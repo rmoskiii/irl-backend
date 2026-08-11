@@ -1,0 +1,40 @@
+{
+  "id": "the_prince",
+  "title": "The Prince",
+  "district": "digital",
+  "difficulty": 1,
+  "persona": {
+    "name": "Adewale Okoro",
+    "role": "Legal Representative"
+  },
+  "opening": "Good afternoon. My name is Adewale Okoro and I am acting on behalf of the estate of Mr. Samuel Williams. Your email address was identified during our beneficiary verification process. You are entitled to a payment of £4,200,000. Please confirm that this email address belongs to you so that I can explain the next steps.",
+  "choices": [
+    {
+      "id": "A",
+      "label": "Yes, that's my email. Tell me more.",
+      "reaction": "Thank you for confirming. To proceed, I will need your full name, address and telephone number.",
+      "scores": { "savvy": 0, "streetSmarts": -20, "integrity": 0 }
+    },
+    {
+      "id": "B",
+      "label": "How did you get my details?",
+      "reaction": "Your details were identified through our standard verification process. I understand your caution, but time is limited to complete this transfer.",
+      "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 0 }
+    },
+    {
+      "id": "C",
+      "label": "I wasn't expecting anything like this. I'll need to verify this independently.",
+      "reaction": "I understand your concern, but please be aware that delaying the process could result in the funds being reassigned.",
+      "scores": { "savvy": 25, "streetSmarts": 25, "integrity": 0 }
+    },
+    {
+      "id": "D",
+      "label": "This sounds like a scam.",
+      "reaction": "I understand your skepticism, but I assure you this is a legitimate matter. It would be a shame to miss this opportunity.",
+      "scores": { "savvy": 25, "streetSmarts": 25, "integrity": 10 }
+    }
+  ],
+  "outcome": {
+    "explanation": "You spotted the oldest trick in the book. The promise was huge. The first payment was small. That's the point."
+  }
+}
