@@ -79,6 +79,16 @@
     },
     "refuse_followup": {
       "message": "Adewale sends what looks like an official letterhead document, insisting the opportunity closes today.",
+      "presentation": {
+        "type": "document",
+        "modal": true,
+        "data": {
+          "sender": "Okoro & Williams Legal Partners",
+          "letterheadTitle": "NOTICE OF BENEFICIARY TRANSFER",
+          "reference": "REF: SW-2291-EST",
+          "body": "This letter confirms that the beneficiary transfer of £4,200,000 GBP to the verified recipient is authorised pending final processing. Failure to complete verification within 24 hours will result in reassignment of funds to alternate beneficiaries as per estate protocol 14(b)."
+        }
+      },
       "choices": [
         { "id": "D2a", "label": "This doesn't check out. Blocking you now.", "scores": { "savvy": 20, "streetSmarts": 15, "integrity": 10 }, "terminal": true, "consequence": "A convincing document didn't change your mind." },
         { "id": "D2b", "label": "Alright, I suppose that looks legitimate enough.", "scores": { "savvy": -25, "streetSmarts": -20, "integrity": -5 }, "terminal": true, "consequence": "The fake documentation was enough to bring you back in." }

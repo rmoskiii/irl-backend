@@ -9,12 +9,15 @@ function loadScenario(scenarioId) {
   return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }
 
-// Strips a node down to what the client is allowed to see - message + choice
-// labels, never scores/consequence/next/terminal.
+// Strips a node down to what the client is allowed to see - message,
+// choice labels, and (if present) the presentation block that tells the
+// client how to render this beat visually. Never scores/consequence/
+// next/terminal.
 function publicNode(nodeId, node) {
   return {
     nodeId,
     message: node.message,
+    presentation: node.presentation || null,
     choices: node.choices.map((c) => ({ id: c.id, label: c.label })),
   };
 }
