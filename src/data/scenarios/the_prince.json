@@ -7,34 +7,82 @@
     "name": "Adewale Okoro",
     "role": "Legal Representative"
   },
-  "opening": "Good afternoon. My name is Adewale Okoro and I am acting on behalf of the estate of Mr. Samuel Williams. Your email address was identified during our beneficiary verification process. You are entitled to a payment of £4,200,000. Please confirm that this email address belongs to you so that I can explain the next steps.",
-  "choices": [
-    {
-      "id": "A",
-      "label": "Yes, that's my email. Tell me more.",
-      "reaction": "Thank you for confirming. To proceed, I will need your full name, address and telephone number.",
-      "scores": { "savvy": 0, "streetSmarts": -20, "integrity": 0 }
-    },
-    {
-      "id": "B",
-      "label": "How did you get my details?",
-      "reaction": "Your details were identified through our standard verification process. I understand your caution, but time is limited to complete this transfer.",
-      "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 0 }
-    },
-    {
-      "id": "C",
-      "label": "I wasn't expecting anything like this. I'll need to verify this independently.",
-      "reaction": "I understand your concern, but please be aware that delaying the process could result in the funds being reassigned.",
-      "scores": { "savvy": 25, "streetSmarts": 25, "integrity": 0 }
-    },
-    {
-      "id": "D",
-      "label": "This sounds like a scam.",
-      "reaction": "I understand your skepticism, but I assure you this is a legitimate matter. It would be a shame to miss this opportunity.",
-      "scores": { "savvy": 25, "streetSmarts": 25, "integrity": 10 }
-    }
+  "rootNode": "start",
+  "outcomeTiers": [
+    { "minTotal": 60, "explanation": "You never let urgency or trust override your judgment — and you were decisive about it. That's the difference between being suspicious and being savvy." },
+    { "minTotal": 25, "explanation": "You caught the trap in the end, even if it took a moment to get there. Good instincts, slightly slow trigger." },
+    { "minTotal": 0, "explanation": "You got out — but only after giving the con more room than it needed." },
+    { "minTotal": -1000, "explanation": "You spotted the oldest trick in the book, too late. The promise was huge. The first ask was small. That's the point." }
   ],
-  "outcome": {
-    "explanation": "You spotted the oldest trick in the book. The promise was huge. The first payment was small. That's the point."
+  "nodes": {
+    "start": {
+      "message": "Good afternoon. My name is Adewale Okoro and I am acting on behalf of the estate of Mr. Samuel Williams. Your email address was identified during our beneficiary verification process. You are entitled to a payment of £4,200,000. Please confirm that this email address belongs to you so that I can explain the next steps.",
+      "choices": [
+        { "id": "A", "label": "Yes, that's my email. Tell me more.", "scores": { "savvy": -5, "streetSmarts": -10, "integrity": 0 }, "next": "engage" },
+        { "id": "B", "label": "How did you get my details?", "scores": { "savvy": 10, "streetSmarts": 5, "integrity": 0 }, "next": "question" },
+        { "id": "C", "label": "I wasn't expecting anything like this. I'll need to verify this independently.", "scores": { "savvy": 15, "streetSmarts": 15, "integrity": 0 }, "next": "verify" },
+        { "id": "D", "label": "This sounds like a scam.", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 5 }, "next": "refuse" }
+      ]
+    },
+
+    "engage": {
+      "message": "Thank you for confirming. To proceed, I will need your full name, address and telephone number.",
+      "choices": [
+        { "id": "A1", "label": "Sure, here's my information.", "scores": { "savvy": -20, "streetSmarts": -25, "integrity": 0 }, "terminal": true, "consequence": "You handed over your details without a second thought." },
+        { "id": "A2", "label": "Wait — why do you need all of that?", "scores": { "savvy": 10, "streetSmarts": 5, "integrity": 0 }, "next": "engage_followup" }
+      ]
+    },
+    "engage_followup": {
+      "message": "It's simply to verify that you're the account holder. Time is limited to complete this transfer.",
+      "choices": [
+        { "id": "A2a", "label": "I'll need to verify this independently before sharing anything.", "scores": { "savvy": 20, "streetSmarts": 20, "integrity": 0 }, "terminal": true, "consequence": "You held the line and asked to verify independently." },
+        { "id": "A2b", "label": "Fine, here it is.", "scores": { "savvy": -15, "streetSmarts": -20, "integrity": 0 }, "terminal": true, "consequence": "The pressure worked. You gave up your details anyway." }
+      ]
+    },
+
+    "question": {
+      "message": "Your details were identified through our standard verification process. I understand your caution, but time is limited to complete this transfer.",
+      "choices": [
+        { "id": "B1", "label": "I'd like proof of this estate and your firm before continuing.", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 0 }, "next": "question_followup" },
+        { "id": "B2", "label": "Okay, what do I need to do?", "scores": { "savvy": -10, "streetSmarts": -15, "integrity": 0 }, "terminal": true, "consequence": "You let the vague explanation satisfy you and kept going." }
+      ]
+    },
+    "question_followup": {
+      "message": "You may contact the estate's legal department directly to confirm — here is a direct line.",
+      "choices": [
+        { "id": "B1a", "label": "I'll verify this independently, not through a number you've given me.", "scores": { "savvy": 20, "streetSmarts": 20, "integrity": 0 }, "terminal": true, "consequence": "You recognised that a number from the scammer isn't independent verification at all." },
+        { "id": "B1b", "label": "Alright, I'll call this number.", "scores": { "savvy": -10, "streetSmarts": -15, "integrity": 0 }, "terminal": true, "consequence": "You called the number — straight back to the same people." }
+      ]
+    },
+
+    "verify": {
+      "message": "I understand your concern, but please be aware that delaying the process could result in the funds being reassigned.",
+      "choices": [
+        { "id": "C1", "label": "I'm not moving forward until I verify independently. Goodbye.", "scores": { "savvy": 20, "streetSmarts": 20, "integrity": 5 }, "terminal": true, "consequence": "You didn't let the urgency change your plan." },
+        { "id": "C2", "label": "Okay, but make it quick then.", "scores": { "savvy": 0, "streetSmarts": -5, "integrity": 0 }, "next": "verify_followup" }
+      ]
+    },
+    "verify_followup": {
+      "message": "Wonderful. There is a small legal processing fee of £650 required before the transfer can be released.",
+      "choices": [
+        { "id": "C2a", "label": "A fee to receive money makes no sense. I'm out.", "scores": { "savvy": 20, "streetSmarts": 15, "integrity": 0 }, "terminal": true, "consequence": "The fee request gave it away, and you walked." },
+        { "id": "C2b", "label": "Fine, how do I pay the fee?", "scores": { "savvy": -30, "streetSmarts": -35, "integrity": 0 }, "terminal": true, "consequence": "You agreed to pay the fee." }
+      ]
+    },
+
+    "refuse": {
+      "message": "I understand your skepticism, but I assure you this is a legitimate matter. It would be a shame to miss this opportunity.",
+      "choices": [
+        { "id": "D1", "label": "I'm blocking and reporting this number.", "scores": { "savvy": 20, "streetSmarts": 20, "integrity": 15 }, "terminal": true, "consequence": "You didn't just disengage — you shut the door and reported it." },
+        { "id": "D2", "label": "Prove it, then. Send me verifiable documentation.", "scores": { "savvy": 5, "streetSmarts": 0, "integrity": 0 }, "next": "refuse_followup" }
+      ]
+    },
+    "refuse_followup": {
+      "message": "Adewale sends what looks like an official letterhead document, insisting the opportunity closes today.",
+      "choices": [
+        { "id": "D2a", "label": "This doesn't check out. Blocking you now.", "scores": { "savvy": 20, "streetSmarts": 15, "integrity": 10 }, "terminal": true, "consequence": "A convincing document didn't change your mind." },
+        { "id": "D2b", "label": "Alright, I suppose that looks legitimate enough.", "scores": { "savvy": -25, "streetSmarts": -20, "integrity": -5 }, "terminal": true, "consequence": "The fake documentation was enough to bring you back in." }
+      ]
+    }
   }
 }

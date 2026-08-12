@@ -9,30 +9,28 @@ function loadScenario(scenarioId) {
   return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }
 
-function getPublicScenario(scenarioId) {
+// Strips a node down to what the client is allowed to see - message + choice
+// labels, never scores/consequence/next/terminal.
+function publicNode(nodeId, node) {
+  return {
+    nodeId,
+    message: node.message,
+    choices: node.choices.map((c) => ({ id: c.id, label: c.label })),
+  };
+}
+
+function getRootView(scenarioId) {
   const scenario = loadScenario(scenarioId);
   if (!scenario) return null;
-  // Strip scores/reactions/outcome so the client never sees the rubric.
+  const rootNode = scenario.nodes[scenario.rootNode];
   return {
-    id: scenario.id,
+    scenarioId: scenario.id,
     title: scenario.title,
     district: scenario.district,
     difficulty: scenario.difficulty,
     persona: scenario.persona,
-    opening: scenario.opening,
-    choices: scenario.choices.map((c) => ({ id: c.id, label: c.label })),
+    node: publicNode(scenario.rootNode, rootNode),
   };
 }
 
-// v0: scripted lookup, no live model call. Swap this function's body for an
-// Anthropic API call (Haiku 4.5 is enough) when you want reaction variety -
-// nothing in routes/services.js needs to change, the signature stays the same.
-function getReaction(scenarioId, choiceId) {
-  const scenario = loadScenario(scenarioId);
-  if (!scenario) return null;
-  const choice = scenario.choices.find((c) => c.id === choiceId);
-  if (!choice) return null;
-  return choice.reaction;
-}
-
-module.exports = { loadScenario, getPublicScenario, getReaction };
+module.exports = { loadScenario, getRootView, publicNode };

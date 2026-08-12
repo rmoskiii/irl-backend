@@ -1,6 +1,6 @@
 const express = require("express");
-const { getPublicScenario, getReaction } = require("../services/personaService");
-const { scoreChoice } = require("../services/evaluationService");
+const { getRootView } = require("../services/personaService");
+const { resolveChoice } = require("../services/evaluationService");
 const { logResult } = require("../services/resultsLog");
 
 const router = express.Router();
@@ -12,31 +12,26 @@ const SCENARIO_ROTATION = ["the_prince"];
 
 router.get("/today", (req, res) => {
   const scenarioId = SCENARIO_ROTATION[0];
-  const scenario = getPublicScenario(scenarioId);
-  if (!scenario) return res.status(404).json({ error: "No scenario available." });
-  res.json(scenario);
+  const view = getRootView(scenarioId);
+  if (!view) return res.status(404).json({ error: "No scenario available." });
+  res.json(view);
 });
 
 router.post("/respond", (req, res) => {
-  const { scenarioId, choiceId, testerId } = req.body;
-  if (!scenarioId || !choiceId) {
-    return res.status(400).json({ error: "scenarioId and choiceId are required." });
+  const { scenarioId, nodeId, choiceId, runningTotal, testerId } = req.body;
+
+  if (!scenarioId || !nodeId || !choiceId) {
+    return res.status(400).json({ error: "scenarioId, nodeId and choiceId are required." });
   }
 
-  const reaction = getReaction(scenarioId, choiceId);
-  const evaluation = scoreChoice(scenarioId, choiceId);
-
-  if (!reaction || !evaluation) {
-    return res.status(404).json({ error: "Unknown scenario or choice." });
+  const result = resolveChoice({ scenarioId, nodeId, choiceId, runningTotal });
+  if (!result) {
+    return res.status(404).json({ error: "Unknown scenario, node or choice." });
   }
 
-  logResult({ testerId, scenarioId, choiceId, scores: evaluation.scores });
+  logResult({ testerId, scenarioId, nodeId, choiceId, scores: result.scores, terminal: result.terminal });
 
-  res.json({
-    reaction,
-    scores: evaluation.scores,
-    outcomeExplanation: evaluation.outcomeExplanation,
-  });
+  res.json(result);
 });
 
 module.exports = router;
