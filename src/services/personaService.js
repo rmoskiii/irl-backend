@@ -36,4 +36,22 @@ function getRootView(scenarioId) {
   };
 }
 
-module.exports = { loadScenario, getRootView, publicNode };
+// Dev/testing convenience: every scenario JSON file on disk, summarised.
+// This is what powers the debug-only scenario picker so you don't have to
+// hand-edit a rotation array every time a new scenario is added.
+function listScenarios() {
+  const files = fs.readdirSync(SCENARIOS_DIR).filter((f) => f.endsWith(".json"));
+  return files
+      .map((file) => {
+        const scenario = JSON.parse(fs.readFileSync(path.join(SCENARIOS_DIR, file), "utf-8"));
+        return {
+          id: scenario.id,
+          title: scenario.title,
+          district: scenario.district,
+          difficulty: scenario.difficulty,
+        };
+      })
+      .sort((a, b) => a.difficulty - b.difficulty);
+}
+
+module.exports = { loadScenario, getRootView, publicNode, listScenarios };

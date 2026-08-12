@@ -1,19 +1,30 @@
 const express = require("express");
-const { getRootView } = require("../services/personaService");
+const { getRootView, listScenarios } = require("../services/personaService");
 const { resolveChoice } = require("../services/evaluationService");
 const { logResult } = require("../services/resultsLog");
 
 const router = express.Router();
 
-// Hardcoded to one scenario for now. Add ids here as new scenario JSON
-// files land in data/scenarios/ - a real "daily scenario" rotation is a
-// post-validation feature, not a v0 one.
-const SCENARIO_ROTATION = ["the_prince"];
+// Default when no scenarioId is requested at all. This is the ONLY thing
+// that matters for a real "daily scenario" later - for now it's just a
+// fallback, since the dev picker (GET /list) is the normal way to reach
+// anything other than the default.
+const DEFAULT_SCENARIO_ID = "the_prince";
+
+// Dev/testing: lists every scenario on disk so a picker UI can jump
+// straight into any of them without editing code each time one is added.
+router.get("/list", (req, res) => {
+  res.json(listScenarios());
+});
 
 router.get("/today", (req, res) => {
-  const scenarioId = SCENARIO_ROTATION[0];
+  const requestedId = req.query.scenarioId;
+  const scenarioId = typeof requestedId === "string" && requestedId.length > 0
+      ? requestedId
+      : DEFAULT_SCENARIO_ID;
+
   const view = getRootView(scenarioId);
-  if (!view) return res.status(404).json({ error: "No scenario available." });
+  if (!view) return res.status(404).json({ error: `Unknown scenario: ${scenarioId}` });
   res.json(view);
 });
 

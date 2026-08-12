@@ -1,0 +1,71 @@
+{
+  "id": "the_bank",
+  "title": "The Bank",
+  "district": "digital",
+  "difficulty": 2,
+  "persona": {
+    "name": "Daniel",
+    "role": "Fraud Prevention Specialist"
+  },
+  "rootNode": "start",
+  "outcomeTiers": [
+    { "minTotal": 55, "explanation": "You never let a professional voice or a ticking clock do your thinking for you. You picked the channel, you set the pace, and you controlled the verification. That's the whole game." },
+    { "minTotal": 20, "explanation": "You caught it before it cost you — but the pressure landed, and you gave the caller more room than they'd earned before you shut it down." },
+    { "minTotal": 0, "explanation": "You got out without handing anything over. Only just. A few more seconds on his script and this could have gone the other way." },
+    { "minTotal": -1000, "explanation": "You read a code that was sent specifically to you, out loud, to a stranger who called you. That single sentence is the entire scam — and it worked." }
+  ],
+  "nodes": {
+    "start": {
+      "message": "Your phone buzzes. A text: \"Meridian Bank Alerts — We've detected unusual activity on your account. If this wasn't you, call our fraud team immediately: 020 7946 28XX\"",
+      "choices": [
+        { "id": "A", "label": "Call the number in the text.", "scores": { "savvy": -10, "streetSmarts": -10, "integrity": 0 }, "next": "call_pickup", "reasons": { "savvy": "The number in the message is the one thing you can't independently verify — using it means trusting the sender to tell you who to call.", "streetSmarts": "You handed the choice of channel to whoever sent the text." } },
+        { "id": "B", "label": "Open your banking app to check for real alerts.", "scores": { "savvy": 20, "streetSmarts": 20, "integrity": 0 }, "terminal": true, "consequence": "No alerts in the app. The text wasn't from your bank.", "reasons": { "savvy": "You checked a source you already trust instead of the one the message pointed you at.", "streetSmarts": "Nothing was ever put at risk — the whole thing routed around the trap." } },
+        { "id": "C", "label": "Call the bank using the number on the back of your card.", "scores": { "savvy": 25, "streetSmarts": 25, "integrity": 5 }, "terminal": true, "consequence": "The real bank confirms there is no fraud alert on your account — the text was fake, and they're grateful for the report.", "reasons": { "savvy": "The number on the card is one of the few things a scammer can't substitute for you.", "streetSmarts": "You verified through a channel you chose, not one they gave you.", "integrity": "Reporting the attempt lets the bank warn other customers." } },
+        { "id": "D", "label": "Delete the text and get on with your day.", "scores": { "savvy": 0, "streetSmarts": 5, "integrity": 0 }, "terminal": true, "consequence": "You never engaged — but you also never checked whether something was actually wrong.", "reasons": { "streetSmarts": "Not engaging closes the door on this attempt, even if it doesn't tell you whether the underlying alert was real." } }
+      ],
+      "presentation": {
+        "type": "sms",
+        "modal": false,
+        "data": {
+          "sender": "Meridian Bank Alerts",
+          "senderNumber": "+44 7700 900142",
+          "body": "We've detected unusual activity on your account. If this wasn't you, call our fraud team immediately: 020 7946 28XX"
+        }
+      }
+    },
+    "call_pickup": {
+      "message": "Daniel picks up on the second ring. Calm, professional. \"Thanks for calling straight back. I can see we've flagged an attempted transfer of £2,400 from your account — card ending 4471, is that right? Good. I've just sent a security code to your phone. Read that back to me now so I can block the transfer.\"",
+      "choices": [
+        { "id": "A1", "label": "Read the code out to him.", "scores": { "savvy": -30, "streetSmarts": -30, "integrity": 0 }, "terminal": true, "consequence": "The code approved the very transfer he claimed to be blocking. The money is gone.", "reasons": { "savvy": "A code sent to your phone exists so that nobody else can use it — reading it out to someone defeats its only purpose.", "streetSmarts": "The moment that code left your mouth, whoever's on the other end had everything they needed to move your money." } },
+        { "id": "A2", "label": "How do I know you're really from the bank?", "scores": { "savvy": 10, "streetSmarts": 5, "integrity": 0 }, "next": "verify_push", "reasons": { "savvy": "You pushed back on identity before doing anything else.", "streetSmarts": "You slowed him down instead of moving at his pace." } },
+        { "id": "A3", "label": "I'm hanging up and calling the bank on the number on my card.", "scores": { "savvy": 25, "streetSmarts": 25, "integrity": 5 }, "terminal": true, "consequence": "You called the real bank. No transfer, no fraud alert. \"Daniel\" wasn't Daniel.", "reasons": { "savvy": "The only way to verify a caller is a channel the caller didn't hand you.", "streetSmarts": "Ending the call cut off every route this attack had.", "integrity": "Reporting it gives the bank a chance to protect the next person." } },
+        { "id": "A4", "label": "Why do you need a code that was sent to me?", "scores": { "savvy": 15, "streetSmarts": 5, "integrity": 0 }, "next": "why_code", "reasons": { "savvy": "You asked the exact question this scam depends on you not asking.", "streetSmarts": "You didn't say no yet — but you didn't say yes either." } }
+      ],
+      "presentation": {
+        "type": "call",
+        "modal": true,
+        "data": {
+          "callerName": "Daniel",
+          "callerRole": "Fraud Prevention — Meridian Bank",
+          "callerNumber": "020 7946 28XX",
+          "status": "On call"
+        }
+      }
+    },
+    "verify_push": {
+      "message": "\"I completely understand — you should be careful. But I need to stop this transaction right now. Every second we spend on this, the transfer is still going through. If we don't act in the next couple of minutes, that money is gone. Just read me the code and I'll block it.\"",
+      "choices": [
+        { "id": "A2a", "label": "Alright, here it is.", "scores": { "savvy": -25, "streetSmarts": -30, "integrity": 0 }, "terminal": true, "consequence": "The urgency worked. You handed over the code.", "reasons": { "savvy": "The urgency was the tell, and you moved anyway.", "streetSmarts": "Once he had the code, the transfer he claimed to be blocking was the one he pushed through." } },
+        { "id": "A2b", "label": "That's not verification, that's pressure. Hanging up.", "scores": { "savvy": 25, "streetSmarts": 25, "integrity": 5 }, "terminal": true, "consequence": "You named it and ended the call.", "reasons": { "savvy": "Urgency stacked on top of a refusal to verify is the shape of a scam, and you called it.", "streetSmarts": "Ending the call closed the whole thing in one move.", "integrity": "Walking away cleanly, rather than baiting him, is the right shape here." } },
+        { "id": "A2c", "label": "Hold on — let me check my banking app first.", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 0 }, "terminal": true, "consequence": "No alert in the app. You didn't need Daniel's version of events.", "reasons": { "savvy": "The app is a source Daniel doesn't control.", "streetSmarts": "You checked your own channel before doing anything he asked." } }
+      ]
+    },
+    "why_code": {
+      "message": "\"It's simply to verify that you're the account holder — standard procedure. I can see you're being careful, and that's exactly right. But the transfer is live right now.\"",
+      "choices": [
+        { "id": "A4a", "label": "A real bank would never need a code that was sent to me. Hanging up.", "scores": { "savvy": 25, "streetSmarts": 25, "integrity": 10 }, "terminal": true, "consequence": "You spotted the trap and ended the call.", "reasons": { "savvy": "You named the exact tell — those codes exist so you stay in control, not so you hand them back to a caller.", "streetSmarts": "Ending the call means no code, no transfer, no exposure.", "integrity": "Naming the pattern out loud makes it easier to warn others afterwards." } },
+        { "id": "A4b", "label": "Fair enough — if it's standard procedure. Here it is.", "scores": { "savvy": -30, "streetSmarts": -30, "integrity": 0 }, "terminal": true, "consequence": "\"Standard procedure\" was enough. You gave up the code.", "reasons": { "savvy": "\"Standard procedure\" was doing the same job as urgency — a reassuring label instead of an actual answer.", "streetSmarts": "The code was the only thing standing between him and your account, and now it isn't." } }
+      ]
+    }
+  }
+}
