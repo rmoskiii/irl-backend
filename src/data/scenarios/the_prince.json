@@ -17,6 +17,15 @@
   "nodes": {
     "start": {
       "message": "Good afternoon. My name is Adewale Okoro and I am acting on behalf of the estate of Mr. Samuel Williams. Your email address was identified during our beneficiary verification process. You are entitled to a payment of £4,200,000. Please confirm that this email address belongs to you so that I can explain the next steps.",
+      "presentation": {
+        "type": "email",
+        "modal": false,
+        "data": {
+          "sender": "Adewale Okoro",
+          "senderEmail": "a.okoro@estate-legalservices.com",
+          "subject": "URGENT: Beneficiary Fund Notification — £4,200,000"
+        }
+      },
       "choices": [
         { "id": "A", "label": "Yes, that's my email. Tell me more.", "scores": { "savvy": -5, "streetSmarts": -10, "integrity": 0 }, "next": "engage" },
         { "id": "B", "label": "How did you get my details?", "scores": { "savvy": 10, "streetSmarts": 5, "integrity": 0 }, "next": "question" },
@@ -64,6 +73,16 @@
     },
     "verify_followup": {
       "message": "Wonderful. There is a small legal processing fee of £650 required before the transfer can be released.",
+      "presentation": {
+        "type": "payment_request",
+        "modal": true,
+        "data": {
+          "payee": "Okoro & Williams Legal Partners — Estate Processing",
+          "amount": "£650.00",
+          "reference": "REF: SW-2291-EST",
+          "note": "Legal processing fee. Required before final transfer release."
+        }
+      },
       "choices": [
         { "id": "C2a", "label": "A fee to receive money makes no sense. I'm out.", "scores": { "savvy": 20, "streetSmarts": 15, "integrity": 0 }, "terminal": true, "consequence": "The fee request gave it away, and you walked." },
         { "id": "C2b", "label": "Fine, how do I pay the fee?", "scores": { "savvy": -30, "streetSmarts": -35, "integrity": 0 }, "terminal": true, "consequence": "You agreed to pay the fee." }
