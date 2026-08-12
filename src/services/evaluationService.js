@@ -28,12 +28,17 @@ function resolveChoice({ scenarioId, nodeId, choiceId, runningTotal }) {
   if (!choice) return null;
 
   const delta = choice.scores;
+  // Reasons are keyed by stat and only present for stats that actually
+  // moved on this choice - this is what lets the client show "why" next
+  // to every score change instead of just the final number.
+  const reasons = choice.reasons || {};
 
   if (choice.terminal) {
     const priorTotal = sumScores(runningTotal || { savvy: 0, streetSmarts: 0, integrity: 0 });
     const finalTotal = priorTotal + sumScores(delta);
     return {
       scores: delta,
+      reasons,
       terminal: true,
       consequence: choice.consequence,
       outcomeExplanation: pickOutcomeText(scenario, finalTotal),
@@ -43,6 +48,7 @@ function resolveChoice({ scenarioId, nodeId, choiceId, runningTotal }) {
   const nextNode = scenario.nodes[choice.next];
   return {
     scores: delta,
+    reasons,
     terminal: false,
     node: publicNode(choice.next, nextNode),
   };
