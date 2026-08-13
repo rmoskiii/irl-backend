@@ -9,21 +9,65 @@
   },
   "rootNode": "start",
   "outcomeTiers": [
-    { "minTotal": 50, "explanation": "You helped where it mattered and held your ground where it counted — and said the honest thing out loud instead of just feeling it." },
-    { "minTotal": 20, "explanation": "You got through it without either of you really losing, though something between you still needs a real conversation eventually." },
-    { "minTotal": 0, "explanation": "You avoided the hard part. The pattern's still there, just a little further under the surface now." },
-    { "minTotal": -1000, "explanation": "You walked back the one honest thing you'd said the moment it got uncomfortable — which is usually how patterns like this stay exactly the same." }
+    {
+      "minTotal": 50,
+      "explanation": "You helped where it mattered and held your ground where it counted — and said the honest thing out loud instead of just feeling it."
+    },
+    {
+      "minTotal": 20,
+      "explanation": "You got through it without either of you really losing, though something between you still needs a real conversation eventually."
+    },
+    {
+      "minTotal": 0,
+      "explanation": "You avoided the hard part. The pattern's still there, just a little further under the surface now."
+    },
+    {
+      "minTotal": -1000,
+      "explanation": "You walked back the one honest thing you'd said the moment it got uncomfortable — which is usually how patterns like this stay exactly the same."
+    }
   ],
   "nodes": {
     "start": {
-      "message": "Sam's been your friend since school — the kind of friendship where you've never really needed to explain yourself, the one who'd drop everything if you actually needed them. A few days before any of this, Sam bails on plans with you last-minute — again — mumbling something about \"just a lot going on right now.\" You don't think much of it at the time.",      "presentation": {
+      "message": "Sam's been your friend since school — the kind of friendship where you've never really needed to explain yourself, the one who'd drop everything if you actually needed them. A few days before any of this, Sam bails on plans with you last-minute — again — mumbling something about \"just a lot going on right now.\" You don't think much of it at the time.",
+      "presentation": {
         "type": "scene",
         "modal": false,
-        "data": { "location": "A text thread, a few days earlier", "character": { "name": "Sam", "role": "Friend", "mood": "distracted" } }
+        "data": {
+          "location": "A text thread, a few days earlier",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "distracted"
+          }
+        }
       },
       "choices": [
-        { "id": "A", "label": "No worries, we'll reschedule.", "scores": { "savvy": 0, "streetSmarts": 0, "integrity": 5 }, "next": "the_call", "reasons": { "integrity": "Genuine grace, no side-eye attached." } },
-        { "id": "B", "label": "That's the third time this month, but okay.", "scores": { "savvy": 10, "streetSmarts": 0, "integrity": 0 }, "next": "the_call", "reasons": { "savvy": "You noticed the pattern before anyone forced you to." } }
+        {
+          "id": "A",
+          "label": "No worries, we'll reschedule.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 5
+          },
+          "next": "the_call",
+          "reasons": {
+            "integrity": "Genuine grace, no side-eye attached."
+          }
+        },
+        {
+          "id": "B",
+          "label": "That's the third time, but okay.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "the_call",
+          "reasons": {
+            "savvy": "You noticed the pattern before anyone forced you to."
+          }
+        }
       ]
     },
     "the_call": {
@@ -31,61 +75,445 @@
       "presentation": {
         "type": "call",
         "modal": true,
-        "data": { "callerName": "Sam", "callerRole": "Friend", "callerNumber": "Mobile", "status": "On call" }
+        "data": {
+          "callerName": "Sam",
+          "callerRole": "Friend",
+          "callerNumber": "Mobile",
+          "status": "On call"
+        }
       },
       "choices": [
-        { "id": "A", "label": "On my way.", "scores": { "savvy": 0, "streetSmarts": -5, "integrity": 15 }, "next": "cost_helped", "reasons": { "integrity": "You showed up without making Sam ask twice.", "streetSmarts": "You didn't weigh what this costs you before saying yes." } },
-        { "id": "B", "label": "I can come, but I've got something at 7 — can you find another way if I can't make it work?", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 10 }, "next": "cost_helped", "reasons": { "savvy": "You said yes without pretending your own plans don't exist.", "streetSmarts": "Naming your limit up front protects both of you from a worse conversation later." } },
-        { "id": "C", "label": "Can you call a taxi and I'll send you the money?", "scores": { "savvy": 10, "streetSmarts": 15, "integrity": 5 }, "next": "cost_declined", "reasons": { "streetSmarts": "You found a way to actually help without absorbing the whole problem yourself." } },
-        { "id": "D", "label": "Sam, this is the third time this month.", "scores": { "savvy": 15, "streetSmarts": 5, "integrity": 15 }, "next": "cost_declined", "reasons": { "savvy": "You said the thing you'd been noticing instead of swallowing it again.", "integrity": "Naming a pattern honestly, even when it's uncomfortable, is its own kind of loyalty." } }
+        {
+          "id": "yes",
+          "label": "Yeah. Where are you?",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": -5,
+            "integrity": 10
+          },
+          "next": "sam_reacts_yes",
+          "reasons": {
+            "integrity": "You showed up without making Sam ask twice.",
+            "streetSmarts": "You didn't weigh what this costs you before saying yes."
+          }
+        },
+        {
+          "id": "limit",
+          "label": "I can come, but I need to leave by 6:30.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 10,
+            "integrity": 10
+          },
+          "next": "sam_reacts_limit",
+          "reasons": {
+            "savvy": "You said yes without pretending your own plans don't exist.",
+            "streetSmarts": "Naming your limit up front protects both of you."
+          }
+        },
+        {
+          "id": "solve",
+          "label": "How are you getting home if I can't?",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 15,
+            "integrity": 0
+          },
+          "next": "sam_reacts_solve",
+          "reasons": {
+            "streetSmarts": "You problem-solved instead of absorbing the whole thing yourself.",
+            "savvy": "Asking the question shifts the frame from 'rescue me' to 'let's figure this out.'"
+          }
+        },
+        {
+          "id": "confront",
+          "label": "Sam... you know this is the third time, right?",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 0,
+            "integrity": 15
+          },
+          "next": "sam_reacts_confront",
+          "reasons": {
+            "savvy": "You said the thing you'd been noticing instead of swallowing it again.",
+            "integrity": "Naming a pattern honestly, even when it's uncomfortable, is its own kind of loyalty."
+          }
+        }
       ]
     },
-    "cost_helped": {
-      "message": "You get there fast, but it means walking into your own evening late and flustered, apologising before you've even sat down. Sam barely seems to register what it cost you to show up.",
+    "sam_reacts_yes": {
+      "message": "\"Oh thank God. I'm on the ring road, just past the Texaco.\" You grab your keys and go. Sam's already smiling when you pull up — relieved, grateful, and completely unaware that you just walked out of something that mattered to you.",
       "presentation": {
         "type": "scene",
         "modal": false,
-        "data": { "location": "Arriving late, out of breath", "character": { "name": "Sam", "role": "Friend", "mood": "relieved" } }
+        "data": {
+          "location": "Arriving at the ring road",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "relieved"
+          }
+        }
       },
       "choices": [
-        { "id": "A", "label": "Mention it lightly — \"that one was a bit of a scramble for me.\"", "scores": { "savvy": 10, "streetSmarts": 10, "integrity": 10 }, "next": "sam_reacts_helped", "reasons": { "integrity": "You said it instead of quietly banking the resentment." } },
-        { "id": "B", "label": "Let it go completely.", "scores": { "savvy": -5, "streetSmarts": -10, "integrity": 0 }, "next": "sam_reacts_helped", "reasons": { "streetSmarts": "Letting it go quietly doesn't make it not cost you — it just makes the cost invisible." } }
+        {
+          "id": "mention",
+          "label": "\"That was a bit of a scramble for me, by the way.\"",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 10,
+            "integrity": 10
+          },
+          "next": "sam_hears_it",
+          "reasons": {
+            "integrity": "You said it instead of quietly banking the resentment."
+          }
+        },
+        {
+          "id": "swallow",
+          "label": "Say nothing. Drive.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": -10,
+            "integrity": 0
+          },
+          "next": "sam_assumes",
+          "reasons": {
+            "streetSmarts": "Letting it go quietly doesn't make it not cost you — it just makes the cost invisible."
+          }
+        }
       ]
     },
-    "cost_declined": {
-      "message": "Sam manages fine in the end — a taxi, a coworker, something. But there's a new distance in the next few messages between you, a little more formal than usual.",
+    "sam_reacts_limit": {
+      "message": "\"Yeah — yeah, of course. Thanks.\" There's a tiny pause before the thanks. Not rude. Just... the fraction of a second where Sam was expecting unconditional and got something slightly less. You show up. Sam's in the car by 6:28. Nobody mentions the deadline.",
       "presentation": {
         "type": "scene",
         "modal": false,
-        "data": { "location": "A few days later, over text", "character": { "name": "Sam", "role": "Friend", "mood": "cold" } }
+        "data": {
+          "location": "Ring road pickup",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "sheepish"
+          }
+        }
       },
       "choices": [
-        { "id": "A", "label": "Check in directly — \"are we okay?\"", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 10 }, "next": "sam_reacts_declined", "reasons": { "integrity": "You didn't let the distance sit unaddressed." } },
-        { "id": "B", "label": "Give it space and see if it passes.", "scores": { "savvy": 0, "streetSmarts": 0, "integrity": 0 }, "next": "sam_reacts_declined", "reasons": { "streetSmarts": "Sometimes space helps. Sometimes it just lets the gap set." } }
+        {
+          "id": "check",
+          "label": "\"Are we good? You went quiet for a second there.\"",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 10
+          },
+          "next": "sam_hears_it",
+          "reasons": {
+            "savvy": "You caught the micro-shift in Sam's tone and named it instead of letting it fester."
+          }
+        },
+        {
+          "id": "leave_it",
+          "label": "Drop Sam off. Head to your thing.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 5,
+            "integrity": 0
+          },
+          "next": "new_info",
+          "reasons": {
+            "streetSmarts": "You set a boundary, kept it, and moved on."
+          }
+        }
       ]
     },
-    "sam_reacts_helped": {
-      "message": "Sam finally brings it up. \"I didn't realise it actually bothered you. I guess I've just gotten used to you being the one who shows up.\" It's not quite an apology, but it's not nothing either.",
+    "sam_reacts_solve": {
+      "message": "\"I... don't really have another option? That's why I'm calling you.\" There's a wobble in Sam's voice you weren't expecting. Not anger. Something closer to embarrassment.",
       "presentation": {
         "type": "scene",
         "modal": true,
-        "data": { "location": "Sam's place, a week later", "character": { "name": "Sam", "role": "Friend", "mood": "sheepish" } }
+        "data": {
+          "location": "Still on the call",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "hurt"
+          }
+        }
       },
       "choices": [
-        { "id": "T1", "label": "I don't mind helping. I mind being the only option.", "scores": { "savvy": 15, "streetSmarts": 15, "integrity": 15 }, "terminal": true, "consequence": "Sam actually hears it this time. Nothing changes overnight, but the next few asks come with real thought behind them.", "reasons": { "integrity": "You named the real issue instead of the surface complaint.", "savvy": "You separated 'helping' from 'being the default' — that's the actual distinction." } },
-        { "id": "T2", "label": "Honestly, don't worry about it.", "scores": { "savvy": -10, "streetSmarts": -10, "integrity": -5 }, "terminal": true, "consequence": "The moment passes. Nothing changes, including how tired you'll feel the next time your phone rings at the wrong moment.", "reasons": { "integrity": "Waving it off protected the moment and cost you the pattern actually changing." } }
+        {
+          "id": "soften",
+          "label": "Okay — I'll come. Just tell me where you are.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 5,
+            "integrity": 10
+          },
+          "next": "sam_hears_it",
+          "reasons": {
+            "savvy": "You heard the wobble and adjusted.",
+            "integrity": "Pivoting from problem-solving to showing up when someone's clearly struggling."
+          }
+        },
+        {
+          "id": "hold",
+          "label": "What about a taxi? I can send you the money.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "next": "new_info",
+          "reasons": {
+            "streetSmarts": "You found a way to help without absorbing the whole problem yourself."
+          }
+        }
       ]
     },
-    "sam_reacts_declined": {
-      "message": "\"I get it,\" Sam says, though the edge in their voice says they don't fully. \"I just thought that's what friends do for each other.\" It's a little bit guilt-trip, a little bit genuinely hurt, and hard to tell which is louder.",
+    "sam_reacts_confront": {
+      "message": "Silence. Five full seconds of it. Then, quietly: \"Yeah. I know.\" Another pause. \"I didn't think you were counting.\"",
       "presentation": {
         "type": "scene",
         "modal": true,
-        "data": { "location": "Coffee, tense", "character": { "name": "Sam", "role": "Friend", "mood": "hurt" } }
+        "data": {
+          "location": "Still on the call",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "hurt"
+          }
+        }
       },
       "choices": [
-        { "id": "T1", "label": "It is. And I still showed up — just not the way you wanted.", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 15 }, "terminal": true, "consequence": "Sam sits with that for longer than either of you expects. The friendship cools for a while, then settles into something a little more honest than before.", "reasons": { "integrity": "You held the boundary without pretending you hadn't cared at all." } },
-        { "id": "T2", "label": "Maybe I overreacted. I'm sorry.", "scores": { "savvy": -10, "streetSmarts": -15, "integrity": -10 }, "terminal": true, "consequence": "Sam relaxes, but the pattern is exactly where it was before this ever started.", "reasons": { "savvy": "Walking it back erased the one moment that might have actually changed something.", "integrity": "Apologising for a boundary you meant undoes the honesty it took to set it." } }
+        {
+          "id": "repair",
+          "label": "I'm not counting. I'm just... noticing. Where are you? I'm coming.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 15,
+            "integrity": 15
+          },
+          "next": "sam_surprised",
+          "reasons": {
+            "savvy": "You named the pattern and then still showed up — that's the strongest version of this move.",
+            "streetSmarts": "Confronting AND helping is harder than picking one.",
+            "integrity": "You separated the boundary from the rescue instead of making Sam choose between hearing the truth and getting help."
+          }
+        },
+        {
+          "id": "stay_firm",
+          "label": "I'm not trying to be harsh. But I need you to hear it.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": -5,
+            "integrity": 15
+          },
+          "next": "new_info",
+          "reasons": {
+            "integrity": "You held the honest thing even when Sam's silence made it uncomfortable.",
+            "streetSmarts": "The timing — mid-crisis, on the phone — isn't ideal for this conversation."
+          }
+        },
+        {
+          "id": "backtrack",
+          "label": "Sorry — forget I said that. Where are you?",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": -15,
+            "integrity": -10
+          },
+          "next": "sam_assumes",
+          "reasons": {
+            "savvy": "Walking it back erased the one moment that might have changed something.",
+            "integrity": "Apologising for a boundary you meant undoes the honesty it took to set it."
+          }
+        }
+      ]
+    },
+    "sam_hears_it": {
+      "message": "Sam looks at you differently for a second. \"I didn't realise it actually bothered you. I guess I've just gotten used to you being the one who shows up.\" It's not quite an apology, but it's not nothing either.",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "Sam's place, a few days later",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "sheepish"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "T1",
+          "label": "I don't mind helping. I mind being the only option.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 15
+          },
+          "terminal": true,
+          "consequence": "Sam actually hears it this time. Nothing changes overnight, but the next few asks come with real thought behind them. Three weeks later Sam texts: 'Hey — can I ask before I assume you'll help this time?' That's progress.",
+          "reasons": {
+            "integrity": "You named the real issue instead of the surface complaint.",
+            "savvy": "You separated 'helping' from 'being the default' — that's the actual distinction."
+          }
+        },
+        {
+          "id": "T2",
+          "label": "Honestly, don't worry about it.",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": -10,
+            "integrity": -5
+          },
+          "terminal": true,
+          "consequence": "The moment passes. Nothing changes, including how tired you'll feel the next time your phone rings at the wrong moment. Sam texts the following week: 'Hey, quick favour?' You stare at it for a while.",
+          "reasons": {
+            "integrity": "Waving it off protected the moment and cost you the pattern actually changing."
+          }
+        }
+      ]
+    },
+    "sam_assumes": {
+      "message": "A week later, Sam texts: \"Hey, quick favour — can you pick something up for me on your way home?\" It's small. It's casual. It's exactly the shape of the pattern you didn't name.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "A text, the following week",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "distracted"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "T1",
+          "label": "Sure.",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": -10,
+            "integrity": -5
+          },
+          "terminal": true,
+          "consequence": "You pick it up. You don't mention it. The pattern is exactly where it was before any of this started. The only thing that's changed is that you now know you had a chance to say something, and you didn't.",
+          "reasons": {
+            "savvy": "You're not missing the pattern anymore — you're choosing to absorb it.",
+            "integrity": "Saying yes when you mean 'I wish you'd stop asking' isn't generosity."
+          }
+        },
+        {
+          "id": "T2",
+          "label": "Actually — can we talk about something?",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 5,
+            "integrity": 10
+          },
+          "terminal": true,
+          "consequence": "It's an awkward conversation. It probably should have happened on the ring road, not over a text about picking something up. But it happens. Sam's quiet for a bit, then: 'I didn't realise it had gotten like that.' It's not a perfect ending. But it's an honest one.",
+          "reasons": {
+            "savvy": "Better late than in another three months.",
+            "integrity": "Bringing it up now, unprompted, when the stakes are low, is actually the braver version."
+          }
+        }
+      ]
+    },
+    "sam_surprised": {
+      "message": "\"Wait — you're still coming?\" Sam sounds genuinely surprised. \"I thought... after what you just said...\" You can hear them recalibrating. This isn't what Sam expected.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Ring road, arriving",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "sheepish"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "T1",
+          "label": "Yeah, I'm still coming. Saying it and leaving would've been worse.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 15,
+            "integrity": 15
+          },
+          "terminal": true,
+          "consequence": "Sam doesn't say much on the drive home. But two days later they text: 'Hey. Thanks for coming even after... yeah. I've been thinking about what you said.' That's the beginning of something changing.",
+          "reasons": {
+            "integrity": "You showed that confrontation and care aren't opposites.",
+            "savvy": "The combination of honest words and a physical showing-up is the strongest signal you could have sent."
+          }
+        },
+        {
+          "id": "T2",
+          "label": "I'm not going to leave you stranded. But we need to talk about this properly.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 10,
+            "integrity": 10
+          },
+          "terminal": true,
+          "consequence": "The drive home is quiet. You have the real conversation a few days later — calmer, less pressured, more honest. It doesn't fix everything, but it puts the pattern on the table where both of you can see it.",
+          "reasons": {
+            "streetSmarts": "Deferring the hard conversation to a better moment — without dropping it — is the most effective version of this."
+          }
+        }
+      ]
+    },
+    "new_info": {
+      "message": "A week later, you run into Sam's sister at the shops. She pulls you aside. \"Has Sam talked to you? About Mum?\" You shake your head. \"She was diagnosed last month. Sam's been driving her to appointments three times a week. They haven't told anyone.\"",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "Supermarket, unexpected encounter",
+          "character": {
+            "name": "Sam's sister",
+            "role": "Family",
+            "mood": "anxious"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "T1",
+          "label": "Call Sam. Right now.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 15
+          },
+          "terminal": true,
+          "consequence": "Sam picks up and is quiet for a long time. Then: \"I didn't know how to tell you. I didn't want it to be a thing.\" You tell them it already is a thing, and that they don't have to handle it alone. The conversation you had about the pattern wasn't wrong — but the full picture changes what it meant.",
+          "reasons": {
+            "savvy": "You updated your read of the situation the moment you had new information.",
+            "integrity": "Reaching out immediately, without needing to process it first, is its own kind of showing up."
+          }
+        },
+        {
+          "id": "T2",
+          "label": "Sit with it for a while. You need to think.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "terminal": true,
+          "consequence": "You think about it for three days. By the time you call, Sam already knows their sister told you. \"I figured you'd call eventually,\" they say. There's no anger in it — just tiredness. You help after that. But some distance has already set that didn't need to.",
+          "reasons": {
+            "streetSmarts": "Processing time is valid — but Sam was carrying this alone every day you spent thinking about it."
+          }
+        }
       ]
     }
   }
