@@ -107,3 +107,11 @@
 {"testerId":"anonymous","scenarioId":"the_prince","nodeId":"start","choiceId":"C","scores":{"savvy":15,"streetSmarts":15,"integrity":0},"terminal":false,"timestamp":"2026-08-12T22:03:46.194Z"}
 {"testerId":"anonymous","scenarioId":"the_prince","nodeId":"verify","choiceId":"C2","scores":{"savvy":0,"streetSmarts":-5,"integrity":0},"terminal":false,"timestamp":"2026-08-12T22:03:50.442Z"}
 {"testerId":"anonymous","scenarioId":"the_prince","nodeId":"verify_followup","choiceId":"C2b","scores":{"savvy":-30,"streetSmarts":-35,"integrity":0},"terminal":true,"timestamp":"2026-08-12T22:03:55.494Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"start","choiceId":"B","scores":{"savvy":0,"streetSmarts":-10,"integrity":0},"terminal":false,"timestamp":"2026-08-13T10:31:35.371Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"confession","choiceId":"push_judgment","scores":{"savvy":5,"streetSmarts":-10,"integrity":5},"terminal":false,"timestamp":"2026-08-13T10:31:55.772Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"reveal_tense","choiceId":"C","scores":{"savvy":10,"streetSmarts":-10,"integrity":10},"terminal":false,"timestamp":"2026-08-13T10:32:12.833Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"jordan_returns_tense","choiceId":"T3","scores":{"savvy":15,"streetSmarts":10,"integrity":15},"terminal":true,"timestamp":"2026-08-13T10:32:39.653Z"}
+{"testerId":"anonymous","scenarioId":"the_favor","nodeId":"start","choiceId":"B","scores":{"savvy":10,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-08-13T10:33:07.527Z"}
+{"testerId":"anonymous","scenarioId":"the_favor","nodeId":"the_call","choiceId":"D","scores":{"savvy":15,"streetSmarts":5,"integrity":15},"terminal":false,"timestamp":"2026-08-13T10:33:21.666Z"}
+{"testerId":"anonymous","scenarioId":"the_favor","nodeId":"cost_declined","choiceId":"B","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-08-13T10:33:38.483Z"}
+{"testerId":"anonymous","scenarioId":"the_favor","nodeId":"sam_reacts_declined","choiceId":"T1","scores":{"savvy":15,"streetSmarts":10,"integrity":15},"terminal":true,"timestamp":"2026-08-13T10:33:46.486Z"}

@@ -16,8 +16,7 @@
   ],
   "nodes": {
     "start": {
-      "message": "A few days before any of this, Sam bails on plans with you last-minute — again — mumbling something about \"just a lot going on right now.\" You don't think much of it at the time.",
-      "presentation": {
+      "message": "Sam's been your friend since school — the kind of friendship where you've never really needed to explain yourself, the one who'd drop everything if you actually needed them. A few days before any of this, Sam bails on plans with you last-minute — again — mumbling something about \"just a lot going on right now.\" You don't think much of it at the time.",      "presentation": {
         "type": "scene",
         "modal": false,
         "data": { "location": "A text thread, a few days earlier", "character": { "name": "Sam", "role": "Friend", "mood": "distracted" } }
