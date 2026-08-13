@@ -1,0 +1,93 @@
+{
+  "id": "the_favor",
+  "title": "The Favor",
+  "district": "neighborhood",
+  "difficulty": 1,
+  "persona": {
+    "name": "Sam",
+    "role": "Friend"
+  },
+  "rootNode": "start",
+  "outcomeTiers": [
+    { "minTotal": 50, "explanation": "You helped where it mattered and held your ground where it counted — and said the honest thing out loud instead of just feeling it." },
+    { "minTotal": 20, "explanation": "You got through it without either of you really losing, though something between you still needs a real conversation eventually." },
+    { "minTotal": 0, "explanation": "You avoided the hard part. The pattern's still there, just a little further under the surface now." },
+    { "minTotal": -1000, "explanation": "You walked back the one honest thing you'd said the moment it got uncomfortable — which is usually how patterns like this stay exactly the same." }
+  ],
+  "nodes": {
+    "start": {
+      "message": "A few days before any of this, Sam bails on plans with you last-minute — again — mumbling something about \"just a lot going on right now.\" You don't think much of it at the time.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": { "location": "A text thread, a few days earlier", "character": { "name": "Sam", "role": "Friend", "mood": "distracted" } }
+      },
+      "choices": [
+        { "id": "A", "label": "No worries, we'll reschedule.", "scores": { "savvy": 0, "streetSmarts": 0, "integrity": 5 }, "next": "the_call", "reasons": { "integrity": "Genuine grace, no side-eye attached." } },
+        { "id": "B", "label": "That's the third time this month, but okay.", "scores": { "savvy": 10, "streetSmarts": 0, "integrity": 0 }, "next": "the_call", "reasons": { "savvy": "You noticed the pattern before anyone forced you to." } }
+      ]
+    },
+    "the_call": {
+      "message": "\"Please tell me you're free right now,\" Sam says before you've even said hello. \"My car just died on the ring road, I've got nowhere else to turn. Can you come get me?\"",
+      "presentation": {
+        "type": "call",
+        "modal": true,
+        "data": { "callerName": "Sam", "callerRole": "Friend", "callerNumber": "Mobile", "status": "On call" }
+      },
+      "choices": [
+        { "id": "A", "label": "On my way.", "scores": { "savvy": 0, "streetSmarts": -5, "integrity": 15 }, "next": "cost_helped", "reasons": { "integrity": "You showed up without making Sam ask twice.", "streetSmarts": "You didn't weigh what this costs you before saying yes." } },
+        { "id": "B", "label": "I can come, but I've got something at 7 — can you find another way if I can't make it work?", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 10 }, "next": "cost_helped", "reasons": { "savvy": "You said yes without pretending your own plans don't exist.", "streetSmarts": "Naming your limit up front protects both of you from a worse conversation later." } },
+        { "id": "C", "label": "Can you call a taxi and I'll send you the money?", "scores": { "savvy": 10, "streetSmarts": 15, "integrity": 5 }, "next": "cost_declined", "reasons": { "streetSmarts": "You found a way to actually help without absorbing the whole problem yourself." } },
+        { "id": "D", "label": "Sam, this is the third time this month.", "scores": { "savvy": 15, "streetSmarts": 5, "integrity": 15 }, "next": "cost_declined", "reasons": { "savvy": "You said the thing you'd been noticing instead of swallowing it again.", "integrity": "Naming a pattern honestly, even when it's uncomfortable, is its own kind of loyalty." } }
+      ]
+    },
+    "cost_helped": {
+      "message": "You get there fast, but it means walking into your own evening late and flustered, apologising before you've even sat down. Sam barely seems to register what it cost you to show up.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": { "location": "Arriving late, out of breath", "character": { "name": "Sam", "role": "Friend", "mood": "relieved" } }
+      },
+      "choices": [
+        { "id": "A", "label": "Mention it lightly — \"that one was a bit of a scramble for me.\"", "scores": { "savvy": 10, "streetSmarts": 10, "integrity": 10 }, "next": "sam_reacts_helped", "reasons": { "integrity": "You said it instead of quietly banking the resentment." } },
+        { "id": "B", "label": "Let it go completely.", "scores": { "savvy": -5, "streetSmarts": -10, "integrity": 0 }, "next": "sam_reacts_helped", "reasons": { "streetSmarts": "Letting it go quietly doesn't make it not cost you — it just makes the cost invisible." } }
+      ]
+    },
+    "cost_declined": {
+      "message": "Sam manages fine in the end — a taxi, a coworker, something. But there's a new distance in the next few messages between you, a little more formal than usual.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": { "location": "A few days later, over text", "character": { "name": "Sam", "role": "Friend", "mood": "cold" } }
+      },
+      "choices": [
+        { "id": "A", "label": "Check in directly — \"are we okay?\"", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 10 }, "next": "sam_reacts_declined", "reasons": { "integrity": "You didn't let the distance sit unaddressed." } },
+        { "id": "B", "label": "Give it space and see if it passes.", "scores": { "savvy": 0, "streetSmarts": 0, "integrity": 0 }, "next": "sam_reacts_declined", "reasons": { "streetSmarts": "Sometimes space helps. Sometimes it just lets the gap set." } }
+      ]
+    },
+    "sam_reacts_helped": {
+      "message": "Sam finally brings it up. \"I didn't realise it actually bothered you. I guess I've just gotten used to you being the one who shows up.\" It's not quite an apology, but it's not nothing either.",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": { "location": "Sam's place, a week later", "character": { "name": "Sam", "role": "Friend", "mood": "sheepish" } }
+      },
+      "choices": [
+        { "id": "T1", "label": "I don't mind helping. I mind being the only option.", "scores": { "savvy": 15, "streetSmarts": 15, "integrity": 15 }, "terminal": true, "consequence": "Sam actually hears it this time. Nothing changes overnight, but the next few asks come with real thought behind them.", "reasons": { "integrity": "You named the real issue instead of the surface complaint.", "savvy": "You separated 'helping' from 'being the default' — that's the actual distinction." } },
+        { "id": "T2", "label": "Honestly, don't worry about it.", "scores": { "savvy": -10, "streetSmarts": -10, "integrity": -5 }, "terminal": true, "consequence": "The moment passes. Nothing changes, including how tired you'll feel the next time your phone rings at the wrong moment.", "reasons": { "integrity": "Waving it off protected the moment and cost you the pattern actually changing." } }
+      ]
+    },
+    "sam_reacts_declined": {
+      "message": "\"I get it,\" Sam says, though the edge in their voice says they don't fully. \"I just thought that's what friends do for each other.\" It's a little bit guilt-trip, a little bit genuinely hurt, and hard to tell which is louder.",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": { "location": "Coffee, tense", "character": { "name": "Sam", "role": "Friend", "mood": "hurt" } }
+      },
+      "choices": [
+        { "id": "T1", "label": "It is. And I still showed up — just not the way you wanted.", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 15 }, "terminal": true, "consequence": "Sam sits with that for longer than either of you expects. The friendship cools for a while, then settles into something a little more honest than before.", "reasons": { "integrity": "You held the boundary without pretending you hadn't cared at all." } },
+        { "id": "T2", "label": "Maybe I overreacted. I'm sorry.", "scores": { "savvy": -10, "streetSmarts": -15, "integrity": -10 }, "terminal": true, "consequence": "Sam relaxes, but the pattern is exactly where it was before this ever started.", "reasons": { "savvy": "Walking it back erased the one moment that might have actually changed something.", "integrity": "Apologising for a boundary you meant undoes the honesty it took to set it." } }
+      ]
+    }
+  }
+}

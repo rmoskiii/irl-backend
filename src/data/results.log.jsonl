@@ -104,3 +104,6 @@
 {"testerId":"anonymous","scenarioId":"the_bank","nodeId":"start","choiceId":"B","scores":{"savvy":20,"streetSmarts":20,"integrity":0},"terminal":true,"timestamp":"2026-08-12T21:41:28.509Z"}
 {"testerId":"anonymous","scenarioId":"the_bank","nodeId":"start","choiceId":"A","scores":{"savvy":-10,"streetSmarts":-10,"integrity":0},"terminal":false,"timestamp":"2026-08-12T21:41:36.142Z"}
 {"testerId":"anonymous","scenarioId":"the_bank","nodeId":"call_pickup","choiceId":"A1","scores":{"savvy":-30,"streetSmarts":-30,"integrity":0},"terminal":true,"timestamp":"2026-08-12T21:41:41.569Z"}
+{"testerId":"anonymous","scenarioId":"the_prince","nodeId":"start","choiceId":"C","scores":{"savvy":15,"streetSmarts":15,"integrity":0},"terminal":false,"timestamp":"2026-08-12T22:03:46.194Z"}
+{"testerId":"anonymous","scenarioId":"the_prince","nodeId":"verify","choiceId":"C2","scores":{"savvy":0,"streetSmarts":-5,"integrity":0},"terminal":false,"timestamp":"2026-08-12T22:03:50.442Z"}
+{"testerId":"anonymous","scenarioId":"the_prince","nodeId":"verify_followup","choiceId":"C2b","scores":{"savvy":-30,"streetSmarts":-35,"integrity":0},"terminal":true,"timestamp":"2026-08-12T22:03:55.494Z"}
