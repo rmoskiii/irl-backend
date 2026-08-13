@@ -18,6 +18,7 @@ function publicNode(nodeId, node) {
     nodeId,
     message: node.message,
     presentation: node.presentation || null,
+    reactionDelay: node.reactionDelay || null,
     choices: node.choices.map((c) => ({ id: c.id, label: c.label })),
   };
 }
