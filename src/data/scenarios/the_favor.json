@@ -1,3 +1,4 @@
+
 {
   "id": "the_favor",
   "title": "The Favor",
@@ -182,7 +183,8 @@
             "streetSmarts": "Letting it go quietly doesn't make it not cost you — it just makes the cost invisible."
           }
         }
-      ]
+      ],
+      "reactionDelay": "short"
     },
     "sam_reacts_limit": {
       "message": "\"Yeah — yeah, of course. Thanks.\" There's a tiny pause before the thanks. Not rude. Just... the fraction of a second where Sam was expecting unconditional and got something slightly less. You show up. Sam's in the car by 6:28. Nobody mentions the deadline.",
@@ -225,7 +227,8 @@
             "streetSmarts": "You set a boundary, kept it, and moved on."
           }
         }
-      ]
+      ],
+      "reactionDelay": "medium"
     },
     "sam_reacts_solve": {
       "message": "\"I... don't really have another option? That's why I'm calling you.\" There's a wobble in Sam's voice you weren't expecting. Not anger. Something closer to embarrassment.",
@@ -269,7 +272,8 @@
             "streetSmarts": "You found a way to help without absorbing the whole problem yourself."
           }
         }
-      ]
+      ],
+      "reactionDelay": "medium"
     },
     "sam_reacts_confront": {
       "message": "Silence. Five full seconds of it. Then, quietly: \"Yeah. I know.\" Another pause. \"I didn't think you were counting.\"",
@@ -329,7 +333,8 @@
             "integrity": "Apologising for a boundary you meant undoes the honesty it took to set it."
           }
         }
-      ]
+      ],
+      "reactionDelay": "long"
     },
     "sam_hears_it": {
       "message": "Sam looks at you differently for a second. \"I didn't realise it actually bothered you. I guess I've just gotten used to you being the one who shows up.\" It's not quite an apology, but it's not nothing either.",
@@ -375,7 +380,8 @@
             "integrity": "Waving it off protected the moment and cost you the pattern actually changing."
           }
         }
-      ]
+      ],
+      "reactionDelay": "long"
     },
     "sam_assumes": {
       "message": "A week later, Sam texts: \"Hey, quick favour — can you pick something up for me on your way home?\" It's small. It's casual. It's exactly the shape of the pattern you didn't name.",
@@ -422,7 +428,8 @@
             "integrity": "Bringing it up now, unprompted, when the stakes are low, is actually the braver version."
           }
         }
-      ]
+      ],
+      "reactionDelay": "medium"
     },
     "sam_surprised": {
       "message": "\"Wait — you're still coming?\" Sam sounds genuinely surprised. \"I thought... after what you just said...\" You can hear them recalibrating. This isn't what Sam expected.",
@@ -468,7 +475,8 @@
             "streetSmarts": "Deferring the hard conversation to a better moment — without dropping it — is the most effective version of this."
           }
         }
-      ]
+      ],
+      "reactionDelay": "medium"
     },
     "new_info": {
       "message": "A week later, you run into Sam's sister at the shops. She pulls you aside. \"Has Sam talked to you? About Mum?\" You shake your head. \"She was diagnosed last month. Sam's been driving her to appointments three times a week. They haven't told anyone.\"",
@@ -514,7 +522,8 @@
             "streetSmarts": "Processing time is valid — but Sam was carrying this alone every day you spent thinking about it."
           }
         }
-      ]
+      ],
+      "reactionDelay": "long"
     }
   }
 }
