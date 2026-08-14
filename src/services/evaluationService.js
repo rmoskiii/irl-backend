@@ -41,6 +41,7 @@ function resolveChoice({ scenarioId, nodeId, choiceId, runningTotal }) {
       reasons,
       terminal: true,
       consequence: choice.consequence,
+      landing: choice.landing || null,
       outcomeExplanation: pickOutcomeText(scenario, finalTotal),
     };
   }

@@ -1,4 +1,3 @@
-
 {
   "id": "the_favor",
   "title": "The Favor",
@@ -359,8 +358,7 @@
             "streetSmarts": 10,
             "integrity": 15
           },
-          "terminal": true,
-          "consequence": "Sam actually hears it this time. Nothing changes overnight, but the next few asks come with real thought behind them. Three weeks later Sam texts: 'Hey — can I ask before I assume you'll help this time?' That's progress.",
+          "next": "sam_hears_it_after",
           "reasons": {
             "integrity": "You named the real issue instead of the surface complaint.",
             "savvy": "You separated 'helping' from 'being the default' — that's the actual distinction."
@@ -374,14 +372,157 @@
             "streetSmarts": -10,
             "integrity": -5
           },
-          "terminal": true,
-          "consequence": "The moment passes. Nothing changes, including how tired you'll feel the next time your phone rings at the wrong moment. Sam texts the following week: 'Hey, quick favour?' You stare at it for a while.",
+          "next": "sam_hears_it_avoided",
           "reasons": {
             "integrity": "Waving it off protected the moment and cost you the pattern actually changing."
           }
         }
       ],
       "reactionDelay": "long"
+    },
+    "sam_hears_it_after": {
+      "message": "Sam goes quiet for a second. \"Yeah. I think I've been doing that.\" They look embarrassed, but they don't try to argue with you. \"I'm sorry.\"",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "Sam's place, a few days later",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "reflective"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "accept",
+          "label": "\"I appreciate you saying that.\"",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 10,
+            "integrity": 10
+          },
+          "next": "sam_hears_it_later",
+          "reasons": {
+            "integrity": "You accepted the apology without pretending the pattern never happened."
+          }
+        },
+        {
+          "id": "reassure",
+          "label": "\"It's fine. I just don't want it to get weird between us.\"",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 5,
+            "integrity": 5
+          },
+          "next": "sam_hears_it_later",
+          "reasons": {
+            "streetSmarts": "You kept the relationship bigger than the argument."
+          }
+        }
+      ],
+      "reactionDelay": "medium"
+    },
+    "sam_hears_it_later": {
+      "message": "Three weeks later, your phone buzzes. Sam: \"Hey — can I ask before I assume you'll help this time?\" You smile. It's a small message, but you know exactly why it matters.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Three weeks later, over text",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "warm"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "final",
+          "label": "Reply.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 5,
+            "integrity": 5
+          },
+          "terminal": true,
+          "consequence": "The friendship doesn't become perfect. But something has shifted: Sam asks, you answer honestly, and neither of you has to guess what the other means anymore."
+        }
+      ],
+      "reactionDelay": "short"
+    },
+    "sam_hears_it_avoided": {
+      "message": "Sam smiles and lets the subject drop. You do too. For the rest of the evening, everything feels normal — almost suspiciously normal.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Later that evening",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "casual"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "leave",
+          "label": "Let the moment pass.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": -5,
+            "integrity": 0
+          },
+          "next": "sam_hears_it_avoided_later",
+          "reasons": {
+            "streetSmarts": "You chose short-term comfort over changing the pattern."
+          }
+        }
+      ],
+      "reactionDelay": "short"
+    },
+    "sam_hears_it_avoided_later": {
+      "message": "The following week, Sam texts: \"Hey, quick favour?\" You stare at the message for a few seconds. It's a small thing. But now you recognise the feeling immediately.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "One week later, over text",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "casual"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "say_something",
+          "label": "\"Actually — can we talk about something first?\"",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 10,
+            "integrity": 10
+          },
+          "terminal": true,
+          "consequence": "It's awkward, but the conversation finally happens when neither of you is stranded, stressed or defensive. Sam listens. The pattern doesn't disappear overnight, but at least it is no longer invisible."
+        },
+        {
+          "id": "sure",
+          "label": "\"Sure.\"",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": -10,
+            "integrity": -5
+          },
+          "terminal": true,
+          "consequence": "You do the favour. Neither of you mentions the conversation you almost had. Nothing explodes. That's almost the problem — the pattern survives because it never becomes uncomfortable enough to change."
+        }
+      ],
+      "reactionDelay": "medium"
     },
     "sam_assumes": {
       "message": "A week later, Sam texts: \"Hey, quick favour — can you pick something up for me on your way home?\" It's small. It's casual. It's exactly the shape of the pattern you didn't name.",
@@ -406,8 +547,7 @@
             "streetSmarts": -10,
             "integrity": -5
           },
-          "terminal": true,
-          "consequence": "You pick it up. You don't mention it. The pattern is exactly where it was before any of this started. The only thing that's changed is that you now know you had a chance to say something, and you didn't.",
+          "next": "sam_assumes_aftermath",
           "reasons": {
             "savvy": "You're not missing the pattern anymore — you're choosing to absorb it.",
             "integrity": "Saying yes when you mean 'I wish you'd stop asking' isn't generosity."
@@ -421,12 +561,80 @@
             "streetSmarts": 5,
             "integrity": 10
           },
-          "terminal": true,
-          "consequence": "It's an awkward conversation. It probably should have happened on the ring road, not over a text about picking something up. But it happens. Sam's quiet for a bit, then: 'I didn't realise it had gotten like that.' It's not a perfect ending. But it's an honest one.",
+          "next": "sam_assumes_talk",
           "reasons": {
             "savvy": "Better late than in another three months.",
             "integrity": "Bringing it up now, unprompted, when the stakes are low, is actually the braver version."
           }
+        }
+      ],
+      "reactionDelay": "medium"
+    },
+    "sam_assumes_aftermath": {
+      "message": "You pick it up. When you hand it over, Sam barely notices what it took to do it. \"You're a lifesaver,\" they say, already moving on to the next thing.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "That evening",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "casual"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "nothing",
+          "label": "Say nothing.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": -5,
+            "integrity": -5
+          },
+          "terminal": true,
+          "consequence": "You walk away knowing you weren't actually okay with it. The next time Sam asks, you'll have to decide whether to keep absorbing it or finally say something."
+        }
+      ],
+      "reactionDelay": "short"
+    },
+    "sam_assumes_talk": {
+      "message": "Sam takes a long breath. \"I genuinely didn't realise I'd been doing that.\" There's a pause. \"I don't want you feeling like you have to say yes to me.\"",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "Later that evening",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "reflective"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "honest",
+          "label": "\"Then I probably need to get better at saying no too.\"",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 15
+          },
+          "terminal": true,
+          "consequence": "Neither of you gets a perfect apology or a dramatic resolution. You just leave the conversation knowing the rules of the friendship are a little clearer now — and that might be enough."
+        },
+        {
+          "id": "reassure",
+          "label": "\"We'll figure it out.\"",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 5,
+            "integrity": 5
+          },
+          "terminal": true,
+          "consequence": "The conversation ends gently. Nothing is magically fixed, but the next time Sam asks for something, there is a little more room for you to answer honestly."
         }
       ],
       "reactionDelay": "medium"
@@ -454,8 +662,7 @@
             "streetSmarts": 15,
             "integrity": 15
           },
-          "terminal": true,
-          "consequence": "Sam doesn't say much on the drive home. But two days later they text: 'Hey. Thanks for coming even after... yeah. I've been thinking about what you said.' That's the beginning of something changing.",
+          "next": "sam_surprised_after",
           "reasons": {
             "integrity": "You showed that confrontation and care aren't opposites.",
             "savvy": "The combination of honest words and a physical showing-up is the strongest signal you could have sent."
@@ -469,11 +676,68 @@
             "streetSmarts": 10,
             "integrity": 10
           },
-          "terminal": true,
-          "consequence": "The drive home is quiet. You have the real conversation a few days later — calmer, less pressured, more honest. It doesn't fix everything, but it puts the pattern on the table where both of you can see it.",
+          "next": "sam_surprised_boundary",
           "reasons": {
             "streetSmarts": "Deferring the hard conversation to a better moment — without dropping it — is the most effective version of this."
           }
+        }
+      ],
+      "reactionDelay": "medium"
+    },
+    "sam_surprised_after": {
+      "message": "The rest of the drive is quieter than usual. Sam doesn't apologise again. They don't need to. Two days later, your phone buzzes.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Two days later, over text",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "thoughtful"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "open",
+          "label": "Open the message.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 5,
+            "integrity": 5
+          },
+          "terminal": true,
+          "consequence": "Sam has been thinking about what you said. Nothing is magically fixed, but for the first time the friendship feels like something both of you are responsible for — not something you quietly carry."
+        }
+      ],
+      "reactionDelay": "medium"
+    },
+    "sam_surprised_boundary": {
+      "message": "The drive home is quiet. Neither of you pushes it. A few days later, you meet for coffee — without a crisis forcing the conversation.",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "Coffee, a few days later",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "open"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "talk",
+          "label": "\"Okay. Let's actually talk about it.\"",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 10,
+            "integrity": 10
+          },
+          "terminal": true,
+          "consequence": "The conversation is uncomfortable, but calmer than it would have been on the ring road. You don't solve the whole friendship in one coffee. You do, however, stop pretending there isn't a problem."
         }
       ],
       "reactionDelay": "medium"
@@ -501,8 +765,7 @@
             "streetSmarts": 10,
             "integrity": 15
           },
-          "terminal": true,
-          "consequence": "Sam picks up and is quiet for a long time. Then: \"I didn't know how to tell you. I didn't want it to be a thing.\" You tell them it already is a thing, and that they don't have to handle it alone. The conversation you had about the pattern wasn't wrong — but the full picture changes what it meant.",
+          "next": "new_info_call",
           "reasons": {
             "savvy": "You updated your read of the situation the moment you had new information.",
             "integrity": "Reaching out immediately, without needing to process it first, is its own kind of showing up."
@@ -516,14 +779,71 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "terminal": true,
-          "consequence": "You think about it for three days. By the time you call, Sam already knows their sister told you. \"I figured you'd call eventually,\" they say. There's no anger in it — just tiredness. You help after that. But some distance has already set that didn't need to.",
+          "next": "new_info_late",
           "reasons": {
             "streetSmarts": "Processing time is valid — but Sam was carrying this alone every day you spent thinking about it."
           }
         }
       ],
       "reactionDelay": "long"
+    },
+    "new_info_call": {
+      "message": "Sam is quiet for a long time. \"I didn't know how to tell you,\" they finally say. \"I didn't want everyone looking at me like something was wrong.\"",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "On the phone that evening",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "vulnerable"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "there",
+          "label": "\"You don't have to handle it alone.\"",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 10,
+            "integrity": 15
+          },
+          "terminal": true,
+          "consequence": "The conversation about the favours suddenly looks different. You weren't wrong to notice the pattern — but now you know there was a whole part of Sam's life you couldn't see. You don't forget the boundary. You just understand it differently."
+        }
+      ],
+      "reactionDelay": "long"
+    },
+    "new_info_late": {
+      "message": "Three days later, you finally call. Sam answers on the second ring. \"I figured you'd call eventually,\" they say. There's no anger in it. Just tiredness.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Three days later, over the phone",
+          "character": {
+            "name": "Sam",
+            "role": "Friend",
+            "mood": "tired"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "help",
+          "label": "\"Tell me what you need.\"",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 10,
+            "integrity": 10
+          },
+          "terminal": true,
+          "consequence": "You help where you can. But you keep thinking about the three days you spent wondering what to do. Sometimes giving someone space is kindness. Sometimes they were hoping you'd close the distance."
+        }
+      ],
+      "reactionDelay": "medium"
     }
   }
 }
