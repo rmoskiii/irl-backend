@@ -176,3 +176,13 @@
 {"testerId":"anonymous","scenarioId":"the_secret","nodeId":"jordan_reacts_hold","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-08-14T16:03:57.151Z"}
 {"testerId":"anonymous","scenarioId":"the_secret","nodeId":"reveal_calm","choiceId":"honest_pause","scores":{"savvy":10,"streetSmarts":-5,"integrity":10},"terminal":false,"timestamp":"2026-08-14T16:04:02.218Z"}
 {"testerId":"anonymous","scenarioId":"the_secret","nodeId":"jordan_final_calm","choiceId":"T3","scores":{"savvy":5,"streetSmarts":0,"integrity":5},"terminal":true,"timestamp":"2026-08-14T16:04:10.917Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"establish","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-08-15T10:06:09.722Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"start","choiceId":"open","scores":{"savvy":10,"streetSmarts":5,"integrity":5},"terminal":false,"timestamp":"2026-08-15T10:06:22.299Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"confession","choiceId":"hold","scores":{"savvy":15,"streetSmarts":10,"integrity":15},"terminal":false,"timestamp":"2026-08-15T10:06:33.558Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"jordan_reacts_hold","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-08-15T10:06:49.285Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"act2_alex_reveal","choiceId":"match_energy","scores":{"savvy":0,"streetSmarts":10,"integrity":-5},"terminal":false,"timestamp":"2026-08-15T10:07:08.056Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"act2_alex_checks_in","choiceId":"im_fine","scores":{"savvy":0,"streetSmarts":5,"integrity":-5},"terminal":false,"timestamp":"2026-08-15T10:07:27.874Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"act3_jordan_returns","choiceId":"hand_back","scores":{"savvy":5,"streetSmarts":0,"integrity":5},"terminal":false,"timestamp":"2026-08-15T10:07:58.049Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"act3_hand_back_response","choiceId":"dont_know","scores":{"savvy":-5,"streetSmarts":0,"integrity":-5},"terminal":false,"timestamp":"2026-08-15T10:08:14.877Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"act4_engagement_party","choiceId":"yeah_of_course","scores":{"savvy":0,"streetSmarts":5,"integrity":-5},"terminal":false,"timestamp":"2026-08-15T10:08:41.894Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"act4_party_night","choiceId":"are_you_okay_c","scores":{"savvy":10,"streetSmarts":0,"integrity":0},"terminal":true,"timestamp":"2026-08-15T10:09:01.980Z"}
