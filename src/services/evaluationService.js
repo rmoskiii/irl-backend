@@ -6,16 +6,12 @@ const {
   resolveNodeContent,
 } = require("./personaService");
 
-// Integer keys in the schema are additive deltas (clamped to `range` if
-// declared). Enum and bool keys are assignments. Reading the type off the
-// schema — rather than sniffing the value — keeps `jordanTrust: 0` in a
-// setState block from being mistaken for a bool assignment.
 function applySetState(state, setState, stateSchema) {
   if (!setState) return state;
   const next = { ...state };
   for (const [key, value] of Object.entries(setState)) {
     const schema = stateSchema[key];
-    if (!schema) continue; // forgiving of authoring typos
+    if (!schema) continue;
     if (schema.type === "int") {
       next[key] = (next[key] || 0) + value;
       if (Array.isArray(schema.range)) {
@@ -33,11 +29,26 @@ function sumScores(delta) {
   return (delta.savvy || 0) + (delta.streetSmarts || 0) + (delta.integrity || 0);
 }
 
+// Legacy path — score-threshold lookup. Kept only for scenarios that
+// haven't been migrated to `reflections` yet (Prince, Bank).
 function pickOutcomeText(scenario, finalTotal) {
-  const tier = scenario.outcomeTiers.find((t) => finalTotal >= t.minTotal);
-  return tier
-      ? tier.explanation
-      : scenario.outcomeTiers[scenario.outcomeTiers.length - 1].explanation;
+  const tiers = scenario.outcomeTiers || [];
+  const tier = tiers.find((t) => finalTotal >= t.minTotal);
+  return tier ? tier.explanation : (tiers[tiers.length - 1]?.explanation || "");
+}
+
+// Reflection path — pattern-matched prose instead of a graded number.
+// Walks `reflections` in declaration order, first fully-matching `when`
+// wins, same semantics as messageVariants/threadVariants. Falls back to
+// `defaultReflection` if nothing matches (shouldn't happen in practice
+// since trajectory is always set, but the engine never leaves a terminal
+// turn with no reflection at all).
+function pickReflection(scenario, state) {
+  const reflections = scenario.reflections || [];
+  const match = reflections.find((r) => matchesAll(r.when, state));
+  if (match) return { title: match.title, text: match.text };
+  const fallback = scenario.defaultReflection || {};
+  return { title: fallback.title || "", text: fallback.text || "" };
 }
 
 function resolveChoice({ scenarioId, nodeId, choiceId, runningTotal, state }) {
@@ -53,28 +64,20 @@ function resolveChoice({ scenarioId, nodeId, choiceId, runningTotal, state }) {
   const stateSchema = scenario.stateSchema || {};
   const currentState = state || {};
 
-  // If the choice has `requires` and none of its when-blocks match, it
-  // should never have been offered. Reject rather than silently proceed.
   if (choice.requires && !matchesAny(choice.requires, currentState)) {
     return { error: "Choice not available in current state." };
   }
 
-  // 1. setState first. Everything downstream — variants, next-node
-  //    rendering — sees the updated state.
   const nextState = applySetState(currentState, choice.setState, stateSchema);
 
   const delta = choice.scores || { savvy: 0, streetSmarts: 0, integrity: 0 };
   const reasons = choice.reasons || {};
   const beat = choice.beat || null;
 
-  // 2. Resolve navigation. nextRules in declaration order, first match
-  //    wins. A matched rule with `next: null` means "resolve terminal".
-  //    If no rule matches, fall back to choice.next. If neither exists,
-  //    fall through to terminal.
-  let nextNodeId; // undefined = unresolved; null = "use terminal"; string = navigate
+  let nextNodeId;
   if (Array.isArray(choice.nextRules)) {
     const rule = choice.nextRules.find((r) => matchesAll(r.when, nextState));
-    if (rule) nextNodeId = rule.next; // could be null
+    if (rule) nextNodeId = rule.next;
   }
   if (nextNodeId === undefined && choice.next) {
     nextNodeId = choice.next;
@@ -87,10 +90,28 @@ function resolveChoice({ scenarioId, nodeId, choiceId, runningTotal, state }) {
     if (!choice.terminal) {
       return { error: `Rule matched null-next but choice ${choiceId} has no terminal block.` };
     }
-    const priorTotal = sumScores(
-        runningTotal || { savvy: 0, streetSmarts: 0, integrity: 0 }
-    );
-    const finalTotal = priorTotal + sumScores(delta);
+
+    // scores/reasons still flow back regardless of mode — the client
+    // applies these to the cross-scenario home-screen stat pool on every
+    // turn, independent of how (or whether) this scenario grades itself.
+    const usesReflections =
+        Array.isArray(scenario.reflections) && scenario.reflections.length > 0;
+
+    let outcomeFields;
+    if (usesReflections) {
+      const reflection = pickReflection(scenario, nextState);
+      outcomeFields = {
+        reflectionTitle: reflection.title,
+        reflectionText: reflection.text,
+      };
+    } else {
+      const priorTotal = sumScores(
+          runningTotal || { savvy: 0, streetSmarts: 0, integrity: 0 }
+      );
+      const finalTotal = priorTotal + sumScores(delta);
+      outcomeFields = { outcomeExplanation: pickOutcomeText(scenario, finalTotal) };
+    }
+
     return {
       scores: delta,
       reasons,
@@ -99,7 +120,7 @@ function resolveChoice({ scenarioId, nodeId, choiceId, runningTotal, state }) {
       state: nextState,
       consequence: choice.terminal.consequence,
       landing: choice.terminal.landing,
-      outcomeExplanation: pickOutcomeText(scenario, finalTotal),
+      ...outcomeFields,
     };
   }
 
@@ -110,10 +131,6 @@ function resolveChoice({ scenarioId, nodeId, choiceId, runningTotal, state }) {
   const nextNode = scenario.nodes[nextNodeId];
   if (!nextNode) return { error: `Unknown next node: ${nextNodeId}.` };
 
-  // 3. Variants on the destination node resolve against the new state.
-  //    This is the ordering the whole scenario depends on: get this
-  //    wrong and act2_probe_response:hold_line silently renders Act 3's
-  //    default text instead of the "Alex is suspicious" version.
   const content = resolveNodeContent(nextNode, nextState);
 
   return {
