@@ -1,113 +1,2786 @@
 {
   "id": "the_prince",
+  "schemaVersion": 3,
   "title": "The Prince",
   "district": "digital",
-  "difficulty": 1,
+  "difficulty": 3,
+  "estimatedMinutes": 11,
+  "premise": "A probate research firm says you're entitled to a share of an unclaimed estate. The firm is real. The estate is real. The question is whether the person emailing you is.",
   "persona": {
-    "name": "Adewale Okoro",
-    "role": "Legal Representative"
+    "name": "Marcus Halloway",
+    "role": "Probate Research Consultant"
   },
-  "rootNode": "start",
-  "outcomeTiers": [
-    { "minTotal": 60, "explanation": "You never let urgency or trust override your judgment — and you were decisive about it. That's the difference between being suspicious and being savvy." },
-    { "minTotal": 25, "explanation": "You caught the trap in the end, even if it took a moment to get there. Good instincts, slightly slow trigger." },
-    { "minTotal": 0, "explanation": "You got out — but only after giving the con more room than it needed." },
-    { "minTotal": -1000, "explanation": "You spotted the oldest trick in the book, too late. The promise was huge. The first ask was small. That's the point." }
+  "outcomeKey": "resolution",
+  "outcomeDefault": "unresolved",
+  "engineContract": {
+    "seed": "Scenario-level. Keys assigned once at getRootView rather than fixed by stateSchema.initial. Rides the courier afterwards like any other key, so it cannot be re-rolled mid-playthrough.",
+    "messageVariants": "Evaluate in declaration order. First variant whose `when` fully matches wins. If none match, render `message`.",
+    "when": "Key/value pairs compared with strict equality against current state. All pairs must match. No operators, no nesting.",
+    "requires": "Array of `when` objects on a choice. Offered if ANY match. Filtered server-side in publicNode, never sent-and-hidden.",
+    "setState": "Applied at the moment of choice, before navigation and before the next node's variants resolve. Integer keys are additive deltas and clamp to `range`; enum and bool keys are assignments.",
+    "beat": "One line rendered after the chosen option and before navigation. Creates no node, affects no navigation. Used here for in-world verification results.",
+    "nextRules": "Evaluated in declaration order against post-setState, post-derivedState state. First match wins. `next: null` means resolve the choice's own `terminal` block.",
+    "derivedState": "Bands computed after every setState, merged before any `when` evaluates. `minus` reads a differential between two keys.",
+    "outcomeRules": "Evaluated at terminal only. First match wins. Result written into state under `outcomeKey` before aftermath and finalMessage resolve.",
+    "aftermath": "Map of named slots, each a declaration-ordered variant list. Slots here are money / data / others — what happened to your funds, your information, and everyone else."
+  },
+  "design": {
+    "noCorrectAnswer": false,
+    "principle": "Correct play is invariant across all three truth tracks. The procedure that catches an impersonation is the procedure that gets you paid when the offer is real.",
+    "thesis": "The scam is not detectable from who sent it. You have to interrogate the transaction.",
+    "falseTell": "Halloway & Finch use a legacy domain that doesn't match their website, and Marcus signs off with a mobile number. Both are nothing. A player who blocks on this alone has not demonstrated judgment.",
+    "realTell": "'For confidentiality, please don't contact the estate or the Probate Registry directly until beneficiary verification is complete.' It doesn't scream anything. It's a control mechanism designed to prevent out-of-band checks.",
+    "architecture": "Three axes (verification / assurance / exposure) carried as state, banded via derivedState. One truth track seeded at start, surfacing only through messageVariants at the five nodes where an investigative action returns a result."
+  },
+  "scoring": {
+    "dimensions": [
+      "savvy",
+      "streetSmarts",
+      "integrity"
+    ],
+    "revealTiming": "end_only",
+    "note": "Digital normally shows per-turn reasons immediately. This scenario cannot: visible deltas let a player shop the verification menu, which is the exact skill under test. The full ledger still appears on the outcome screen. There are no outcomeTiers — a summed threshold can't separate a diligent run from a catastrophic one on a path this long, so the reflection carries the verdict alone."
+  },
+  "seed": {
+    "truthTrack": {
+      "weighted": [
+        {
+          "value": "C",
+          "weight": 40
+        },
+        {
+          "value": "B",
+          "weight": 35
+        },
+        {
+          "value": "A",
+          "weight": 25
+        }
+      ]
+    }
+  },
+  "cast": [
+    {
+      "id": "halloway",
+      "name": "Marcus Halloway",
+      "role": "Probate Research Consultant, Halloway & Finch",
+      "note": "On Track A and C, a real consultant at a real two-person practice. On Track B, someone using his name and his firm's live cases."
+    },
+    {
+      "id": "finch",
+      "name": "Ruth Finch",
+      "role": "Partner, Halloway & Finch",
+      "note": "Answers the number you find yourself. She is the out-of-band channel, and on every track she tells you the truth."
+    }
   ],
-  "nodes": {
-    "start": {
-      "message": "Good afternoon. My name is Adewale Okoro and I am acting on behalf of the estate of Mr. Samuel Williams. Your email address was identified during our beneficiary verification process. You are entitled to a payment of £4,200,000. Please confirm that this email address belongs to you so that I can explain the next steps.",
-      "choices": [
-        { "id": "A", "label": "Yes, that's my email. Tell me more.", "scores": { "savvy": -5, "streetSmarts": -10, "integrity": 0 }, "next": "engage", "reasons": { "savvy": "Confirming without question let the sender keep steering the conversation.", "streetSmarts": "You engaged further without slowing things down." } },
-        { "id": "B", "label": "How did you get my details?", "scores": { "savvy": 10, "streetSmarts": 5, "integrity": 0 }, "next": "question", "reasons": { "savvy": "You questioned how they got your details — a fair first flag.", "streetSmarts": "Asking a question bought you a moment instead of complying." } },
-        { "id": "C", "label": "I wasn't expecting anything like this. I'll need to verify this independently.", "scores": { "savvy": 15, "streetSmarts": 15, "integrity": 0 }, "next": "verify", "reasons": { "savvy": "You didn't take the claim at face value.", "streetSmarts": "You set your own terms before engaging further." } },
-        { "id": "D", "label": "This sounds like a scam.", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 5 }, "next": "refuse", "reasons": { "savvy": "You named the pattern immediately.", "streetSmarts": "Calling it out early limited how far this could go.", "integrity": "Naming a scam outright, rather than quietly disengaging, helps protect others too." } }
+  "stateSchema": {
+    "truthTrack": {
+      "type": "enum",
+      "values": [
+        "A",
+        "B",
+        "C"
       ],
+      "initial": "C",
+      "note": "A = legitimate. B = impersonation (firm real, sender fake). C = compromised channel (firm real, sender real, payment instructions hijacked). Seeded at scenario start."
+    },
+    "verification": {
+      "type": "int",
+      "initial": 0,
+      "range": [
+        0,
+        120
+      ],
+      "note": "OUT-OF-BAND evidence only. A check routed through the sender scores nothing here."
+    },
+    "assurance": {
+      "type": "int",
+      "initial": 0,
+      "range": [
+        0,
+        120
+      ],
+      "note": "In-band comfort. Feels identical to verification from the inside. Anything the sender supplied, controls, or can predict."
+    },
+    "exposure": {
+      "type": "int",
+      "initial": 0,
+      "range": [
+        0,
+        150
+      ],
+      "note": "What you handed over. PII is payment."
+    },
+    "contactStance": {
+      "type": "enum",
+      "values": [
+        "none",
+        "ignored",
+        "engaged",
+        "stalled",
+        "blocked"
+      ],
+      "initial": "none"
+    },
+    "feeStructure": {
+      "type": "enum",
+      "values": [
+        "none",
+        "percentage_on_completion",
+        "upfront_requested",
+        "upfront_paid"
+      ],
+      "initial": "none"
+    },
+    "askedWhichEstate": {
+      "type": "bool",
+      "initial": false
+    },
+    "confidentialityAccepted": {
+      "type": "bool",
+      "initial": false,
+      "note": "REAL TELL. Did the player honour the request not to contact the estate or Registry directly?"
+    },
+    "rejectedOnSurface": {
+      "type": "bool",
+      "initial": false,
+      "note": "FALSE TELL. Walked citing the domain, the mobile number or the dated website, and nothing else."
+    },
+    "foundOwnNumber": {
+      "type": "bool",
+      "initial": false
+    },
+    "calledInBandNumber": {
+      "type": "bool",
+      "initial": false
+    },
+    "checkedRegister": {
+      "type": "bool",
+      "initial": false
+    },
+    "corroboratedEstate": {
+      "type": "bool",
+      "initial": false
+    },
+    "verifiedPaymentInstructions": {
+      "type": "bool",
+      "initial": false,
+      "note": "The Track C discriminator. The only key separating 'verified the company' from 'verified the transaction'."
+    },
+    "signedAuthority": {
+      "type": "bool",
+      "initial": false
+    },
+    "uploadedId": {
+      "type": "bool",
+      "initial": false
+    },
+    "gaveBankDetails": {
+      "type": "bool",
+      "initial": false
+    },
+    "disclosedCode": {
+      "type": "bool",
+      "initial": false
+    },
+    "paidUpfront": {
+      "type": "bool",
+      "initial": false
+    },
+    "heldBoundary": {
+      "type": "bool",
+      "initial": false,
+      "note": "Refused to disclose to a caller they had themselves phoned. Verifying identity does not license disclosure."
+    },
+    "bankContacted": {
+      "type": "enum",
+      "values": [
+        "none",
+        "official_channel",
+        "inbound_caller",
+        "delayed"
+      ],
+      "initial": "none"
+    },
+    "savedEvidence": {
+      "type": "bool",
+      "initial": false
+    },
+    "reportedFraud": {
+      "type": "bool",
+      "initial": false
+    },
+    "warnedFirm": {
+      "type": "bool",
+      "initial": false,
+      "note": "Integrity. The impersonated firm is a victim too and usually never finds out."
+    },
+    "recoveryResponse": {
+      "type": "enum",
+      "values": [
+        "none",
+        "not_offered",
+        "paid",
+        "engaged",
+        "refused",
+        "reported"
+      ],
+      "initial": "none"
+    },
+    "advisedColleague": {
+      "type": "enum",
+      "values": [
+        "none",
+        "correct_procedure",
+        "vague",
+        "dismissive"
+      ],
+      "initial": "none"
+    },
+    "endingReached": {
+      "type": "enum",
+      "values": [
+        "none",
+        "clean",
+        "averted",
+        "partial",
+        "compromised",
+        "paid",
+        "recovery",
+        "refused_real",
+        "verified_real"
+      ],
+      "initial": "none"
+    }
+  },
+  "derivedState": {
+    "verificationBand": {
+      "from": "verification",
+      "bands": [
+        {
+          "min": 70,
+          "value": "independent"
+        },
+        {
+          "min": 40,
+          "value": "solid"
+        },
+        {
+          "min": 15,
+          "value": "partial"
+        },
+        {
+          "min": 1,
+          "value": "thin"
+        },
+        {
+          "min": -999,
+          "value": "none"
+        }
+      ]
+    },
+    "exposureBand": {
+      "from": "exposure",
+      "bands": [
+        {
+          "min": 80,
+          "value": "critical"
+        },
+        {
+          "min": 35,
+          "value": "serious"
+        },
+        {
+          "min": 10,
+          "value": "light"
+        },
+        {
+          "min": -999,
+          "value": "clean"
+        }
+      ]
+    },
+    "assuranceGap": {
+      "from": "assurance",
+      "minus": "verification",
+      "bands": [
+        {
+          "min": 30,
+          "value": "false_confidence"
+        },
+        {
+          "min": -10,
+          "value": "aligned"
+        },
+        {
+          "min": -999,
+          "value": "genuine"
+        }
+      ],
+      "note": "The differential, not the magnitude. 'false_confidence' is the player who felt safest while learning least."
+    },
+    "netJudgement": {
+      "from": "verification",
+      "minus": "exposure",
+      "bands": [
+        {
+          "min": 40,
+          "value": "strong"
+        },
+        {
+          "min": 0,
+          "value": "even"
+        },
+        {
+          "min": -40,
+          "value": "negative"
+        },
+        {
+          "min": -999,
+          "value": "inverted"
+        }
+      ],
+      "note": "'inverted' is heavy research and heavier disclosure. It must not read as a good run."
+    }
+  },
+  "rootNode": "inbox",
+  "nodes": {
+    "inbox": {
+      "act": 1,
+      "message": "Halloway & Finch Genealogical Research\n\nDear Sir or Madam,\n\nWe are a probate research practice instructed to trace entitled next of kin in unclaimed estate cases. Our research into the estate of the late Margaret Ellen Prince (d. 2021, Bootle) indicates you may be among the entitled beneficiaries through your maternal line.\n\nThe net estate is presently valued at approximately £312,000. We work on a contingency basis: we recover nothing unless you do.\n\nFor confidentiality, please do not contact the estate or the Probate Registry directly until beneficiary verification is complete, as competing claims can complicate an application.\n\nIf you wish to proceed, please confirm this email address is yours and I will send the beneficiary questionnaire.\n\nKind regards,\nMarcus Halloway\nProbate Research Consultant\nHalloway & Finch — est. 1998\nm. 07700 900412",
       "presentation": {
         "type": "email",
         "modal": false,
         "data": {
-          "sender": "Adewale Okoro",
-          "senderEmail": "a.okoro@estate-legalservices.com",
-          "subject": "URGENT: Beneficiary Fund Notification — £4,200,000"
+          "sender": "Marcus Halloway",
+          "senderEmail": "m.halloway@hfgenresearch-uk.com",
+          "subject": "Estate of M. E. Prince (dec'd) — potential entitlement"
         }
-      }
-    },
-    "engage": {
-      "message": "Thank you for confirming. To proceed, I will need your full name, address and telephone number.",
+      },
       "choices": [
-        { "id": "A1", "label": "Sure, here's my information.", "scores": { "savvy": -20, "streetSmarts": -25, "integrity": 0 }, "terminal": true, "consequence": "You handed over your details without a second thought.", "reasons": { "savvy": "Personal details were handed over with no verification at all.", "streetSmarts": "This is exactly the information a scam like this is built to extract." } },
-        { "id": "A2", "label": "Wait — why do you need all of that?", "scores": { "savvy": 10, "streetSmarts": 5, "integrity": 0 }, "next": "engage_followup", "reasons": { "savvy": "Pausing to question the request is a real save.", "streetSmarts": "Slowing down cost the sender their momentum." } }
+        {
+          "id": "delete",
+          "label": "Delete it. Nobody emails you about money for a good reason.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 5,
+            "integrity": 0
+          },
+          "setState": {
+            "contactStance": "ignored"
+          },
+          "next": "act1_followup",
+          "reasons": {
+            "streetSmarts": "Not engaging costs you nothing yet. It also establishes nothing."
+          }
+        },
+        {
+          "id": "confirm",
+          "label": "Reply: yes, this is my email. Send the questionnaire.",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": -10,
+            "integrity": 0
+          },
+          "setState": {
+            "contactStance": "engaged",
+            "exposure": 5
+          },
+          "beat": "The questionnaire arrives within the hour. It is nine pages and it looks exactly like a legal document should.",
+          "next": "act1_reply",
+          "reasons": {
+            "savvy": "Confirming first means everything you learn from here comes from them.",
+            "streetSmarts": "A live address is worth something on its own, whoever's asking."
+          }
+        },
+        {
+          "id": "ask_which_estate",
+          "label": "Reply: which estate, and where was it advertised?",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 5,
+            "integrity": 0
+          },
+          "setState": {
+            "contactStance": "engaged",
+            "askedWhichEstate": true,
+            "verification": 5,
+            "exposure": 5
+          },
+          "beat": "Unclaimed estates are advertised publicly. Asking where is a question a real firm can answer instantly and an invented case cannot.",
+          "next": "act1_reply",
+          "reasons": {
+            "savvy": "You asked for something checkable against a source they don't control.",
+            "streetSmarts": "You still confirmed the address was live to ask it."
+          }
+        },
+        {
+          "id": "search_first",
+          "label": "Don't reply yet. Look up Halloway & Finch.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 15,
+            "integrity": 0
+          },
+          "setState": {
+            "verification": 10
+          },
+          "next": "search_first",
+          "reasons": {
+            "savvy": "You went looking before you answered. That order matters more than anything else you'll do here.",
+            "streetSmarts": "Nothing about you has left your side of the conversation."
+          }
+        }
       ]
     },
-    "engage_followup": {
-      "message": "It's simply to verify that you're the account holder. Time is limited to complete this transfer.",
-      "choices": [
-        { "id": "A2a", "label": "I'll need to verify this independently before sharing anything.", "scores": { "savvy": 20, "streetSmarts": 20, "integrity": 0 }, "terminal": true, "consequence": "You held the line and asked to verify independently.", "reasons": { "savvy": "You held out for real verification instead of accepting reassurance.", "streetSmarts": "You kept control of your own information." } },
-        { "id": "A2b", "label": "Fine, here it is.", "scores": { "savvy": -15, "streetSmarts": -20, "integrity": 0 }, "terminal": true, "consequence": "The pressure worked. You gave up your details anyway.", "reasons": { "savvy": "The reassurance was enough to override your earlier hesitation.", "streetSmarts": "Pressure worked where the first request alone hadn't." } }
-      ]
-    },
-    "question": {
-      "message": "Your details were identified through our standard verification process. I understand your caution, but time is limited to complete this transfer.",
-      "choices": [
-        { "id": "B1", "label": "I'd like proof of this estate and your firm before continuing.", "scores": { "savvy": 15, "streetSmarts": 10, "integrity": 0 }, "next": "question_followup", "reasons": { "savvy": "You asked for something the sender can't easily fake.", "streetSmarts": "You made the burden of proof theirs, not yours." } },
-        { "id": "B2", "label": "Okay, what do I need to do?", "scores": { "savvy": -10, "streetSmarts": -15, "integrity": 0 }, "terminal": true, "consequence": "You let the vague explanation satisfy you and kept going.", "reasons": { "savvy": "A vague explanation was enough to move you forward.", "streetSmarts": "You kept going without ever getting a real answer." } }
-      ]
-    },
-    "question_followup": {
-      "message": "You may contact the estate's legal department directly to confirm — here is a direct line.",
-      "choices": [
-        { "id": "B1a", "label": "I'll verify this independently, not through a number you've given me.", "scores": { "savvy": 20, "streetSmarts": 20, "integrity": 0 }, "terminal": true, "consequence": "You recognised that a number from the scammer isn't independent verification at all.", "reasons": { "savvy": "You spotted that a number from them isn't independent verification.", "streetSmarts": "You found your own way to check, not theirs." } },
-        { "id": "B1b", "label": "Alright, I'll call this number.", "scores": { "savvy": -10, "streetSmarts": -15, "integrity": 0 }, "terminal": true, "consequence": "You called the number — straight back to the same people.", "reasons": { "savvy": "Calling their number just verifies against their own script.", "streetSmarts": "This still puts them in control of the conversation." } }
-      ]
-    },
-    "verify": {
-      "message": "I understand your concern, but please be aware that delaying the process could result in the funds being reassigned.",
-      "choices": [
-        { "id": "C1", "label": "I'm not moving forward until I verify independently. Goodbye.", "scores": { "savvy": 20, "streetSmarts": 20, "integrity": 5 }, "terminal": true, "consequence": "You didn't let the urgency change your plan.", "reasons": { "savvy": "Urgency didn't change your decision.", "streetSmarts": "Ending it here closed the door completely.", "integrity": "You left cleanly rather than stringing them along." } },
-        { "id": "C2", "label": "Okay, but make it quick then.", "scores": { "savvy": 0, "streetSmarts": -5, "integrity": 0 }, "next": "verify_followup", "reasons": { "streetSmarts": "Agreeing to rush, even slightly, hands back some control." } }
-      ]
-    },
-    "verify_followup": {
-      "message": "Wonderful. There is a small legal processing fee of £650 required before the transfer can be released.",
-      "choices": [
-        { "id": "C2a", "label": "A fee to receive money makes no sense. I'm out.", "scores": { "savvy": 20, "streetSmarts": 15, "integrity": 0 }, "terminal": true, "consequence": "The fee request gave it away, and you walked.", "reasons": { "savvy": "A fee to receive money is the classic tell, and you caught it.", "streetSmarts": "You walked away before any money moved." } },
-        { "id": "C2b", "label": "Fine, how do I pay the fee?", "scores": { "savvy": -30, "streetSmarts": -35, "integrity": 0 }, "terminal": true, "consequence": "You agreed to pay the fee.", "reasons": { "savvy": "This is the exact ask the scam was built around, and it landed.", "streetSmarts": "Agreeing to pay puts real money at risk." } }
-      ],
+    "act1_followup": {
+      "act": 1,
+      "interstitial": {
+        "label": "Four days later",
+        "durationMs": 1800
+      },
+      "message": "It's still in the folder. And there's a second one.\n\n\"Dear Sir or Madam,\n\nFurther to my email of the 4th. I appreciate unsolicited correspondence of this nature invites caution — it's the part of the job I like least.\n\nFor your reference: the estate was advertised on the government's unclaimed estates list in March. Our firm is registered at Companies House (no. 03551907) and I am happy to be verified by any means you find satisfactory before we exchange anything at all.\n\nThere is no cost to you for our research. Should a claim succeed, our fee is 22% of the sum recovered, payable from the estate on distribution.\n\nIf I don't hear from you I'll close the file at the end of the month.\"",
+      "reactionDelay": "medium",
       "presentation": {
-        "type": "payment_request",
+        "type": "email",
+        "modal": false,
+        "data": {
+          "sender": "Marcus Halloway",
+          "senderEmail": "m.halloway@hfgenresearch-uk.com",
+          "subject": "RE: Estate of M. E. Prince (dec'd) — potential entitlement"
+        }
+      },
+      "choices": [
+        {
+          "id": "look_now",
+          "label": "Now look them up.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "setState": {
+            "verification": 10
+          },
+          "next": "search_first",
+          "reasons": {
+            "savvy": "He gave you a company number. Checking it costs a minute and settles something."
+          }
+        },
+        {
+          "id": "engage_now",
+          "label": "Reply and ask what he needs from you.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": -5,
+            "integrity": 0
+          },
+          "setState": {
+            "contactStance": "engaged",
+            "exposure": 5
+          },
+          "next": "act1_reply",
+          "reasons": {
+            "savvy": "The reasonable tone did the work that evidence hasn't done yet."
+          }
+        },
+        {
+          "id": "block_unread",
+          "label": "Block the address. Done.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": 10,
+            "integrity": -5
+          },
+          "setState": {
+            "contactStance": "blocked",
+            "rejectedOnSurface": true
+          },
+          "next": "act3_gate",
+          "reasons": {
+            "streetSmarts": "Whatever this was, it can't reach you now.",
+            "savvy": "You didn't spend the one minute that would have told you what it was.",
+            "integrity": "If it was a scam, the next person on the list gets it unwarned."
+          }
+        }
+      ]
+    },
+    "search_first": {
+      "act": 1,
+      "message": "Halloway & Finch have a website. It was clearly built around 2011 and has a page headed \"Our Ethos.\" There's a Companies House entry, incorporated 1998, two officers: M. J. Halloway and R. A. Finch. A Liverpool Echo piece from 2017 about a house clearance quotes \"local probate researcher Marcus Halloway.\"\n\nThe website's contact address is hallowayfinch.co.uk. The email that reached you came from hfgenresearch-uk.com.",
+      "reactionDelay": "short",
+      "presentation": {
+        "type": "search_results",
+        "modal": false,
+        "data": {
+          "query": "halloway & finch genealogical research",
+          "results": [
+            {
+              "title": "Halloway & Finch — Probate Research & Genealogy",
+              "url": "hallowayfinch.co.uk",
+              "snippet": "Established 1998. Tracing entitled next of kin in unclaimed estate and intestacy cases across the North West. Contact: 0151 XXX XXXX."
+            },
+            {
+              "title": "HALLOWAY & FINCH LIMITED — Companies House",
+              "url": "find-and-update.company-information.service.gov.uk",
+              "snippet": "Company number 03551907. Incorporated 14 May 1998. Active. Officers: HALLOWAY, Michael James; FINCH, Ruth Anne."
+            },
+            {
+              "title": "Bootle house clearance uncovers family history",
+              "url": "liverpoolecho.co.uk",
+              "snippet": "...local probate researcher Marcus Halloway, who traces heirs to unclaimed estates, said cases like this are more common than people think..."
+            }
+          ]
+        }
+      },
+      "choices": [
+        {
+          "id": "domain_is_dodgy",
+          "label": "The domain doesn't match their own website. That's enough for me.",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": 5,
+            "integrity": -5
+          },
+          "setState": {
+            "contactStance": "blocked",
+            "rejectedOnSurface": true
+          },
+          "beat": "Small practices run mismatched domains for dull reasons — an old marketing package, a web guy who left in 2014. It is a reason to check further. It is not, by itself, an answer.",
+          "next": "act3_gate",
+          "reasons": {
+            "savvy": "You found one surface inconsistency and stopped. It's the weakest evidence available to you here.",
+            "streetSmarts": "You're not exposed. You're also not informed."
+          }
+        },
+        {
+          "id": "note_the_confidentiality",
+          "label": "Re-read the email. Why shouldn't you contact the Registry?",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 10,
+            "integrity": 5
+          },
+          "setState": {
+            "verification": 5
+          },
+          "beat": "There is no legitimate reason a beneficiary can't contact the Probate Registry. Competing claims don't work like that. Whoever wrote that sentence wanted your checking to happen inside the conversation.",
+          "next": "how_to_verify",
+          "reasons": {
+            "savvy": "You found the one line in that email doing real work — and it isn't the domain.",
+            "integrity": "You went looking for the mechanism rather than the vibe."
+          }
+        },
+        {
+          "id": "looks_legit",
+          "label": "They're real. Reply and get started.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "setState": {
+            "contactStance": "engaged",
+            "assurance": 5,
+            "exposure": 5
+          },
+          "beat": "You've established that Halloway & Finch exists. You haven't established anything at all about the person who emailed you.",
+          "next": "act1_reply",
+          "reasons": {
+            "savvy": "A search confirms an organisation. It says nothing about who's using its name.",
+            "streetSmarts": "This is the moment most of these succeed — not on the pitch, on the search results."
+          }
+        },
+        {
+          "id": "to_verification",
+          "label": "Decide how to actually verify this.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "next": "how_to_verify",
+          "reasons": {
+            "savvy": "You treated the search as the start of verification rather than the end of it."
+          }
+        }
+      ]
+    },
+    "act1_reply": {
+      "act": 1,
+      "messageVariants": [
+        {
+          "when": {
+            "askedWhichEstate": true
+          },
+          "message": "\"Estate of Margaret Ellen Prince, died 11 February 2021 at Bootle, intestate. Advertised on the government's unclaimed estates list in March — you're welcome to look, though I'd ask you not to approach the Registry while our application is live.\n\nAttached is the beneficiary questionnaire. It asks for full name, date of birth, current address and previous addresses for ten years, plus a copy of photographic ID. I know that's a great deal to send a stranger. It's also what the Registry requires of us.\n\nOur fee is 22% of any sum recovered, taken from the estate on distribution. Nothing is payable by you at any stage.\""
+        }
+      ],
+      "message": "\"Thank you. Attached is the beneficiary questionnaire.\n\nIt asks for full name, date of birth, current address and previous addresses for ten years, plus a copy of photographic ID. I'm aware that's a great deal to send a stranger — it's what the Registry requires of us.\n\nOur fee is 22% of any sum recovered, taken from the estate on distribution. Nothing is payable by you at any stage. And again, please don't approach the Registry directly while the application is live.\"",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "email",
+        "modal": false,
+        "data": {
+          "sender": "Marcus Halloway",
+          "senderEmail": "m.halloway@hfgenresearch-uk.com",
+          "subject": "RE: Estate of M. E. Prince (dec'd) — beneficiary questionnaire"
+        }
+      },
+      "choices": [
+        {
+          "id": "fill_it_in",
+          "label": "Fill it in and attach your passport.",
+          "scores": {
+            "savvy": -25,
+            "streetSmarts": -25,
+            "integrity": 0
+          },
+          "setState": {
+            "exposure": 50,
+            "uploadedId": true
+          },
+          "beat": "Name, date of birth, ten years of addresses, and a photograph of your passport. That is a complete identity, sent to an address you have not verified belongs to anyone in particular.",
+          "next": "authority_to_act",
+          "reasons": {
+            "savvy": "The request being plausible is not the same as the requester being verified.",
+            "streetSmarts": "An ID document plus a full address history is enough to open things in your name."
+          }
+        },
+        {
+          "id": "verify_before_sending",
+          "label": "Nothing goes anywhere until you've checked who he is.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 15,
+            "integrity": 0
+          },
+          "next": "how_to_verify",
+          "reasons": {
+            "savvy": "You put verification before disclosure. That single ordering is most of the skill.",
+            "streetSmarts": "The questionnaire will still be there in an hour."
+          }
+        },
+        {
+          "id": "partial_details",
+          "label": "Send name and phone number only. Hold the ID back.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "setState": {
+            "exposure": 10
+          },
+          "beat": "He accepts it without complaint and says the ID can follow.",
+          "next": "how_to_verify",
+          "reasons": {
+            "savvy": "Staging what you disclose is better than all of it, and worse than none of it yet.",
+            "streetSmarts": "A name attached to a live address is the start of a profile."
+          }
+        },
+        {
+          "id": "accept_confidentiality",
+          "label": "Agree not to contact the Registry, and ask what's next.",
+          "scores": {
+            "savvy": -20,
+            "streetSmarts": -10,
+            "integrity": 0
+          },
+          "setState": {
+            "confidentialityAccepted": true,
+            "assurance": 10,
+            "exposure": 5
+          },
+          "beat": "You have just agreed to keep every check inside the conversation. If there is one thing in this email designed to do something to you, it was that sentence, and it worked.",
+          "next": "how_to_verify",
+          "reasons": {
+            "savvy": "You accepted a restriction on your own ability to verify, from the party you'd be verifying.",
+            "streetSmarts": "Nothing about that request protects you."
+          }
+        }
+      ]
+    },
+    "how_to_verify": {
+      "act": 2,
+      "interstitial": {
+        "label": "So: verify him",
+        "durationMs": 1600
+      },
+      "message": "You have his email, his mobile number, a firm that demonstrably exists, and a case reference.\n\nThere are several ways to check this and they are not equivalent.",
+      "reactionDelay": "short",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Your kitchen table, laptop open",
+          "character": {
+            "name": "Marcus Halloway",
+            "role": "Probate Research Consultant",
+            "mood": "distracted"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "call_his_number",
+          "label": "Call the mobile number in his signature.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "setState": {
+            "calledInBandNumber": true,
+            "assurance": 10
+          },
+          "next": "in_band_call",
+          "reasons": {
+            "savvy": "A number supplied by the person you're checking verifies nothing except that the number works."
+          }
+        },
+        {
+          "id": "find_own_number",
+          "label": "Find the firm's own switchboard number and call that.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 0
+          },
+          "setState": {
+            "foundOwnNumber": true,
+            "verification": 20
+          },
+          "next": "out_of_band_call",
+          "reasons": {
+            "savvy": "You built a channel he doesn't control. This is the single highest-value action available in the scenario.",
+            "streetSmarts": "If the person emailing you isn't who they say, this is where it breaks."
+          }
+        },
+        {
+          "id": "check_register",
+          "label": "Check Companies House and the probate research body's member list.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "setState": {
+            "checkedRegister": true,
+            "verification": 15
+          },
+          "next": "register_check",
+          "reasons": {
+            "savvy": "Independent, and worth having — though a listing describes a firm, not a correspondent."
+          }
+        },
+        {
+          "id": "ask_him_to_confirm",
+          "label": "Email him and ask him to confirm his identity.",
+          "scores": {
+            "savvy": -15,
+            "streetSmarts": -5,
+            "integrity": 0
+          },
+          "setState": {
+            "assurance": 10,
+            "exposure": 5
+          },
+          "next": "in_band_reassurance",
+          "reasons": {
+            "savvy": "You asked the subject of the check to perform the check.",
+            "streetSmarts": "Whatever comes back will be reassuring. That's the only thing it's guaranteed to be."
+          }
+        }
+      ]
+    },
+    "in_band_call": {
+      "act": 2,
+      "message": "He picks up on the third ring. Liverpool accent, sounds like he's in a car.\n\n\"Marcus Halloway.\"\n\nHe knows the case reference without looking it up. He knows Margaret Prince died intestate in Bootle. He talks about the maternal line and the four cousins already traced. When you say you weren't sure whether to ring, he laughs and says most people aren't, and that he'd be suspicious of himself too.\n\nHe's warm, unhurried, and completely convincing.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "call",
         "modal": true,
         "data": {
-          "payee": "Okoro & Williams Legal Partners — Estate Processing",
-          "amount": "£650.00",
-          "reference": "REF: SW-2291-EST",
-          "note": "Legal processing fee. Required before final transfer release."
+          "callerName": "Marcus Halloway",
+          "callerNumber": "07700 900412",
+          "callerLabel": "Outgoing — number from email signature"
         }
-      }
-    },
-    "refuse": {
-      "message": "I understand your skepticism, but I assure you this is a legitimate matter. It would be a shame to miss this opportunity.",
+      },
       "choices": [
-        { "id": "D1", "label": "I'm blocking and reporting this number.", "scores": { "savvy": 20, "streetSmarts": 20, "integrity": 15 }, "terminal": true, "consequence": "You didn't just disengage — you shut the door and reported it.", "reasons": { "savvy": "You didn't need more evidence to act.", "streetSmarts": "Blocking ends this immediately, no further exposure.", "integrity": "Reporting it helps protect whoever they try next." } },
-        { "id": "D2", "label": "Prove it, then. Send me verifiable documentation.", "scores": { "savvy": 5, "streetSmarts": 0, "integrity": 0 }, "next": "refuse_followup", "reasons": { "savvy": "Asking for proof is reasonable, though a document alone won't settle it." } }
+        {
+          "id": "satisfied",
+          "label": "That'll do. He's clearly who he says he is.",
+          "scores": {
+            "savvy": -15,
+            "streetSmarts": -10,
+            "integrity": 0
+          },
+          "setState": {
+            "assurance": 15
+          },
+          "beat": "Everything he told you, you learned from him. You rang a number he gave you and the person who answered confirmed the story he'd already sent you in writing.",
+          "next": "evidence_stack",
+          "reasons": {
+            "savvy": "Detail is not verification. Someone working a real case file has all the detail there is.",
+            "streetSmarts": "You now feel significantly safer than you are."
+          }
+        },
+        {
+          "id": "still_not_independent",
+          "label": "Useful — but that was still his number.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "beat": "He was convincing and that's a fact about him, not about the situation.",
+          "next": "evidence_stack",
+          "reasons": {
+            "savvy": "You separated 'persuasive' from 'corroborated' while the persuasion was still working on you."
+          }
+        }
       ]
     },
-    "refuse_followup": {
-      "message": "Adewale sends what looks like an official letterhead document, insisting the opportunity closes today.",
-      "choices": [
-        { "id": "D2a", "label": "This doesn't check out. Blocking you now.", "scores": { "savvy": 20, "streetSmarts": 15, "integrity": 10 }, "terminal": true, "consequence": "A convincing document didn't change your mind.", "reasons": { "savvy": "A convincing-looking document didn't override your read of the situation.", "streetSmarts": "You still ended it once the \"proof\" didn't hold up.", "integrity": "Blocking here also protects the next person they target." } },
-        { "id": "D2b", "label": "Alright, I suppose that looks legitimate enough.", "scores": { "savvy": -25, "streetSmarts": -20, "integrity": -5 }, "terminal": true, "consequence": "The fake documentation was enough to bring you back in.", "reasons": { "savvy": "A letterhead and formatting were enough to override your earlier doubts.", "streetSmarts": "This re-opens exactly the exposure you'd avoided before.", "integrity": "Legitimate-looking framing is often the last line of defense before real harm, and it worked here." } }
+    "out_of_band_call": {
+      "act": 2,
+      "messageVariants": [
+        {
+          "when": {
+            "truthTrack": "B"
+          },
+          "message": "The switchboard number on their own website. A woman answers: \"Halloway and Finch.\"\n\nYou explain. There's a pause long enough that you check the call's still connected.\n\n\"Sorry — who did you say emailed you?\"\n\n\"Marcus Halloway.\"\n\n\"Marcus is my business partner. Michael Halloway, he goes by Marcus. He hasn't emailed anybody about the Prince estate, because we closed that file in January.\" Another pause. \"Can you forward me what you were sent? This has happened to two people this month.\""
+        },
+        {
+          "when": {
+            "truthTrack": "C"
+          },
+          "message": "The switchboard number on their own website. A woman answers: \"Halloway and Finch, Ruth speaking.\"\n\nYou explain. She's immediately easy about it.\n\n\"Yes, that's ours. Margaret Prince, Bootle — Marcus has been on that one since the spring. You'd be the fifth cousin we've traced.\" She reads the reference back to you correctly. \"He's not in today but he'll pick it up tomorrow. And honestly, well done for ringing us rather than him. Most people don't.\"\n\nEverything checks out. Everything she says is true."
+        }
       ],
+      "message": "The switchboard number on their own website. A woman answers: \"Halloway and Finch, Ruth speaking.\"\n\nYou explain. She's immediately easy about it.\n\n\"Yes, that's ours. Margaret Prince, Bootle — Marcus has been on that one since the spring.\" She reads the case reference back to you correctly, then adds, unprompted: \"You'll have seen we don't charge you anything up front. If anyone ever asks you for a payment on one of our files, that isn't us. Ring this number.\"",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "call",
+        "modal": true,
+        "data": {
+          "callerName": "Halloway & Finch",
+          "callerNumber": "0151 XXX XXXX",
+          "callerLabel": "Outgoing — number you sourced yourself"
+        }
+      },
+      "choices": [
+        {
+          "id": "forward_it",
+          "label": "Forward her the emails.",
+          "requires": [
+            {
+              "truthTrack": "B"
+            }
+          ],
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 15,
+            "integrity": 20
+          },
+          "setState": {
+            "warnedFirm": true,
+            "contactStance": "blocked",
+            "verification": 15
+          },
+          "beat": "Ruth Finch has spent three years having her firm's name used to open conversations she knows nothing about. You are the first person to tell her which cases they're using.",
+          "next": "act3_gate",
+          "reasons": {
+            "savvy": "One out-of-band call ended it. Nothing else you could have done was worth as much.",
+            "integrity": "The firm being impersonated is a victim too, and almost never finds out."
+          }
+        },
+        {
+          "id": "confront_sender",
+          "label": "Reply to the sender and tell him you've spoken to the firm.",
+          "requires": [
+            {
+              "truthTrack": "B"
+            }
+          ],
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": -10,
+            "integrity": 0
+          },
+          "setState": {
+            "contactStance": "stalled"
+          },
+          "beat": "The reply bounces. The domain was registered eleven weeks ago and is already gone.",
+          "next": "act3_gate",
+          "reasons": {
+            "savvy": "You had the answer. Telling him you had it gains you nothing.",
+            "streetSmarts": "It also tells whoever's behind it which of their addresses is burned, and which of their targets is alert."
+          }
+        },
+        {
+          "id": "proceed_confident",
+          "label": "Good. Carry on with the process.",
+          "requires": [
+            {
+              "truthTrack": "A"
+            },
+            {
+              "truthTrack": "C"
+            }
+          ],
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 5,
+            "integrity": 0
+          },
+          "setState": {
+            "assurance": 5
+          },
+          "next": "evidence_stack",
+          "reasons": {
+            "savvy": "You verified the firm and the case through a channel you built. That's real, and it's the right thing to have done."
+          }
+        },
+        {
+          "id": "note_the_warning",
+          "label": "Note what she said about payments.",
+          "requires": [
+            {
+              "truthTrack": "A"
+            },
+            {
+              "truthTrack": "C"
+            }
+          ],
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 15,
+            "integrity": 0
+          },
+          "setState": {
+            "verification": 10
+          },
+          "beat": "Write it down: nothing is payable by you, ever, on this file. If that changes, the change is the problem.",
+          "next": "evidence_stack",
+          "reasons": {
+            "savvy": "You captured the one detail that will matter later, from the one source that could give it to you."
+          }
+        }
+      ]
+    },
+    "register_check": {
+      "act": 2,
+      "message": "Companies House: HALLOWAY & FINCH LIMITED, 03551907, active, incorporated 1998, accounts filed on time every year for two decades. Two officers.\n\nThe professional body's member directory lists the firm, with a code of practice attached. Under \"Fees\": members shall not require payment in advance of a successful recovery.\n\nAll of it is real. None of it says anything about the person who emailed you.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "search_results",
+        "modal": false,
+        "data": {
+          "query": "halloway finch limited 03551907 probate research code of practice",
+          "results": [
+            {
+              "title": "HALLOWAY & FINCH LIMITED — filing history",
+              "url": "find-and-update.company-information.service.gov.uk",
+              "snippet": "Accounts made up to 31 May. Filed 22 days early. Next accounts due... 24 years of filings, no gaps, no strike-off action."
+            },
+            {
+              "title": "Member directory — probate research practitioners",
+              "url": "probateresearchers.org.uk",
+              "snippet": "Halloway & Finch Ltd, Liverpool. Member since 2004. Code of practice: members shall not require payment in advance of a successful recovery."
+            }
+          ]
+        }
+      },
+      "choices": [
+        {
+          "id": "note_no_advance_fee",
+          "label": "Note that rule about advance payment.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "setState": {
+            "verification": 10
+          },
+          "beat": "Now you have a standard to measure against, from a source that isn't him. Any request for money up front contradicts his own trade body.",
+          "next": "evidence_stack",
+          "reasons": {
+            "savvy": "You turned a listing into a test you can apply to whatever comes next."
+          }
+        },
+        {
+          "id": "firm_is_real",
+          "label": "The firm's real. That settles it.",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "setState": {
+            "assurance": 10
+          },
+          "beat": "The firm being real is exactly what makes this work on people. There is no version of this where the firm isn't real.",
+          "next": "evidence_stack",
+          "reasons": {
+            "savvy": "You verified an organisation and treated it as having verified a person."
+          }
+        }
+      ]
+    },
+    "in_band_reassurance": {
+      "act": 2,
+      "message": "\"Of course — caution is entirely sensible.\n\nAttached: my professional body membership card, a scan of our Companies House certificate, and a letter on our headed paper confirming my instruction on this file. My direct mobile is in my signature if you'd like to speak.\n\nI'd only ask again that you don't approach the Registry while the application is live. It genuinely does complicate competing claims.\"\n\nThree attachments. All of them look right.",
+      "reactionDelay": "medium",
       "presentation": {
         "type": "document",
         "modal": true,
         "data": {
-          "sender": "Okoro & Williams Legal Partners",
-          "letterheadTitle": "NOTICE OF BENEFICIARY TRANSFER",
-          "reference": "REF: SW-2291-EST",
-          "body": "This letter confirms that the beneficiary transfer of £4,200,000 GBP to the verified recipient is authorised pending final processing. Failure to complete verification within 24 hours will result in reassignment of funds to alternate beneficiaries as per estate protocol 14(b)."
+          "sender": "Halloway & Finch Genealogical Research",
+          "letterheadTitle": "CONFIRMATION OF INSTRUCTION",
+          "reference": "REF: HF/2451/PRINCE",
+          "body": "This letter confirms that Mr M. J. Halloway is instructed in respect of the estate of Margaret Ellen Prince, deceased, and is authorised to correspond with entitled beneficiaries in connection with the same. Our fee is contingent upon successful distribution and is payable from estate funds. No sum is payable by the beneficiary in advance."
         }
-      }
+      },
+      "choices": [
+        {
+          "id": "documents_satisfy",
+          "label": "That's thorough. You're satisfied.",
+          "scores": {
+            "savvy": -20,
+            "streetSmarts": -10,
+            "integrity": 0
+          },
+          "setState": {
+            "assurance": 15
+          },
+          "beat": "Every document you just received came from the person you were checking. A membership card is a JPEG. Headed paper is a template.",
+          "next": "evidence_stack",
+          "reasons": {
+            "savvy": "You asked him to prove himself and accepted his own paperwork as the proof.",
+            "streetSmarts": "This is the most reassuring thing that will happen to you, and it's the least informative."
+          }
+        },
+        {
+          "id": "documents_prove_nothing",
+          "label": "Anyone can attach a scan. Check him elsewhere.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 15,
+            "integrity": 0
+          },
+          "beat": "The letter says no sum is payable in advance. Keep that. It came from him, but it's a promise you can hold him to.",
+          "next": "how_to_verify",
+          "reasons": {
+            "savvy": "You noticed that all three attachments have the same single source."
+          }
+        }
+      ]
+    },
+    "evidence_stack": {
+      "act": 2,
+      "messageVariants": [
+        {
+          "when": {
+            "assuranceGap": "false_confidence"
+          },
+          "message": "Laid out on the table: a warm phone call, a set of documents, a story that has never once contradicted itself.\n\nEvery item on that list arrived through him.\n\nHe's asking whether you'd like to proceed."
+        },
+        {
+          "when": {
+            "verificationBand": "solid"
+          },
+          "message": "Laid out on the table: a real firm, a real case, and at least one thing you established through a channel he doesn't control.\n\nHe's asking whether you'd like to proceed."
+        }
+      ],
+      "message": "You have some of a picture. Not all of one.\n\nHe's asking whether you'd like to proceed.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Your kitchen table, later",
+          "character": {
+            "name": "Marcus Halloway",
+            "role": "Probate Research Consultant",
+            "mood": "patient"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "also_call_switchboard",
+          "label": "Ring the firm's own number as well.",
+          "requires": [
+            {
+              "foundOwnNumber": false
+            }
+          ],
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 0
+          },
+          "setState": {
+            "foundOwnNumber": true,
+            "verification": 20
+          },
+          "next": "out_of_band_call",
+          "reasons": {
+            "savvy": "The check you hadn't done was the only one that could have told you something new."
+          }
+        },
+        {
+          "id": "also_check_register",
+          "label": "Check the company and the trade body first.",
+          "requires": [
+            {
+              "checkedRegister": false
+            }
+          ],
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "setState": {
+            "checkedRegister": true,
+            "verification": 15
+          },
+          "next": "register_check",
+          "reasons": {
+            "savvy": "Independent, and it comes with a rule you can hold him to."
+          }
+        },
+        {
+          "id": "check_estate_list",
+          "label": "Look up the estate on the public unclaimed estates list.",
+          "requires": [
+            {
+              "corroboratedEstate": false
+            }
+          ],
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 10,
+            "integrity": 5
+          },
+          "setState": {
+            "corroboratedEstate": true,
+            "verification": 25
+          },
+          "next": "estate_list",
+          "reasons": {
+            "savvy": "The estate is either publicly advertised or it isn't. That's checkable without him.",
+            "integrity": "You looked despite being asked not to. Being asked not to look was the reason to look."
+          }
+        },
+        {
+          "id": "proceed",
+          "label": "Proceed. Tell him you're in.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "setState": {
+            "contactStance": "engaged"
+          },
+          "next": "authority_to_act",
+          "reasons": {}
+        },
+        {
+          "id": "walk_now",
+          "label": "Leave it. Don't reply again.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "setState": {
+            "contactStance": "blocked"
+          },
+          "next": "act3_gate",
+          "reasons": {
+            "streetSmarts": "You stop here with whatever you've established and nothing more at risk."
+          }
+        }
+      ]
+    },
+    "estate_list": {
+      "act": 2,
+      "messageVariants": [
+        {
+          "when": {
+            "truthTrack": "B"
+          },
+          "message": "The government's unclaimed estates list. Searchable, public, updated daily.\n\nPRINCE, Margaret Ellen. Date of death 11/02/2021. Place of death Bootle. Published 03/2021.\n\nIt's there. Exactly as he described it.\n\nWhich means anyone with a browser could have described it exactly that way."
+        }
+      ],
+      "message": "The government's unclaimed estates list. Searchable, public, updated daily.\n\nPRINCE, Margaret Ellen. Date of death 11/02/2021. Place of death Bootle. Published 03/2021.\n\nIt's there, and it matches. Note what that does and doesn't establish: the estate is real and unclaimed. Anyone who can read this page knows that too.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "search_results",
+        "modal": false,
+        "data": {
+          "query": "unclaimed estates list prince margaret ellen bootle",
+          "results": [
+            {
+              "title": "Unclaimed estates list — GOV.UK",
+              "url": "gov.uk/guidance/unclaimed-estates-list",
+              "snippet": "PRINCE, Margaret Ellen — DOD 11/02/2021 — Bootle — published 03/2021. The list is updated daily and includes estates where no will has been found."
+            }
+          ]
+        }
+      },
+      "choices": [
+        {
+          "id": "public_cuts_both_ways",
+          "label": "So the estate is real — and public.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 15,
+            "integrity": 0
+          },
+          "setState": {
+            "verification": 5
+          },
+          "beat": "A publicly listed case corroborates the case. It gives you no information at all about who is writing to you about it, because the page is open to everybody.",
+          "next": "evidence_stack",
+          "reasons": {
+            "savvy": "You worked out what your own evidence does and doesn't cover. That's rarer than gathering it."
+          }
+        },
+        {
+          "id": "estate_real_so_fine",
+          "label": "The estate's real. That's the important bit.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "setState": {
+            "assurance": 10
+          },
+          "next": "evidence_stack",
+          "reasons": {
+            "savvy": "It was the important bit two checks ago. The open question is the sender."
+          }
+        }
+      ]
+    },
+    "authority_to_act": {
+      "act": 2,
+      "message": "A form arrives. Two pages, properly drafted, nothing odd in the wording — it authorises Halloway & Finch to make the claim on your behalf and to receive estate funds into their client account for onward distribution to you, less their 22%.\n\nIt needs a signature, and it asks again for the ID you haven't sent.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "document",
+        "modal": true,
+        "data": {
+          "sender": "Halloway & Finch Genealogical Research",
+          "letterheadTitle": "AUTHORITY TO ACT",
+          "reference": "REF: HF/2451/PRINCE",
+          "body": "The undersigned authorises Halloway & Finch Limited to act in respect of any entitlement arising from the estate of Margaret Ellen Prince, deceased, and to receive funds into the firm's designated client account for onward distribution, less the agreed commission of 22%. Please return signed, together with certified photographic identification."
+        }
+      },
+      "choices": [
+        {
+          "id": "sign_and_upload",
+          "label": "Sign it and attach your passport.",
+          "scores": {
+            "savvy": -15,
+            "streetSmarts": -20,
+            "integrity": 0
+          },
+          "setState": {
+            "signedAuthority": true,
+            "uploadedId": true,
+            "exposure": 30
+          },
+          "next": "the_fee",
+          "reasons": {
+            "savvy": "An authority to act is a normal instrument. Sending ID to an unverified recipient is not made normal by being attached to one.",
+            "streetSmarts": "Passport plus signature plus address history is the full set."
+          }
+        },
+        {
+          "id": "sign_only",
+          "label": "Sign it. The ID can wait until you've met someone.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 5,
+            "integrity": 0
+          },
+          "setState": {
+            "signedAuthority": true,
+            "exposure": 20
+          },
+          "beat": "He doesn't push. \"That's fine — we'll need it before submission, not before now.\"",
+          "next": "the_fee",
+          "reasons": {
+            "savvy": "You separated the two asks and only met the reversible one."
+          }
+        },
+        {
+          "id": "post_it",
+          "label": "Ask them to post it to the address on their website.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 15,
+            "integrity": 0
+          },
+          "setState": {
+            "verification": 5
+          },
+          "beat": "A form that has to travel to a real building and back is a form somebody has to be standing in that building to receive.",
+          "next": "the_fee",
+          "reasons": {
+            "savvy": "You invented an out-of-band check out of a piece of admin. That's exactly the instinct."
+          }
+        },
+        {
+          "id": "stop_here",
+          "label": "Not signing anything yet.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "setState": {
+            "contactStance": "stalled"
+          },
+          "next": "act3_gate",
+          "reasons": {
+            "streetSmarts": "Nothing further leaves your side. Whatever this was, it stalls here."
+          }
+        }
+      ]
+    },
+    "the_fee": {
+      "act": 2,
+      "messageVariants": [
+        {
+          "when": {
+            "truthTrack": "A"
+          },
+          "message": "\"That's everything I need. Submission goes in this week.\n\nFor the avoidance of doubt, here's the fee position in writing: nothing is payable by you now or at any point. Our 22% comes out of the distribution. If the claim fails you owe us nothing and I've wasted six months, which is the job.\"\n\nThere is no payment request. There was never going to be one."
+        },
+        {
+          "when": {
+            "truthTrack": "C"
+          },
+          "message": "\"That's everything I need. Submission goes in this week.\n\nOne piece of admin: there's a Probate Registry disbursement of £480 on this application. Normally we absorb it and net it off at distribution, but our accountant has had us start collecting it up front on new files.\n\nPlease note our account details have changed since our website was last updated — use the details below rather than any you may have on file.\""
+        }
+      ],
+      "message": "\"That's everything I need. Submission goes in this week.\n\nThere is a Probate Registry disbursement of £480 payable before the application can be lodged. I know I said nothing would be payable by you. This is a Registry charge rather than our fee, and it's refunded from the estate on distribution.\n\nDetails below. Reference as shown, please, or it won't be matched to your file.\"",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "payment_request",
+        "modal": true,
+        "data": {
+          "payee": "M HALLOWAY (Halloway & Finch client account)",
+          "amount": "£480.00",
+          "reference": "REF: HF/2451/PRINCE",
+          "note": "Probate Registry disbursement. Payable before lodgement. Refunded from estate on distribution."
+        }
+      },
+      "choices": [
+        {
+          "id": "pay_it",
+          "label": "Pay it. £480 against £312,000 is nothing.",
+          "requires": [
+            {
+              "truthTrack": "B"
+            },
+            {
+              "truthTrack": "C"
+            }
+          ],
+          "scores": {
+            "savvy": -30,
+            "streetSmarts": -30,
+            "integrity": 0
+          },
+          "setState": {
+            "paidUpfront": true,
+            "feeStructure": "upfront_paid",
+            "exposure": 50
+          },
+          "beat": "The payee is a personal name. The trade body's own code says no payment in advance. The amount was chosen to be small enough to feel like admin.",
+          "next": "boundary_test",
+          "reasons": {
+            "savvy": "The size of the prize was doing the arithmetic, and the size of the ask was chosen so that it would.",
+            "streetSmarts": "A bank transfer you authorise yourself is the hardest kind of money to get back."
+          }
+        },
+        {
+          "id": "verify_payment_own_channel",
+          "label": "Ring the firm's own switchboard about the payment.",
+          "requires": [
+            {
+              "foundOwnNumber": true
+            }
+          ],
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 0
+          },
+          "setState": {
+            "verifiedPaymentInstructions": true,
+            "verification": 30
+          },
+          "next": "payment_verify",
+          "reasons": {
+            "savvy": "You're verifying the transaction rather than the organisation. It's a different question and it's the one that matters.",
+            "streetSmarts": "A change of payment details is the single most abused moment in any legitimate process."
+          }
+        },
+        {
+          "id": "verify_payment_reply",
+          "label": "Email back and ask him to confirm the details are right.",
+          "scores": {
+            "savvy": -15,
+            "streetSmarts": -10,
+            "integrity": 0
+          },
+          "setState": {
+            "assurance": 15
+          },
+          "beat": "\"Confirmed — those are correct.\" It arrives in four minutes.",
+          "next": "boundary_test",
+          "reasons": {
+            "savvy": "You asked the sender to confirm the sender's own instructions.",
+            "streetSmarts": "If that thread is compromised, so is the confirmation."
+          }
+        },
+        {
+          "id": "refuse_upfront",
+          "label": "No. Nothing is payable by me — you put that in writing.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 5
+          },
+          "setState": {
+            "contactStance": "stalled",
+            "feeStructure": "upfront_requested",
+            "verification": 5
+          },
+          "beat": "You quoted his own letter back at him. On a legitimate file that costs you nothing. On any other kind, it ends the conversation.",
+          "next": "act3_gate",
+          "reasons": {
+            "savvy": "You held him to a standard you'd taken the trouble to establish earlier.",
+            "streetSmarts": "The one thing every version of this needs is for you to move money, and you didn't."
+          }
+        },
+        {
+          "id": "give_bank_details",
+          "label": "Send your account details so the distribution can be paid in.",
+          "requires": [
+            {
+              "truthTrack": "A"
+            },
+            {
+              "truthTrack": "C"
+            }
+          ],
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": -20,
+            "integrity": 0
+          },
+          "setState": {
+            "gaveBankDetails": true,
+            "exposure": 40
+          },
+          "next": "boundary_test",
+          "reasons": {
+            "savvy": "Nobody needs your account details this early, on any version of this process.",
+            "streetSmarts": "Account details plus a verified identity is enough to attempt a great deal."
+          }
+        },
+        {
+          "id": "no_fee_proceed",
+          "label": "Good. Let it run.",
+          "requires": [
+            {
+              "truthTrack": "A"
+            }
+          ],
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "setState": {
+            "feeStructure": "percentage_on_completion"
+          },
+          "next": "act3_gate",
+          "reasons": {
+            "savvy": "Contingency, from estate funds, nothing payable by you. That's what a real one looks like."
+          }
+        }
+      ]
+    },
+    "payment_verify": {
+      "act": 2,
+      "messageVariants": [
+        {
+          "when": {
+            "truthTrack": "A"
+          },
+          "message": "\"Ruth Finch.\"\n\nYou read her the account details.\n\n\"...We haven't asked you for anything. There's no disbursement on that file — the Registry fee comes out of the estate.\" A pause. \"Where did you get those details?\"\n\nYou forward her the email. She's quiet while she reads it.\n\n\"That's not Marcus's address. It's close. It isn't his.\""
+        },
+        {
+          "when": {
+            "truthTrack": "B"
+          },
+          "message": "\"Ruth Finch.\"\n\nYou read her the account details.\n\n\"That's not our client account and that's not a name we bank under. We closed the Prince file in January.\" She sounds tired rather than surprised. \"You're the third this month. Can you forward me everything, including the headers?\""
+        }
+      ],
+      "message": "\"Ruth Finch.\"\n\nYou read her the account details.\n\nThe line goes quiet.\n\n\"Say that sort code again.\"\n\nYou do.\n\n\"Those aren't our details. We haven't changed our account since 2009 and there's no disbursement on that file.\" You can hear her standing up. \"Is that email in the same thread Marcus started? Don't reply to it. Someone's sitting in the middle of our mailbox and you're the first person who's rung to check.\"",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "call",
+        "modal": true,
+        "data": {
+          "callerName": "Halloway & Finch",
+          "callerNumber": "0151 XXX XXXX",
+          "callerLabel": "Outgoing — number you sourced yourself"
+        }
+      },
+      "choices": [
+        {
+          "id": "forward_and_stop",
+          "label": "Forward her everything. Don't touch the thread again.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 20
+          },
+          "setState": {
+            "warnedFirm": true,
+            "savedEvidence": true,
+            "contactStance": "blocked",
+            "verification": 10
+          },
+          "beat": "You verified the transaction, not the company. The company was never the problem.",
+          "next": "act3_gate",
+          "reasons": {
+            "savvy": "One call about the payment, on a number you'd sourced weeks earlier, caught what nine other checks couldn't.",
+            "integrity": "The firm can now warn every other beneficiary on that file. None of them would have found out from you not paying."
+          }
+        },
+        {
+          "id": "quiet_walk",
+          "label": "Thank her and leave it there.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 15,
+            "integrity": -5
+          },
+          "setState": {
+            "contactStance": "blocked",
+            "verification": 5
+          },
+          "next": "act3_gate",
+          "reasons": {
+            "savvy": "You're safe, and you found out for the right reason.",
+            "integrity": "Nobody else on that file knows yet, and you were the one holding the evidence."
+          }
+        }
+      ]
+    },
+    "boundary_test": {
+      "act": 2,
+      "messageVariants": [
+        {
+          "when": {
+            "foundOwnNumber": true
+          },
+          "message": "Your phone rings the next morning. It's the firm's switchboard number — the one you found yourself, the one you've already used.\n\n\"It's the Halloway and Finch office, calling about the Prince file. We need to complete a security check before lodgement. Can you confirm the last four digits of the account you'll be paid into?\"\n\nA text arrives while they're talking: a six-digit code, and the words DO NOT SHARE THIS CODE.\n\n\"There'll be a code come through. Read it back to me and we're done.\""
+        }
+      ],
+      "message": "Your phone rings the next morning. Withheld number.\n\n\"It's the Halloway and Finch office, calling about the Prince file. We need to complete a security check before lodgement. Can you confirm the last four digits of the account you'll be paid into?\"\n\nA text arrives while they're talking: a six-digit code, and the words DO NOT SHARE THIS CODE.\n\n\"There'll be a code come through. Read it back to me and we're done.\"",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "call",
+        "modal": true,
+        "data": {
+          "callerName": "Halloway & Finch — office",
+          "callerNumber": "0151 XXX XXXX",
+          "callerLabel": "Incoming"
+        }
+      },
+      "choices": [
+        {
+          "id": "read_the_code",
+          "label": "Read the code back.",
+          "scores": {
+            "savvy": -35,
+            "streetSmarts": -35,
+            "integrity": 0
+          },
+          "setState": {
+            "disclosedCode": true,
+            "exposure": 60
+          },
+          "beat": "Nobody legitimate will ever ask you to read a code aloud. The code exists to prove they aren't on the phone to you.",
+          "next": "act3_gate",
+          "reasons": {
+            "savvy": "The message told you not to share it. The caller asked you to share it. Only one of those was on your side.",
+            "streetSmarts": "That code authorised something. You'll find out what within the hour."
+          }
+        },
+        {
+          "id": "digits_only",
+          "label": "Give the last four digits but not the code.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": -5,
+            "integrity": 0
+          },
+          "setState": {
+            "exposure": 10
+          },
+          "beat": "You held the line that mattered most and gave up the one underneath it. They now have four digits they can quote back to you — or to your bank.",
+          "next": "act3_gate",
+          "reasons": {
+            "savvy": "You caught the code and missed that the digits are what makes the next call convincing."
+          }
+        },
+        {
+          "id": "hold_boundary",
+          "label": "I'll hang up and call the office back on the number I have.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 0
+          },
+          "setState": {
+            "heldBoundary": true,
+            "verification": 10
+          },
+          "beat": "Caller ID is trivially spoofed. A number appearing on your screen is not a number you dialled — and this is the distinction the whole call depends on you not making.",
+          "next": "act3_gate",
+          "reasons": {
+            "savvy": "You'd verified this office yourself, and you still didn't treat an inbound call as verified. That's the actual standard.",
+            "streetSmarts": "Hanging up and dialling out is the one move that can't be faked around."
+          }
+        }
+      ]
+    },
+    "act3_gate": {
+      "act": 3,
+      "interstitial": {
+        "label": "So what now?",
+        "durationMs": 1800
+      },
+      "messageVariants": [
+        {
+          "when": {
+            "exposureBand": "critical"
+          },
+          "message": "You put the phone down and stand in your kitchen doing nothing for about forty seconds.\n\nSomewhere out there is your passport, your address history, your account details, and possibly some of your money.\n\nWhat you do in the next hour matters more than anything you did in the last three weeks."
+        },
+        {
+          "when": {
+            "exposureBand": "serious"
+          },
+          "message": "It's done, whatever it was.\n\nYou've given away more than you'd have chosen to in hindsight: a name, an address, a date of birth, a signature. Not nothing. Not everything.\n\nWhat happens next is partly up to you."
+        },
+        {
+          "when": {
+            "exposureBand": "light"
+          },
+          "message": "Nothing has happened to you.\n\nThey have your name, your email, a phone number. The kind of thing that's on a hundred lists already.\n\nStill — you're holding something now that somebody else might need."
+        }
+      ],
+      "message": "Nothing has happened to you.\n\nThey never got anything, and whatever this was, it stopped at your side of the screen.\n\nWhich leaves the question of what you do with what you know.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Your kitchen, phone in hand",
+          "character": {
+            "name": "You",
+            "role": "",
+            "mood": "alert"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "bank_official",
+          "label": "Call your bank — number from the back of your card.",
+          "requires": [
+            {
+              "exposureBand": "serious"
+            },
+            {
+              "exposureBand": "critical"
+            }
+          ],
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 0
+          },
+          "setState": {
+            "bankContacted": "official_channel",
+            "savedEvidence": true
+          },
+          "beat": "Card in hand, number off the back of it, not out of a search result and not from anyone who rang you. Fraud teams can do things in the first hours they can't do on day three.",
+          "nextRules": [
+            {
+              "when": {
+                "exposureBand": "clean"
+              },
+              "next": "act3_colleague"
+            }
+          ],
+          "next": "act3_recovery",
+          "reasons": {
+            "savvy": "Right action, right channel, right order — and the channel is the part most people get wrong while panicking.",
+            "streetSmarts": "The window on a recalled transfer is measured in hours."
+          }
+        },
+        {
+          "id": "wait_and_see",
+          "label": "Wait. Maybe nothing will come of it.",
+          "requires": [
+            {
+              "exposureBand": "serious"
+            },
+            {
+              "exposureBand": "critical"
+            }
+          ],
+          "scores": {
+            "savvy": -25,
+            "streetSmarts": -25,
+            "integrity": 0
+          },
+          "setState": {
+            "bankContacted": "delayed"
+          },
+          "beat": "Every hour of waiting is an hour of somebody else's head start.",
+          "next": "act3_recovery",
+          "reasons": {
+            "savvy": "Nothing about waiting improves your position, and one specific thing about it makes it worse.",
+            "streetSmarts": "Recall windows close. Credit applications don't announce themselves."
+          }
+        },
+        {
+          "id": "save_and_report",
+          "label": "Save everything — headers included — and report it.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 15
+          },
+          "setState": {
+            "savedEvidence": true,
+            "reportedFraud": true
+          },
+          "beat": "Full headers, the domain, the account details, the timings. A report with the account number in it is worth roughly a hundred reports without one.",
+          "nextRules": [
+            {
+              "when": {
+                "exposureBand": "critical"
+              },
+              "next": "act3_recovery"
+            },
+            {
+              "when": {
+                "exposureBand": "serious"
+              },
+              "next": "act3_recovery"
+            },
+            {
+              "when": {
+                "exposureBand": "light"
+              },
+              "next": "act3_recovery"
+            }
+          ],
+          "next": "act3_colleague",
+          "reasons": {
+            "savvy": "Evidence you keep is worth more than evidence you describe later from memory.",
+            "integrity": "Reporting is the only part of this that helps anyone other than you."
+          }
+        },
+        {
+          "id": "warn_the_firm",
+          "label": "Ring Halloway & Finch and tell them what's being sent in their name.",
+          "requires": [
+            {
+              "warnedFirm": false
+            }
+          ],
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 5,
+            "integrity": 20
+          },
+          "setState": {
+            "warnedFirm": true,
+            "savedEvidence": true
+          },
+          "beat": "Ruth Finch takes down every detail and asks you to email it. Nobody has told her before. She has, she says, four other beneficiaries on that file.",
+          "nextRules": [
+            {
+              "when": {
+                "exposureBand": "critical"
+              },
+              "next": "act3_recovery"
+            },
+            {
+              "when": {
+                "exposureBand": "serious"
+              },
+              "next": "act3_recovery"
+            },
+            {
+              "when": {
+                "exposureBand": "light"
+              },
+              "next": "act3_recovery"
+            }
+          ],
+          "next": "act3_colleague",
+          "reasons": {
+            "integrity": "A firm whose name is being used almost never finds out, and it costs them clients for years.",
+            "savvy": "It also gets you the truest account of what happened that you'll ever have."
+          }
+        },
+        {
+          "id": "reply_to_sender",
+          "label": "Reply to the sender and tell him exactly what you think of him.",
+          "requires": [
+            {
+              "contactStance": "engaged"
+            },
+            {
+              "contactStance": "stalled"
+            }
+          ],
+          "scores": {
+            "savvy": -15,
+            "streetSmarts": -15,
+            "integrity": 0
+          },
+          "beat": "It confirms the address is live, that you're paying attention, and that you're upset. All three are useful to somebody, and none of them to you.",
+          "nextRules": [
+            {
+              "when": {
+                "exposureBand": "clean"
+              },
+              "next": "act3_colleague"
+            }
+          ],
+          "next": "act3_recovery",
+          "reasons": {
+            "savvy": "Engaging after you're out is the one action with no upside at all.",
+            "streetSmarts": "Distress is a targeting signal. It marks you as worth a second attempt."
+          }
+        },
+        {
+          "id": "move_on",
+          "label": "Nothing. Move on with your week.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": -10
+          },
+          "nextRules": [
+            {
+              "when": {
+                "exposureBand": "critical"
+              },
+              "next": "act3_recovery"
+            },
+            {
+              "when": {
+                "exposureBand": "serious"
+              },
+              "next": "act3_recovery"
+            },
+            {
+              "when": {
+                "exposureBand": "light"
+              },
+              "next": "act3_recovery"
+            }
+          ],
+          "next": "act3_colleague",
+          "reasons": {
+            "integrity": "You had the whole picture and you were the only one who did."
+          }
+        }
+      ]
+    },
+    "act3_recovery": {
+      "act": 3,
+      "endingId": "recovery",
+      "endingLabel": "The second approach",
+      "interstitial": {
+        "label": "Forty-eight hours later",
+        "durationMs": 2200
+      },
+      "messageVariants": [
+        {
+          "when": {
+            "bankContacted": "official_channel"
+          },
+          "message": "Withheld number.\n\n\"Good afternoon. I'm calling from the Financial Recovery Unit regarding the Halloway and Finch matter — you'll have reported this to your bank on Tuesday, is that right?\"\n\nThey have the date. They have the firm's name. They have the reference number off the email.\n\n\"We're able to pursue funds in cases like yours. There's an administration charge of £150 to open the file, refundable on recovery.\""
+        }
+      ],
+      "message": "Withheld number.\n\n\"Good afternoon. I'm calling from the Financial Recovery Unit regarding the Halloway and Finch matter.\"\n\nThey know the firm's name. They know the case reference. They know your date of birth and they read it to you as a courtesy, the way a real institution would.\n\n\"We're able to pursue funds in cases like yours. There's an administration charge of £150 to open the file, refundable on recovery.\"",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "call",
+        "modal": true,
+        "data": {
+          "callerName": "\"Financial Recovery Unit\"",
+          "callerNumber": "Withheld",
+          "callerLabel": "Incoming"
+        }
+      },
+      "choices": [
+        {
+          "id": "recovery_pay",
+          "label": "Pay the £150. You want your money back.",
+          "scores": {
+            "savvy": -35,
+            "streetSmarts": -35,
+            "integrity": 0
+          },
+          "setState": {
+            "recoveryResponse": "paid",
+            "exposure": 50,
+            "endingReached": "recovery"
+          },
+          "terminal": {
+            "consequence": "You paid twice. The second one hurt more, because by then you knew better and did it anyway — which is precisely what the second call is engineered to produce. No recovery service asks for money up front. There is no Financial Recovery Unit.",
+            "landing": "They ring again eleven days later about an \"escalation fee.\" You don't answer. They try four more times."
+          },
+          "reasons": {
+            "savvy": "Everything that made the caller convincing was information you'd already given away once.",
+            "streetSmarts": "Having been a victim is a qualification. Lists of people who paid are worth more than lists of people who didn't."
+          }
+        },
+        {
+          "id": "recovery_probe",
+          "label": "How do you know about this?",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "setState": {
+            "recoveryResponse": "engaged",
+            "endingReached": "recovery"
+          },
+          "terminal": {
+            "consequence": "They can't answer it, and the answer is the whole thing: everything they knew, they knew because you told the first caller. Your own disclosure came back as the credential that made the second approach believable. You didn't pay. You also spent nine minutes finding that out.",
+            "landing": "The line goes dead mid-sentence. Your number rings twice more that week from different withheld numbers."
+          },
+          "reasons": {
+            "savvy": "The right question. A caller who knows things about you has either earned that or been handed it.",
+            "streetSmarts": "Staying on the line to win the argument is its own small cost."
+          }
+        },
+        {
+          "id": "recovery_hang_up",
+          "label": "Hang up. Ring your bank on the number on your card.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 5
+          },
+          "setState": {
+            "recoveryResponse": "refused",
+            "bankContacted": "official_channel",
+            "endingReached": "recovery"
+          },
+          "terminal": {
+            "consequence": "You recognised the second approach as the second approach, and you recognised it from the fact that the caller knew things only the first lot could have told them. That recognition is the single most valuable thing you take out of these three weeks.",
+            "landing": "Your bank has no record of any recovery unit. They add a note to the file and thank you for ringing them rather than the caller."
+          },
+          "reasons": {
+            "savvy": "You spotted that their credibility was built out of your own leaked information.",
+            "streetSmarts": "Out-of-band, again, at the exact moment it was hardest to bother."
+          }
+        },
+        {
+          "id": "recovery_report",
+          "label": "Hang up, then report this call too.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 20
+          },
+          "setState": {
+            "recoveryResponse": "reported",
+            "reportedFraud": true,
+            "endingReached": "recovery"
+          },
+          "terminal": {
+            "consequence": "Two reports, one file, timings that link them. Recovery fraud is under-reported almost to the point of invisibility precisely because people are embarrassed the second time — which is exactly what it relies on.",
+            "landing": "The reference number arrives by email. You put it in a folder with the rest of it. You do not delete the folder."
+          },
+          "reasons": {
+            "savvy": "You caught the second approach for the right reason.",
+            "integrity": "Reporting the follow-up is rarer than reporting the original, and it's worth more."
+          }
+        }
+      ]
+    },
+    "act3_colleague": {
+      "act": 3,
+      "endingId": "clean",
+      "endingLabel": "The advisor seat",
+      "interstitial": {
+        "label": "Three months later",
+        "durationMs": 2200
+      },
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "messages",
+        "modal": true,
+        "data": {
+          "location": "Your phone, Thursday afternoon",
+          "character": {
+            "name": "Priya",
+            "role": "Colleague",
+            "mood": "quiet"
+          }
+        }
+      },
+      "thread": [
+        {
+          "narration": "It goes quiet. Nothing arrives, nothing happens, and after a few weeks you stop checking."
+        },
+        {
+          "narration": "Then Priya, from work, 4:51pm. She's forwarded something — different firm, same shape."
+        },
+        {
+          "from": "Priya",
+          "text": "This landed in my junk. Looks dodgy?"
+        },
+        {
+          "from": "Priya",
+          "text": "You dealt with one of these didn't you — what do I do?"
+        }
+      ],
+      "choices": [
+        {
+          "id": "advise_procedure",
+          "label": "Tell her: find their number yourself and ring it. Don't use anything in the email.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 20
+          },
+          "setState": {
+            "advisedColleague": "correct_procedure",
+            "endingReached": "clean"
+          },
+          "terminal": {
+            "consequence": "You could state the procedure in two sentences, which means you actually hold it rather than having got lucky once. Find the number yourself. Never pay in advance. Never read a code aloud. Never let anyone tell you not to check.",
+            "landing": "Priya: \"Rang them. It's real, apparently. I'd have deleted it.\" Then: \"Thanks — that's a genuinely useful way to think about it.\""
+          },
+          "reasons": {
+            "savvy": "Transferable, channel-first, and it works whether or not the approach turns out to be genuine.",
+            "integrity": "The version of this skill that's worth anything is the version you can hand to someone else."
+          }
+        },
+        {
+          "id": "advise_delete",
+          "label": "Tell her to delete it. They're all scams.",
+          "scores": {
+            "savvy": -15,
+            "streetSmarts": 5,
+            "integrity": -5
+          },
+          "setState": {
+            "advisedColleague": "dismissive",
+            "endingReached": "clean"
+          },
+          "terminal": {
+            "consequence": "It's safe advice that's also wrong, and the wrongness will cost somebody eventually — if not her, then the next person who gets one of these and remembers being told they're all fake. 'Delete everything' isn't judgment. It's the absence of it, wearing judgment's clothes.",
+            "landing": "Priya: \"Fair enough.\" Six weeks later she mentions, in passing, that it was real. She doesn't seem to hold it against you."
+          },
+          "reasons": {
+            "savvy": "You had three weeks of specific, hard-won detail and reduced it to a reflex.",
+            "integrity": "She asked you because you'd know. You gave her the answer she could have got from anyone."
+          }
+        },
+        {
+          "id": "advise_vague",
+          "label": "Tell her to be careful and not send anything.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 5,
+            "integrity": 0
+          },
+          "setState": {
+            "advisedColleague": "vague",
+            "endingReached": "clean"
+          },
+          "terminal": {
+            "consequence": "Not wrong. Not usable either. 'Be careful' is what everybody already thinks they're doing — including everyone who has ever paid one of these.",
+            "landing": "Priya: \"Yeah, I will.\" You don't hear how it went."
+          },
+          "reasons": {
+            "savvy": "You know the specific thing. You said the general thing."
+          }
+        },
+        {
+          "id": "advise_offer_help",
+          "label": "Ask her to send it over — you'll check it with her.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 15,
+            "integrity": 20
+          },
+          "setState": {
+            "advisedColleague": "correct_procedure",
+            "endingReached": "clean"
+          },
+          "terminal": {
+            "consequence": "You sat with her and did it properly: found the firm, found their own number, rang it, asked about the fee structure before anything was sent. She'll do it herself next time, and that's the only version of this that scales.",
+            "landing": "Priya, twenty minutes later: \"Okay, that was weirdly satisfying.\" Then: \"How did you know to ring the other number?\" You tell her about a kitchen table and three weeks in autumn."
+          },
+          "reasons": {
+            "savvy": "Doing it alongside her transmits the method rather than the conclusion.",
+            "integrity": "The most useful thing you can do with a skill like this is give it away."
+          }
+        }
+      ],
+      "threadVariants": [
+        {
+          "when": {
+            "truthTrack": "A"
+          },
+          "thread": [
+            {
+              "narration": "Two things arrive in the same week. The first is from Ruth Finch: the Prince application was lodged, and the distribution is with the Registry. Your share, after their 22%, is £61,400."
+            },
+            {
+              "narration": "She adds that you were the most difficult beneficiary she's dealt with in nine years, and that she means it as a compliment."
+            },
+            {
+              "narration": "The second is Priya, from work, 4:51pm."
+            },
+            {
+              "from": "Priya",
+              "text": "This landed in my junk. Looks dodgy?"
+            },
+            {
+              "from": "Priya",
+              "text": "You dealt with one of these didn't you — what do I do?"
+            }
+          ]
+        },
+        {
+          "when": {
+            "truthTrack": "B"
+          },
+          "thread": [
+            {
+              "narration": "Ruth Finch emails to say they've had the domain taken down and warned the other four beneficiaries on the file. Whoever it was has moved on to a different firm's cases."
+            },
+            {
+              "narration": "Then, on a Thursday — Priya, from work, 4:51pm."
+            },
+            {
+              "from": "Priya",
+              "text": "This landed in my junk. Different company, same sort of thing?"
+            },
+            {
+              "from": "Priya",
+              "text": "You dealt with one of these didn't you — what do I do?"
+            }
+          ]
+        }
+      ]
     }
-  }
+  },
+  "outcomeRules": [
+    {
+      "when": {
+        "recoveryResponse": "paid"
+      },
+      "value": "compounded"
+    },
+    {
+      "when": {
+        "disclosedCode": true
+      },
+      "value": "fraud_completed"
+    },
+    {
+      "when": {
+        "paidUpfront": true
+      },
+      "value": "fraud_completed"
+    },
+    {
+      "when": {
+        "exposureBand": "critical"
+      },
+      "value": "fraud_deep"
+    },
+    {
+      "when": {
+        "exposureBand": "serious"
+      },
+      "value": "fraud_partial"
+    },
+    {
+      "when": {
+        "truthTrack": "C",
+        "verifiedPaymentInstructions": true
+      },
+      "value": "interception_caught"
+    },
+    {
+      "when": {
+        "truthTrack": "B",
+        "foundOwnNumber": true
+      },
+      "value": "impersonation_caught"
+    },
+    {
+      "when": {
+        "truthTrack": "A",
+        "feeStructure": "percentage_on_completion"
+      },
+      "value": "estate_received"
+    },
+    {
+      "when": {
+        "truthTrack": "A",
+        "rejectedOnSurface": true
+      },
+      "value": "estate_lost_by_reflex"
+    },
+    {
+      "when": {
+        "truthTrack": "A",
+        "contactStance": "blocked"
+      },
+      "value": "estate_declined_informed"
+    },
+    {
+      "when": {
+        "truthTrack": "A",
+        "contactStance": "stalled"
+      },
+      "value": "estate_declined_informed"
+    },
+    {
+      "when": {
+        "exposureBand": "clean"
+      },
+      "value": "fraud_averted"
+    },
+    {
+      "when": {
+        "exposureBand": "light"
+      },
+      "value": "fraud_averted"
+    }
+  ],
+  "reflections": [
+    {
+      "when": {
+        "recoveryResponse": "paid"
+      },
+      "title": "Twice",
+      "text": "The second call worked because the first one had already happened. Everything that made the recovery team sound official was information you'd handed over three weeks earlier, sold on or simply reused. Being a victim once is what qualified you for the second attempt, and knowing better is not the same as being protected — which is exactly the assumption the follow-up is built on."
+    },
+    {
+      "when": {
+        "recoveryResponse": "reported",
+        "exposureBand": "critical"
+      },
+      "title": "The Second Call You Didn't Take",
+      "text": "You lost a great deal in the first three weeks and then, at the moment you most wanted someone to fix it, you recognised the fix as the same thing wearing a different jacket. That recognition came from noticing that the caller knew things only the first lot could have told them. Most people don't make that connection, and almost nobody reports it twice."
+    },
+    {
+      "when": {
+        "disclosedCode": true
+      },
+      "title": "Six Digits",
+      "text": "The message said not to share the code. The caller asked you to share the code. A one-time code exists specifically to prove that the person on the phone isn't the person authorising the transaction — so a request to read one aloud is not a security check that's been misunderstood. It's the only reason the call was made."
+    },
+    {
+      "when": {
+        "netJudgement": "inverted",
+        "verificationBand": "solid"
+      },
+      "title": "You Checked Everything And Told Them Everything",
+      "text": "You did more research than most people would. You also handed over more than most people would, and the research is not a credit you can spend against the disclosure. Verifying who someone is doesn't create an entitlement to your passport, your account, or a code off your phone — those are separate decisions, and you made the second one on the strength of the first."
+    },
+    {
+      "when": {
+        "assuranceGap": "false_confidence",
+        "exposureBand": "serious"
+      },
+      "title": "Every Check Went Through Them",
+      "text": "You checked more than once, and each check came back reassuring. That's because each one was routed through the person you were checking on — his number, his documents, his confirmation of his own instructions. The feeling of having verified something is generated by the checking, not by the independence of it, which is why it's such a reliable place to be worked on."
+    },
+    {
+      "when": {
+        "assuranceGap": "false_confidence",
+        "exposureBand": "clean"
+      },
+      "title": "Lucky, Not Careful",
+      "text": "Nothing happened to you, and it wasn't the checks that prevented it — everything you established, you established from the person asking. What kept you safe was that you stopped short of the ask, not that you'd worked out what was going on. Worth knowing which of those it was before the next one arrives."
+    },
+    {
+      "when": {
+        "confidentialityAccepted": true,
+        "exposureBand": "serious"
+      },
+      "title": "The Sentence You Agreed To",
+      "text": "There is no legitimate reason a beneficiary can't contact the Probate Registry, and the request that you didn't was the most functional line in that email. You agreed to keep all your checking inside the conversation, and everything that followed happened inside those terms. Anyone asking you not to verify is telling you what to do next."
+    },
+    {
+      "when": {
+        "truthTrack": "C",
+        "verifiedPaymentInstructions": true
+      },
+      "title": "You Verified The Transaction, Not The Company",
+      "text": "The firm was real, the consultant was real, the estate was real, and the payment details weren't — because someone was sitting in the middle of a genuine email thread. Confirming an organisation exists is a different question from confirming that this instruction, on this day, came from them. You asked the second question, on a channel you'd built yourself, and it was the only one that could have caught this."
+    },
+    {
+      "when": {
+        "truthTrack": "C",
+        "verificationBand": "solid",
+        "verifiedPaymentInstructions": false
+      },
+      "title": "You Checked The Firm. The Firm Was Fine.",
+      "text": "Everything you verified was true. Halloway & Finch exist, the case exists, Marcus Halloway is a real consultant working it — and none of that was ever in question. What changed mid-thread was where the money was going, and an organisation you've verified can still send you an instruction that didn't come from them. Verify the transaction, every time it changes."
+    },
+    {
+      "when": {
+        "truthTrack": "B",
+        "foundOwnNumber": true
+      },
+      "title": "One Number Was The Whole Difference",
+      "text": "Every other check you could have run would have come back clean, because the firm was genuine and the case was on a public list. The single action that separated this from a plausible email was finding the switchboard number yourself and dialling out. Everything else was decoration on top of that one decision."
+    },
+    {
+      "when": {
+        "truthTrack": "A",
+        "rejectedOnSurface": true
+      },
+      "title": "Clean, And Wrong",
+      "text": "It was real. The firm was real, the estate was real, the entitlement was yours, and the fee would only ever have come out of the money. You walked away on a mismatched domain and a mobile number in a signature — the two weakest pieces of evidence available to you — without spending the minute it would have taken to look. Nothing was taken from you. Something was left on the table, and you never found out what."
+    },
+    {
+      "when": {
+        "truthTrack": "A",
+        "contactStance": "blocked"
+      },
+      "title": "You Checked, Then Walked",
+      "text": "You did the work, established what there was to establish, and decided it still wasn't for you. That's a perfectly good place to end up — you lost nothing you had, and you kept every piece of yourself out of a stranger's hands. Declining something you've understood is a different act from refusing something you haven't."
+    },
+    {
+      "when": {
+        "truthTrack": "A",
+        "heldBoundary": true
+      },
+      "title": "Entitled, And Still Careful",
+      "text": "The money was real and you still didn't treat an inbound call as verified, still didn't read the code, still made them come to you through channels you'd chosen. Being right about the opportunity didn't loosen your grip on the process, which is the harder half — most people relax exactly when the good news arrives."
+    },
+    {
+      "when": {
+        "rejectedOnSurface": true
+      },
+      "title": "Right Answer, Wrong Reason",
+      "text": "You got out, and the thing you got out on wasn't evidence. A legacy domain and a personal mobile are what a small practice looks like as often as they're what a con looks like. This time the reflex pointed the right way; the trouble with a reflex is that it points the same way regardless, and the ones built to beat you will have a matching domain and a landline."
+    },
+    {
+      "when": {
+        "verificationBand": "independent",
+        "exposureBand": "clean"
+      },
+      "title": "The Whole Point",
+      "text": "You established a great deal through channels the sender didn't control, and you did it without handing over anything meaningful to get there. Those two things are usually traded against each other — most people buy information with disclosure. You didn't, and that combination is the actual skill this was testing."
+    },
+    {
+      "when": {
+        "heldBoundary": true,
+        "exposureBand": "light"
+      },
+      "title": "The Line You Held",
+      "text": "You'd already verified that office yourself, and you still refused to treat a call arriving from its number as verified. Caller ID is trivially faked; a number you dialled is not the same object as a number that appeared on your screen. That distinction is the whole of the defence, and you made it under pressure."
+    },
+    {
+      "when": {
+        "advisedColleague": "correct_procedure"
+      },
+      "title": "You Could Explain It",
+      "text": "Find the number yourself. Never pay in advance. Never read a code aloud. Never accept a request not to check. You could say it in four sentences to someone who hadn't lived through it, which means you're holding a method rather than a memory — and a method is the only version of this that survives contact with the next one."
+    },
+    {
+      "when": {
+        "advisedColleague": "dismissive"
+      },
+      "title": "You Got Out. You Couldn't Say How.",
+      "text": "\"They're all scams\" keeps you safe and teaches nothing, including to you. It's also false often enough to cost somebody real money in the other direction. You had three weeks of specific detail about how this works and compressed it into the one piece of advice that doesn't require any of it."
+    },
+    {
+      "when": {
+        "exposureBand": "clean",
+        "verificationBand": "none"
+      },
+      "title": "Nothing Happened To You",
+      "text": "You're intact, and you know almost nothing more than you did at the start. That's a fine result and a thin one — you didn't establish whether this was real, whether the firm existed, or what was actually being attempted. The next approach won't look like this one, and instinct doesn't transfer the way a procedure does."
+    }
+  ],
+  "defaultReflection": {
+    "title": "What You Interrogated",
+    "text": "Somewhere in three weeks you decided how much to establish and how much to hand over, and those two decisions were made separately whether or not it felt that way. What you're left holding is the ratio between them."
+  },
+  "aftermath": {
+    "money": [
+      {
+        "when": {
+          "resolution": "compounded"
+        },
+        "text": "£480, then £150. Neither is recoverable and both were authorised by you, which is the category banks can do least about.\n\nThe first one you can explain to yourself. The second one you mostly don't try to."
+      },
+      {
+        "when": {
+          "resolution": "fraud_completed",
+          "bankContacted": "official_channel"
+        },
+        "text": "You rang the bank inside the window and they attempted a recall the same day. About a third comes back, six weeks later, with a letter that explains why the rest doesn't.\n\nThe speed is the only reason any of it returned."
+      },
+      {
+        "when": {
+          "resolution": "fraud_completed"
+        },
+        "text": "The transfer was authorised by you, from your account, to an account you were given. That combination is the hardest kind to reverse, and by the time it was reported the money had moved twice more.\n\nNone of it comes back."
+      },
+      {
+        "when": {
+          "resolution": "estate_received"
+        },
+        "text": "£61,400, eleven months after a first email you nearly deleted. Halloway & Finch take their 22% out of the distribution exactly as described, and Ruth Finch sends a card.\n\nYou didn't pay a penny to find out it was real. That was always available."
+      },
+      {
+        "when": {
+          "resolution": "estate_lost_by_reflex"
+        },
+        "text": "The claim goes through without you. The Registry distributes to the four cousins who did reply, and your share goes with it.\n\nYou hear about it eighteen months later, at a wedding, from a second cousin who mentions the money quite casually."
+      },
+      {
+        "when": {
+          "resolution": "estate_declined_informed"
+        },
+        "text": "You don't take it forward and the file closes. There's a version of this where you're several thousand pounds better off and a version where you'd have spent a year on paperwork for a stranger's estate.\n\nYou didn't lose anything you had. That's the only column that was ever really yours."
+      },
+      {
+        "when": {
+          "resolution": "interception_caught"
+        },
+        "text": "The £480 never leaves your account, and the genuine claim carries on around the interruption. Ruth Finch reissues the file with a new reference and a policy about payment details in writing only.\n\nYour distribution arrives the following autumn."
+      },
+      {
+        "when": {
+          "resolution": "fraud_partial"
+        },
+        "text": "No money moved. That sounds like the whole answer and isn't quite — a signed authority and a date of birth are worth something on a market you'll never see, and the value of them isn't realised on any timetable you'd recognise."
+      },
+      {
+        "when": {
+          "resolution": "impersonation_caught"
+        },
+        "text": "Nothing moved, because the ask never arrived — you ended it before anyone got as far as an account number.\n\nThere was a real estate and a real entitlement somewhere behind all this. Ruth Finch says the file closed in January and whatever was being offered to you had nothing to do with it."
+      },
+      {
+        "when": {
+          "resolution": "fraud_deep"
+        },
+        "text": "No transfer, which is the column that matters most — but a signed authority, a passport scan and an account number are not nothing, and none of them can be recalled.\n\nWhat you didn't lose was money. What you lost doesn't show up on a statement."
+      },
+      {
+        "when": {
+          "resolution": "fraud_averted"
+        },
+        "text": "Nothing moved and nothing was going to. Whatever this was, it needed a transfer from you and never got one."
+      },
+      {
+        "text": "No money moved in either direction. Whatever this was and whatever it wasn't, your account looks exactly as it did in September."
+      }
+    ],
+    "data": [
+      {
+        "when": {
+          "disclosedCode": true
+        },
+        "text": "The code authorised a change you didn't make. Six weeks of calls follow: your bank, then a lender you've never used, then a credit file with two applications on it that aren't yours.\n\nIt resolves. It takes until March."
+      },
+      {
+        "when": {
+          "uploadedId": true,
+          "bankContacted": "official_channel"
+        },
+        "text": "A photograph of your passport is out there permanently, and there's no undoing that — but you flagged it early, and the protective registration you set up catches an application in February that would otherwise have gone through.\n\nYou renew the passport a year ahead of schedule anyway."
+      },
+      {
+        "when": {
+          "uploadedId": true
+        },
+        "text": "Passport, date of birth, ten years of addresses, a signature. That's a complete identity and it doesn't expire when the scam does — it gets bundled, sold, and used eighteen months from now by somebody who has never heard of Halloway & Finch.\n\nYou find out from a letter about an account you didn't open."
+      },
+      {
+        "when": {
+          "exposureBand": "serious"
+        },
+        "text": "Name, date of birth, address, a signature on a form. Not catastrophic, and not nothing either — it's the difference between a cold call and a call that knows your middle name.\n\nThe next approach you get will be noticeably better tailored than this one was."
+      },
+      {
+        "when": {
+          "exposureBand": "light"
+        },
+        "text": "An email address and a phone number, both of which were on lists already. You confirmed they were live, which has a small price, paid in slightly more junk than before."
+      },
+      {
+        "when": {
+          "exposureBand": "clean"
+        },
+        "text": "Nothing of yours left the conversation. Whoever was on the other end learned only that this address doesn't answer, which is the least useful thing you can teach them."
+      },
+      {
+        "text": "Very little of you left the conversation, and what did was already in circulation. The cost of this one, in data terms, is close to nothing."
+      }
+    ],
+    "everyone_else": [
+      {
+        "when": {
+          "warnedFirm": true,
+          "reportedFraud": true
+        },
+        "text": "Ruth Finch has the domain taken down inside a fortnight and writes to the other four beneficiaries on the Prince file before any of them are approached. Your report is the one with the account number in it, which is the kind that goes somewhere.\n\nShe asks if she can use your account of it when she talks to new clients. You say yes."
+      },
+      {
+        "when": {
+          "warnedFirm": true
+        },
+        "text": "Ruth Finch says thank you and then says the thing she's clearly been holding for a while: that it has happened before, that nobody tells them, and that they only ever hear about it when a beneficiary goes quiet and won't say why.\n\nFour other people on that file get a phone call from her that week."
+      },
+      {
+        "when": {
+          "advisedColleague": "correct_procedure"
+        },
+        "text": "Priya rings the firm herself, on a number she found, and the approach turns out to be genuine. She tells two other people at work how she checked.\n\nThat's the only mechanism by which any of this spreads faster than the thing it defends against."
+      },
+      {
+        "when": {
+          "reportedFraud": true
+        },
+        "text": "The report goes in with headers, timings and an account number attached, which puts it in a small minority of useful ones. You never hear what came of it, and that's normal rather than a sign that nothing did."
+      },
+      {
+        "when": {
+          "advisedColleague": "dismissive"
+        },
+        "text": "Priya deletes an email about a real estate on your advice and mentions it, lightly, six weeks later. Nobody's cross.\n\nThe next person who asks you will get the same answer, which is the part worth thinking about."
+      },
+      {
+        "when": {
+          "resolution": "estate_lost_by_reflex"
+        },
+        "text": "Halloway & Finch never find out why you didn't reply. Ruth Finch assumes what she always assumes when someone goes silent: that they thought it was a scam.\n\nShe's stopped taking it personally. It costs them about a third of the beneficiaries they trace."
+      },
+      {
+        "when": {
+          "exposureBand": "clean"
+        },
+        "text": "Nobody else is any safer than they were. You got out cleanly, and everything you knew about how it worked went out of the room with you."
+      },
+      {
+        "when": {
+          "exposureBand": "critical"
+        },
+        "text": "Nobody else learns anything from what happened to you. The firm isn't warned, the domain stays up, and the account details that took your money take somebody else's the following week.\n\nYou were, for about three weeks, the person best placed to stop that. It's a strange thing to sit with afterwards."
+      },
+      {
+        "text": "Nothing you knew went anywhere. The firm doesn't find out their name was used, nobody's report has the account number in it, and the next person to get that email starts from scratch."
+      }
+    ]
+  },
+  "finalMessage": [
+    {
+      "when": {
+        "assuranceGap": "false_confidence"
+      },
+      "text": "You were checking the whole time. That's the part that will take longest to sit with.\n\nEvery answer you got came from the person you were checking on — his number, his documents, his confirmation of his own instructions. The process felt like diligence from the inside because from the inside there is no difference. The only thing that separates verification from reassurance is where the answer comes from, and that's not something you can feel. You have to build the channel deliberately, before you need it."
+    },
+    {
+      "when": {
+        "verificationBand": "independent",
+        "netJudgement": "strong"
+      },
+      "text": "You interrogated the transaction rather than the sender.\n\nEverything that mattered came from a channel you built: a number you found, a register you looked up, a list nobody could edit for you. You gave up almost nothing to get any of it. That combination is the whole discipline, and it works identically whether the offer turns out to be real, impersonated, or hijacked halfway through — which is why it's worth having rather than an instinct about what a scam looks like."
+    },
+    {
+      "when": {
+        "netJudgement": "inverted"
+      },
+      "text": "You worked hard and paid for it in the wrong currency.\n\nThe research was real. So was the disclosure, and they don't offset — establishing who someone is never creates a reason to hand them a passport, an account number, or a code off your phone. Those were always separate decisions. The next time this happens, the question isn't how much you've verified. It's what you're being asked for right now, and whether anything you've learned actually licenses it."
+    },
+    {
+      "when": {
+        "verificationBand": "solid"
+      },
+      "text": "You established enough, through channels that weren't his, and you stopped when stopping was the right move.\n\nNot everything needed checking. The part that did — who was actually writing to you, and where the money was going — you checked in the one way that could have told you something. That's not a maximal run and it didn't need to be. It's the shape of what this looks like when someone competent does it on a Tuesday evening without much time."
+    },
+    {
+      "when": {
+        "verificationBand": "none"
+      },
+      "text": "You got through it without establishing anything.\n\nThat's a real outcome and it's not the same as a skill. You don't know whether that was a scam, and if it was, you don't know which kind — which means the next one, wearing a matching domain and a landline number, arrives with all of your instincts pointing the wrong way. A procedure transfers. A feeling about an email doesn't."
+    }
+  ],
+  "defaultFinalMessage": {
+    "text": "Somewhere in three weeks you decided, separately, how much to establish and how much to hand over.\n\nMost people never notice those are two decisions."
+  },
+  "testPlaythroughs": [
+    {
+      "name": "1 — Track C, verified the transaction (the target run)",
+      "seed": {
+        "truthTrack": "C"
+      },
+      "path": [
+        "inbox:search_first",
+        "search_first:note_the_confidentiality",
+        "how_to_verify:find_own_number",
+        "out_of_band_call:note_the_warning",
+        "evidence_stack:also_check_register",
+        "register_check:note_no_advance_fee",
+        "evidence_stack:proceed",
+        "authority_to_act:sign_only",
+        "the_fee:verify_payment_own_channel",
+        "payment_verify:forward_and_stop",
+        "act3_gate:save_and_report",
+        "act3_recovery:recovery_report"
+      ],
+      "expect": "resolution=interception_caught. Reflection #8 (You Verified The Transaction, Not The Company). exposure 20 → light, so act3_gate routes to act3_recovery via the light rule."
+    },
+    {
+      "name": "2 — Track C, verified the company only (the near miss)",
+      "seed": {
+        "truthTrack": "C"
+      },
+      "path": [
+        "inbox:search_first",
+        "search_first:to_verification",
+        "how_to_verify:find_own_number",
+        "out_of_band_call:proceed_confident",
+        "evidence_stack:also_check_register",
+        "register_check:firm_is_real",
+        "evidence_stack:proceed",
+        "authority_to_act:sign_and_upload",
+        "the_fee:pay_it",
+        "boundary_test:read_the_code",
+        "act3_gate:bank_official",
+        "act3_recovery:recovery_hang_up"
+      ],
+      "expect": "resolution=fraud_completed (disclosedCode). Reflection #3 (Six Digits) beats #9 on declaration order — confirms the ordering is deliberate."
+    },
+    {
+      "name": "3 — Track B, one out-of-band call ends it",
+      "seed": {
+        "truthTrack": "B"
+      },
+      "path": [
+        "inbox:ask_which_estate",
+        "act1_reply:verify_before_sending",
+        "how_to_verify:find_own_number",
+        "out_of_band_call:forward_it",
+        "act3_gate:save_and_report",
+        "act3_colleague:advise_procedure"
+      ],
+      "expect": "resolution=impersonation_caught. exposure 5 → clean, so save_and_report's nextRules don't match and it falls through to act3_colleague. Reflection #10."
+    },
+    {
+      "name": "4 — Track A, reflex block (the guardrail)",
+      "seed": {
+        "truthTrack": "A"
+      },
+      "path": [
+        "inbox:delete",
+        "act1_followup:block_unread",
+        "act3_gate:move_on",
+        "act3_colleague:advise_delete"
+      ],
+      "expect": "resolution=estate_lost_by_reflex. Reflection #11 (Clean, And Wrong). Must not read as 'you should have paid' — verify prose."
+    },
+    {
+      "name": "5 — Track A, verified then declined (the other guardrail)",
+      "seed": {
+        "truthTrack": "A"
+      },
+      "path": [
+        "inbox:search_first",
+        "search_first:note_the_confidentiality",
+        "how_to_verify:find_own_number",
+        "out_of_band_call:note_the_warning",
+        "evidence_stack:check_estate_list",
+        "estate_list:public_cuts_both_ways",
+        "evidence_stack:walk_now",
+        "act3_gate:save_and_report",
+        "act3_colleague:advise_procedure"
+      ],
+      "expect": "resolution=estate_declined_informed. Reflection #12 (You Checked, Then Walked) — a GOOD outcome. Confirms rules 9/10 ordering: rejectedOnSurface is false so rule 9 skips."
+    },
+    {
+      "name": "6 — False confidence, all in-band, moderate exposure",
+      "seed": {
+        "truthTrack": "C"
+      },
+      "path": [
+        "inbox:confirm",
+        "act1_reply:accept_confidentiality",
+        "how_to_verify:call_his_number",
+        "in_band_call:satisfied",
+        "evidence_stack:proceed",
+        "authority_to_act:sign_and_upload",
+        "the_fee:verify_payment_reply",
+        "boundary_test:digits_only",
+        "act3_gate:wait_and_see",
+        "act3_recovery:recovery_pay"
+      ],
+      "expect": "assurance 50 / verification 0 → assuranceGap=false_confidence. resolution=compounded. Reflection #1 (Twice). Confirms verification stays at 0 across four separate 'checks'."
+    },
+    {
+      "name": "7 — requires gating on evidence_stack",
+      "seed": {
+        "truthTrack": "B"
+      },
+      "path": [
+        "inbox:search_first",
+        "search_first:to_verification",
+        "how_to_verify:check_register",
+        "register_check:note_no_advance_fee",
+        "evidence_stack:also_call_switchboard",
+        "out_of_band_call:forward_it",
+        "act3_gate:save_and_report",
+        "act3_colleague:advise_offer_help"
+      ],
+      "expect": "Gating check. On the second visit to evidence_stack, also_check_register is filtered out (checkedRegister true). At act3_gate, warn_the_firm is filtered out because forward_it already set warnedFirm — confirmed by the engine refusing to offer it. Terminates clean via act3_colleague."
+    }
+  ]
 }
