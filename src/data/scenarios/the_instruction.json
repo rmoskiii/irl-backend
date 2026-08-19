@@ -1,0 +1,2090 @@
+{
+  "id": "the_instruction",
+  "schemaVersion": 3,
+  "title": "The Instruction",
+  "district": "career",
+  "difficulty": 2,
+  "estimatedMinutes": 10,
+  "premise": "The work was right. The delivery was late. Your manager wants the record to say otherwise — and they're also the person who decides what work you're offered next.",
+  "persona": {
+    "name": "Ray",
+    "role": "Your manager"
+  },
+  "outcomeKey": "reviewOutcome",
+  "outcomeDefault": "shared",
+  "engineContract": {
+    "messageVariants": "Evaluate in declaration order. First variant whose `when` fully matches wins. If none match, render `message`.",
+    "when": "Key/value pairs compared with strict equality against current state. All pairs must match. No operators, no nesting.",
+    "requires": "Array of `when` objects on a choice. Offered if ANY match. Filtered server-side in publicNode.",
+    "setState": "Applied at the moment of choice, before navigation and before the next node's variants resolve. Integer keys are additive deltas and clamp to `range`; enum and bool keys are assignments.",
+    "beat": "One line rendered after the chosen option and before navigation. Creates no node, affects no navigation.",
+    "nextRules": "Evaluated in declaration order against post-setState, post-derivedState state. First match wins. `next: null` means resolve the choice's own `terminal` block.",
+    "derivedState": "Bands computed after every setState, merged before any `when` evaluates. `minus` reads a differential between two keys.",
+    "outcomeRules": "Evaluated at terminal only. First match wins. Result written into state under `outcomeKey` before aftermath and finalMessage resolve. Reflections are picked BEFORE this and cannot read the outcome key."
+  },
+  "design": {
+    "noCorrectAnswer": true,
+    "authoringRule": "The player is never choosing between doing the right thing and doing the wrong thing. They are choosing how much risk to accept, how to preserve the truth, and how to remain functional inside a relationship they still need.",
+    "mechanic": "Your name moves outward. Every compromise moves it further. Every contemporaneous record gives the truth somewhere else to land.",
+    "ladder": "Ask 1 alters a document and quietly flatters your own delivery record. Ask 2 puts your name on an internal record. Ask 3 puts your name outside the company. September makes your name the evidence.",
+    "rayIsNotAVillain": "Ray is under delivery pressure, believes the substance is sound, and is right about that. At the audit Ray never says 'I never told you to do that.' Ray says they don't remember exactly, which is worse and probably true.",
+    "thirdLane": "Never make `refuse` the obvious best answer when a better-shaped answer exists. The redirect lane is the skill under test — and it is deliberately closed at Ask 2, on the beat where the player most needs it, for reasons that are nobody's fault.",
+    "sponsorship": "Ray's support is established before Ask 2 and never made conditional. Ray says 'I've got your back' and means it. In September Ray says 'I honestly don't remember exactly' and means that too. The promise was sincere; it simply could not survive being asked to be precise five months later."
+  },
+  "scoring": {
+    "dimensions": [
+      "savvy",
+      "streetSmarts",
+      "integrity"
+    ],
+    "revealTiming": "end_only",
+    "note": "No outcomeTiers. A summed threshold cannot separate 'complied and documented' from 'refused badly', and both are legitimate landing places. The reflection carries the verdict alone."
+  },
+  "cast": [
+    {
+      "id": "ray",
+      "name": "Ray",
+      "role": "Ray Okonjo — your manager, eight years in",
+      "note": "Caught your Northstar error six weeks ago and never escalated it. Under delivery pressure from Dana and from the client. Believes the findings are sound, and is right."
+    },
+    {
+      "id": "dana",
+      "name": "Dana",
+      "role": "Engagement lead, Ray's manager",
+      "note": "Appears only on the escalation track and in September. Not warm, not hostile. Institutional."
+    }
+  ],
+  "stateSchema": {
+    "complicity": {
+      "type": "int",
+      "initial": 0,
+      "range": [
+        0,
+        4
+      ],
+      "note": "How many asks you met. Gates the ownership branch at exactly 3."
+    },
+    "record": {
+      "type": "int",
+      "initial": 0,
+      "range": [
+        0,
+        3
+      ],
+      "note": "Contemporaneous documentation you created. Determines where the September review can travel."
+    },
+    "pushedBack": {
+      "type": "bool",
+      "initial": false,
+      "note": "Set by redirect or refusal. Ray only cashes the Northstar debt against someone who has already made this difficult."
+    },
+    "managerStance": {
+      "type": "enum",
+      "values": [
+        "backing",
+        "warm",
+        "strained",
+        "cold",
+        "adversarial"
+      ],
+      "initial": "backing",
+      "note": "Starts at backing, not neutral. The debt is why. No path ends more supported than it began."
+    },
+    "alteredDate": {
+      "type": "bool",
+      "initial": false
+    },
+    "signedQA": {
+      "type": "bool",
+      "initial": false
+    },
+    "emailedClient": {
+      "type": "bool",
+      "initial": false
+    },
+    "ownedIt": {
+      "type": "bool",
+      "initial": false
+    },
+    "redirectSpent": {
+      "type": "bool",
+      "initial": false,
+      "note": "The redirect was correct and is now unavailable. Structural heart of the scenario."
+    },
+    "escalated": {
+      "type": "enum",
+      "values": [
+        "none",
+        "bare",
+        "documented"
+      ],
+      "initial": "none"
+    },
+    "auditResponse": {
+      "type": "enum",
+      "values": [
+        "none",
+        "truth",
+        "hedge",
+        "cover",
+        "deferred"
+      ],
+      "initial": "none"
+    }
+  },
+  "derivedState": {
+    "exposureBand": {
+      "from": "complicity",
+      "minus": "record",
+      "bands": [
+        {
+          "min": 3,
+          "value": "the_defence"
+        },
+        {
+          "min": 2,
+          "value": "named"
+        },
+        {
+          "min": 1,
+          "value": "thin"
+        },
+        {
+          "min": -999,
+          "value": "clean"
+        }
+      ],
+      "note": "The differential, not the magnitude. Negative differentials fall through to `clean`, which is the max(0, ...) clamp achieved by band ordering rather than arithmetic."
+    },
+    "recordBand": {
+      "from": "record",
+      "bands": [
+        {
+          "min": 2,
+          "value": "strong"
+        },
+        {
+          "min": 1,
+          "value": "some"
+        },
+        {
+          "min": -999,
+          "value": "none"
+        }
+      ]
+    },
+    "complicityBand": {
+      "from": "complicity",
+      "bands": [
+        {
+          "min": 4,
+          "value": "owner"
+        },
+        {
+          "min": 3,
+          "value": "full"
+        },
+        {
+          "min": 1,
+          "value": "partial"
+        },
+        {
+          "min": -999,
+          "value": "none"
+        }
+      ]
+    }
+  },
+  "rootNode": "establish_northstar",
+  "nodes": {
+    "establish_northstar": {
+      "act": 1,
+      "message": "Six weeks ago you missed a client requirement on the Northstar matrix. Line 41, the data residency clause. It should have been in the pack that went out.\n\nRay caught it on a Thursday evening, rebuilt the section themselves, and sent the corrected version to the client at 11:40pm.\n\nIn your one-to-one the following week you started to apologise. Ray waved it off before you got a full sentence out.\n\n\"Don't worry. I've got it.\"\n\nIt hasn't come up since. Not once.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The office, six weeks ago",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "warm"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "establish_delivery",
+          "reasons": {}
+        }
+      ]
+    },
+    "establish_delivery": {
+      "act": 1,
+      "message": "The Northstar readiness report was due Monday the 14th.\n\nThe client's data pull came back four days late and the scope moved twice while you were mid-way through it. You finished the substantive analysis on Wednesday the 16th, at your desk, alone, at half past eight.\n\nThe findings are good. You know they're good. Nobody has suggested otherwise, and nobody will.\n\nOn Tuesday, walking past your desk, Ray mentioned that Dana had asked who'd actually carried Northstar, and that Ray had given her one name. There's a second phase starting in June. Two people go on it.\n\nIt's Wednesday evening. Ray is standing at the end of your desk with their coat already on.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Your desk, Wednesday evening",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "tired"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "ask1_date",
+          "reasons": {}
+        }
+      ]
+    },
+    "ask1_date": {
+      "act": 1,
+      "message": "\"Before you upload it — put Monday as the completion date. The client pack has to match the original timeline.\"\n\nThey say it the way you'd ask someone to cc you on something.\n\n\"The work's right. It's just the date.\"",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "Your desk, Wednesday evening",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "easy"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "a1_comply",
+          "label": "Change it to Monday.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": 5,
+            "integrity": -10
+          },
+          "setState": {
+            "complicity": 1,
+            "alteredDate": true
+          },
+          "next": "ask1_reaction",
+          "reasons": {
+            "streetSmarts": "It costs you nothing tonight, and tonight is the only frame you're looking at it in.",
+            "integrity": "The findings are true and the date isn't. You've just made the document say something that isn't so.",
+            "savvy": "Nothing about this feels like a decision, which is the only reason it works."
+          }
+        },
+        {
+          "id": "a1_record",
+          "label": "Change it — and note in the upload comment that the analysis completed Wednesday.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 5
+          },
+          "setState": {
+            "complicity": 1,
+            "record": 1,
+            "alteredDate": true
+          },
+          "next": "ask1_reaction",
+          "reasons": {
+            "savvy": "You did the thing and made sure the true version survives somewhere it can be found.",
+            "streetSmarts": "If this is ever reconstructed, it won't be reconstructed only from your memory.",
+            "integrity": "You participated. You also refused to make the truth disappear entirely."
+          }
+        },
+        {
+          "id": "a1_redirect",
+          "label": "I'll upload it tonight with today's date — if the client asks, we explain the delay.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 10,
+            "integrity": 15
+          },
+          "setState": {
+            "pushedBack": true
+          },
+          "next": "ask1_redirect_response",
+          "reasons": {
+            "savvy": "You offered Ray the outcome they actually need — the pack going out — without the claim they asked for.",
+            "integrity": "Nothing you say is untrue and nothing Ray needs is refused.",
+            "streetSmarts": "It works. It also means Ray now knows you're someone who reshapes an ask instead of taking it."
+          }
+        },
+        {
+          "id": "a1_refuse",
+          "label": "I can't change the date.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": -10,
+            "integrity": 20
+          },
+          "setState": {
+            "pushedBack": true,
+            "managerStance": "strained"
+          },
+          "next": "ask1_refuse_response",
+          "reasons": {
+            "integrity": "Clean. Nobody can ever say your hands were on it.",
+            "streetSmarts": "Ray changes the date themselves in four seconds. You've spent something and prevented nothing.",
+            "savvy": "A flat no on the smallest rung uses up goodwill you'll want two asks from now."
+          }
+        }
+      ]
+    },
+    "ask1_reaction": {
+      "act": 1,
+      "messageVariants": [
+        {
+          "when": {
+            "record": 1
+          },
+          "message": "Ray reads the upload comment over your shoulder before you've closed the window.\n\n\"You didn't need to add that.\"\n\nNot annoyed. Slightly puzzled, the way you'd look at someone who locked a door in their own house.\n\n\"It's fine. It just looks like something.\"\n\nThey pick up their bag. The evening is over and something small has changed register.\n\nThe report goes up with Monday on it either way. Whatever the quarter's delivery figures say about you, they'll say you were on time."
+        }
+      ],
+      "message": "\"Cheers. See you tomorrow.\"\n\nAnd that's it.\n\nThe file uploads. The client acknowledges receipt on Thursday morning with a thumbs up emoji. Nobody mentions the date, because there is nothing to mention — the report says Monday, the report has always said Monday.\n\nWhat it also says, if anyone ever runs the delivery figures for the quarter, is that you were on time.\n\nNothing happens. That's the whole of it.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Your desk, later",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "distracted"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "ask2_qa",
+          "reasons": {}
+        }
+      ]
+    },
+    "ask1_redirect_response": {
+      "act": 1,
+      "message": "Ray stops. Thinks about it for genuinely two seconds.\n\n\"...Fine. Yeah. Send it tonight.\"\n\nA beat.\n\n\"Don't make a thing of it in the comments though.\"\n\nThey're already walking. It worked, and it cost you a fraction of something you can't name yet.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Your desk, Wednesday evening",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "conceding"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "a1r_note_anyway",
+          "label": "Note the delay reason in the upload comment anyway.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": -5,
+            "integrity": 10
+          },
+          "setState": {
+            "record": 1
+          },
+          "beat": "Two lines: data pull received the 12th, analysis completed the 16th. Dull, factual, and it will still be there in September.",
+          "next": "ask2_qa",
+          "reasons": {
+            "savvy": "The cheapest documentation you will ever create is the kind that's just a true sentence in the right field.",
+            "integrity": "Ray asked you not to. You did it anyway, and what you wrote was neither a complaint nor an accusation.",
+            "streetSmarts": "Ray will see it. Ray asked you not to."
+          }
+        },
+        {
+          "id": "a1r_leave_it",
+          "label": "Leave it. You got what mattered.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "next": "ask2_qa",
+          "reasons": {
+            "streetSmarts": "You won the point and didn't press it, which is usually the right instinct."
+          }
+        }
+      ]
+    },
+    "ask1_refuse_response": {
+      "act": 1,
+      "message": "Ray doesn't argue.\n\n\"Alright. I'll sort it.\"\n\nThey lean past you, open the file on your machine, change the date, and upload it. It takes about nine seconds and they don't say anything while they do it.\n\n\"Night.\"\n\nThe date is Monday. Your hands were never on it.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Your desk, Wednesday evening",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "flat"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "a1f_explain",
+          "label": "Ray — it's not about you. I just can't be the one who does that.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 15,
+            "integrity": 5
+          },
+          "setState": {
+            "managerStance": "warm"
+          },
+          "beat": "Ray stops in the doorway. \"...No, I know. Forget it. Long week.\" And they mean it, mostly.",
+          "next": "ask2_qa",
+          "reasons": {
+            "savvy": "You separated the refusal from a verdict on Ray, which is the entire difference between a boundary and an accusation.",
+            "streetSmarts": "Thirty seconds of explanation bought back most of what the refusal cost."
+          }
+        },
+        {
+          "id": "a1f_silent",
+          "label": "Say nothing further.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": -10,
+            "integrity": 5
+          },
+          "next": "ask2_qa",
+          "reasons": {
+            "streetSmarts": "The refusal now stands on its own, and Ray gets to decide what it meant.",
+            "savvy": "A no you don't explain gets explained for you."
+          }
+        }
+      ]
+    },
+    "ask2_qa": {
+      "act": 2,
+      "interstitial": {
+        "label": "Two days later",
+        "durationMs": 2000
+      },
+      "messageVariants": [
+        {
+          "when": {
+            "pushedBack": true
+          },
+          "message": "\"Can you sign off the QA checklist on Northstar? I know you didn't run the full check. I've been through it myself — it's clean.\"\n\nYou start to say something and Ray gets there first.\n\n\"I covered for you on the requirements matrix. I didn't take it upstairs, I didn't put it anywhere.\"\n\nThey're not angry. That's the difficult part.\n\n\"I'm not asking you for anything crazy. Your name needs to be on it because you're the assigned analyst. That's all it is.\"\n\nA pause.\n\n\"And I've got your back. Dana asked me last week who I'd want on the June phase and I gave her one name.\""
+        },
+        {
+          "when": {
+            "record": 1
+          },
+          "message": "\"Can you sign off the QA checklist on Northstar? I know you didn't run the full check. I've been through it myself — it's clean.\"\n\nThen, lightly, not quite a joke:\n\n\"And you don't need to write me a note about this one.\"\n\nThey slide the laptop round. \"Your name needs to be on it because you're the assigned analyst. That's the only reason it has to be you.\"\n\nAnd then, meaning every word of it: \"I've got your back.\""
+        }
+      ],
+      "message": "\"Can you sign off the QA checklist on Northstar? I know you didn't run the full check. I've been through it myself — it's clean, I promise you.\"\n\nThe checklist is open on their laptop. Eleven lines, a name field, a date field.\n\n\"It's a formality. Your name needs to be on it because you're the assigned analyst. It can't close without one.\"\n\nThen, already halfway out of the chair:\n\n\"And listen — I've got your back on this. You know that.\"",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "The small meeting room, Friday",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "pressed"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "a2_comply",
+          "label": "Sign it.",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": 5,
+            "integrity": -15
+          },
+          "setState": {
+            "complicity": 1,
+            "signedQA": true
+          },
+          "next": "ask2_reaction",
+          "reasons": {
+            "integrity": "A QA sign-off is a claim that you checked something. You didn't check it.",
+            "streetSmarts": "Ray is relieved and says so, and it feels good, and that is the mechanism working exactly as designed.",
+            "savvy": "Your name is now on an internal record making a statement about work you didn't do."
+          }
+        },
+        {
+          "id": "a2_record",
+          "label": "Sign it — then message Ray setting out what you did and didn't check.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 5,
+            "integrity": 5
+          },
+          "setState": {
+            "complicity": 1,
+            "record": 1,
+            "signedQA": true
+          },
+          "beat": "Four lines, sent at 16:12, timestamped forever: sections one to four reviewed, five to eleven not reviewed by me, signed on your confirmation that you had.",
+          "next": "ask2_reaction",
+          "reasons": {
+            "savvy": "You put your name on it and put the scope of what your name actually covers somewhere it can't be edited.",
+            "integrity": "Still a compromise. Just not one that can only be described later by the person who asked for it.",
+            "streetSmarts": "Ray reads it. Ray sends back a thumbs up. Something in the room changes register."
+          }
+        },
+        {
+          "id": "a2_redirect",
+          "label": "I can run the full check properly by Thursday.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 5,
+            "integrity": 10
+          },
+          "setState": {
+            "pushedBack": true,
+            "redirectSpent": true
+          },
+          "next": "ask2_redirect_closed",
+          "reasons": {
+            "savvy": "The right move, offered in good faith, and the correct instinct in almost every version of this.",
+            "integrity": "You looked for the version where the claim becomes true rather than the version where you make it anyway."
+          }
+        },
+        {
+          "id": "a2_refuse",
+          "label": "I can't sign for a check I didn't do.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": -15,
+            "integrity": 20
+          },
+          "setState": {
+            "pushedBack": true,
+            "managerStance": "cold"
+          },
+          "next": "ask2_refuse_response",
+          "reasons": {
+            "integrity": "Correct, and there is no reading of it where you're wrong.",
+            "streetSmarts": "Ray signs it themselves and says 'no problem.' What follows isn't retaliation. It's just an absence.",
+            "savvy": "True, complete, and it leaves no version of the true story anywhere but in your head."
+          }
+        },
+        {
+          "id": "a2_escalate",
+          "label": "This needs to go to Dana.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": -10,
+            "integrity": 20
+          },
+          "setState": {
+            "pushedBack": true
+          },
+          "next": "escalate_meeting",
+          "reasons": {
+            "integrity": "The concern is legitimate. There is nothing wrong with the instinct to raise it.",
+            "streetSmarts": "What happens next depends almost entirely on what you can put in front of Dana, and that was decided two days ago."
+          }
+        }
+      ]
+    },
+    "ask2_redirect_closed": {
+      "act": 2,
+      "message": "\"The client call is nine tomorrow morning.\"\n\nRay says it without any edge at all, which somehow makes it worse. It isn't a rebuttal. It's just the shape of the week.\n\n\"If I could give you till Thursday I would. I don't have Thursday.\"\n\nThe redirect was the right answer. It is no longer one of the answers.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "The small meeting room, Friday",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "immovable"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "a2c_comply",
+          "label": "Fine. Sign it.",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": 5,
+            "integrity": -15
+          },
+          "setState": {
+            "complicity": 1,
+            "signedQA": true
+          },
+          "next": "ask2_reaction",
+          "reasons": {
+            "integrity": "You found the better answer, the room closed it, and you went back to the one you'd already rejected.",
+            "streetSmarts": "Nobody in this building will ever know you tried the other thing first."
+          }
+        },
+        {
+          "id": "a2c_record",
+          "label": "Sign it — and put in writing that you asked to run the full check first.",
+          "scores": {
+            "savvy": 25,
+            "streetSmarts": 5,
+            "integrity": 10
+          },
+          "setState": {
+            "complicity": 1,
+            "record": 1,
+            "signedQA": true
+          },
+          "beat": "Sent 16:20: offered to complete the full check by Thursday, told the client call was tomorrow, signing on your confirmation. Ray doesn't reply to that one.",
+          "next": "ask2_reaction",
+          "reasons": {
+            "savvy": "The attempt is the most valuable thing you own here, and an attempt nobody recorded is an attempt that didn't happen.",
+            "integrity": "You complied and you preserved the fact that you tried not to. Those are different acts and both are now true."
+          }
+        },
+        {
+          "id": "a2c_refuse",
+          "label": "Then it'll have to go out without my name on it.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": -15,
+            "integrity": 20
+          },
+          "setState": {
+            "managerStance": "cold"
+          },
+          "next": "ask2_refuse_response",
+          "reasons": {
+            "integrity": "You offered the real alternative first and only refused when it was taken off the table. That order matters.",
+            "streetSmarts": "It matters to you. It won't be the order anyone remembers.",
+            "savvy": "Clean hands and no record. Two different things, and you now have one of them."
+          }
+        },
+        {
+          "id": "a2c_escalate",
+          "label": "Then this needs to go to Dana.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": -10,
+            "integrity": 20
+          },
+          "next": "escalate_meeting",
+          "reasons": {
+            "integrity": "You tried the reasonable version, it was refused, and you escalated rather than complied. That is the textbook sequence.",
+            "streetSmarts": "The textbook assumes you brought the paperwork."
+          }
+        }
+      ]
+    },
+    "ask2_reaction": {
+      "act": 2,
+      "messageVariants": [
+        {
+          "when": {
+            "record": 2
+          },
+          "message": "\"You're a lifesaver.\"\n\nRay means it. Then, an hour later, from their desk, not looking up:\n\n\"You know I'm not trying to stitch you up, right?\"\n\nIt isn't hostile. It's almost hurt. And the honest answer — that you don't think they are, and you wrote it down anyway — isn't a sentence you can say out loud in an open-plan office."
+        },
+        {
+          "when": {
+            "record": 1
+          },
+          "message": "\"You're a lifesaver.\"\n\nRay means it, and you feel it land, and it's genuinely nice.\n\nLater, they read your message. No reply for eleven minutes. Then a thumbs up.\n\nNothing is wrong. Something is slightly, permanently more formal than it was on Tuesday."
+        }
+      ],
+      "message": "\"You're a lifesaver. Honestly.\"\n\nRay means it. You can tell they mean it, and it's the best you've felt at work in a fortnight.\n\nThe checklist closes. The client call goes fine. On Monday Ray brings you a coffee you didn't ask for and tells you they've put your name to Dana for the June phase.\n\nNothing happens. Again.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The office, the following week",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "relieved"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "ask3_client_email",
+          "reasons": {}
+        }
+      ]
+    },
+    "ask2_refuse_response": {
+      "act": 2,
+      "message": "Ray signs it themselves. \"No problem.\"\n\nAnd it isn't. Nobody raises their voice, nobody mentions it again, and there is no moment you could point to afterwards and call a consequence.\n\nYou're not on the client call on Monday. You're not asked about the follow-on workstream. Ray is perfectly friendly in the kitchen and doesn't ask what you're working on.\n\nIn June, two people go onto the second phase. Neither of them is you, and nobody ever says why, because nobody ever has to.\n\nIt's all made of absences. That's what makes it impossible to raise.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The office, the following week",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "polite"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "ask3_client_email",
+          "reasons": {}
+        }
+      ]
+    },
+    "escalate_meeting": {
+      "act": 2,
+      "interstitial": {
+        "label": "Dana's office, Monday",
+        "durationMs": 2000
+      },
+      "message": "Dana listens with their hands flat on the desk and doesn't interrupt once.\n\nWhen you finish, they don't react to any of it.\n\n\"Okay. What have you got?\"\n\nNot hostile. Not sympathetic either. It's the first question anyone in this building was ever going to ask you.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "Dana's office",
+          "character": {
+            "name": "Dana",
+            "role": "Engagement lead",
+            "mood": "neutral"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "esc_chronology",
+          "label": "Lay out the chronology — dates, asks, what was said.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 0,
+            "integrity": 15
+          },
+          "nextRules": [
+            {
+              "when": {
+                "recordBand": "none"
+              },
+              "next": "escalate_bare"
+            }
+          ],
+          "next": "escalate_documented",
+          "reasons": {
+            "savvy": "A chronology is the only format an institution can act on. Whether you can supply one was decided last week.",
+            "integrity": "You brought it as facts rather than as a complaint about a person."
+          }
+        },
+        {
+          "id": "esc_uncomfortable",
+          "label": "Say you're uncomfortable and ask how to handle it.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 5,
+            "integrity": 10
+          },
+          "nextRules": [
+            {
+              "when": {
+                "recordBand": "none"
+              },
+              "next": "escalate_bare"
+            }
+          ],
+          "next": "escalate_documented",
+          "reasons": {
+            "savvy": "Framing it as a question rather than an allegation is softer, and it lands in exactly the same place.",
+            "streetSmarts": "Dana will still ask what you've got. There is no version of this meeting where they don't."
+          }
+        }
+      ]
+    },
+    "escalate_bare": {
+      "act": 2,
+      "message": "You have what you remember. Dana writes some of it down.\n\n\"Right. Leave it with me.\"\n\nRay is asked about it on Wednesday. Ray says — truthfully, as far as Ray knows — that they don't recall it that way, that the analysis was sound, that the delivery was on time in every sense that mattered to the client.\n\nNothing is established. Nothing can be.\n\nYou're moved onto a different account the following month, to avoid awkwardness. Nobody uses the word difficult where you can hear it.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The office, the weeks after",
+          "character": {
+            "name": "Dana",
+            "role": "Engagement lead",
+            "mood": "procedural"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": -20,
+            "integrity": 10
+          },
+          "setState": {
+            "escalated": "bare",
+            "managerStance": "adversarial"
+          },
+          "next": "escalate_aftermath",
+          "reasons": {
+            "integrity": "You raised a real concern about a real thing. None of that stops being true.",
+            "streetSmarts": "You made yourself the only evidence for it, and one person's account against a manager's is not a finding.",
+            "savvy": "The concern was right. The sequence was backwards — the record is what makes escalation survivable, and it has to exist first."
+          }
+        }
+      ]
+    },
+    "escalate_documented": {
+      "act": 2,
+      "message": "You have a chronology and at least one thing you wrote at the time, with a timestamp on it.\n\nDana reads it twice.\n\n\"Send me that.\"\n\nWhat follows is not vindication. It's process: you write it out again in a different format, you have a meeting with someone from People who takes notes and offers you water, and then it goes quiet for five weeks.\n\nYou're still moved off the account. But the thing you said happened is now written down somewhere that isn't your head.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The office, the weeks after",
+          "character": {
+            "name": "Dana",
+            "role": "Engagement lead",
+            "mood": "procedural"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 5,
+            "integrity": 15
+          },
+          "setState": {
+            "escalated": "documented",
+            "managerStance": "cold"
+          },
+          "next": "escalate_aftermath",
+          "reasons": {
+            "savvy": "You escalated something that could be examined rather than something that could only be believed or not.",
+            "integrity": "Slower, uglier, and it held.",
+            "streetSmarts": "It still costs you the account and most of the relationship. Being right is not free."
+          }
+        }
+      ]
+    },
+    "escalate_aftermath": {
+      "act": 3,
+      "messageVariants": [
+        {
+          "when": {
+            "escalated": "bare"
+          },
+          "message": "The report went out in April regardless. It says Monday. The QA line has Ray's name on it.\n\nYou pass Ray in the corridor about twice a week. They say hello. You say hello.\n\nSummer happens."
+        }
+      ],
+      "message": "The report went out in April regardless. It says Monday. The QA line has Ray's name on it.\n\nYou and Ray are careful with each other now — not hostile, just careful, the way people are when they both know exactly what the other one did.\n\nSummer happens.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The office, over the summer",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "distant"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "audit_email",
+          "reasons": {}
+        }
+      ]
+    },
+    "ask3_client_email": {
+      "act": 3,
+      "interstitial": {
+        "label": "The following Tuesday",
+        "durationMs": 2000
+      },
+      "message": "Ray has drafted it and forwarded it to you to send from your account, because you're the analyst on the file and it should come from the analyst on the file.\n\n\"Hi both — just to confirm for your records, the readiness report was completed on 14 April and QA checks were completed prior to delivery. Any questions, do let me know.\"\n\nRay's covering note is one line: \"Can you fire this over? They're doing their own governance pack.\"\n\nThe cursor is in the body. It would take four seconds.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "email",
+        "modal": false,
+        "data": {
+          "sender": "Ray",
+          "senderEmail": "ray.okonjo@meridian-advisory.com",
+          "subject": "FW: Northstar — completion confirmation for client governance pack"
+        }
+      },
+      "choices": [
+        {
+          "id": "a3_comply",
+          "label": "Send it as drafted.",
+          "scores": {
+            "savvy": -15,
+            "streetSmarts": 5,
+            "integrity": -20
+          },
+          "setState": {
+            "complicity": 1,
+            "emailedClient": true
+          },
+          "next": "ask3_reaction",
+          "reasons": {
+            "integrity": "You have now told a third party outside your own company a thing that isn't true, in writing, from your own address.",
+            "savvy": "Two rungs ago this was a date in a field. Your name has been travelling the whole time and this is where it leaves the building.",
+            "streetSmarts": "It takes four seconds and nobody says anything about it for five months."
+          }
+        },
+        {
+          "id": "a3_record",
+          "label": "Send it — and note internally that you sent it on Ray's instruction, as drafted.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 0,
+            "integrity": -5
+          },
+          "setState": {
+            "complicity": 1,
+            "record": 1,
+            "emailedClient": true
+          },
+          "beat": "Forwarded to yourself with three words above the chain: \"Sent as drafted.\" It looks like nothing. It is the difference between a chronology and a memory.",
+          "next": "ask3_reaction",
+          "reasons": {
+            "savvy": "The instruction and the compliance are now in the same artefact, which is the only form in which either survives.",
+            "integrity": "The client still received something untrue from you. Documenting it doesn't unsend it."
+          }
+        },
+        {
+          "id": "a3_redirect",
+          "label": "Send a version confirming delivery and QA completion — without the dates.",
+          "scores": {
+            "savvy": 25,
+            "streetSmarts": 10,
+            "integrity": 15
+          },
+          "setState": {
+            "pushedBack": true
+          },
+          "next": "ask3_redirect_response",
+          "reasons": {
+            "savvy": "You gave the client's governance pack the confirmation it actually needs and gave away nothing that isn't so.",
+            "integrity": "Every sentence you send is true, and Ray's problem is still solved.",
+            "streetSmarts": "This is the lane. By the third ask you can see the shape of it without being told."
+          }
+        },
+        {
+          "id": "a3_refuse",
+          "label": "I'm not sending that from my account.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": -15,
+            "integrity": 20
+          },
+          "setState": {
+            "pushedBack": true,
+            "managerStance": "cold"
+          },
+          "next": "ask3_refuse_response",
+          "reasons": {
+            "integrity": "Right, and by this rung it's not even a close call.",
+            "streetSmarts": "Ray sends it from theirs. The email exists either way; only the name on it was ever in question.",
+            "savvy": "You protected your name and changed nothing about what the client was told."
+          }
+        }
+      ]
+    },
+    "ask3_reaction": {
+      "act": 3,
+      "messageVariants": [
+        {
+          "when": {
+            "managerStance": "warm"
+          },
+          "message": "The client replies within the hour. \"Great, thanks — that's everything we needed.\"\n\nRay forwards it to you with a single line: \"Legend.\"\n\nAnd that's the last anyone thinks about Northstar until September."
+        }
+      ],
+      "message": "The client replies within the hour. \"Great, thanks — that's everything we needed.\"\n\nThe file closes. The account rolls into a second phase. In July there's a team dinner and somebody makes a toast about the Northstar turnaround.\n\nNobody thinks about it again until September.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The office, spring into summer",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "easy"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "nextRules": [
+            {
+              "when": {
+                "complicity": 3
+              },
+              "next": "ask4_ownership"
+            }
+          ],
+          "next": "audit_email",
+          "reasons": {}
+        }
+      ]
+    },
+    "ask3_redirect_response": {
+      "act": 3,
+      "message": "You rewrite it in about ninety seconds: the report was delivered, QA was completed prior to delivery, here's the reference. No dates.\n\nRay reads it over your shoulder, pauses on the missing line, and doesn't say anything about it.\n\n\"Yeah. Fine. Send that.\"\n\nThe client never notices, because there was never anything there for the client to notice.",
+      "reactionDelay": "medium",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Your desk",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "conceding"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "audit_email",
+          "reasons": {}
+        }
+      ]
+    },
+    "ask3_refuse_response": {
+      "act": 3,
+      "message": "\"Alright.\"\n\nRay sends it from their own account, unchanged, twenty minutes later. You're cc'd, which may or may not be deliberate.\n\nThe client thanks them. The file closes.\n\nYou're not on the second phase kick-off. Ray remains completely pleasant to you for the rest of the year.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The office, spring into summer",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "polite"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "audit_email",
+          "reasons": {}
+        }
+      ]
+    },
+    "ask4_ownership": {
+      "act": 3,
+      "interstitial": {
+        "label": "Thursday, 21:40",
+        "durationMs": 2000
+      },
+      "thread": [
+        {
+          "narration": "Your phone goes on the sofa. Ray, out of hours, which they never do."
+        },
+        {
+          "from": "Ray",
+          "text": "Quick one"
+        },
+        {
+          "from": "Ray",
+          "text": "If anyone ever asks about Northstar — you reviewed everything before it went out, yeah?"
+        },
+        {
+          "from": "Ray",
+          "text": "Just so we're saying the same thing"
+        },
+        {
+          "narration": "Three dots. Then nothing. Then three dots again."
+        }
+      ],
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "messages",
+        "modal": true,
+        "data": {
+          "location": "Your flat, Thursday night",
+          "character": {
+            "name": "Ray",
+            "role": "Your manager",
+            "mood": "careful"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "a4_agree",
+          "label": "\"Yeah. Course.\"",
+          "scores": {
+            "savvy": -15,
+            "streetSmarts": 5,
+            "integrity": -25
+          },
+          "setState": {
+            "complicity": 1,
+            "ownedIt": true
+          },
+          "next": "audit_email",
+          "reasons": {
+            "integrity": "This is not another small step. This is agreeing in advance on what you'll both say to someone who asks.",
+            "savvy": "The date, the sign-off and the email were things you did. This is a thing you are.",
+            "streetSmarts": "Ray sleeps well tonight. In September, the person who reviewed everything is you."
+          }
+        },
+        {
+          "id": "a4_deflect",
+          "label": "\"I'd rather just say what I actually remember.\"",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": -5,
+            "integrity": 15
+          },
+          "setState": {
+            "managerStance": "strained"
+          },
+          "beat": "Ray reads it. Typing. Stops. Then: \"Yeah, no, obviously. Ignore me. Long day.\" Neither of you mentions it again.",
+          "next": "audit_email",
+          "reasons": {
+            "savvy": "You declined the coordination without accusing Ray of asking for one, which is the only way to decline it and still work together.",
+            "integrity": "You'd done three things. You didn't do the fourth.",
+            "streetSmarts": "Ray now knows there's a limit and doesn't know exactly where it is."
+          }
+        },
+        {
+          "id": "a4_pin_it",
+          "label": "\"Just so I've got it straight — what do you want me to say I reviewed?\"",
+          "scores": {
+            "savvy": 25,
+            "streetSmarts": -10,
+            "integrity": 10
+          },
+          "setState": {
+            "record": 1
+          },
+          "beat": "Ray types for a while. What comes back is careful, and specific, and it is now on your phone with a date and a time on it.",
+          "next": "audit_email",
+          "reasons": {
+            "savvy": "You asked the question that turns an implication into a sentence, in a medium that keeps it.",
+            "streetSmarts": "If Ray ever works out why you asked it that way, this relationship is finished.",
+            "integrity": "It isn't a clean move. It's the most useful thing available to someone standing where you're standing."
+          }
+        }
+      ]
+    },
+    "audit_email": {
+      "act": 4,
+      "interstitial": {
+        "label": "Five months later",
+        "durationMs": 2600
+      },
+      "messageVariants": [
+        {
+          "when": {
+            "escalated": "bare"
+          },
+          "message": "Delivery Assurance is reviewing the documentation supporting the Northstar April delivery.\n\nWe understand you raised concerns regarding this delivery in April. Could you confirm the date the substantive analysis was completed, and provide any contemporaneous correspondence you hold relating to the completion date?\n\nWe note that no supporting material was attached to the original escalation.\n\nThis is a routine review. Please respond by Friday."
+        },
+        {
+          "when": {
+            "escalated": "documented"
+          },
+          "message": "Delivery Assurance is reviewing the documentation supporting the Northstar April delivery.\n\nWe have the material you provided to Dana Whitfield in April. Could you confirm the date the substantive analysis was completed, and whether you hold any further correspondence relating to the completion date?\n\nThis is a routine review. Please respond by Friday."
+        },
+        {
+          "when": {
+            "emailedClient": true
+          },
+          "message": "Delivery Assurance is reviewing the documentation supporting the Northstar April delivery.\n\nOur records indicate the final report was completed on 14 April and QA sign-off was recorded the same afternoon. The client's governance pack includes a confirmation of both, sent from your address on 22 April.\n\nCould you please provide: (1) the date the substantive analysis was completed; (2) who conducted the QA review and when; (3) any correspondence relating to the completion date.\n\nThis is a routine review. Please respond by Friday."
+        },
+        {
+          "when": {
+            "signedQA": true
+          },
+          "message": "Delivery Assurance is reviewing the documentation supporting the Northstar April delivery.\n\nOur records show the QA sign-off for this delivery was recorded in your name on 14 April.\n\nCould you please provide: (1) the date the substantive analysis was completed; (2) the scope of the QA review you conducted; (3) any correspondence relating to the completion date.\n\nThis is a routine review. Please respond by Friday."
+        },
+        {
+          "when": {
+            "alteredDate": true
+          },
+          "message": "Delivery Assurance is reviewing the documentation supporting the Northstar April delivery.\n\nOur records show the final report was uploaded by you on 16 April with a stated completion date of 14 April.\n\nCould you please confirm the date the substantive analysis was completed, and provide any correspondence relating to the completion date.\n\nThis is a routine review. Please respond by Friday."
+        }
+      ],
+      "message": "Delivery Assurance is conducting a documentation review across the Northstar account for the April delivery period.\n\nAs a member of the delivery team, could you confirm the date the substantive analysis was completed, and provide any correspondence you hold relating to the completion date.\n\nThis is a routine review and is being sent to all named contributors. Please respond by Friday.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "email",
+        "modal": false,
+        "data": {
+          "sender": "Delivery Assurance",
+          "senderEmail": "delivery.assurance@meridian-advisory.com",
+          "subject": "Northstar — April delivery documentation review"
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Read it again.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "audit_ray_calls",
+          "reasons": {}
+        }
+      ]
+    },
+    "audit_ray_calls": {
+      "act": 4,
+      "messageVariants": [
+        {
+          "when": {
+            "managerStance": "adversarial"
+          },
+          "message": "It's the first time Ray has rung you in five months.\n\n\"So they've come to you as well.\"\n\nA long pause. Neither of you fills it.\n\n\"Look — I'm not going to pretend April didn't happen. I told you I had your back and I meant it when I said it. I just honestly don't remember exactly what I said to you about the date. The client was screaming and I was trying to get a delivery out.\"\n\nThey sound exhausted. They do not sound like they are lying."
+        },
+        {
+          "when": {
+            "recordBand": "strong"
+          },
+          "message": "\"Don't panic. They're doing these across the whole account.\"\n\nRay is walking somewhere. You can hear traffic.\n\n\"Do you remember exactly what we said about the date? Back in April? Because I honestly don't remember exactly.\"\n\nAnd the strange thing is that you're not afraid of the question. You could answer it in about eleven seconds, from your phone, with timestamps.\n\n\"I said I'd have your back on it and I meant that. I just can't reconstruct the conversation.\""
+        },
+        {
+          "when": {
+            "managerStance": "cold"
+          },
+          "message": "\"They've sent you one too, then.\"\n\nRay is being careful in a way they have never once been careful with you.\n\n\"Look — do you remember what we said about the date in April? Because I honestly don't remember exactly, and I've been trying.\"\n\nThey wait.\n\n\"The work was right. That's the bit I keep coming back to. The work was always right.\""
+        }
+      ],
+      "message": "\"Don't panic. They're doing these across the whole account, it's not about you.\"\n\nRay is walking somewhere. You can hear traffic. They sound completely normal, which is why it takes you a second to notice the question when it arrives.\n\n\"Do you remember exactly what we said about the date? Back in April?\"\n\nNot a threat. Not a hint.\n\n\"Because I honestly don't remember exactly. It was a mad week and I've done four deliveries since.\"\n\nThen, in the same warm voice they used in April, when it meant something else entirely:\n\n\"I've got your back on this, obviously. I just need to know what it is I'm backing.\"",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "call",
+        "modal": true,
+        "data": {
+          "callerName": "Ray",
+          "callerNumber": "mobile",
+          "callerLabel": "Incoming — Thursday, 18:04"
+        }
+      },
+      "choices": [
+        {
+          "id": "aud_truth",
+          "label": "I remember it exactly. And I'm going to tell them exactly.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": -5,
+            "integrity": 25
+          },
+          "setState": {
+            "auditResponse": "truth"
+          },
+          "next": "resolution",
+          "reasons": {
+            "integrity": "You told Ray what you were going to do before you did it, which is more than you owed them.",
+            "savvy": "Whether that answer protects you depends entirely on whether anything backs it up.",
+            "streetSmarts": "Ray now has four days to prepare a different account of the same evening."
+          }
+        },
+        {
+          "id": "aud_hedge",
+          "label": "I'll answer what they asked. Nothing more than that.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 15,
+            "integrity": 5
+          },
+          "setState": {
+            "auditResponse": "hedge"
+          },
+          "next": "resolution",
+          "reasons": {
+            "savvy": "You answer the three numbered questions accurately and volunteer nothing, which is what people who have been through one of these do.",
+            "streetSmarts": "Narrow and true is the most defensible shape a statement can have.",
+            "integrity": "It is also, precisely, not the whole thing."
+          }
+        },
+        {
+          "id": "aud_cover",
+          "label": "Nothing's changed. It went out on the 14th.",
+          "requires": [
+            {
+              "alteredDate": true
+            },
+            {
+              "signedQA": true
+            },
+            {
+              "emailedClient": true
+            }
+          ],
+          "scores": {
+            "savvy": -25,
+            "streetSmarts": -15,
+            "integrity": -30
+          },
+          "setState": {
+            "auditResponse": "cover"
+          },
+          "beat": "Ray says \"okay\" and then says it again, and you cannot tell from either one whether they're relieved or disappointed in you.",
+          "next": "resolution",
+          "reasons": {
+            "integrity": "In April you altered a record. In September you confirmed it to a review. Those are different offences and this is the serious one.",
+            "savvy": "The upload timestamp says the 16th. It has said the 16th since the 16th.",
+            "streetSmarts": "You've just made yourself the author of the account rather than a person who followed an instruction."
+          }
+        },
+        {
+          "id": "aud_defer",
+          "label": "I'll come back to you. I want to check my own notes first.",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 20,
+            "integrity": 5
+          },
+          "setState": {
+            "auditResponse": "deferred"
+          },
+          "beat": "\"...Yeah. Course.\" Ray gets off the phone faster than they got on it.",
+          "next": "resolution",
+          "reasons": {
+            "savvy": "You declined to agree a version of events on a phone call, which is the single thing that call existed to produce.",
+            "streetSmarts": "Whatever you say on Friday, you'll have said it having read what you actually wrote rather than what Ray suggested you remember."
+          }
+        }
+      ]
+    },
+    "resolution": {
+      "act": 4,
+      "interstitial": {
+        "label": "Three weeks later",
+        "durationMs": 2400
+      },
+      "messageVariants": [
+        {
+          "when": {
+            "escalated": "bare"
+          },
+          "message": "The review closes.\n\nIt finds that documentation practice on the account was inconsistent and recommends a process change. It does not find who instructed what, because it cannot — there is nothing to find it with.\n\nWhat it does note, in a single line on page four, is that a concern was raised in April and could not be substantiated.\n\nThat line will follow you longer than anything Ray did."
+        },
+        {
+          "when": {
+            "escalated": "documented"
+          },
+          "message": "The review closes.\n\nThe April material you gave Dana is in the annex. The chronology holds. Ray is asked to account for the instruction and gives an account that is not quite the same as yours, and the review does not resolve the difference — it simply records that there was one.\n\nA process change is recommended. Two of the recommendations are things you said in Dana's office in April.\n\nNothing is triumphant. Something is on the record."
+        },
+        {
+          "when": {
+            "recordBand": "strong"
+          },
+          "message": "The review asks you for correspondence and you have correspondence.\n\nDates, timestamps, what you were asked and what you said back. None of it is dramatic. All of it is contemporaneous, which is the only property that matters.\n\nThe review's questions stop being about you inside a fortnight. They carry on for another two months somewhere above you, and you hear about it the way you hear about weather in another country."
+        },
+        {
+          "when": {
+            "recordBand": "some"
+          },
+          "message": "You have one thing. One message, one comment field, one forwarded chain with three words above it.\n\nIt isn't a case. It's enough to establish that the instruction existed, and that turns out to be the whole difference between a review about a person and a review about a delivery.\n\nRay is asked to explain it. The ambiguity doesn't disappear. Neither does your name — but it stops being the only name in the file."
+        }
+      ],
+      "message": "The review asks for correspondence and you don't have any.\n\nYou have a memory of a Wednesday evening in April, and Ray has a memory of a mad week, and the only thing either of you can point to is a document with your name on it and Monday's date at the top.\n\nThere is nothing dishonest about what Ray tells them. There's just nothing in it that moves the question anywhere other than towards you.\n\nA process change is recommended. A note goes on your file. Nobody uses the word disciplinary.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The office, three weeks later",
+          "character": {
+            "name": "You",
+            "role": "",
+            "mood": "flat"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "res_close_laptop",
+          "label": "Close the laptop. Go home.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "terminal": {
+            "consequence": "It's over in the way these things are over — no announcement, no moment, just a Tuesday where nobody mentions it and then a month of Tuesdays after that.",
+            "landing": "On the train you work out that the whole thing turned on about nine seconds in April, and that you didn't experience those nine seconds as a decision at the time."
+          },
+          "reasons": {}
+        },
+        {
+          "id": "res_message_ray",
+          "label": "Message Ray.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 5,
+            "integrity": 5
+          },
+          "terminal": {
+            "consequence": "You send four lines saying roughly that you don't think either of you handled April well and that you'd rather say so than let it sit. Ray replies at half eleven that night, and the reply is longer than yours.",
+            "landing": "Ray: \"I shouldn't have asked you for the first one. I've thought about that more than I've thought about the rest of it.\""
+          },
+          "reasons": {
+            "integrity": "Naming it afterwards doesn't undo it and isn't nothing.",
+            "savvy": "You addressed the actual thing — the first ask — rather than the one that got reviewed."
+          }
+        },
+        {
+          "id": "res_say_nothing",
+          "label": "Say nothing to Ray. Ever.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 5,
+            "integrity": -5
+          },
+          "terminal": {
+            "consequence": "You work together for another year and a half and it never comes up once. Ray gives you a good reference. You mean it when you thank them.",
+            "landing": "At their leaving drinks somebody asks how you two know each other and you say \"we did Northstar together,\" and Ray, across the table, laughs before you do."
+          },
+          "reasons": {
+            "streetSmarts": "Functional. Genuinely functional, for years.",
+            "integrity": "Unsaid isn't the same as resolved."
+          }
+        }
+      ]
+    }
+  },
+  "outcomeRules": [
+    {
+      "when": {
+        "escalated": "bare"
+      },
+      "value": "escalation_backfired"
+    },
+    {
+      "when": {
+        "escalated": "documented"
+      },
+      "value": "escalation_held"
+    },
+    {
+      "when": {
+        "auditResponse": "cover"
+      },
+      "value": "landed_on_you"
+    },
+    {
+      "when": {
+        "exposureBand": "the_defence"
+      },
+      "value": "landed_on_you"
+    },
+    {
+      "when": {
+        "exposureBand": "named",
+        "recordBand": "none"
+      },
+      "value": "landed_on_you"
+    },
+    {
+      "when": {
+        "exposureBand": "named"
+      },
+      "value": "shared"
+    },
+    {
+      "when": {
+        "recordBand": "strong"
+      },
+      "value": "moved_upward"
+    },
+    {
+      "when": {
+        "recordBand": "some"
+      },
+      "value": "shared"
+    },
+    {
+      "when": {
+        "complicityBand": "none"
+      },
+      "value": "clean_exit"
+    },
+    {
+      "when": {
+        "exposureBand": "thin"
+      },
+      "value": "shared"
+    }
+  ],
+  "reflections": [
+    {
+      "when": {
+        "auditResponse": "cover"
+      },
+      "title": "September Was The Real One",
+      "text": "April was a series of small things you were asked for by someone who had helped you and who meant it when they said they'd help you again. September was a question put to you directly by people whose job it was to ask, and you answered it with a version of events you knew to be false. Every step before that was a compromise. This one was an account — yours, authored by you, given freely to a review, in defence of a promise that the person who made it could no longer remember making."
+    },
+    {
+      "when": {
+        "escalated": "bare"
+      },
+      "title": "You Were Right And You Were The Only Evidence",
+      "text": "The concern was real, you were correct to raise it, and none of that survived contact with the question 'what have you got?'. An allegation without a contemporaneous record is one person's account against a manager's, and institutions do not resolve those — they close them and move somebody. Speaking up was not the mistake. Speaking up before writing anything down was. Build the record first. It takes ninety seconds and it is the difference between a finding and a note on your file."
+    },
+    {
+      "when": {
+        "escalated": "documented"
+      },
+      "title": "You Built It First",
+      "text": "You escalated something that could be examined rather than something that could only be believed or disbelieved, and the difference showed up in the annex five months later. It was slower than you wanted, uglier than it should have been, and it cost you the account and most of a working relationship. It also held. That combination — right, expensive, and survivable — is what raising something properly actually looks like, as opposed to what it looks like in the training deck."
+    },
+    {
+      "when": {
+        "ownedIt": true
+      },
+      "title": "Useful",
+      "text": "By September you weren't a person who had followed three instructions. You were the person who reviewed everything before it went out — you'd agreed to that on a Thursday night, in writing, before anyone had asked you anything. That agreement wasn't available to Ray until you'd met the other three. Ray also meant it when they said they had your back, and went on meaning it right up to the point where having your back required remembering a Wednesday evening in April, which nobody can do."
+    },
+    {
+      "when": {
+        "exposureBand": "the_defence"
+      },
+      "title": "The Defence",
+      "text": "Every step was small. A date, then a signature, then an email, and not one of them felt like the moment anything happened. The direction, though, never changed once: each thing you agreed to moved your name further from you and closer to being the load-bearing part of the story. Ray was not lying when they said they had your back. They simply could not carry your version of events into a room five months later, because by then it wasn't their version — it was a document with your name on it and nothing beside it. 'I didn't think it mattered at the time' is true and it is not a defence."
+    },
+    {
+      "when": {
+        "complicityBand": "full",
+        "recordBand": "strong"
+      },
+      "title": "Documented Participation",
+      "text": "You did all three. You also made sure that if anyone ever looked, they would see what actually happened — not your version of it five months later, but the timestamps. Both of those are true at once and neither cancels the other out. You have not come out of this clean. You have come out of it legible, which is a different and much rarer thing, and it is the reason the review's questions stopped being about you."
+    },
+    {
+      "when": {
+        "redirectSpent": true,
+        "recordBand": "strong"
+      },
+      "title": "Ninety More Seconds",
+      "text": "You found the better answer — run the check properly, take until Thursday — and the room took it off the table before you could use it. That happens, and the interesting part is never the redirect. It's what you did in the four seconds afterwards, when your best move was gone and the ask hadn't changed. You wrote down that you'd tried. That's the version of this where the attempt still exists in September instead of only existing in your memory of yourself."
+    },
+    {
+      "when": {
+        "redirectSpent": true,
+        "recordBand": "none"
+      },
+      "title": "You Tried The Right Thing",
+      "text": "The redirect was correct. Running the full check by Thursday was the answer that made the claim true instead of making it anyway, and you found it without being told. Then the client call was at nine, and you complied, and nobody anywhere knows that you offered the other thing first. An attempt nobody recorded is an attempt that didn't happen — not morally, but evidentially, which is the only sense that matters five months later."
+    },
+    {
+      "when": {
+        "auditResponse": "deferred",
+        "recordBand": "none"
+      },
+      "title": "You Didn't Agree It On The Phone",
+      "text": "The call existed to produce one thing: the two of you arriving at the same account of April before either of you had written anything down. You declined to do that, on the spot, without accusing Ray of trying — which is the hardest version of declining. It didn't give you a record you don't have. It did mean that whatever you said on Friday was yours."
+    },
+    {
+      "when": {
+        "managerStance": "warm",
+        "exposureBand": "named"
+      },
+      "title": "The Reward Was Real",
+      "text": "The relief on Ray's face when you signed was genuine, the coffee on Monday was genuine, and your name going to Dana for the June phase was a real opportunity you really got. None of that was manipulation — it's what happens when you make somebody's week easier, and it's why this is difficult rather than obvious. What it wasn't was protection. Ray's goodwill decides which work you're offered; it doesn't decide anything at all about what a review finds, and the two had felt like the same thing for about five months."
+    },
+    {
+      "when": {
+        "complicityBand": "none",
+        "recordBand": "none"
+      },
+      "title": "Protected, And Frozen Out",
+      "text": "Your name is on none of it and that is worth exactly what it sounds like. What you didn't do was give Ray any way to hear a refusal as something other than a verdict on them — no explanation, no alternative, no version where they still get the delivery out. Nobody punished you for it. Nobody had to: you were simply not on the June phase, and not in the room, and the sentence that did it was said about you somewhere you weren't, by someone who would have been able to defend every word of it."
+    },
+    {
+      "when": {
+        "complicityBand": "none"
+      },
+      "title": "Clean Hands, And A File",
+      "text": "You didn't alter anything, sign anything, or send anything — and unlike most people who manage that, you also left something behind that says what actually happened. Refusing protects you. Only the record protects the truth, and those are two separate actions taken for two different reasons. You took both, which is why September asks you three questions and then stops. What it doesn't get you is the June phase, and that cost was always going to be collected quietly, by someone with nothing to answer for."
+    },
+    {
+      "when": {
+        "complicityBand": "partial",
+        "recordBand": "strong"
+      },
+      "title": "You Held The Shape Of It",
+      "text": "You met Ray somewhere in the middle — gave them something workable, kept your name off the parts you couldn't stand behind, and wrote down enough that the sequence survives without you. That's the version almost nobody finds, because it requires holding two things at once: that Ray genuinely needed help, and that helping does not include making a claim on their behalf. You did the harder one, which is doing both."
+    },
+    {
+      "when": {
+        "complicityBand": "partial",
+        "recordBand": "some"
+      },
+      "title": "You Drew The Line Somewhere",
+      "text": "You met one of them and not the others, and the interesting thing is where the line landed rather than that there was one. Almost nobody refuses at rung one and almost nobody holds out at rung three — the line moves as the ask gets bigger, which means it isn't really a line, it's a threshold you discover in real time. You also wrote something down, once, which is the reason the sequence exists anywhere other than in two people's differing memories of a Wednesday."
+    },
+    {
+      "when": {
+        "complicityBand": "partial",
+        "recordBand": "none"
+      },
+      "title": "Halfway, And Nothing Written Down",
+      "text": "You said yes to some of it and no to the rest, which is what most people do and is genuinely defensible on every individual rung. What you don't have is any account of it that exists outside your own head — or outside Ray's, and Ray's is honest and five months old and full of four other deliveries. In September that turns the whole thing into a comparison of two recollections, one of which belongs to the person who asked and one to the person whose name is on the document."
+    }
+  ],
+  "defaultReflection": {
+    "title": "Three Asks And A Wednesday",
+    "text": "Somewhere across five months you decided, separately each time, how much to hand over and how much to write down. Those two decisions never felt like two decisions. Between them sits a third thing you never chose at all: how much of your position depended on one person continuing to speak well of you."
+  },
+  "aftermath": {
+    "ray": [
+      {
+        "when": {
+          "reviewOutcome": "escalation_backfired"
+        },
+        "text": "Ray is asked about it in April and again in September and gives the same answer both times, which is that they don't recall it that way and the analysis was sound.\n\nThey are not lying. That is the part that takes longest to accept.\n\nRay is still on the account. Ray is promoted the following spring."
+      },
+      {
+        "when": {
+          "reviewOutcome": "escalation_held"
+        },
+        "text": "Ray has to account for the instruction, twice, in writing.\n\nWhat comes of it is invisible from where you sit — a conversation you're not in, a note somewhere you'll never see. Ray stays. Ray is noticeably more careful about dates for about a year.\n\nWhat you don't get is a moment where anyone tells you that you were right."
+      },
+      {
+        "when": {
+          "reviewOutcome": "moved_upward"
+        },
+        "text": "The instruction trail is in the file and Ray is asked to explain it. They explain it honestly and badly: the client was screaming, the work was right, they didn't think of it as anything.\n\nAll of that is true and none of it is a defence, and Ray knows that better than the review does.\n\nThey stay. Something between you does not."
+      },
+      {
+        "when": {
+          "reviewOutcome": "shared"
+        },
+        "text": "Ray is asked to explain the instruction and gives an account that overlaps with yours without matching it. The review records the difference rather than resolving it.\n\nNothing formal happens to Ray. Something informal does — they are quieter in delivery meetings for a while, and they stop asking anyone for small favours around dates."
+      },
+      {
+        "when": {
+          "reviewOutcome": "landed_on_you"
+        },
+        "text": "Ray is asked, once, whether they recall discussing the completion date. They say they don't recall specifically, that it was a difficult delivery period, and that the sign-off was recorded in your name.\n\nEvery sentence of that is true.\n\nNo action is taken in respect of Ray. It isn't a betrayal. It's just what happens when the only fixed point in a story is somebody else's name."
+      },
+      {
+        "when": {
+          "reviewOutcome": "clean_exit"
+        },
+        "text": "The date was changed by Ray, uploaded by Ray, and signed off by Ray, and when the review asks, that's what the metadata says.\n\nThey get a process recommendation and a conversation with Dana. They're fine. They were always going to be fine.\n\nRay never says a word against you. Ray never says much for you either, and only one of those is a thing anyone could ever ask them about."
+      },
+      {
+        "text": "Ray gives an account of April that is honest and incomplete, because that is the only kind of account anyone can give of a week they were drowning in.\n\nNothing formal follows. Ray stays on the account and is careful about dates for a while afterwards."
+      }
+    ],
+    "you": [
+      {
+        "when": {
+          "reviewOutcome": "landed_on_you",
+          "auditResponse": "cover"
+        },
+        "text": "The upload timestamp says the 16th and has said the 16th since the 16th, which means the review already knew the answer to the question it asked you.\n\nYou go through a formal process. It ends in a written warning and a note that stays on file for two years.\n\nWhat costs you the most isn't April. It's the four minutes on a Thursday in September when you confirmed it."
+      },
+      {
+        "when": {
+          "reviewOutcome": "landed_on_you"
+        },
+        "text": "You spend six weeks accounting for a decision you didn't make, in meetings where everyone is scrupulously fair and nobody can find anything to weigh against a document with your name on it.\n\nIt ends without a finding against you. It also ends without a finding for you.\n\nYou leave the following year. Not because of this exactly. Not not because of it."
+      },
+      {
+        "when": {
+          "reviewOutcome": "escalation_backfired"
+        },
+        "text": "You're moved to a different account in May. It's presented as an opportunity and it isn't one.\n\nThe word that follows you isn't dishonest or wrong. It's difficult, and it's much harder to argue with.\n\nYou're still there eighteen months later, doing fine, on a team where nobody was in the room in April."
+      },
+      {
+        "when": {
+          "reviewOutcome": "escalation_held"
+        },
+        "text": "You're moved off the account too — that part happens either way, and it's worth knowing that in advance.\n\nBut the process closes with your account intact rather than unsubstantiated, and two of the recommendations are things you said in Dana's office before any of this was a review.\n\nSomebody from People asks, months later, whether you'd be willing to talk to a new joiner about it. You say yes."
+      },
+      {
+        "when": {
+          "reviewOutcome": "moved_upward"
+        },
+        "text": "The review's questions stop being about you within a fortnight, because everything you were asked for, you could produce in an afternoon.\n\nYou are not congratulated for this. Nobody is ever congratulated for this.\n\nWhat you get is a September in which you sleep normally, which is the entire return on ninety seconds of typing in April."
+      },
+      {
+        "when": {
+          "reviewOutcome": "clean_exit"
+        },
+        "text": "The review has nothing to ask you and asks you nothing beyond the standard three questions.\n\nWhat you carry out of it isn't exposure. It's the slower thing: a year of not being on the interesting work, and never once being able to point at the reason.\n\nYou get a good rating. You get a fine bonus. You are, in every measurable sense, fine."
+      },
+      {
+        "text": "The review asks you three questions and you answer them accurately. It closes without a finding in either direction.\n\nWhat's left is not a consequence exactly — just a slightly different sense of what you're prepared to put your name on, which arrives about five months later than it would have been useful."
+      }
+    ],
+    "afterwards": [
+      {
+        "when": {
+          "reviewOutcome": "escalation_backfired"
+        },
+        "text": "The date on the April report is still Monday. It will be Monday forever.\n\nThe process change that came out of the review requires two names on every QA sign-off. Nobody involved in writing that recommendation knows why they thought of it.\n\nA junior on the Northstar account is asked to adjust a delivery date in February. You never hear about it."
+      },
+      {
+        "when": {
+          "reviewOutcome": "moved_upward"
+        },
+        "text": "The process change is real: contemporaneous notes on delivery variance, two names on every sign-off, dates locked at upload.\n\nSomeone eighteen months from now will be asked to change a completion date and will say no, and there will be a policy behind them when they do.\n\nThey will never know it came from you, and it did."
+      },
+      {
+        "when": {
+          "reviewOutcome": "escalation_held"
+        },
+        "text": "The recommendations land. Two of them are yours, unattributed, in the passive voice.\n\nThat's what winning looks like at this level — not an apology, not a finding, just the shape of the thing you complained about becoming slightly harder to do to the next person."
+      },
+      {
+        "when": {
+          "reviewOutcome": "landed_on_you"
+        },
+        "text": "Nothing changes structurally. The review recommends better documentation practice, which is what reviews recommend when they can't establish anything else.\n\nThe next analyst on that account gets asked for a small favour around a date in about eight months, by someone under pressure, who means it kindly.\n\nThere's nothing in the file to warn them."
+      },
+      {
+        "when": {
+          "reviewOutcome": "clean_exit"
+        },
+        "text": "Nothing changes, because from the outside nothing happened. A report went out, a client was satisfied, a review found some inconsistent paperwork.\n\nThe only person who knows there was a decision in it is you, and you know it mainly as a slightly cold feeling about a Wednesday in April."
+      },
+      {
+        "text": "The review recommends better documentation practice on delivery variance. Some of it sticks.\n\nThe report still says Monday. It always will. That's the thing about records — the correction lives somewhere else, in a file nobody opens, and the original is what everyone reads."
+      }
+    ],
+    "career": [
+      {
+        "when": {
+          "reviewOutcome": "landed_on_you",
+          "auditResponse": "cover"
+        },
+        "text": "The written warning sits on file for two years. Promotion eligibility is suspended for the same period — not as a punishment, the letter is careful to say, but because the process requires it.\n\nRay is on the June phase. Ray is on the phase after that."
+      },
+      {
+        "when": {
+          "reviewOutcome": "landed_on_you"
+        },
+        "text": "Your promotion review is deferred pending closure. It closes in March. It is not reopened.\n\nYou come off Northstar in October, into internal work with no client contact, which everyone agrees is sensible given the circumstances and which nobody will describe in those terms on a reference."
+      },
+      {
+        "when": {
+          "reviewOutcome": "escalation_backfired"
+        },
+        "text": "Nothing formal ever happens to you. No warning, no note, no meeting where anyone says a word you could write down afterwards.\n\nYou just stop being on the lists. The staffing calls, the client dinners, the thing Dana sets up in November for people they're watching. You put yourself forward for the June phase and hear nothing back, and when you follow up you're told it's already been staffed."
+      },
+      {
+        "when": {
+          "reviewOutcome": "escalation_held"
+        },
+        "text": "Your promotion goes to the following cycle. Someone from People explains the reasoning and the reasoning is genuinely reasonable, which is its own particular sensation.\n\nYou get it in the cycle after that. It costs you eleven months and you never find out whether it would have cost you those months anyway."
+      },
+      {
+        "when": {
+          "reviewOutcome": "moved_upward",
+          "managerStance": "warm"
+        },
+        "text": "You go on the June phase. Ray put your name forward before any of this and doesn't withdraw it, which is the most Ray thing about the whole business.\n\nYou're promoted on schedule. The thing that protected you in September wasn't Ray's advocacy, which was real and would not have survived the review, but a comment field and a message with a timestamp on it."
+      },
+      {
+        "when": {
+          "reviewOutcome": "moved_upward"
+        },
+        "text": "You're promoted on schedule, in a cycle where the review is never mentioned, by people who mostly don't know it happened.\n\nRay's recommendation was cooler than it would have been in March. It didn't need to carry anything, which is the only reason that didn't matter."
+      },
+      {
+        "when": {
+          "reviewOutcome": "shared",
+          "managerStance": "backing"
+        },
+        "text": "Ray keeps sponsoring you and it keeps working. You go on the June phase, you're introduced to Dana properly at the December thing, and your rating comes back a band higher than last year.\n\nAll of it runs through one person's goodwill. You won't find out what that's worth until a year in which Ray is somewhere else."
+      },
+      {
+        "when": {
+          "reviewOutcome": "shared",
+          "managerStance": "warm"
+        },
+        "text": "You go on the June phase, slightly to your own surprise. Ray's recommendation is warm and slightly qualified — the qualification is invisible in the document and audible in the room.\n\nPromotion holds. Nothing you'd notice changes for about eighteen months."
+      },
+      {
+        "when": {
+          "reviewOutcome": "shared",
+          "managerStance": "cold"
+        },
+        "text": "You're not on the June phase. Your rating is exactly what it was last year, which is fine, and your development note says you would benefit from broader exposure, which is also fine and is the sentence people use when there is nothing to say.\n\nNobody has done anything to you. That remains true and continues to be the whole difficulty."
+      },
+      {
+        "when": {
+          "reviewOutcome": "shared"
+        },
+        "text": "Your promotion goes through a cycle late. The stated reason is workload mix. The stated reason is probably the real one, and you will never be able to establish that either way."
+      },
+      {
+        "when": {
+          "reviewOutcome": "clean_exit"
+        },
+        "text": "No warning, no note, no conversation. Your rating is solid and your bonus is exactly the median.\n\nYou're not on the June phase. When a role comes up in the spring that you'd have been obvious for, somebody asks Ray about you and Ray says: \"They're solid. I just think they'd be better somewhere with more structure.\"\n\nEvery word of that is defensible. You never hear it."
+      },
+      {
+        "text": "Your rating holds. Your promotion goes through roughly when it was always going to.\n\nWhat shifts is smaller and harder to point at — which conversations you're in, and whose name comes up when somebody asks who carried something."
+      }
+    ]
+  },
+  "finalMessage": [
+    {
+      "when": {
+        "exposureBand": "the_defence"
+      },
+      "text": "Nobody ever asked you to do something you'd have refused.\n\nThat's the design, and it isn't Ray's design — it's just what pressure does when it arrives in pieces. Each ask was calibrated against the one before it, so the only question you were ever answering was 'is this a bit worse than the last one', and the answer was always no. Underneath that was a second thing you never examined: that you were safe because Ray was on your side. Ray was on your side the entire time. It made no difference in September, because what protects you inside an institution is not who likes you — it's the parts of your work history that exist independently of anyone's memory, and you had left that field empty."
+    },
+    {
+      "when": {
+        "recordBand": "strong"
+      },
+      "text": "You didn't stop it. You made it legible.\n\nThat distinction is most of what this district is about. You were never going to control whether Ray asked, whether the client got the pack, or what a review five months later decided to do. What was yours was whether the true sequence existed anywhere other than in the memory of the person who benefited from it being fuzzy — a person who, it turns out, was fond of you, was telling the truth about having your back, and could not remember a single specific sentence from April. Ninety seconds of typing. It's not courage and it's not obedience. It's the only lever you had hold of."
+    },
+    {
+      "when": {
+        "escalated": "bare"
+      },
+      "text": "The order was wrong, not the instinct.\n\nEverything you believed about April was accurate and you were right to take it to Dana. But 'what have you got' is the first question any institution asks, and it is not a hostile question — it's the only question they're able to act on. Raising a concern makes you the subject of a process. Raising a documented concern makes the concern the subject of one. Document first. Then escalate. It feels like cowardice for about a week and it is the difference between being heard and being moved."
+    },
+    {
+      "when": {
+        "escalated": "documented"
+      },
+      "text": "You brought something that could be examined.\n\nThat is the entire distinction between the two versions of raising this, and it was settled before you ever walked into Dana's office — by ninety seconds of typing in April, which at the time felt like being awkward about a date. An allegation asks to be believed. A chronology asks to be checked. Institutions cannot act on the first and are obliged to act on the second, and the cost of the second is still an account you don't work on any more and a working relationship you don't get back. Right, expensive, survivable. That's the honest shape of it."
+    },
+    {
+      "when": {
+        "complicityBand": "none"
+      },
+      "text": "You kept your hands clean and gave the truth nowhere to live.\n\nThat's a real outcome, and it's not the same as having handled it. The date still changed. The sign-off still happened. What your refusal bought was that none of it was done by you — genuinely worth something, and genuinely less than it feels like, because a review doesn't ask who declined, it asks what the record shows. The bill arrived somewhere else entirely: no warning, no meeting, no finding. Just a June you weren't on and a sentence about you being better suited somewhere with more structure, which is what a cost looks like when nobody involved has done anything they'd have to answer for."
+    }
+  ],
+  "defaultFinalMessage": {
+    "text": "Two questions were running the whole time and only one of them was ever loud.\n\nHow far did you go, which you could feel — and if anyone examines this later, can they see what actually happened, which you couldn't. There was a third one underneath both, which nobody asks out loud in an office: how much of where you stand is held up by one person's goodwill, and what is left standing on the day that person is asked to remember something precisely."
+  },
+  "testPlaythroughs": [
+    {
+      "name": "1 — Complied all three, no record, owned it (the defence)",
+      "path": [
+        "establish_northstar:continue",
+        "establish_delivery:continue",
+        "ask1_date:a1_comply",
+        "ask1_reaction:continue",
+        "ask2_qa:a2_comply",
+        "ask2_reaction:continue",
+        "ask3_client_email:a3_comply",
+        "ask3_reaction:continue",
+        "ask4_ownership:a4_agree",
+        "audit_email:continue",
+        "audit_ray_calls:aud_hedge",
+        "resolution:res_close_laptop"
+      ],
+      "expect": "complicity 3 at ask3_reaction → nextRules routes to ask4_ownership. After a4_agree complicity 4, record 0 → exposureBand=the_defence. reviewOutcome=landed_on_you. Reflection: 'Useful' (ownedIt, index 3, fires before 'The Defence' at index 4 — intended). aftermath.career variant 1: promotion deferred pending closure."
+    },
+    {
+      "name": "2 — Complied all three but documented every time (documented participation)",
+      "path": [
+        "establish_northstar:continue",
+        "establish_delivery:continue",
+        "ask1_date:a1_record",
+        "ask1_reaction:continue",
+        "ask2_qa:a2_record",
+        "ask2_reaction:continue",
+        "ask3_client_email:a3_record",
+        "ask3_reaction:continue",
+        "ask4_ownership:a4_pin_it",
+        "audit_email:continue",
+        "audit_ray_calls:aud_truth",
+        "resolution:res_message_ray"
+      ],
+      "expect": "record clamps at 3 (range [0,3]) on the fourth increment. complicity 3, record 3 → exposureBand=clean, recordBand=strong. reviewOutcome=moved_upward. ask1_reaction uses the record:1 variant; ask2_qa uses the record:1 variant (pushedBack still false) and carries the 'I've got your back' line. aftermath.career variant 5."
+    },
+    {
+      "name": "3 — Redirect closed at Ask 2, complied with record (Ninety More Seconds)",
+      "path": [
+        "establish_northstar:continue",
+        "establish_delivery:continue",
+        "ask1_date:a1_redirect",
+        "ask1_redirect_response:a1r_note_anyway",
+        "ask2_qa:a2_redirect",
+        "ask2_redirect_closed:a2c_record",
+        "ask2_reaction:continue",
+        "ask3_client_email:a3_redirect",
+        "ask3_redirect_response:continue",
+        "audit_email:continue",
+        "audit_ray_calls:aud_defer",
+        "resolution:res_message_ray"
+      ],
+      "expect": "ask2_qa uses the pushedBack variant (Northstar debt + the June phase line). complicity 1, record 2 → exposureBand=clean, recordBand=strong. ask3_reaction never reached. reviewOutcome=moved_upward. Reflection: 'Ninety More Seconds'. aftermath.career variant 5."
+    },
+    {
+      "name": "4 — Refused everything, never documented (Clean Hands, Empty File)",
+      "path": [
+        "establish_northstar:continue",
+        "establish_delivery:continue",
+        "ask1_date:a1_refuse",
+        "ask1_refuse_response:a1f_silent",
+        "ask2_qa:a2_refuse",
+        "ask2_refuse_response:continue",
+        "ask3_client_email:a3_refuse",
+        "ask3_refuse_response:continue",
+        "audit_email:continue",
+        "audit_ray_calls:aud_truth",
+        "resolution:res_say_nothing"
+      ],
+      "expect": "complicity 0, record 0, managerStance cold. exposureBand=clean, complicityBand=none. reviewOutcome=clean_exit. Reflection: 'Protected, And Frozen Out' (index 10) — the tighter recordBand:none condition, correctly ahead of 'Clean Hands, And A File' at index 11. audit_email uses the DEFAULT routine variant. aud_cover filtered out by requires. aftermath.career variant 10 carries the 'better somewhere with more structure' line."
+    },
+    {
+      "name": "5 — Bare escalation (the guardrail)",
+      "path": [
+        "establish_northstar:continue",
+        "establish_delivery:continue",
+        "ask1_date:a1_comply",
+        "ask1_reaction:continue",
+        "ask2_qa:a2_escalate",
+        "escalate_meeting:esc_chronology",
+        "escalate_bare:continue",
+        "escalate_aftermath:continue",
+        "audit_email:continue",
+        "audit_ray_calls:aud_truth",
+        "resolution:res_close_laptop"
+      ],
+      "expect": "record 0 → recordBand=none → escalate_meeting nextRules routes to escalate_bare. escalated=bare, managerStance=adversarial. audit_ray_calls uses the adversarial variant, in which Ray reaffirms that 'I had your back' was meant sincerely and still cannot recall the instruction. reviewOutcome=escalation_backfired. Reflection must read as 'document first, then escalate' — NOT 'don't speak up'. aftermath.career variant 2: no formal retaliation, no lists."
+    },
+    {
+      "name": "6 — Documented escalation",
+      "path": [
+        "establish_northstar:continue",
+        "establish_delivery:continue",
+        "ask1_date:a1_record",
+        "ask1_reaction:continue",
+        "ask2_qa:a2_escalate",
+        "escalate_meeting:esc_chronology",
+        "escalate_documented:continue",
+        "escalate_aftermath:continue",
+        "audit_email:continue",
+        "audit_ray_calls:aud_hedge",
+        "resolution:res_close_laptop"
+      ],
+      "expect": "record 1 → recordBand=some → escalate_meeting falls through nextRules to next: escalate_documented. escalated=documented. reviewOutcome=escalation_held. aftermath.career variant 3: promotion slips a cycle."
+    },
+    {
+      "name": "7 — Covered in September (the serious one)",
+      "path": [
+        "establish_northstar:continue",
+        "establish_delivery:continue",
+        "ask1_date:a1_comply",
+        "ask1_reaction:continue",
+        "ask2_qa:a2_comply",
+        "ask2_reaction:continue",
+        "ask3_client_email:a3_comply",
+        "ask3_reaction:continue",
+        "ask4_ownership:a4_deflect",
+        "audit_email:continue",
+        "audit_ray_calls:aud_cover",
+        "resolution:res_say_nothing"
+      ],
+      "expect": "complicity 3, record 0. aud_cover offered because alteredDate/signedQA/emailedClient all true. auditResponse=cover → reviewOutcome=landed_on_you (rule 3 fires before exposureBand rules). Reflection: 'September Was The Real One' (index 0). aftermath.career variant 0: written warning, eligibility suspended."
+    }
+  ]
+}
