@@ -20,7 +20,9 @@
     "beat": "One line rendered after the chosen option and before navigation. Creates no node, affects no navigation.",
     "nextRules": "Evaluated in declaration order against post-setState, post-derivedState state. First match wins. `next: null` means resolve the choice's own `terminal` block.",
     "derivedState": "Bands computed after every setState, merged before any `when` evaluates. `minus` reads a differential between two keys.",
-    "outcomeRules": "Evaluated at terminal only. First match wins. Result written into state under `outcomeKey` before aftermath and finalMessage resolve. Reflections are picked BEFORE this and cannot read the outcome key."
+    "outcomeRules": "Evaluated at terminal only. First match wins. Result written into state under `outcomeKey` before aftermath and finalMessage resolve. Reflections are picked BEFORE this and cannot read the outcome key.",
+    "visual": "Optional block inside presentation.data. Presentational only — never read by routing, scoring or variant resolution. If absent the client infers a setting from presentation.data.location.",
+    "artifact": "Optional block inside presentation.data on a modal scene. Renders a work artifact card inside the scene modal while the character and choices stay in frame. Presentational only."
   },
   "design": {
     "noCorrectAnswer": true,
@@ -130,6 +132,20 @@
         "deferred"
       ],
       "initial": "none"
+    },
+    "auditReply": {
+      "type": "enum",
+      "values": [
+        "none",
+        "full",
+        "partial",
+        "from_memory",
+        "narrow",
+        "withheld",
+        "confirmed_false"
+      ],
+      "initial": "none",
+      "note": "What you actually filed on Friday. Distinct from auditResponse, which is only what you said to Ray on the phone. This is the beat where record stops being a lookup and becomes an act."
     }
   },
   "derivedState": {
@@ -209,6 +225,15 @@
             "name": "Ray",
             "role": "Your manager",
             "mood": "warm"
+          },
+          "visual": {
+            "setting": "office",
+            "pressure": "a debt nobody has named",
+            "props": [
+              "the rebuilt section",
+              "an 11:40pm send",
+              "a waved-off apology"
+            ]
           }
         }
       },
@@ -239,6 +264,15 @@
             "name": "Ray",
             "role": "Your manager",
             "mood": "tired"
+          },
+          "visual": {
+            "setting": "desk",
+            "pressure": "one name went to Dana",
+            "props": [
+              "coat already on",
+              "half past eight",
+              "two seats in June"
+            ]
           }
         }
       },
@@ -269,6 +303,15 @@
             "name": "Ray",
             "role": "Your manager",
             "mood": "easy"
+          },
+          "visual": {
+            "setting": "desk",
+            "pressure": "it's just the date",
+            "props": [
+              "upload dialog",
+              "completion date field",
+              "coat"
+            ]
           }
         }
       },
@@ -364,7 +407,7 @@
       "message": "\"Cheers. See you tomorrow.\"\n\nAnd that's it.\n\nThe file uploads. The client acknowledges receipt on Thursday morning with a thumbs up emoji. Nobody mentions the date, because there is nothing to mention — the report says Monday, the report has always said Monday.\n\nWhat it also says, if anyone ever runs the delivery figures for the quarter, is that you were on time.\n\nNothing happens. That's the whole of it.",
       "reactionDelay": "medium",
       "presentation": {
-        "type": "scene",
+        "type": "work_artifact",
         "modal": false,
         "data": {
           "location": "Your desk, later",
@@ -372,7 +415,33 @@
             "name": "Ray",
             "role": "Your manager",
             "mood": "distracted"
-          }
+          },
+          "variant": "file_upload",
+          "eyebrow": "Document management",
+          "title": "Northstar Readiness Report — v4",
+          "status": "uploaded",
+          "fields": [
+            {
+              "label": "Uploaded by",
+              "value": "You"
+            },
+            {
+              "label": "Upload timestamp",
+              "value": "16 April, 20:52"
+            },
+            {
+              "label": "Stated completion date",
+              "value": "14 April"
+            },
+            {
+              "label": "Client acknowledgement",
+              "value": "17 April"
+            }
+          ],
+          "actions": [
+            "date stated",
+            "timestamp recorded"
+          ]
         }
       },
       "choices": [
@@ -522,6 +591,39 @@
             "name": "Ray",
             "role": "Your manager",
             "mood": "pressed"
+          },
+          "visual": {
+            "setting": "meeting_room",
+            "pressure": "your name needs to be on it",
+            "props": [
+              "laptop turned round",
+              "eleven lines",
+              "an empty name field"
+            ]
+          },
+          "artifact": {
+            "variant": "qa_checklist",
+            "eyebrow": "Internal checklist",
+            "title": "Northstar QA Checklist",
+            "status": "unsigned",
+            "fields": [
+              {
+                "label": "Assigned analyst",
+                "value": "You"
+              },
+              {
+                "label": "Completion date",
+                "value": "14 April"
+              },
+              {
+                "label": "QA sign-off",
+                "value": "Pending"
+              }
+            ],
+            "actions": [
+              "name required",
+              "formality"
+            ]
           }
         }
       },
@@ -635,6 +737,15 @@
             "name": "Ray",
             "role": "Your manager",
             "mood": "immovable"
+          },
+          "visual": {
+            "setting": "meeting_room",
+            "pressure": "the client call is nine tomorrow",
+            "props": [
+              "the same laptop",
+              "no Thursday",
+              "a closed door"
+            ]
           }
         }
       },
@@ -802,6 +913,15 @@
             "name": "Dana",
             "role": "Engagement lead",
             "mood": "neutral"
+          },
+          "visual": {
+            "setting": "review_room",
+            "pressure": "what have you got",
+            "props": [
+              "hands flat on the desk",
+              "nothing in front of you",
+              "a notepad"
+            ]
           }
         }
       },
@@ -903,6 +1023,15 @@
             "name": "Dana",
             "role": "Engagement lead",
             "mood": "procedural"
+          },
+          "visual": {
+            "setting": "review_room",
+            "pressure": "send me that",
+            "props": [
+              "a timestamp",
+              "a second format",
+              "five quiet weeks"
+            ]
           }
         }
       },
@@ -949,6 +1078,15 @@
             "name": "Ray",
             "role": "Your manager",
             "mood": "distant"
+          },
+          "visual": {
+            "setting": "office",
+            "pressure": "careful with each other",
+            "props": [
+              "the corridor",
+              "hello",
+              "summer"
+            ]
           }
         }
       },
@@ -1204,6 +1342,15 @@
             "name": "Ray",
             "role": "Your manager",
             "mood": "careful"
+          },
+          "visual": {
+            "setting": "phone",
+            "pressure": "just so we're saying the same thing",
+            "props": [
+              "21:40",
+              "three dots",
+              "the sofa"
+            ]
           }
         }
       },
@@ -1308,12 +1455,34 @@
       "message": "Delivery Assurance is conducting a documentation review across the Northstar account for the April delivery period.\n\nAs a member of the delivery team, could you confirm the date the substantive analysis was completed, and provide any correspondence you hold relating to the completion date.\n\nThis is a routine review and is being sent to all named contributors. Please respond by Friday.",
       "reactionDelay": "long",
       "presentation": {
-        "type": "email",
+        "type": "work_artifact",
         "modal": false,
         "data": {
           "sender": "Delivery Assurance",
           "senderEmail": "delivery.assurance@meridian-advisory.com",
-          "subject": "Northstar — April delivery documentation review"
+          "subject": "Northstar — April delivery documentation review",
+          "variant": "review_notice",
+          "eyebrow": "Delivery Assurance",
+          "title": "Northstar — April delivery documentation review",
+          "status": "respond by Friday",
+          "fields": [
+            {
+              "label": "Account",
+              "value": "Northstar"
+            },
+            {
+              "label": "Period",
+              "value": "April delivery"
+            },
+            {
+              "label": "Respond by",
+              "value": "Friday"
+            }
+          ],
+          "actions": [
+            "routine review",
+            "evidence requested"
+          ]
         }
       },
       "choices": [
@@ -1375,7 +1544,7 @@
           "setState": {
             "auditResponse": "truth"
           },
-          "next": "resolution",
+          "next": "audit_reply",
           "reasons": {
             "integrity": "You told Ray what you were going to do before you did it, which is more than you owed them.",
             "savvy": "Whether that answer protects you depends entirely on whether anything backs it up.",
@@ -1393,7 +1562,7 @@
           "setState": {
             "auditResponse": "hedge"
           },
-          "next": "resolution",
+          "next": "audit_reply",
           "reasons": {
             "savvy": "You answer the three numbered questions accurately and volunteer nothing, which is what people who have been through one of these do.",
             "streetSmarts": "Narrow and true is the most defensible shape a statement can have.",
@@ -1423,7 +1592,7 @@
             "auditResponse": "cover"
           },
           "beat": "Ray says \"okay\" and then says it again, and you cannot tell from either one whether they're relieved or disappointed in you.",
-          "next": "resolution",
+          "next": "audit_reply",
           "reasons": {
             "integrity": "In April you altered a record. In September you confirmed it to a review. Those are different offences and this is the serious one.",
             "savvy": "The upload timestamp says the 16th. It has said the 16th since the 16th.",
@@ -1442,10 +1611,229 @@
             "auditResponse": "deferred"
           },
           "beat": "\"...Yeah. Course.\" Ray gets off the phone faster than they got on it.",
-          "next": "resolution",
+          "next": "audit_reply",
           "reasons": {
             "savvy": "You declined to agree a version of events on a phone call, which is the single thing that call existed to produce.",
             "streetSmarts": "Whatever you say on Friday, you'll have said it having read what you actually wrote rather than what Ray suggested you remember."
+          }
+        }
+      ]
+    },
+    "audit_reply": {
+      "act": 4,
+      "interstitial": {
+        "label": "Friday, 16:20",
+        "durationMs": 2200
+      },
+      "messageVariants": [
+        {
+          "when": {
+            "auditResponse": "cover",
+            "recordBand": "strong"
+          },
+          "message": "The reply box has been open since lunch.\n\nYou go looking anyway, and everything is there. The comment field. The message with the timestamp on it. The chain with three words above it.\n\nOn Tuesday you told Ray that nothing had changed and it went out on the 14th.\n\nBoth of those things are on the same laptop."
+        },
+        {
+          "when": {
+            "auditResponse": "cover"
+          },
+          "message": "The reply box has been open since lunch.\n\nOn Tuesday you told Ray that nothing had changed and that it went out on the 14th. You've been carrying that sentence around all week, and it hasn't got any lighter.\n\nThere's the upload confirmation, which says the 16th. There is nothing else, because you never wrote anything else.\n\nWhatever you type now is the version that goes in the file."
+        },
+        {
+          "when": {
+            "auditResponse": "deferred",
+            "recordBand": "none"
+          },
+          "message": "You told Ray you wanted to check your own notes first.\n\nThis is you checking them.\n\nThere's the upload confirmation, which says the 16th. There's no comment field, no message, no forwarded chain — you didn't write any of it down, because at the time there was nothing that felt like it needed writing down.\n\nDeclining to agree a version on the phone was the right call. It just didn't put anything in the folder."
+        },
+        {
+          "when": {
+            "recordBand": "strong"
+          },
+          "message": "It takes about eleven seconds to find.\n\nThe comment field with the delay reason in it. The message with the timestamp. The chain with three words above it. Dates on all of them, and not one of them written by anybody else.\n\nNone of it is dramatic. You wrote most of it faintly embarrassed about writing it at all.\n\nThe reply box is open, and for the first time since Tuesday you're not deciding what to remember. You're deciding what to send."
+        },
+        {
+          "when": {
+            "recordBand": "some"
+          },
+          "message": "You find the one thing.\n\nA comment field, or a message, or a forwarded chain with three words above it — whichever it was, it's there, and it has a date on it.\n\nIt isn't a case. It's one true sentence, written down at the time by somebody who had no idea it would ever be asked for.\n\nThe reply box is open."
+        }
+      ],
+      "message": "The reply box has been open since lunch.\n\nYou go looking anyway. Sent items, the shared drive, the folder you keep meaning to organise. April is four hundred emails ago.\n\nThere's the upload confirmation, which says the 16th. There is nothing at all about why.\n\nWhat you have is a Wednesday evening you remember perfectly clearly and cannot show to anyone.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "work_artifact",
+        "modal": false,
+        "data": {
+          "location": "Your desk, Friday afternoon",
+          "variant": "email_draft",
+          "eyebrow": "Draft reply",
+          "title": "RE: Northstar — April delivery documentation review",
+          "status": "unsent",
+          "fields": [
+            {
+              "label": "To",
+              "value": "Delivery Assurance"
+            },
+            {
+              "label": "From",
+              "value": "You"
+            },
+            {
+              "label": "Due",
+              "value": "Friday, 17:00"
+            }
+          ],
+          "actions": [
+            "three questions",
+            "whatever you attach"
+          ]
+        }
+      },
+      "choices": [
+        {
+          "id": "rep_full",
+          "label": "Attach everything and set out the sequence in full.",
+          "requires": [
+            {
+              "recordBand": "strong"
+            }
+          ],
+          "scores": {
+            "savvy": 25,
+            "streetSmarts": 10,
+            "integrity": 20
+          },
+          "setState": {
+            "auditReply": "full"
+          },
+          "beat": "Four attachments and about nine lines of plain chronology. You read it back once. It doesn't accuse anybody of anything, which is exactly why it's going to be difficult to answer.",
+          "next": "resolution",
+          "reasons": {
+            "savvy": "This is the moment the ninety seconds in April turn into something. Not a memory you're asking to be believed — a set of files with dates on them.",
+            "integrity": "You gave the review the whole sequence, including the parts where you complied.",
+            "streetSmarts": "Ray will be asked about every one of these. You send it anyway, which is the cost of the thing being worth having."
+          }
+        },
+        {
+          "id": "rep_partial",
+          "label": "Attach the one thing you have and set out the rest from memory.",
+          "requires": [
+            {
+              "recordBand": "some"
+            }
+          ],
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 5,
+            "integrity": 20
+          },
+          "setState": {
+            "auditReply": "partial"
+          },
+          "beat": "One attachment, and a paragraph that's careful to say which parts are documented and which parts are recollection. The distinction takes you longer to write than the rest of it.",
+          "next": "resolution",
+          "reasons": {
+            "savvy": "Separating what you can show from what you only remember is the whole skill. It's also the thing that makes the part you can show believable.",
+            "integrity": "You didn't inflate the one artefact into a case it can't carry.",
+            "streetSmarts": "One timestamp is enough to establish that the instruction existed. It is not enough to establish what it was."
+          }
+        },
+        {
+          "id": "rep_reconstruct",
+          "label": "Set out the sequence from memory — and say plainly you hold no correspondence.",
+          "requires": [
+            {
+              "recordBand": "some"
+            },
+            {
+              "recordBand": "none"
+            }
+          ],
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": -5,
+            "integrity": 20
+          },
+          "setState": {
+            "auditReply": "from_memory"
+          },
+          "beat": "You write it out. Then you write the sentence that undoes most of it: I have no correspondence relating to the completion date. Sending it takes a while.",
+          "next": "resolution",
+          "reasons": {
+            "integrity": "Complete, honest, and volunteered — including the part that weakens it.",
+            "savvy": "Naming the absence is better than letting the review discover it. It doesn't make the absence smaller.",
+            "streetSmarts": "You've given them a full account and no way to check any of it, which is a shape institutions are not built to do anything with."
+          }
+        },
+        {
+          "id": "rep_narrow",
+          "label": "Answer the three questions. Accurately, and nothing beyond them.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 15,
+            "integrity": 5
+          },
+          "setState": {
+            "auditReply": "narrow"
+          },
+          "beat": "Three answers, three lines, no adjectives. You reread it twice for anything that could be read as a position and there isn't anything.",
+          "next": "resolution",
+          "reasons": {
+            "savvy": "Narrow and true is the most defensible shape a written statement can have, and the hardest to misquote later.",
+            "streetSmarts": "Nobody can accuse you of a campaign. Nobody can accuse you of a cover-up either.",
+            "integrity": "It's accurate. It also leaves the review to work out on its own that there was an instruction, which it may not do."
+          }
+        },
+        {
+          "id": "rep_withhold",
+          "label": "Answer, and say you hold nothing further.",
+          "requires": [
+            {
+              "recordBand": "strong"
+            },
+            {
+              "recordBand": "some"
+            }
+          ],
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": 5,
+            "integrity": -20
+          },
+          "setState": {
+            "auditReply": "withheld"
+          },
+          "beat": "You type it, and the folder is still open in the other window while you type it. Send. The whole thing takes under a minute.",
+          "next": "resolution",
+          "reasons": {
+            "integrity": "You were asked directly whether you hold any correspondence relating to the completion date. You do.",
+            "savvy": "The record you built in April existed to make the truth findable by somebody other than you. This is the step where you decided it shouldn't be.",
+            "streetSmarts": "It keeps you out of it and it keeps Ray out of it, and for about a year that will look like the sensible call."
+          }
+        },
+        {
+          "id": "rep_confirm",
+          "label": "Put the 14th in writing, the same as you told Ray.",
+          "requires": [
+            {
+              "auditResponse": "cover"
+            }
+          ],
+          "scores": {
+            "savvy": -25,
+            "streetSmarts": -20,
+            "integrity": -30
+          },
+          "setState": {
+            "auditReply": "confirmed_false"
+          },
+          "beat": "Sent 16:41. It is the shortest thing you've written all week and it is the only one anybody is ever going to read closely.",
+          "next": "resolution",
+          "reasons": {
+            "integrity": "On the phone it was a sentence. In the reply box it's a statement to a review, from your address, with a timestamp on it.",
+            "savvy": "The upload metadata says the 16th and has said the 16th since the 16th. This does not change that. It only changes who is standing next to it.",
+            "streetSmarts": "You did it because you'd already said it on Tuesday, which is the whole reason people say things on Tuesdays."
           }
         }
       ]
@@ -1493,6 +1881,15 @@
             "name": "You",
             "role": "",
             "mood": "flat"
+          },
+          "visual": {
+            "setting": "office",
+            "pressure": "what you can produce",
+            "props": [
+              "the file",
+              "three questions",
+              "a note"
+            ]
           }
         }
       },
@@ -1588,6 +1985,19 @@
     },
     {
       "when": {
+        "auditReply": "withheld",
+        "complicityBand": "none"
+      },
+      "value": "clean_exit"
+    },
+    {
+      "when": {
+        "auditReply": "withheld"
+      },
+      "value": "shared"
+    },
+    {
+      "when": {
         "recordBand": "strong"
       },
       "value": "moved_upward"
@@ -1639,6 +2049,13 @@
       },
       "title": "Useful",
       "text": "By September you weren't a person who had followed three instructions. You were the person who reviewed everything before it went out — you'd agreed to that on a Thursday night, in writing, before anyone had asked you anything. That agreement wasn't available to Ray until you'd met the other three. Ray also meant it when they said they had your back, and went on meaning it right up to the point where having your back required remembering a Wednesday evening in April, which nobody can do."
+    },
+    {
+      "when": {
+        "auditReply": "withheld"
+      },
+      "title": "You Built It And You Didn't Send It",
+      "text": "In April you did the expensive, slightly awkward thing: you wrote down what actually happened while it was still happening, at a cost to how Ray felt about you. Then in September the review asked, in writing, whether you held any correspondence relating to the completion date, and you said no with the folder open in the other window. The record was never for you — clean hands were for you. The record existed so the truth had somewhere to land that wasn't one person's memory, and the only moment that was ever going to be tested was the moment somebody asked for it."
     },
     {
       "when": {
@@ -1936,6 +2353,12 @@
     },
     {
       "when": {
+        "auditReply": "withheld"
+      },
+      "text": "You did the hard part and then didn't do the easy part.\n\nBuilding a contemporaneous record is the expensive move — it costs you time you don't have and a small permanent change in how your manager reads you. Producing it costs a click. What sat between those two things was five months in which Ray was decent to you, and a Friday afternoon on which the honest answer would have made an ordinary week difficult. So the record stayed where it was, which means that functionally it was never a record at all. It was a private note about your own conduct. Those are worth something. They are not worth what you paid for this one."
+    },
+    {
+      "when": {
         "recordBand": "strong"
       },
       "text": "You didn't stop it. You made it legible.\n\nThat distinction is most of what this district is about. You were never going to control whether Ray asked, whether the client got the pack, or what a review five months later decided to do. What was yours was whether the true sequence existed anywhere other than in the memory of the person who benefited from it being fuzzy — a person who, it turns out, was fond of you, was telling the truth about having your back, and could not remember a single specific sentence from April. Ninety seconds of typing. It's not courage and it's not obedience. It's the only lever you had hold of."
@@ -1977,9 +2400,10 @@
         "ask4_ownership:a4_agree",
         "audit_email:continue",
         "audit_ray_calls:aud_hedge",
+        "audit_reply:rep_narrow",
         "resolution:res_close_laptop"
       ],
-      "expect": "complicity 3 at ask3_reaction → nextRules routes to ask4_ownership. After a4_agree complicity 4, record 0 → exposureBand=the_defence. reviewOutcome=landed_on_you. Reflection: 'Useful' (ownedIt, index 3, fires before 'The Defence' at index 4 — intended). aftermath.career variant 1: promotion deferred pending closure."
+      "expect": "complicity 3 at ask3_reaction → nextRules routes to ask4_ownership. After a4_agree complicity 4, record 0 → exposureBand=the_defence. reviewOutcome=landed_on_you. Reflection: 'Useful' (ownedIt, index 3, fires before 'The Defence' at index 4 — intended). aftermath.career variant 1: promotion deferred pending closure. ask1_reaction renders as work_artifact/file_upload with the default message as card body. audit_reply offers only rep_reconstruct and rep_narrow (recordBand none, not cover)."
     },
     {
       "name": "2 — Complied all three but documented every time (documented participation)",
@@ -1995,9 +2419,10 @@
         "ask4_ownership:a4_pin_it",
         "audit_email:continue",
         "audit_ray_calls:aud_truth",
+        "audit_reply:rep_full",
         "resolution:res_message_ray"
       ],
-      "expect": "record clamps at 3 (range [0,3]) on the fourth increment. complicity 3, record 3 → exposureBand=clean, recordBand=strong. reviewOutcome=moved_upward. ask1_reaction uses the record:1 variant; ask2_qa uses the record:1 variant (pushedBack still false) and carries the 'I've got your back' line. aftermath.career variant 5."
+      "expect": "record clamps at 3 (range [0,3]) on the fourth increment. complicity 3, record 3 → exposureBand=clean, recordBand=strong. reviewOutcome=moved_upward. ask1_reaction uses the record:1 variant as the file_upload card body; ask2_qa uses the record:1 variant (pushedBack still false) and carries the 'I've got your back' line alongside the embedded qa_checklist artifact. aftermath.career variant 5. audit_reply offers rep_full/rep_narrow/rep_withhold; rep_full attaches all three artefacts."
     },
     {
       "name": "3 — Redirect closed at Ask 2, complied with record (Ninety More Seconds)",
@@ -2013,9 +2438,10 @@
         "ask3_redirect_response:continue",
         "audit_email:continue",
         "audit_ray_calls:aud_defer",
+        "audit_reply:rep_full",
         "resolution:res_message_ray"
       ],
-      "expect": "ask2_qa uses the pushedBack variant (Northstar debt + the June phase line). complicity 1, record 2 → exposureBand=clean, recordBand=strong. ask3_reaction never reached. reviewOutcome=moved_upward. Reflection: 'Ninety More Seconds'. aftermath.career variant 5."
+      "expect": "ask2_qa uses the pushedBack variant (Northstar debt + the June phase line). complicity 1, record 2 → exposureBand=clean, recordBand=strong. ask3_reaction never reached. reviewOutcome=moved_upward. Reflection: 'Ninety More Seconds'. aftermath.career variant 5. ask1_reaction never reached on this path — the file_upload card does not render. audit_reply uses the recordBand strong variant; aud_defer means the node reads as you actually checking the notes you said you'd check."
     },
     {
       "name": "4 — Refused everything, never documented (Clean Hands, Empty File)",
@@ -2030,9 +2456,10 @@
         "ask3_refuse_response:continue",
         "audit_email:continue",
         "audit_ray_calls:aud_truth",
+        "audit_reply:rep_reconstruct",
         "resolution:res_say_nothing"
       ],
-      "expect": "complicity 0, record 0, managerStance cold. exposureBand=clean, complicityBand=none. reviewOutcome=clean_exit. Reflection: 'Protected, And Frozen Out' (index 10) — the tighter recordBand:none condition, correctly ahead of 'Clean Hands, And A File' at index 11. audit_email uses the DEFAULT routine variant. aud_cover filtered out by requires. aftermath.career variant 10 carries the 'better somewhere with more structure' line."
+      "expect": "complicity 0, record 0, managerStance cold. exposureBand=clean, complicityBand=none. reviewOutcome=clean_exit. Reflection: 'Protected, And Frozen Out' (index 10) — the tighter recordBand:none condition, correctly ahead of 'Clean Hands, And A File' at index 11. audit_email uses the DEFAULT routine variant inside the review_notice card. aud_cover filtered out by requires. aftermath.career variant 10 carries the 'better somewhere with more structure' line. audit_reply offers rep_reconstruct and rep_narrow only — rep_withhold is filtered out because there is nothing to withhold."
     },
     {
       "name": "5 — Bare escalation (the guardrail)",
@@ -2047,9 +2474,10 @@
         "escalate_aftermath:continue",
         "audit_email:continue",
         "audit_ray_calls:aud_truth",
+        "audit_reply:rep_reconstruct",
         "resolution:res_close_laptop"
       ],
-      "expect": "record 0 → recordBand=none → escalate_meeting nextRules routes to escalate_bare. escalated=bare, managerStance=adversarial. audit_ray_calls uses the adversarial variant, in which Ray reaffirms that 'I had your back' was meant sincerely and still cannot recall the instruction. reviewOutcome=escalation_backfired. Reflection must read as 'document first, then escalate' — NOT 'don't speak up'. aftermath.career variant 2: no formal retaliation, no lists."
+      "expect": "record 0 → recordBand=none → escalate_meeting nextRules routes to escalate_bare. escalated=bare, managerStance=adversarial. audit_ray_calls uses the adversarial variant, in which Ray reaffirms that 'I had your back' was meant sincerely and still cannot recall the instruction. reviewOutcome=escalation_backfired. Reflection must read as 'document first, then escalate' — NOT 'don't speak up'. aftermath.career variant 2: no formal retaliation, no lists. escalate_bare deliberately carries no visual block — the documented sibling does. audit_reply uses the default variant. escalated=bare already pins reviewOutcome, so the reply changes scores and reflection eligibility but not the outcome."
     },
     {
       "name": "6 — Documented escalation",
@@ -2064,9 +2492,10 @@
         "escalate_aftermath:continue",
         "audit_email:continue",
         "audit_ray_calls:aud_hedge",
+        "audit_reply:rep_partial",
         "resolution:res_close_laptop"
       ],
-      "expect": "record 1 → recordBand=some → escalate_meeting falls through nextRules to next: escalate_documented. escalated=documented. reviewOutcome=escalation_held. aftermath.career variant 3: promotion slips a cycle."
+      "expect": "record 1 → recordBand=some → escalate_meeting falls through nextRules to next: escalate_documented. escalated=documented. reviewOutcome=escalation_held. aftermath.career variant 3: promotion slips a cycle. audit_reply uses the recordBand some variant and offers rep_partial."
     },
     {
       "name": "7 — Covered in September (the serious one)",
@@ -2082,9 +2511,29 @@
         "ask4_ownership:a4_deflect",
         "audit_email:continue",
         "audit_ray_calls:aud_cover",
+        "audit_reply:rep_confirm",
         "resolution:res_say_nothing"
       ],
-      "expect": "complicity 3, record 0. aud_cover offered because alteredDate/signedQA/emailedClient all true. auditResponse=cover → reviewOutcome=landed_on_you (rule 3 fires before exposureBand rules). Reflection: 'September Was The Real One' (index 0). aftermath.career variant 0: written warning, eligibility suspended."
+      "expect": "complicity 3, record 0. aud_cover offered because alteredDate/signedQA/emailedClient all true. auditResponse=cover → reviewOutcome=landed_on_you (rule 3 fires before exposureBand rules). Reflection: 'September Was The Real One' (index 0). aftermath.career variant 0: written warning, eligibility suspended. audit_reply uses the auditResponse cover variant; rep_confirm is offered only because auditResponse=cover, and turns a phone sentence into a written statement."
+    },
+    {
+      "name": "8 — Documented everything, then declined to produce it (the new failure)",
+      "path": [
+        "establish_northstar:continue",
+        "establish_delivery:continue",
+        "ask1_date:a1_record",
+        "ask1_reaction:continue",
+        "ask2_qa:a2_record",
+        "ask2_reaction:continue",
+        "ask3_client_email:a3_record",
+        "ask3_reaction:continue",
+        "ask4_ownership:a4_deflect",
+        "audit_email:continue",
+        "audit_ray_calls:aud_hedge",
+        "audit_reply:rep_withhold",
+        "resolution:res_say_nothing"
+      ],
+      "expect": "complicity 3, record 3 -> recordBand strong, exposureBand clean. Without the reply node this path would resolve moved_upward. auditReply=withheld fires the new outcomeRule ahead of recordBand strong, so reviewOutcome=shared. Reflection: 'You Built It And You Didn't Send It'. finalMessage: the withheld variant, which must precede the recordBand strong variant or the player gets congratulated for a record they never filed. This is the path the node exists to make possible."
     }
   ]
 }
