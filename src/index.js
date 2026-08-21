@@ -9,10 +9,15 @@ const PORT = process.env.PORT || 4000;
 
 app.use(cors({
   origin: [
+    'http://localhost:3000',
+    'http://localhost:4000',
+    'http://localhost:5000',
+    'http://localhost:8080',
     'https://irx.world',
-    'https://www.irx.world',
-    'http://localhost:3000' // Local React testing
-  ]
+    'https://www.irx.world'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 app.use(rateLimiter);
