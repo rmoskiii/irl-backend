@@ -17,6 +17,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/scenarios", scenarioRoutes);
 
-app.listen(PORT, () => {
-  console.log(`IRL backend listening on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`IRL backend listening on port ${PORT}`);
 });
