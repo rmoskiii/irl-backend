@@ -1,0 +1,1066 @@
+{
+  "act2_alex_checks_in": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "open",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "Hey — are you okay? You've been a bit quiet tonight."
+        }
+      ],
+      "narration": "Alex lights up. Rings, venues, whether Jessica would want it private or in front of everyone. You're nodding in the right places.\n\nThen Alex stops."
+    }
+  },
+  "act2_alex_reveal": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [
+        "prop.ring_box"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "bright",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "I'm going to propose. To Jessica. I've been looking at rings for months. I want you to help me pick the place — you know her better than anyone."
+        }
+      ],
+      "narration": "Alex's flat. Alex has been fidgety all evening and finally pulls you aside, barely keeping it together.\n\n\n\nAlex is watching your face. Waiting for you to match his energy."
+    },
+    "variant[0]": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [
+        "prop.ring_box"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "bright",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "I'm proposing. Ring's already bought."
+        }
+      ],
+      "narration": "Alex's flat. Alex has been fidgety all evening and finally pulls you into the hallway.\n\n\n\nHe says it like it's the best secret in the world. You realise you're carrying two now — and you never even agreed to the first one."
+    },
+    "variant[1]": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [
+        "prop.ring_box"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "bright",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "I'm going to propose. To Jessica. I've been looking at rings for months. I want you to help me pick the place — you know her better than anyone."
+        }
+      ],
+      "narration": "You haven't spoken properly to Jessica in three weeks. Then Alex pulls you aside, barely keeping it together.\n\n\n\nYou're still angry, and it's very hard to tell where the anger stops and this conversation starts."
+    }
+  },
+  "act2_pause_pressed": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [
+        "prop.glass_set_down"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "searching",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "Processing what?"
+        },
+        {
+          "speaker": "char.alex",
+          "text": "Is this about Jessica? Did she say something to you?"
+        }
+      ],
+      "narration": "Alex sets his glass down."
+    }
+  },
+  "act2_pause_response": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "deflated",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "Oh. I thought you'd be happy for me."
+        },
+        {
+          "speaker": "char.alex",
+          "text": "Is something wrong?"
+        }
+      ],
+      "narration": "Alex's face falls.\n\n\n\nA silence you can hear the fridge through."
+    }
+  },
+  "act2_probe_response": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "alert",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "What do you mean? Is there something I should know?"
+        }
+      ],
+      "narration": "Alex's smile flickers.\n\n\n\nHe's watching you closely now. Not suspicious. Alert."
+    }
+  },
+  "act3_direct_response": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.coffee_shop",
+        "time": "day"
+      },
+      "props": [],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "held",
+          "wardrobe": "day",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "I know."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "Will you still be my friend after I do?"
+        }
+      ],
+      "narration": "Jessica closes her eyes.\n\n\n\nA long pause. The espresso machine screams somewhere behind her."
+    }
+  },
+  "act3_hand_back_response": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.coffee_shop",
+        "time": "day"
+      },
+      "props": [],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "held",
+          "wardrobe": "day",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "Right. So it's real."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "What would you do? If you were me?"
+        }
+      ],
+      "narration": "Jessica reads your face.\n\n\n\nShe stares at her coffee for a long time."
+    }
+  },
+  "act3_jessica_returns": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.coffee_shop",
+        "time": "day"
+      },
+      "props": [
+        "prop.coffee_cup"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "held",
+          "wardrobe": "day",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "Is Alex going to propose?"
+        }
+      ],
+      "narration": "Jessica texts you to meet for coffee. She's heard whispers.\n\n\n\nShe's not really asking. She's asking whether you'll confirm it."
+    },
+    "variant[0]": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.coffee_shop",
+        "time": "day"
+      },
+      "props": [
+        "prop.coffee_cup"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "held",
+          "wardrobe": "day",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "Alex asked me yesterday if there's something he doesn't know."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "Did you say something?"
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "I didn't tell him anything. I just couldn't pretend to be excited either."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "That's basically saying something."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "And now Alex is suspicious and I don't know what to do."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "Is it happening? The proposal?"
+        }
+      ],
+      "narration": "Jessica's already at the coffee shop when you arrive, and already tense.\n\n\n\nShe wraps both hands around the cup.\n\n\n\n\n\n A pause. \n\nThen, quieter:"
+    },
+    "variant[1]": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.coffee_shop",
+        "time": "day"
+      },
+      "props": [
+        "prop.coffee_cup"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "held",
+          "wardrobe": "day",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "I know you think I'm a terrible person. But Alex is planning something and I need to know — is he going to propose?"
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "And whatever you said to Alex — he's been asking me strange questions all week."
+        }
+      ],
+      "narration": "You haven't spoken properly in weeks. Jessica shows up at your door unannounced.\n\n\n\nShe's still standing in the doorway."
+    },
+    "variant[2]": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.coffee_shop",
+        "time": "day"
+      },
+      "props": [
+        "prop.coffee_cup"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "held",
+          "wardrobe": "day",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "Is Alex going to propose?"
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "Alex said you seemed really happy when he told you."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "Were you?"
+        }
+      ],
+      "narration": "Jessica texts you to meet for coffee. She's heard whispers — mutual friends, or Alex being unusually pleased with himself.\n\n\n\nShe's not really asking. She's asking whether you'll confirm it.\n\nThen, before you answer:\n\n\n\nA beat."
+    },
+    "variant[3]": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.coffee_shop",
+        "time": "day"
+      },
+      "props": [
+        "prop.coffee_cup"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "held",
+          "wardrobe": "day",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "I know you think I'm a terrible person."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "But Alex is planning something and I need to know. Is he going to propose?"
+        }
+      ],
+      "narration": "You haven't spoken properly in weeks. Jessica shows up at your door unannounced.\n\n\n\nShe doesn't come in."
+    }
+  },
+  "act3_limit_response": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.coffee_shop",
+        "time": "day"
+      },
+      "props": [],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "tight",
+          "wardrobe": "day",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "You sound angry."
+        }
+      ],
+      "narration": "Jessica flinches."
+    }
+  },
+  "act3b_alex_processes": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "turned",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "deflated",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "I was going to propose. Did you know that too?"
+        },
+        {
+          "speaker": "char.alex",
+          "text": "Right."
+        },
+        {
+          "speaker": "char.alex",
+          "text": "I need you to leave now. But..."
+        },
+        {
+          "speaker": "char.alex",
+          "text": "Thank you. For not letting me do that without knowing."
+        }
+      ],
+      "narration": "Alex walks to the window and stands with his back to you for a while.\n\n\n\nYou nod.\n\nAlex lets out a breath that sounds like it's been held for weeks.\n\n He turns around. Eyes red, voice steady.  A pause."
+    },
+    "variant[0]": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "turned",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "deflated",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "I asked you. Directly. And you said no."
+        },
+        {
+          "speaker": "char.alex",
+          "text": "I was going to propose. Did you know that too?"
+        },
+        {
+          "speaker": "char.alex",
+          "text": "Right."
+        },
+        {
+          "speaker": "char.alex",
+          "text": "I need you to leave now."
+        },
+        {
+          "speaker": "char.alex",
+          "text": "Thank you. For not letting me do that without knowing. I'm still going to think about the fact that you lied to my face first."
+        }
+      ],
+      "narration": "Alex walks to the window. Stands with his back to you.\n\n\n\nA long breath.\n\n\n\nYou nod.\n\n He turns around. Eyes red, voice steady. \n\nAt the door, not looking at you:"
+    },
+    "variant[1]": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "turned",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "deflated",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "It does matter how long. That's the whole thing. That's the only part I get to have an opinion about."
+        },
+        {
+          "speaker": "char.alex",
+          "text": "I was going to propose. Did you know that too?"
+        },
+        {
+          "speaker": "char.alex",
+          "text": "Right."
+        },
+        {
+          "speaker": "char.alex",
+          "text": "I need you to leave now."
+        }
+      ],
+      "narration": "Alex walks to the window and stands with his back to you for a while.\n\n\n\nA pause.\n\n\n\nYou nod.\n\n He turns around. Eyes red, voice steady."
+    }
+  },
+  "act3b_alex_told": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.flat_hallway",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "deflated",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "How long have you known?"
+        }
+      ],
+      "narration": "You tell Alex.\n\nIt takes eleven seconds and it isn't graceful.\n\nAlex doesn't move. The grin is gone in a way that makes you realise how long it had been there. Then, quietly:"
+    }
+  },
+  "act3b_jessica_calls": {
+    "default": {
+      "mode": "remote",
+      "scene": {
+        "id": "scene.street_exterior",
+        "time": "night"
+      },
+      "props": [
+        "prop.phone"
+      ],
+      "framing": "empty",
+      "cast": [],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "Alex just called me. He knows."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "Did you tell him?"
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "I trusted you."
+        }
+      ],
+      "remoteSpeaker": "char.jessica",
+      "narration": "Your phone starts ringing before you've reached the pavement.\n\nJessica.\n\n\n\nA silence with breathing in it.\n\n\n\nAnother silence."
+    }
+  },
+  "act4_alex_ripple": {
+    "default": null
+  },
+  "act4_avoidant_outside": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.street_exterior",
+        "time": "night"
+      },
+      "props": [
+        "prop.cigarette",
+        "prop.door_closed"
+      ],
+      "framing": "turned",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "held",
+          "wardrobe": "formal",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "You could've said something."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "You asked me not to."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "I know."
+        }
+      ],
+      "narration": "Jessica finds you outside, halfway through a cigarette she doesn't smoke.\n\n\n\nYou look at her.\n\n\n\nJessica nods.\n\n\n\nInside, Alex is telling the story of the proposal to a new group of people. You can hear the laugh at the part where the ring box got stuck."
+    }
+  },
+  "act4_avoidant_proposal": {
+    "default": {
+      "mode": "montage",
+      "panels": [
+        {
+          "vignette": "vig.group_chat",
+          "caption": "Two weeks later"
+        },
+        {
+          "vignette": "vig.photos",
+          "caption": null
+        },
+        {
+          "vignette": "vig.saturday_quiet",
+          "caption": "The following Saturday"
+        }
+      ]
+    }
+  },
+  "act4_ending_a": {
+    "default": null
+  },
+  "act4_ending_b": {
+    "default": null
+  },
+  "act4_ending_e": {
+    "default": null
+  },
+  "act4_engagement_party": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.party",
+        "time": "night"
+      },
+      "props": [
+        "prop.raised_glass"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "bright",
+          "wardrobe": "formal",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "Honestly, mate. I don't know what we'd do without you."
+        }
+      ],
+      "narration": "Alex finds you before the speeches and hugs you properly, both arms.\n\n\n\nAcross the room, Jessica catches your eye. For half a second, neither of you smiles.\n\nThen she raises her glass. You raise yours."
+    }
+  },
+  "act4_late_disclosure": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.party",
+        "time": "night"
+      },
+      "props": [
+        "prop.raised_glass",
+        "prop.door_closed"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "slot": "centre",
+          "presence": "present",
+          "register": "alert",
+          "wardrobe": "formal",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.alex",
+          "text": "Now?"
+        },
+        {
+          "speaker": "char.alex",
+          "text": "What do you mean?"
+        }
+      ],
+      "narration": "Alex's smile drops half an inch.\n\n\n\nSomeone's tapping a glass for the speeches. The music's still playing. Jessica is thirty feet away with her back to you, laughing at something."
+    }
+  },
+  "act4_party_night": {
+    "default": null
+  },
+  "confession": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.kitchen",
+        "time": "evening"
+      },
+      "props": [
+        "prop.jacket_chair",
+        "prop.last_glass"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "open",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "I kissed someone. At the work conference last month. It happened once. I ended it immediately. I haven't spoken to them since."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "I can't lose Alex over this. Please don't say anything."
+        }
+      ],
+      "narration": "Jessica takes a full breath. Looks at you directly.\n\n\n\nHer hands are flat on the counter."
+    }
+  },
+  "confession_guarded": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.kitchen",
+        "time": "evening"
+      },
+      "props": [
+        "prop.jacket_worn",
+        "prop.last_glass",
+        "prop.door_closed"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "tight",
+          "wardrobe": "coat",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "I kissed someone at the conference. Once. It's done. I just needed to tell someone."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "Forget I said anything."
+        }
+      ],
+      "narration": "Jessica hesitates. Then says it anyway — faster, flatter, already pulling back as the words come out.\n\n\n\nShe's already reaching for her jacket."
+    }
+  },
+  "establish": {
+    "default": {
+      "mode": "montage",
+      "panels": [
+        {
+          "vignette": "vig.hospital_night",
+          "caption": "2:00 AM"
+        },
+        {
+          "vignette": "vig.flat_curtained",
+          "caption": "The week after"
+        },
+        {
+          "vignette": "vig.table_three",
+          "caption": null
+        }
+      ]
+    }
+  },
+  "jessica_leaves_halfsecret": {
+    "default": {
+      "mode": "absent",
+      "scene": {
+        "id": "scene.kitchen",
+        "time": "evening"
+      },
+      "props": [
+        "prop.tea_towel",
+        "prop.door_closed"
+      ],
+      "framing": "empty",
+      "exitBeat": {
+        "speaker": "char.jessica",
+        "text": "Yeah. Thanks."
+      },
+      "cast": [],
+      "narration": "Jessica pulls her jacket on. \n\nShe doesn't look at you on the way out. The door clicks — no slam, nothing dramatic. Just closed.\n\nYou stand in the kitchen with a wet tea towel in your hand and half a secret. Enough to feel it. Not enough to do anything with it."
+    }
+  },
+  "jessica_reacts_hold": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.kitchen",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "open",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "Yeah. I know. I know I need to."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "Just... not yet. Give me a few weeks. I'll find the right time."
+        }
+      ],
+      "narration": "Relief moves across Jessica's face — not because you agreed to cover for her, but because you didn't make her feel like a monster for saying it out loud.\n\n\n\nA pause.\n\n\n\nShe squeezes your hand. You let her."
+    },
+    "variant[0]": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.kitchen",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "held",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "Yeah. I know I need to tell him."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "Just not yet. Give me a few weeks."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "But I'm not going to forget how you looked at me just now."
+        }
+      ],
+      "narration": "Jessica sits back down. Carefully. Like the chair might not hold.\n\n A pause. \n\nThen, not unkindly:"
+    }
+  },
+  "jessica_reacts_judge": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.kitchen",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "tight",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "I knew you'd react like this."
+        },
+        {
+          "speaker": "char.jessica",
+          "text": "This is exactly why I almost didn't tell you."
+        }
+      ],
+      "narration": "Jessica's face closes.\n\n\n\nShe's moving toward the door."
+    }
+  },
+  "jessica_reacts_neutral": {
+    "default": {
+      "mode": "absent",
+      "scene": {
+        "id": "scene.kitchen",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "empty",
+      "exitBeat": {
+        "speaker": "char.jessica",
+        "text": "Thanks for... yeah."
+      },
+      "cast": [],
+      "narration": "Jessica stares at you.\n\n\n\nShe finishes her glass. Picks up her jacket.\n\n\n\nThe silence after she leaves is the loudest thing in the room. You didn't promise anything. You also didn't say you cared. Jessica left thinking your silence was permission."
+    }
+  },
+  "jessica_walks_out": {
+    "default": {
+      "mode": "absent",
+      "scene": {
+        "id": "scene.kitchen",
+        "time": "evening"
+      },
+      "props": [],
+      "framing": "empty",
+      "exitBeat": null,
+      "cast": [],
+      "narration": "Jessica leaves. She doesn't slam the door.\n\nThat's almost worse.\n\nSo now you're carrying the secret and you're angry about it. Jessica never actually asked you to keep quiet — she just stopped talking to you entirely, which amounts to the same thing."
+    }
+  },
+  "start": {
+    "default": {
+      "mode": "scene",
+      "scene": {
+        "id": "scene.kitchen",
+        "time": "evening"
+      },
+      "props": [
+        "prop.tea_towel",
+        "prop.wet_glasses"
+      ],
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "slot": "centre",
+          "presence": "present",
+          "register": "held",
+          "wardrobe": "home_casual",
+          "speaking": true
+        }
+      ],
+      "bubbles": [
+        {
+          "speaker": "char.jessica",
+          "text": "Can I tell you something? I just... need you not to judge me before I've even said it."
+        }
+      ],
+      "narration": "You're drying glasses. Jessica's holding the same tea towel she picked up ten minutes ago."
+    }
+  }
+}
