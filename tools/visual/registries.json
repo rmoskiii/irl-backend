@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "note": "Scenario-agnostic. Lives outside scenario JSON. Spec v1.0 §6.",
+
+  "slots": [
+    "left",
+    "centre",
+    "right",
+    "foreground_left",
+    "foreground_right",
+    "background_left",
+    "background_right"
+  ],
+
+  "framings": ["direct", "turned", "empty"],
+
+  "modes": ["scene", "montage", "remote", "absent", "messages"],
+
+  "characters": {
+    "char.jessica": {
+      "name": "Jessica",
+      "base": "figure_a",
+      "turned": "figure_a_rear",
+      "palette": "neighbourhood",
+      "registers": ["open", "held", "tight", "away", "bright"],
+      "wardrobe": ["home_casual", "coat", "day", "formal"]
+    },
+    "char.alex": {
+      "name": "Alex",
+      "base": "figure_b",
+      "turned": "figure_b_rear",
+      "palette": "neighbourhood",
+      "registers": ["open", "bright", "alert", "deflated", "searching"],
+      "wardrobe": ["home_casual", "formal"]
+    }
+  },
+
+  "scenes": {
+    "scene.kitchen":         { "times": ["evening"],      "default_time": "evening" },
+    "scene.flat_hallway":    { "times": ["evening"],      "default_time": "evening" },
+    "scene.coffee_shop":     { "times": ["day"],          "default_time": "day" },
+    "scene.street_exterior": { "times": ["night"],        "default_time": "night" },
+    "scene.party":           { "times": ["night"],        "default_time": "night" }
+  },
+
+  "vignettes": {
+    "vig.hospital_night":  { "note": "establish beat 1 — 2:00 AM" },
+    "vig.flat_curtained":  { "note": "establish beat 2 — the week after" },
+    "vig.table_three":     { "note": "establish beat 3 — player POV, third glass in foreground (§11.2)" },
+    "vig.group_chat":      { "note": "act4_avoidant_proposal panel 1" },
+    "vig.photos":          { "note": "act4_avoidant_proposal panel 2" },
+    "vig.saturday_quiet":  { "note": "act4_avoidant_proposal panel 3" }
+  },
+
+  "props": {
+    "prop.tea_towel":      {},
+    "prop.wet_glasses":    {},
+    "prop.jacket_chair":   {},
+    "prop.jacket_worn":    {},
+    "prop.last_glass":     {},
+    "prop.door_closed":    {},
+    "prop.ring_box":       {},
+    "prop.coffee_cup":     {},
+    "prop.glass_set_down": {},
+    "prop.raised_glass":   {},
+    "prop.cigarette":      {},
+    "prop.phone":          {}
+  },
+
+  "scoring_keys_forbidden": [
+    "jessicaLoyalty",
+    "alexLoyalty",
+    "savvy",
+    "streetSmarts",
+    "integrity",
+    "loyaltyBand",
+    "jessicaStanding",
+    "alexStanding"
+  ]
+}
