@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 800"
+     id="figure_a.wardrobe.home_casual" data-asset="figure_a" data-kind="wardrobe"
+     data-wardrobe="home_casual" data-base-point="210,800">
+    <!-- IRX Phase 2A — wardrobe: home_casual.
+         Open cardigan over a soft tee. Drawn in figure_a's local coordinate space so
+         it overlays the base body exactly; no per-frame offset. Exports one group. -->
+    <defs><style>
+        /* @tokens-begin */
+        :root {
+        /* line */
+        --irx-line:          #241D19;
+        --irx-line-soft:     #3B302A;
+        --irx-shadow:        #2A231E;
+
+        /* architecture */
+        --irx-wall:          #5D6B60;
+        --irx-wall-dark:     #4C584F;
+        --irx-wall-pattern:  #556359;
+        --irx-tile:          #C2B8A5;
+        --irx-tile-alt:      #AEA48E;
+        --irx-floor:         #5A4A3B;
+
+        /* window */
+        --irx-sky-high:      #2F3A4A;
+        --irx-sky-mid:       #4A4352;
+        --irx-sky-low:       #7A5B50;
+        --irx-outside-dark:  #232A33;
+        --irx-curtain:       #3F4A52;
+        --irx-curtain-dark:  #333C43;
+
+        /* joinery */
+        --irx-cabinet:       #785D44;
+        --irx-cabinet-dark:  #5F4934;
+        --irx-counter:       #9B7A57;
+        --irx-counter-edge:  #7C6043;
+
+        /* character */
+        --irx-skin:          #D3A17C;
+        --irx-skin-shade:    #B8845F;
+        --irx-hair:          #41322A;
+        --irx-hair-light:    #554136;
+
+        /* wardrobe: home_casual */
+        --irx-cloth:         #A8603F;
+        --irx-cloth-dark:    #894C31;
+        --irx-cloth-inner:   #D9CDBC;
+
+        /* props */
+        --irx-glass:         #BCC8C3;
+        --irx-glass-dark:    #9AA8A2;
+        --irx-highlight:     #FFFFFF;
+        --irx-jacket:        #4F5A63;
+        --irx-jacket-dark:   #3D464E;
+
+        /* accent — neighbourhood district, warm light only */
+        --irx-accent:        #FFC15E;
+        --irx-accent-dim:    #C89A4E;
+        --irx-lamp-warm:     #F2C77E;
+        --irx-cool-spill:    #7E93A8;
+
+        /* stroke weights */
+        --irx-stroke-xheavy: 6.6;
+        --irx-stroke-heavy:  5;
+        --irx-stroke:        3.4;
+        --irx-stroke-fine:   2.1;
+        --irx-stroke-hair:   1.4;
+        }
+        /* @tokens-end */
+        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .hv { stroke-width: 5; }
+        .md { stroke-width: 3.4; }
+        .fn { stroke-width: 2.1; }
+        .xh { stroke-width: 6.6; }
+        .hr { stroke-width: 1.4; }
+        .cl  { fill: var(--irx-cloth); }
+        .cld { fill: var(--irx-cloth-dark); }
+        .cli { fill: var(--irx-cloth-inner); }
+    </style></defs>
+
+    <g id="character_clothing">
+        <!-- tee underneath, visible at the neckline and centre front -->
+        <path d="M168 244 q42 26 84 0 q14 58 12 134 q-2 90 -5 178 h-98
+           q-3 -88 -5 -178 q-2 -76 12 -134 z" class="cli"/>
+        <path class="ln md" d="M158 240 q52 30 104 0"/>
+
+        <!-- cardigan: left panel -->
+        <path d="M128 272 q24 -32 56 -34 q-13 42 -17 104 q-5 82 -3 212 h-54
+           q-5 -80 -7 -178 q-2 -88 25 -104 z" class="cl"/>
+        <path class="ln hv" d="M128 272 q24 -32 56 -34 q-13 42 -17 104 q-5 82 -3 212"/>
+        <path class="ln md" d="M184 238 q-13 42 -17 104 q-5 82 -3 212" />
+
+        <!-- cardigan: right panel -->
+        <path d="M292 272 q-24 -32 -56 -34 q13 42 17 104 q5 82 3 212 h54
+           q5 -80 7 -178 q2 -88 -25 -104 z" class="cl"/>
+        <path class="ln hv" d="M292 272 q-24 -32 -56 -34 q13 42 17 104 q5 82 3 212"/>
+        <path class="ln md" d="M236 238 q13 42 17 104 q5 82 3 212"/>
+
+        <!-- sleeves over the reaching arms, cuffs stopping short of the wrists -->
+        <path d="M132 268 q-38 56 -44 114 q-4 32 4 60 l42 -14 q-8 -28 -4 -56 q6 -50 38 -97 z" class="cl"/>
+        <path class="ln hv" d="M132 268 q-38 56 -44 114 q-4 32 4 60"/>
+        <path class="ln hv" d="M166 280 q-33 46 -38 97 q-4 26 2 52"/>
+        <path d="M92 442 q28 12 44 -10 l-4 -14 l-42 14 z" class="cld"/>
+        <path class="ln md" d="M92 442 q28 12 44 -10"/>
+
+        <path d="M288 268 q38 56 44 114 q4 32 -4 60 l-42 -14 q8 -28 4 -56 q-6 -50 -38 -97 z" class="cl"/>
+        <path class="ln hv" d="M288 268 q38 56 44 114 q4 32 -4 60"/>
+        <path class="ln hv" d="M254 280 q33 46 38 97 q4 26 -2 52"/>
+        <path d="M328 442 q-28 12 -44 -10 l4 -14 l42 14 z" class="cld"/>
+        <path class="ln md" d="M328 442 q-28 12 -44 -10"/>
+
+        <!-- soft fabric folds; slightly irregular on purpose -->
+        <path class="ln fn" d="M134 320 q10 60 6 128" opacity="0.45"/>
+        <path class="ln fn" d="M286 324 q-9 58 -5 124" opacity="0.45"/>
+        <path class="ln fn" d="M196 300 q6 74 3 152" opacity="0.3"/>
+        <path class="ln fn" d="M224 302 q-5 72 -2 150" opacity="0.3"/>
+        <path d="M268 300 q16 62 14 132 q-2 60 -5 118 h-24 q4 -128 -2 -196 q-2 -32 17 -54 z"
+              fill="var(--irx-shadow)" opacity="0.16"/>
+    </g>
+</svg>

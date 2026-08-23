@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 800"
+     id="figure_a.body" data-asset="figure_a" data-kind="base-body"
+     data-base-point="210,800" data-head-socket="210,210">
+    <!-- IRX Phase 2A — figure_a base body.
+         Exports TWO layer groups:
+           character_body  — torso, arms, neck (goes behind furniture)
+           character_front — hands (go in front of furniture, resting on the counter)
+         The head socket at (210,210) is where a register's neckAnchor lands.
+         Wardrobe is a separate asset drawn between these two groups. -->
+    <defs><style>
+        /* @tokens-begin */
+        :root {
+        /* line */
+        --irx-line:          #241D19;
+        --irx-line-soft:     #3B302A;
+        --irx-shadow:        #2A231E;
+
+        /* architecture */
+        --irx-wall:          #5D6B60;
+        --irx-wall-dark:     #4C584F;
+        --irx-wall-pattern:  #556359;
+        --irx-tile:          #C2B8A5;
+        --irx-tile-alt:      #AEA48E;
+        --irx-floor:         #5A4A3B;
+
+        /* window */
+        --irx-sky-high:      #2F3A4A;
+        --irx-sky-mid:       #4A4352;
+        --irx-sky-low:       #7A5B50;
+        --irx-outside-dark:  #232A33;
+        --irx-curtain:       #3F4A52;
+        --irx-curtain-dark:  #333C43;
+
+        /* joinery */
+        --irx-cabinet:       #785D44;
+        --irx-cabinet-dark:  #5F4934;
+        --irx-counter:       #9B7A57;
+        --irx-counter-edge:  #7C6043;
+
+        /* character */
+        --irx-skin:          #D3A17C;
+        --irx-skin-shade:    #B8845F;
+        --irx-hair:          #41322A;
+        --irx-hair-light:    #554136;
+
+        /* wardrobe: home_casual */
+        --irx-cloth:         #A8603F;
+        --irx-cloth-dark:    #894C31;
+        --irx-cloth-inner:   #D9CDBC;
+
+        /* props */
+        --irx-glass:         #BCC8C3;
+        --irx-glass-dark:    #9AA8A2;
+        --irx-highlight:     #FFFFFF;
+        --irx-jacket:        #4F5A63;
+        --irx-jacket-dark:   #3D464E;
+
+        /* accent — neighbourhood district, warm light only */
+        --irx-accent:        #FFC15E;
+        --irx-accent-dim:    #C89A4E;
+        --irx-lamp-warm:     #F2C77E;
+        --irx-cool-spill:    #7E93A8;
+
+        /* stroke weights */
+        --irx-stroke-xheavy: 6.6;
+        --irx-stroke-heavy:  5;
+        --irx-stroke:        3.4;
+        --irx-stroke-fine:   2.1;
+        --irx-stroke-hair:   1.4;
+        }
+        /* @tokens-end */
+        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .hv { stroke-width: 5; }
+        .md { stroke-width: 3.4; }
+        .fn { stroke-width: 2.1; }
+        .xh { stroke-width: 6.6; }
+        .hr { stroke-width: 1.4; }
+        .sk  { fill: var(--irx-skin); }
+        .skd { fill: var(--irx-skin-shade); }
+    </style></defs>
+
+    <g id="character_back">
+        <!-- cast shadow on the splashback. added in QA: without it the figure read as
+             pasted onto the background. key light is upper-left so the shadow throws right. -->
+        <path d="M152 268 q24 -34 78 -34 q54 0 80 36 q19 58 17 146 q-2 56 -5 94 h-176
+           q-4 -56 -6 -94 q-2 -86 12 -148 z" fill="var(--irx-shadow)" opacity="0.13"/>
+    </g>
+
+    <g id="character_body">
+        <!-- legs / hips: fully drawn although the kitchen counter occludes them -->
+        <path d="M138 560 q-8 122 -4 240 h64 q4 -118 12 -196 q8 78 12 196 h64 q4 -118 -4 -240 z"
+              fill="var(--irx-cabinet-dark)"/>
+        <path class="ln md" d="M138 560 q-8 122 -4 240 h64 q4 -118 12 -196 q8 78 12 196 h64 q4 -118 -4 -240 z"/>
+
+        <!-- neck: narrowed in QA rev2 (rev1 read thick and masculine) -->
+        <path d="M191 170 v44 q19 14 38 0 v-44 z" class="sk"/>
+        <path d="M191 174 q19 26 38 0 v16 q-19 18 -38 0 z" class="skd" opacity="0.8"/>
+        <path class="ln md" d="M191 170 v46"/>
+        <path class="ln md" d="M229 170 v46"/>
+
+        <!-- torso -->
+        <path d="M128 272 q26 -36 82 -36 q56 0 82 36 q20 60 18 148 q-2 98 -7 178 h-186
+           q-5 -80 -7 -178 q-2 -88 18 -148 z" class="sk"/>
+        <path class="ln xh" d="M128 272 q26 -36 82 -36 q56 0 82 36 q20 60 18 148 q-2 98 -7 178"/>
+        <path class="ln xh" d="M128 272 q-20 60 -18 148 q2 98 7 178"/>
+
+        <!-- arms: reaching forward and down onto the counter -->
+        <path d="M132 268 q-38 56 -44 114 q-6 56 18 98 l38 -15 q-21 -39 -15 -86 q6 -50 38 -97 z" class="sk"/>
+        <path class="ln hv" d="M132 268 q-38 56 -44 114 q-6 56 18 98"/>
+        <path class="ln hv" d="M166 280 q-33 46 -38 97 q-5 46 15 85"/>
+
+        <path d="M288 268 q38 56 44 114 q6 56 -18 98 l-38 -15 q21 -39 15 -86 q-6 -50 -38 -97 z" class="sk"/>
+        <path class="ln hv" d="M288 268 q38 56 44 114 q6 56 -18 98"/>
+        <path class="ln hv" d="M254 280 q33 46 38 97 q5 46 -15 85"/>
+    </g>
+
+    <g id="character_contact">
+        <!-- soft contact shadow where the hands meet the counter -->
+        <ellipse cx="116" cy="514" rx="42" ry="9" fill="var(--irx-shadow)" opacity="0.3"/>
+        <ellipse cx="304" cy="514" rx="42" ry="9" fill="var(--irx-shadow)" opacity="0.3"/>
+    </g>
+
+    <g id="character_front">
+        <!-- hands flat on the counter surface (occlusion line lands at local y=500).
+             Drawn from slightly above: backs of hands, knuckles, splayed fingers. -->
+        <g id="hand_left">
+            <path d="M84 474 q26 -13 58 -5 q13 24 6 38 q-33 12 -64 1 q-11 -18 0 -34 z" class="sk"/>
+            <path d="M84 492 q30 10 62 2 q1 8 2 13 q-33 12 -64 1 z" class="skd" opacity="0.4"/>
+            <path class="ln md" d="M84 474 q26 -13 58 -5 q13 24 6 38 q-33 12 -64 1 q-11 -18 0 -34 z"/>
+            <path class="ln hr" d="M99 486 q2 14 -1 22" opacity="0.62"/>
+            <path class="ln hr" d="M116 483 q2 15 -1 24" opacity="0.62"/>
+            <path class="ln hr" d="M132 482 q2 13 0 21" opacity="0.62"/>
+        </g>
+        <g id="hand_right">
+            <path d="M336 474 q-26 -13 -58 -5 q-13 24 -6 38 q33 12 64 1 q11 -18 0 -34 z" class="sk"/>
+            <path d="M336 492 q-30 10 -62 2 q-1 8 -2 13 q33 12 64 1 z" class="skd" opacity="0.4"/>
+            <path class="ln md" d="M336 474 q-26 -13 -58 -5 q-13 24 -6 38 q33 12 64 1 q11 -18 0 -34 z"/>
+            <path class="ln hr" d="M321 486 q-2 14 1 22" opacity="0.62"/>
+            <path class="ln hr" d="M304 483 q-2 15 1 24" opacity="0.62"/>
+            <path class="ln hr" d="M288 482 q-2 13 0 21" opacity="0.62"/>
+        </g>
+    </g>
+</svg>

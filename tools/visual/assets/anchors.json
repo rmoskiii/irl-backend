@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "phase": "2A",
+  "note": "Canonical coordinate contract for the IRX visual asset system. compose_frame.py reads ONLY this file to place assets. If a frame needs an offset that is not in here, the contract is wrong \u2014 fix the contract, not the frame.",
+  "canvas": {
+    "viewBox": "0 0 1600 900",
+    "width": 1600,
+    "height": 900,
+    "aspect": "16:9",
+    "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+  },
+  "safeArea": {
+    "mobile_4_5": {
+      "x": 440,
+      "y": 0,
+      "width": 720,
+      "height": 900
+    },
+    "note": "Anything narratively load-bearing must sit inside mobile_4_5. Slot 'centre' is centred within it."
+  },
+  "layerOrder": [
+    "background",
+    "architecture",
+    "environmental_detail",
+    "character_back",
+    "character_body",
+    "character_clothing",
+    "character_head",
+    "furniture",
+    "prop",
+    "character_contact",
+    "character_front",
+    "foreground"
+  ],
+  "layerNote": "Phase 1 established no layer convention, so the Phase 2A brief's list is adopted with changes forced by the artwork: (1) character_face/character_hair are NOT separate top-level layers - a register is one atomic swappable unit and splitting it would let face and hair desynchronise; (2) 'furniture' sits AFTER character_head so the counter occludes the figure below counter height; (3) 'character_front' (hands) sits after 'prop' so hands rest on the counter surface; (4) ADDED IN QA: 'character_contact' between prop and character_front carries contact shadows. Without it the figure read as pasted onto the background. 'character_back' carries the figure's cast shadow on the wall.",
+  "character": {
+    "localViewBox": "0 0 420 800",
+    "basePoint": {
+      "x": 210,
+      "y": 800,
+      "note": "bottom-centre; lands on the scene slot anchor"
+    },
+    "headSocket": {
+      "x": 210,
+      "y": 210,
+      "note": "where the register's neckAnchor lands"
+    }
+  },
+  "register": {
+    "localViewBox": "0 0 200 220",
+    "neckAnchor": {
+      "x": 100,
+      "y": 210
+    },
+    "note": "A register may apply its own rotation about neckAnchor (declared as data-register-rotate on the root <g>). Rotation about the anchor keeps the join mechanical while allowing head tilt to carry part of the register."
+  },
+  "scenes": {
+    "scene.kitchen": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 560,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1040,
+          "y": 820
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "counter top surface. Figures at left/centre/right are occluded below this by the 'furniture' layer."
+      },
+      "propAnchors": {
+        "counter_left": {
+          "x": 430,
+          "y": 604
+        },
+        "counter_right": {
+          "x": 1196,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 268,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1340,
+          "y": 892
+        }
+      },
+      "propNote": "The environment owns prop placement, exactly as it owns character slots. Props declare a bottom-centre anchor and are placed onto a named scene anchor."
+    }
+  },
+  "props": {
+    "prop.jacket_chair": {
+      "localViewBox": "0 0 300 380",
+      "basePoint": {
+        "x": 150,
+        "y": 380
+      },
+      "defaultAnchor": {
+        "scene.kitchen": "floor_left"
+      }
+    },
+    "prop.last_glass": {
+      "localViewBox": "0 0 90 130",
+      "basePoint": {
+        "x": 45,
+        "y": 130
+      },
+      "defaultAnchor": {
+        "scene.kitchen": "counter_right"
+      }
+    }
+  },
+  "frames": {
+    "frame_1_confession": {
+      "renderBlockSource": "render_blocks.json \u2192 confession \u2192 default",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "open",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [
+        {
+          "id": "prop.jacket_chair",
+          "anchor": "floor_left"
+        },
+        {
+          "id": "prop.last_glass",
+          "anchor": "counter_right"
+        }
+      ]
+    }
+  }
+}
