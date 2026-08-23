@@ -52,7 +52,18 @@
       "x": 100,
       "y": 210
     },
-    "note": "A register may apply its own rotation about neckAnchor (declared as data-register-rotate on the root <g>). Rotation about the anchor keeps the join mechanical while allowing head tilt to carry part of the register."
+    "note": "A register may apply its own rotation about neckAnchor (declared as data-register-rotate on the root <g>). Rotation about the anchor keeps the join mechanical while allowing head tilt to carry part of the register.",
+    "neckSpan": {
+      "x0": 81,
+      "x1": 119,
+      "y": 170,
+      "note": "The body draws the neck front-on at register-local x 81..119 from y 170 down. Any register head MUST span that column at y 175..195 or it will float. Discovered by the 'away' 3/4 test; front-facing heads satisfy it incidentally, yaw-based heads do not."
+    },
+    "rotateLimit": {
+      "min": -16,
+      "max": 16,
+      "note": "Rotation is TILT only. It cannot produce yaw. A turned head must be redrawn in the register, not rotated."
+    }
   },
   "scenes": {
     "scene.kitchen": {
@@ -158,6 +169,71 @@
           "anchor": "counter_right"
         }
       ]
+    },
+    "frame_2_reacts_judge": {
+      "renderBlockSource": "render_blocks.json -> jessica_reacts_judge -> default",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "tight",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [],
+      "note": "Register swap stress test. Identical to frame_1_confession in every render-block field except register. Props are empty because the render block says so."
+    },
+    "frame_3_away_test": {
+      "renderBlockSource": "SYNTHETIC - no node in the_secret.json currently emits register 'away'",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "away",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [],
+      "note": "Architecture stress test only. 'away' is declared in registries.json but the mapping table never resolves to it, so there is no real render block to compose. Scene/slot/wardrobe copied from frame_2 so the register is the only variable."
+    },
+    "frame_scale_test": {
+      "renderBlockSource": "SYNTHETIC - shipping-scale readability test, not a scenario node",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "left",
+          "register": "open",
+          "wardrobe": "home_casual"
+        },
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "tight",
+          "wardrobe": "home_casual"
+        },
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "right",
+          "register": "away",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [],
+      "note": "Three registers at real slot anchors on the real canvas, so head height matches shipping (~208px). Uses the production composer and the contract slots - no special scaling."
     }
   }
 }

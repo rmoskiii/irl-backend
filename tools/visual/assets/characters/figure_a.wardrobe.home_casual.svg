@@ -6,66 +6,66 @@
          it overlays the base body exactly; no per-frame offset. Exports one group. -->
     <defs><style>
         /* @tokens-begin */
-        :root {
-        /* line */
-        --irx-line:          #241D19;
-        --irx-line-soft:     #3B302A;
-        --irx-shadow:        #2A231E;
+:root {
+    /* line */
+    --irx-line:          #241D19;
+    --irx-line-soft:     #3B302A;
+    --irx-shadow:        #2A231E;
 
-        /* architecture */
-        --irx-wall:          #5D6B60;
-        --irx-wall-dark:     #4C584F;
-        --irx-wall-pattern:  #556359;
-        --irx-tile:          #C2B8A5;
-        --irx-tile-alt:      #AEA48E;
-        --irx-floor:         #5A4A3B;
+    /* architecture */
+    --irx-wall:          #5D6B60;
+    --irx-wall-dark:     #4C584F;
+    --irx-wall-pattern:  #556359;
+    --irx-tile:          #C2B8A5;
+    --irx-tile-alt:      #AEA48E;
+    --irx-floor:         #5A4A3B;
 
-        /* window */
-        --irx-sky-high:      #2F3A4A;
-        --irx-sky-mid:       #4A4352;
-        --irx-sky-low:       #7A5B50;
-        --irx-outside-dark:  #232A33;
-        --irx-curtain:       #3F4A52;
-        --irx-curtain-dark:  #333C43;
+    /* window */
+    --irx-sky-high:      #2F3A4A;
+    --irx-sky-mid:       #4A4352;
+    --irx-sky-low:       #7A5B50;
+    --irx-outside-dark:  #232A33;
+    --irx-curtain:       #3F4A52;
+    --irx-curtain-dark:  #333C43;
 
-        /* joinery */
-        --irx-cabinet:       #785D44;
-        --irx-cabinet-dark:  #5F4934;
-        --irx-counter:       #9B7A57;
-        --irx-counter-edge:  #7C6043;
+    /* joinery */
+    --irx-cabinet:       #785D44;
+    --irx-cabinet-dark:  #5F4934;
+    --irx-counter:       #9B7A57;
+    --irx-counter-edge:  #7C6043;
 
-        /* character */
-        --irx-skin:          #D3A17C;
-        --irx-skin-shade:    #B8845F;
-        --irx-hair:          #41322A;
-        --irx-hair-light:    #554136;
+    /* character */
+    --irx-skin:          #D3A17C;
+    --irx-skin-shade:    #B8845F;
+    --irx-hair:          #41322A;
+    --irx-hair-light:    #554136;
 
-        /* wardrobe: home_casual */
-        --irx-cloth:         #A8603F;
-        --irx-cloth-dark:    #894C31;
-        --irx-cloth-inner:   #D9CDBC;
+    /* wardrobe: home_casual */
+    --irx-cloth:         #A8603F;
+    --irx-cloth-dark:    #894C31;
+    --irx-cloth-inner:   #D9CDBC;
 
-        /* props */
-        --irx-glass:         #BCC8C3;
-        --irx-glass-dark:    #9AA8A2;
-        --irx-highlight:     #FFFFFF;
-        --irx-jacket:        #4F5A63;
-        --irx-jacket-dark:   #3D464E;
+    /* props */
+    --irx-glass:         #BCC8C3;
+    --irx-glass-dark:    #9AA8A2;
+    --irx-highlight:     #FFFFFF;
+    --irx-jacket:        #4F5A63;
+    --irx-jacket-dark:   #3D464E;
 
-        /* accent — neighbourhood district, warm light only */
-        --irx-accent:        #FFC15E;
-        --irx-accent-dim:    #C89A4E;
-        --irx-lamp-warm:     #F2C77E;
-        --irx-cool-spill:    #7E93A8;
+    /* accent — neighbourhood district, warm light only */
+    --irx-accent:        #FFC15E;
+    --irx-accent-dim:    #C89A4E;
+    --irx-lamp-warm:     #F2C77E;
+    --irx-cool-spill:    #7E93A8;
 
-        /* stroke weights */
-        --irx-stroke-xheavy: 6.6;
-        --irx-stroke-heavy:  5;
-        --irx-stroke:        3.4;
-        --irx-stroke-fine:   2.1;
-        --irx-stroke-hair:   1.4;
-        }
-        /* @tokens-end */
+    /* stroke weights */
+    --irx-stroke-xheavy: 6.6;
+    --irx-stroke-heavy:  5;
+    --irx-stroke:        3.4;
+    --irx-stroke-fine:   2.1;
+    --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
         .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
         .hv { stroke-width: 5; }
         .md { stroke-width: 3.4; }

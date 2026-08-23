@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220"
+     id="figure_a.register.away" data-asset="figure_a" data-kind="register"
+     data-register="away" data-neck-anchor="100,210" data-register-rotate="5">
+    <!-- IRX = register: away. Third register, drawn as the final contract stress test.
+
+         This is NOT the front-facing head rotated. Rotation produces TILT, not YAW,
+         and tilting a symmetrical front-facing head to imply "turned away" is exactly
+         the anatomically implausible fake the brief rules out. The head is redrawn in
+         an intermediate 3/4 orientation, turned toward the viewer's left:
+
+           - nose and lips sit on the LEFT silhouette edge, in profile
+           - far eye compressed and pushed toward the nose; near eye fuller, further right
+           - visible ear moved to x~130 (the other ear is now hidden)
+           - cranial mass bulges right, toward the back of the head
+           - hair silhouette redistributed: swept off the near temple, weight to the rear
+
+         CRITICAL CONSTRAINT: the neck is drawn in the BODY, front-on, occupying
+         register-local x 81..119 from y 170 down. This head's base spans x 66..128 at
+         y 175..195, so it fully covers and meets that column. Any 3/4 head that does
+         not span the neck column will float. That number is now in the asset contract.
+
+         Firewall: 'away' reports that her attention has left the conversation. It must
+         not read as shame, evasion or dishonesty. No downcast lids, no hidden face.
+         Gaze is level and directed off-frame, not lowered. -->
+    <defs><style>
+        /* @tokens-begin */
+:root {
+    /* line */
+    --irx-line:          #241D19;
+    --irx-line-soft:     #3B302A;
+    --irx-shadow:        #2A231E;
+
+    /* architecture */
+    --irx-wall:          #5D6B60;
+    --irx-wall-dark:     #4C584F;
+    --irx-wall-pattern:  #556359;
+    --irx-tile:          #C2B8A5;
+    --irx-tile-alt:      #AEA48E;
+    --irx-floor:         #5A4A3B;
+
+    /* window */
+    --irx-sky-high:      #2F3A4A;
+    --irx-sky-mid:       #4A4352;
+    --irx-sky-low:       #7A5B50;
+    --irx-outside-dark:  #232A33;
+    --irx-curtain:       #3F4A52;
+    --irx-curtain-dark:  #333C43;
+
+    /* joinery */
+    --irx-cabinet:       #785D44;
+    --irx-cabinet-dark:  #5F4934;
+    --irx-counter:       #9B7A57;
+    --irx-counter-edge:  #7C6043;
+
+    /* character */
+    --irx-skin:          #D3A17C;
+    --irx-skin-shade:    #B8845F;
+    --irx-hair:          #41322A;
+    --irx-hair-light:    #554136;
+
+    /* wardrobe: home_casual */
+    --irx-cloth:         #A8603F;
+    --irx-cloth-dark:    #894C31;
+    --irx-cloth-inner:   #D9CDBC;
+
+    /* props */
+    --irx-glass:         #BCC8C3;
+    --irx-glass-dark:    #9AA8A2;
+    --irx-highlight:     #FFFFFF;
+    --irx-jacket:        #4F5A63;
+    --irx-jacket-dark:   #3D464E;
+
+    /* accent — neighbourhood district, warm light only */
+    --irx-accent:        #FFC15E;
+    --irx-accent-dim:    #C89A4E;
+    --irx-lamp-warm:     #F2C77E;
+    --irx-cool-spill:    #7E93A8;
+
+    /* stroke weights */
+    --irx-stroke-xheavy: 6.6;
+    --irx-stroke-heavy:  5;
+    --irx-stroke:        3.4;
+    --irx-stroke-fine:   2.1;
+    --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
+        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .xh { stroke-width: 6.6; }
+        .hv { stroke-width: 5; }
+        .md { stroke-width: 3.4; }
+        .fn { stroke-width: 2.1; }
+        .hr { stroke-width: 1.4; }
+        .sk  { fill: var(--irx-skin); }
+        .skd { fill: var(--irx-skin-shade); }
+        .ha  { fill: var(--irx-hair); }
+        .hal { fill: var(--irx-hair-light); }
+    </style></defs>
+
+    <g id="character_head">
+        <!-- cranial + hair mass behind, weight thrown to the rear of the turn -->
+        <path d="M92 4 q62 2 78 56 q13 39 6 80 q-5 34 -19 76 q-15 -35 -15 -76
+           q-38 17 -84 4 q-6 39 -22 70 q-10 -45 -11 -82 q-2 -43 11 -78 q16 -48 56 -50 z"
+              class="ha"/>
+
+        <!-- face in 3/4: profile edge left, cheek and ear right.
+             base spans x 66..128 at y 175..195 to meet the body's neck column -->
+        <path d="M94 28 q34 2 45 34 q9 30 6 60 q-4 30 -17 46 q-11 14 -28 18
+           q-18 4 -30 -8 q-10 -10 -12 -26 q-2 -12 2 -22 q-6 -6 -3 -14 q4 -9 5 -18
+           q-5 -8 0 -16 q4 -7 6 -16 q6 -32 26 -38 z" class="sk"/>
+        <path class="ln" stroke-width="3.8"
+              d="M94 28 q34 2 45 34 q9 30 6 60 q-4 30 -17 46 q-11 14 -28 18
+           q-18 4 -30 -8 q-10 -10 -12 -26 q-2 -12 2 -22 q-6 -6 -3 -14 q4 -9 5 -18
+           q-5 -8 0 -16 q4 -7 6 -16 q6 -32 26 -38 z"/>
+
+        <!-- profile detail on the near edge: brow ridge, nose, lip, chin -->
+        <path class="ln" stroke-width="2.4" d="M62 96 q-6 6 -4 13" opacity="0.85"/>
+        <path class="ln" stroke-width="3.0" d="M59 122 q-5 9 1 14 q5 4 11 2" opacity="0.95"/>
+        <path class="ln" stroke-width="2.2" d="M62 150 q6 3 11 1" opacity="0.9"/>
+        <path class="ln" stroke-width="2.0" d="M63 158 q6 3 10 1" opacity="0.6"/>
+
+        <!-- jaw: heavier where it turns, lighter as it recedes -->
+        <path class="ln" stroke-width="4.4" d="M64 172 q14 20 34 22" opacity="0.92"/>
+        <path class="ln" stroke-width="2.2" d="M98 194 q20 -3 30 -21" opacity="0.6"/>
+
+        <!-- eyes: far eye compressed toward the nose, near eye fuller and further right -->
+        <!-- QA: the two eyes previously read as mismatched rather than foreshortened.
+             Both now sit at the same proportional position within their own aperture
+             (~35% from the inner corner), and the far eye is compressed on its outer
+             edge by the turn rather than merely drawn smaller. -->
+        <path class="ln" stroke-width="2.6" d="M66 111 q6 -5 14 -1" opacity="0.95"/>
+        <path class="ln hr" d="M67 116 q6 2 12 0" opacity="0.6"/>
+        <circle cx="71" cy="113" r="2.6" fill="var(--irx-line)"/>
+        <path class="ln" stroke-width="3.6" d="M95 108 q12 -6 22 1"/>
+        <path class="ln hr" d="M96 115 q11 3 20 -1" opacity="0.72"/>
+        <circle cx="101" cy="111" r="3.4" fill="var(--irx-line)"/>
+        <!-- gaze sits toward the near edge: she is looking off-frame, not down -->
+
+        <!-- brows follow the turn: near brow foreshortened, far brow fuller -->
+        <path class="ln" stroke-width="2.2" d="M65 97 q8 -4 16 -1" opacity="0.88"/>
+        <path class="ln" stroke-width="2.7" d="M93 93 q13 -4 25 2" opacity="0.92"/>
+
+        <!-- ear, now on the far side of the turn -->
+        <path d="M129 112 q9 -3 12 8 q3 13 -7 18 q-6 2 -8 -3" class="sk"/>
+        <path class="ln" stroke-width="2.2" d="M129 112 q9 -3 12 8 q3 13 -7 18"/>
+        <path class="ln hr" d="M133 120 q4 3 3 9" opacity="0.6"/>
+
+        <!-- second tonal pass: light upper-left, so the receding plane takes the shade -->
+        <path d="M112 108 q14 30 6 58 q-9 16 -22 20 q20 -38 18 -78 z" class="skd" opacity="0.5"/>
+        <path d="M64 134 q8 12 6 24 q-10 -6 -12 -20 z" class="skd" opacity="0.26"/>
+        <path d="M86 168 q12 6 24 2 q-11 8 -25 3 z" class="skd" opacity="0.2"/>
+
+        <!-- hair front: swept off the near temple, bulk carried to the rear of the turn -->
+        <path d="M92 4 q-47 4 -61 50 q-7 21 -7 44 q8 -31 19 -44 q14 21 43 15
+           q23 -5 34 -23 q22 23 45 26 q14 11 20 34 q4 -27 -2 -50 q-15 -52 -68 -52 z"
+              class="ha"/>
+        <path d="M92 4 q-36 4 -51 36 q17 -15 39 -17 q-13 12 -18 26 q20 -19 45 -20 z"
+              class="hal" opacity="0.4"/>
+        <path class="ln" stroke-width="3.6" d="M92 4 q-47 4 -61 50 q-7 21 -7 44"/>
+        <path class="ln" stroke-width="3.2" d="M92 4 q64 3 74 57 q6 23 4 47"/>
+        <path class="ln hr" d="M45 76 q24 17 47 4" opacity="0.6"/>
+        <path class="ln hr" d="M156 86 q-17 13 -34 6" opacity="0.5"/>
+
+        <!-- length: heavier on the rear side, near side tucked behind the ear -->
+        <path d="M168 118 q11 49 -5 96 q-13 -35 -14 -76 q11 -8 18 -20 z" class="ha"/>
+        <path class="ln" stroke-width="3.4" d="M168 118 q11 49 -5 96"/>
+        <path class="ln hr" d="M162 136 q5 41 -3 70" opacity="0.45"/>
+        <path d="M27 114 q-9 46 5 88 q11 -33 11 -69 q-9 -7 -16 -19 z" class="ha"/>
+        <path class="ln" stroke-width="2.6" d="M27 114 q-9 46 5 88"/>
+    </g>
+</svg>

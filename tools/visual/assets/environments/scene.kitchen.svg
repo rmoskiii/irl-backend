@@ -1,78 +1,89 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
      id="scene.kitchen" data-asset="scene.kitchen" data-time="evening"
      data-occlusion-line="600">
-    <!-- IRX Phase 2A = scene.kitchen (evening), revision 2.
-         Rev 1 was symmetrical, evenly lit and had no environmental storytelling.
-         Rev 2: window pushed right, tall units left, one warm key light from an
-         off-frame pendant upper-left, cool spill from the window, lived-in clutter. -->
+    <!-- IRX = scene.kitchen (evening), revision 3: craft-language lock.
+
+         Composition, slot anchors, prop anchors, occlusion line, viewBox and layer
+         group ids are UNCHANGED from rev 2. This pass changes only how things are
+         drawn, to match the locked Figure A standard:
+
+           - explicit per-path stroke widths instead of four uniform classes
+           - long runs are gentle curves, not h/v commands. nothing in a hand-drawn
+             room is dead straight, and at 1600px a perfect 1600px rule is the single
+             most obviously vector thing in the frame
+           - tonal masses (2-3 values per surface) instead of flat single fills
+           - surface irregularity as drawn marks, not as a filter
+           - grain lifted from 0.055 to 0.10 where it actually reads
+
+         KNOWN LIMIT, flagged rather than invented around: the reference's paper
+         tooth is a raster property. SVG can approximate it with feTurbulence (used
+         here) or with thousands of hatch paths (rejected: unmaintainable and slow).
+         The turbulence filter is resolution-dependent and will not rasterise
+         identically everywhere. If the grain must be exact, it belongs in the
+         compositing layer downstream, not in the asset. -->
     <defs><style>
         /* @tokens-begin */
-        :root {
-        /* line */
-        --irx-line:          #241D19;
-        --irx-line-soft:     #3B302A;
-        --irx-shadow:        #2A231E;
+:root {
+    /* line */
+    --irx-line:          #241D19;
+    --irx-line-soft:     #3B302A;
+    --irx-shadow:        #2A231E;
 
-        /* architecture */
-        --irx-wall:          #5D6B60;
-        --irx-wall-dark:     #4C584F;
-        --irx-wall-pattern:  #556359;
-        --irx-tile:          #C2B8A5;
-        --irx-tile-alt:      #AEA48E;
-        --irx-floor:         #5A4A3B;
+    /* architecture */
+    --irx-wall:          #5D6B60;
+    --irx-wall-dark:     #4C584F;
+    --irx-wall-pattern:  #556359;
+    --irx-tile:          #C2B8A5;
+    --irx-tile-alt:      #AEA48E;
+    --irx-floor:         #5A4A3B;
 
-        /* window */
-        --irx-sky-high:      #2F3A4A;
-        --irx-sky-mid:       #4A4352;
-        --irx-sky-low:       #7A5B50;
-        --irx-outside-dark:  #232A33;
-        --irx-curtain:       #3F4A52;
-        --irx-curtain-dark:  #333C43;
+    /* window */
+    --irx-sky-high:      #2F3A4A;
+    --irx-sky-mid:       #4A4352;
+    --irx-sky-low:       #7A5B50;
+    --irx-outside-dark:  #232A33;
+    --irx-curtain:       #3F4A52;
+    --irx-curtain-dark:  #333C43;
 
-        /* joinery */
-        --irx-cabinet:       #785D44;
-        --irx-cabinet-dark:  #5F4934;
-        --irx-counter:       #9B7A57;
-        --irx-counter-edge:  #7C6043;
+    /* joinery */
+    --irx-cabinet:       #785D44;
+    --irx-cabinet-dark:  #5F4934;
+    --irx-counter:       #9B7A57;
+    --irx-counter-edge:  #7C6043;
 
-        /* character */
-        --irx-skin:          #D3A17C;
-        --irx-skin-shade:    #B8845F;
-        --irx-hair:          #41322A;
-        --irx-hair-light:    #554136;
+    /* character */
+    --irx-skin:          #D3A17C;
+    --irx-skin-shade:    #B8845F;
+    --irx-hair:          #41322A;
+    --irx-hair-light:    #554136;
 
-        /* wardrobe: home_casual */
-        --irx-cloth:         #A8603F;
-        --irx-cloth-dark:    #894C31;
-        --irx-cloth-inner:   #D9CDBC;
+    /* wardrobe: home_casual */
+    --irx-cloth:         #A8603F;
+    --irx-cloth-dark:    #894C31;
+    --irx-cloth-inner:   #D9CDBC;
 
-        /* props */
-        --irx-glass:         #BCC8C3;
-        --irx-glass-dark:    #9AA8A2;
-        --irx-highlight:     #FFFFFF;
-        --irx-jacket:        #4F5A63;
-        --irx-jacket-dark:   #3D464E;
+    /* props */
+    --irx-glass:         #BCC8C3;
+    --irx-glass-dark:    #9AA8A2;
+    --irx-highlight:     #FFFFFF;
+    --irx-jacket:        #4F5A63;
+    --irx-jacket-dark:   #3D464E;
 
-        /* accent — neighbourhood district, warm light only */
-        --irx-accent:        #FFC15E;
-        --irx-accent-dim:    #C89A4E;
-        --irx-lamp-warm:     #F2C77E;
-        --irx-cool-spill:    #7E93A8;
+    /* accent — neighbourhood district, warm light only */
+    --irx-accent:        #FFC15E;
+    --irx-accent-dim:    #C89A4E;
+    --irx-lamp-warm:     #F2C77E;
+    --irx-cool-spill:    #7E93A8;
 
-        /* stroke weights */
-        --irx-stroke-xheavy: 6.6;
-        --irx-stroke-heavy:  5;
-        --irx-stroke:        3.4;
-        --irx-stroke-fine:   2.1;
-        --irx-stroke-hair:   1.4;
-        }
-        /* @tokens-end */
+    /* stroke weights */
+    --irx-stroke-xheavy: 6.6;
+    --irx-stroke-heavy:  5;
+    --irx-stroke:        3.4;
+    --irx-stroke-fine:   2.1;
+    --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
         .ln  { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
-        .xh  { stroke-width: 6.6; }
-        .hv  { stroke-width: 5; }
-        .md  { stroke-width: 3.4; }
-        .fn  { stroke-width: 2.1; }
-        .hr  { stroke-width: 1.4; }
         .wall { fill: var(--irx-wall); }
         .walld{ fill: var(--irx-wall-dark); }
         .cab  { fill: var(--irx-cabinet); }
@@ -91,12 +102,12 @@
     </style>
 
         <pattern id="k-wallpaper" width="78" height="78" patternUnits="userSpaceOnUse">
-            <path d="M16 56 q22 -30 44 -3" stroke="var(--irx-wall-pattern)" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <path d="M56 18 q-22 30 -41 4" stroke="var(--irx-wall-pattern)" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M16 56 q22 -31 44 -4" stroke="var(--irx-wall-pattern)" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+            <path d="M56 18 q-23 30 -41 5" stroke="var(--irx-wall-pattern)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
         </pattern>
 
         <filter id="k-grain" x="0" y="0" width="100%" height="100%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="11" result="n"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.86" numOctaves="4" seed="11" result="n"/>
             <feColorMatrix in="n" type="saturate" values="0"/>
         </filter>
 
@@ -112,98 +123,120 @@
             <stop offset="0%"   stop-color="#7E93A8" stop-opacity="0.26"/>
             <stop offset="100%" stop-color="#7E93A8" stop-opacity="0"/>
         </radialGradient>
-        <!-- three gradients total: vignette, key light, cool spill. All are lighting.
-             No gradient fills any object surface. -->
     </defs>
 
     <!-- ============================== background ============================== -->
     <g id="background">
-        <rect x="0" y="0" width="1600" height="640" class="wall"/>
-        <rect x="0" y="0" width="1600" height="640" fill="url(#k-wallpaper)" opacity="0.42"/>
-        <path d="M0 0 h218 q-34 322 -14 640 H0 Z" class="walld" opacity="0.5"/>
-        <path d="M1600 0 h-176 q30 322 14 640 h162 Z" class="walld" opacity="0.42"/>
-        <rect x="0" y="392" width="1600" height="248" class="walld" opacity="0.3"/>
+        <path d="M0 0 h1600 v638 q-402 7 -800 0 q-398 -7 -800 2 z" class="wall"/>
+        <path d="M0 0 h1600 v638 q-402 7 -800 0 q-398 -7 -800 2 z" fill="url(#k-wallpaper)" opacity="0.4"/>
+        <!-- tonal grouping 2: the room falls off at both edges -->
+        <path d="M0 0 q118 2 220 -2 q-38 322 -16 640 q-104 4 -204 0 z" class="walld" opacity="0.5"/>
+        <path d="M1600 0 q-96 3 -178 -1 q32 322 15 641 q84 3 163 -1 z" class="walld" opacity="0.42"/>
+        <!-- tonal grouping 3: lower wall sits in shadow below the cabinet run -->
+        <path d="M0 392 q400 -6 800 -1 q400 5 800 -3 v250 q-402 7 -800 0 q-398 -7 -800 2 z"
+              class="walld" opacity="0.3"/>
+        <!-- drawn surface irregularity: scuffs and a picture hook, not a filter -->
+        <path class="ln" stroke-width="1.6" d="M596 176 q40 -7 74 3" opacity="0.1"/>
+        <path class="ln" stroke-width="1.4" d="M1392 236 q34 6 62 -4" opacity="0.09"/>
+        <path class="ln" stroke-width="1.8" d="M812 330 q-16 22 -4 40" opacity="0.08"/>
     </g>
 
     <!-- ============================= architecture ============================= -->
     <g id="architecture">
 
         <g id="k-window">
-            <rect x="892" y="112" width="404" height="286" fill="var(--irx-outside-dark)"/>
-            <rect x="892" y="112" width="404" height="104" fill="var(--irx-sky-high)"/>
-            <rect x="892" y="216" width="404" height="74"  fill="var(--irx-sky-mid)"/>
-            <rect x="892" y="290" width="404" height="40"  fill="var(--irx-sky-low)"/>
-            <rect x="892" y="330" width="404" height="68"  fill="var(--irx-outside-dark)"/>
-            <path d="M892 332 v-26 h50 v-18 h38 v44 h34 v-32 h58 v32 h44 v-22 h42 v22 h34 v-30 h60 v30 z"
+            <path d="M892 112 q202 -4 404 1 q5 142 -1 285 q-202 5 -404 0 q-5 -143 1 -286 z"
                   fill="var(--irx-outside-dark)"/>
-            <rect x="952"  y="308" width="11" height="14" class="accd" opacity="0.7"/>
-            <rect x="1168" y="314" width="9"  height="12" class="accd" opacity="0.5"/>
-            <path class="ln md" d="M1094 114 v282"/>
-            <path class="ln md" d="M894 260 h400"/>
-            <rect x="892" y="112" width="404" height="286" class="ln hv" fill="none"/>
-            <path d="M876 98 h436 v20 h-436 z" class="cab"/>
-            <path class="ln md" d="M876 98 h436 v20 h-436 z"/>
-            <path d="M872 394 h444 v24 h-444 z" class="cab"/>
-            <path class="ln md" d="M872 394 h444 v24 h-444 z"/>
+            <path d="M893 113 q201 -4 402 1 q2 51 1 103 q-202 4 -403 0 q-2 -52 0 -104 z" fill="var(--irx-sky-high)"/>
+            <path d="M893 216 q201 -4 403 0 q1 36 0 74 q-202 4 -403 0 q-1 -37 0 -74 z" fill="var(--irx-sky-mid)"/>
+            <path d="M893 290 q201 -4 403 0 q1 19 0 40 q-202 4 -403 0 q-1 -20 0 -40 z" fill="var(--irx-sky-low)"/>
+            <path d="M892 332 v-26 h50 v-18 h38 v44 h34 v-32 h58 v32 h44 v-22 h42 v22 h34 v-30 h60 v30
+             q-180 5 -360 0 z" fill="var(--irx-outside-dark)"/>
+            <path d="M892 330 q202 6 404 0 q3 34 0 68 q-202 5 -404 0 q-3 -34 0 -68 z" fill="var(--irx-outside-dark)"/>
+            <path d="M952 308 h11 v14 h-11 z" class="accd" opacity="0.72"/>
+            <path d="M1168 314 h9 v12 h-9 z" class="accd" opacity="0.5"/>
+            <path class="ln" stroke-width="3.6" d="M1094 114 q3 141 -1 282"/>
+            <path class="ln" stroke-width="3.0" d="M894 260 q200 -4 400 1"/>
+            <path class="ln" stroke-width="5.4" d="M892 112 q202 -4 404 1 q5 142 -1 285 q-202 5 -404 0 q-5 -143 1 -286 z"/>
+            <path d="M876 98 q218 -5 436 2 q2 10 0 20 q-218 -6 -436 0 z" class="cab"/>
+            <path class="ln" stroke-width="3.4" d="M876 98 q218 -5 436 2 q2 10 0 20 q-218 -6 -436 0 z"/>
+            <path d="M872 394 q222 -5 444 2 q2 12 0 24 q-222 -6 -444 0 z" class="cab"/>
+            <path d="M872 394 q222 -5 444 2 q1 6 0 12 q-222 -6 -444 0 z" class="cabd" opacity="0.55"/>
+            <path class="ln" stroke-width="3.6" d="M872 394 q222 -5 444 2 q2 12 0 24 q-222 -6 -444 0 z"/>
             <path d="M1218 356 q-6 34 2 38 h44 q8 -4 2 -38 z" class="ctre"/>
-            <path class="ln fn" d="M1218 356 q-6 34 2 38 h44 q8 -4 2 -38 z"/>
-            <path class="ln md" d="M1240 356 q-4 -34 -26 -46"/>
-            <path class="ln md" d="M1242 356 q2 -36 22 -50"/>
-            <path class="ln md" d="M1241 356 q-16 -22 -6 -46"/>
-            <path class="ln fn" d="M1214 312 q-14 -4 -18 -16 q16 0 20 14"/>
-            <path class="ln fn" d="M1264 308 q12 -8 12 -20 q-16 4 -16 18"/>
+            <path d="M1218 356 q-3 18 0 20 q22 4 46 0 q3 -3 2 -20 z" class="cabd" opacity="0.4"/>
+            <path class="ln" stroke-width="2.4" d="M1218 356 q-6 34 2 38 h44 q8 -4 2 -38 z"/>
+            <path class="ln" stroke-width="3.2" d="M1240 356 q-4 -34 -26 -46"/>
+            <path class="ln" stroke-width="2.8" d="M1242 356 q2 -36 22 -50"/>
+            <path class="ln" stroke-width="2.2" d="M1241 356 q-16 -22 -6 -46"/>
+            <path class="ln" stroke-width="1.8" d="M1214 312 q-14 -4 -18 -16 q16 0 20 14"/>
+            <path class="ln" stroke-width="1.8" d="M1264 308 q12 -8 12 -20 q-16 4 -16 18"/>
         </g>
 
         <g id="k-curtain">
             <path d="M1300 86 q30 168 12 330 q30 12 56 4 q-22 -176 -8 -334 z" class="curt"/>
             <path d="M1300 86 q30 168 12 330 q15 6 28 5 q-20 -178 -10 -335 z" class="curtd"/>
-            <path class="ln md" d="M1300 86 q30 168 12 330 q30 12 56 4 q-22 -176 -8 -334 z"/>
-            <path class="ln fn" d="M1320 100 q22 158 10 302" opacity="0.7"/>
-            <path class="ln hv" d="M1268 84 h132"/>
+            <path d="M1352 92 q16 158 12 320 q-8 2 -14 0 q-4 -164 -14 -318 z" class="curtd" opacity="0.55"/>
+            <path class="ln" stroke-width="3.8" d="M1300 86 q30 168 12 330 q30 12 56 4 q-22 -176 -8 -334 z"/>
+            <path class="ln" stroke-width="2.0" d="M1320 100 q22 158 10 302" opacity="0.7"/>
+            <path class="ln" stroke-width="1.6" d="M1340 96 q20 160 10 306" opacity="0.4"/>
+            <path class="ln" stroke-width="5.0" d="M1268 84 q66 -3 132 2"/>
         </g>
 
         <g id="k-cab-left">
-            <path d="M28 40 h398 v298 h-398 z" class="cab"/>
-            <path d="M28 40 h398 v20 h-398 z" class="cabd"/>
-            <path class="ln xh" d="M28 40 h398 v298 h-398 z"/>
-            <path class="ln md" d="M226 60 v278"/>
-            <path class="ln fn" d="M54 82 h146 v236 h-146 z"/>
-            <path class="ln fn" d="M252 82 h148 v236 h-148 z"/>
-            <path class="ln hv" d="M206 182 v50"/>
-            <path class="ln hv" d="M244 182 v50"/>
-            <path d="M28 338 h398 v18 h-398 z" class="shad" opacity="0.42"/>
+            <path d="M28 40 q200 -4 398 2 q5 148 -1 296 q-200 5 -398 0 q-5 -149 1 -298 z" class="cab"/>
+            <path d="M28 40 q200 -4 398 2 q1 9 0 18 q-200 -5 -398 0 z" class="cabd"/>
+            <!-- tonal grouping: doors sit a value darker than the carcass -->
+            <path d="M54 82 q74 -2 146 1 q3 118 0 236 q-74 2 -146 -1 q-3 -118 0 -236 z" class="cabd" opacity="0.34"/>
+            <path d="M252 82 q75 -2 148 1 q3 118 0 236 q-75 2 -148 -1 q-3 -118 0 -236 z" class="cabd" opacity="0.28"/>
+            <path class="ln" stroke-width="6.2" d="M28 40 q200 -4 398 2 q5 148 -1 296 q-200 5 -398 0 q-5 -149 1 -298 z"/>
+            <path class="ln" stroke-width="3.2" d="M226 60 q3 139 -1 278"/>
+            <path class="ln" stroke-width="2.2" d="M54 82 q74 -2 146 1 q3 118 0 236 q-74 2 -146 -1 q-3 -118 0 -236 z"/>
+            <path class="ln" stroke-width="2.0" d="M252 82 q75 -2 148 1 q3 118 0 236 q-75 2 -148 -1 q-3 -118 0 -236 z"/>
+            <path class="ln" stroke-width="5.0" d="M206 182 q2 25 0 50"/>
+            <path class="ln" stroke-width="4.6" d="M244 182 q2 25 0 50"/>
+            <path d="M28 338 q200 5 398 0 q1 9 0 18 q-200 5 -398 0 z" class="shad" opacity="0.42"/>
             <path d="M96 8 q-4 30 2 32 h52 q6 -2 2 -32 z" class="ctre"/>
-            <path class="ln fn" d="M96 8 q-4 30 2 32 h52 q6 -2 2 -32 z"/>
-            <path d="M300 14 h72 v26 h-72 z" class="tilea"/>
-            <path class="ln fn" d="M300 14 h72 v26 h-72 z"/>
+            <path class="ln" stroke-width="2.2" d="M96 8 q-4 30 2 32 h52 q6 -2 2 -32 z"/>
+            <path d="M300 14 q36 -2 72 1 q2 12 0 25 q-36 2 -72 -1 z" class="tilea"/>
+            <path class="ln" stroke-width="2.0" d="M300 14 q36 -2 72 1 q2 12 0 25 q-36 2 -72 -1 z"/>
         </g>
 
         <g id="k-shelf">
-            <path d="M470 300 h250 v12 h-250 z" class="cabd"/>
-            <path class="ln md" d="M470 300 h250 v12 h-250 z"/>
-            <path class="ln fn" d="M496 312 v22"/>
-            <path class="ln fn" d="M694 312 v22"/>
+            <path d="M470 300 q126 -3 250 1 q1 6 0 12 q-126 3 -250 -1 z" class="cabd"/>
+            <path class="ln" stroke-width="3.2" d="M470 300 q126 -3 250 1 q1 6 0 12 q-126 3 -250 -1 z"/>
+            <path class="ln" stroke-width="2.0" d="M496 312 q1 11 0 22"/>
+            <path class="ln" stroke-width="2.0" d="M694 312 q1 11 0 22"/>
         </g>
 
         <g id="k-splashback">
-            <rect x="0" y="446" width="1600" height="154" class="tile"/>
-            <path class="ln md" d="M0 446 h1600"/>
-            <path d="M0 446 h1600 v14 h-1600 z" class="tilea" opacity="0.7"/>
-            <path class="ln hr" d="M180 500 q60 -8 118 4" opacity="0.16"/>
-            <path class="ln hr" d="M640 538 q84 6 150 -6" opacity="0.14"/>
-            <path class="ln hr" d="M1180 494 q70 10 132 -4" opacity="0.15"/>
-            <path class="ln hv" d="M138 486 h330"/>
-            <path class="ln fn" d="M170 486 v30 q0 12 12 12 q12 0 12 -12 v-30"/>
-            <path class="ln fn" d="M226 486 v40"/>
+            <path d="M0 446 q400 -6 800 -1 q400 5 800 -3 v157 q-402 6 -800 0 q-398 -6 -800 2 z" class="tile"/>
+            <!-- two tonal groupings: lit upper band, shaded lower band -->
+            <path d="M0 446 q400 -6 800 -1 q400 5 800 -3 v16 q-402 6 -800 1 q-398 -5 -800 3 z"
+                  class="tilea" opacity="0.7"/>
+            <path d="M0 540 q400 -5 800 0 q400 5 800 -2 v63 q-402 6 -800 0 q-398 -6 -800 2 z"
+                  class="tilea" opacity="0.4"/>
+            <path class="ln" stroke-width="3.2" d="M0 446 q400 -6 800 -1 q400 5 800 -3"/>
+            <!-- plaster mottling: drawn, deliberately uneven -->
+            <path class="ln" stroke-width="1.5" d="M180 500 q60 -9 118 5" opacity="0.17"/>
+            <path class="ln" stroke-width="1.2" d="M640 538 q84 7 150 -7" opacity="0.15"/>
+            <path class="ln" stroke-width="1.6" d="M1180 494 q70 11 132 -5" opacity="0.16"/>
+            <path class="ln" stroke-width="1.3" d="M330 566 q52 8 96 -4" opacity="0.12"/>
+            <path class="ln" stroke-width="1.4" d="M902 470 q60 -8 110 6" opacity="0.11"/>
+
+            <path class="ln" stroke-width="5.0" d="M138 486 q166 -3 330 2"/>
+            <path class="ln" stroke-width="2.2" d="M170 486 q1 16 0 30 q0 12 12 12 q12 0 12 -12 q1 -15 0 -30"/>
+            <path class="ln" stroke-width="2.0" d="M226 486 q1 20 0 40"/>
             <path d="M216 526 q10 22 22 0 q-2 -16 -11 -16 q-9 0 -11 16 z" class="tilea"/>
-            <path class="ln fn" d="M216 526 q10 22 22 0 q-2 -16 -11 -16 q-9 0 -11 16 z"/>
-            <path class="ln fn" d="M284 486 v22"/>
+            <path class="ln" stroke-width="2.2" d="M216 526 q10 22 22 0 q-2 -16 -11 -16 q-9 0 -11 16 z"/>
+            <path class="ln" stroke-width="2.0" d="M284 486 q1 11 0 22"/>
             <path d="M270 508 q14 34 28 0 q-2 -22 -14 -22 q-12 0 -14 22 z" class="cabd"/>
-            <path class="ln fn" d="M270 508 q14 34 28 0 q-2 -22 -14 -22 q-12 0 -14 22 z"/>
+            <path class="ln" stroke-width="2.4" d="M270 508 q14 34 28 0 q-2 -22 -14 -22 q-12 0 -14 22 z"/>
             <path d="M366 490 q34 -8 66 2 q10 54 2 96 q-36 10 -70 0 q-8 -46 2 -98 z" class="tilea"/>
-            <path class="ln md" d="M366 490 q34 -8 66 2 q10 54 2 96 q-36 10 -70 0 q-8 -46 2 -98 z"/>
-            <path class="ln hr" d="M390 500 q2 44 0 84" opacity="0.5"/>
-            <path class="ln hr" d="M412 500 q2 44 0 84" opacity="0.5"/>
+            <path d="M366 490 q34 -8 66 2 q4 22 4 44 q-36 8 -70 0 q-2 -24 0 -46 z" class="tile" opacity="0.6"/>
+            <path class="ln" stroke-width="3.4" d="M366 490 q34 -8 66 2 q10 54 2 96 q-36 10 -70 0 q-8 -46 2 -98 z"/>
+            <path class="ln" stroke-width="1.4" d="M390 500 q2 44 0 84" opacity="0.5"/>
+            <path class="ln" stroke-width="1.2" d="M412 500 q2 44 0 84" opacity="0.42"/>
         </g>
     </g>
 
@@ -211,92 +244,109 @@
     <g id="environmental_detail">
         <g id="k-shelf-items">
             <path d="M486 250 q-5 46 2 50 h44 q7 -4 2 -50 z" class="ctre"/>
-            <path class="ln fn" d="M486 250 q-5 46 2 50 h44 q7 -4 2 -50 z"/>
-            <path class="ln fn" d="M482 246 h56"/>
+            <path d="M486 250 q-3 24 -1 26 q22 4 46 0 q2 -3 0 -26 z" class="cabd" opacity="0.35"/>
+            <path class="ln" stroke-width="2.4" d="M486 250 q-5 46 2 50 h44 q7 -4 2 -50 z"/>
+            <path class="ln" stroke-width="2.0" d="M482 246 q28 -3 56 1"/>
             <path d="M552 262 q-4 34 2 38 h34 q6 -4 2 -38 z" class="tilea"/>
-            <path class="ln fn" d="M552 262 q-4 34 2 38 h34 q6 -4 2 -38 z"/>
-            <path d="M604 268 h26 v32 h-26 z" class="cabd"/>
-            <path class="ln fn" d="M604 268 h26 v32 h-26 z"/>
-            <path d="M636 260 h22 v40 h-22 z" class="ctre"/>
-            <path class="ln fn" d="M636 260 h22 v40 h-22 z"/>
+            <path class="ln" stroke-width="2.2" d="M552 262 q-4 34 2 38 h34 q6 -4 2 -38 z"/>
+            <path d="M604 268 q13 -2 26 1 q2 15 0 31 q-13 2 -26 -1 z" class="cabd"/>
+            <path class="ln" stroke-width="2.0" d="M604 268 q13 -2 26 1 q2 15 0 31 q-13 2 -26 -1 z"/>
+            <path d="M636 260 q11 -2 22 1 q2 19 0 39 q-11 2 -22 -1 z" class="ctre"/>
+            <path class="ln" stroke-width="2.0" d="M636 260 q11 -2 22 1 q2 19 0 39 q-11 2 -22 -1 z"/>
             <path d="M666 272 q-4 28 2 28 h26 q6 0 2 -28 z" class="tile"/>
-            <path class="ln fn" d="M666 272 q-4 28 2 28 h26 q6 0 2 -28 z"/>
+            <path class="ln" stroke-width="1.8" d="M666 272 q-4 28 2 28 h26 q6 0 2 -28 z"/>
         </g>
 
         <g id="k-drainer">
-            <path d="M470 540 h206 v56 h-206 z" class="cabd" opacity="0.85"/>
-            <path class="ln md" d="M470 540 h206 v56 h-206 z"/>
-            <g class="ln md">
-                <path d="M500 548 q-8 26 0 46"/>
-                <path d="M530 546 q-8 28 0 50"/>
-                <path d="M560 548 q-8 26 0 46"/>
-                <path d="M590 546 q-8 28 0 50"/>
-            </g>
+            <path d="M470 540 q104 -3 206 1 q2 27 0 55 q-104 3 -206 -1 z" class="cabd" opacity="0.85"/>
+            <path class="ln" stroke-width="3.0" d="M470 540 q104 -3 206 1 q2 27 0 55 q-104 3 -206 -1 z"/>
+            <path class="ln" stroke-width="3.2" d="M500 548 q-8 26 0 46"/>
+            <path class="ln" stroke-width="2.8" d="M530 546 q-8 28 0 50"/>
+            <path class="ln" stroke-width="3.0" d="M560 548 q-8 26 0 46"/>
+            <path class="ln" stroke-width="2.6" d="M590 546 q-8 28 0 50"/>
             <path d="M612 556 q-6 34 2 40 h40 q8 -6 2 -40 z" class="gl" opacity="0.5"/>
-            <path class="ln fn" d="M612 556 q-6 34 2 40 h40 q8 -6 2 -40 z"/>
+            <path class="ln" stroke-width="2.0" d="M612 556 q-6 34 2 40 h40 q8 -6 2 -40 z"/>
         </g>
 
         <g id="k-counter-right">
             <path d="M1372 470 q-3 26 -12 34 q-6 44 0 92 h44 q6 -48 0 -92 q-9 -8 -12 -34 z" class="curtd"/>
-            <path class="ln md" d="M1372 470 q-3 26 -12 34 q-6 44 0 92 h44 q6 -48 0 -92 q-9 -8 -12 -34 z"/>
-            <path class="ln fn" d="M1372 470 h20"/>
-            <path d="M1436 520 h116 v76 h-116 z" class="ctre"/>
-            <path class="ln md" d="M1436 520 h116 v76 h-116 z"/>
-            <path class="ln fn" d="M1436 546 h116" opacity="0.5"/>
+            <path d="M1372 470 q-3 26 -12 34 q-3 22 -2 46 q22 4 46 0 q1 -24 -2 -46 q-9 -8 -12 -34 z"
+                  class="curt" opacity="0.4"/>
+            <path class="ln" stroke-width="3.4" d="M1372 470 q-3 26 -12 34 q-6 44 0 92 h44 q6 -48 0 -92 q-9 -8 -12 -34 z"/>
+            <path class="ln" stroke-width="2.2" d="M1372 470 q10 -2 20 1"/>
+            <path d="M1436 520 q58 -2 116 1 q2 38 0 76 q-58 2 -116 -1 z" class="ctre"/>
+            <path d="M1436 520 q58 -2 116 1 q1 13 0 26 q-58 2 -116 -1 z" class="ctr" opacity="0.45"/>
+            <path class="ln" stroke-width="3.2" d="M1436 520 q58 -2 116 1 q2 38 0 76 q-58 2 -116 -1 z"/>
+            <path class="ln" stroke-width="1.8" d="M1436 546 q58 -2 116 1" opacity="0.5"/>
         </g>
 
-        <path d="M28 356 h398 q-10 44 -26 90 h-372 z" class="shad" opacity="0.14"/>
+        <path d="M28 356 q200 5 398 0 q-12 45 -27 91 q-176 5 -372 0 z" class="shad" opacity="0.15"/>
     </g>
 
     <!-- ============================== furniture =============================== -->
     <g id="furniture">
-        <path d="M0 596 h1600 v20 h-1600 z" class="ctr"/>
-        <path d="M0 616 h1600 v20 h-1600 z" class="ctre"/>
-        <path class="ln xh" d="M0 596 h1600"/>
-        <path class="ln md" d="M0 636 h1600"/>
-        <path class="ln fn" d="M330 601 q16 4 32 -1" opacity="0.4"/>
-        <path class="ln fn" d="M1088 602 q20 5 36 -2" opacity="0.4"/>
+        <!-- worktop. the top edge is the strongest line in the room, so it carries
+             the heaviest weight and the most visible waver -->
+        <!-- QA: these two bands previously ABUTTED at y=617 with independently wavered
+             edges, which left a sub-pixel gap showing the wall through the worktop.
+             They now share one top edge and OVERLAP, so no seam is possible. -->
+        <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v42 q-402 6 -800 1 q-398 -5 -800 3 z" class="ctre"/>
+        <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v22 q-402 6 -800 1 q-398 -5 -800 3 z" class="ctr"/>
+        <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v8 q-402 6 -800 1 q-398 -5 -800 3 z"
+              class="tile" opacity="0.15"/>
+        <path class="ln" stroke-width="6.8" d="M0 596 q400 -5 800 0 q400 5 800 -3"/>
+        <path class="ln" stroke-width="3.2" d="M0 638 q400 -5 800 0 q400 5 800 -3"/>
+        <path class="ln" stroke-width="1.8" d="M330 601 q16 5 32 -2" opacity="0.4"/>
+        <path class="ln" stroke-width="1.6" d="M1088 602 q20 6 36 -3" opacity="0.4"/>
+        <path class="ln" stroke-width="1.4" d="M706 605 q24 4 44 -3" opacity="0.28"/>
 
-        <rect x="0" y="636" width="1600" height="214" class="cab"/>
-        <rect x="0" y="758" width="1600" height="92" class="shad" opacity="0.16"/>
-        <g class="ln md">
-            <path d="M292 642 v208"/><path d="M604 642 v208"/><path d="M916 642 v208"/><path d="M1228 642 v208"/>
-        </g>
-        <g class="ln fn">
-            <path d="M40 668 h214 v152 h-214 z"/>
-            <path d="M330 668 h236 v152 h-236 z"/>
-            <path d="M954 668 h236 v152 h-236 z"/>
-            <path d="M1266 668 h240 v152 h-240 z"/>
-        </g>
-        <g class="ln fn">
-            <path d="M642 668 h236 v42 h-236 z"/>
-            <path d="M642 722 h236 v42 h-236 z"/>
-            <path d="M642 776 h236 v42 h-236 z"/>
-        </g>
-        <g class="ln hv">
-            <path d="M124 730 h48"/><path d="M424 730 h48"/>
-            <path d="M736 688 h48"/><path d="M736 742 h48"/><path d="M736 796 h48"/>
-            <path d="M1048 730 h48"/><path d="M1362 730 h48"/>
-        </g>
-        <path d="M0 850 h1600 v12 h-1600 z" class="cabd"/>
-        <path class="ln md" d="M0 850 h1600"/>
-        <rect x="0" y="862" width="1600" height="38" class="flr"/>
-        <path class="ln md" d="M0 862 h1600"/>
+        <path d="M0 636 q400 -5 800 0 q400 5 800 -3 v217 q-402 6 -800 0 q-398 -6 -800 2 z" class="cab"/>
+        <path d="M0 758 q400 -5 800 0 q400 5 800 -3 v95 q-402 6 -800 0 q-398 -6 -800 2 z"
+              class="shad" opacity="0.17"/>
+        <path class="ln" stroke-width="3.0" d="M292 642 q3 104 -1 208"/>
+        <path class="ln" stroke-width="2.8" d="M604 642 q3 104 -1 208"/>
+        <path class="ln" stroke-width="3.2" d="M916 642 q3 104 -1 208"/>
+        <path class="ln" stroke-width="2.6" d="M1228 642 q3 104 -1 208"/>
+        <!-- door panels a value down from the carcass -->
+        <path d="M40 668 q108 -3 214 1 q3 76 0 152 q-108 3 -214 -1 z" class="cabd" opacity="0.3"/>
+        <path d="M330 668 q119 -3 236 1 q3 76 0 152 q-119 3 -236 -1 z" class="cabd" opacity="0.26"/>
+        <path d="M954 668 q119 -3 236 1 q3 76 0 152 q-119 3 -236 -1 z" class="cabd" opacity="0.3"/>
+        <path d="M1266 668 q121 -3 240 1 q3 76 0 152 q-121 3 -240 -1 z" class="cabd" opacity="0.24"/>
+        <path class="ln" stroke-width="2.2" d="M40 668 q108 -3 214 1 q3 76 0 152 q-108 3 -214 -1 z"/>
+        <path class="ln" stroke-width="2.0" d="M330 668 q119 -3 236 1 q3 76 0 152 q-119 3 -236 -1 z"/>
+        <path class="ln" stroke-width="2.2" d="M954 668 q119 -3 236 1 q3 76 0 152 q-119 3 -236 -1 z"/>
+        <path class="ln" stroke-width="1.9" d="M1266 668 q121 -3 240 1 q3 76 0 152 q-121 3 -240 -1 z"/>
+        <path d="M642 668 q119 -3 236 1 q1 21 0 42 q-119 3 -236 -1 z" class="cabd" opacity="0.26"/>
+        <path d="M642 722 q119 -3 236 1 q1 21 0 42 q-119 3 -236 -1 z" class="cabd" opacity="0.22"/>
+        <path d="M642 776 q119 -3 236 1 q1 21 0 42 q-119 3 -236 -1 z" class="cabd" opacity="0.18"/>
+        <path class="ln" stroke-width="2.1" d="M642 668 q119 -3 236 1 q1 21 0 42 q-119 3 -236 -1 z"/>
+        <path class="ln" stroke-width="2.0" d="M642 722 q119 -3 236 1 q1 21 0 42 q-119 3 -236 -1 z"/>
+        <path class="ln" stroke-width="1.9" d="M642 776 q119 -3 236 1 q1 21 0 42 q-119 3 -236 -1 z"/>
+        <path class="ln" stroke-width="5.2" d="M124 730 q24 -2 48 1"/>
+        <path class="ln" stroke-width="4.8" d="M424 730 q24 -2 48 1"/>
+        <path class="ln" stroke-width="4.6" d="M736 688 q24 -2 48 1"/>
+        <path class="ln" stroke-width="5.0" d="M736 742 q24 -2 48 1"/>
+        <path class="ln" stroke-width="4.6" d="M736 796 q24 -2 48 1"/>
+        <path class="ln" stroke-width="5.0" d="M1048 730 q24 -2 48 1"/>
+        <path class="ln" stroke-width="4.6" d="M1362 730 q24 -2 48 1"/>
+        <path d="M0 850 q400 -5 800 0 q400 5 800 -3 v13 q-402 6 -800 0 q-398 -6 -800 2 z" class="cabd"/>
+        <path class="ln" stroke-width="3.4" d="M0 850 q400 -5 800 0 q400 5 800 -3"/>
+        <path d="M0 862 q400 -5 800 0 q400 5 800 -3 v41 h-1600 z" class="flr"/>
+        <path class="ln" stroke-width="3.0" d="M0 862 q400 -5 800 0 q400 5 800 -3"/>
     </g>
 
     <!-- ============================== foreground ============================== -->
     <g id="foreground">
-        <!-- near counter running across the bottom: added in QA. rev2 left the lower
-             third an empty brown band and the frame had no true foreground plane. -->
         <path d="M0 800 q220 -24 470 -12 q420 18 1130 4 v108 h-1600 z" class="ctre"/>
         <path d="M0 800 q220 -24 470 -12 q420 18 1130 4 v26 q-712 14 -1130 -6 q-250 -12 -470 12 z"
               class="ctr" opacity="0.62"/>
-        <path class="ln xh" d="M0 800 q220 -24 470 -12 q420 18 1130 4"/>
+        <path class="ln" stroke-width="6.6" d="M0 800 q220 -24 470 -12 q420 18 1130 4"/>
+        <path class="ln" stroke-width="1.8" d="M212 800 q90 -6 176 2" opacity="0.22"/>
         <path d="M0 830 q220 -22 470 -10 q420 18 1130 4 v76 h-1600 z" class="shad" opacity="0.4"/>
         <rect x="0" y="0" width="1600" height="900" fill="url(#k-keylight)" pointer-events="none"/>
         <rect x="0" y="0" width="1600" height="900" fill="url(#k-coolspill)" pointer-events="none"/>
         <rect x="0" y="0" width="1600" height="900" fill="url(#k-vignette)" pointer-events="none"/>
-        <rect x="0" y="0" width="1600" height="900" filter="url(#k-grain)" opacity="0.075"
+        <rect x="0" y="0" width="1600" height="900" filter="url(#k-grain)" opacity="0.10"
               style="mix-blend-mode:multiply" pointer-events="none"/>
     </g>
 </svg>

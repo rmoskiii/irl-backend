@@ -3,3 +3,5 @@ node_modules/
 data/results.log.jsonl
 .DS_Store
 qa_render.py
+tools/visual/assets/qa/
+tools/visual/render_blocks.json
