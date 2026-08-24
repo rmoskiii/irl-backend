@@ -118,16 +118,18 @@ def main():
     # F — neck join: both registers declare the same anchor
     print("\nneck anchor declared by each register")
     print("-" * 74)
-    regs = sorted(q.name.split(".register.")[1].rsplit(".svg",1)[0]
-                  for q in (ROOT / "characters").glob("*.register.*.svg"))
-    for reg in regs:
-        r = ET.parse(ROOT / "characters" / f"figure_a.register.{reg}.svg").getroot()
-        print(f"  {reg:6s} neckAnchor={r.get('data-neck-anchor')}  "
+    # iterate the actual FILES, not a name pattern rebuilt from figure_a.
+    # This previously assumed every register belonged to figure_a and crashed
+    # as soon as Alex had registers Jessica does not.
+    files = sorted((ROOT / "characters").glob("*.register.*.svg"))
+    for q in files:
+        reg = q.name.split(".register.")[1].rsplit(".svg", 1)[0]
+        base = q.name.split(".register.")[0]
+        r = ET.parse(q).getroot()
+        print(f"  {base}/{reg:10s} neckAnchor={r.get('data-neck-anchor')}  "
               f"viewBox={r.get('viewBox')}  rotate={r.get('data-register-rotate')}")
-    anchors = {ET.parse(ROOT / "characters" / f"figure_a.register.{r}.svg")
-               .getroot().get("data-neck-anchor") for r in regs}
-    boxes = {ET.parse(ROOT / "characters" / f"figure_a.register.{r}.svg")
-             .getroot().get("viewBox") for r in regs}
+    anchors = {ET.parse(q).getroot().get("data-neck-anchor") for q in files}
+    boxes = {ET.parse(q).getroot().get("viewBox") for q in files}
     if len(anchors) != 1:
         fail(f"registers declare different neck anchors: {anchors}")
     if len(boxes) != 1:

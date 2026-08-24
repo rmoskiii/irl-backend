@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220"
+     id="figure_b.register.deflated" data-asset="figure_b" data-kind="register"
+     data-register="deflated" data-neck-anchor="100,210" data-register-rotate="9">
+    <!-- IRX 2B.1 = figure_b register: deflated (Alex).
+
+         act2_pause_response ("Oh. I thought you'd be happy for me.") and
+         act3b_alex_told / act3b_alex_processes, where his mood is authored as hurt.
+
+         Largest downward tilt in his set (+9) - with a fixed short cut, chin height
+         is the only silhouette lever he has. Upper lids lowered, inner brows lifted,
+         mouth closed and slightly compressed.
+
+         Firewall: NOT a frown. A downturned mouth would read as sulking and hand the
+         player a verdict. The prose says his face falls; it does not say he is
+         wounded at you.
+
+         Hair block copied VERBATIM from figure_b.register.open. Registers are
+         atomic, so the cut must be identical across all five; validate_assets.py
+         rule 11 fails the build if any figure_b register drifts.
+
+         No face shading planes and no lip outline: both removed across figure_b at
+         art direction. His face carries a single flat tone. -->
+    <defs><style>
+        /* @tokens-begin */
+        :root {
+        /* line */
+        --irx-line:          #241D19;
+        --irx-line-soft:     #3B302A;
+        --irx-shadow:        #2A231E;
+
+        /* architecture */
+        --irx-wall:          #5C6A5F;
+        --irx-wall-dark:     #4E5A51;
+        --irx-wall-pattern:  #556359;
+        --irx-tile:          #B5A992;
+        --irx-tile-alt:      #A49980;
+        --irx-floor:         #5E4D3E;
+
+        /* window */
+        --irx-sky-high:      #334051;
+        --irx-sky-mid:       #4D4656;
+        --irx-sky-low:       #785A4F;
+        --irx-outside-dark:  #2A333E;
+        --irx-curtain:       #424E56;
+        --irx-curtain-dark:  #38424A;
+
+        /* joinery */
+        --irx-cabinet:       #785D44;
+        --irx-cabinet-dark:  #634C36;
+        --irx-counter:       #947553;
+        --irx-counter-edge:  #7B5F43;
+
+        /* character */
+        --irx-skin:          #A87A5A;
+        --irx-skin-shade:    #875D42;
+        /* figure_b: same warm hazel family, one step deeper than figure_a */
+        --irx-skin-b:        #8E6244;
+        --irx-skin-b-shade:  #6E4A32;
+        /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+        mouth with --irx-line reads as black lips. */
+        --irx-lip-b:         #96604F;
+        --irx-mouth-b:       #4A2C24;
+        --irx-hair:          #41322A;
+        --irx-hair-light:    #554136;
+        /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+        --irx-hair-b:        #241A16;
+        --irx-hair-b-light:  #3D2C24;
+
+        /* wardrobe: home_casual */
+        --irx-cloth:         #A8603F;
+        --irx-cloth-dark:    #894C31;
+        --irx-cloth-inner:   #D9CDBC;
+
+        /* props */
+        --irx-glass:         #BCC8C3;
+        --irx-glass-dark:    #9AA8A2;
+        --irx-highlight:     #FFFFFF;
+        --irx-jacket:        #4F5A63;
+        --irx-jacket-dark:   #3D464E;
+
+        /* accent — neighbourhood district, warm light only */
+        --irx-accent:        #FFC15E;
+        --irx-accent-dim:    #C89A4E;
+        --irx-lamp-warm:     #F2C77E;
+        --irx-cool-spill:    #7E93A8;
+
+        /* stroke weights */
+        --irx-stroke-xheavy: 6.6;
+        --irx-stroke-heavy:  5;
+        --irx-stroke:        3.4;
+        --irx-stroke-fine:   2.1;
+        --irx-stroke-hair:   1.4;
+        }
+        /* @tokens-end */
+        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .sk  { fill: var(--irx-skin-b); }
+        .skd { fill: var(--irx-skin-b-shade); }
+        .lip { fill: var(--irx-lip-b); }
+        .mth { fill: var(--irx-mouth-b); }
+        .ha  { fill: var(--irx-hair-b); }
+        .hal { fill: var(--irx-hair-b-light); }
+    </style></defs>
+
+    <g id="character_head">
+        <path d="M100 16 q44 0 56 34 q7 26 5 56 q-3 34 -18 52 q-15 18 -43 18
+           q-28 0 -43 -18 q-15 -18 -18 -52 q-2 -30 5 -56 q12 -34 56 -34 z" class="sk"/>
+        <path class="ln" stroke-width="3.8"
+              d="M100 16 q44 0 56 34 q7 26 5 56 q-3 34 -18 52 q-15 18 -43 18
+           q-28 0 -43 -18 q-15 -18 -18 -52 q-2 -30 5 -56 q12 -34 56 -34 z"/>
+        <path class="ln" stroke-width="3.6" d="M100 176 q-28 0 -43 -18 q-9 -11 -14 -28" opacity="0.4"/>
+
+        <path d="M44 96 q-9 -2 -11 9 q-2 13 9 16" class="sk"/>
+        <path class="ln" stroke-width="2.2" d="M44 96 q-9 -2 -11 9 q-2 13 9 16"/>
+        <path d="M156 96 q9 -2 11 9 q2 13 -9 16" class="sk"/>
+        <path class="ln" stroke-width="2.2" d="M156 96 q9 -2 11 9 q2 13 -9 16"/>
+
+        <!-- brows: inner ends lifted. the whole register lives here -->
+        <path class="ln" stroke-width="2.5" d="M66 92 q14 -8 28 -1" opacity="0.9"/>
+        <path class="ln" stroke-width="2.5" d="M134 92 q-14 -8 -28 -1" opacity="0.9"/>
+
+        <!-- eyes: upper lid dropped, aperture reduced, gaze still level -->
+        <path class="ln" stroke-width="3.6" d="M66 110 q11 -5 22 -1"/>
+        <path class="ln" stroke-width="1.4" d="M67 116 q10 3 20 0" opacity="0.6"/>
+        <circle cx="77" cy="112" r="3.0" fill="var(--irx-line)"/>
+        <path class="ln" stroke-width="3.6" d="M112 109 q11 -5 22 1"/>
+        <path class="ln" stroke-width="1.4" d="M113 116 q10 3 20 -1" opacity="0.6"/>
+        <circle cx="123" cy="112" r="3.0" fill="var(--irx-line)"/>
+
+        <!-- mouth: closed and compressed, corners tucked. no downturn -->
+        <path class="ln" stroke-width="2.8" d="M87 156 q13 -2 26 0"/>
+        <path class="ln" stroke-width="1.4" d="M86 155 q-2 3 -1 5" opacity="0.55"/>
+        <path class="ln" stroke-width="1.4" d="M114 155 q2 3 1 5" opacity="0.55"/>
+
+        <path class="ln" stroke-width="2.0" d="M97 118 q-7 16 5 21" opacity="0.9"/>
+        <path class="ln" stroke-width="1.4" d="M102 139 q6 1 10 -2" opacity="0.55"/>
+
+        <g id="hair">
+            <path d="M37 92
+             q-2 -28 6 -52
+             q12 -32 57 -32
+             q45 0 57 32
+             q8 24 6 52
+             q-8 -14 -26 -20
+             q-18 -6 -37 -6
+             q-19 0 -37 6
+             q-18 6 -26 20 z" class="ha"/>
+            <!-- lit crown plane, upper-left key -->
+            <path d="M55 50 q14 -26 45 -29 q-21 8 -30 24 q-9 11 -12 22 z"
+                  class="hal" opacity="0.5"/>
+            <!-- outer contour -->
+            <path class="ln" stroke-width="3.4"
+                  d="M37 92 q-2 -28 6 -52 q12 -32 57 -32 q45 0 57 32 q8 24 6 52"/>
+            <!-- hairline: same geometry as the band's inner edge, so they cannot drift -->
+            <path class="ln" stroke-width="2.6"
+                  d="M37 92 q8 -14 26 -20 q18 -6 37 -6 q19 0 37 6 q18 6 26 20" opacity="0.9"/>
+            <!-- coil texture: short marks only, invisible at shipping scale by design -->
+            <g class="ln" stroke-width="1.4" opacity="0.22">
+                <path d="M64 60 q6 -5 11 0"/>
+                <path d="M85 42 q6 -5 11 0"/>
+                <path d="M107 40 q6 -5 11 0"/>
+                <path d="M128 52 q6 -5 10 1"/>
+                <path d="M76 60 q6 -5 11 0"/>
+                <path d="M115 58 q6 -5 11 0"/>
+            </g>
+        </g>
+    </g>
+</svg>
