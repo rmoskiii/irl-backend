@@ -10,7 +10,9 @@ Usage: python3 compose_frame.py frame_1_confession
 import json
 import re
 import sys
+import textwrap
 import pathlib
+import textwrap
 import xml.etree.ElementTree as ET
 
 ROOT = pathlib.Path(__file__).resolve().parent
@@ -45,7 +47,88 @@ def style_blocks(root):
             for c in d if c.tag.endswith("style")]
 
 
-def main(frame_id):
+def render_blocks_path():
+    for c in (ROOT.parent / "render_blocks.json",
+              ROOT.parent.parent / "render_blocks.json"):
+        if c.exists():
+            return c
+    return None
+
+
+def build_bubbles(A, fr, scene_cfg, node):
+    """LOCKED treatment: rounded balloon + tail (variant 1).
+
+    Text comes from render_blocks.json, so what is drawn is what the engine
+    emits. The tail is aimed at the speaker's resolved head position, computed
+    from the same anchors the character was placed with - it is never
+    hand-placed."""
+    rb = render_blocks_path()
+    if rb is None or not node:
+        return None
+    blocks = json.loads(rb.read_text(encoding="utf-8"))
+    if node not in blocks:
+        raise SystemExit(f"bubbles: node '{node}' not in render_blocks.json")
+    bs = blocks[node]["default"].get("bubbles", [])
+    if not bs:
+        return None
+
+    cfg = A["bubbles"]
+    speaker_slot = fr["cast"][0]["slot"]
+    place = cfg["placement"].get(speaker_slot)
+    if place is None:
+        raise SystemExit(f"bubbles: no placement defined for slot '{speaker_slot}'")
+
+    base = fr["cast"][0]["base"]
+    cc = A.get("characters", {}).get(base) or A["character"]
+    s = scene_cfg["slots"][speaker_slot]
+    head_x = s["x"] + (cc["headSocket"]["x"] - cc["basePoint"]["x"])
+    head_y = s["y"] - (cc["basePoint"]["y"] - cc["headSocket"]["y"])
+    tx = head_x + cfg["tailTarget"]["dx"]
+    ty = head_y + cfg["tailTarget"]["dy"]
+
+    g = ET.Element(f"{{{SVG}}}g", {"data-layer": "bubbles"})
+    w, r = cfg["maxWidth"], cfg["cornerRadius"]
+    y = place["y"]
+    for i, b in enumerate(bs):
+        lines = textwrap.wrap(b["text"], cfg["charsPerLine"]) or [""]
+        h = cfg["lineHeight"] * len(lines) + 34
+        x = place["x"]
+        bub = ET.SubElement(g, f"{{{SVG}}}g")
+        ET.SubElement(bub, f"{{{SVG}}}path", {
+            "d": (f"M{x} {y+r} q0 -{r} {r} -{r} h{w-2*r} q{r} 0 {r} {r} "
+                  f"v{h-2*r} q0 {r} -{r} {r} h-{w-2*r} q-{r} 0 -{r} -{r} z"),
+            "fill": "var(--irx-cloth-inner)", "stroke": "var(--irx-line)",
+            "stroke-width": str(cfg["strokeWidth"]), "stroke-linejoin": "round"})
+        if i == len(bs) - 1:
+            # tail: base on the balloon edge nearest the speaker, apex at target
+            near_right = tx > x + w / 2
+            bx = x + w if near_right else x
+            by = y + h - 26
+            hw = cfg["tail"]["baseWidth"] / 2
+            # clamp to tail.length: aim at the speaker, but stop short. an
+            # unclamped tail becomes a thin spike across the artwork.
+            dx, dy = tx - bx, ty - by
+            m = max(1e-6, (dx * dx + dy * dy) ** 0.5)
+            L = cfg["tail"]["length"]
+            ax, ay = bx + dx / m * L, by + dy / m * L
+            ET.SubElement(bub, f"{{{SVG}}}path", {
+                "d": f"M{bx} {by-hw:g} L{ax:g} {ay:g} L{bx} {by+hw:g} z",
+                "fill": "var(--irx-cloth-inner)", "stroke": "var(--irx-line)",
+                "stroke-width": str(cfg["strokeWidth"]), "stroke-linejoin": "round"})
+            ET.SubElement(bub, f"{{{SVG}}}path", {
+                "d": f"M{bx} {by-hw:g} v{2*hw:g}", "stroke": "var(--irx-cloth-inner)",
+                "stroke-width": str(cfg["strokeWidth"] + 1.6), "fill": "none"})
+        for j, ln in enumerate(lines):
+            t = ET.SubElement(bub, f"{{{SVG}}}text", {
+                "x": str(x + cfg["padding"]), "y": str(y + 40 + j * cfg["lineHeight"]),
+                "font-family": "Zilla Slab, Georgia, serif",
+                "font-size": str(cfg["fontSize"]), "fill": "var(--irx-line)"})
+            t.text = ln
+        y += h + cfg["gap"]
+    return g
+
+
+def main(frame_id, with_bubbles=False):
     A = json.loads((ROOT / "anchors.json").read_text(encoding="utf-8"))
     fr = A["frames"][frame_id]
     scene_id = fr["scene"]
@@ -168,6 +251,11 @@ def main(frame_id):
             wrapper = ET.SubElement(out, f"{{{SVG}}}g", {"data-layer": name})
             wrapper.append(g)
 
+    if with_bubbles:
+        gb = build_bubbles(A, fr, scene_cfg, fr.get("bubblesFrom"))
+        if gb is not None:
+            out.append(gb)
+
     dest = ROOT / "frames" / f"{frame_id}.svg"
     dest.parent.mkdir(exist_ok=True)
     ET.ElementTree(out).write(dest, encoding="unicode", xml_declaration=False)
@@ -182,4 +270,6 @@ def main(frame_id):
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv[1] if len(sys.argv) > 1 else "frame_1_confession"))
+    argv = [a for a in sys.argv[1:] if a != "--bubbles"]
+    sys.exit(main(argv[0] if argv else "frame_1_confession",
+                  with_bubbles="--bubbles" in sys.argv))

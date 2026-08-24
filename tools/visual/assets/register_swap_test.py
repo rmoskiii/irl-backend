@@ -66,7 +66,8 @@ def main():
     print(f"\ncanvas            {ra.get('viewBox')}   {'same' if ra.get('viewBox')==rb.get('viewBox') else 'DIFFERS'}")
 
     # B — same layer set (props differ by render block, so exclude)
-    sa, sb = set(la) - {"prop"}, set(lb) - {"prop"}
+    IGNORE = {"prop", "bubbles"}   # render-block content, not character geometry
+    sa, sb = set(la) - IGNORE, set(lb) - IGNORE
     if sa != sb:
         fail(f"layer sets differ: only-in-open {sa-sb}, only-in-tight {sb-sa}")
     print(f"layer set         {len(sa)} character/scene layers   "
@@ -76,8 +77,8 @@ def main():
     print("\nlayer-by-layer comparison")
     print("-" * 74)
     for name in [n for n in la if n in lb]:
-        if name == "prop":
-            print(f"  {name:22s} skipped (render block: open has 2 props, tight has 0)")
+        if name in IGNORE:
+            print(f"  {name:22s} skipped (render-block content, varies by node)")
             continue
         a_s = "".join(canon(g) for g in la[name])
         b_s = "".join(canon(g) for g in lb[name])

@@ -30,7 +30,8 @@
     "prop",
     "character_contact",
     "character_front",
-    "foreground"
+    "foreground",
+    "bubbles"
   ],
   "layerNote": "Phase 1 established no layer convention, so the Phase 2A brief's list is adopted with changes forced by the artwork: (1) character_face/character_hair are NOT separate top-level layers - a register is one atomic swappable unit and splitting it would let face and hair desynchronise; (2) 'furniture' sits AFTER character_head so the counter occludes the figure below counter height; (3) 'character_front' (hands) sits after 'prop' so hands rest on the counter surface; (4) ADDED IN QA: 'character_contact' between prop and character_front carries contact shadows. Without it the figure read as pasted onto the background. 'character_back' carries the figure's cast shadow on the wall.",
   "character": {
@@ -44,7 +45,8 @@
       "x": 210,
       "y": 210,
       "note": "where the register's neckAnchor lands"
-    }
+    },
+    "note": "DEPRECATED as a global. Retained for backward compatibility with existing frames; new work should read anchors.characters[<base>]. neckSpan was never global - it is derived from a specific figure's neck geometry, and figure_b will differ. Generalised at the start of 2B, before a second character existed to break it."
   },
   "register": {
     "localViewBox": "0 0 200 220",
@@ -53,17 +55,12 @@
       "y": 210
     },
     "note": "A register may apply its own rotation about neckAnchor (declared as data-register-rotate on the root <g>). Rotation about the anchor keeps the join mechanical while allowing head tilt to carry part of the register.",
-    "neckSpan": {
-      "x0": 81,
-      "x1": 119,
-      "y": 170,
-      "note": "The body draws the neck front-on at register-local x 81..119 from y 170 down. Any register head MUST span that column at y 175..195 or it will float. Discovered by the 'away' 3/4 test; front-facing heads satisfy it incidentally, yaw-based heads do not."
-    },
     "rotateLimit": {
       "min": -16,
       "max": 16,
       "note": "Rotation is TILT only. It cannot produce yaw. A turned head must be redrawn in the register, not rotated."
-    }
+    },
+    "neckSpanNote": "Per-character; see anchors.characters[<base>].neckSpan. Rotation remains global and is TILT only, bounded by rotateLimit."
   },
   "scenes": {
     "scene.kitchen": {
@@ -168,7 +165,8 @@
           "id": "prop.last_glass",
           "anchor": "counter_right"
         }
-      ]
+      ],
+      "bubblesFrom": "confession"
     },
     "frame_2_reacts_judge": {
       "renderBlockSource": "render_blocks.json -> jessica_reacts_judge -> default",
@@ -185,7 +183,8 @@
         }
       ],
       "props": [],
-      "note": "Register swap stress test. Identical to frame_1_confession in every render-block field except register. Props are empty because the render block says so."
+      "note": "Register swap stress test. Identical to frame_1_confession in every render-block field except register. Props are empty because the render block says so.",
+      "bubblesFrom": "jessica_reacts_judge"
     },
     "frame_3_away_test": {
       "renderBlockSource": "SYNTHETIC - no node in the_secret.json currently emits register 'away'",
@@ -234,6 +233,66 @@
       ],
       "props": [],
       "note": "Three registers at real slot anchors on the real canvas, so head height matches shipping (~208px). Uses the production composer and the contract slots - no special scaling."
+    }
+  },
+  "characters": {
+    "figure_a": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 210,
+        "note": "where the register's neckAnchor lands"
+      },
+      "neckSpan": {
+        "x0": 81,
+        "x1": 119,
+        "y": 170,
+        "note": "figure_a draws its neck front-on at register-local x 81..119 from y 170. A register head MUST span that column at y 175..195 or it will float."
+      }
+    }
+  },
+  "bubbles": {
+    "treatment": "balloon",
+    "note": "LOCKED: rounded balloon with a tail to the speaker (design variant 1). Bubbles are GENERATED from render_blocks.json at compose time - they are not an asset file. Geometry lives here; the renderer is build_bubbles() in compose_frame.py. Enable per frame with `bubblesFrom: <node>` and compose with --bubbles.",
+    "maxChars": 120,
+    "maxPerNode": 3,
+    "fontSize": 26,
+    "lineHeight": 34,
+    "charsPerLine": 26,
+    "maxWidth": 368,
+    "cornerRadius": 22,
+    "gap": 16,
+    "padding": 24,
+    "strokeWidth": 3.6,
+    "placement": {
+      "left": {
+        "x": 560,
+        "y": 104
+      },
+      "centre": {
+        "x": 292,
+        "y": 104
+      },
+      "right": {
+        "x": 292,
+        "y": 104
+      },
+      "note": "Per-slot stack origin. Explicit rather than computed: the free area in a room is a compositional fact about that room, not something derivable from the slot alone. Each new environment must declare placements for the slots it uses."
+    },
+    "tailTarget": {
+      "dx": -70,
+      "dy": 150,
+      "note": "Offset from the speaker's resolved head socket to the tail apex - chin/neck height, just inside the near cheek. Resolved through the same slot transform as the figure, so the tail tracks the speaker at any slot without hand-placement."
+    },
+    "tail": {
+      "length": 54,
+      "baseWidth": 26,
+      "note": "Length is CLAMPED. The tail aims at the speaker but stops short; an unclamped tail becomes a thin spike across the artwork, which is what made variant 1 read badly in the first design pass. Drawn on the last bubble only - a tail per bubble reads as noise."
     }
   }
 }
