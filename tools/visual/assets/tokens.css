@@ -43,6 +43,9 @@
     --irx-skin-b-shade:  #6E4A32;
     --irx-hair:          #41322A;
     --irx-hair-light:    #554136;
+    /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+    --irx-hair-b:        #241A16;
+    --irx-hair-b-light:  #3D2C24;
 
     /* wardrobe: home_casual */
     --irx-cloth:         #A8603F;
