@@ -114,6 +114,10 @@
         "floor_right": {
           "x": 1340,
           "y": 892
+        },
+        "door": {
+          "x": 1470,
+          "y": 880
         }
       },
       "propNote": "The environment owns prop placement, exactly as it owns character slots. Props declare a bottom-centre anchor and are placed onto a named scene anchor."
@@ -169,6 +173,10 @@
         "floor_right": {
           "x": 1360,
           "y": 892
+        },
+        "console_centre": {
+          "x": 620,
+          "y": 604
         }
       },
       "bubblePlacement": {
@@ -375,6 +383,10 @@
         "floor_right": {
           "x": 1350,
           "y": 892
+        },
+        "table_centre": {
+          "x": 1130,
+          "y": 604
         }
       },
       "bubblePlacement": {
@@ -415,6 +427,70 @@
       "defaultAnchor": {
         "scene.kitchen": "counter_right"
       }
+    },
+    "prop.ring_box": {
+      "localViewBox": "0 0 120 100",
+      "basePoint": {
+        "x": 60,
+        "y": 100
+      }
+    },
+    "prop.raised_glass": {
+      "localViewBox": "0 0 90 160",
+      "basePoint": {
+        "x": 45,
+        "y": 160
+      }
+    },
+    "prop.coffee_cup": {
+      "localViewBox": "0 0 140 110",
+      "basePoint": {
+        "x": 70,
+        "y": 110
+      }
+    },
+    "prop.phone": {
+      "localViewBox": "0 0 130 76",
+      "basePoint": {
+        "x": 65,
+        "y": 76
+      }
+    },
+    "prop.cigarette": {
+      "localViewBox": "0 0 70 130",
+      "basePoint": {
+        "x": 35,
+        "y": 130
+      }
+    },
+    "prop.tea_towel": {
+      "localViewBox": "0 0 150 180",
+      "basePoint": {
+        "x": 75,
+        "y": 180
+      }
+    },
+    "prop.wet_glasses": {
+      "localViewBox": "0 0 200 120",
+      "basePoint": {
+        "x": 100,
+        "y": 120
+      }
+    },
+    "prop.glass_set_down": {
+      "localViewBox": "0 0 100 130",
+      "basePoint": {
+        "x": 50,
+        "y": 130
+      }
+    },
+    "prop.door_closed": {
+      "localViewBox": "0 0 340 680",
+      "basePoint": {
+        "x": 170,
+        "y": 680
+      },
+      "note": "Scoped to scene.kitchen. street_exterior and party name it in their render blocks but both already contain a fire door; their frames omit it rather than draw a second."
     }
   },
   "frames": {
@@ -735,7 +811,12 @@
           "wardrobe": "home_casual"
         }
       ],
-      "props": [],
+      "props": [
+        {
+          "id": "prop.ring_box",
+          "anchor": "console_centre"
+        }
+      ],
       "bubblesFrom": "act2_alex_reveal",
       "note": "First real node composed in flat_hallway. prop.ring_box lands in 2B.4."
     },
@@ -753,7 +834,12 @@
           "wardrobe": "day"
         }
       ],
-      "props": [],
+      "props": [
+        {
+          "id": "prop.coffee_cup",
+          "anchor": "table_left"
+        }
+      ],
       "bubblesFrom": "act3_jessica_returns",
       "note": "prop.coffee_cup lands in 2B.4."
     },
@@ -771,7 +857,12 @@
           "wardrobe": "formal"
         }
       ],
-      "props": [],
+      "props": [
+        {
+          "id": "prop.cigarette",
+          "anchor": "wall_left"
+        }
+      ],
       "bubblesFrom": "act4_avoidant_outside",
       "note": "framing `turned` resolves to the figure_a_rear base. First real node using a rear figure. prop.cigarette and prop.door_closed land in 2B.4."
     },
@@ -781,7 +872,12 @@
       "time": "night",
       "framing": "empty",
       "cast": [],
-      "props": [],
+      "props": [
+        {
+          "id": "prop.phone",
+          "anchor": "wall_left"
+        }
+      ],
       "bubblesFrom": "act3b_jessica_calls",
       "bubbleSpeaker": {
         "base": "figure_a",
@@ -803,7 +899,12 @@
           "wardrobe": "formal"
         }
       ],
-      "props": [],
+      "props": [
+        {
+          "id": "prop.raised_glass",
+          "anchor": "table_left"
+        }
+      ],
       "bubblesFrom": "act4_engagement_party",
       "note": "prop.raised_glass and prop.door_closed land in 2B.4."
     },
@@ -821,9 +922,86 @@
           "wardrobe": "formal"
         }
       ],
-      "props": [],
+      "props": [
+        {
+          "id": "prop.raised_glass",
+          "anchor": "table_centre"
+        }
+      ],
       "bubblesFrom": "act4_late_disclosure",
       "note": "prop.raised_glass and prop.door_closed land in 2B.4."
+    },
+    "frame_10_start": {
+      "renderBlockSource": "render_blocks.json -> start -> default",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "held",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [
+        {
+          "id": "prop.tea_towel",
+          "anchor": "counter_left"
+        },
+        {
+          "id": "prop.wet_glasses",
+          "anchor": "counter_right"
+        }
+      ],
+      "bubblesFrom": "start",
+      "note": "The opening scene of the scenario - the first frame any player sees."
+    },
+    "frame_11_pause_pressed": {
+      "renderBlockSource": "render_blocks.json -> act2_pause_pressed -> default",
+      "scene": "scene.flat_hallway",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "searching",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [
+        {
+          "id": "prop.glass_set_down",
+          "anchor": "console_left"
+        }
+      ],
+      "bubblesFrom": "act2_pause_pressed"
+    },
+    "frame_12_leaves_halfsecret": {
+      "renderBlockSource": "render_blocks.json -> jessica_leaves_halfsecret -> default",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "empty",
+      "cast": [],
+      "props": [
+        {
+          "id": "prop.tea_towel",
+          "anchor": "counter_left"
+        },
+        {
+          "id": "prop.door_closed",
+          "anchor": "door"
+        }
+      ],
+      "bubblesFrom": "jessica_leaves_halfsecret",
+      "bubbleSpeaker": {
+        "base": "figure_a",
+        "slot": "centre"
+      },
+      "note": "`absent` mode: she has gone, the empty room is the beat, and the door is the prop that says so."
     }
   },
   "characters": {
@@ -976,5 +1154,8 @@
     "rule": "EVERY IRX environment must provide an occluding surface at y=600. This is not a stylistic preference - both figure bodies are drawn with arms reaching forward and hands flat at local y~500, which resolves to canvas y~600. A room with no surface there leaves the hands floating in mid-air. The surface can be anything plausible for the room (counter, console table, cafe table, low wall, bar) but it must exist and it must sit at 600.",
     "discovered": "2B.3, before flat_hallway was drawn. scene.kitchen satisfied it by accident because the counter was designed first and the figure was fitted to it.",
     "alternative": "If a future scene genuinely cannot have a surface there, it needs an arms-down body variant - which is what figure_a_rear and figure_b_rear already are. Do not solve it by moving the occlusion line per scene; that would desynchronise the hands from every existing wardrobe."
+  },
+  "propsRemoved": {
+    "prop.jacket_worn": "NOT A PROP. Used by one node (confession_guarded) where Jessica's wardrobe is already `coat` - the jacket she is reaching for is the garment she is wearing. Reclassified as wardrobe-provided; mapping.the_secret.json should move 'jacket' to unrenderableProps."
   }
 }
