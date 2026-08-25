@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220"
+     id="figure_a.register.held" data-asset="figure_a" data-kind="register"
+     data-register="held" data-neck-anchor="100,210" data-register-rotate="2">
+    <!-- IRX 2B.2 = figure_a register: held (Jessica).
+
+         Her most-used register by a distance - 5 nodes: start, act3_jessica_returns,
+         act3_direct_response, act3_hand_back_response, act4_avoidant_outside. It
+         carries the opening scene of the scenario, which makes it the first face a
+         player ever sees.
+
+         'held' sits between 'open' and 'tight'. She is keeping hold of herself:
+         present, engaged, not yet closed off, but braced. Carried by brows drawn
+         very slightly together and level, a steady direct gaze at normal aperture,
+         and a closed neutral mouth with a fraction of compression at the corners.
+
+         SILHOUETTE: hair tucked behind the near ear on the viewer's right, loose on
+         the left. That asymmetry is what separates 'held' from 'open' at 220px,
+         where the facial differences between them are effectively invisible. Per
+         anchors.characters.figure_a.hairPolicy = "variable", her hair is expected
+         to differ per register - it is her main silhouette lever.
+
+         Firewall: 'held' must not read as guilty or evasive. She is not hiding in
+         this register - in `start` she has not confessed yet, and in
+         act3_direct_response she is being told to tell Alex. A downcast or averted
+         face here would hand the player a verdict the prose has not given them. -->
+    <defs><style>
+        /* @tokens-begin */
+        :root {
+        /* line */
+        --irx-line:          #241D19;
+        --irx-line-soft:     #3B302A;
+        --irx-shadow:        #2A231E;
+
+        /* architecture */
+        --irx-wall:          #5C6A5F;
+        --irx-wall-dark:     #4E5A51;
+        --irx-wall-pattern:  #556359;
+        --irx-tile:          #B5A992;
+        --irx-tile-alt:      #A49980;
+        --irx-floor:         #5E4D3E;
+
+        /* window */
+        --irx-sky-high:      #334051;
+        --irx-sky-mid:       #4D4656;
+        --irx-sky-low:       #785A4F;
+        --irx-outside-dark:  #2A333E;
+        --irx-curtain:       #424E56;
+        --irx-curtain-dark:  #38424A;
+
+        /* joinery */
+        --irx-cabinet:       #785D44;
+        --irx-cabinet-dark:  #634C36;
+        --irx-counter:       #947553;
+        --irx-counter-edge:  #7B5F43;
+
+        /* character */
+        --irx-skin:          #A87A5A;
+        --irx-skin-shade:    #875D42;
+        /* figure_b: same warm hazel family, one step deeper than figure_a */
+        --irx-skin-b:        #8E6244;
+        --irx-skin-b-shade:  #6E4A32;
+        /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+        mouth with --irx-line reads as black lips. */
+        --irx-lip-b:         #96604F;
+        --irx-mouth-b:       #4A2C24;
+        --irx-hair:          #41322A;
+        --irx-hair-light:    #554136;
+        /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+        --irx-hair-b:        #241A16;
+        --irx-hair-b-light:  #3D2C24;
+
+        /* wardrobe: home_casual */
+        --irx-cloth:         #A8603F;
+        --irx-cloth-dark:    #894C31;
+        --irx-cloth-inner:   #D9CDBC;
+
+        /* props */
+        --irx-glass:         #BCC8C3;
+        --irx-glass-dark:    #9AA8A2;
+        --irx-highlight:     #FFFFFF;
+        --irx-jacket:        #4F5A63;
+        --irx-jacket-dark:   #3D464E;
+
+        /* accent — neighbourhood district, warm light only */
+        --irx-accent:        #FFC15E;
+        --irx-accent-dim:    #C89A4E;
+        --irx-lamp-warm:     #F2C77E;
+        --irx-cool-spill:    #7E93A8;
+
+        /* stroke weights */
+        --irx-stroke-xheavy: 6.6;
+        --irx-stroke-heavy:  5;
+        --irx-stroke:        3.4;
+        --irx-stroke-fine:   2.1;
+        --irx-stroke-hair:   1.4;
+        }
+        /* @tokens-end */
+        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .sk  { fill: var(--irx-skin); }
+        .skd { fill: var(--irx-skin-shade); }
+        .ha  { fill: var(--irx-hair); }
+        .hal { fill: var(--irx-hair-light); }
+    </style></defs>
+
+    <g id="character_head">
+        <!-- hair mass behind -->
+        <path d="M100 8 q56 2 68 52 q11 35 6 76 q-4 33 -13 74 q-15 -34 -16 -73
+           q-38 15 -85 1 q-4 40 -19 72 q-9 -43 -12 -76 q-5 -41 7 -76 q13 -50 64 -50 z"
+              class="ha"/>
+
+        <!-- face: same construction as open and tight -->
+        <path d="M100 32 q38 0 48 36 q8 30 3 60 q-5 34 -21 52 q-13 15 -30 15
+           q-17 0 -30 -15 q-16 -18 -21 -52 q-5 -30 3 -60 q10 -36 48 -36 z" class="sk"/>
+        <path class="ln" stroke-width="3.8"
+              d="M100 32 q38 0 48 36 q8 30 3 60 q-5 34 -21 52 q-13 15 -30 15
+           q-17 0 -30 -15 q-16 -18 -21 -52 q-5 -30 3 -60 q10 -36 48 -36 z"/>
+        <path class="ln" stroke-width="4.4" d="M100 195 q-17 0 -30 -15 q-9 -10 -14 -26" opacity="0.55"/>
+
+        <!-- both ears drawn: the right one is exposed by the tuck -->
+        <path d="M52 102 q-8 -2 -10 8 q-2 12 8 15" class="sk"/>
+        <path class="ln" stroke-width="2.1" d="M52 102 q-8 -2 -10 8 q-2 12 8 15"/>
+        <path d="M148 100 q9 -2 11 9 q2 13 -9 16" class="sk"/>
+        <path class="ln" stroke-width="2.4" d="M148 100 q9 -2 11 9 q2 13 -9 16"/>
+        <path class="ln" stroke-width="1.4" d="M152 108 q4 3 3 9" opacity="0.55"/>
+
+        <!-- brows: level, drawn a fraction together. NOT lifted like 'open',
+             NOT angled down like 'tight' -->
+        <path class="ln" stroke-width="2.4" d="M70 92 q13 -5 26 -1" opacity="0.9"/>
+        <path class="ln" stroke-width="2.4" d="M130 92 q-13 -5 -26 -1" opacity="0.9"/>
+
+        <!-- eyes: normal aperture, steady and direct -->
+        <path class="ln" stroke-width="3.4" d="M76 109 q11 -8 21 -1"/>
+        <path class="ln" stroke-width="1.4" d="M77 116 q10 4 19 0" opacity="0.68"/>
+        <circle cx="87" cy="111" r="3.2" fill="var(--irx-line)"/>
+        <path class="ln" stroke-width="3.4" d="M103 108 q11 -7 21 1"/>
+        <path class="ln" stroke-width="1.4" d="M104 116 q10 4 19 -1" opacity="0.68"/>
+        <circle cx="113" cy="111" r="3.2" fill="var(--irx-line)"/>
+
+        <path class="ln" stroke-width="1.4" d="M98 116 q-6 18 4 24" opacity="0.85"/>
+
+        <!-- mouth: closed, level, corners fractionally tucked -->
+        <path class="ln" stroke-width="2.8" d="M90 157 h20"/>
+        <path class="ln" stroke-width="1.4" d="M89 156 q-2 3 -1 4" opacity="0.5"/>
+        <path class="ln" stroke-width="1.4" d="M111 156 q2 3 1 4" opacity="0.5"/>
+
+        <!-- tonal masses: key light upper-left -->
+        <path d="M129 116 q10 27 1 50 q-9 13 -19 15 q17 -31 15 -65 z" class="skd" opacity="0.42"/>
+        <path d="M60 128 q7 14 3 24 q-9 -7 -11 -19 z" class="skd" opacity="0.28"/>
+        <path d="M84 176 q16 7 32 2 q-15 10 -34 3 z" class="skd" opacity="0.22"/>
+
+        <!-- hair front: tucked behind the RIGHT ear, loose on the left.
+             This asymmetry is the register's silhouette signature. -->
+        <path d="M100 8 q-60 4 -72 56 q-6 21 -4 44 q9 -30 19 -42 q14 21 42 15
+           q22 -5 33 -22 q19 20 40 22 q13 10 19 32 q4 -25 -2 -47 q-14 -51 -66 -52 z"
+              class="ha"/>
+        <path d="M100 8 q-35 3 -50 34 q15 -14 38 -16 q-13 10 -18 25 q20 -17 43 -17 z"
+              class="hal" opacity="0.42"/>
+        <path class="ln" stroke-width="3.8" d="M100 8 q-60 4 -72 56 q-6 21 -4 44"/>
+        <path class="ln" stroke-width="3.0" d="M100 8 q60 4 68 54 q6 21 5 45"/>
+        <path class="ln" stroke-width="1.4" d="M50 74 q26 17 50 4" opacity="0.6"/>
+        <!-- the tuck is carried by the front hair path sweeping up on the right and by
+             the short length below; a separate wedge read as a blob on the temple. -->
+
+        <!-- length: full on the left, short and tucked on the right -->
+        <path d="M28 112 q-10 52 6 104 q12 -38 13 -82 q-12 -8 -19 -22 z" class="ha"/>
+        <path class="ln" stroke-width="3.4" d="M28 112 q-10 52 6 104"/>
+        <path class="ln" stroke-width="1.4" d="M37 130 q-5 42 5 74" opacity="0.45"/>
+        <path d="M164 116 q5 20 -2 40 q-7 -17 -8 -33 q5 -3 10 -7 z" class="ha"/>
+        <path class="ln" stroke-width="2.4" d="M164 116 q5 20 -2 40"/>
+    </g>
+</svg>

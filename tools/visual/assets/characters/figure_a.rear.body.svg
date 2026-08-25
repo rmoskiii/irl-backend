@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 800"
+     id="figure_a_rear.body" data-asset="figure_a_rear" data-kind="base-body"
+     data-base-point="210,800" data-head-socket="210,210">
+    <!-- IRX 2B.1 = figure_a_rear base body (Jessica, seen from behind).
+
+         Required by act4_avoidant_outside, where framing resolves to `turned`. She
+         has found you outside the engagement party and the conversation happens
+         side-on to the room she just left.
+
+         Deliberately simple, per the standing rule: a rear figure gets NO register
+         system. There is one head asset ("rear") carrying the back of the skull and
+         the cut, and that is all. Inventing rear-facing emotional registers for a
+         scenario that needs exactly one rear shot would be building for a
+         requirement that does not exist.
+
+         Shares figure_a's contract exactly - same viewBox, basePoint, headSocket at
+         210,210 - so it drops into the same slot system with no composer change.
+
+         Arms hang at his sides rather than reaching: he is at a window, not a
+         counter. There is therefore no character_front group. -->
+    <defs><style>
+        /* @tokens-begin */
+        :root {
+        /* line */
+        --irx-line:          #241D19;
+        --irx-line-soft:     #3B302A;
+        --irx-shadow:        #2A231E;
+
+        /* architecture */
+        --irx-wall:          #5C6A5F;
+        --irx-wall-dark:     #4E5A51;
+        --irx-wall-pattern:  #556359;
+        --irx-tile:          #B5A992;
+        --irx-tile-alt:      #A49980;
+        --irx-floor:         #5E4D3E;
+
+        /* window */
+        --irx-sky-high:      #334051;
+        --irx-sky-mid:       #4D4656;
+        --irx-sky-low:       #785A4F;
+        --irx-outside-dark:  #2A333E;
+        --irx-curtain:       #424E56;
+        --irx-curtain-dark:  #38424A;
+
+        /* joinery */
+        --irx-cabinet:       #785D44;
+        --irx-cabinet-dark:  #634C36;
+        --irx-counter:       #947553;
+        --irx-counter-edge:  #7B5F43;
+
+        /* character */
+        --irx-skin:          #A87A5A;
+        --irx-skin-shade:    #875D42;
+        /* figure_b: same warm hazel family, one step deeper than figure_a */
+        --irx-skin-b:        #8E6244;
+        --irx-skin-b-shade:  #6E4A32;
+        /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+        mouth with --irx-line reads as black lips. */
+        --irx-lip-b:         #96604F;
+        --irx-mouth-b:       #4A2C24;
+        --irx-hair:          #41322A;
+        --irx-hair-light:    #554136;
+        /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+        --irx-hair-b:        #241A16;
+        --irx-hair-b-light:  #3D2C24;
+
+        /* wardrobe: home_casual */
+        --irx-cloth:         #A8603F;
+        --irx-cloth-dark:    #894C31;
+        --irx-cloth-inner:   #D9CDBC;
+
+        /* props */
+        --irx-glass:         #BCC8C3;
+        --irx-glass-dark:    #9AA8A2;
+        --irx-highlight:     #FFFFFF;
+        --irx-jacket:        #4F5A63;
+        --irx-jacket-dark:   #3D464E;
+
+        /* accent — neighbourhood district, warm light only */
+        --irx-accent:        #FFC15E;
+        --irx-accent-dim:    #C89A4E;
+        --irx-lamp-warm:     #F2C77E;
+        --irx-cool-spill:    #7E93A8;
+
+        /* stroke weights */
+        --irx-stroke-xheavy: 6.6;
+        --irx-stroke-heavy:  5;
+        --irx-stroke:        3.4;
+        --irx-stroke-fine:   2.1;
+        --irx-stroke-hair:   1.4;
+        }
+        /* @tokens-end */
+        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .sk  { fill: var(--irx-skin); }
+        .skd { fill: var(--irx-skin-shade); }
+    </style></defs>
+
+    <g id="character_back">
+        <path d="M148 250 q28 -36 84 -36 q58 0 86 38 q20 60 18 148 q-2 56 -5 94 h-186
+           q-4 -56 -6 -94 q-2 -86 13 -150 z" fill="var(--irx-shadow)" opacity="0.13"/>
+    </g>
+
+    <g id="character_body">
+        <path d="M191 170 v44 q19 14 38 0 v-44 z" class="sk"/>
+        <path d="M191 174 q19 18 38 0 v18 q-19 15 -38 0 z" class="skd" opacity="0.55"/>
+        <path class="ln" stroke-width="3.4" d="M191 170 v46"/>
+        <path class="ln" stroke-width="3.4" d="M229 170 v46"/>
+
+        <path d="M128 272 q26 -36 82 -36 q56 0 82 36 q20 60 18 148 q-2 98 -7 178 h-186
+           q-5 -80 -7 -178 q-2 -88 18 -148 z" class="sk"/>
+        <path class="ln" stroke-width="6.6" d="M128 272 q26 -36 82 -36 q56 0 82 36 q20 60 18 148 q-2 98 -7 178"/>
+        <path class="ln" stroke-width="6.6" d="M128 272 q-20 60 -18 148 q2 98 7 178"/>
+        <!-- shoulder blades: the mark that reads as a back rather than a front -->
+        <path class="ln" stroke-width="2.0" d="M166 300 q9 32 5 64" opacity="0.35"/>
+        <path class="ln" stroke-width="2.0" d="M254 300 q-9 32 -5 64" opacity="0.35"/>
+        <path class="ln" stroke-width="1.6" d="M210 282 q3 90 1 180" opacity="0.3"/>
+
+        <path d="M134 556 q-9 124 -5 244 h68 q4 -120 13 -200 q9 80 13 200 h68 q4 -120 -5 -244 z"
+              fill="var(--irx-cabinet-dark)"/>
+        <path class="ln" stroke-width="3.4"
+              d="M134 556 q-9 124 -5 244 h68 q4 -120 13 -200 q9 80 13 200 h68 q4 -120 -5 -244 z"/>
+
+        <!-- arms hanging, not reaching -->
+        <path d="M132 268 q-24 60 -26 126 q-1 44 6 84 l40 -6 q-8 -40 -6 -78 q2 -60 26 -114 z" class="sk"/>
+        <path class="ln" stroke-width="6.6" d="M132 268 q-24 60 -26 126 q-1 44 6 84"/>
+        <path class="ln" stroke-width="6.6" d="M166 280 q-21 50 -22 108 q-1 38 6 76"/>
+        <path d="M288 268 q24 60 26 126 q1 44 -6 84 l-40 -6 q8 -40 6 -78 q-2 -60 -26 -114 z" class="sk"/>
+        <path class="ln" stroke-width="6.6" d="M288 268 q24 60 26 126 q1 44 -6 84"/>
+        <path class="ln" stroke-width="6.6" d="M254 280 q21 50 22 108 q1 38 -6 76"/>
+    </g>
+</svg>

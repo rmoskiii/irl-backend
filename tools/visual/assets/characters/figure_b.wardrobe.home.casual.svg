@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 800"
+     id="figure_b.wardrobe.home_casual" data-asset="figure_b" data-kind="wardrobe"
+     data-wardrobe="home_casual" data-base-point="210,800">
+    <!-- IRX 2B.1 = figure_b wardrobe: home_casual (Alex).
+
+         Open overshirt worn loose over a plain tee. Deliberately a different garment
+         TYPE from Jessica's cardigan, not a recolour: square hem, chest pocket,
+         rolled cuffs, collar. Palette pulls to the cool side of the neighbourhood
+         range so the two figures separate on colour as well as silhouette when they
+         eventually share a frame.
+
+         Drawn in figure_b's local space, so it overlays the body with no per-frame
+         offset. Exports one group, same contract as figure_a. -->
+    <defs><style>
+        /* @tokens-begin */
+        :root {
+        /* line */
+        --irx-line:          #241D19;
+        --irx-line-soft:     #3B302A;
+        --irx-shadow:        #2A231E;
+
+        /* architecture */
+        --irx-wall:          #5C6A5F;
+        --irx-wall-dark:     #4E5A51;
+        --irx-wall-pattern:  #556359;
+        --irx-tile:          #B5A992;
+        --irx-tile-alt:      #A49980;
+        --irx-floor:         #5E4D3E;
+
+        /* window */
+        --irx-sky-high:      #334051;
+        --irx-sky-mid:       #4D4656;
+        --irx-sky-low:       #785A4F;
+        --irx-outside-dark:  #2A333E;
+        --irx-curtain:       #424E56;
+        --irx-curtain-dark:  #38424A;
+
+        /* joinery */
+        --irx-cabinet:       #785D44;
+        --irx-cabinet-dark:  #634C36;
+        --irx-counter:       #947553;
+        --irx-counter-edge:  #7B5F43;
+
+        /* character */
+        --irx-skin:          #A87A5A;
+        --irx-skin-shade:    #875D42;
+        /* figure_b: same warm hazel family, one step deeper than figure_a */
+        --irx-skin-b:        #8E6244;
+        --irx-skin-b-shade:  #6E4A32;
+        /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+        mouth with --irx-line reads as black lips. */
+        --irx-lip-b:         #96604F;
+        --irx-mouth-b:       #4A2C24;
+        --irx-hair:          #41322A;
+        --irx-hair-light:    #554136;
+        /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+        --irx-hair-b:        #241A16;
+        --irx-hair-b-light:  #3D2C24;
+
+        /* wardrobe: home_casual */
+        --irx-cloth:         #A8603F;
+        --irx-cloth-dark:    #894C31;
+        --irx-cloth-inner:   #D9CDBC;
+
+        /* props */
+        --irx-glass:         #BCC8C3;
+        --irx-glass-dark:    #9AA8A2;
+        --irx-highlight:     #FFFFFF;
+        --irx-jacket:        #4F5A63;
+        --irx-jacket-dark:   #3D464E;
+
+        /* accent — neighbourhood district, warm light only */
+        --irx-accent:        #FFC15E;
+        --irx-accent-dim:    #C89A4E;
+        --irx-lamp-warm:     #F2C77E;
+        --irx-cool-spill:    #7E93A8;
+
+        /* stroke weights */
+        --irx-stroke-xheavy: 6.6;
+        --irx-stroke-heavy:  5;
+        --irx-stroke:        3.4;
+        --irx-stroke-fine:   2.1;
+        --irx-stroke-hair:   1.4;
+        }
+        /* @tokens-end */
+        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .sh  { fill: var(--irx-curtain); }
+        .shd { fill: var(--irx-curtain-dark); }
+        .tee { fill: var(--irx-tile); }
+    </style></defs>
+
+    <g id="character_clothing">
+        <!-- tee underneath -->
+        <path d="M158 226 q52 30 104 0 q14 62 12 140 q-2 92 -6 178 h-118
+           q-4 -86 -6 -178 q-2 -78 14 -140 z" class="tee"/>
+        <path class="ln" stroke-width="3.4" d="M158 226 q52 30 104 0"/>
+        <path class="ln" stroke-width="1.4" d="M196 268 q3 76 1 152" opacity="0.3"/>
+
+        <!-- overshirt: left panel, square hem -->
+        <path d="M112 264 q20 -44 68 -46 q-13 46 -17 112 q-5 86 -3 214 h-62
+           q-4 -80 -6 -176 q-2 -88 20 -104 z" class="sh"/>
+        <path class="ln" stroke-width="6.6" d="M112 264 q20 -44 68 -46 q-13 46 -17 112 q-5 86 -3 214"/>
+        <path class="ln" stroke-width="3.4" d="M180 218 q-13 46 -17 112 q-5 86 -3 214"/>
+
+        <!-- overshirt: right panel -->
+        <path d="M308 264 q-20 -44 -68 -46 q13 46 17 112 q5 86 3 214 h62
+           q4 -80 6 -176 q2 -88 -20 -104 z" class="sh"/>
+        <path class="ln" stroke-width="6.6" d="M308 264 q-20 -44 -68 -46 q13 46 17 112 q5 86 3 214"/>
+        <path class="ln" stroke-width="3.4" d="M240 218 q13 46 17 112 q5 86 3 214"/>
+
+
+        <!-- chest pocket -->
+        <path class="ln" stroke-width="2.2" d="M132 300 h34 v30 h-34 z" opacity="0.75"/>
+
+        <!-- sleeves with rolled cuffs, stopping short of the wrists -->
+        <path d="M118 262 q-40 58 -46 116 q-4 32 4 60 l42 -14 q-8 -28 -4 -56 q6 -51 40 -99 z" class="sh"/>
+        <path class="ln" stroke-width="6.6" d="M118 262 q-40 58 -46 116 q-4 32 4 60"/>
+        <path class="ln" stroke-width="6.6" d="M154 274 q-34 47 -40 98 q-4 26 2 52"/>
+        <path d="M76 438 q30 13 46 -10 l-5 -18 l-45 16 z" class="shd"/>
+        <path class="ln" stroke-width="3.4" d="M76 438 q30 13 46 -10"/>
+
+        <path d="M302 262 q40 58 46 116 q4 32 -4 60 l-42 -14 q8 -28 4 -56 q-6 -51 -40 -99 z" class="sh"/>
+        <path class="ln" stroke-width="6.6" d="M302 262 q40 58 46 116 q4 32 -4 60"/>
+        <path class="ln" stroke-width="6.6" d="M266 274 q34 47 40 98 q4 26 -2 52"/>
+        <path d="M344 438 q-30 13 -46 -10 l5 -18 l45 16 z" class="shd"/>
+        <path class="ln" stroke-width="3.4" d="M344 438 q-30 13 -46 -10"/>
+
+        <!-- folds, and the right-side shade to match the key light -->
+        <path class="ln" stroke-width="1.4" d="M136 340 q9 60 5 126" opacity="0.4"/>
+        <path class="ln" stroke-width="1.4" d="M284 344 q-8 58 -4 122" opacity="0.4"/>
+        <path d="M272 296 q15 62 13 132 q-2 60 -5 118 h-24 q4 -128 -2 -196 q-2 -32 18 -54 z"
+              fill="var(--irx-shadow)" opacity="0.16"/>
+    </g>
+</svg>

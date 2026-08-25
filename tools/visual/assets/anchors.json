@@ -117,6 +117,282 @@
         }
       },
       "propNote": "The environment owns prop placement, exactly as it owns character slots. Props declare a bottom-centre anchor and are placed onto a named scene anchor."
+    },
+    "scene.flat_hallway": {
+      "slots": {
+        "left": {
+          "x": 480,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1120,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "console table along the hallway wall"
+      },
+      "propAnchors": {
+        "console_left": {
+          "x": 430,
+          "y": 604
+        },
+        "console_right": {
+          "x": 1180,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 250,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1360,
+          "y": 892
+        }
+      },
+      "bubblePlacement": {
+        "centre": {
+          "x": 250,
+          "y": 110
+        },
+        "left": {
+          "x": 600,
+          "y": 110
+        },
+        "right": {
+          "x": 250,
+          "y": 110
+        }
+      }
+    },
+    "scene.coffee_shop": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "cafe table, a small two-seater against the wall"
+      },
+      "propAnchors": {
+        "table_left": {
+          "x": 560,
+          "y": 604
+        },
+        "table_right": {
+          "x": 1010,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "bubblePlacement": {
+        "centre": {
+          "x": 250,
+          "y": 112
+        },
+        "left": {
+          "x": 600,
+          "y": 112
+        },
+        "right": {
+          "x": 250,
+          "y": 112
+        }
+      },
+      "note": "First DAYTIME environment. Window left is the key; vignette is deliberately weaker than the evening rooms. Act 3 is the one part of the scenario in public daylight."
+    },
+    "scene.street_exterior": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "low boundary wall outside the venue"
+      },
+      "propAnchors": {
+        "wall_left": {
+          "x": 470,
+          "y": 604
+        },
+        "wall_right": {
+          "x": 1010,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "bubblePlacement": {
+        "centre": {
+          "x": 250,
+          "y": 118
+        },
+        "left": {
+          "x": 600,
+          "y": 118
+        },
+        "right": {
+          "x": 250,
+          "y": 118
+        }
+      },
+      "note": "Night, and the only environment that must hold a frame with NO character: act3b_jessica_calls is `remote` and has an empty cast."
+    },
+    "scene.party": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "banquet table with a cloth to the floor"
+      },
+      "propAnchors": {
+        "table_left": {
+          "x": 560,
+          "y": 604
+        },
+        "table_right": {
+          "x": 1030,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "bubblePlacement": {
+        "centre": {
+          "x": 250,
+          "y": 300
+        },
+        "left": {
+          "x": 600,
+          "y": 300
+        },
+        "right": {
+          "x": 250,
+          "y": 300
+        }
+      },
+      "bubbleNote": "Bubbles sit LOWER here than in the other rooms: the string lights and bunting occupy the top third, and a bubble over them would bury the one thing that makes this room read as a party.",
+      "note": "The only environment containing other people. Crowd is silhouette-only - no faces, no outlines, value close to the wall - so eighty guests are present without competing with the speaker."
     }
   },
   "props": {
@@ -233,6 +509,321 @@
       ],
       "props": [],
       "note": "Three registers at real slot anchors on the real canvas, so head height matches shipping (~208px). Uses the production composer and the contract slots - no special scaling."
+    },
+    "frame_audit_leaves": {
+      "renderBlockSource": "render_blocks.json -> jessica_leaves_halfsecret -> default",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "empty",
+      "cast": [],
+      "props": [
+        {
+          "id": "prop.jacket_chair",
+          "anchor": "floor_left"
+        }
+      ],
+      "bubblesFrom": "jessica_leaves_halfsecret",
+      "bubbleSpeaker": {
+        "base": "figure_a",
+        "slot": "centre"
+      },
+      "note": "2B.0 bubble audit: absent mode. Empty cast, departure line from exitBeat. bubbleSpeaker gives the tail a target for a character who has already gone."
+    },
+    "frame_alex_checkpoint": {
+      "renderBlockSource": "SYNTHETIC - 2B.1 checkpoint. Alex in the LOCKED kitchen so he is judged against the accepted reference, not a new room. His real rooms do not exist yet.",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "open",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": []
+    },
+    "frame_alex_bright": {
+      "renderBlockSource": "SYNTHETIC - 2B.1 register swap test partner for frame_alex_checkpoint",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "bright",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": []
+    },
+    "frame_alex_alert": {
+      "renderBlockSource": "SYNTHETIC - 2B.1 shipping-scale review, register 'alert'",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "alert",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": []
+    },
+    "frame_alex_deflated": {
+      "renderBlockSource": "SYNTHETIC - 2B.1 shipping-scale review, register 'deflated'",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "deflated",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": []
+    },
+    "frame_alex_searching": {
+      "renderBlockSource": "SYNTHETIC - 2B.1 shipping-scale review, register 'searching'",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "searching",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": []
+    },
+    "frame_alex_formal": {
+      "renderBlockSource": "SYNTHETIC - 2B.1 review: formal",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "bright",
+          "wardrobe": "formal"
+        }
+      ],
+      "props": []
+    },
+    "frame_alex_rear": {
+      "renderBlockSource": "SYNTHETIC - 2B.1 review: rear",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b_rear",
+          "slot": "centre",
+          "register": "rear",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": []
+    },
+    "frame_jess_home_casual": {
+      "renderBlockSource": "SYNTHETIC - 2B.2 review: held + home_casual",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "held",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": []
+    },
+    "frame_jess_coat": {
+      "renderBlockSource": "SYNTHETIC - 2B.2 review: held + coat",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "held",
+          "wardrobe": "coat"
+        }
+      ],
+      "props": []
+    },
+    "frame_jess_day": {
+      "renderBlockSource": "SYNTHETIC - 2B.2 review: held + day",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "held",
+          "wardrobe": "day"
+        }
+      ],
+      "props": []
+    },
+    "frame_jess_formal": {
+      "renderBlockSource": "SYNTHETIC - 2B.2 review: held + formal",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "held",
+          "wardrobe": "formal"
+        }
+      ],
+      "props": []
+    },
+    "frame_jess_rear": {
+      "renderBlockSource": "SYNTHETIC - 2B.2 review: figure_a_rear",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a_rear",
+          "slot": "centre",
+          "register": "rear",
+          "wardrobe": "formal"
+        }
+      ],
+      "props": []
+    },
+    "frame_4_alex_reveal": {
+      "renderBlockSource": "render_blocks.json -> act2_alex_reveal -> default",
+      "scene": "scene.flat_hallway",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "bright",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act2_alex_reveal",
+      "note": "First real node composed in flat_hallway. prop.ring_box lands in 2B.4."
+    },
+    "frame_5_jessica_returns": {
+      "renderBlockSource": "render_blocks.json -> act3_jessica_returns -> default",
+      "scene": "scene.coffee_shop",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "held",
+          "wardrobe": "day"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act3_jessica_returns",
+      "note": "prop.coffee_cup lands in 2B.4."
+    },
+    "frame_6_avoidant_outside": {
+      "renderBlockSource": "render_blocks.json -> act4_avoidant_outside -> default",
+      "scene": "scene.street_exterior",
+      "time": "night",
+      "framing": "turned",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a_rear",
+          "slot": "centre",
+          "register": "rear",
+          "wardrobe": "formal"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act4_avoidant_outside",
+      "note": "framing `turned` resolves to the figure_a_rear base. First real node using a rear figure. prop.cigarette and prop.door_closed land in 2B.4."
+    },
+    "frame_7_jessica_calls": {
+      "renderBlockSource": "render_blocks.json -> act3b_jessica_calls -> default",
+      "scene": "scene.street_exterior",
+      "time": "night",
+      "framing": "empty",
+      "cast": [],
+      "props": [],
+      "bubblesFrom": "act3b_jessica_calls",
+      "bubbleSpeaker": {
+        "base": "figure_a",
+        "slot": "centre"
+      },
+      "note": "mode `remote`: Jessica is a voice on the phone. Empty cast - the environment carries the entire frame. prop.phone lands in 2B.4."
+    },
+    "frame_8_engagement_party": {
+      "renderBlockSource": "render_blocks.json -> act4_engagement_party -> default",
+      "scene": "scene.party",
+      "time": "night",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "bright",
+          "wardrobe": "formal"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act4_engagement_party",
+      "note": "prop.raised_glass and prop.door_closed land in 2B.4."
+    },
+    "frame_9_late_disclosure": {
+      "renderBlockSource": "render_blocks.json -> act4_late_disclosure -> default",
+      "scene": "scene.party",
+      "time": "night",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "alert",
+          "wardrobe": "formal"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act4_late_disclosure",
+      "note": "prop.raised_glass and prop.door_closed land in 2B.4."
     }
   },
   "characters": {
@@ -253,7 +844,91 @@
         "x1": 119,
         "y": 170,
         "note": "figure_a draws its neck front-on at register-local x 81..119 from y 170. A register head MUST span that column at y 175..195 or it will float."
-      }
+      },
+      "hairPolicy": "variable",
+      "hairNote": "Jessica's hair CHANGES per register and that is deliberate: it is her primary silhouette lever at shipping scale. 'tight' carries a forward near-side lock, 'away' redistributes the whole mass. Forcing her registers to share one hair block would remove the only thing that separates two front-facing registers at 220px."
+    },
+    "figure_b": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 196,
+        "note": "14px HIGHER than figure_a (210). Alex is a taller, longer-necked build; the socket moves rather than the canvas, so both figures share one viewBox and one slot system."
+      },
+      "neckSpan": {
+        "x0": 85,
+        "x1": 123,
+        "y": 156,
+        "note": "Alex's neck is 4px wider than Jessica's (38 vs 38 span, shifted right and starting 14px higher to match the raised socket). Any figure_b register head MUST span x 85..123 at y 161..181 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 196,
+        "note": "vs figure_a 185. Slightly smaller head on a taller body \u2014 the proportion difference that reads at shipping scale.",
+        "headHeight": 178
+      },
+      "skinTokens": {
+        "base": "--irx-skin-b",
+        "shade": "--irx-skin-b-shade"
+      },
+      "hairPolicy": "fixed",
+      "hairNote": "Alex's cut is FIXED across all five registers - a low cut cannot restyle between nodes. Because registers are atomic the block is duplicated per file, so it must be enforced identical."
+    },
+    "figure_b_rear": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 196,
+        "note": "14px HIGHER than figure_a (210). Alex is a taller, longer-necked build; the socket moves rather than the canvas, so both figures share one viewBox and one slot system."
+      },
+      "neckSpan": {
+        "x0": 85,
+        "x1": 123,
+        "y": 156,
+        "note": "Alex's neck is 4px wider than Jessica's (38 vs 38 span, shifted right and starting 14px higher to match the raised socket). Any figure_b register head MUST span x 85..123 at y 161..181 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 196,
+        "note": "vs figure_a 185. Slightly smaller head on a taller body \u2014 the proportion difference that reads at shipping scale.",
+        "headHeight": 178
+      },
+      "skinTokens": {
+        "base": "--irx-skin-b",
+        "shade": "--irx-skin-b-shade"
+      },
+      "note": "Rear view of figure_b. Shares its geometry exactly so it drops into the same slot system. One register only ('rear') - a rear figure reports posture, not expression.",
+      "hairPolicy": "fixed"
+    },
+    "figure_a_rear": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 210,
+        "note": "where the register's neckAnchor lands"
+      },
+      "neckSpan": {
+        "x0": 81,
+        "x1": 119,
+        "y": 170,
+        "note": "figure_a draws its neck front-on at register-local x 81..119 from y 170. A register head MUST span that column at y 175..195 or it will float."
+      },
+      "hairPolicy": "fixed",
+      "hairNote": "Jessica's hair CHANGES per register and that is deliberate: it is her primary silhouette lever at shipping scale. 'tight' carries a forward near-side lock, 'away' redistributes the whole mass. Forcing her registers to share one hair block would remove the only thing that separates two front-facing registers at 220px.",
+      "note": "Rear view of figure_a. One register only ('rear')."
     }
   },
   "bubbles": {
@@ -293,6 +968,13 @@
       "length": 54,
       "baseWidth": 26,
       "note": "Length is CLAMPED. The tail aims at the speaker but stops short; an unclamped tail becomes a thin spike across the artwork, which is what made variant 1 read badly in the first design pass. Drawn on the last bubble only - a tail per bubble reads as noise."
-    }
+    },
+    "placementNote": "Global defaults live in bubbles.placement. A scene may override them via scenes.<id>.bubblePlacement.<slot> when its free area differs - where a bubble can sit is a compositional fact about the room, not a property of the slot."
+  },
+  "environmentContract": {
+    "occlusionLine": 600,
+    "rule": "EVERY IRX environment must provide an occluding surface at y=600. This is not a stylistic preference - both figure bodies are drawn with arms reaching forward and hands flat at local y~500, which resolves to canvas y~600. A room with no surface there leaves the hands floating in mid-air. The surface can be anything plausible for the room (counter, console table, cafe table, low wall, bar) but it must exist and it must sit at 600.",
+    "discovered": "2B.3, before flat_hallway was drawn. scene.kitchen satisfied it by accident because the counter was designed first and the figure was fitted to it.",
+    "alternative": "If a future scene genuinely cannot have a surface there, it needs an arms-down body variant - which is what figure_a_rear and figure_b_rear already are. Do not solve it by moving the occlusion line per scene; that would desynchronise the hands from every existing wardrobe."
   }
 }

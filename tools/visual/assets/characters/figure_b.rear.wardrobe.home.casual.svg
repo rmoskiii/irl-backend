@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 800"
+     id="figure_b_rear.wardrobe.home_casual" data-asset="figure_b_rear" data-kind="wardrobe"
+     data-wardrobe="home_casual" data-base-point="210,800">
+    <!-- IRX 2B.1 = figure_b wardrobe: home_casual (Alex).
+
+         Open overshirt worn loose over a plain tee. Deliberately a different garment
+         TYPE from Jessica's cardigan, not a recolour: square hem, chest pocket,
+         rolled cuffs, collar. Palette pulls to the cool side of the neighbourhood
+         range so the two figures separate on colour as well as silhouette when they
+         eventually share a frame.
+
+         Drawn in figure_b's local space, so it overlays the body with no per-frame
+         offset. Exports one group, same contract as figure_a. -->
+    <defs><style>
+        /* @tokens-begin */
+        :root {
+        /* line */
+        --irx-line:          #241D19;
+        --irx-line-soft:     #3B302A;
+        --irx-shadow:        #2A231E;
+
+        /* architecture */
+        --irx-wall:          #5C6A5F;
+        --irx-wall-dark:     #4E5A51;
+        --irx-wall-pattern:  #556359;
+        --irx-tile:          #B5A992;
+        --irx-tile-alt:      #A49980;
+        --irx-floor:         #5E4D3E;
+
+        /* window */
+        --irx-sky-high:      #334051;
+        --irx-sky-mid:       #4D4656;
+        --irx-sky-low:       #785A4F;
+        --irx-outside-dark:  #2A333E;
+        --irx-curtain:       #424E56;
+        --irx-curtain-dark:  #38424A;
+
+        /* joinery */
+        --irx-cabinet:       #785D44;
+        --irx-cabinet-dark:  #634C36;
+        --irx-counter:       #947553;
+        --irx-counter-edge:  #7B5F43;
+
+        /* character */
+        --irx-skin:          #A87A5A;
+        --irx-skin-shade:    #875D42;
+        /* figure_b: same warm hazel family, one step deeper than figure_a */
+        --irx-skin-b:        #8E6244;
+        --irx-skin-b-shade:  #6E4A32;
+        /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+        mouth with --irx-line reads as black lips. */
+        --irx-lip-b:         #96604F;
+        --irx-mouth-b:       #4A2C24;
+        --irx-hair:          #41322A;
+        --irx-hair-light:    #554136;
+        /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+        --irx-hair-b:        #241A16;
+        --irx-hair-b-light:  #3D2C24;
+
+        /* wardrobe: home_casual */
+        --irx-cloth:         #A8603F;
+        --irx-cloth-dark:    #894C31;
+        --irx-cloth-inner:   #D9CDBC;
+
+        /* props */
+        --irx-glass:         #BCC8C3;
+        --irx-glass-dark:    #9AA8A2;
+        --irx-highlight:     #FFFFFF;
+        --irx-jacket:        #4F5A63;
+        --irx-jacket-dark:   #3D464E;
+
+        /* accent — neighbourhood district, warm light only */
+        --irx-accent:        #FFC15E;
+        --irx-accent-dim:    #C89A4E;
+        --irx-lamp-warm:     #F2C77E;
+        --irx-cool-spill:    #7E93A8;
+
+        /* stroke weights */
+        --irx-stroke-xheavy: 6.6;
+        --irx-stroke-heavy:  5;
+        --irx-stroke:        3.4;
+        --irx-stroke-fine:   2.1;
+        --irx-stroke-hair:   1.4;
+        }
+        /* @tokens-end */
+        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .sh  { fill: var(--irx-curtain); }
+        .shd { fill: var(--irx-curtain-dark); }
+        .tee { fill: var(--irx-tile); }  /* unused from behind */
+    </style></defs>
+
+    <g id="character_clothing">
+        <!-- BACK PANEL. Removing the tee left the two side panels not meeting, so his
+             bare back showed through the middle. From behind the garment is a single
+             closed surface; the side panels now sit on top of this. -->
+        <path d="M110 264 q24 -48 100 -48 q76 0 100 48 q17 62 15 150 q-2 96 -6 174 h-218
+           q-4 -78 -6 -174 q-2 -88 15 -150 z" class="sh"/>
+        <path class="ln" stroke-width="6.6"
+              d="M110 264 q24 -48 100 -48 q76 0 100 48 q17 62 15 150 q-2 96 -6 174"/>
+        <path class="ln" stroke-width="6.6" d="M110 264 q-17 62 -15 150 q2 96 6 174"/>
+        <!-- shade down the right, matching the key light. replaces the seam lines -->
+        <path d="M278 280 q16 60 14 136 q-2 60 -5 118 h-24 q5 -128 -1 -196 q-2 -34 16 -58 z"
+              fill="var(--irx-shadow)" opacity="0.16"/>
+        <!-- from behind the overshirt hangs CLOSED, so there is no tee panel and no
+             front opening. Only the collar band shows above it. -->
+        <!-- collar band, sitting on the coat back. no opening, no lapel -->
+        <path d="M158 218 q52 24 104 0 q6 14 5 26 q-57 18 -114 0 q-1 -12 5 -26 z" class="shd"/>
+
+        <!-- overshirt: left panel, square hem -->
+
+        <!-- overshirt: right panel -->
+
+
+
+        <!-- sleeves with rolled cuffs, stopping short of the wrists -->
+        <!-- sleeves follow the REAR body's HANGING arms. These were copied from the
+             front wardrobe, where the arms reach forward onto a counter, so their
+             inner seams cut across the coat back as two vertical stripes. -->
+        <path d="M118 262 q-26 62 -28 128 q-1 38 5 70 l42 -8 q-7 -34 -5 -64 q2 -60 26 -114 z" class="sh"/>
+        <path class="ln" stroke-width="6.6" d="M118 262 q-26 62 -28 128 q-1 38 5 70"/>
+        <path d="M90 452 q30 10 46 -8 l-4 -14 l-42 8 z" class="shd"/>
+
+        <path d="M302 262 q26 62 28 128 q1 38 -5 70 l-42 -8 q7 -34 5 -64 q-2 -60 -26 -114 z" class="sh"/>
+        <path class="ln" stroke-width="6.6" d="M302 262 q26 62 28 128 q1 38 -5 70"/>
+        <path d="M330 452 q-30 10 -46 -8 l4 -14 l42 8 z" class="shd"/>
+
+        <!-- folds, and the right-side shade to match the key light -->
+        <!-- rear: a yoke seam instead of a front opening -->
+        <path class="ln" stroke-width="2.6" d="M144 282 q66 20 132 0" opacity="0.8"/>
+    </g>
+</svg>

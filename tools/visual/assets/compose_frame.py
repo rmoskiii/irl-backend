@@ -68,17 +68,32 @@ def build_bubbles(A, fr, scene_cfg, node):
     blocks = json.loads(rb.read_text(encoding="utf-8"))
     if node not in blocks:
         raise SystemExit(f"bubbles: node '{node}' not in render_blocks.json")
-    bs = blocks[node]["default"].get("bubbles", [])
+    block = blocks[node]["default"]
+    bs = list(block.get("bubbles", []))
+    exit_beat = False
+    if not bs and block.get("exitBeat"):
+        # `absent` mode carries its departure line in exitBeat, not bubbles, and
+        # has an EMPTY cast. Before this, the line was silently dropped and
+        # placement crashed on cast[0]. Three of scene.kitchen's eight nodes.
+        bs = [block["exitBeat"]]
+        exit_beat = True
     if not bs:
         return None
 
     cfg = A["bubbles"]
-    speaker_slot = fr["cast"][0]["slot"]
-    place = cfg["placement"].get(speaker_slot)
+    # an absent node has no cast, so the speaker must be declared on the frame
+    spk = fr.get("bubbleSpeaker") or (fr["cast"][0] if fr.get("cast") else None)
+    if spk is None:
+        raise SystemExit(f"bubbles: node '{node}' has no cast; frame must declare "
+                         f"`bubbleSpeaker` {{base, slot}} so the tail has a target")
+    speaker_slot = spk["slot"]
+    # a scene may override where bubbles sit; the free area is a fact about the room
+    place = (scene_cfg.get("bubblePlacement") or {}).get(speaker_slot) \
+            or cfg["placement"].get(speaker_slot)
     if place is None:
         raise SystemExit(f"bubbles: no placement defined for slot '{speaker_slot}'")
 
-    base = fr["cast"][0]["base"]
+    base = spk["base"]
     cc = A.get("characters", {}).get(base) or A["character"]
     s = scene_cfg["slots"][speaker_slot]
     head_x = s["x"] + (cc["headSocket"]["x"] - cc["basePoint"]["x"])
@@ -86,7 +101,8 @@ def build_bubbles(A, fr, scene_cfg, node):
     tx = head_x + cfg["tailTarget"]["dx"]
     ty = head_y + cfg["tailTarget"]["dy"]
 
-    g = ET.Element(f"{{{SVG}}}g", {"data-layer": "bubbles"})
+    g = ET.Element(f"{{{SVG}}}g", {"data-layer": "bubbles",
+                                   "data-exit-beat": "true" if exit_beat else "false"})
     w, r = cfg["maxWidth"], cfg["cornerRadius"]
     y = place["y"]
     for i, b in enumerate(bs):
@@ -99,7 +115,13 @@ def build_bubbles(A, fr, scene_cfg, node):
                   f"v{h-2*r} q0 {r} -{r} {r} h-{w-2*r} q-{r} 0 -{r} -{r} z"),
             "fill": "var(--irx-cloth-inner)", "stroke": "var(--irx-line)",
             "stroke-width": str(cfg["strokeWidth"]), "stroke-linejoin": "round"})
-        if i == len(bs) - 1:
+        # an exit beat has no tail: the speaker has left, and a tail pointing at the
+        # empty room where she used to stand reads as a bug, not as intention.
+        # `remote` frames have an empty cast: the speaker is on a phone. A tail
+        # would point at nobody and claim she is standing there, exactly like the
+        # exit-beat case. Voice, not presence.
+        remote = not fr.get("cast")
+        if i == len(bs) - 1 and not exit_beat and not remote:
             # tail: base on the balloon edge nearest the speaker, apex at target
             near_right = tx > x + w / 2
             bx = x + w if near_right else x
@@ -172,10 +194,13 @@ def main(frame_id, with_bubbles=False):
         gf = group(body, "character_front")
         gk = group(body, "character_back")       # optional: wall shadow
         gt = group(body, "character_contact")    # optional: contact shadow
+        # character_front is OPTIONAL: a rear figure, or any figure whose hands
+        # hang at its sides, has no layer that belongs in front of furniture.
+        # Same treatment character_back and character_contact already get.
         for nm, g in (("character_body", gb), ("character_clothing", gc),
-                      ("character_head", gh), ("character_front", gf)):
+                      ("character_head", gh)):
             if g is None:
-                raise SystemExit(f"{base}: missing layer group '{nm}'")
+                raise SystemExit(f"{base}: missing required layer group '{nm}'")
 
         head_tf = f"translate({head_tx:g},{head_ty:g})"
         if rot:
@@ -198,7 +223,8 @@ def main(frame_id, with_bubbles=False):
         layers.setdefault("character_head", []).append(slot_layer(gh, head_tf))
         if gt is not None:
             layers.setdefault("character_contact", []).append(slot_layer(gt))
-        layers.setdefault("character_front", []).append(slot_layer(gf))
+        if gf is not None:
+            layers.setdefault("character_front", []).append(slot_layer(gf))
 
     # ----------------------------------------------------------------- props
     for pr in fr["props"]:
