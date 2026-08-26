@@ -60,6 +60,20 @@ def main():
     print(f"{A_NAME}  vs  {B_NAME}")
     print("=" * 74)
 
+    # guard: this test isolates the REGISTER variable. If the two frames differ
+    # in wardrobe or base as well, character_clothing legitimately changes and
+    # the FAIL is a test-usage error, not a contract breach. Say so plainly.
+    import json as _json
+    _A = _json.loads((ROOT / "anchors.json").read_text(encoding="utf-8"))
+    _fa, _fb = _A["frames"].get(A_NAME, {}), _A["frames"].get(B_NAME, {})
+    if _fa.get("cast") and _fb.get("cast"):
+        _ca, _cb = _fa["cast"][0], _fb["cast"][0]
+        for _k in ("base", "wardrobe"):
+            if _ca.get(_k) != _cb.get(_k):
+                print(f"\n  NOTE: frames differ in {_k} "
+                      f"({_ca.get(_k)} vs {_cb.get(_k)}). This test isolates REGISTER only; "
+                      f"pick two frames sharing base and wardrobe.\n")
+
     # A — canvas identical
     if ra.get("viewBox") != rb.get("viewBox"):
         fail(f"canvas differs: {ra.get('viewBox')} vs {rb.get('viewBox')}")

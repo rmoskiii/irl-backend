@@ -150,12 +150,96 @@ def build_bubbles(A, fr, scene_cfg, node):
     return g
 
 
+def build_montage(A, fr, ROOTDIR):
+    """Compose a montage node: an ordered strip of reduced-fidelity vignettes.
+
+    Montage is a first-class presentation mode, not a scene with the figure
+    removed. It carries compressed time - `establish` covers years of friendship,
+    act4_avoidant_proposal covers two weeks - and the vignette language is what
+    tells the player they are not in the present tense."""
+    cfg = A["montage"]
+    panels = fr["panels"]
+    g = ET.Element(f"{{{SVG}}}g", {"data-layer": "montage"})
+    ET.SubElement(g, f"{{{SVG}}}rect", {
+        "x": "0", "y": "0", "width": str(A["canvas"]["width"]),
+        "height": str(A["canvas"]["height"]), "fill": f"var({cfg['matte']})"})
+    pw, ph = cfg["panelWidth"], cfg["panelHeight"]
+    gap = cfg["gap"]
+    total = len(panels) * pw + (len(panels) - 1) * gap
+    x0 = (A["canvas"]["width"] - total) / 2
+    defs_out, styles_out = [], []
+    for i, panel in enumerate(panels):
+        vid = panel["vignette"]
+        vp = ROOTDIR / "vignettes" / f"{vid}.svg"
+        if not vp.exists():
+            raise SystemExit(f"montage: missing vignette asset {vp.name}")
+        vr = ET.parse(vp).getroot()
+        for d in vr.findall(f"{{{SVG}}}defs"):
+            for c in d:
+                if c.tag.endswith("style"):
+                    styles_out.append(c.text or "")
+                else:
+                    defs_out.append(c)
+        inner = vr.find(f".//{{{SVG}}}g[@id='vignette']")
+        if inner is None:
+            raise SystemExit(f"{vid}: missing layer group 'vignette'")
+        x = x0 + i * (pw + gap)
+        holder = ET.SubElement(g, f"{{{SVG}}}g", {
+            "transform": f"translate({x:g},{cfg['top']}) "
+                         f"scale({pw / cfg['sourceWidth']:g})"})
+        holder.append(inner)
+        ET.SubElement(g, f"{{{SVG}}}rect", {
+            "x": f"{x:g}", "y": str(cfg["top"]), "width": str(pw), "height": str(ph),
+            "fill": "none", "stroke": f"var({cfg['frame']})",
+            "stroke-width": str(cfg["frameWidth"])})
+        if panel.get("caption"):
+            t = ET.SubElement(g, f"{{{SVG}}}text", {
+                "x": f"{x + pw / 2:g}", "y": str(cfg["top"] + ph + cfg["captionGap"]),
+                "text-anchor": "middle", "font-family": "monospace",
+                "font-size": str(cfg["captionSize"]), "letter-spacing": "1.6",
+                "fill": f"var({cfg['frame']})"})
+            t.text = panel["caption"].upper()
+    return g, defs_out, styles_out
+
+
 def main(frame_id, with_bubbles=False):
     A = json.loads((ROOT / "anchors.json").read_text(encoding="utf-8"))
     fr = A["frames"][frame_id]
+
+    # montage is checked BEFORE the scene lookup: a montage frame has panels,
+    # not a scene, and reading fr["scene"] first made it a KeyError.
+    if fr.get("mode") == "montage":
+        g, extra_defs, extra_styles = build_montage(A, fr, ROOT)
+        out = ET.Element(f"{{{SVG}}}svg", {
+            "viewBox": A["canvas"]["viewBox"], "id": frame_id,
+            "data-frame": frame_id, "data-mode": "montage",
+            "data-render-block": fr["renderBlockSource"]})
+        d = ET.SubElement(out, f"{{{SVG}}}defs")
+        st = ET.SubElement(d, f"{{{SVG}}}style")
+        merged, seen = [], set()
+        for block in extra_styles:
+            for rule in re.findall(r"[^{}]+\{[^{}]*\}", block):
+                k = rule.strip()
+                if k not in seen:
+                    seen.add(k); merged.append(k)
+        st.text = "\n" + "\n".join(merged) + "\n"
+        seen_id = set()
+        for c in extra_defs:
+            cid = c.get("id")
+            if cid and cid in seen_id:
+                continue
+            if cid:
+                seen_id.add(cid)
+            d.append(c)
+        out.append(g)
+        dest = ROOT / "frames" / f"{frame_id}.svg"
+        ET.ElementTree(out).write(dest, encoding="unicode", xml_declaration=False)
+        print(f"composed {dest.relative_to(ROOT)}")
+        print(f"  montage: {[p['vignette'] for p in fr['panels']]}")
+        return 0
+
     scene_id = fr["scene"]
     scene_cfg = A["scenes"][scene_id]
-
     env = load(ROOT / "environments" / f"{scene_id}.svg")
     layers = {}
     for name in ("background", "architecture", "environmental_detail",

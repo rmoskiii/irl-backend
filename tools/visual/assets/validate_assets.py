@@ -125,6 +125,10 @@ def main():
             ["background", "architecture", "environmental_detail", "furniture", "foreground"],
         "characters/figure_a.body.svg":
             ["character_back", "character_body", "character_contact", "character_front"],
+        "characters/figure_b.body.svg":
+            ["character_back", "character_body", "character_contact", "character_front"],
+        "characters/figure_b_rear.body.svg":
+            ["character_back", "character_body"],
         "characters/figure_a.wardrobe.home_casual.svg": ["character_clothing"],
         **{f"characters/{q.name}": ["character_head"]
            for q in sorted((ROOT / "characters").glob("*.register.*.svg"))},
@@ -213,12 +217,21 @@ def main():
         base = rp.name.split(".register.")[0]
         cid = next((k for k, v in reg_list["characters"].items()
                     if v.get("base") == base), None)
-        if cid is None:
-            fail(11, f"{rp.name}: base {base!r} maps to no character in registries.json")
-        else:
+        turned_of = next((k for k, v in reg_list["characters"].items()
+                          if v.get("turned") == base), None)
+        if cid:
             allowed = reg_list["characters"][cid]["registers"]
             if declared not in allowed:
                 fail(11, f"{rp.name}: register {declared!r} not declared for {cid} {allowed}")
+        elif turned_of:
+            # a `turned` base is a rear view. By standing rule it carries exactly
+            # one register, 'rear' - rear figures report posture, not expression.
+            if declared != "rear":
+                fail(11, f"{rp.name}: rear base {base!r} may only declare register "
+                         f"'rear', got {declared!r}")
+        else:
+            fail(11, f"{rp.name}: base {base!r} is neither a `base` nor a `turned` "
+                     f"entry in registries.json")
 
     # 11b — all registers of a base must carry an IDENTICAL hair block.
     # A register is atomic, so the haircut is duplicated across every register
@@ -234,9 +247,33 @@ def main():
         if m:
             hair[base][rp.name] = re.sub(r"\s+", " ", m.group(0)).strip()
     for base, files in hair.items():
+        # Only enforce for characters whose hair is declared FIXED. Jessica's
+        # hair varies per register by design; this rule previously applied to
+        # anything with a <g id="hair"> wrapper, which happened to be Alex only.
+        # That was luck, not intent.
+        policy = (A.get("characters", {}).get(base) or {}).get("hairPolicy", "fixed")
+        if policy != "fixed":
+            continue
         if len(set(files.values())) > 1:
             fail(11, f"{base}: registers carry DIFFERENT hair blocks — the character "
                      f"changes haircut between nodes. Files: {sorted(files)}")
+
+    # 13 — vignettes may use ONLY the --irx-vig-* ramp plus line and accent.
+    # A vignette that reached into the full palette would compete with a real
+    # environment and flatten the distinction between memory and present tense.
+    allowed_vig = {"--irx-vig-light", "--irx-vig-base", "--irx-vig-mid",
+                   "--irx-vig-dark", "--irx-line", "--irx-accent"}
+    vdir = ROOT / "vignettes"
+    if vdir.exists():
+        for vp in sorted(vdir.glob("*.svg")):
+            txt = vp.read_text(encoding="utf-8")
+            art = re.sub(r"<defs>.*?</defs>", "", txt, flags=re.S)
+            for tok in set(re.findall(r"var\((--irx-[a-z-]+)\)", art)):
+                if tok not in allowed_vig:
+                    fail(13, f"{vp.name}: uses {tok}, outside the vignette palette")
+            body = re.search(r'<g id="vignette">(.*?)</g>\s*</svg>', txt, re.S)
+            if body is None:
+                fail(13, f"{vp.name}: missing layer group 'vignette'")
 
     # 12 — Phase 1 untouched
     scn = ROOT.parent.parent / "scenarios" / "the_secret.json"

@@ -433,6 +433,9 @@
       "basePoint": {
         "x": 60,
         "y": 100
+      },
+      "defaultAnchor": {
+        "scene.flat_hallway": "console_centre"
       }
     },
     "prop.raised_glass": {
@@ -440,6 +443,9 @@
       "basePoint": {
         "x": 45,
         "y": 160
+      },
+      "defaultAnchor": {
+        "scene.party": "table_left"
       }
     },
     "prop.coffee_cup": {
@@ -447,6 +453,9 @@
       "basePoint": {
         "x": 70,
         "y": 110
+      },
+      "defaultAnchor": {
+        "scene.coffee_shop": "table_left"
       }
     },
     "prop.phone": {
@@ -454,6 +463,9 @@
       "basePoint": {
         "x": 65,
         "y": 76
+      },
+      "defaultAnchor": {
+        "scene.street_exterior": "wall_left"
       }
     },
     "prop.cigarette": {
@@ -461,6 +473,9 @@
       "basePoint": {
         "x": 35,
         "y": 130
+      },
+      "defaultAnchor": {
+        "scene.street_exterior": "wall_left"
       }
     },
     "prop.tea_towel": {
@@ -468,6 +483,9 @@
       "basePoint": {
         "x": 75,
         "y": 180
+      },
+      "defaultAnchor": {
+        "scene.kitchen": "counter_left"
       }
     },
     "prop.wet_glasses": {
@@ -475,6 +493,9 @@
       "basePoint": {
         "x": 100,
         "y": 120
+      },
+      "defaultAnchor": {
+        "scene.kitchen": "counter_right"
       }
     },
     "prop.glass_set_down": {
@@ -482,6 +503,9 @@
       "basePoint": {
         "x": 50,
         "y": 130
+      },
+      "defaultAnchor": {
+        "scene.flat_hallway": "console_left"
       }
     },
     "prop.door_closed": {
@@ -490,7 +514,10 @@
         "x": 170,
         "y": 680
       },
-      "note": "Scoped to scene.kitchen. street_exterior and party name it in their render blocks but both already contain a fire door; their frames omit it rather than draw a second."
+      "note": "Scoped to scene.kitchen. street_exterior and party name it in their render blocks but both already contain a fire door; their frames omit it rather than draw a second.",
+      "defaultAnchor": {
+        "scene.kitchen": "door"
+      }
     }
   },
   "frames": {
@@ -925,7 +952,7 @@
       "props": [
         {
           "id": "prop.raised_glass",
-          "anchor": "table_centre"
+          "anchor": "table_left"
         }
       ],
       "bubblesFrom": "act4_late_disclosure",
@@ -1002,6 +1029,274 @@
         "slot": "centre"
       },
       "note": "`absent` mode: she has gone, the empty room is the beat, and the door is the prop that says so."
+    },
+    "frame_13_establish": {
+      "renderBlockSource": "render_blocks.json -> establish -> default",
+      "mode": "montage",
+      "panels": [
+        {
+          "vignette": "vig.hospital_night",
+          "caption": "2:00 AM"
+        },
+        {
+          "vignette": "vig.flat_curtained",
+          "caption": "The week after"
+        },
+        {
+          "vignette": "vig.table_three",
+          "caption": null
+        }
+      ],
+      "note": "The opening montage. ~600 characters of backstory that bubbles cannot fix, carried by three images instead."
+    },
+    "frame_14_avoidant_proposal": {
+      "renderBlockSource": "render_blocks.json -> act4_avoidant_proposal -> default",
+      "mode": "montage",
+      "panels": [
+        {
+          "vignette": "vig.group_chat",
+          "caption": "Two weeks later"
+        },
+        {
+          "vignette": "vig.photos",
+          "caption": null
+        },
+        {
+          "vignette": "vig.saturday_quiet",
+          "caption": "The following Saturday"
+        }
+      ]
+    },
+    "audit_act2_alex_checks_in": {
+      "renderBlockSource": "render_blocks.json -> act2_alex_checks_in -> default",
+      "scene": "scene.flat_hallway",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "open",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act2_alex_checks_in"
+    },
+    "audit_act2_pause_response": {
+      "renderBlockSource": "render_blocks.json -> act2_pause_response -> default",
+      "scene": "scene.flat_hallway",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "deflated",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act2_pause_response"
+    },
+    "audit_act2_probe_response": {
+      "renderBlockSource": "render_blocks.json -> act2_probe_response -> default",
+      "scene": "scene.flat_hallway",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "alert",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act2_probe_response"
+    },
+    "audit_act3_direct_response": {
+      "renderBlockSource": "render_blocks.json -> act3_direct_response -> default",
+      "scene": "scene.coffee_shop",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "held",
+          "wardrobe": "day"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act3_direct_response"
+    },
+    "audit_act3_hand_back_response": {
+      "renderBlockSource": "render_blocks.json -> act3_hand_back_response -> default",
+      "scene": "scene.coffee_shop",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "held",
+          "wardrobe": "day"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act3_hand_back_response"
+    },
+    "audit_act3_limit_response": {
+      "renderBlockSource": "render_blocks.json -> act3_limit_response -> default",
+      "scene": "scene.coffee_shop",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "tight",
+          "wardrobe": "day"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act3_limit_response"
+    },
+    "audit_act3b_alex_processes": {
+      "renderBlockSource": "render_blocks.json -> act3b_alex_processes -> default",
+      "scene": "scene.flat_hallway",
+      "time": "evening",
+      "framing": "turned",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b_rear",
+          "slot": "centre",
+          "register": "rear",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act3b_alex_processes"
+    },
+    "audit_act3b_alex_told": {
+      "renderBlockSource": "render_blocks.json -> act3b_alex_told -> default",
+      "scene": "scene.flat_hallway",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.alex",
+          "base": "figure_b",
+          "slot": "centre",
+          "register": "deflated",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "act3b_alex_told"
+    },
+    "audit_confession": {
+      "renderBlockSource": "render_blocks.json -> confession -> default",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "open",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [
+        {
+          "id": "prop.jacket_chair",
+          "anchor": "floor_left"
+        },
+        {
+          "id": "prop.last_glass",
+          "anchor": "counter_right"
+        }
+      ],
+      "bubblesFrom": "confession"
+    },
+    "audit_confession_guarded": {
+      "renderBlockSource": "render_blocks.json -> confession_guarded -> default",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "tight",
+          "wardrobe": "coat"
+        }
+      ],
+      "props": [
+        {
+          "id": "prop.last_glass",
+          "anchor": "counter_right"
+        },
+        {
+          "id": "prop.door_closed",
+          "anchor": "door"
+        }
+      ],
+      "bubblesFrom": "confession_guarded"
+    },
+    "audit_jessica_reacts_hold": {
+      "renderBlockSource": "render_blocks.json -> jessica_reacts_hold -> default",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.jessica",
+          "base": "figure_a",
+          "slot": "centre",
+          "register": "open",
+          "wardrobe": "home_casual"
+        }
+      ],
+      "props": [],
+      "bubblesFrom": "jessica_reacts_hold"
+    },
+    "audit_jessica_reacts_neutral": {
+      "renderBlockSource": "render_blocks.json -> jessica_reacts_neutral -> default",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "empty",
+      "cast": [],
+      "props": [],
+      "bubblesFrom": "jessica_reacts_neutral",
+      "bubbleSpeaker": {
+        "base": "figure_a",
+        "slot": "centre"
+      }
+    },
+    "audit_jessica_walks_out": {
+      "renderBlockSource": "render_blocks.json -> jessica_walks_out -> default",
+      "scene": "scene.kitchen",
+      "time": "evening",
+      "framing": "empty",
+      "cast": [],
+      "props": [],
+      "bubblesFrom": "jessica_walks_out",
+      "bubbleSpeaker": {
+        "base": "figure_a",
+        "slot": "centre"
+      }
     }
   },
   "characters": {
@@ -1157,5 +1452,39 @@
   },
   "propsRemoved": {
     "prop.jacket_worn": "NOT A PROP. Used by one node (confession_guarded) where Jessica's wardrobe is already `coat` - the jacket she is reaching for is the garment she is wearing. Reclassified as wardrobe-provided; mapping.the_secret.json should move 'jacket' to unrenderableProps."
-  }
+  },
+  "montage": {
+    "matte": "--irx-vig-dark",
+    "frame": "--irx-vig-light",
+    "frameWidth": 3,
+    "panelWidth": 440,
+    "panelHeight": 550,
+    "sourceWidth": 480,
+    "gap": 48,
+    "top": 140,
+    "captionGap": 48,
+    "captionSize": 22,
+    "note": "Montage is a first-class presentation mode, not a scene with the figure removed. Panels are reduced-fidelity vignettes on a dark matte, so compressed time reads differently from present tense without a caption having to say so."
+  },
+  "vignettes": {
+    "vig.hospital_night": {
+      "localViewBox": "0 0 480 600"
+    },
+    "vig.flat_curtained": {
+      "localViewBox": "0 0 480 600"
+    },
+    "vig.table_three": {
+      "localViewBox": "0 0 480 600"
+    },
+    "vig.group_chat": {
+      "localViewBox": "0 0 480 600"
+    },
+    "vig.photos": {
+      "localViewBox": "0 0 480 600"
+    },
+    "vig.saturday_quiet": {
+      "localViewBox": "0 0 480 600"
+    }
+  },
+  "propAnchorRule": "Every prop declares defaultAnchor per scene. Composers must use it rather than assigning anchors positionally - the full-scenario audit caught prop.jacket_chair placed on a worktop because a round-robin had put the second prop at the second anchor."
 }
