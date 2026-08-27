@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220"
      id="figure_b.register.searching" data-asset="figure_b" data-kind="register"
-     data-register="searching" data-neck-anchor="100,210" data-register-rotate="-3">
+     data-register="searching" data-neck-anchor="100,210" data-register-rotate="-9">
     <!-- IRX 2B.1 = figure_b register: searching (Alex).
 
          act2_pause_pressed: "Processing what? ... Is this about Jessica? Did she
@@ -83,6 +83,15 @@
         --irx-accent-dim:    #C89A4E;
         --irx-lamp-warm:     #F2C77E;
         --irx-cool-spill:    #7E93A8;
+
+        /* vignettes: montage panels only. Desaturated and reduced, so compressed
+        time reads differently from present tense without a caption saying so.
+        A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+        validate_assets.py rule 13. */
+        --irx-vig-light:     #B3ABA0;
+        --irx-vig-base:      #8C857C;
+        --irx-vig-mid:       #635D56;
+        --irx-vig-dark:      #3B3733;
 
         /* stroke weights */
         --irx-stroke-xheavy: 6.6;

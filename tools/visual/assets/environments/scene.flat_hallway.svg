@@ -84,6 +84,15 @@
         --irx-lamp-warm:     #F2C77E;
         --irx-cool-spill:    #7E93A8;
 
+        /* vignettes: montage panels only. Desaturated and reduced, so compressed
+        time reads differently from present tense without a caption saying so.
+        A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+        validate_assets.py rule 13. */
+        --irx-vig-light:     #B3ABA0;
+        --irx-vig-base:      #8C857C;
+        --irx-vig-mid:       #635D56;
+        --irx-vig-dark:      #3B3733;
+
         /* stroke weights */
         --irx-stroke-xheavy: 6.6;
         --irx-stroke-heavy:  5;
@@ -244,8 +253,15 @@
         <path class="ln" stroke-width="1.4" d="M1046 604 q22 4 38 -3" opacity="0.28"/>
 
         <!-- apron and legs -->
-        <path d="M0 636 q400 -5 800 0 q400 5 800 -3 v58 q-402 6 -800 0 q-398 -6 -800 2 z" class="cabd"/>
+        <path d="M0 630 q400 -5 800 0 q400 5 800 -3 v64 q-402 6 -800 0 q-398 -6 -800 2 z" class="cabd"/>
         <path class="ln" stroke-width="2.4" d="M0 692 q400 -5 800 0 q400 5 800 -3" opacity="0.7"/>
+        <!-- Recess beneath the console. The occluding surface has to run unbroken from
+             the top down to the skirting: with open legs, a standing figure showed
+             through the gap between the apron and the skirting (y690-782). The legs
+             below still read, as strokes over the recess. -->
+        <path d="M0 690 q400 -5 800 0 q400 5 800 -3 v98 q-402 6 -800 0 q-398 -6 -800 2 z" class="cabd"/>
+        <path d="M0 690 q400 -5 800 0 q400 5 800 -3 v36 q-402 6 -800 0 q-398 -6 -800 2 z"
+              class="shad" opacity="0.4"/>
         <path class="ln" stroke-width="5.6" d="M172 694 q-4 44 -2 88"/>
         <path class="ln" stroke-width="5.6" d="M636 694 q-3 44 -1 88"/>
         <path class="ln" stroke-width="5.0" d="M1428 694 q4 44 2 88"/>

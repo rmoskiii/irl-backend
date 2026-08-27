@@ -87,6 +87,15 @@
         --irx-lamp-warm:     #F2C77E;
         --irx-cool-spill:    #7E93A8;
 
+        /* vignettes: montage panels only. Desaturated and reduced, so compressed
+        time reads differently from present tense without a caption saying so.
+        A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+        validate_assets.py rule 13. */
+        --irx-vig-light:     #B3ABA0;
+        --irx-vig-base:      #8C857C;
+        --irx-vig-mid:       #635D56;
+        --irx-vig-dark:      #3B3733;
+
         /* stroke weights */
         --irx-stroke-xheavy: 6.6;
         --irx-stroke-heavy:  5;
@@ -251,7 +260,10 @@
         <path class="ln" stroke-width="1.4" d="M1114 608 q22 4 38 -3" opacity="0.24"/>
 
         <!-- the cloth hangs to the floor: a long pale band, so it is broken by folds -->
-        <path d="M0 626 q400 -5 800 0 q400 5 800 -3 v180 q-402 6 -800 0 q-398 -6 -800 2 z" class="cloth"/>
+        <!-- The cloth runs 10px past the floor line. Its wobbled hem and the floor's
+             wobbled top edge both nominally met at y806, and between the two wobbles a
+             5px sliver opened where neither covered the figure. -->
+        <path d="M0 626 q400 -5 800 0 q400 5 800 -3 v190 q-402 6 -800 0 q-398 -6 -800 2 z" class="cloth"/>
         <path d="M0 626 q400 -5 800 0 q400 5 800 -3 v40 q-402 6 -800 0 q-398 -6 -800 2 z"
               class="clothd" opacity="0.45"/>
         <g class="ln" stroke-width="1.8" opacity="0.3">

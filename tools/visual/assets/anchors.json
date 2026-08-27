@@ -181,15 +181,15 @@
       },
       "bubblePlacement": {
         "centre": {
-          "x": 250,
+          "x": 40,
           "y": 110
         },
         "left": {
-          "x": 600,
+          "x": 700,
           "y": 110
         },
         "right": {
-          "x": 250,
+          "x": 40,
           "y": 110
         }
       }
@@ -249,15 +249,15 @@
       },
       "bubblePlacement": {
         "centre": {
-          "x": 250,
+          "x": 40,
           "y": 112
         },
         "left": {
-          "x": 600,
+          "x": 700,
           "y": 112
         },
         "right": {
-          "x": 250,
+          "x": 40,
           "y": 112
         }
       },
@@ -318,15 +318,15 @@
       },
       "bubblePlacement": {
         "centre": {
-          "x": 250,
+          "x": 40,
           "y": 118
         },
         "left": {
-          "x": 600,
+          "x": 700,
           "y": 118
         },
         "right": {
-          "x": 250,
+          "x": 40,
           "y": 118
         }
       },
@@ -391,15 +391,15 @@
       },
       "bubblePlacement": {
         "centre": {
-          "x": 250,
+          "x": 40,
           "y": 300
         },
         "left": {
-          "x": 600,
+          "x": 700,
           "y": 300
         },
         "right": {
-          "x": 250,
+          "x": 40,
           "y": 300
         }
       },
@@ -1409,25 +1409,29 @@
     "note": "LOCKED: rounded balloon with a tail to the speaker (design variant 1). Bubbles are GENERATED from render_blocks.json at compose time - they are not an asset file. Geometry lives here; the renderer is build_bubbles() in compose_frame.py. Enable per frame with `bubblesFrom: <node>` and compose with --bubbles.",
     "maxChars": 120,
     "maxPerNode": 3,
-    "fontSize": 26,
-    "lineHeight": 34,
-    "charsPerLine": 26,
-    "maxWidth": 368,
-    "cornerRadius": 22,
-    "gap": 16,
-    "padding": 24,
-    "strokeWidth": 3.6,
+    "fontSize": 47,
+    "lineHeight": 57,
+    "charsPerLine": 19,
+    "maxWidth": 580,
+    "cornerRadius": 30,
+    "gap": 20,
+    "padding": 28,
+    "paddingY": 41,
+    "firstBaseline": 55,
+    "tailInset": 40,
+    "strokeWidth": 4.4,
+    "typeScaleNote": "Type is sized against the DEVICE, not the canvas. The artwork is contained 16:9 in a ~390pt phone width, so the canvas-to-device factor is 0.244 and the previous fontSize 26 rendered at 6.3pt - roughly half a legible size. 47 renders at 11.5pt. maxWidth grew and every placement origin moved left in step, because a wider balloon at the old x=250/292 origin would have crossed the centre-slot figure at x=664. paddingY, firstBaseline and tailInset were hard-coded in build_bubbles() as 34/40/26; they are contract values now so the balloon scales with the type instead of splitting from it.",
     "placement": {
       "left": {
-        "x": 560,
+        "x": 700,
         "y": 104
       },
       "centre": {
-        "x": 292,
+        "x": 48,
         "y": 104
       },
       "right": {
-        "x": 292,
+        "x": 48,
         "y": 104
       },
       "note": "Per-slot stack origin. Explicit rather than computed: the free area in a room is a compositional fact about that room, not something derivable from the slot alone. Each new environment must declare placements for the slots it uses."

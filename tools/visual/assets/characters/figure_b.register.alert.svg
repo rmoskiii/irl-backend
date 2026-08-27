@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220"
      id="figure_b.register.alert" data-asset="figure_b" data-kind="register"
-     data-register="alert" data-neck-anchor="100,210" data-register-rotate="2">
+     data-register="alert" data-neck-anchor="100,210" data-register-rotate="5">
     <!-- IRX 2B.1 = figure_b register: alert (Alex).
 
          act2_probe_response: "What do you mean? Is there something I should know?"
@@ -81,6 +81,15 @@
         --irx-accent-dim:    #C89A4E;
         --irx-lamp-warm:     #F2C77E;
         --irx-cool-spill:    #7E93A8;
+
+        /* vignettes: montage panels only. Desaturated and reduced, so compressed
+        time reads differently from present tense without a caption saying so.
+        A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+        validate_assets.py rule 13. */
+        --irx-vig-light:     #B3ABA0;
+        --irx-vig-base:      #8C857C;
+        --irx-vig-mid:       #635D56;
+        --irx-vig-dark:      #3B3733;
 
         /* stroke weights */
         --irx-stroke-xheavy: 6.6;

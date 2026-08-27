@@ -81,8 +81,24 @@ def build_bubbles(A, fr, scene_cfg, node):
         return None
 
     cfg = A["bubbles"]
-    # an absent node has no cast, so the speaker must be declared on the frame
-    spk = fr.get("bubbleSpeaker") or (fr["cast"][0] if fr.get("cast") else None)
+
+    def resolve_speaker(bubble):
+        """Each bubble names its own speaker; the frame's cast order does not.
+
+        Previously the tail was aimed at cast[0] for every bubble. That is
+        correct only while a frame has one cast member, which is true of all 27
+        scenario frames today and will stop being true the moment a scene has
+        two people in it. The render block's `speaker` field is authoritative;
+        cast order is not."""
+        sid = (bubble or {}).get("speaker")
+        if sid:
+            for c in fr.get("cast") or []:
+                if c.get("id") == sid:
+                    return c
+        # an absent or remote node has no cast, so the frame declares the target
+        return fr.get("bubbleSpeaker") or (fr["cast"][0] if fr.get("cast") else None)
+
+    spk = resolve_speaker(bs[0])
     if spk is None:
         raise SystemExit(f"bubbles: node '{node}' has no cast; frame must declare "
                          f"`bubbleSpeaker` {{base, slot}} so the tail has a target")
@@ -107,7 +123,10 @@ def build_bubbles(A, fr, scene_cfg, node):
     y = place["y"]
     for i, b in enumerate(bs):
         lines = textwrap.wrap(b["text"], cfg["charsPerLine"]) or [""]
-        h = cfg["lineHeight"] * len(lines) + 34
+        # paddingY / firstBaseline / tailInset were 34 / 40 / 26, hard-coded
+        # against fontSize 26. Left literal, the balloon would not have grown
+        # with the type and the text would have burst out of it.
+        h = cfg["lineHeight"] * len(lines) + cfg["paddingY"]
         x = place["x"]
         bub = ET.SubElement(g, f"{{{SVG}}}g")
         ET.SubElement(bub, f"{{{SVG}}}path", {
@@ -122,10 +141,17 @@ def build_bubbles(A, fr, scene_cfg, node):
         # exit-beat case. Voice, not presence.
         remote = not fr.get("cast")
         if i == len(bs) - 1 and not exit_beat and not remote:
+            tspk = resolve_speaker(b) or spk
+            ts = scene_cfg["slots"][tspk["slot"]]
+            tcc = A.get("characters", {}).get(tspk["base"]) or A["character"]
+            thx = ts["x"] + (tcc["headSocket"]["x"] - tcc["basePoint"]["x"])
+            thy = ts["y"] - (tcc["basePoint"]["y"] - tcc["headSocket"]["y"])
+            tx = thx + cfg["tailTarget"]["dx"]
+            ty = thy + cfg["tailTarget"]["dy"]
             # tail: base on the balloon edge nearest the speaker, apex at target
             near_right = tx > x + w / 2
             bx = x + w if near_right else x
-            by = y + h - 26
+            by = y + h - cfg["tailInset"]
             hw = cfg["tail"]["baseWidth"] / 2
             # clamp to tail.length: aim at the speaker, but stop short. an
             # unclamped tail becomes a thin spike across the artwork.
@@ -142,7 +168,7 @@ def build_bubbles(A, fr, scene_cfg, node):
                 "stroke-width": str(cfg["strokeWidth"] + 1.6), "fill": "none"})
         for j, ln in enumerate(lines):
             t = ET.SubElement(bub, f"{{{SVG}}}text", {
-                "x": str(x + cfg["padding"]), "y": str(y + 40 + j * cfg["lineHeight"]),
+                "x": str(x + cfg["padding"]), "y": str(y + cfg["firstBaseline"] + j * cfg["lineHeight"]),
                 "font-family": "Zilla Slab, Georgia, serif",
                 "font-size": str(cfg["fontSize"]), "fill": "var(--irx-line)"})
             t.text = ln
