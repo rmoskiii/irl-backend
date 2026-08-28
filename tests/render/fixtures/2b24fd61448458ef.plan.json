@@ -1,0 +1,66 @@
+{
+  "renderKey": "act4_avoidant_proposal::default",
+  "cacheKey": "2b24fd61448458ef24c1ccf10281387122257817c706881a9b3591dfe4c78392",
+  "sourceFrame": "frame_14_avoidant_proposal",
+  "presentedBy": [
+    "frame_14_avoidant_proposal"
+  ],
+  "renderBlock": {
+    "mode": "montage",
+    "panels": [
+      {
+        "vignette": "vig.group_chat",
+        "caption": "Two weeks later"
+      },
+      {
+        "vignette": "vig.photos",
+        "caption": null
+      },
+      {
+        "vignette": "vig.saturday_quiet",
+        "caption": "The following Saturday"
+      }
+    ]
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "mode": "montage",
+    "panels": [
+      {
+        "vignette": "vig.group_chat",
+        "caption": "Two weeks later"
+      },
+      {
+        "vignette": "vig.photos",
+        "caption": null
+      },
+      {
+        "vignette": "vig.saturday_quiet",
+        "caption": "The following Saturday"
+      }
+    ],
+    "layers": [
+      {
+        "layer": "montage_panel",
+        "index": 0,
+        "source": "vignettes/vig.group_chat.svg"
+      },
+      {
+        "layer": "montage_panel",
+        "index": 1,
+        "source": "vignettes/vig.photos.svg"
+      },
+      {
+        "layer": "montage_panel",
+        "index": 2,
+        "source": "vignettes/vig.saturday_quiet.svg"
+      }
+    ]
+  }
+}

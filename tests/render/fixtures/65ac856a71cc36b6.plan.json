@@ -1,0 +1,117 @@
+{
+  "renderKey": "act3b_jessica_calls::default",
+  "cacheKey": "65ac856a71cc36b66957ebb7cee594a6a11d052f5533915dbed2acb1e7099bf4",
+  "sourceFrame": "frame_7_jessica_calls",
+  "presentedBy": [
+    "frame_7_jessica_calls"
+  ],
+  "renderBlock": {
+    "mode": "remote",
+    "scene": {
+      "id": "scene.street_exterior",
+      "time": "night"
+    },
+    "props": [
+      "prop.phone"
+    ],
+    "framing": "empty",
+    "cast": [],
+    "bubbles": [
+      {
+        "speaker": "char.jessica",
+        "text": "Alex just called me. He knows."
+      },
+      {
+        "speaker": "char.jessica",
+        "text": "Did you tell him?"
+      },
+      {
+        "speaker": "char.jessica",
+        "text": "I trusted you."
+      }
+    ],
+    "remoteSpeaker": "char.jessica",
+    "narration": "Your phone starts ringing before you've reached the pavement.\n\nJessica.\n\n\n\nA silence with breathing in it.\n\n\n\nAnother silence."
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "scene": "scene.street_exterior",
+    "mode": "remote",
+    "framing": "empty",
+    "cast": [],
+    "layers": [
+      {
+        "layer": "background",
+        "source": "environments/scene.street_exterior.svg",
+        "group": "background",
+        "transform": null
+      },
+      {
+        "layer": "architecture",
+        "source": "environments/scene.street_exterior.svg",
+        "group": "architecture",
+        "transform": null
+      },
+      {
+        "layer": "environmental_detail",
+        "source": "environments/scene.street_exterior.svg",
+        "group": "environmental_detail",
+        "transform": null
+      },
+      {
+        "layer": "furniture",
+        "source": "environments/scene.street_exterior.svg",
+        "group": "furniture",
+        "transform": null
+      },
+      {
+        "layer": "prop",
+        "id": "prop.phone",
+        "anchor": "wall_left",
+        "source": "props/prop.phone.svg",
+        "transform": "translate(405,528)"
+      },
+      {
+        "layer": "foreground",
+        "source": "environments/scene.street_exterior.svg",
+        "group": "foreground",
+        "transform": null
+      },
+      {
+        "layer": "bubbles",
+        "origin": {
+          "x": 950,
+          "y": 118
+        },
+        "count": 3,
+        "exitBeat": false,
+        "remote": true,
+        "speakers": [
+          "char.jessica",
+          "char.jessica",
+          "char.jessica"
+        ],
+        "config": {
+          "fontSize": 47,
+          "lineHeight": 57,
+          "charsPerLine": 19,
+          "maxWidth": 580,
+          "cornerRadius": 30,
+          "gap": 20,
+          "padding": 28,
+          "paddingY": 41,
+          "firstBaseline": 55,
+          "tailInset": 40,
+          "strokeWidth": 4.4,
+          "maxPerNode": 3
+        }
+      }
+    ]
+  }
+}

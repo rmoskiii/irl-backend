@@ -1,0 +1,66 @@
+{
+  "renderKey": "establish::default",
+  "cacheKey": "06fc7114b11a9dd6fbf0853f7bb3c8779427e62b6d6be2b95155a1adf8555f1a",
+  "sourceFrame": "frame_13_establish",
+  "presentedBy": [
+    "frame_13_establish"
+  ],
+  "renderBlock": {
+    "mode": "montage",
+    "panels": [
+      {
+        "vignette": "vig.hospital_night",
+        "caption": "2:00 AM"
+      },
+      {
+        "vignette": "vig.flat_curtained",
+        "caption": "The week after"
+      },
+      {
+        "vignette": "vig.table_three",
+        "caption": null
+      }
+    ]
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "mode": "montage",
+    "panels": [
+      {
+        "vignette": "vig.hospital_night",
+        "caption": "2:00 AM"
+      },
+      {
+        "vignette": "vig.flat_curtained",
+        "caption": "The week after"
+      },
+      {
+        "vignette": "vig.table_three",
+        "caption": null
+      }
+    ],
+    "layers": [
+      {
+        "layer": "montage_panel",
+        "index": 0,
+        "source": "vignettes/vig.hospital_night.svg"
+      },
+      {
+        "layer": "montage_panel",
+        "index": 1,
+        "source": "vignettes/vig.flat_curtained.svg"
+      },
+      {
+        "layer": "montage_panel",
+        "index": 2,
+        "source": "vignettes/vig.table_three.svg"
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "renderKey": "act3_jessica_returns::default",
+  "cacheKey": "247fc09398b53644f436d02f583f4c136b8d48bec98395c2ff08531e5d849b34",
+  "sourceFrame": "frame_5_jessica_returns",
+  "presentedBy": [
+    "frame_5_jessica_returns"
+  ],
+  "renderBlock": {
+    "mode": "scene",
+    "scene": {
+      "id": "scene.coffee_shop",
+      "time": "day"
+    },
+    "props": [
+      "prop.coffee_cup"
+    ],
+    "framing": "direct",
+    "cast": [
+      {
+        "id": "char.jessica",
+        "slot": "centre",
+        "presence": "present",
+        "register": "held",
+        "wardrobe": "day",
+        "speaking": true
+      }
+    ],
+    "bubbles": [
+      {
+        "speaker": "char.jessica",
+        "text": "Is Alex going to propose?"
+      }
+    ],
+    "narration": "Jessica texts you to meet for coffee. She's heard whispers.\n\n\n\nShe's not really asking. She's asking whether you'll confirm it."
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "scene": "scene.coffee_shop",
+    "mode": "scene",
+    "framing": "direct",
+    "cast": [
+      {
+        "id": "char.jessica",
+        "base": "figure_a",
+        "slot": "centre",
+        "register": "held",
+        "wardrobe": "day",
+        "transform": "translate(590,100)",
+        "registerRotate": {
+          "degrees": -6.0,
+          "about": [
+            100,
+            210
+          ]
+        },
+        "assets": {
+          "body": "characters/figure_a.body.svg",
+          "register": "characters/figure_a.register.held.svg",
+          "wardrobe": "characters/figure_a.wardrobe.day.svg"
+        }
+      }
+    ],
+    "layers": [
+      {
+        "layer": "background",
+        "source": "environments/scene.coffee_shop.svg",
+        "group": "background",
+        "transform": null
+      },
+      {
+        "layer": "architecture",
+        "source": "environments/scene.coffee_shop.svg",
+        "group": "architecture",
+        "transform": null
+      },
+      {
+        "layer": "environmental_detail",
+        "source": "environments/scene.coffee_shop.svg",
+        "group": "environmental_detail",
+        "transform": null
+      },
+      {
+        "layer": "character_back",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_body",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_clothing",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_head",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "furniture",
+        "source": "environments/scene.coffee_shop.svg",
+        "group": "furniture",
+        "transform": null
+      },
+      {
+        "layer": "prop",
+        "id": "prop.coffee_cup",
+        "anchor": "table_left",
+        "source": "props/prop.coffee_cup.svg",
+        "transform": "translate(490,494)"
+      },
+      {
+        "layer": "character_contact",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_front",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "foreground",
+        "source": "environments/scene.coffee_shop.svg",
+        "group": "foreground",
+        "transform": null
+      },
+      {
+        "layer": "bubbles",
+        "origin": {
+          "x": 950,
+          "y": 112
+        },
+        "count": 1,
+        "exitBeat": false,
+        "remote": false,
+        "speakers": [
+          "char.jessica"
+        ],
+        "config": {
+          "fontSize": 47,
+          "lineHeight": 57,
+          "charsPerLine": 19,
+          "maxWidth": 580,
+          "cornerRadius": 30,
+          "gap": 20,
+          "padding": 28,
+          "paddingY": 41,
+          "firstBaseline": 55,
+          "tailInset": 40,
+          "strokeWidth": 4.4,
+          "maxPerNode": 3
+        }
+      }
+    ]
+  }
+}

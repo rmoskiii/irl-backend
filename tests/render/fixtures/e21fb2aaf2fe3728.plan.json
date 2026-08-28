@@ -1,0 +1,171 @@
+{
+  "renderKey": "act4_avoidant_outside::default",
+  "cacheKey": "e21fb2aaf2fe3728eed93ad2fe60c005e7d34e189aad137f85b53067d72d92df",
+  "sourceFrame": "frame_6_avoidant_outside",
+  "presentedBy": [
+    "frame_6_avoidant_outside"
+  ],
+  "renderBlock": {
+    "mode": "scene",
+    "scene": {
+      "id": "scene.street_exterior",
+      "time": "night"
+    },
+    "props": [
+      "prop.cigarette",
+      "prop.door_closed"
+    ],
+    "framing": "turned",
+    "cast": [
+      {
+        "id": "char.jessica",
+        "slot": "centre",
+        "presence": "present",
+        "register": "held",
+        "wardrobe": "formal",
+        "speaking": true
+      }
+    ],
+    "bubbles": [
+      {
+        "speaker": "char.jessica",
+        "text": "You could've said something."
+      },
+      {
+        "speaker": "char.jessica",
+        "text": "You asked me not to."
+      },
+      {
+        "speaker": "char.jessica",
+        "text": "I know."
+      }
+    ],
+    "narration": "Jessica finds you outside, halfway through a cigarette she doesn't smoke.\n\n\n\nYou look at her.\n\n\n\nJessica nods.\n\n\n\nInside, Alex is telling the story of the proposal to a new group of people. You can hear the laugh at the part where the ring box got stuck."
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "scene": "scene.street_exterior",
+    "mode": "scene",
+    "framing": "turned",
+    "cast": [
+      {
+        "id": "char.jessica",
+        "base": "figure_a_rear",
+        "slot": "centre",
+        "register": "rear",
+        "wardrobe": "formal",
+        "transform": "translate(590,100)",
+        "registerRotate": null,
+        "assets": {
+          "body": "characters/figure_a_rear.body.svg",
+          "register": "characters/figure_a_rear.register.rear.svg",
+          "wardrobe": "characters/figure_a_rear.wardrobe.formal.svg"
+        }
+      }
+    ],
+    "layers": [
+      {
+        "layer": "background",
+        "source": "environments/scene.street_exterior.svg",
+        "group": "background",
+        "transform": null
+      },
+      {
+        "layer": "architecture",
+        "source": "environments/scene.street_exterior.svg",
+        "group": "architecture",
+        "transform": null
+      },
+      {
+        "layer": "environmental_detail",
+        "source": "environments/scene.street_exterior.svg",
+        "group": "environmental_detail",
+        "transform": null
+      },
+      {
+        "layer": "character_back",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_body",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_clothing",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_head",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "furniture",
+        "source": "environments/scene.street_exterior.svg",
+        "group": "furniture",
+        "transform": null
+      },
+      {
+        "layer": "prop",
+        "id": "prop.cigarette",
+        "anchor": "wall_left",
+        "source": "props/prop.cigarette.svg",
+        "transform": "translate(435,474)"
+      },
+      {
+        "layer": "character_contact",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_front",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "foreground",
+        "source": "environments/scene.street_exterior.svg",
+        "group": "foreground",
+        "transform": null
+      },
+      {
+        "layer": "bubbles",
+        "origin": {
+          "x": 950,
+          "y": 118
+        },
+        "count": 3,
+        "exitBeat": false,
+        "remote": false,
+        "speakers": [
+          "char.jessica",
+          "char.jessica",
+          "char.jessica"
+        ],
+        "config": {
+          "fontSize": 47,
+          "lineHeight": 57,
+          "charsPerLine": 19,
+          "maxWidth": 580,
+          "cornerRadius": 30,
+          "gap": 20,
+          "padding": 28,
+          "paddingY": 41,
+          "firstBaseline": 55,
+          "tailInset": 40,
+          "strokeWidth": 4.4,
+          "maxPerNode": 3
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "renderKey": "jessica_reacts_neutral::default",
+  "cacheKey": "e74b93918076304da76c890f903ea460cb5af6f2f7736cef86802bf0e7a00436",
+  "sourceFrame": "audit_jessica_reacts_neutral",
+  "presentedBy": [
+    "audit_jessica_reacts_neutral"
+  ],
+  "renderBlock": {
+    "mode": "absent",
+    "scene": {
+      "id": "scene.kitchen",
+      "time": "evening"
+    },
+    "props": [],
+    "framing": "empty",
+    "exitBeat": {
+      "speaker": "char.jessica",
+      "text": "Thanks for... yeah."
+    },
+    "cast": [],
+    "narration": "Jessica stares at you.\n\n\n\nShe finishes her glass. Picks up her jacket.\n\n\n\nThe silence after she leaves is the loudest thing in the room. You didn't promise anything. You also didn't say you cared. Jessica left thinking your silence was permission."
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "scene": "scene.kitchen",
+    "mode": "absent",
+    "framing": "empty",
+    "cast": [],
+    "layers": [
+      {
+        "layer": "background",
+        "source": "environments/scene.kitchen.svg",
+        "group": "background",
+        "transform": null
+      },
+      {
+        "layer": "architecture",
+        "source": "environments/scene.kitchen.svg",
+        "group": "architecture",
+        "transform": null
+      },
+      {
+        "layer": "environmental_detail",
+        "source": "environments/scene.kitchen.svg",
+        "group": "environmental_detail",
+        "transform": null
+      },
+      {
+        "layer": "furniture",
+        "source": "environments/scene.kitchen.svg",
+        "group": "furniture",
+        "transform": null
+      },
+      {
+        "layer": "foreground",
+        "source": "environments/scene.kitchen.svg",
+        "group": "foreground",
+        "transform": null
+      },
+      {
+        "layer": "bubbles",
+        "origin": {
+          "x": 48,
+          "y": 104
+        },
+        "count": 1,
+        "exitBeat": true,
+        "remote": true,
+        "speakers": [
+          "char.jessica"
+        ],
+        "config": {
+          "fontSize": 47,
+          "lineHeight": 57,
+          "charsPerLine": 19,
+          "maxWidth": 580,
+          "cornerRadius": 30,
+          "gap": 20,
+          "padding": 28,
+          "paddingY": 41,
+          "firstBaseline": 55,
+          "tailInset": 40,
+          "strokeWidth": 4.4,
+          "maxPerNode": 3
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "renderKey": "jessica_leaves_halfsecret::default",
+  "cacheKey": "43a135ef537d1e443553b20aca04c0c5234df2b9dd613ffb2f0c96bf8b4acb70",
+  "sourceFrame": "frame_12_leaves_halfsecret",
+  "presentedBy": [
+    "frame_12_leaves_halfsecret",
+    "frame_audit_leaves"
+  ],
+  "renderBlock": {
+    "mode": "absent",
+    "scene": {
+      "id": "scene.kitchen",
+      "time": "evening"
+    },
+    "props": [
+      "prop.tea_towel",
+      "prop.door_closed"
+    ],
+    "framing": "empty",
+    "exitBeat": {
+      "speaker": "char.jessica",
+      "text": "Yeah. Thanks."
+    },
+    "cast": [],
+    "narration": "Jessica pulls her jacket on. \n\nShe doesn't look at you on the way out. The door clicks \u2014 no slam, nothing dramatic. Just closed.\n\nYou stand in the kitchen with a wet tea towel in your hand and half a secret. Enough to feel it. Not enough to do anything with it."
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "scene": "scene.kitchen",
+    "mode": "absent",
+    "framing": "empty",
+    "cast": [],
+    "layers": [
+      {
+        "layer": "background",
+        "source": "environments/scene.kitchen.svg",
+        "group": "background",
+        "transform": null
+      },
+      {
+        "layer": "architecture",
+        "source": "environments/scene.kitchen.svg",
+        "group": "architecture",
+        "transform": null
+      },
+      {
+        "layer": "environmental_detail",
+        "source": "environments/scene.kitchen.svg",
+        "group": "environmental_detail",
+        "transform": null
+      },
+      {
+        "layer": "furniture",
+        "source": "environments/scene.kitchen.svg",
+        "group": "furniture",
+        "transform": null
+      },
+      {
+        "layer": "prop",
+        "id": "prop.tea_towel",
+        "anchor": "counter_right",
+        "source": "props/prop.tea_towel.svg",
+        "transform": "translate(1121,424)"
+      },
+      {
+        "layer": "prop",
+        "id": "prop.door_closed",
+        "anchor": "door",
+        "source": "props/prop.door_closed.svg",
+        "transform": "translate(1300,200)"
+      },
+      {
+        "layer": "foreground",
+        "source": "environments/scene.kitchen.svg",
+        "group": "foreground",
+        "transform": null
+      },
+      {
+        "layer": "bubbles",
+        "origin": {
+          "x": 48,
+          "y": 104
+        },
+        "count": 1,
+        "exitBeat": true,
+        "remote": true,
+        "speakers": [
+          "char.jessica"
+        ],
+        "config": {
+          "fontSize": 47,
+          "lineHeight": 57,
+          "charsPerLine": 19,
+          "maxWidth": 580,
+          "cornerRadius": 30,
+          "gap": 20,
+          "padding": 28,
+          "paddingY": 41,
+          "firstBaseline": 55,
+          "tailInset": 40,
+          "strokeWidth": 4.4,
+          "maxPerNode": 3
+        }
+      }
+    ]
+  }
+}

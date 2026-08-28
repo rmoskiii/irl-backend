@@ -5,3 +5,4 @@ data/results.log.jsonl
 qa_render.py
 tools/visual/assets/qa/
 tools/visual/render_blocks.json
+.venv/

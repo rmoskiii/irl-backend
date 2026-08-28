@@ -1,0 +1,171 @@
+{
+  "renderKey": "act2_pause_pressed::default",
+  "cacheKey": "45d9c648415626e1cedc8e8bcb5c4430fa59e2a392017921c0c5ae6380a9529a",
+  "sourceFrame": "frame_11_pause_pressed",
+  "presentedBy": [
+    "frame_11_pause_pressed"
+  ],
+  "renderBlock": {
+    "mode": "scene",
+    "scene": {
+      "id": "scene.flat_hallway",
+      "time": "evening"
+    },
+    "props": [
+      "prop.glass_set_down"
+    ],
+    "framing": "direct",
+    "cast": [
+      {
+        "id": "char.alex",
+        "slot": "centre",
+        "presence": "present",
+        "register": "searching",
+        "wardrobe": "home_casual",
+        "speaking": true
+      }
+    ],
+    "bubbles": [
+      {
+        "speaker": "char.alex",
+        "text": "Processing what?"
+      },
+      {
+        "speaker": "char.alex",
+        "text": "Is this about Jessica? Did she say something to you?"
+      }
+    ],
+    "narration": "Alex sets his glass down."
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "scene": "scene.flat_hallway",
+    "mode": "scene",
+    "framing": "direct",
+    "cast": [
+      {
+        "id": "char.alex",
+        "base": "figure_b",
+        "slot": "centre",
+        "register": "searching",
+        "wardrobe": "home_casual",
+        "transform": "translate(590,100)",
+        "registerRotate": {
+          "degrees": -9.0,
+          "about": [
+            100,
+            210
+          ]
+        },
+        "assets": {
+          "body": "characters/figure_b.body.svg",
+          "register": "characters/figure_b.register.searching.svg",
+          "wardrobe": "characters/figure_b.wardrobe.home_casual.svg"
+        }
+      }
+    ],
+    "layers": [
+      {
+        "layer": "background",
+        "source": "environments/scene.flat_hallway.svg",
+        "group": "background",
+        "transform": null
+      },
+      {
+        "layer": "architecture",
+        "source": "environments/scene.flat_hallway.svg",
+        "group": "architecture",
+        "transform": null
+      },
+      {
+        "layer": "environmental_detail",
+        "source": "environments/scene.flat_hallway.svg",
+        "group": "environmental_detail",
+        "transform": null
+      },
+      {
+        "layer": "character_back",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_body",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_clothing",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_head",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "furniture",
+        "source": "environments/scene.flat_hallway.svg",
+        "group": "furniture",
+        "transform": null
+      },
+      {
+        "layer": "prop",
+        "id": "prop.glass_set_down",
+        "anchor": "console_left",
+        "source": "props/prop.glass_set_down.svg",
+        "transform": "translate(380,474)"
+      },
+      {
+        "layer": "character_contact",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_front",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "foreground",
+        "source": "environments/scene.flat_hallway.svg",
+        "group": "foreground",
+        "transform": null
+      },
+      {
+        "layer": "bubbles",
+        "origin": {
+          "x": 950,
+          "y": 110
+        },
+        "count": 2,
+        "exitBeat": false,
+        "remote": false,
+        "speakers": [
+          "char.alex",
+          "char.alex"
+        ],
+        "config": {
+          "fontSize": 47,
+          "lineHeight": 57,
+          "charsPerLine": 19,
+          "maxWidth": 580,
+          "cornerRadius": 30,
+          "gap": 20,
+          "padding": 28,
+          "paddingY": 41,
+          "firstBaseline": 55,
+          "tailInset": 40,
+          "strokeWidth": 4.4,
+          "maxPerNode": 3
+        }
+      }
+    ]
+  }
+}

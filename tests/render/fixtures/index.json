@@ -1,0 +1,178 @@
+{
+  "generatedFrom": "signed-off 2B.6 state",
+  "cacheKey": "sha256 of the canonicalised resolved render block",
+  "count": 24,
+  "fixtures": [
+    {
+      "renderKey": "act2_alex_checks_in::default",
+      "cacheKey": "2a044ac2fb9a12aa54123167dd75f9dde74efa8e3f108880b77da5c6a5f82bb9",
+      "sourceFrame": "audit_act2_alex_checks_in",
+      "mode": "scene",
+      "scene": "scene.flat_hallway"
+    },
+    {
+      "renderKey": "act2_alex_reveal::default",
+      "cacheKey": "eed512bc09b917f5595f9cc6db56529702902d22b7b30c316b936aad49953038",
+      "sourceFrame": "frame_4_alex_reveal",
+      "mode": "scene",
+      "scene": "scene.flat_hallway"
+    },
+    {
+      "renderKey": "act2_pause_pressed::default",
+      "cacheKey": "45d9c648415626e1cedc8e8bcb5c4430fa59e2a392017921c0c5ae6380a9529a",
+      "sourceFrame": "frame_11_pause_pressed",
+      "mode": "scene",
+      "scene": "scene.flat_hallway"
+    },
+    {
+      "renderKey": "act2_pause_response::default",
+      "cacheKey": "65a00104e52a9df4d0536b01bcd52bdf52540039dc67b7e5a1eac36abb59177b",
+      "sourceFrame": "audit_act2_pause_response",
+      "mode": "scene",
+      "scene": "scene.flat_hallway"
+    },
+    {
+      "renderKey": "act2_probe_response::default",
+      "cacheKey": "b9ae63e7c1fdb3745266d44e0a436ffc7b19893eef0870b7de3da4cbadd11024",
+      "sourceFrame": "audit_act2_probe_response",
+      "mode": "scene",
+      "scene": "scene.flat_hallway"
+    },
+    {
+      "renderKey": "act3_direct_response::default",
+      "cacheKey": "eb0ecb90501a2caf340748af9b33161865a1c7b339601d6c74f9579f86b96da7",
+      "sourceFrame": "audit_act3_direct_response",
+      "mode": "scene",
+      "scene": "scene.coffee_shop"
+    },
+    {
+      "renderKey": "act3_hand_back_response::default",
+      "cacheKey": "a769e686e07cd7ffe4542399ad83f3745eca904478c1dada5268875af1ec6a15",
+      "sourceFrame": "audit_act3_hand_back_response",
+      "mode": "scene",
+      "scene": "scene.coffee_shop"
+    },
+    {
+      "renderKey": "act3_jessica_returns::default",
+      "cacheKey": "247fc09398b53644f436d02f583f4c136b8d48bec98395c2ff08531e5d849b34",
+      "sourceFrame": "frame_5_jessica_returns",
+      "mode": "scene",
+      "scene": "scene.coffee_shop"
+    },
+    {
+      "renderKey": "act3_limit_response::default",
+      "cacheKey": "75d3b208b0d9be0b1198a57d36f9c027ed34293d51c4858ffde8d3a7ad5efee0",
+      "sourceFrame": "audit_act3_limit_response",
+      "mode": "scene",
+      "scene": "scene.coffee_shop"
+    },
+    {
+      "renderKey": "act3b_alex_told::default",
+      "cacheKey": "37843aa9d119e83ef4a34a1d2d08f8e9edea86d759c8a91fd0cb4244c6c44c8b",
+      "sourceFrame": "audit_act3b_alex_told",
+      "mode": "scene",
+      "scene": "scene.flat_hallway"
+    },
+    {
+      "renderKey": "act3b_jessica_calls::default",
+      "cacheKey": "65ac856a71cc36b66957ebb7cee594a6a11d052f5533915dbed2acb1e7099bf4",
+      "sourceFrame": "frame_7_jessica_calls",
+      "mode": "remote",
+      "scene": "scene.street_exterior"
+    },
+    {
+      "renderKey": "act4_avoidant_outside::default",
+      "cacheKey": "e21fb2aaf2fe3728eed93ad2fe60c005e7d34e189aad137f85b53067d72d92df",
+      "sourceFrame": "frame_6_avoidant_outside",
+      "mode": "scene",
+      "scene": "scene.street_exterior"
+    },
+    {
+      "renderKey": "act4_avoidant_proposal::default",
+      "cacheKey": "2b24fd61448458ef24c1ccf10281387122257817c706881a9b3591dfe4c78392",
+      "sourceFrame": "frame_14_avoidant_proposal",
+      "mode": "montage",
+      "scene": null
+    },
+    {
+      "renderKey": "act4_engagement_party::default",
+      "cacheKey": "8381d001656473566ecff206a8d28a914aa0e0b34949cb4c8361b9d8bf2d56fa",
+      "sourceFrame": "frame_8_engagement_party",
+      "mode": "scene",
+      "scene": "scene.party"
+    },
+    {
+      "renderKey": "act4_late_disclosure::default",
+      "cacheKey": "ffaf242a3ecf2eed213cc51342501ac1eb28a65b57175713262c94ea5f3e2597",
+      "sourceFrame": "frame_9_late_disclosure",
+      "mode": "scene",
+      "scene": "scene.party"
+    },
+    {
+      "renderKey": "confession::default",
+      "cacheKey": "0fba5be5820d8aeaa56bc2744ab4f8495e9049a893853a40f0d255e8af728c14",
+      "sourceFrame": "audit_confession",
+      "mode": "scene",
+      "scene": "scene.kitchen"
+    },
+    {
+      "renderKey": "confession_guarded::default",
+      "cacheKey": "5ca5add1fc7a42dcf9d650ecb6368ee6533f024bec7a0d9c6e0d93553c326d7e",
+      "sourceFrame": "audit_confession_guarded",
+      "mode": "scene",
+      "scene": "scene.kitchen"
+    },
+    {
+      "renderKey": "establish::default",
+      "cacheKey": "06fc7114b11a9dd6fbf0853f7bb3c8779427e62b6d6be2b95155a1adf8555f1a",
+      "sourceFrame": "frame_13_establish",
+      "mode": "montage",
+      "scene": null
+    },
+    {
+      "renderKey": "jessica_leaves_halfsecret::default",
+      "cacheKey": "43a135ef537d1e443553b20aca04c0c5234df2b9dd613ffb2f0c96bf8b4acb70",
+      "sourceFrame": "frame_12_leaves_halfsecret",
+      "mode": "absent",
+      "scene": "scene.kitchen"
+    },
+    {
+      "renderKey": "jessica_reacts_hold::default",
+      "cacheKey": "2b88f9cacbac810b6ee8ec13ab5b91ed7207182d1016d363b07de35c2cd9dcd5",
+      "sourceFrame": "audit_jessica_reacts_hold",
+      "mode": "scene",
+      "scene": "scene.kitchen"
+    },
+    {
+      "renderKey": "jessica_reacts_judge::default",
+      "cacheKey": "7b05f4a831e52ca48b709df15385b46ab3654f52bbcab9ea21d066e3a4901fb9",
+      "sourceFrame": "frame_2_reacts_judge",
+      "mode": "scene",
+      "scene": "scene.kitchen"
+    },
+    {
+      "renderKey": "jessica_reacts_neutral::default",
+      "cacheKey": "e74b93918076304da76c890f903ea460cb5af6f2f7736cef86802bf0e7a00436",
+      "sourceFrame": "audit_jessica_reacts_neutral",
+      "mode": "absent",
+      "scene": "scene.kitchen"
+    },
+    {
+      "renderKey": "jessica_walks_out::default",
+      "cacheKey": "be3cd0759873ea4255bd9f97263e79a79621b772613e23815b76cb25a36a68d6",
+      "sourceFrame": "audit_jessica_walks_out",
+      "mode": "absent",
+      "scene": "scene.kitchen"
+    },
+    {
+      "renderKey": "start::default",
+      "cacheKey": "c8dba7c80c6f3daa6b2d2d5f9dfa3c2e0a1b367b9f360eb2e17cb27f3899cdc7",
+      "sourceFrame": "frame_10_start",
+      "mode": "scene",
+      "scene": "scene.kitchen"
+    }
+  ],
+  "skipped": [
+    "act3b_alex_processes::default (audit_act3b_alex_processes) \u2014 blocked by maxPerNode"
+  ]
+}

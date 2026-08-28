@@ -1,0 +1,65 @@
+{
+  "renderKey": "jessica_walks_out::default",
+  "cacheKey": "be3cd0759873ea4255bd9f97263e79a79621b772613e23815b76cb25a36a68d6",
+  "sourceFrame": "audit_jessica_walks_out",
+  "presentedBy": [
+    "audit_jessica_walks_out"
+  ],
+  "renderBlock": {
+    "mode": "absent",
+    "scene": {
+      "id": "scene.kitchen",
+      "time": "evening"
+    },
+    "props": [],
+    "framing": "empty",
+    "exitBeat": null,
+    "cast": [],
+    "narration": "Jessica leaves. She doesn't slam the door.\n\nThat's almost worse.\n\nSo now you're carrying the secret and you're angry about it. Jessica never actually asked you to keep quiet \u2014 she just stopped talking to you entirely, which amounts to the same thing."
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "scene": "scene.kitchen",
+    "mode": "absent",
+    "framing": "empty",
+    "cast": [],
+    "layers": [
+      {
+        "layer": "background",
+        "source": "environments/scene.kitchen.svg",
+        "group": "background",
+        "transform": null
+      },
+      {
+        "layer": "architecture",
+        "source": "environments/scene.kitchen.svg",
+        "group": "architecture",
+        "transform": null
+      },
+      {
+        "layer": "environmental_detail",
+        "source": "environments/scene.kitchen.svg",
+        "group": "environmental_detail",
+        "transform": null
+      },
+      {
+        "layer": "furniture",
+        "source": "environments/scene.kitchen.svg",
+        "group": "furniture",
+        "transform": null
+      },
+      {
+        "layer": "foreground",
+        "source": "environments/scene.kitchen.svg",
+        "group": "foreground",
+        "transform": null
+      }
+    ]
+  }
+}

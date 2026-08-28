@@ -1,0 +1,166 @@
+{
+  "renderKey": "act4_engagement_party::default",
+  "cacheKey": "8381d001656473566ecff206a8d28a914aa0e0b34949cb4c8361b9d8bf2d56fa",
+  "sourceFrame": "frame_8_engagement_party",
+  "presentedBy": [
+    "frame_8_engagement_party"
+  ],
+  "renderBlock": {
+    "mode": "scene",
+    "scene": {
+      "id": "scene.party",
+      "time": "night"
+    },
+    "props": [
+      "prop.raised_glass"
+    ],
+    "framing": "direct",
+    "cast": [
+      {
+        "id": "char.alex",
+        "slot": "centre",
+        "presence": "present",
+        "register": "bright",
+        "wardrobe": "formal",
+        "speaking": true
+      }
+    ],
+    "bubbles": [
+      {
+        "speaker": "char.alex",
+        "text": "Honestly, mate. I don't know what we'd do without you."
+      }
+    ],
+    "narration": "Alex finds you before the speeches and hugs you properly, both arms.\n\n\n\nAcross the room, Jessica catches your eye. For half a second, neither of you smiles.\n\nThen she raises her glass. You raise yours."
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "scene": "scene.party",
+    "mode": "scene",
+    "framing": "direct",
+    "cast": [
+      {
+        "id": "char.alex",
+        "base": "figure_b",
+        "slot": "centre",
+        "register": "bright",
+        "wardrobe": "formal",
+        "transform": "translate(590,100)",
+        "registerRotate": {
+          "degrees": -5.0,
+          "about": [
+            100,
+            210
+          ]
+        },
+        "assets": {
+          "body": "characters/figure_b.body.svg",
+          "register": "characters/figure_b.register.bright.svg",
+          "wardrobe": "characters/figure_b.wardrobe.formal.svg"
+        }
+      }
+    ],
+    "layers": [
+      {
+        "layer": "background",
+        "source": "environments/scene.party.svg",
+        "group": "background",
+        "transform": null
+      },
+      {
+        "layer": "architecture",
+        "source": "environments/scene.party.svg",
+        "group": "architecture",
+        "transform": null
+      },
+      {
+        "layer": "environmental_detail",
+        "source": "environments/scene.party.svg",
+        "group": "environmental_detail",
+        "transform": null
+      },
+      {
+        "layer": "character_back",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_body",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_clothing",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_head",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "furniture",
+        "source": "environments/scene.party.svg",
+        "group": "furniture",
+        "transform": null
+      },
+      {
+        "layer": "prop",
+        "id": "prop.raised_glass",
+        "anchor": "table_left",
+        "source": "props/prop.raised_glass.svg",
+        "transform": "translate(515,444)"
+      },
+      {
+        "layer": "character_contact",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_front",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "foreground",
+        "source": "environments/scene.party.svg",
+        "group": "foreground",
+        "transform": null
+      },
+      {
+        "layer": "bubbles",
+        "origin": {
+          "x": 950,
+          "y": 300
+        },
+        "count": 1,
+        "exitBeat": false,
+        "remote": false,
+        "speakers": [
+          "char.alex"
+        ],
+        "config": {
+          "fontSize": 47,
+          "lineHeight": 57,
+          "charsPerLine": 19,
+          "maxWidth": 580,
+          "cornerRadius": 30,
+          "gap": 20,
+          "padding": 28,
+          "paddingY": 41,
+          "firstBaseline": 55,
+          "tailInset": 40,
+          "strokeWidth": 4.4,
+          "maxPerNode": 3
+        }
+      }
+    ]
+  }
+}

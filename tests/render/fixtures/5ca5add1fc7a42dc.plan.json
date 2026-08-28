@@ -1,0 +1,179 @@
+{
+  "renderKey": "confession_guarded::default",
+  "cacheKey": "5ca5add1fc7a42dcf9d650ecb6368ee6533f024bec7a0d9c6e0d93553c326d7e",
+  "sourceFrame": "audit_confession_guarded",
+  "presentedBy": [
+    "audit_confession_guarded"
+  ],
+  "renderBlock": {
+    "mode": "scene",
+    "scene": {
+      "id": "scene.kitchen",
+      "time": "evening"
+    },
+    "props": [
+      "prop.last_glass",
+      "prop.door_closed"
+    ],
+    "framing": "direct",
+    "cast": [
+      {
+        "id": "char.jessica",
+        "slot": "centre",
+        "presence": "present",
+        "register": "tight",
+        "wardrobe": "coat",
+        "speaking": true
+      }
+    ],
+    "bubbles": [
+      {
+        "speaker": "char.jessica",
+        "text": "I kissed someone at the conference. Once. It's done. I just needed to tell someone."
+      },
+      {
+        "speaker": "char.jessica",
+        "text": "Forget I said anything."
+      }
+    ],
+    "narration": "Jessica hesitates. Then says it anyway \u2014 faster, flatter, already pulling back as the words come out.\n\n\n\nShe's already reaching for her jacket."
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "scene": "scene.kitchen",
+    "mode": "scene",
+    "framing": "direct",
+    "cast": [
+      {
+        "id": "char.jessica",
+        "base": "figure_a",
+        "slot": "centre",
+        "register": "tight",
+        "wardrobe": "coat",
+        "transform": "translate(590,100)",
+        "registerRotate": {
+          "degrees": 9.0,
+          "about": [
+            100,
+            210
+          ]
+        },
+        "assets": {
+          "body": "characters/figure_a.body.svg",
+          "register": "characters/figure_a.register.tight.svg",
+          "wardrobe": "characters/figure_a.wardrobe.coat.svg"
+        }
+      }
+    ],
+    "layers": [
+      {
+        "layer": "background",
+        "source": "environments/scene.kitchen.svg",
+        "group": "background",
+        "transform": null
+      },
+      {
+        "layer": "architecture",
+        "source": "environments/scene.kitchen.svg",
+        "group": "architecture",
+        "transform": null
+      },
+      {
+        "layer": "environmental_detail",
+        "source": "environments/scene.kitchen.svg",
+        "group": "environmental_detail",
+        "transform": null
+      },
+      {
+        "layer": "character_back",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_body",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_clothing",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_head",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "furniture",
+        "source": "environments/scene.kitchen.svg",
+        "group": "furniture",
+        "transform": null
+      },
+      {
+        "layer": "prop",
+        "id": "prop.last_glass",
+        "anchor": "counter_right",
+        "source": "props/prop.last_glass.svg",
+        "transform": "translate(1151,474)"
+      },
+      {
+        "layer": "prop",
+        "id": "prop.door_closed",
+        "anchor": "door",
+        "source": "props/prop.door_closed.svg",
+        "transform": "translate(1300,200)"
+      },
+      {
+        "layer": "character_contact",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_front",
+        "cast": "char.jessica",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "foreground",
+        "source": "environments/scene.kitchen.svg",
+        "group": "foreground",
+        "transform": null
+      },
+      {
+        "layer": "bubbles",
+        "origin": {
+          "x": 48,
+          "y": 104
+        },
+        "count": 2,
+        "exitBeat": false,
+        "remote": false,
+        "speakers": [
+          "char.jessica",
+          "char.jessica"
+        ],
+        "config": {
+          "fontSize": 47,
+          "lineHeight": 57,
+          "charsPerLine": 19,
+          "maxWidth": 580,
+          "cornerRadius": 30,
+          "gap": 20,
+          "padding": 28,
+          "paddingY": 41,
+          "firstBaseline": 55,
+          "tailInset": 40,
+          "strokeWidth": 4.4,
+          "maxPerNode": 3
+        }
+      }
+    ]
+  }
+}

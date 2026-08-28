@@ -1,0 +1,166 @@
+{
+  "renderKey": "act2_alex_reveal::default",
+  "cacheKey": "eed512bc09b917f5595f9cc6db56529702902d22b7b30c316b936aad49953038",
+  "sourceFrame": "frame_4_alex_reveal",
+  "presentedBy": [
+    "frame_4_alex_reveal"
+  ],
+  "renderBlock": {
+    "mode": "scene",
+    "scene": {
+      "id": "scene.flat_hallway",
+      "time": "evening"
+    },
+    "props": [
+      "prop.ring_box"
+    ],
+    "framing": "direct",
+    "cast": [
+      {
+        "id": "char.alex",
+        "slot": "centre",
+        "presence": "present",
+        "register": "bright",
+        "wardrobe": "home_casual",
+        "speaking": true
+      }
+    ],
+    "bubbles": [
+      {
+        "speaker": "char.alex",
+        "text": "I'm going to propose. To Jessica. I've been looking at rings for months. I want you to help me pick the place \u2014 you know her better than anyone."
+      }
+    ],
+    "narration": "Alex's flat. Alex has been fidgety all evening and finally pulls you aside, barely keeping it together.\n\n\n\nAlex is watching your face. Waiting for you to match his energy."
+  },
+  "plan": {
+    "canvas": {
+      "viewBox": "0 0 1600 900",
+      "width": 1600,
+      "height": 900,
+      "aspect": "16:9",
+      "rationale": "Phase 1 defines no canvas. 16:9 chosen for the investor demo surface (ScenarioDemo + deck). Mobile crops to a 4:5 safe area, documented below."
+    },
+    "scene": "scene.flat_hallway",
+    "mode": "scene",
+    "framing": "direct",
+    "cast": [
+      {
+        "id": "char.alex",
+        "base": "figure_b",
+        "slot": "centre",
+        "register": "bright",
+        "wardrobe": "home_casual",
+        "transform": "translate(590,100)",
+        "registerRotate": {
+          "degrees": -5.0,
+          "about": [
+            100,
+            210
+          ]
+        },
+        "assets": {
+          "body": "characters/figure_b.body.svg",
+          "register": "characters/figure_b.register.bright.svg",
+          "wardrobe": "characters/figure_b.wardrobe.home_casual.svg"
+        }
+      }
+    ],
+    "layers": [
+      {
+        "layer": "background",
+        "source": "environments/scene.flat_hallway.svg",
+        "group": "background",
+        "transform": null
+      },
+      {
+        "layer": "architecture",
+        "source": "environments/scene.flat_hallway.svg",
+        "group": "architecture",
+        "transform": null
+      },
+      {
+        "layer": "environmental_detail",
+        "source": "environments/scene.flat_hallway.svg",
+        "group": "environmental_detail",
+        "transform": null
+      },
+      {
+        "layer": "character_back",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_body",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_clothing",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_head",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "furniture",
+        "source": "environments/scene.flat_hallway.svg",
+        "group": "furniture",
+        "transform": null
+      },
+      {
+        "layer": "prop",
+        "id": "prop.ring_box",
+        "anchor": "console_centre",
+        "source": "props/prop.ring_box.svg",
+        "transform": "translate(560,504)"
+      },
+      {
+        "layer": "character_contact",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "character_front",
+        "cast": "char.alex",
+        "transform": "translate(590,100)"
+      },
+      {
+        "layer": "foreground",
+        "source": "environments/scene.flat_hallway.svg",
+        "group": "foreground",
+        "transform": null
+      },
+      {
+        "layer": "bubbles",
+        "origin": {
+          "x": 950,
+          "y": 110
+        },
+        "count": 1,
+        "exitBeat": false,
+        "remote": false,
+        "speakers": [
+          "char.alex"
+        ],
+        "config": {
+          "fontSize": 47,
+          "lineHeight": 57,
+          "charsPerLine": 19,
+          "maxWidth": 580,
+          "cornerRadius": 30,
+          "gap": 20,
+          "padding": 28,
+          "paddingY": 41,
+          "firstBaseline": 55,
+          "tailInset": 40,
+          "strokeWidth": 4.4,
+          "maxPerNode": 3
+        }
+      }
+    ]
+  }
+}
