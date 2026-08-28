@@ -1,164 +1,183 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220"
      id="figure_a.register.tight" data-asset="figure_a" data-kind="register"
      data-register="tight" data-neck-anchor="100,210" data-register-rotate="9">
-    <!-- IRX = register: tight. Second register, drawn as a contract stress test.
-         Same viewBox, same neckAnchor, same layer group id, same token block as
-         'open'. Nothing about the body, wardrobe, renderer or scenario changes.
+<!-- IRX = register: tight. Second register, drawn as a contract stress test.
+     Same viewBox, same neckAnchor, same layer group id, same token block as
+     'open'. Nothing about the body, wardrobe, renderer or scenario changes.
 
-         'tight' is carried by: head turned fractionally away and chin dropped, gaze
-         off-camera past the viewer's shoulder (she has already decided to leave),
-         narrowed eye aperture, level brows drawn slightly in, mouth closed and
-         compressed, jaw set. Hair falls forward on the near side, shielding.
+     'tight' is carried by: head turned fractionally away and chin dropped, gaze
+     off-camera past the viewer's shoulder (she has already decided to leave),
+     narrowed eye aperture, level brows drawn slightly in, mouth closed and
+     compressed, jaw set. Hair falls forward on the near side, shielding.
 
-         Firewall check: this must read as CLOSED, not as GUILTY or ANGRY. No
-         V-shaped brow, no downturned scowl, no narrowed-eye villainy. A player must
-         not be able to read a verdict about Jessica off this head. The register
-         reports that she has shut the conversation down, which the node's own prose
-         already states ("Jessica's face closes").
+     Firewall check: this must read as CLOSED, not as GUILTY or ANGRY. No
+     V-shaped brow, no downturned scowl, no narrowed-eye villainy. A player must
+     not be able to read a verdict about Jessica off this head. The register
+     reports that she has shut the conversation down, which the node's own prose
+     already states ("Jessica's face closes").
 
-         Craft note: this asset uses per-path stroke widths and a second tonal pass,
-         per the Phase 2A art-direction critique. 'open' does not. That inconsistency
-         is deliberate and is the subject of finding F in the test report. -->
-    <defs><style>
-        /* @tokens-begin */
+     Craft note: this asset uses per-path stroke widths and a second tonal pass,
+     per the Phase 2A art-direction critique. 'open' does not. That inconsistency
+     is deliberate and is the subject of finding F in the test report. -->
+<defs><style>
+/* @tokens-begin */
 :root {
-    /* line */
-    --irx-line:          #241D19;
-    --irx-line-soft:     #3B302A;
-    --irx-shadow:        #2A231E;
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
 
-    /* architecture */
-    --irx-wall:          #5D6B60;
-    --irx-wall-dark:     #4C584F;
-    --irx-wall-pattern:  #556359;
-    --irx-tile:          #C2B8A5;
-    --irx-tile-alt:      #AEA48E;
-    --irx-floor:         #5A4A3B;
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
 
-    /* window */
-    --irx-sky-high:      #2F3A4A;
-    --irx-sky-mid:       #4A4352;
-    --irx-sky-low:       #7A5B50;
-    --irx-outside-dark:  #232A33;
-    --irx-curtain:       #3F4A52;
-    --irx-curtain-dark:  #333C43;
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
 
-    /* joinery */
-    --irx-cabinet:       #785D44;
-    --irx-cabinet-dark:  #5F4934;
-    --irx-counter:       #9B7A57;
-    --irx-counter-edge:  #7C6043;
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
 
-    /* character */
-    --irx-skin:          #D3A17C;
-    --irx-skin-shade:    #B8845F;
-    --irx-hair:          #41322A;
-    --irx-hair-light:    #554136;
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
 
-    /* wardrobe: home_casual */
-    --irx-cloth:         #A8603F;
-    --irx-cloth-dark:    #894C31;
-    --irx-cloth-inner:   #D9CDBC;
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
 
-    /* props */
-    --irx-glass:         #BCC8C3;
-    --irx-glass-dark:    #9AA8A2;
-    --irx-highlight:     #FFFFFF;
-    --irx-jacket:        #4F5A63;
-    --irx-jacket-dark:   #3D464E;
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
 
-    /* accent — neighbourhood district, warm light only */
-    --irx-accent:        #FFC15E;
-    --irx-accent-dim:    #C89A4E;
-    --irx-lamp-warm:     #F2C77E;
-    --irx-cool-spill:    #7E93A8;
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
 
-    /* stroke weights */
-    --irx-stroke-xheavy: 6.6;
-    --irx-stroke-heavy:  5;
-    --irx-stroke:        3.4;
-    --irx-stroke-fine:   2.1;
-    --irx-stroke-hair:   1.4;
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
 }
 /* @tokens-end */
-        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
-        .xh { stroke-width: 6.6; }
-        .hv { stroke-width: 5; }
-        .md { stroke-width: 3.4; }
-        .fn { stroke-width: 2.1; }
-        .hr { stroke-width: 1.4; }
-        .sk  { fill: var(--irx-skin); }
-        .skd { fill: var(--irx-skin-shade); }
-        .ha  { fill: var(--irx-hair); }
-        .hal { fill: var(--irx-hair-light); }
-    </style></defs>
+.ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.xh { stroke-width: 6.6; }
+.hv { stroke-width: 5; }
+.md { stroke-width: 3.4; }
+.fn { stroke-width: 2.1; }
+.hr { stroke-width: 1.4; }
+.sk  { fill: var(--irx-skin); }
+.skd { fill: var(--irx-skin-shade); }
+.ha  { fill: var(--irx-hair); }
+.hal { fill: var(--irx-hair-light); }
+</style></defs>
 
-    <g id="character_head">
-        <!-- hair mass behind: weight shifted to the far side as the head turns -->
-        <path d="M98 8 q56 1 71 52 q11 35 7 75 q-4 33 -13 74 q-16 -34 -18 -73
+<g id="character_head">
+  <!-- hair mass behind: weight shifted to the far side as the head turns -->
+  <path d="M98 8 q56 1 71 52 q11 35 7 75 q-4 33 -13 74 q-16 -34 -18 -73
            q-39 15 -87 1 q-5 40 -21 71 q-9 -42 -12 -76 q-5 -41 8 -76 q14 -50 65 -48 z"
-              class="ha"/>
+        class="ha"/>
 
-        <!-- face: same construction as 'open', shifted 3px on the turn -->
-        <path d="M97 32 q38 0 48 36 q8 30 3 60 q-5 34 -21 52 q-13 15 -30 15 q-17 0 -30 -15
+  <!-- face: same construction as 'open', shifted 3px on the turn -->
+  <path d="M97 32 q38 0 48 36 q8 30 3 60 q-5 34 -21 52 q-13 15 -30 15 q-17 0 -30 -15
            q-16 -18 -21 -52 q-5 -30 3 -60 q10 -36 48 -36 z" class="sk"/>
-        <path class="ln" stroke-width="3.6"
-              d="M97 32 q38 0 48 36 q8 30 3 60 q-5 34 -21 52 q-13 15 -30 15
+  <path class="ln" stroke-width="3.6"
+        d="M97 32 q38 0 48 36 q8 30 3 60 q-5 34 -21 52 q-13 15 -30 15
            q-17 0 -30 -15 q-16 -18 -21 -52 q-5 -30 3 -60 q10 -36 48 -36 z"/>
-        <!-- jaw set. QA: this was a heavy detached arc inside the face and read as a
-             stray mark at shipping scale. It now hugs the actual jaw contour, so the
-             weight reads as a set jaw rather than a line someone forgot to delete. -->
-        <path class="ln" stroke-width="4.8" d="M97 195 q-17 0 -30 -15 q-10 -11 -15 -28" opacity="0.7"/>
+  <!-- jaw set. QA: this was a heavy detached arc inside the face and read as a
+       stray mark at shipping scale. It now hugs the actual jaw contour, so the
+       weight reads as a set jaw rather than a line someone forgot to delete. -->
+  <path class="ln" stroke-width="4.8" d="M97 195 q-17 0 -30 -15 q-10 -11 -15 -28" opacity="0.7"/>
 
-        <path d="M49 102 q-8 -2 -10 8 q-2 12 8 15" class="sk"/>
-        <path class="ln fn" d="M49 102 q-8 -2 -10 8 q-2 12 8 15"/>
-        <path d="M145 102 q8 -2 10 8 q2 12 -8 15" class="sk"/>
-        <path class="ln hr" d="M145 102 q8 -2 10 8 q2 12 -8 15" opacity="0.8"/>
+  <path d="M49 102 q-8 -2 -10 8 q-2 12 8 15" class="sk"/>
+  <path class="ln fn" d="M49 102 q-8 -2 -10 8 q-2 12 8 15"/>
+  <path d="M145 102 q8 -2 10 8 q2 12 -8 15" class="sk"/>
+  <path class="ln hr" d="M145 102 q8 -2 10 8 q2 12 -8 15" opacity="0.8"/>
 
-        <!-- brows: level, drawn slightly inward and down. NOT angled into a V -->
-        <path class="ln" stroke-width="2.6" d="M69 95 q12 -3 24 1"/>
-        <path class="ln" stroke-width="2.2" d="M127 96 q-12 -4 -24 0" opacity="0.9"/>
+  <!-- brows: level, drawn slightly inward and down. NOT angled into a V -->
+  <path class="ln" stroke-width="2.6" d="M69 95 q12 -3 24 1"/>
+  <path class="ln" stroke-width="2.2" d="M127 96 q-12 -4 -24 0" opacity="0.9"/>
 
-        <!-- eyes: aperture narrowed, gaze off past the viewer's shoulder -->
-        <path class="ln" stroke-width="3.6" d="M71 112 q10 -6 20 -1"/>
-        <path class="ln hr" d="M72 117 q10 3 18 0" opacity="0.75"/>
-        <circle cx="80" cy="113" r="3.2" fill="var(--irx-line)"/>
-        <path class="ln" stroke-width="3.2" d="M102 111 q10 -6 20 1"/>
-        <path class="ln hr" d="M103 117 q9 3 18 -1" opacity="0.7"/>
-        <circle cx="110" cy="113" r="3.1" fill="var(--irx-line)"/>
+  <!-- eyes: aperture narrowed, gaze off past the viewer's shoulder -->
+  <path class="ln" stroke-width="3.6" d="M71 112 q10 -6 20 -1"/>
+  <path class="ln hr" d="M72 117 q10 3 18 0" opacity="0.75"/>
+  <circle cx="80" cy="113" r="3.2" fill="var(--irx-line)"/>
+  <path class="ln" stroke-width="3.2" d="M102 111 q10 -6 20 1"/>
+  <path class="ln hr" d="M103 117 q9 3 18 -1" opacity="0.7"/>
+  <circle cx="110" cy="113" r="3.1" fill="var(--irx-line)"/>
 
-        <path class="ln hr" d="M95 124 q-5 14 4 18" opacity="0.85"/>
+  <path class="ln hr" d="M95 124 q-5 14 4 18" opacity="0.85"/>
 
-        <!-- mouth: closed and compressed, corners tucked. no downturn -->
-        <path class="ln" stroke-width="2.9" d="M87 158 q10 -2 20 0"/>
-        <path class="ln hr" d="M86 157 q-2 3 -1 5" opacity="0.6"/>
-        <path class="ln hr" d="M108 157 q2 3 1 5" opacity="0.6"/>
+  <!-- mouth: closed and compressed, corners tucked. no downturn -->
+  <path class="ln" stroke-width="2.9" d="M87 158 q10 -2 20 0"/>
+  <path class="ln hr" d="M86 157 q-2 3 -1 5" opacity="0.6"/>
+  <path class="ln hr" d="M108 157 q2 3 1 5" opacity="0.6"/>
 
-        <!-- second tonal pass: light still upper-left, so the turn throws more shade -->
-        <path d="M127 116 q10 28 1 52 q-9 13 -19 16 q17 -32 15 -68 z" class="skd" opacity="0.46"/>
-        <path d="M59 130 q7 15 3 25 q-9 -7 -11 -20 z" class="skd" opacity="0.3"/>
-        <path d="M77 141 q9 5 19 3 q-9 6 -20 2 z" class="skd" opacity="0.22"/>
+  <!-- second tonal pass: light still upper-left, so the turn throws more shade -->
+  <path d="M127 116 q10 28 1 52 q-9 13 -19 16 q17 -32 15 -68 z" class="skd" opacity="0.46"/>
+  <path d="M59 130 q7 15 3 25 q-9 -7 -11 -20 z" class="skd" opacity="0.3"/>
+  <path d="M77 141 q9 5 19 3 q-9 6 -20 2 z" class="skd" opacity="0.22"/>
 
-        <!-- hair front: falls forward on the near side, shielding the cheek.
-             reads as a hairstyle with direction, not a symmetrical cap -->
-        <path d="M98 8 q-60 3 -73 57 q-6 22 -4 44 q8 -30 18 -43 q11 25 43 21
+  <!-- hair front: falls forward on the near side, shielding the cheek.
+       reads as a hairstyle with direction, not a symmetrical cap -->
+  <path d="M98 8 q-60 3 -73 57 q-6 22 -4 44 q8 -30 18 -43 q11 25 43 21
            q25 -3 39 -23 q19 24 47 27 q12 10 18 32 q4 -24 -1 -46 q-13 -53 -66 -55 z"
-              class="ha"/>
-        <path d="M98 8 q-43 2 -59 36 q17 -16 41 -18 q-14 12 -20 27 q22 -19 47 -19 z"
-              class="hal" opacity="0.44"/>
-        <!-- near-side lock falling across the temple -->
-        <path d="M40 58 q-13 48 -5 92 q14 -34 20 -60 q-9 -14 -15 -32 z" class="ha"/>
-        <path class="ln" stroke-width="3.2" d="M40 58 q-13 48 -5 92" opacity="0.9"/>
-        <path class="ln" stroke-width="3.8" d="M98 8 q-60 3 -73 57 q-6 22 -4 44"/>
-        <path class="ln" stroke-width="3.0" d="M98 8 q57 4 66 53 q5 21 4 43"/>
-        <path class="ln hr" d="M52 76 q24 16 46 3" opacity="0.62"/>
-        <path class="ln hr" d="M144 80 q-20 13 -38 4" opacity="0.55"/>
+        class="ha"/>
+  <path d="M98 8 q-43 2 -59 36 q17 -16 41 -18 q-14 12 -20 27 q22 -19 47 -19 z"
+        class="hal" opacity="0.44"/>
+  <!-- near-side lock falling across the temple -->
+  <path d="M40 58 q-13 48 -5 92 q14 -34 20 -60 q-9 -14 -15 -32 z" class="ha"/>
+  <path class="ln" stroke-width="3.2" d="M40 58 q-13 48 -5 92" opacity="0.9"/>
+  <path class="ln" stroke-width="3.8" d="M98 8 q-60 3 -73 57 q-6 22 -4 44"/>
+  <path class="ln" stroke-width="3.0" d="M98 8 q57 4 66 53 q5 21 4 43"/>
+  <path class="ln hr" d="M52 76 q24 16 46 3" opacity="0.62"/>
+  <path class="ln hr" d="M144 80 q-20 13 -38 4" opacity="0.55"/>
 
-        <!-- length past the jaw -->
-        <path d="M29 112 q-11 54 6 104 q13 -38 14 -82 q-12 -8 -20 -22 z" class="ha"/>
-        <path class="ln" stroke-width="3.4" d="M29 112 q-11 54 6 104"/>
-        <path class="ln hr" d="M38 132 q-5 43 6 74" opacity="0.42"/>
-        <path d="M164 118 q8 44 -5 86 q-9 -31 -10 -68 q9 -6 15 -18 z" class="ha"/>
-        <path class="ln" stroke-width="2.8" d="M164 118 q8 44 -5 86"/>
-    </g>
+  <!-- length past the jaw -->
+  <path d="M29 112 q-11 54 6 104 q13 -38 14 -82 q-12 -8 -20 -22 z" class="ha"/>
+  <path class="ln" stroke-width="3.4" d="M29 112 q-11 54 6 104"/>
+  <path class="ln hr" d="M38 132 q-5 43 6 74" opacity="0.42"/>
+  <path d="M164 118 q8 44 -5 86 q-9 -31 -10 -68 q9 -6 15 -18 z" class="ha"/>
+  <path class="ln" stroke-width="2.8" d="M164 118 q8 44 -5 86"/>
+</g>
 </svg>

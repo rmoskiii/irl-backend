@@ -81,6 +81,17 @@ def build_bubbles(A, fr, scene_cfg, node):
         return None
 
     cfg = A["bubbles"]
+    cap = cfg.get("maxPerNode")
+    if cap and len(bs) > cap:
+        # Enforced, not advisory. The stack has no vertical bound: at the current
+        # type scale a 4-bubble stack already reaches y877 of 900, and the 5- and
+        # 6-bubble states resolved by the scenario cannot fit at any legible size.
+        # Failing here is the point - a silently overflowing frame is worse than a
+        # build error, and the fix belongs in Phase 3 content, not in the renderer.
+        raise SystemExit(
+            f"bubbles: node '{node}' resolves {len(bs)} bubbles; maxPerNode is {cap}. "
+            f"This is a Phase 3 content issue - split or compress the dialogue in the "
+            f"scenario. Do not raise maxPerNode to make it compose.")
 
     def resolve_speaker(bubble):
         """Each bubble names its own speaker; the frame's cast order does not.
@@ -105,7 +116,7 @@ def build_bubbles(A, fr, scene_cfg, node):
     speaker_slot = spk["slot"]
     # a scene may override where bubbles sit; the free area is a fact about the room
     place = (scene_cfg.get("bubblePlacement") or {}).get(speaker_slot) \
-            or cfg["placement"].get(speaker_slot)
+        or cfg["placement"].get(speaker_slot)
     if place is None:
         raise SystemExit(f"bubbles: no placement defined for slot '{speaker_slot}'")
 

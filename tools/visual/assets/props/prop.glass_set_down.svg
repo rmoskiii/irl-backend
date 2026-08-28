@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 130"
+     id="prop.glass_set_down" data-asset="prop.glass_set_down" data-base-point="50,130">
+<!-- IRX 2B.4 = prop.glass_set_down.
+
+     act2_pause_pressed: "Alex sets his glass down." The action is the beat - he
+     has stopped being casual and is about to ask you a direct question. Upright,
+     still half full, put down harder than necessary. -->
+<defs><style>
+/* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
+
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
+
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
+
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
+
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
+
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
+
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
+
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
+
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
+.ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.gl  { fill: var(--irx-glass); }
+.gld { fill: var(--irx-glass-dark); }
+</style></defs>
+
+<g id="prop">
+  <path d="M22 26 q28 -8 56 0 q4 48 -2 92 q-26 8 -52 0 q-6 -44 -2 -92 z" class="gl" opacity="0.7"/>
+  <path d="M25 74 q25 6 50 0 q-1 24 -3 44 q-22 7 -44 0 q-2 -20 -3 -44 z" class="gld" opacity="0.85"/>
+  <path class="ln" stroke-width="3.0" d="M22 26 q28 -8 56 0 q4 48 -2 92 q-26 8 -52 0 q-6 -44 -2 -92 z"/>
+  <path class="ln" stroke-width="2.0" d="M22 26 q28 8 56 0" opacity="0.85"/>
+  <path class="ln" stroke-width="1.8" d="M25 74 q25 6 50 0" opacity="0.6"/>
+  <path class="ln" stroke-width="1.6" d="M34 38 q-3 32 0 62" opacity="0.4" stroke="var(--irx-highlight)"/>
+  <!-- it went down hard enough to slop -->
+  <path class="ln" stroke-width="1.6" d="M14 122 q36 7 72 0" opacity="0.3"/>
+</g>
+</svg>

@@ -1,116 +1,135 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380"
      id="prop.jacket_chair" data-asset="prop.jacket_chair"
      data-base-point="150,380">
-    <!-- IRX Phase 2A — prop.jacket_chair.
-         Authored in the_secret.json as "a jacket on the chair" (node: confession).
-         The jacket is the narrative object: it is hers, and it is already off. -->
-    <defs><style>
-        /* @tokens-begin */
+<!-- IRX Phase 2A — prop.jacket_chair.
+     Authored in the_secret.json as "a jacket on the chair" (node: confession).
+     The jacket is the narrative object: it is hers, and it is already off. -->
+<defs><style>
+/* @tokens-begin */
 :root {
-    /* line */
-    --irx-line:          #241D19;
-    --irx-line-soft:     #3B302A;
-    --irx-shadow:        #2A231E;
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
 
-    /* architecture */
-    --irx-wall:          #5D6B60;
-    --irx-wall-dark:     #4C584F;
-    --irx-wall-pattern:  #556359;
-    --irx-tile:          #C2B8A5;
-    --irx-tile-alt:      #AEA48E;
-    --irx-floor:         #5A4A3B;
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
 
-    /* window */
-    --irx-sky-high:      #2F3A4A;
-    --irx-sky-mid:       #4A4352;
-    --irx-sky-low:       #7A5B50;
-    --irx-outside-dark:  #232A33;
-    --irx-curtain:       #3F4A52;
-    --irx-curtain-dark:  #333C43;
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
 
-    /* joinery */
-    --irx-cabinet:       #785D44;
-    --irx-cabinet-dark:  #5F4934;
-    --irx-counter:       #9B7A57;
-    --irx-counter-edge:  #7C6043;
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
 
-    /* character */
-    --irx-skin:          #D3A17C;
-    --irx-skin-shade:    #B8845F;
-    --irx-hair:          #41322A;
-    --irx-hair-light:    #554136;
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
 
-    /* wardrobe: home_casual */
-    --irx-cloth:         #A8603F;
-    --irx-cloth-dark:    #894C31;
-    --irx-cloth-inner:   #D9CDBC;
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
 
-    /* props */
-    --irx-glass:         #BCC8C3;
-    --irx-glass-dark:    #9AA8A2;
-    --irx-highlight:     #FFFFFF;
-    --irx-jacket:        #4F5A63;
-    --irx-jacket-dark:   #3D464E;
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
 
-    /* accent — neighbourhood district, warm light only */
-    --irx-accent:        #FFC15E;
-    --irx-accent-dim:    #C89A4E;
-    --irx-lamp-warm:     #F2C77E;
-    --irx-cool-spill:    #7E93A8;
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
 
-    /* stroke weights */
-    --irx-stroke-xheavy: 6.6;
-    --irx-stroke-heavy:  5;
-    --irx-stroke:        3.4;
-    --irx-stroke-fine:   2.1;
-    --irx-stroke-hair:   1.4;
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
 }
 /* @tokens-end */
-        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
-        .hv { stroke-width: 5; }
-        .md { stroke-width: 3.4; }
-        .fn { stroke-width: 2.1; }
-        .ch  { fill: var(--irx-cabinet); }
-        .chd { fill: var(--irx-cabinet-dark); }
-        .jk  { fill: var(--irx-jacket); }
-        .jkd { fill: var(--irx-jacket-dark); }
-    </style></defs>
+.ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.hv { stroke-width: 5; }
+.md { stroke-width: 3.4; }
+.fn { stroke-width: 2.1; }
+.ch  { fill: var(--irx-cabinet); }
+.chd { fill: var(--irx-cabinet-dark); }
+.jk  { fill: var(--irx-jacket); }
+.jkd { fill: var(--irx-jacket-dark); }
+</style></defs>
 
-    <g id="prop">
-        <!-- chair: back posts and rails -->
-        <path d="M74 62 q-6 150 -2 246 h18 q-4 -98 2 -246 z" class="ch"/>
-        <path class="ln md" d="M74 62 q-6 150 -2 246 h18 q-4 -98 2 -246 z"/>
-        <path d="M212 62 q6 150 2 246 h-18 q4 -98 -2 -246 z" class="ch"/>
-        <path class="ln md" d="M212 62 q6 150 2 246 h-18 q4 -98 -2 -246 z"/>
-        <path d="M72 66 q72 -12 142 0 v18 q-70 -12 -142 0 z" class="chd"/>
-        <path class="ln md" d="M72 66 q72 -12 142 0 v18 q-70 -12 -142 0 z"/>
+<g id="prop">
+  <!-- chair: back posts and rails -->
+  <path d="M74 62 q-6 150 -2 246 h18 q-4 -98 2 -246 z" class="ch"/>
+  <path class="ln md" d="M74 62 q-6 150 -2 246 h18 q-4 -98 2 -246 z"/>
+  <path d="M212 62 q6 150 2 246 h-18 q4 -98 -2 -246 z" class="ch"/>
+  <path class="ln md" d="M212 62 q6 150 2 246 h-18 q4 -98 -2 -246 z"/>
+  <path d="M72 66 q72 -12 142 0 v18 q-70 -12 -142 0 z" class="chd"/>
+  <path class="ln md" d="M72 66 q72 -12 142 0 v18 q-70 -12 -142 0 z"/>
 
-        <!-- seat -->
-        <path d="M58 214 q94 -14 174 0 q6 20 0 30 q-88 -14 -174 0 q-6 -14 0 -30 z" class="ch"/>
-        <path class="ln hv" d="M58 214 q94 -14 174 0 q6 20 0 30 q-88 -14 -174 0 q-6 -14 0 -30 z"/>
+  <!-- seat -->
+  <path d="M58 214 q94 -14 174 0 q6 20 0 30 q-88 -14 -174 0 q-6 -14 0 -30 z" class="ch"/>
+  <path class="ln hv" d="M58 214 q94 -14 174 0 q6 20 0 30 q-88 -14 -174 0 q-6 -14 0 -30 z"/>
 
-        <!-- legs -->
-        <path class="ln md" d="M66 244 q-8 68 -4 132"/>
-        <path class="ln md" d="M226 244 q8 68 4 132"/>
-        <path class="ln fn" d="M70 330 q78 -10 154 0" opacity="0.7"/>
+  <!-- legs -->
+  <path class="ln md" d="M66 244 q-8 68 -4 132"/>
+  <path class="ln md" d="M226 244 q8 68 4 132"/>
+  <path class="ln fn" d="M70 330 q78 -10 154 0" opacity="0.7"/>
 
-        <!-- jacket draped over the back, one sleeve hanging -->
-        <path d="M76 58 q68 -18 138 2 q14 62 6 116 q-6 40 -18 58 q-32 12 -66 8
+  <!-- jacket draped over the back, one sleeve hanging -->
+  <path d="M76 58 q68 -18 138 2 q14 62 6 116 q-6 40 -18 58 q-32 12 -66 8
            q-34 -4 -58 -14 q-12 -60 -8 -112 q2 -34 6 -58 z" class="jk"/>
-        <path class="ln hv" d="M76 58 q68 -18 138 2 q14 62 6 116 q-6 40 -18 58 q-32 12 -66 8
+  <path class="ln hv" d="M76 58 q68 -18 138 2 q14 62 6 116 q-6 40 -18 58 q-32 12 -66 8
                          q-34 -4 -58 -14 q-12 -60 -8 -112 q2 -34 6 -58 z"/>
-        <!-- collar -->
-        <path d="M112 54 q34 22 68 2 q-6 26 -34 34 q-28 -8 -34 -36 z" class="jkd"/>
-        <path class="ln md" d="M112 54 q34 22 68 2"/>
-        <path class="ln md" d="M146 90 q2 60 -2 130" opacity="0.85"/>
-        <!-- hanging sleeve -->
-        <path d="M214 92 q26 44 22 104 q-2 40 -14 62 q-16 -4 -22 -18 q10 -34 8 -68
+  <!-- collar -->
+  <path d="M112 54 q34 22 68 2 q-6 26 -34 34 q-28 -8 -34 -36 z" class="jkd"/>
+  <path class="ln md" d="M112 54 q34 22 68 2"/>
+  <path class="ln md" d="M146 90 q2 60 -2 130" opacity="0.85"/>
+  <!-- hanging sleeve -->
+  <path d="M214 92 q26 44 22 104 q-2 40 -14 62 q-16 -4 -22 -18 q10 -34 8 -68
            q-2 -44 -18 -74 z" class="jk"/>
-        <path class="ln hv" d="M214 92 q26 44 22 104 q-2 40 -14 62 q-16 -4 -22 -18 q10 -34 8 -68
+  <path class="ln hv" d="M214 92 q26 44 22 104 q-2 40 -14 62 q-16 -4 -22 -18 q10 -34 8 -68
                          q-2 -44 -18 -74 z"/>
-        <path class="ln fn" d="M206 232 q14 6 26 4" opacity="0.7"/>
-        <!-- folds -->
-        <path class="ln fn" d="M100 96 q-6 62 2 118" opacity="0.45"/>
-        <path class="ln fn" d="M186 100 q8 58 0 112" opacity="0.45"/>
-    </g>
+  <path class="ln fn" d="M206 232 q14 6 26 4" opacity="0.7"/>
+  <!-- folds -->
+  <path class="ln fn" d="M100 96 q-6 62 2 118" opacity="0.45"/>
+  <path class="ln fn" d="M186 100 q8 58 0 112" opacity="0.45"/>
+</g>
 </svg>

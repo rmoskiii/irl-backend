@@ -26,12 +26,14 @@ import sys
 import xml.etree.ElementTree as ET
 
 SVG = "http://www.w3.org/2000/svg"
-ROOT = pathlib.Path("/home/claude/irx/irx_handoff")
-ASSETS = ROOT / "tools/visual/assets"
-OUT = pathlib.Path("/home/claude/irx/audit_only/fixtures")
+# tools/visual/make_fixtures.py -> repo root is two levels up
+ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
+VISUAL = ROOT / "tools" / "visual"
+ASSETS = VISUAL / "assets"
+OUT = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "tests" / "render" / "fixtures"
 
 A = json.loads((ASSETS / "anchors.json").read_text())
-RB = json.loads((ROOT / "tools/visual/render_blocks.json").read_text())
+RB = json.loads((VISUAL / "render_blocks.json").read_text())
 LAYER_ORDER = A["layerOrder"] if "layerOrder" in A else None
 
 
@@ -43,9 +45,18 @@ def block_hash(block):
     return hashlib.sha256(canonical(block).encode()).hexdigest()
 
 
+# root provenance is audit metadata: the 2B frames name the hand-authored
+# declaration they came from, and the runtime has no declarations. Stripped here
+# so the fixture is a pure composition record and the parity test needs nothing
+# but the fixture - no frames/ directory, which is regenerable build output.
+PROVENANCE = {"id", "data-frame", "data-render-block", "data-render-key"}
+
+
 def canonical_svg(text):
     """Normalise so irrelevant serialisation differences cannot fail a diff."""
     root = ET.fromstring(text)
+    for k in PROVENANCE:
+        root.attrib.pop(k, None)
 
     def norm(el):
         attrs = {k: re.sub(r"\s+", " ", v).strip() for k, v in sorted(el.attrib.items())}
@@ -136,7 +147,7 @@ def plan_for(frame_id, fr, block):
 
 
 def main():
-    OUT.mkdir(exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=True)
     frames_dir = ASSETS / "frames"
     key_to_frame = {}
     for fid, fr in A["frames"].items():

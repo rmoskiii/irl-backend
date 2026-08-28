@@ -29,26 +29,6 @@ function weightedPick(options) {
   return entries[entries.length - 1].value;
 }
 
-// Walk stateSchema once at scenario start, then apply the optional `seed`
-// block on top. The client hands the resulting map back on every /respond,
-// so the backend stays stateless.
-//
-// `seed` exists for keys whose value is decided when a playthrough BEGINS
-// rather than by anything the player does — The Prince's `truthTrack` is
-// the motivating case. Because it lands in ordinary state, every `when`,
-// nextRule and variant reads it with no special handling, and the client
-// never sees it as anything other than another opaque key.
-//
-//   "seed": {
-//     "truthTrack": { "weighted": [
-//       { "value": "C", "weight": 40 },
-//       { "value": "B", "weight": 35 },
-//       { "value": "A", "weight": 25 }
-//     ] }
-//   }
-//
-// Seeding happens ONLY here. A key seeded at root is then carried by the
-// courier like any other, so it can't be re-rolled mid-playthrough.
 function initialState(scenario) {
   const schema = scenario.stateSchema || {};
   const state = {};
@@ -70,9 +50,6 @@ function initialState(scenario) {
   return state;
 }
 
-// All key/value pairs must match. Missing key on state = non-match.
-// Used by messageVariants/threadVariants (each `when` block) and by
-// nextRules (each rule's `when`).
 function matchesAll(when, state) {
   if (!when) return true;
   for (const [key, value] of Object.entries(when)) {
@@ -82,23 +59,24 @@ function matchesAll(when, state) {
   return true;
 }
 
-// Array of when objects, OR'd. Used by `requires` on a choice only.
-// Deliberately different combining rule from matchesAll — kept as a
-// separate helper so nobody normalises them together by mistake.
 function matchesAny(whenArray, state) {
   if (!whenArray || whenArray.length === 0) return true;
   return whenArray.some((w) => matchesAll(w, state));
 }
 
-// Picks the right message/thread for a node given current state. Walks
-// variants in declaration order; first `when` that fully matches wins.
-// Falls back to base message/thread if none match.
 function resolveNodeContent(node, state) {
   const resolved = {};
 
+  // The INDEX matters, not just the text: the visual layer resolves its own
+  // block per variant, and the picture has to agree with the prose. Without
+  // this, jessica_reacts_hold renders Jessica open-faced on the judgedFirst
+  // path — the exact beat the variant exists to carry.
+  resolved.variantIndex = null;
+
   if (Array.isArray(node.messageVariants)) {
-    const match = node.messageVariants.find((v) => matchesAll(v.when, state));
-    resolved.message = match ? match.message : node.message;
+    const idx = node.messageVariants.findIndex((v) => matchesAll(v.when, state));
+    resolved.variantIndex = idx >= 0 ? idx : null;
+    resolved.message = idx >= 0 ? node.messageVariants[idx].message : node.message;
   } else if (node.message !== undefined) {
     resolved.message = node.message;
   }
@@ -113,9 +91,39 @@ function resolveNodeContent(node, state) {
   return resolved;
 }
 
-// Strips a node to what the client is allowed to see. Choices whose
-// `requires` doesn't match current state are filtered out here rather
-// than sent-and-hidden — keeps state opaque to the client.
+let _render = null;
+let _blocks = null;
+function renderer() {
+  if (_render === null) {
+    const { RenderService } = require("./renderService");
+    const { RenderBlocks } = require("./render/renderBlocks");
+    _render = new RenderService();
+    _blocks = new RenderBlocks();
+  }
+  return { render: _render, blocks: _blocks };
+}
+
+/** Composed artwork for a node, or null when it has none.
+ *
+ *  Lives here because publicNode is already the one place a node is reduced to
+ *  what the client may see, and a picture is presentation. The client receives
+ *  an SVG and head coordinates - never state, never the variant index that
+ *  chose them. */
+function renderFor(nodeId, variantIndex) {
+  try {
+    const { render, blocks } = renderer();
+    const block = blocks.blockFor(nodeId, variantIndex);
+    if (!block) return null;                 // messages mode, or another scenario
+    return render.render(block, { nodeId });
+  } catch (e) {
+    // A node the visual contract refuses to compose must not take the prose
+    // down with it. act3b_alex_processes resolves 4 bubbles against a cap of 3
+    // and is a known Phase 3 content issue.
+    console.warn(`[render] ${nodeId}: ${e.code || e.name} - ${e.message}`);
+    return null;
+  }
+}
+
 function publicNode(nodeId, node, state, content) {
   const resolved = content || resolveNodeContent(node, state || {});
   const currentState = state || {};
@@ -132,16 +140,10 @@ function publicNode(nodeId, node, state, content) {
     reactionDelay: node.reactionDelay || null,
     interstitial: node.interstitial || null,
     choices: visibleChoices.map((c) => ({ id: c.id, label: c.label })),
+    render: renderFor(nodeId, resolved.variantIndex),
   };
 }
 
-// `revealTiming` moves out of the client's district check and into the
-// scenario. Digital used to imply "show per-turn reasons immediately" by
-// virtue of not being Neighbourhood; The Prince is Digital but must hide
-// them, because visible deltas let a player shop the verification choices
-// — which is the exact skill under test. The outcome ledger is unaffected.
-//
-// "immediate" (default) | "end_only"
 function revealTimingFor(scenario) {
   return scenario.scoring?.revealTiming === "end_only"
       ? "end_only"
@@ -184,7 +186,14 @@ function listScenarios() {
       .sort((a, b) => a.difficulty - b.difficulty);
 }
 
+/** Boot/health check for the render layer. */
+function renderHealth() {
+  const { render, blocks } = renderer();
+  return { ...render.stats, renderBlocks: blocks.stats };
+}
+
 module.exports = {
+  renderHealth,
   loadScenario,
   getRootView,
   publicNode,

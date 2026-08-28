@@ -836,7 +836,6 @@
         "time": "evening"
       },
       "props": [
-        "prop.jacket_worn",
         "prop.last_glass",
         "prop.door_closed"
       ],

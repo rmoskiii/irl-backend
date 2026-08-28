@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220"
+     id="figure_b_rear.register.rear" data-asset="figure_b_rear" data-kind="register"
+     data-register="rear" data-neck-anchor="100,210" data-register-rotate="0">
+<!-- IRX 2B.1 = figure_b_rear register: rear.
+
+     The ONLY register a rear figure gets. No face, no expression, no variants.
+     A rear view reports posture and nothing else, which is exactly what
+     act3b_alex_processes needs - his back is the whole point of the shot.
+
+     Same neckAnchor and viewBox as every figure_b register so it lands on the
+     rear body through the identical head-socket maths. The cut is the same
+     silhouette as the front registers; only the hairline is absent, because
+     from behind there is not one. -->
+<defs><style>
+/* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
+
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
+
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
+
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
+
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
+
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
+
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
+
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
+
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
+.ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.sk  { fill: var(--irx-skin-b); }
+.skd { fill: var(--irx-skin-b-shade); }
+.ha  { fill: var(--irx-hair-b); }
+.hal { fill: var(--irx-hair-b-light); }
+</style></defs>
+
+<g id="character_head">
+  <path d="M100 16 q44 0 56 34 q7 26 5 56 q-3 34 -18 52 q-15 18 -43 18
+           q-28 0 -43 -18 q-15 -18 -18 -52 q-2 -30 5 -56 q12 -34 56 -34 z" class="sk"/>
+  <path class="ln" stroke-width="3.8"
+        d="M100 16 q44 0 56 34 q7 26 5 56 q-3 34 -18 52 q-15 18 -43 18
+           q-28 0 -43 -18 q-15 -18 -18 -52 q-2 -30 5 -56 q12 -34 56 -34 z"/>
+  <!-- ears seen from behind sit closer to the silhouette edge -->
+  <path d="M42 98 q-8 -1 -9 9 q-2 12 8 14" class="sk"/>
+  <path class="ln" stroke-width="2.0" d="M42 98 q-8 -1 -9 9 q-2 12 8 14"/>
+  <path d="M158 98 q8 -1 9 9 q2 12 -8 14" class="sk"/>
+  <path class="ln" stroke-width="2.0" d="M158 98 q8 -1 9 9 q2 12 -8 14"/>
+  <!-- the cut, covering the whole skull: no hairline from behind -->
+  <path d="M37 116 q-4 -44 8 -76 q12 -32 55 -32 q43 0 55 32 q12 32 8 76
+           q-10 30 -25 40 q-17 10 -38 10 q-21 0 -38 -10 q-15 -10 -25 -40 z" class="ha"/>
+  <path d="M55 50 q14 -26 45 -29 q-21 8 -30 24 q-9 11 -12 22 z" class="hal" opacity="0.45"/>
+  <path class="ln" stroke-width="3.4"
+        d="M37 116 q-4 -44 8 -76 q12 -32 55 -32 q43 0 55 32 q12 32 8 76"/>
+  <!-- nape: where the cut stops on the neck -->
+  <path class="ln" stroke-width="2.6" d="M62 152 q38 14 76 0" opacity="0.85"/>
+  <path d="M62 152 q38 14 76 0 q-6 16 -38 16 q-32 0 -38 -16 z" class="ha"/>
+  <g class="ln" stroke-width="1.4" opacity="0.22">
+    <path d="M64 60 q6 -5 11 0"/><path d="M85 42 q6 -5 11 0"/>
+    <path d="M107 40 q6 -5 11 0"/><path d="M128 52 q6 -5 10 1"/>
+    <path d="M76 92 q6 -5 11 0"/><path d="M115 90 q6 -5 11 0"/>
+  </g>
+</g>
+</svg>

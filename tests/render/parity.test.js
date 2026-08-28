@@ -15,7 +15,6 @@ const { canonicalSvg } = require('./canonical');
 // repo-relative by default: tests/render/ -> ../../tools/visual
 const VISUAL = process.env.IRX_VISUAL || path.join(__dirname, '..', '..', 'tools', 'visual');
 const FIX = process.env.IRX_FIXTURES || path.join(__dirname, 'fixtures');
-const LOCKED = path.join(VISUAL, 'assets', 'frames');
 
 const contract = loadContract(path.join(VISUAL, 'assets'), path.join(VISUAL, 'registries.json'));
 const store = new AssetStore(path.join(VISUAL, 'assets')).loadAll();
@@ -52,12 +51,15 @@ test('LEVEL 1 — resolved plan matches the fixture plan', async t => {
 test('LEVEL 2 — composed SVG matches the signed-off 2B composition', async t => {
     for (const f of index.fixtures) {
         await t.test(f.renderKey, () => {
-            const fx = fixture(f.cacheKey);
-            const locked = fs.readFileSync(path.join(LOCKED, `${fx.sourceFrame}.svg`), 'utf8');
-            const mine = composeFrame(resolvePlan(fx.renderBlock, contract), contract, store);
-            assert.strictEqual(
-                canonicalSvg(mine, { ignoreProvenance: true }),
-                canonicalSvg(locked, { ignoreProvenance: true }));
+            // compared against the fixture, not against tools/visual/assets/frames/.
+            // Those frames are regenerable build output; the fixture IS the record of
+            // what was signed off, so the test must not depend on them existing.
+            const svgFx = JSON.parse(fs.readFileSync(
+                path.join(FIX, `${f.cacheKey.slice(0, 16)}.svg.json`), 'utf8'));
+            const mine = composeFrame(resolvePlan(fixture(f.cacheKey).renderBlock, contract),
+                contract, store);
+            assert.strictEqual(canonicalSvg(mine, { ignoreProvenance: true }),
+                svgFx.canonicalSvg);
         });
     }
 });

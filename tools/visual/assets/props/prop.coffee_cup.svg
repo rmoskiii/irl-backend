@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 110"
+     id="prop.coffee_cup" data-asset="prop.coffee_cup" data-base-point="70,110">
+<!-- IRX 2B.4 = prop.coffee_cup.
+
+     act3_jessica_returns. She wraps both hands around it - the scenario says so
+     twice. Cup and saucer, on the cafe table. -->
+<defs><style>
+/* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
+
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
+
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
+
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
+
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
+
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
+
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
+
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
+
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
+.ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.cp  { fill: var(--irx-tile); }
+.cpd { fill: var(--irx-tile-alt); }
+.brew{ fill: var(--irx-cabinet-dark); }
+</style></defs>
+
+<g id="prop">
+  <path d="M14 88 q56 -10 112 0 q2 8 0 14 q-56 9 -112 -1 z" class="cpd"/>
+  <path class="ln" stroke-width="2.6" d="M14 88 q56 -10 112 0 q2 8 0 14 q-56 9 -112 -1 z"/>
+  <path d="M34 34 q36 -8 72 0 q4 34 -4 52 q-32 8 -64 0 q-8 -18 -4 -52 z" class="cp"/>
+  <path d="M34 34 q36 -8 72 0 q1 10 1 20 q-36 7 -74 0 q0 -10 1 -20 z" class="cpd" opacity="0.55"/>
+  <path class="ln" stroke-width="3.0" d="M34 34 q36 -8 72 0 q4 34 -4 52 q-32 8 -64 0 q-8 -18 -4 -52 z"/>
+  <path d="M40 36 q30 8 60 0 q-2 8 -30 9 q-28 -1 -30 -9 z" class="brew" opacity="0.8"/>
+  <path class="ln" stroke-width="2.2" d="M34 34 q36 8 72 0" opacity="0.85"/>
+  <!-- handle -->
+  <path class="ln" stroke-width="3.4" d="M106 46 q18 2 17 16 q-1 14 -16 15"/>
+</g>
+</svg>

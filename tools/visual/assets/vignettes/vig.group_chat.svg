@@ -1,124 +1,124 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600"
      id="vig.group_chat" data-asset="vig.group_chat" data-kind="vignette">
-    <!-- IRX 2B.5 = vig.group_chat.
+<!-- IRX 2B.5 = vig.group_chat.
 
-         act4_avoidant_proposal, panel 1: "Then a group text: Alex proposed. Jessica
-         said yes. Fourteen replies in the first minute, all exclamation marks."
+     act4_avoidant_proposal, panel 1: "Then a group text: Alex proposed. Jessica
+     said yes. Fourteen replies in the first minute, all exclamation marks."
 
-         Everyone else's delight, arriving on your phone. The bubbles are blank -
-         legible text would make the player read fourteen messages instead of
-         feeling the volume of them.
+     Everyone else's delight, arriving on your phone. The bubbles are blank -
+     legible text would make the player read fourteen messages instead of
+     feeling the volume of them.
 
-         VIGNETTE RULES: reduced detail, desaturated, amber retained as the only
-         colour. Deliberately NOT a full environment - a montage panel that competed
-         with scene.kitchen would flatten the distinction between memory and now.
-         Palette restricted to the irx-vig-* ramp plus line and accent. -->
-    <defs><style>
-        /* @tokens-begin */
-        :root {
-        /* line */
-        --irx-line:          #241D19;
-        --irx-line-soft:     #3B302A;
-        --irx-shadow:        #2A231E;
+     VIGNETTE RULES: reduced detail, desaturated, amber retained as the only
+     colour. Deliberately NOT a full environment - a montage panel that competed
+     with scene.kitchen would flatten the distinction between memory and now.
+     Palette restricted to the irx-vig-* ramp plus line and accent. -->
+<defs><style>
+/* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
 
-        /* architecture */
-        --irx-wall:          #5C6A5F;
-        --irx-wall-dark:     #4E5A51;
-        --irx-wall-pattern:  #556359;
-        --irx-tile:          #B5A992;
-        --irx-tile-alt:      #A49980;
-        --irx-floor:         #5E4D3E;
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
 
-        /* window */
-        --irx-sky-high:      #334051;
-        --irx-sky-mid:       #4D4656;
-        --irx-sky-low:       #785A4F;
-        --irx-outside-dark:  #2A333E;
-        --irx-curtain:       #424E56;
-        --irx-curtain-dark:  #38424A;
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
 
-        /* joinery */
-        --irx-cabinet:       #785D44;
-        --irx-cabinet-dark:  #634C36;
-        --irx-counter:       #947553;
-        --irx-counter-edge:  #7B5F43;
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
 
-        /* character */
-        --irx-skin:          #A87A5A;
-        --irx-skin-shade:    #875D42;
-        /* figure_b: same warm hazel family, one step deeper than figure_a */
-        --irx-skin-b:        #8E6244;
-        --irx-skin-b-shade:  #6E4A32;
-        /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
-        mouth with --irx-line reads as black lips. */
-        --irx-lip-b:         #96604F;
-        --irx-mouth-b:       #4A2C24;
-        --irx-hair:          #41322A;
-        --irx-hair-light:    #554136;
-        /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
-        --irx-hair-b:        #241A16;
-        --irx-hair-b-light:  #3D2C24;
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
 
-        /* wardrobe: home_casual */
-        --irx-cloth:         #A8603F;
-        --irx-cloth-dark:    #894C31;
-        --irx-cloth-inner:   #D9CDBC;
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
 
-        /* props */
-        --irx-glass:         #BCC8C3;
-        --irx-glass-dark:    #9AA8A2;
-        --irx-highlight:     #FFFFFF;
-        --irx-jacket:        #4F5A63;
-        --irx-jacket-dark:   #3D464E;
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
 
-        /* accent — neighbourhood district, warm light only */
-        --irx-accent:        #FFC15E;
-        --irx-accent-dim:    #C89A4E;
-        --irx-lamp-warm:     #F2C77E;
-        --irx-cool-spill:    #7E93A8;
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
 
-        /* vignettes: montage panels only. Desaturated and reduced, so compressed
-        time reads differently from present tense without a caption saying so.
-        A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
-        validate_assets.py rule 13. */
-        --irx-vig-light:     #B3ABA0;
-        --irx-vig-base:      #8C857C;
-        --irx-vig-mid:       #635D56;
-        --irx-vig-dark:      #3B3733;
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
 
-        /* stroke weights */
-        --irx-stroke-xheavy: 6.6;
-        --irx-stroke-heavy:  5;
-        --irx-stroke:        3.4;
-        --irx-stroke-fine:   2.1;
-        --irx-stroke-hair:   1.4;
-        }
-        /* @tokens-end */
-        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
-        .l  { fill: var(--irx-vig-light); }
-        .b  { fill: var(--irx-vig-base); }
-        .m  { fill: var(--irx-vig-mid); }
-        .d  { fill: var(--irx-vig-dark); }
-        .a  { fill: var(--irx-accent); }
-    </style></defs>
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
+.ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.l  { fill: var(--irx-vig-light); }
+.b  { fill: var(--irx-vig-base); }
+.m  { fill: var(--irx-vig-mid); }
+.d  { fill: var(--irx-vig-dark); }
+.a  { fill: var(--irx-accent); }
+</style></defs>
 
-    <g id="vignette">
-        <path d="M0 0 h480 v600 h-480 z" class="d"/>
-        <path d="M70 40 h340 v520 h-340 z" class="m"/>
-        <path class="ln" stroke-width="4.0" d="M70 40 h340 v520 h-340 z"/>
-        <path d="M70 40 h340 v46 h-340 z" class="d"/>
-        <g class="l" opacity="0.85">
-            <path d="M96 112 h150 v42 h-150 z"/><path d="M96 168 h190 v42 h-190 z"/>
-            <path d="M96 224 h120 v42 h-120 z"/><path d="M96 336 h170 v42 h-170 z"/>
-            <path d="M96 392 h140 v42 h-140 z"/><path d="M96 448 h200 v42 h-200 z"/>
-        </g>
-        <g class="a" opacity="0.5">
-            <path d="M238 280 h146 v42 h-146 z"/><path d="M266 504 h118 v42 h-118 z"/>
-        </g>
-        <g class="ln" stroke-width="1.8" opacity="0.35">
-            <path d="M112 133 h110"/><path d="M112 189 h150"/><path d="M112 245 h80"/>
-            <path d="M254 301 h106"/><path d="M112 357 h130"/><path d="M112 413 h100"/>
-            <path d="M112 469 h160"/><path d="M282 525 h78"/>
-        </g>
-    </g>
+<g id="vignette">
+  <path d="M0 0 h480 v600 h-480 z" class="d"/>
+  <path d="M70 40 h340 v520 h-340 z" class="m"/>
+  <path class="ln" stroke-width="4.0" d="M70 40 h340 v520 h-340 z"/>
+  <path d="M70 40 h340 v46 h-340 z" class="d"/>
+  <g class="l" opacity="0.85">
+    <path d="M96 112 h150 v42 h-150 z"/><path d="M96 168 h190 v42 h-190 z"/>
+    <path d="M96 224 h120 v42 h-120 z"/><path d="M96 336 h170 v42 h-170 z"/>
+    <path d="M96 392 h140 v42 h-140 z"/><path d="M96 448 h200 v42 h-200 z"/>
+  </g>
+  <g class="a" opacity="0.5">
+    <path d="M238 280 h146 v42 h-146 z"/><path d="M266 504 h118 v42 h-118 z"/>
+  </g>
+  <g class="ln" stroke-width="1.8" opacity="0.35">
+    <path d="M112 133 h110"/><path d="M112 189 h150"/><path d="M112 245 h80"/>
+    <path d="M254 301 h106"/><path d="M112 357 h130"/><path d="M112 413 h100"/>
+    <path d="M112 469 h160"/><path d="M282 525 h78"/>
+  </g>
+</g>
 </svg>

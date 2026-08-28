@@ -5,13 +5,19 @@ Proves the tail resolves against the bubble's declared `speaker`, not against
 cast order. Runs entirely on synthetic fixtures written outside the source tree:
 the scenario is never consulted and anchors.json is never modified.
 """
-import json, pathlib, re, subprocess, sys, shutil, xml.etree.ElementTree as ET
+import json, pathlib, re, subprocess, sys, shutil, tempfile, atexit
+import xml.etree.ElementTree as ET
 
-SRC = pathlib.Path("/home/claude/irx/irx_handoff/tools/visual/assets")
-RIG = pathlib.Path("/home/claude/irx/audit_only/speaker_rig_root/assets")
+SRC = pathlib.Path(__file__).resolve().parent
+# the rig is disposable: fixtures, a composer copy and symlinks to the real
+# assets, thrown away on exit. It must sit one level below its render_blocks.json
+# because compose_frame.py looks for that file in ROOT.parent.
+_TMP = pathlib.Path(tempfile.mkdtemp(prefix="irx_speaker_rig_"))
+atexit.register(shutil.rmtree, _TMP, True)
+RIG = _TMP / "assets"
 SVGNS = "http://www.w3.org/2000/svg"
 
-RIG.mkdir(exist_ok=True); (RIG / "frames").mkdir(exist_ok=True)
+RIG.mkdir(parents=True, exist_ok=True); (RIG / "frames").mkdir(exist_ok=True)
 for d in ("characters", "environments", "props", "vignettes"):
     tgt = RIG / d
     if not tgt.exists():

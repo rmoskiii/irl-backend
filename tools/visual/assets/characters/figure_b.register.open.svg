@@ -1,154 +1,163 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220"
      id="figure_b.register.open" data-asset="figure_b" data-kind="register"
      data-register="open" data-neck-anchor="100,210" data-register-rotate="-1">
-    <!-- IRX 2B.1 = figure_b register: open (Alex).
+<!-- IRX 2B.1 = figure_b register: open (Alex).
 
-         Same register contract as figure_a: viewBox 0 0 200 220, neckAnchor 100,210,
-         single atomic character_head group, rotation is tilt only within +/-16.
+     Same register contract as figure_a: viewBox 0 0 200 220, neckAnchor 100,210,
+     single atomic character_head group, rotation is tilt only within +/-16.
 
-         Alex's own construction, not Jessica's head recoloured:
-           - squarer cranium with a flatter crown and a defined temple corner
-           - wider jaw, shorter chin, stronger mandible line
-           - shorter cropped hair with a visible hairline, no falling length
-           - heavier brow ridge, eyes set slightly wider and lower
-           - broader nose, wider mouth
+     Alex's own construction, not Jessica's head recoloured:
+       - squarer cranium with a flatter crown and a defined temple corner
+       - wider jaw, shorter chin, stronger mandible line
+       - shorter cropped hair with a visible hairline, no falling length
+       - heavier brow ridge, eyes set slightly wider and lower
+       - broader nose, wider mouth
 
-         Head base must span x 85..123 at y 161..181 to meet figure_b's neck
-         (anchors.characters.figure_b.neckSpan). Jessica's span would leave a gap -
-         that is exactly why neckSpan was generalised per-character before this file
-         was drawn.
+     Head base must span x 85..123 at y 161..181 to meet figure_b's neck
+     (anchors.characters.figure_b.neckSpan). Jessica's span would leave a gap -
+     that is exactly why neckSpan was generalised per-character before this file
+     was drawn.
 
-         'open' carried by: level head squared to camera, direct gaze, brows relaxed
-         and slightly lifted, mouth just parted. Alex in this register is genuinely
-         pleased to see you - but the face must not editorialise, so no grin. -->
-    <defs><style>
-        /* @tokens-begin */
-        :root {
-        /* line */
-        --irx-line:          #241D19;
-        --irx-line-soft:     #3B302A;
-        --irx-shadow:        #2A231E;
+     'open' carried by: level head squared to camera, direct gaze, brows relaxed
+     and slightly lifted, mouth just parted. Alex in this register is genuinely
+     pleased to see you - but the face must not editorialise, so no grin. -->
+<defs><style>
+/* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
 
-        /* architecture */
-        --irx-wall:          #5C6A5F;
-        --irx-wall-dark:     #4E5A51;
-        --irx-wall-pattern:  #556359;
-        --irx-tile:          #B5A992;
-        --irx-tile-alt:      #A49980;
-        --irx-floor:         #5E4D3E;
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
 
-        /* window */
-        --irx-sky-high:      #334051;
-        --irx-sky-mid:       #4D4656;
-        --irx-sky-low:       #785A4F;
-        --irx-outside-dark:  #2A333E;
-        --irx-curtain:       #424E56;
-        --irx-curtain-dark:  #38424A;
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
 
-        /* joinery */
-        --irx-cabinet:       #785D44;
-        --irx-cabinet-dark:  #634C36;
-        --irx-counter:       #947553;
-        --irx-counter-edge:  #7B5F43;
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
 
-        /* character */
-        --irx-skin:          #A87A5A;
-        --irx-skin-shade:    #875D42;
-        /* figure_b: same warm hazel family, one step deeper than figure_a */
-        --irx-skin-b:        #8E6244;
-        --irx-skin-b-shade:  #6E4A32;
-        /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
-        mouth with --irx-line reads as black lips. */
-        --irx-lip-b:         #96604F;
-        --irx-mouth-b:       #4A2C24;
-        --irx-hair:          #41322A;
-        --irx-hair-light:    #554136;
-        /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
-        --irx-hair-b:        #241A16;
-        --irx-hair-b-light:  #3D2C24;
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
 
-        /* wardrobe: home_casual */
-        --irx-cloth:         #A8603F;
-        --irx-cloth-dark:    #894C31;
-        --irx-cloth-inner:   #D9CDBC;
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
 
-        /* props */
-        --irx-glass:         #BCC8C3;
-        --irx-glass-dark:    #9AA8A2;
-        --irx-highlight:     #FFFFFF;
-        --irx-jacket:        #4F5A63;
-        --irx-jacket-dark:   #3D464E;
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
 
-        /* accent — neighbourhood district, warm light only */
-        --irx-accent:        #FFC15E;
-        --irx-accent-dim:    #C89A4E;
-        --irx-lamp-warm:     #F2C77E;
-        --irx-cool-spill:    #7E93A8;
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
 
-        /* stroke weights */
-        --irx-stroke-xheavy: 6.6;
-        --irx-stroke-heavy:  5;
-        --irx-stroke:        3.4;
-        --irx-stroke-fine:   2.1;
-        --irx-stroke-hair:   1.4;
-        }
-        /* @tokens-end */
-        .ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
-        .sk  { fill: var(--irx-skin-b); }
-        .skd { fill: var(--irx-skin-b-shade); }
-        .ha  { fill: var(--irx-hair-b); }
-        .hal { fill: var(--irx-hair-b-light); }
-    </style></defs>
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
 
-    <g id="character_head">
-        <!-- cranium: squarer than figure_a, flatter crown, defined temple corners -->
-        <path d="M100 16 q44 0 56 34 q7 26 5 56 q-3 34 -18 52 q-15 18 -43 18
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
+.ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.sk  { fill: var(--irx-skin-b); }
+.skd { fill: var(--irx-skin-b-shade); }
+.ha  { fill: var(--irx-hair-b); }
+.hal { fill: var(--irx-hair-b-light); }
+</style></defs>
+
+<g id="character_head">
+  <!-- cranium: squarer than figure_a, flatter crown, defined temple corners -->
+  <path d="M100 16 q44 0 56 34 q7 26 5 56 q-3 34 -18 52 q-15 18 -43 18
            q-28 0 -43 -18 q-15 -18 -18 -52 q-2 -30 5 -56 q12 -34 56 -34 z" class="sk"/>
-        <path class="ln" stroke-width="3.8"
-              d="M100 16 q44 0 56 34 q7 26 5 56 q-3 34 -18 52 q-15 18 -43 18
+  <path class="ln" stroke-width="3.8"
+        d="M100 16 q44 0 56 34 q7 26 5 56 q-3 34 -18 52 q-15 18 -43 18
            q-28 0 -43 -18 q-15 -18 -18 -52 q-2 -30 5 -56 q12 -34 56 -34 z"/>
-        <!-- mandible: heavier than Jessica's, hugging the contour -->
-        <path class="ln" stroke-width="4.8" d="M100 176 q-28 0 -43 -18 q-9 -11 -14 -28" opacity="0.62"/>
+  <!-- mandible: heavier than Jessica's, hugging the contour -->
+  <path class="ln" stroke-width="4.8" d="M100 176 q-28 0 -43 -18 q-9 -11 -14 -28" opacity="0.62"/>
 
-        <path d="M44 96 q-9 -2 -11 9 q-2 13 9 16" class="sk"/>
-        <path class="ln" stroke-width="2.2" d="M44 96 q-9 -2 -11 9 q-2 13 9 16"/>
-        <path d="M156 96 q9 -2 11 9 q2 13 -9 16" class="sk"/>
-        <path class="ln" stroke-width="2.2" d="M156 96 q9 -2 11 9 q2 13 -9 16"/>
+  <path d="M44 96 q-9 -2 -11 9 q-2 13 9 16" class="sk"/>
+  <path class="ln" stroke-width="2.2" d="M44 96 q-9 -2 -11 9 q-2 13 9 16"/>
+  <path d="M156 96 q9 -2 11 9 q2 13 -9 16" class="sk"/>
+  <path class="ln" stroke-width="2.2" d="M156 96 q9 -2 11 9 q2 13 -9 16"/>
 
-        <!-- brow ridge: heavier than figure_a, but level. no inward angle -->
-        <path class="ln" stroke-width="2.6" d="M64 90 q14 -6 29 -2" opacity="0.9"/>
-        <path class="ln" stroke-width="2.6" d="M136 90 q-14 -6 -29 -2" opacity="0.9"/>
+  <!-- brow ridge: heavier than figure_a, but level. no inward angle -->
+  <path class="ln" stroke-width="2.6" d="M64 90 q14 -6 29 -2" opacity="0.9"/>
+  <path class="ln" stroke-width="2.6" d="M136 90 q-14 -6 -29 -2" opacity="0.9"/>
 
-        <!-- eyes: set wider and lower than Jessica's, heavier upper lid -->
-        <path class="ln" stroke-width="3.4" d="M66 107 q11 -7 22 -1"/>
-        <path class="ln" stroke-width="1.4" d="M67 113 q10 4 20 0" opacity="0.7"/>
-        <circle cx="77" cy="109" r="3.2" fill="var(--irx-line)"/>
-        <path class="ln" stroke-width="3.4" d="M112 106 q11 -6 22 1"/>
-        <path class="ln" stroke-width="1.4" d="M114 113 q10 4 20 -1" opacity="0.7"/>
-        <circle cx="123" cy="109" r="3.2" fill="var(--irx-line)"/>
+  <!-- eyes: set wider and lower than Jessica's, heavier upper lid -->
+  <path class="ln" stroke-width="3.4" d="M66 107 q11 -7 22 -1"/>
+  <path class="ln" stroke-width="1.4" d="M67 113 q10 4 20 0" opacity="0.7"/>
+  <circle cx="77" cy="109" r="3.2" fill="var(--irx-line)"/>
+  <path class="ln" stroke-width="3.4" d="M112 106 q11 -6 22 1"/>
+  <path class="ln" stroke-width="1.4" d="M114 113 q10 4 20 -1" opacity="0.7"/>
+  <circle cx="123" cy="109" r="3.2" fill="var(--irx-line)"/>
 
-        <!-- nose: broader, with a defined base -->
-        <path class="ln" stroke-width="2.0" d="M97 118 q-7 16 5 21" opacity="0.9"/>
-        <path class="ln" stroke-width="1.4" d="M102 139 q6 1 10 -2" opacity="0.55"/>
+  <!-- nose: broader, with a defined base -->
+  <path class="ln" stroke-width="2.0" d="M97 118 q-7 16 5 21" opacity="0.9"/>
+  <path class="ln" stroke-width="1.4" d="M102 139 q6 1 10 -2" opacity="0.55"/>
 
-        <!-- mouth: wider than Jessica's, just parted. flat, no upward curve -->
-        <path class="ln" stroke-width="3.0" d="M84 154 h32"/>
-        <path class="ln" stroke-width="1.4" d="M87 161 h26" opacity="0.45"/>
+  <!-- mouth: wider than Jessica's, just parted. flat, no upward curve -->
+  <path class="ln" stroke-width="3.0" d="M84 154 h32"/>
+  <path class="ln" stroke-width="1.4" d="M87 161 h26" opacity="0.45"/>
 
 
-        <!-- hair: low cut / buzz.
+  <!-- hair: low cut / buzz.
 
-             Sits tight to the skull - the band follows the cranium contour offset by
-             ~9px, so the silhouette is the HEAD's silhouette, not a separate mass.
-             The previous version was a full coil mass that ballooned outside the
-             skull and grew temple tabs; at asset scale it read as a wig sitting on
-             top of him.
+       Sits tight to the skull - the band follows the cranium contour offset by
+       ~9px, so the silhouette is the HEAD's silhouette, not a separate mass.
+       The previous version was a full coil mass that ballooned outside the
+       skull and grew temple tabs; at asset scale it read as a wig sitting on
+       top of him.
 
-             4C texture is carried by tone and a few short marks, not by contour. On a
-             low cut there is almost nothing to see at 220px anyway - the read is the
-             dark even band and the hairline. -->
-        <g id="hair">
-            <path d="M37 92
+       4C texture is carried by tone and a few short marks, not by contour. On a
+       low cut there is almost nothing to see at 220px anyway - the read is the
+       dark even band and the hairline. -->
+  <g id="hair">
+    <path d="M37 92
              q-2 -28 6 -52
              q12 -32 57 -32
              q45 0 57 32
@@ -157,24 +166,24 @@
              q-18 -6 -37 -6
              q-19 0 -37 6
              q-18 6 -26 20 z" class="ha"/>
-            <!-- lit crown plane, upper-left key -->
-            <path d="M55 50 q14 -26 45 -29 q-21 8 -30 24 q-9 11 -12 22 z"
-                  class="hal" opacity="0.5"/>
-            <!-- outer contour -->
-            <path class="ln" stroke-width="3.4"
-                  d="M37 92 q-2 -28 6 -52 q12 -32 57 -32 q45 0 57 32 q8 24 6 52"/>
-            <!-- hairline: same geometry as the band's inner edge, so they cannot drift -->
-            <path class="ln" stroke-width="2.6"
-                  d="M37 92 q8 -14 26 -20 q18 -6 37 -6 q19 0 37 6 q18 6 26 20" opacity="0.9"/>
-            <!-- coil texture: short marks only, invisible at shipping scale by design -->
-            <g class="ln" stroke-width="1.4" opacity="0.22">
-                <path d="M64 60 q6 -5 11 0"/>
-                <path d="M85 42 q6 -5 11 0"/>
-                <path d="M107 40 q6 -5 11 0"/>
-                <path d="M128 52 q6 -5 10 1"/>
-                <path d="M76 60 q6 -5 11 0"/>
-                <path d="M115 58 q6 -5 11 0"/>
-            </g>
-        </g>
+    <!-- lit crown plane, upper-left key -->
+    <path d="M55 50 q14 -26 45 -29 q-21 8 -30 24 q-9 11 -12 22 z"
+          class="hal" opacity="0.5"/>
+    <!-- outer contour -->
+    <path class="ln" stroke-width="3.4"
+          d="M37 92 q-2 -28 6 -52 q12 -32 57 -32 q45 0 57 32 q8 24 6 52"/>
+    <!-- hairline: same geometry as the band's inner edge, so they cannot drift -->
+    <path class="ln" stroke-width="2.6"
+          d="M37 92 q8 -14 26 -20 q18 -6 37 -6 q19 0 37 6 q18 6 26 20" opacity="0.9"/>
+    <!-- coil texture: short marks only, invisible at shipping scale by design -->
+    <g class="ln" stroke-width="1.4" opacity="0.22">
+      <path d="M64 60 q6 -5 11 0"/>
+      <path d="M85 42 q6 -5 11 0"/>
+      <path d="M107 40 q6 -5 11 0"/>
+      <path d="M128 52 q6 -5 10 1"/>
+      <path d="M76 60 q6 -5 11 0"/>
+      <path d="M115 58 q6 -5 11 0"/>
     </g>
+  </g>
+</g>
 </svg>

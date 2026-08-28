@@ -181,7 +181,7 @@
       },
       "bubblePlacement": {
         "centre": {
-          "x": 40,
+          "x": 950,
           "y": 110
         },
         "left": {
@@ -189,7 +189,7 @@
           "y": 110
         },
         "right": {
-          "x": 40,
+          "x": 950,
           "y": 110
         }
       }
@@ -249,7 +249,7 @@
       },
       "bubblePlacement": {
         "centre": {
-          "x": 40,
+          "x": 950,
           "y": 112
         },
         "left": {
@@ -257,7 +257,7 @@
           "y": 112
         },
         "right": {
-          "x": 40,
+          "x": 950,
           "y": 112
         }
       },
@@ -318,7 +318,7 @@
       },
       "bubblePlacement": {
         "centre": {
-          "x": 40,
+          "x": 950,
           "y": 118
         },
         "left": {
@@ -326,7 +326,7 @@
           "y": 118
         },
         "right": {
-          "x": 40,
+          "x": 950,
           "y": 118
         }
       },
@@ -391,7 +391,7 @@
       },
       "bubblePlacement": {
         "centre": {
-          "x": 40,
+          "x": 950,
           "y": 300
         },
         "left": {
@@ -399,7 +399,7 @@
           "y": 300
         },
         "right": {
-          "x": 40,
+          "x": 950,
           "y": 300
         }
       },
@@ -415,7 +415,7 @@
         "y": 380
       },
       "defaultAnchor": {
-        "scene.kitchen": "floor_left"
+        "scene.kitchen": "floor_right"
       }
     },
     "prop.last_glass": {
@@ -485,7 +485,7 @@
         "y": 180
       },
       "defaultAnchor": {
-        "scene.kitchen": "counter_left"
+        "scene.kitchen": "counter_right"
       }
     },
     "prop.wet_glasses": {
@@ -495,7 +495,7 @@
         "y": 120
       },
       "defaultAnchor": {
-        "scene.kitchen": "counter_right"
+        "scene.kitchen": "counter_left"
       }
     },
     "prop.glass_set_down": {
@@ -538,7 +538,7 @@
       "props": [
         {
           "id": "prop.jacket_chair",
-          "anchor": "floor_left"
+          "anchor": "floor_right"
         },
         {
           "id": "prop.last_glass",
@@ -622,7 +622,7 @@
       "props": [
         {
           "id": "prop.jacket_chair",
-          "anchor": "floor_left"
+          "anchor": "floor_right"
         }
       ],
       "bubblesFrom": "jessica_leaves_halfsecret",
@@ -975,11 +975,11 @@
       "props": [
         {
           "id": "prop.tea_towel",
-          "anchor": "counter_left"
+          "anchor": "counter_right"
         },
         {
           "id": "prop.wet_glasses",
-          "anchor": "counter_right"
+          "anchor": "counter_left"
         }
       ],
       "bubblesFrom": "start",
@@ -1016,7 +1016,7 @@
       "props": [
         {
           "id": "prop.tea_towel",
-          "anchor": "counter_left"
+          "anchor": "counter_right"
         },
         {
           "id": "prop.door_closed",
@@ -1220,7 +1220,7 @@
       "props": [
         {
           "id": "prop.jacket_chair",
-          "anchor": "floor_left"
+          "anchor": "floor_right"
         },
         {
           "id": "prop.last_glass",

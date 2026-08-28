@@ -22,6 +22,13 @@ router.get("/list", (req, res) => {
   res.json(listScenarios());
 });
 
+// Boot check: confirms the 45 assets and the render blocks actually loaded in
+// the deployed environment, and exposes the cache hit rate.
+router.get("/render/health", (req, res) => {
+  const { renderHealth } = require("../services/personaService");
+  res.json(renderHealth());
+});
+
 router.post("/respond", (req, res) => {
   const { scenarioId, nodeId, choiceId, runningTotal, state, testerId } = req.body;
 

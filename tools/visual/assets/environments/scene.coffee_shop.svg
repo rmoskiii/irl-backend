@@ -1,284 +1,284 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
      id="scene.coffee_shop" data-asset="scene.coffee_shop" data-time="day"
      data-occlusion-line="600">
-    <!-- IRX 2B.3 = scene.coffee_shop (day). Third IRX environment.
+<!-- IRX 2B.3 = scene.coffee_shop (day). Third IRX environment.
 
-         Carries 4 nodes, all of Act 3's compassionate branch: act3_jessica_returns,
-         act3_direct_response, act3_hand_back_response, act3_limit_response.
+     Carries 4 nodes, all of Act 3's compassionate branch: act3_jessica_returns,
+     act3_direct_response, act3_hand_back_response, act3_limit_response.
 
-         FIRST DAYTIME ENVIRONMENT. Kitchen and hallway are both evening interiors
-         lit by a warm key. This one is lit from a large window on the left: cooler,
-         higher key, a much weaker vignette. That difference is doing narrative work
-         - Act 3 is the one part of the scenario that happens in public daylight.
+     FIRST DAYTIME ENVIRONMENT. Kitchen and hallway are both evening interiors
+     lit by a warm key. This one is lit from a large window on the left: cooler,
+     higher key, a much weaker vignette. That difference is doing narrative work
+     - Act 3 is the one part of the scenario that happens in public daylight.
 
-         OCCLUSION: a café table at y=600 per the environment contract. The scenario
-         calls it a quiet corner, so the table is a small two-seater against the
-         wall rather than a counter running the frame.
+     OCCLUSION: a café table at y=600 per the environment contract. The scenario
+     calls it a quiet corner, so the table is a small two-seater against the
+     wall rather than a counter running the frame.
 
-         Built to the locked craft language: explicit per-path stroke widths, long
-         runs as gentle curves, 2-3 tonal groupings per surface, drawn surface marks,
-         value range inside environment lock C. -->
-    <defs><style>
-        /* @tokens-begin */
-        :root {
-        /* line */
-        --irx-line:          #241D19;
-        --irx-line-soft:     #3B302A;
-        --irx-shadow:        #2A231E;
+     Built to the locked craft language: explicit per-path stroke widths, long
+     runs as gentle curves, 2-3 tonal groupings per surface, drawn surface marks,
+     value range inside environment lock C. -->
+<defs><style>
+/* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
 
-        /* architecture */
-        --irx-wall:          #5C6A5F;
-        --irx-wall-dark:     #4E5A51;
-        --irx-wall-pattern:  #556359;
-        --irx-tile:          #B5A992;
-        --irx-tile-alt:      #A49980;
-        --irx-floor:         #5E4D3E;
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
 
-        /* window */
-        --irx-sky-high:      #334051;
-        --irx-sky-mid:       #4D4656;
-        --irx-sky-low:       #785A4F;
-        --irx-outside-dark:  #2A333E;
-        --irx-curtain:       #424E56;
-        --irx-curtain-dark:  #38424A;
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
 
-        /* joinery */
-        --irx-cabinet:       #785D44;
-        --irx-cabinet-dark:  #634C36;
-        --irx-counter:       #947553;
-        --irx-counter-edge:  #7B5F43;
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
 
-        /* character */
-        --irx-skin:          #A87A5A;
-        --irx-skin-shade:    #875D42;
-        /* figure_b: same warm hazel family, one step deeper than figure_a */
-        --irx-skin-b:        #8E6244;
-        --irx-skin-b-shade:  #6E4A32;
-        /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
-        mouth with --irx-line reads as black lips. */
-        --irx-lip-b:         #96604F;
-        --irx-mouth-b:       #4A2C24;
-        --irx-hair:          #41322A;
-        --irx-hair-light:    #554136;
-        /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
-        --irx-hair-b:        #241A16;
-        --irx-hair-b-light:  #3D2C24;
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
 
-        /* wardrobe: home_casual */
-        --irx-cloth:         #A8603F;
-        --irx-cloth-dark:    #894C31;
-        --irx-cloth-inner:   #D9CDBC;
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
 
-        /* props */
-        --irx-glass:         #BCC8C3;
-        --irx-glass-dark:    #9AA8A2;
-        --irx-highlight:     #FFFFFF;
-        --irx-jacket:        #4F5A63;
-        --irx-jacket-dark:   #3D464E;
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
 
-        /* accent — neighbourhood district, warm light only */
-        --irx-accent:        #FFC15E;
-        --irx-accent-dim:    #C89A4E;
-        --irx-lamp-warm:     #F2C77E;
-        --irx-cool-spill:    #7E93A8;
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
 
-        /* vignettes: montage panels only. Desaturated and reduced, so compressed
-        time reads differently from present tense without a caption saying so.
-        A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
-        validate_assets.py rule 13. */
-        --irx-vig-light:     #B3ABA0;
-        --irx-vig-base:      #8C857C;
-        --irx-vig-mid:       #635D56;
-        --irx-vig-dark:      #3B3733;
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
 
-        /* stroke weights */
-        --irx-stroke-xheavy: 6.6;
-        --irx-stroke-heavy:  5;
-        --irx-stroke:        3.4;
-        --irx-stroke-fine:   2.1;
-        --irx-stroke-hair:   1.4;
-        }
-        /* @tokens-end */
-        .ln   { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
-        .wall { fill: var(--irx-tile); }
-        .walld{ fill: var(--irx-tile-alt); }
-        .panel{ fill: var(--irx-cabinet); }
-        .paneld{ fill: var(--irx-cabinet-dark); }
-        .tbl  { fill: var(--irx-counter); }
-        .tbld { fill: var(--irx-counter-edge); }
-        .flr  { fill: var(--irx-floor); }
-        .dark { fill: var(--irx-outside-dark); }
-        .shad { fill: var(--irx-shadow); }
-        .acc  { fill: var(--irx-accent); }
-        .accd { fill: var(--irx-accent-dim); }
-        .glass{ fill: var(--irx-glass); }
-        .chair{ fill: var(--irx-curtain); }
-    </style>
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
+.ln   { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.wall { fill: var(--irx-tile); }
+.walld{ fill: var(--irx-tile-alt); }
+.panel{ fill: var(--irx-cabinet); }
+.paneld{ fill: var(--irx-cabinet-dark); }
+.tbl  { fill: var(--irx-counter); }
+.tbld { fill: var(--irx-counter-edge); }
+.flr  { fill: var(--irx-floor); }
+.dark { fill: var(--irx-outside-dark); }
+.shad { fill: var(--irx-shadow); }
+.acc  { fill: var(--irx-accent); }
+.accd { fill: var(--irx-accent-dim); }
+.glass{ fill: var(--irx-glass); }
+.chair{ fill: var(--irx-curtain); }
+</style>
 
-        <pattern id="c-tile" width="96" height="96" patternUnits="userSpaceOnUse">
-            <path d="M0 48 h96" stroke="var(--irx-tile-alt)" stroke-width="2" opacity="0.5"/>
-            <path d="M48 0 v96" stroke="var(--irx-tile-alt)" stroke-width="2" opacity="0.35"/>
-        </pattern>
+<pattern id="c-tile" width="96" height="96" patternUnits="userSpaceOnUse">
+  <path d="M0 48 h96" stroke="var(--irx-tile-alt)" stroke-width="2" opacity="0.5"/>
+  <path d="M48 0 v96" stroke="var(--irx-tile-alt)" stroke-width="2" opacity="0.35"/>
+</pattern>
 
-        <filter id="c-grain" x="0" y="0" width="100%" height="100%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="4" seed="41" result="n"/>
-            <feColorMatrix in="n" type="saturate" values="0"/>
-        </filter>
+<filter id="c-grain" x="0" y="0" width="100%" height="100%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="4" seed="41" result="n"/>
+  <feColorMatrix in="n" type="saturate" values="0"/>
+</filter>
 
-        <radialGradient id="c-vignette" cx="50%" cy="46%" r="74%">
-            <stop offset="52%" stop-color="#0E0B09" stop-opacity="0"/>
-            <stop offset="100%" stop-color="#0E0B09" stop-opacity="0.42"/>
-        </radialGradient>
-        <radialGradient id="c-daylight" cx="14%" cy="24%" r="74%">
-            <stop offset="0%"   stop-color="#CFE0E6" stop-opacity="0.52"/>
-            <stop offset="100%" stop-color="#CFE0E6" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="c-warmfill" cx="82%" cy="62%" r="42%">
-            <stop offset="0%"   stop-color="#F2C77E" stop-opacity="0.16"/>
-            <stop offset="100%" stop-color="#F2C77E" stop-opacity="0"/>
-        </radialGradient>
-        <!-- three gradients, all lighting: window daylight, warm fill from the counter
-             lamps, vignette. Vignette is deliberately weaker than the evening rooms. -->
-    </defs>
+<radialGradient id="c-vignette" cx="50%" cy="46%" r="74%">
+  <stop offset="52%" stop-color="#0E0B09" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#0E0B09" stop-opacity="0.42"/>
+</radialGradient>
+<radialGradient id="c-daylight" cx="14%" cy="24%" r="74%">
+  <stop offset="0%"   stop-color="#CFE0E6" stop-opacity="0.52"/>
+  <stop offset="100%" stop-color="#CFE0E6" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="c-warmfill" cx="82%" cy="62%" r="42%">
+  <stop offset="0%"   stop-color="#F2C77E" stop-opacity="0.16"/>
+  <stop offset="100%" stop-color="#F2C77E" stop-opacity="0"/>
+</radialGradient>
+<!-- three gradients, all lighting: window daylight, warm fill from the counter
+     lamps, vignette. Vignette is deliberately weaker than the evening rooms. -->
+</defs>
 
-    <!-- ============================== background ============================== -->
-    <g id="background">
-        <path d="M0 0 h1600 v862 q-402 7 -800 0 q-398 -7 -800 2 z" class="wall"/>
-        <path d="M0 0 h1600 v560 q-402 7 -800 0 q-398 -7 -800 2 z" fill="url(#c-tile)" opacity="0.4"/>
-        <!-- tonal grouping 2: corners fall away, the right side sits deeper in the room -->
-        <path d="M1600 0 q-160 3 -300 -2 q46 430 22 862 h278 z" class="walld" opacity="0.46"/>
-        <path d="M0 0 q108 3 200 -2 q-32 430 -16 862 H0 z" class="walld" opacity="0.24"/>
-        <!-- tonal grouping 3: dado panelling below the rail -->
-        <path d="M0 470 q400 -6 800 -1 q400 5 800 -3 v394 q-402 7 -800 0 q-398 -7 -800 2 z"
-              class="panel"/>
-        <path d="M0 470 q400 -6 800 -1 q400 5 800 -3 v16 q-402 7 -800 1 q-398 -6 -800 3 z"
-              class="paneld"/>
-        <path class="ln" stroke-width="3.4" d="M0 470 q268 -6 536 -1"/>
-        <path class="ln" stroke-width="3.0" d="M1020 470 q290 4 580 -3" opacity="0.75"/>
-        <g class="ln" stroke-width="1.8" opacity="0.35">
-            <path d="M186 492 q3 130 1 260"/><path d="M452 492 q3 130 1 260"/>
-            <path d="M1148 492 q3 130 1 260"/><path d="M1414 492 q3 130 1 260"/>
-        </g>
-        <path class="ln" stroke-width="1.6" d="M690 250 q54 -9 100 5" opacity="0.12"/>
-        <path class="ln" stroke-width="1.4" d="M1180 190 q44 8 82 -5" opacity="0.1"/>
+<!-- ============================== background ============================== -->
+<g id="background">
+  <path d="M0 0 h1600 v862 q-402 7 -800 0 q-398 -7 -800 2 z" class="wall"/>
+  <path d="M0 0 h1600 v560 q-402 7 -800 0 q-398 -7 -800 2 z" fill="url(#c-tile)" opacity="0.4"/>
+  <!-- tonal grouping 2: corners fall away, the right side sits deeper in the room -->
+  <path d="M1600 0 q-160 3 -300 -2 q46 430 22 862 h278 z" class="walld" opacity="0.46"/>
+  <path d="M0 0 q108 3 200 -2 q-32 430 -16 862 H0 z" class="walld" opacity="0.24"/>
+  <!-- tonal grouping 3: dado panelling below the rail -->
+  <path d="M0 470 q400 -6 800 -1 q400 5 800 -3 v394 q-402 7 -800 0 q-398 -7 -800 2 z"
+        class="panel"/>
+  <path d="M0 470 q400 -6 800 -1 q400 5 800 -3 v16 q-402 7 -800 1 q-398 -6 -800 3 z"
+        class="paneld"/>
+  <path class="ln" stroke-width="3.4" d="M0 470 q268 -6 536 -1"/>
+  <path class="ln" stroke-width="3.0" d="M1020 470 q290 4 580 -3" opacity="0.75"/>
+  <g class="ln" stroke-width="1.8" opacity="0.35">
+    <path d="M186 492 q3 130 1 260"/><path d="M452 492 q3 130 1 260"/>
+    <path d="M1148 492 q3 130 1 260"/><path d="M1414 492 q3 130 1 260"/>
+  </g>
+  <path class="ln" stroke-width="1.6" d="M690 250 q54 -9 100 5" opacity="0.12"/>
+  <path class="ln" stroke-width="1.4" d="M1180 190 q44 8 82 -5" opacity="0.1"/>
+</g>
+
+<!-- ============================= architecture ============================= -->
+<g id="architecture">
+
+  <!-- window, left: the key light source and the only bright value in the frame -->
+  <g id="c-window">
+    <path d="M60 96 q168 -5 332 3 q6 172 2 364 q-168 5 -336 0 q-4 -184 2 -367 z" class="glass"/>
+    <path d="M60 96 q168 -5 332 3 q3 62 2 126 q-168 5 -336 0 q-2 -66 2 -129 z"
+          fill="var(--irx-cool-spill)" opacity="0.34"/>
+    <!-- street beyond, kept vague: nothing out there should compete -->
+    <path d="M76 300 q152 -5 300 2 q2 78 0 158 q-152 4 -302 0 z" class="walld" opacity="0.5"/>
+    <path d="M104 322 h58 v136 h-58 z" class="paneld" opacity="0.45"/>
+    <path d="M236 340 h72 v118 h-72 z" class="paneld" opacity="0.35"/>
+    <path class="ln" stroke-width="3.0" d="M226 98 q3 182 -1 364"/>
+    <path class="ln" stroke-width="3.0" d="M62 280 q166 -5 330 2"/>
+    <path class="ln" stroke-width="6.2" d="M60 96 q168 -5 332 3 q6 172 2 364 q-168 5 -336 0 q-4 -184 2 -367 z"/>
+    <path d="M44 82 q184 -5 364 3 q3 10 1 20 q-184 -6 -366 0 z" class="paneld"/>
+    <path class="ln" stroke-width="3.4" d="M44 82 q184 -5 364 3 q3 10 1 20 q-184 -6 -366 0 z"/>
+  </g>
+
+  <!-- café counter and espresso machine, right -->
+  <g id="c-counter">
+    <path d="M1076 430 q248 -6 492 4 q6 84 2 172 q-248 6 -496 0 q-4 -90 2 -176 z" class="paneld"/>
+    <path d="M1076 430 q248 -6 492 4 q2 26 1 52 q-248 6 -496 0 q-1 -28 3 -56 z" class="panel"/>
+    <path class="ln" stroke-width="6.2" d="M1076 430 q248 -6 492 4 q6 84 2 172 q-248 6 -496 0 q-4 -90 2 -176 z"/>
+    <path class="ln" stroke-width="2.0" d="M1180 490 q3 56 1 112" opacity="0.35"/>
+    <path class="ln" stroke-width="2.0" d="M1380 490 q3 56 1 112" opacity="0.35"/>
+    <!-- espresso machine: it screams somewhere behind her in act3_direct_response -->
+    <path d="M1212 306 q116 -4 230 3 q4 62 0 124 q-116 4 -232 0 q-4 -66 2 -127 z" class="dark"/>
+    <path d="M1212 306 q116 -4 230 3 q2 22 1 44 q-116 4 -232 0 q-1 -24 1 -47 z"
+          class="paneld" opacity="0.6"/>
+    <path class="ln" stroke-width="5.0" d="M1212 306 q116 -4 230 3 q4 62 0 124 q-116 4 -232 0 q-4 -66 2 -127 z"/>
+    <path class="ln" stroke-width="3.0" d="M1252 392 q-2 22 0 38"/>
+    <path class="ln" stroke-width="3.0" d="M1300 392 q-2 22 0 38"/>
+    <path d="M1360 356 q30 -3 58 2 q1 20 0 40 q-30 3 -60 -2 z" class="accd" opacity="0.55"/>
+    <path class="ln" stroke-width="2.2" d="M1360 356 q30 -3 58 2 q1 20 0 40 q-30 3 -60 -2 z"/>
+    <!-- cups stacked on top -->
+    <path d="M1244 276 q-4 26 2 30 h34 q6 -4 2 -30 z" class="wall"/>
+    <path class="ln" stroke-width="2.0" d="M1244 276 q-4 26 2 30 h34 q6 -4 2 -30 z"/>
+    <path d="M1300 282 q-4 20 2 24 h28 q6 -4 2 -24 z" class="wall"/>
+    <path class="ln" stroke-width="1.8" d="M1300 282 q-4 20 2 24 h28 q6 -4 2 -24 z"/>
+  </g>
+
+  <!-- menu board above the counter -->
+  <g id="c-menu">
+    <path d="M1104 138 q136 -4 270 3 q4 54 0 108 q-136 4 -272 0 q-4 -58 2 -111 z" class="paneld"/>
+    <path class="ln" stroke-width="4.4" d="M1104 138 q136 -4 270 3 q4 54 0 108 q-136 4 -272 0 q-4 -58 2 -111 z"/>
+    <g class="ln" stroke-width="2.4" opacity="0.4">
+      <path d="M1132 174 q60 -4 118 2"/>
+      <path d="M1132 202 q46 -4 92 2"/>
+      <path d="M1132 228 q54 -4 106 2"/>
     </g>
+  </g>
+</g>
 
-    <!-- ============================= architecture ============================= -->
-    <g id="architecture">
+<!-- ========================= environmental_detail ========================= -->
+<g id="environmental_detail">
+  <!-- pendant lights over the counter -->
+  <g id="c-lamps">
+    <path class="ln" stroke-width="2.4" d="M1180 0 v72"/>
+    <path d="M1148 72 q32 -10 64 0 q-8 34 -32 36 q-24 -2 -32 -36 z" class="paneld"/>
+    <path class="ln" stroke-width="3.0" d="M1148 72 q32 -10 64 0 q-8 34 -32 36 q-24 -2 -32 -36 z"/>
+    <path class="ln" stroke-width="2.2" d="M1452 0 v92"/>
+    <path d="M1424 92 q28 -9 56 0 q-7 30 -28 32 q-21 -2 -28 -32 z" class="paneld"/>
+    <path class="ln" stroke-width="2.8" d="M1424 92 q28 -9 56 0 q-7 30 -28 32 q-21 -2 -28 -32 z"/>
+  </g>
+  <!-- a framed print on the wall behind her, off to the left of the figure -->
+  <path d="M508 208 q80 -3 158 2 q3 62 0 124 q-80 3 -160 0 q-3 -66 2 -126 z" class="paneld"/>
+  <path class="ln" stroke-width="3.6" d="M508 208 q80 -3 158 2 q3 62 0 124 q-80 3 -160 0 q-3 -66 2 -126 z"/>
+  <path class="ln" stroke-width="1.8" d="M530 300 q40 -34 78 -62" opacity="0.3"/>
+  <path class="ln" stroke-width="1.8" d="M596 300 q26 -22 50 -40" opacity="0.24"/>
+</g>
 
-        <!-- window, left: the key light source and the only bright value in the frame -->
-        <g id="c-window">
-            <path d="M60 96 q168 -5 332 3 q6 172 2 364 q-168 5 -336 0 q-4 -184 2 -367 z" class="glass"/>
-            <path d="M60 96 q168 -5 332 3 q3 62 2 126 q-168 5 -336 0 q-2 -66 2 -129 z"
-                  fill="var(--irx-cool-spill)" opacity="0.34"/>
-            <!-- street beyond, kept vague: nothing out there should compete -->
-            <path d="M76 300 q152 -5 300 2 q2 78 0 158 q-152 4 -302 0 z" class="walld" opacity="0.5"/>
-            <path d="M104 322 h58 v136 h-58 z" class="paneld" opacity="0.45"/>
-            <path d="M236 340 h72 v118 h-72 z" class="paneld" opacity="0.35"/>
-            <path class="ln" stroke-width="3.0" d="M226 98 q3 182 -1 364"/>
-            <path class="ln" stroke-width="3.0" d="M62 280 q166 -5 330 2"/>
-            <path class="ln" stroke-width="6.2" d="M60 96 q168 -5 332 3 q6 172 2 364 q-168 5 -336 0 q-4 -184 2 -367 z"/>
-            <path d="M44 82 q184 -5 364 3 q3 10 1 20 q-184 -6 -366 0 z" class="paneld"/>
-            <path class="ln" stroke-width="3.4" d="M44 82 q184 -5 364 3 q3 10 1 20 q-184 -6 -366 0 z"/>
-        </g>
+<!-- ============================== furniture =============================== -->
+<g id="furniture">
+  <!-- café table: the occluding surface required at y=600 -->
+  <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v36 q-402 6 -800 1 q-398 -5 -800 3 z" class="tbld"/>
+  <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v18 q-402 6 -800 1 q-398 -5 -800 3 z" class="tbl"/>
+  <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v6 q-402 6 -800 1 q-398 -5 -800 3 z"
+        class="wall" opacity="0.18"/>
+  <path class="ln" stroke-width="6.8" d="M0 596 q400 -5 800 0 q400 5 800 -3"/>
+  <path class="ln" stroke-width="2.2" d="M0 634 q400 -5 800 0 q400 5 800 -3" opacity="0.6"/>
+  <!-- rings and marks: this table has been wiped a thousand times -->
+  <path class="ln" stroke-width="1.6" d="M410 608 q22 6 40 -2" opacity="0.3"/>
+  <path class="ln" stroke-width="1.4" d="M1090 610 q26 5 44 -3" opacity="0.26"/>
+  <path class="ln" stroke-width="1.4" d="M690 616 q28 4 48 -3" opacity="0.2"/>
 
-        <!-- café counter and espresso machine, right -->
-        <g id="c-counter">
-            <path d="M1076 430 q248 -6 492 4 q6 84 2 172 q-248 6 -496 0 q-4 -90 2 -176 z" class="paneld"/>
-            <path d="M1076 430 q248 -6 492 4 q2 26 1 52 q-248 6 -496 0 q-1 -28 3 -56 z" class="panel"/>
-            <path class="ln" stroke-width="6.2" d="M1076 430 q248 -6 492 4 q6 84 2 172 q-248 6 -496 0 q-4 -90 2 -176 z"/>
-            <path class="ln" stroke-width="2.0" d="M1180 490 q3 56 1 112" opacity="0.35"/>
-            <path class="ln" stroke-width="2.0" d="M1380 490 q3 56 1 112" opacity="0.35"/>
-            <!-- espresso machine: it screams somewhere behind her in act3_direct_response -->
-            <path d="M1212 306 q116 -4 230 3 q4 62 0 124 q-116 4 -232 0 q-4 -66 2 -127 z" class="dark"/>
-            <path d="M1212 306 q116 -4 230 3 q2 22 1 44 q-116 4 -232 0 q-1 -24 1 -47 z"
-                  class="paneld" opacity="0.6"/>
-            <path class="ln" stroke-width="5.0" d="M1212 306 q116 -4 230 3 q4 62 0 124 q-116 4 -232 0 q-4 -66 2 -127 z"/>
-            <path class="ln" stroke-width="3.0" d="M1252 392 q-2 22 0 38"/>
-            <path class="ln" stroke-width="3.0" d="M1300 392 q-2 22 0 38"/>
-            <path d="M1360 356 q30 -3 58 2 q1 20 0 40 q-30 3 -60 -2 z" class="accd" opacity="0.55"/>
-            <path class="ln" stroke-width="2.2" d="M1360 356 q30 -3 58 2 q1 20 0 40 q-30 3 -60 -2 z"/>
-            <!-- cups stacked on top -->
-            <path d="M1244 276 q-4 26 2 30 h34 q6 -4 2 -30 z" class="wall"/>
-            <path class="ln" stroke-width="2.0" d="M1244 276 q-4 26 2 30 h34 q6 -4 2 -30 z"/>
-            <path d="M1300 282 q-4 20 2 24 h28 q6 -4 2 -24 z" class="wall"/>
-            <path class="ln" stroke-width="1.8" d="M1300 282 q-4 20 2 24 h28 q6 -4 2 -24 z"/>
-        </g>
+  <!-- table apron and a central pedestal -->
+  <path d="M0 626 q400 -5 800 0 q400 5 800 -3 v48 q-402 6 -800 0 q-398 -6 -800 2 z" class="tbld"/>
+  <path class="ln" stroke-width="2.4" d="M0 674 q400 -5 800 0 q400 5 800 -3" opacity="0.7"/>
+  <!-- Panel beneath the café table, down to the floor line. A central pedestal
+       left the span y670-800 open, so a seated figure's lower body rendered over
+       the counter front. The pedestal strokes below still read over the panel. -->
+  <path d="M0 670 q400 -5 800 0 q400 5 800 -3 v136 q-402 6 -800 0 q-398 -6 -800 2 z" class="tbld"/>
+  <path d="M0 670 q400 -5 800 0 q400 5 800 -3 v48 q-402 6 -800 0 q-398 -6 -800 2 z"
+        class="shad" opacity="0.32"/>
+  <path class="ln" stroke-width="6.4" d="M756 676 q-4 62 -2 124"/>
+  <path class="ln" stroke-width="6.4" d="M848 676 q4 62 2 124"/>
+  <path class="ln" stroke-width="5.0" d="M700 800 q100 8 204 0" opacity="0.85"/>
 
-        <!-- menu board above the counter -->
-        <g id="c-menu">
-            <path d="M1104 138 q136 -4 270 3 q4 54 0 108 q-136 4 -272 0 q-4 -58 2 -111 z" class="paneld"/>
-            <path class="ln" stroke-width="4.4" d="M1104 138 q136 -4 270 3 q4 54 0 108 q-136 4 -272 0 q-4 -58 2 -111 z"/>
-            <g class="ln" stroke-width="2.4" opacity="0.4">
-                <path d="M1132 174 q60 -4 118 2"/>
-                <path d="M1132 202 q46 -4 92 2"/>
-                <path d="M1132 228 q54 -4 106 2"/>
-            </g>
-        </g>
-    </g>
+  <!-- floor -->
+  <path d="M0 800 q400 -5 800 0 q400 5 800 -3 v103 h-1600 z" class="flr"/>
+  <path class="ln" stroke-width="3.4" d="M0 800 q400 -5 800 0 q400 5 800 -3"/>
+  <g class="ln" stroke-width="1.6" opacity="0.24">
+    <path d="M300 900 q12 -46 26 -96"/>
+    <path d="M640 900 q6 -46 12 -96"/>
+    <path d="M960 900 q-6 -46 -12 -96"/>
+    <path d="M1300 900 q-12 -46 -26 -96"/>
+  </g>
+</g>
 
-    <!-- ========================= environmental_detail ========================= -->
-    <g id="environmental_detail">
-        <!-- pendant lights over the counter -->
-        <g id="c-lamps">
-            <path class="ln" stroke-width="2.4" d="M1180 0 v72"/>
-            <path d="M1148 72 q32 -10 64 0 q-8 34 -32 36 q-24 -2 -32 -36 z" class="paneld"/>
-            <path class="ln" stroke-width="3.0" d="M1148 72 q32 -10 64 0 q-8 34 -32 36 q-24 -2 -32 -36 z"/>
-            <path class="ln" stroke-width="2.2" d="M1452 0 v92"/>
-            <path d="M1424 92 q28 -9 56 0 q-7 30 -28 32 q-21 -2 -28 -32 z" class="paneld"/>
-            <path class="ln" stroke-width="2.8" d="M1424 92 q28 -9 56 0 q-7 30 -28 32 q-21 -2 -28 -32 z"/>
-        </g>
-        <!-- a framed print on the wall behind her, off to the left of the figure -->
-        <path d="M508 208 q80 -3 158 2 q3 62 0 124 q-80 3 -160 0 q-3 -66 2 -126 z" class="paneld"/>
-        <path class="ln" stroke-width="3.6" d="M508 208 q80 -3 158 2 q3 62 0 124 q-80 3 -160 0 q-3 -66 2 -126 z"/>
-        <path class="ln" stroke-width="1.8" d="M530 300 q40 -34 78 -62" opacity="0.3"/>
-        <path class="ln" stroke-width="1.8" d="M596 300 q26 -22 50 -40" opacity="0.24"/>
-    </g>
-
-    <!-- ============================== furniture =============================== -->
-    <g id="furniture">
-        <!-- café table: the occluding surface required at y=600 -->
-        <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v36 q-402 6 -800 1 q-398 -5 -800 3 z" class="tbld"/>
-        <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v18 q-402 6 -800 1 q-398 -5 -800 3 z" class="tbl"/>
-        <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v6 q-402 6 -800 1 q-398 -5 -800 3 z"
-              class="wall" opacity="0.18"/>
-        <path class="ln" stroke-width="6.8" d="M0 596 q400 -5 800 0 q400 5 800 -3"/>
-        <path class="ln" stroke-width="2.2" d="M0 634 q400 -5 800 0 q400 5 800 -3" opacity="0.6"/>
-        <!-- rings and marks: this table has been wiped a thousand times -->
-        <path class="ln" stroke-width="1.6" d="M410 608 q22 6 40 -2" opacity="0.3"/>
-        <path class="ln" stroke-width="1.4" d="M1090 610 q26 5 44 -3" opacity="0.26"/>
-        <path class="ln" stroke-width="1.4" d="M690 616 q28 4 48 -3" opacity="0.2"/>
-
-        <!-- table apron and a central pedestal -->
-        <path d="M0 626 q400 -5 800 0 q400 5 800 -3 v48 q-402 6 -800 0 q-398 -6 -800 2 z" class="tbld"/>
-        <path class="ln" stroke-width="2.4" d="M0 674 q400 -5 800 0 q400 5 800 -3" opacity="0.7"/>
-        <!-- Panel beneath the café table, down to the floor line. A central pedestal
-             left the span y670-800 open, so a seated figure's lower body rendered over
-             the counter front. The pedestal strokes below still read over the panel. -->
-        <path d="M0 670 q400 -5 800 0 q400 5 800 -3 v136 q-402 6 -800 0 q-398 -6 -800 2 z" class="tbld"/>
-        <path d="M0 670 q400 -5 800 0 q400 5 800 -3 v48 q-402 6 -800 0 q-398 -6 -800 2 z"
-              class="shad" opacity="0.32"/>
-        <path class="ln" stroke-width="6.4" d="M756 676 q-4 62 -2 124"/>
-        <path class="ln" stroke-width="6.4" d="M848 676 q4 62 2 124"/>
-        <path class="ln" stroke-width="5.0" d="M700 800 q100 8 204 0" opacity="0.85"/>
-
-        <!-- floor -->
-        <path d="M0 800 q400 -5 800 0 q400 5 800 -3 v103 h-1600 z" class="flr"/>
-        <path class="ln" stroke-width="3.4" d="M0 800 q400 -5 800 0 q400 5 800 -3"/>
-        <g class="ln" stroke-width="1.6" opacity="0.24">
-            <path d="M300 900 q12 -46 26 -96"/>
-            <path d="M640 900 q6 -46 12 -96"/>
-            <path d="M960 900 q-6 -46 -12 -96"/>
-            <path d="M1300 900 q-12 -46 -26 -96"/>
-        </g>
-    </g>
-
-    <!-- ============================== foreground ============================== -->
-    <g id="foreground">
-        <rect x="0" y="0" width="1600" height="900" fill="url(#c-daylight)" pointer-events="none"/>
-        <rect x="0" y="0" width="1600" height="900" fill="url(#c-warmfill)" pointer-events="none"/>
-        <rect x="0" y="0" width="1600" height="900" fill="url(#c-vignette)" pointer-events="none"/>
-        <rect x="0" y="0" width="1600" height="900" filter="url(#c-grain)" opacity="0.09"
-              style="mix-blend-mode:multiply" pointer-events="none"/>
-    </g>
+<!-- ============================== foreground ============================== -->
+<g id="foreground">
+  <rect x="0" y="0" width="1600" height="900" fill="url(#c-daylight)" pointer-events="none"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#c-warmfill)" pointer-events="none"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#c-vignette)" pointer-events="none"/>
+  <rect x="0" y="0" width="1600" height="900" filter="url(#c-grain)" opacity="0.09"
+        style="mix-blend-mode:multiply" pointer-events="none"/>
+</g>
 </svg>

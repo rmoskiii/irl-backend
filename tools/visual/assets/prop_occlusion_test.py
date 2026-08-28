@@ -12,8 +12,8 @@ import re, sys, pathlib, cairosvg, numpy as np, xml.etree.ElementTree as ET
 from PIL import Image
 
 SVG = "http://www.w3.org/2000/svg"; ET.register_namespace("", SVG)
-FRAMES = pathlib.Path(sys.argv[1] if len(sys.argv) > 1
-                      else '/home/claude/irx/irx_handoff/tools/visual/assets/frames')
+HERE = pathlib.Path(__file__).resolve().parent
+FRAMES = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else HERE / 'frames'
 THRESHOLD = 90.0     # % of a prop's pixels that must remain visible
 
 def flat(t):

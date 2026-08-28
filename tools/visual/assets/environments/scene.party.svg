@@ -1,294 +1,294 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
      id="scene.party" data-asset="scene.party" data-time="night"
      data-occlusion-line="600">
-    <!-- IRX 2B.3 = scene.party (night). Fifth and final IRX environment.
+<!-- IRX 2B.3 = scene.party (night). Fifth and final IRX environment.
 
-         Carries 2 nodes, both endings territory:
-           act4_engagement_party - Alex `bright` + `formal`. He hugs you before the
-                                   speeches. The player knows what that face costs.
-           act4_late_disclosure  - Alex `alert` + `formal`, by the doors, someone
-                                   tapping a glass for the speeches.
+     Carries 2 nodes, both endings territory:
+       act4_engagement_party - Alex `bright` + `formal`. He hugs you before the
+                               speeches. The player knows what that face costs.
+       act4_late_disclosure  - Alex `alert` + `formal`, by the doors, someone
+                               tapping a glass for the speeches.
 
-         THE HARDEST ROOM IN THE SET, for a reason worth recording: every other
-         environment is empty by definition. This one is a party of eighty people
-         and the scenario keeps referring to them - "sixty people watched Alex's
-         face change", "Jessica is thirty feet away". The crowd has to be PRESENT
-         but must never compete with the figure at centre. Solution: the crowd is
-         rendered as low-contrast silhouettes behind the occlusion line, at a value
-         close to the wall, with no faces and no outlines. They read as a room full
-         of people at a glance and dissolve entirely if you look at the speaker.
+     THE HARDEST ROOM IN THE SET, for a reason worth recording: every other
+     environment is empty by definition. This one is a party of eighty people
+     and the scenario keeps referring to them - "sixty people watched Alex's
+     face change", "Jessica is thirty feet away". The crowd has to be PRESENT
+     but must never compete with the figure at centre. Solution: the crowd is
+     rendered as low-contrast silhouettes behind the occlusion line, at a value
+     close to the wall, with no faces and no outlines. They read as a room full
+     of people at a glance and dissolve entirely if you look at the speaker.
 
-         OCCLUSION: a long banquet table at y=600 per the environment contract.
+     OCCLUSION: a long banquet table at y=600 per the environment contract.
 
-         Night, warm, and the brightest environment in the set - string lights and
-         candles. That brightness is doing narrative work: this is the only scene
-         where everyone except the player is happy. -->
-    <defs><style>
-        /* @tokens-begin */
-        :root {
-        /* line */
-        --irx-line:          #241D19;
-        --irx-line-soft:     #3B302A;
-        --irx-shadow:        #2A231E;
+     Night, warm, and the brightest environment in the set - string lights and
+     candles. That brightness is doing narrative work: this is the only scene
+     where everyone except the player is happy. -->
+<defs><style>
+/* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
 
-        /* architecture */
-        --irx-wall:          #5C6A5F;
-        --irx-wall-dark:     #4E5A51;
-        --irx-wall-pattern:  #556359;
-        --irx-tile:          #B5A992;
-        --irx-tile-alt:      #A49980;
-        --irx-floor:         #5E4D3E;
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
 
-        /* window */
-        --irx-sky-high:      #334051;
-        --irx-sky-mid:       #4D4656;
-        --irx-sky-low:       #785A4F;
-        --irx-outside-dark:  #2A333E;
-        --irx-curtain:       #424E56;
-        --irx-curtain-dark:  #38424A;
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
 
-        /* joinery */
-        --irx-cabinet:       #785D44;
-        --irx-cabinet-dark:  #634C36;
-        --irx-counter:       #947553;
-        --irx-counter-edge:  #7B5F43;
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
 
-        /* character */
-        --irx-skin:          #A87A5A;
-        --irx-skin-shade:    #875D42;
-        /* figure_b: same warm hazel family, one step deeper than figure_a */
-        --irx-skin-b:        #8E6244;
-        --irx-skin-b-shade:  #6E4A32;
-        /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
-        mouth with --irx-line reads as black lips. */
-        --irx-lip-b:         #96604F;
-        --irx-mouth-b:       #4A2C24;
-        --irx-hair:          #41322A;
-        --irx-hair-light:    #554136;
-        /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
-        --irx-hair-b:        #241A16;
-        --irx-hair-b-light:  #3D2C24;
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
 
-        /* wardrobe: home_casual */
-        --irx-cloth:         #A8603F;
-        --irx-cloth-dark:    #894C31;
-        --irx-cloth-inner:   #D9CDBC;
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
 
-        /* props */
-        --irx-glass:         #BCC8C3;
-        --irx-glass-dark:    #9AA8A2;
-        --irx-highlight:     #FFFFFF;
-        --irx-jacket:        #4F5A63;
-        --irx-jacket-dark:   #3D464E;
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
 
-        /* accent — neighbourhood district, warm light only */
-        --irx-accent:        #FFC15E;
-        --irx-accent-dim:    #C89A4E;
-        --irx-lamp-warm:     #F2C77E;
-        --irx-cool-spill:    #7E93A8;
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
 
-        /* vignettes: montage panels only. Desaturated and reduced, so compressed
-        time reads differently from present tense without a caption saying so.
-        A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
-        validate_assets.py rule 13. */
-        --irx-vig-light:     #B3ABA0;
-        --irx-vig-base:      #8C857C;
-        --irx-vig-mid:       #635D56;
-        --irx-vig-dark:      #3B3733;
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
 
-        /* stroke weights */
-        --irx-stroke-xheavy: 6.6;
-        --irx-stroke-heavy:  5;
-        --irx-stroke:        3.4;
-        --irx-stroke-fine:   2.1;
-        --irx-stroke-hair:   1.4;
-        }
-        /* @tokens-end */
-        .ln    { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
-        .wall  { fill: var(--irx-cabinet); }
-        .walld { fill: var(--irx-cabinet-dark); }
-        .drape { fill: var(--irx-cabinet-dark); }
-        .tbl   { fill: var(--irx-counter); }
-        .tbld  { fill: var(--irx-counter-edge); }
-        .cloth { fill: var(--irx-tile-alt); }
-        .clothd{ fill: var(--irx-counter-edge); }
-        .flr   { fill: var(--irx-floor); }
-        .dark  { fill: var(--irx-outside-dark); }
-        .shad  { fill: var(--irx-shadow); }
-        .acc   { fill: var(--irx-accent); }
-        .accd  { fill: var(--irx-accent-dim); }
-        .glass { fill: var(--irx-glass); }
-        .crowd { fill: var(--irx-cabinet-dark); }
-    </style>
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
+.ln    { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.wall  { fill: var(--irx-cabinet); }
+.walld { fill: var(--irx-cabinet-dark); }
+.drape { fill: var(--irx-cabinet-dark); }
+.tbl   { fill: var(--irx-counter); }
+.tbld  { fill: var(--irx-counter-edge); }
+.cloth { fill: var(--irx-tile-alt); }
+.clothd{ fill: var(--irx-counter-edge); }
+.flr   { fill: var(--irx-floor); }
+.dark  { fill: var(--irx-outside-dark); }
+.shad  { fill: var(--irx-shadow); }
+.acc   { fill: var(--irx-accent); }
+.accd  { fill: var(--irx-accent-dim); }
+.glass { fill: var(--irx-glass); }
+.crowd { fill: var(--irx-cabinet-dark); }
+</style>
 
-        <filter id="p-grain" x="0" y="0" width="100%" height="100%">
-            <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="4" seed="83" result="n"/>
-            <feColorMatrix in="n" type="saturate" values="0"/>
-        </filter>
+<filter id="p-grain" x="0" y="0" width="100%" height="100%">
+  <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="4" seed="83" result="n"/>
+  <feColorMatrix in="n" type="saturate" values="0"/>
+</filter>
 
-        <radialGradient id="p-vignette" cx="50%" cy="46%" r="70%">
-            <stop offset="44%" stop-color="#0E0B09" stop-opacity="0"/>
-            <stop offset="100%" stop-color="#0E0B09" stop-opacity="0.62"/>
-        </radialGradient>
-        <radialGradient id="p-warm" cx="50%" cy="20%" r="66%">
-            <stop offset="0%"   stop-color="#F2C77E" stop-opacity="0.34"/>
-            <stop offset="100%" stop-color="#F2C77E" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="p-doorcool" cx="90%" cy="52%" r="28%">
-            <stop offset="0%"   stop-color="#7E93A8" stop-opacity="0.22"/>
-            <stop offset="100%" stop-color="#7E93A8" stop-opacity="0"/>
-        </radialGradient>
-        <!-- three gradients, all lighting: warm room, cool night air at the fire door,
-             vignette. The fire door matters - act4_late_disclosure happens beside it. -->
-    </defs>
+<radialGradient id="p-vignette" cx="50%" cy="46%" r="70%">
+  <stop offset="44%" stop-color="#0E0B09" stop-opacity="0"/>
+  <stop offset="100%" stop-color="#0E0B09" stop-opacity="0.62"/>
+</radialGradient>
+<radialGradient id="p-warm" cx="50%" cy="20%" r="66%">
+  <stop offset="0%"   stop-color="#F2C77E" stop-opacity="0.34"/>
+  <stop offset="100%" stop-color="#F2C77E" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="p-doorcool" cx="90%" cy="52%" r="28%">
+  <stop offset="0%"   stop-color="#7E93A8" stop-opacity="0.22"/>
+  <stop offset="100%" stop-color="#7E93A8" stop-opacity="0"/>
+</radialGradient>
+<!-- three gradients, all lighting: warm room, cool night air at the fire door,
+     vignette. The fire door matters - act4_late_disclosure happens beside it. -->
+</defs>
 
-    <!-- ============================== background ============================== -->
-    <g id="background">
-        <path d="M0 0 h1600 v862 q-402 7 -800 0 q-398 -7 -800 2 z" class="wall"/>
-        <path d="M0 0 q120 3 224 -2 q-38 430 -18 862 h-206 z" class="walld" opacity="0.42"/>
-        <path d="M1600 0 q-130 3 -244 -2 q40 430 18 862 h226 z" class="walld" opacity="0.5"/>
-        <path d="M0 430 q400 -6 800 -1 q400 5 800 -3 v434 q-402 7 -800 0 q-398 -7 -800 2 z"
-              class="walld" opacity="0.24"/>
-        <!-- drapes along the back wall -->
-        <g id="p-drapes">
-            <path d="M232 60 q34 200 18 396 q-34 12 -64 4 q22 -212 6 -400 z" class="drape" opacity="0.85"/>
-            <path d="M1372 60 q-34 200 -18 396 q34 12 64 4 q-22 -212 -6 -400 z" class="drape" opacity="0.85"/>
-            <path class="ln" stroke-width="3.0" d="M232 60 q34 200 18 396" opacity="0.6"/>
-            <path class="ln" stroke-width="3.0" d="M1372 60 q-34 200 -18 396" opacity="0.6"/>
-        </g>
+<!-- ============================== background ============================== -->
+<g id="background">
+  <path d="M0 0 h1600 v862 q-402 7 -800 0 q-398 -7 -800 2 z" class="wall"/>
+  <path d="M0 0 q120 3 224 -2 q-38 430 -18 862 h-206 z" class="walld" opacity="0.42"/>
+  <path d="M1600 0 q-130 3 -244 -2 q40 430 18 862 h226 z" class="walld" opacity="0.5"/>
+  <path d="M0 430 q400 -6 800 -1 q400 5 800 -3 v434 q-402 7 -800 0 q-398 -7 -800 2 z"
+        class="walld" opacity="0.24"/>
+  <!-- drapes along the back wall -->
+  <g id="p-drapes">
+    <path d="M232 60 q34 200 18 396 q-34 12 -64 4 q22 -212 6 -400 z" class="drape" opacity="0.85"/>
+    <path d="M1372 60 q-34 200 -18 396 q34 12 64 4 q-22 -212 -6 -400 z" class="drape" opacity="0.85"/>
+    <path class="ln" stroke-width="3.0" d="M232 60 q34 200 18 396" opacity="0.6"/>
+    <path class="ln" stroke-width="3.0" d="M1372 60 q-34 200 -18 396" opacity="0.6"/>
+  </g>
+</g>
+
+<!-- ============================= architecture ============================= -->
+<g id="architecture">
+
+  <!-- string lights: the room's signature, and its key source -->
+  <g id="p-lights">
+    <path class="ln" stroke-width="2.6" d="M0 92 q400 96 800 44 q400 -52 800 40" opacity="0.75"/>
+    <path class="ln" stroke-width="2.2" d="M0 168 q400 104 800 48 q400 -56 800 44" opacity="0.5"/>
+    <g class="acc">
+      <circle cx="120" cy="118" r="9"/><circle cx="290" cy="140" r="9"/>
+      <circle cx="460" cy="152" r="9"/><circle cx="630" cy="150" r="9"/>
+      <circle cx="800" cy="136" r="9"/><circle cx="970" cy="126" r="9"/>
+      <circle cx="1140" cy="122" r="9"/><circle cx="1310" cy="128" r="9"/>
+      <circle cx="1480" cy="146" r="9"/>
     </g>
-
-    <!-- ============================= architecture ============================= -->
-    <g id="architecture">
-
-        <!-- string lights: the room's signature, and its key source -->
-        <g id="p-lights">
-            <path class="ln" stroke-width="2.6" d="M0 92 q400 96 800 44 q400 -52 800 40" opacity="0.75"/>
-            <path class="ln" stroke-width="2.2" d="M0 168 q400 104 800 48 q400 -56 800 44" opacity="0.5"/>
-            <g class="acc">
-                <circle cx="120" cy="118" r="9"/><circle cx="290" cy="140" r="9"/>
-                <circle cx="460" cy="152" r="9"/><circle cx="630" cy="150" r="9"/>
-                <circle cx="800" cy="136" r="9"/><circle cx="970" cy="126" r="9"/>
-                <circle cx="1140" cy="122" r="9"/><circle cx="1310" cy="128" r="9"/>
-                <circle cx="1480" cy="146" r="9"/>
-            </g>
-            <g class="accd" opacity="0.7">
-                <circle cx="205" cy="196" r="7"/><circle cx="545" cy="220" r="7"/>
-                <circle cx="885" cy="208" r="7"/><circle cx="1225" cy="198" r="7"/>
-            </g>
-            <g class="acc" opacity="0.14">
-                <circle cx="120" cy="118" r="30"/><circle cx="460" cy="152" r="30"/>
-                <circle cx="800" cy="136" r="30"/><circle cx="1140" cy="122" r="30"/>
-                <circle cx="1480" cy="146" r="30"/>
-            </g>
-        </g>
-
-        <!-- fire door, far right: act4_late_disclosure is staged at it -->
-        <g id="p-firedoor">
-            <path d="M1414 236 q90 -3 178 3 q4 148 1 314 q-90 4 -180 0 q-3 -160 1 -317 z" class="dark"/>
-            <path d="M1414 236 q90 -3 178 3 q4 148 1 314 q-90 4 -180 0 q-3 -160 1 -317 z"
-                  fill="var(--irx-cool-spill)" opacity="0.22"/>
-            <path class="ln" stroke-width="5.4" d="M1414 236 q90 -3 178 3 q4 148 1 314 q-90 4 -180 0 q-3 -160 1 -317 z"/>
-            <path class="ln" stroke-width="4.0" d="M1442 396 q-2 20 0 36"/>
-            <path d="M1398 220 q106 -3 210 3 q2 10 1 20 q-106 -4 -212 1 z" class="walld"/>
-            <path class="ln" stroke-width="3.2" d="M1398 220 q106 -3 210 3 q2 10 1 20 q-106 -4 -212 1 z"/>
-        </g>
-
-        <!-- CROWD. Silhouettes only: no faces, no outlines, value close to the wall.
-             Eighty people who must never pull the eye off the speaker. -->
-        <g id="p-crowd" class="crowd" opacity="0.42">
-            <path d="M300 596 q0 -78 40 -78 q40 0 40 78 z"/>
-            <path d="M340 518 q-22 0 -22 -24 q0 -24 22 -24 q22 0 22 24 q0 24 -22 24 z"/>
-            <path d="M392 596 q0 -68 34 -68 q34 0 34 68 z"/>
-            <path d="M426 528 q-19 0 -19 -21 q0 -21 19 -21 q19 0 19 21 q0 21 -19 21 z"/>
-            <path d="M470 596 q0 -84 42 -84 q42 0 42 84 z"/>
-            <path d="M512 512 q-23 0 -23 -25 q0 -25 23 -25 q23 0 23 25 q0 25 -23 25 z"/>
-            <path d="M1010 596 q0 -74 38 -74 q38 0 38 74 z"/>
-            <path d="M1048 522 q-21 0 -21 -23 q0 -23 21 -23 q21 0 21 23 q0 23 -21 23 z"/>
-            <path d="M1094 596 q0 -82 40 -82 q40 0 40 82 z"/>
-            <path d="M1134 514 q-22 0 -22 -24 q0 -24 22 -24 q22 0 22 24 q0 24 -22 24 z"/>
-            <path d="M1186 596 q0 -66 33 -66 q33 0 33 66 z"/>
-            <path d="M1219 530 q-18 0 -18 -20 q0 -20 18 -20 q18 0 18 20 q0 20 -18 20 z"/>
-            <path d="M1272 596 q0 -76 38 -76 q38 0 38 76 z"/>
-            <path d="M1310 520 q-21 0 -21 -23 q0 -23 21 -23 q21 0 21 23 q0 23 -21 23 z"/>
-        </g>
-        <!-- a second rank, fainter still, so the room has depth rather than a line -->
-        <g class="crowd" opacity="0.22">
-            <path d="M360 596 q0 -62 32 -62 q32 0 32 62 z"/>
-            <path d="M392 534 q-18 0 -18 -20 q0 -20 18 -20 q18 0 18 20 q0 20 -18 20 z"/>
-            <path d="M1146 596 q0 -58 30 -58 q30 0 30 58 z"/>
-            <path d="M1176 538 q-17 0 -17 -19 q0 -19 17 -19 q17 0 17 19 q0 19 -17 19 z"/>
-        </g>
+    <g class="accd" opacity="0.7">
+      <circle cx="205" cy="196" r="7"/><circle cx="545" cy="220" r="7"/>
+      <circle cx="885" cy="208" r="7"/><circle cx="1225" cy="198" r="7"/>
     </g>
-
-    <!-- ========================= environmental_detail ========================= -->
-    <g id="environmental_detail">
-        <!-- bunting, because someone made an effort -->
-        <g id="p-bunting">
-            <path class="ln" stroke-width="2.0" d="M96 268 q360 74 720 34 q360 -40 688 44" opacity="0.5"/>
-            <g class="clothd" opacity="0.7">
-                <path d="M240 292 l30 4 l-13 34 z"/><path d="M420 312 l30 3 l-13 34 z"/>
-                <path d="M600 322 l30 2 l-14 34 z"/><path d="M900 316 l30 -2 l-16 33 z"/>
-                <path d="M1080 302 l30 -3 l-16 33 z"/><path d="M1260 288 l30 -4 l-17 32 z"/>
-            </g>
-        </g>
-        <!-- glasses and a candle along the table, kept to the edges of frame -->
-        <g id="p-tabletop">
-            <path d="M226 544 q-6 38 4 46 h30 q10 -8 4 -46 z" class="glass" opacity="0.55"/>
-            <path class="ln" stroke-width="2.0" d="M226 544 q-6 38 4 46 h30 q10 -8 4 -46 z"/>
-            <path d="M272 550 q-5 34 3 40 h26 q9 -6 4 -40 z" class="glass" opacity="0.5"/>
-            <path class="ln" stroke-width="1.8" d="M272 550 q-5 34 3 40 h26 q9 -6 4 -40 z"/>
-            <path d="M1310 548 q-5 36 4 42 h28 q9 -6 4 -42 z" class="glass" opacity="0.5"/>
-            <path class="ln" stroke-width="1.8" d="M1310 548 q-5 36 4 42 h28 q9 -6 4 -42 z"/>
-            <!-- candle -->
-            <path d="M1210 528 q-4 44 3 62 h26 q7 -18 3 -62 z" class="cloth"/>
-            <path class="ln" stroke-width="2.2" d="M1210 528 q-4 44 3 62 h26 q7 -18 3 -62 z"/>
-            <path d="M1223 500 q10 14 0 26 q-10 -12 0 -26 z" class="acc"/>
-            <circle cx="1223" cy="516" r="18" class="acc" opacity="0.16"/>
-        </g>
+    <g class="acc" opacity="0.14">
+      <circle cx="120" cy="118" r="30"/><circle cx="460" cy="152" r="30"/>
+      <circle cx="800" cy="136" r="30"/><circle cx="1140" cy="122" r="30"/>
+      <circle cx="1480" cy="146" r="30"/>
     </g>
+  </g>
 
-    <!-- ============================== furniture =============================== -->
-    <g id="furniture">
-        <!-- banquet table with a cloth: the occluding surface required at y=600 -->
-        <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v34 q-402 6 -800 1 q-398 -5 -800 3 z" class="tbl"/>
-        <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v10 q-402 6 -800 1 q-398 -5 -800 3 z"
-              class="cloth" opacity="0.5"/>
-        <path class="ln" stroke-width="6.8" d="M0 596 q400 -5 800 0 q400 5 800 -3"/>
-        <path class="ln" stroke-width="2.4" d="M0 630 q400 -5 800 0 q400 5 800 -3" opacity="0.6"/>
-        <path class="ln" stroke-width="1.6" d="M356 606 q18 5 34 -2" opacity="0.28"/>
-        <path class="ln" stroke-width="1.4" d="M1114 608 q22 4 38 -3" opacity="0.24"/>
+  <!-- fire door, far right: act4_late_disclosure is staged at it -->
+  <g id="p-firedoor">
+    <path d="M1414 236 q90 -3 178 3 q4 148 1 314 q-90 4 -180 0 q-3 -160 1 -317 z" class="dark"/>
+    <path d="M1414 236 q90 -3 178 3 q4 148 1 314 q-90 4 -180 0 q-3 -160 1 -317 z"
+          fill="var(--irx-cool-spill)" opacity="0.22"/>
+    <path class="ln" stroke-width="5.4" d="M1414 236 q90 -3 178 3 q4 148 1 314 q-90 4 -180 0 q-3 -160 1 -317 z"/>
+    <path class="ln" stroke-width="4.0" d="M1442 396 q-2 20 0 36"/>
+    <path d="M1398 220 q106 -3 210 3 q2 10 1 20 q-106 -4 -212 1 z" class="walld"/>
+    <path class="ln" stroke-width="3.2" d="M1398 220 q106 -3 210 3 q2 10 1 20 q-106 -4 -212 1 z"/>
+  </g>
 
-        <!-- the cloth hangs to the floor: a long pale band, so it is broken by folds -->
-        <!-- The cloth runs 10px past the floor line. Its wobbled hem and the floor's
-             wobbled top edge both nominally met at y806, and between the two wobbles a
-             5px sliver opened where neither covered the figure. -->
-        <path d="M0 626 q400 -5 800 0 q400 5 800 -3 v190 q-402 6 -800 0 q-398 -6 -800 2 z" class="cloth"/>
-        <path d="M0 626 q400 -5 800 0 q400 5 800 -3 v40 q-402 6 -800 0 q-398 -6 -800 2 z"
-              class="clothd" opacity="0.45"/>
-        <g class="ln" stroke-width="1.8" opacity="0.3">
-            <path d="M188 636 q4 84 2 168"/><path d="M406 638 q4 84 2 168"/>
-            <path d="M622 640 q3 84 1 166"/><path d="M986 640 q-3 84 -1 166"/>
-            <path d="M1202 638 q-4 84 -2 168"/><path d="M1418 636 q-4 84 -2 168"/>
-        </g>
-        <path d="M0 700 q400 -5 800 0 q400 5 800 -3 v106 q-402 6 -800 0 q-398 -6 -800 2 z"
-              class="shad" opacity="0.26"/>
-        <path class="ln" stroke-width="2.6" d="M0 806 q400 -5 800 0 q400 5 800 -3" opacity="0.7"/>
+  <!-- CROWD. Silhouettes only: no faces, no outlines, value close to the wall.
+       Eighty people who must never pull the eye off the speaker. -->
+  <g id="p-crowd" class="crowd" opacity="0.42">
+    <path d="M300 596 q0 -78 40 -78 q40 0 40 78 z"/>
+    <path d="M340 518 q-22 0 -22 -24 q0 -24 22 -24 q22 0 22 24 q0 24 -22 24 z"/>
+    <path d="M392 596 q0 -68 34 -68 q34 0 34 68 z"/>
+    <path d="M426 528 q-19 0 -19 -21 q0 -21 19 -21 q19 0 19 21 q0 21 -19 21 z"/>
+    <path d="M470 596 q0 -84 42 -84 q42 0 42 84 z"/>
+    <path d="M512 512 q-23 0 -23 -25 q0 -25 23 -25 q23 0 23 25 q0 25 -23 25 z"/>
+    <path d="M1010 596 q0 -74 38 -74 q38 0 38 74 z"/>
+    <path d="M1048 522 q-21 0 -21 -23 q0 -23 21 -23 q21 0 21 23 q0 23 -21 23 z"/>
+    <path d="M1094 596 q0 -82 40 -82 q40 0 40 82 z"/>
+    <path d="M1134 514 q-22 0 -22 -24 q0 -24 22 -24 q22 0 22 24 q0 24 -22 24 z"/>
+    <path d="M1186 596 q0 -66 33 -66 q33 0 33 66 z"/>
+    <path d="M1219 530 q-18 0 -18 -20 q0 -20 18 -20 q18 0 18 20 q0 20 -18 20 z"/>
+    <path d="M1272 596 q0 -76 38 -76 q38 0 38 76 z"/>
+    <path d="M1310 520 q-21 0 -21 -23 q0 -23 21 -23 q21 0 21 23 q0 23 -21 23 z"/>
+  </g>
+  <!-- a second rank, fainter still, so the room has depth rather than a line -->
+  <g class="crowd" opacity="0.22">
+    <path d="M360 596 q0 -62 32 -62 q32 0 32 62 z"/>
+    <path d="M392 534 q-18 0 -18 -20 q0 -20 18 -20 q18 0 18 20 q0 20 -18 20 z"/>
+    <path d="M1146 596 q0 -58 30 -58 q30 0 30 58 z"/>
+    <path d="M1176 538 q-17 0 -17 -19 q0 -19 17 -19 q17 0 17 19 q0 19 -17 19 z"/>
+  </g>
+</g>
 
-        <!-- floor -->
-        <path d="M0 806 q400 -5 800 0 q400 5 800 -3 v97 h-1600 z" class="flr"/>
-        <g class="ln" stroke-width="1.6" opacity="0.22">
-            <path d="M320 900 q10 -42 22 -90"/><path d="M660 900 q5 -42 10 -90"/>
-            <path d="M960 900 q-5 -42 -10 -90"/><path d="M1300 900 q-10 -42 -22 -90"/>
-        </g>
+<!-- ========================= environmental_detail ========================= -->
+<g id="environmental_detail">
+  <!-- bunting, because someone made an effort -->
+  <g id="p-bunting">
+    <path class="ln" stroke-width="2.0" d="M96 268 q360 74 720 34 q360 -40 688 44" opacity="0.5"/>
+    <g class="clothd" opacity="0.7">
+      <path d="M240 292 l30 4 l-13 34 z"/><path d="M420 312 l30 3 l-13 34 z"/>
+      <path d="M600 322 l30 2 l-14 34 z"/><path d="M900 316 l30 -2 l-16 33 z"/>
+      <path d="M1080 302 l30 -3 l-16 33 z"/><path d="M1260 288 l30 -4 l-17 32 z"/>
     </g>
+  </g>
+  <!-- glasses and a candle along the table, kept to the edges of frame -->
+  <g id="p-tabletop">
+    <path d="M226 544 q-6 38 4 46 h30 q10 -8 4 -46 z" class="glass" opacity="0.55"/>
+    <path class="ln" stroke-width="2.0" d="M226 544 q-6 38 4 46 h30 q10 -8 4 -46 z"/>
+    <path d="M272 550 q-5 34 3 40 h26 q9 -6 4 -40 z" class="glass" opacity="0.5"/>
+    <path class="ln" stroke-width="1.8" d="M272 550 q-5 34 3 40 h26 q9 -6 4 -40 z"/>
+    <path d="M1310 548 q-5 36 4 42 h28 q9 -6 4 -42 z" class="glass" opacity="0.5"/>
+    <path class="ln" stroke-width="1.8" d="M1310 548 q-5 36 4 42 h28 q9 -6 4 -42 z"/>
+    <!-- candle -->
+    <path d="M1210 528 q-4 44 3 62 h26 q7 -18 3 -62 z" class="cloth"/>
+    <path class="ln" stroke-width="2.2" d="M1210 528 q-4 44 3 62 h26 q7 -18 3 -62 z"/>
+    <path d="M1223 500 q10 14 0 26 q-10 -12 0 -26 z" class="acc"/>
+    <circle cx="1223" cy="516" r="18" class="acc" opacity="0.16"/>
+  </g>
+</g>
 
-    <!-- ============================== foreground ============================== -->
-    <g id="foreground">
-        <rect x="0" y="0" width="1600" height="900" fill="url(#p-warm)" pointer-events="none"/>
-        <rect x="0" y="0" width="1600" height="900" fill="url(#p-doorcool)" pointer-events="none"/>
-        <rect x="0" y="0" width="1600" height="900" fill="url(#p-vignette)" pointer-events="none"/>
-        <rect x="0" y="0" width="1600" height="900" filter="url(#p-grain)" opacity="0.09"
-              style="mix-blend-mode:multiply" pointer-events="none"/>
-    </g>
+<!-- ============================== furniture =============================== -->
+<g id="furniture">
+  <!-- banquet table with a cloth: the occluding surface required at y=600 -->
+  <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v34 q-402 6 -800 1 q-398 -5 -800 3 z" class="tbl"/>
+  <path d="M0 596 q400 -5 800 0 q400 5 800 -3 v10 q-402 6 -800 1 q-398 -5 -800 3 z"
+        class="cloth" opacity="0.5"/>
+  <path class="ln" stroke-width="6.8" d="M0 596 q400 -5 800 0 q400 5 800 -3"/>
+  <path class="ln" stroke-width="2.4" d="M0 630 q400 -5 800 0 q400 5 800 -3" opacity="0.6"/>
+  <path class="ln" stroke-width="1.6" d="M356 606 q18 5 34 -2" opacity="0.28"/>
+  <path class="ln" stroke-width="1.4" d="M1114 608 q22 4 38 -3" opacity="0.24"/>
+
+  <!-- the cloth hangs to the floor: a long pale band, so it is broken by folds -->
+  <!-- The cloth runs 10px past the floor line. Its wobbled hem and the floor's
+       wobbled top edge both nominally met at y806, and between the two wobbles a
+       5px sliver opened where neither covered the figure. -->
+  <path d="M0 626 q400 -5 800 0 q400 5 800 -3 v190 q-402 6 -800 0 q-398 -6 -800 2 z" class="cloth"/>
+  <path d="M0 626 q400 -5 800 0 q400 5 800 -3 v40 q-402 6 -800 0 q-398 -6 -800 2 z"
+        class="clothd" opacity="0.45"/>
+  <g class="ln" stroke-width="1.8" opacity="0.3">
+    <path d="M188 636 q4 84 2 168"/><path d="M406 638 q4 84 2 168"/>
+    <path d="M622 640 q3 84 1 166"/><path d="M986 640 q-3 84 -1 166"/>
+    <path d="M1202 638 q-4 84 -2 168"/><path d="M1418 636 q-4 84 -2 168"/>
+  </g>
+  <path d="M0 700 q400 -5 800 0 q400 5 800 -3 v106 q-402 6 -800 0 q-398 -6 -800 2 z"
+        class="shad" opacity="0.26"/>
+  <path class="ln" stroke-width="2.6" d="M0 806 q400 -5 800 0 q400 5 800 -3" opacity="0.7"/>
+
+  <!-- floor -->
+  <path d="M0 806 q400 -5 800 0 q400 5 800 -3 v97 h-1600 z" class="flr"/>
+  <g class="ln" stroke-width="1.6" opacity="0.22">
+    <path d="M320 900 q10 -42 22 -90"/><path d="M660 900 q5 -42 10 -90"/>
+    <path d="M960 900 q-5 -42 -10 -90"/><path d="M1300 900 q-10 -42 -22 -90"/>
+  </g>
+</g>
+
+<!-- ============================== foreground ============================== -->
+<g id="foreground">
+  <rect x="0" y="0" width="1600" height="900" fill="url(#p-warm)" pointer-events="none"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#p-doorcool)" pointer-events="none"/>
+  <rect x="0" y="0" width="1600" height="900" fill="url(#p-vignette)" pointer-events="none"/>
+  <rect x="0" y="0" width="1600" height="900" filter="url(#p-grain)" opacity="0.09"
+        style="mix-blend-mode:multiply" pointer-events="none"/>
+</g>
 </svg>

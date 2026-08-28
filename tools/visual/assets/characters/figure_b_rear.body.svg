@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 800"
+     id="figure_b_rear.body" data-asset="figure_b_rear" data-kind="base-body"
+     data-base-point="210,800" data-head-socket="210,196">
+<!-- IRX 2B.1 = figure_b_rear base body (Alex, seen from behind).
+
+     Required by act3b_alex_processes, whose prose is explicit: "Alex walks to
+     the window and stands with his back to you." The turn IS the beat, so this
+     node cannot be downgraded to a front view.
+
+     Deliberately simple, per the standing rule: a rear figure gets NO register
+     system. There is one head asset ("rear") carrying the back of the skull and
+     the cut, and that is all. Inventing rear-facing emotional registers for a
+     scenario that needs exactly one rear shot would be building for a
+     requirement that does not exist.
+
+     Shares figure_b's contract exactly - same viewBox, basePoint, headSocket -
+     so it drops into the same slot system with no composer change.
+
+     Arms hang at his sides rather than reaching: he is at a window, not a
+     counter. There is therefore no character_front group. -->
+<defs><style>
+/* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
+
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
+
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
+
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
+
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
+
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
+
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
+
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
+
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
+.ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.sk  { fill: var(--irx-skin-b); }
+.skd { fill: var(--irx-skin-b-shade); }
+</style></defs>
+
+<g id="character_back">
+  <path d="M148 250 q28 -36 84 -36 q58 0 86 38 q20 60 18 148 q-2 56 -5 94 h-186
+           q-4 -56 -6 -94 q-2 -86 13 -150 z" fill="var(--irx-shadow)" opacity="0.13"/>
+</g>
+
+<g id="character_body">
+  <path d="M186 152 v46 q24 15 46 0 v-46 z" class="sk"/>
+  <path d="M186 152 q23 20 46 0 v20 q-23 16 -46 0 z" class="skd" opacity="0.55"/>
+  <path class="ln" stroke-width="3.4" d="M186 152 v48"/>
+  <path class="ln" stroke-width="3.4" d="M232 152 v48"/>
+
+  <path d="M112 264 q22 -46 98 -46 q76 0 98 46 q16 62 14 150 q-2 96 -6 176 h-212
+           q-4 -80 -6 -176 q-2 -88 14 -150 z" class="sk"/>
+  <path class="ln" stroke-width="6.6" d="M112 264 q22 -46 98 -46 q76 0 98 46 q16 62 14 150 q-2 96 -6 176"/>
+  <path class="ln" stroke-width="6.6" d="M112 264 q-16 62 -14 150 q2 96 6 176"/>
+  <!-- shoulder blades: the mark that reads as a back rather than a front -->
+  <path class="ln" stroke-width="2.0" d="M156 296 q10 34 6 68" opacity="0.35"/>
+  <path class="ln" stroke-width="2.0" d="M264 296 q-10 34 -6 68" opacity="0.35"/>
+  <path class="ln" stroke-width="1.6" d="M210 282 q3 90 1 180" opacity="0.3"/>
+
+  <path d="M134 556 q-9 124 -5 244 h68 q4 -120 13 -200 q9 80 13 200 h68 q4 -120 -5 -244 z"
+        fill="var(--irx-cabinet-dark)"/>
+  <path class="ln" stroke-width="3.4"
+        d="M134 556 q-9 124 -5 244 h68 q4 -120 13 -200 q9 80 13 200 h68 q4 -120 -5 -244 z"/>
+
+  <!-- arms hanging, not reaching -->
+  <path d="M118 262 q-26 62 -28 128 q-1 44 6 84 l40 -6 q-8 -40 -6 -78 q2 -60 26 -114 z" class="sk"/>
+  <path class="ln" stroke-width="6.6" d="M118 262 q-26 62 -28 128 q-1 44 6 84"/>
+  <path class="ln" stroke-width="6.6" d="M156 276 q-22 52 -24 110 q-1 38 6 76"/>
+  <path d="M302 262 q26 62 28 128 q1 44 -6 84 l-40 -6 q8 -40 6 -78 q-2 -60 -26 -114 z" class="sk"/>
+  <path class="ln" stroke-width="6.6" d="M302 262 q26 62 28 128 q1 44 -6 84"/>
+  <path class="ln" stroke-width="6.6" d="M264 276 q22 52 24 110 q1 38 -6 76"/>
+</g>
+</svg>

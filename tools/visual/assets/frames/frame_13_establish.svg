@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" id="frame_13_establish" data-frame="frame_13_establish" data-mode="montage" data-render-block="render_blocks.json -&gt; establish -&gt; default"><defs><style>
+/* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
+
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
+
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
+
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
+
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
+
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
+
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
+
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
+
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+}
+/* @tokens-end */
+.ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.l  { fill: var(--irx-vig-light); }
+.b  { fill: var(--irx-vig-base); }
+.m  { fill: var(--irx-vig-mid); }
+.d  { fill: var(--irx-vig-dark); }
+.a  { fill: var(--irx-accent); }
+</style></defs><g data-layer="montage"><rect x="0" y="0" width="1600" height="900" fill="var(--irx-vig-dark)" /><g transform="translate(92,140) scale(0.916667)"><g id="vignette">
+  <path d="M0 0 h480 v600 h-480 z" class="d" />
+  <path d="M0 380 h480 v220 h-480 z" class="m" opacity="0.6" />
+  <path class="ln" stroke-width="3.0" d="M0 380 q240 -6 480 0" opacity="0.5" />
+  
+  <path d="M286 128 h110 v256 h-110 z" class="b" />
+  <path d="M296 140 h90 v240 h-90 z" class="a" opacity="0.34" />
+  <path class="ln" stroke-width="3.4" d="M286 128 h110 v256 h-110 z" />
+  
+  <g class="ln" stroke-width="3.0" opacity="0.75">
+    <path d="M40 300 h68 v80 h-68 z" /><path d="M120 300 h68 v80 h-68 z" />
+    <path d="M200 300 h68 v80 h-68 z" />
+    <path d="M40 340 h228" />
+  </g>
+  
+  <path d="M120 40 h240 v14 h-240 z" class="l" opacity="0.7" />
+  <path d="M120 40 h240 v14 h-240 z" class="a" opacity="0.14" />
+  <path class="ln" stroke-width="2.4" d="M120 40 h240 v14 h-240 z" />
+</g>
+</g><rect x="92" y="140" width="440" height="550" fill="none" stroke="var(--irx-vig-light)" stroke-width="3" /><text x="312" y="738" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="1.6" fill="var(--irx-vig-light)">2:00 AM</text><g transform="translate(580,140) scale(0.916667)"><g id="vignette">
+  <path d="M0 0 h480 v600 h-480 z" class="m" />
+  
+  <path d="M96 60 h288 v340 h-288 z" class="d" />
+  <path d="M96 60 h288 v340 h-288 z" class="ln" stroke-width="3.4" />
+  <path d="M96 60 h12 v340 h-12 z" class="a" opacity="0.3" />
+  <path d="M372 60 h12 v340 h-12 z" class="a" opacity="0.24" />
+  <path d="M96 60 h288 v10 h-288 z" class="a" opacity="0.2" />
+  <g class="ln" stroke-width="2.2" opacity="0.4">
+    <path d="M160 66 q6 168 2 330" /><path d="M240 66 q6 168 2 330" /><path d="M318 66 q4 168 0 330" />
+  </g>
+  
+  <path d="M40 440 h400 v120 h-400 z" class="b" />
+  <path class="ln" stroke-width="3.4" d="M40 440 h400 v120 h-400 z" />
+  <path d="M74 410 q116 -26 236 6 q10 18 6 30 q-124 -24 -246 2 q-4 -20 4 -38 z" class="d" opacity="0.75" />
+  <path class="ln" stroke-width="3.0" d="M74 410 q116 -26 236 6 q10 18 6 30 q-124 -24 -246 2 q-4 -20 4 -38 z" />
+  
+  <g class="ln" stroke-width="2.4" opacity="0.7">
+    <path d="M368 546 h72 v18 h-72 z" /><path d="M362 566 h78 v18 h-78 z" />
+  </g>
+</g>
+</g><rect x="580" y="140" width="440" height="550" fill="none" stroke="var(--irx-vig-light)" stroke-width="3" /><text x="800" y="738" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="1.6" fill="var(--irx-vig-light)">THE WEEK AFTER</text><g transform="translate(1068,140) scale(0.916667)"><g id="vignette">
+  <path d="M0 0 h480 v600 h-480 z" class="b" />
+  <path d="M0 300 h480 v300 h-480 z" class="m" />
+  <path class="ln" stroke-width="3.4" d="M0 300 q240 -8 480 0" />
+  
+  <path d="M110 300 q0 -92 46 -92 q46 0 46 92 z" class="d" opacity="0.62" />
+  <path d="M156 208 q-26 0 -26 -28 q0 -28 26 -28 q26 0 26 28 q0 28 -26 28 z" class="d" opacity="0.62" />
+  <path d="M282 300 q0 -86 44 -86 q44 0 44 86 z" class="d" opacity="0.62" />
+  <path d="M326 214 q-25 0 -25 -27 q0 -27 25 -27 q25 0 25 27 q0 27 -25 27 z" class="d" opacity="0.62" />
+  
+  <path d="M188 240 q22 -6 44 0 q3 30 -5 46 q-8 12 -17 12 q-9 0 -17 -12 q-8 -16 -5 -46 z" class="l" opacity="0.8" />
+  <path class="ln" stroke-width="2.6" d="M188 240 q22 -6 44 0 q3 30 -5 46 q-8 12 -17 12 q-9 0 -17 -12 q-8 -16 -5 -46 z" />
+  <path d="M254 246 q20 -6 40 0 q3 28 -4 42 q-8 11 -16 11 q-8 0 -16 -11 q-7 -14 -4 -42 z" class="l" opacity="0.72" />
+  <path class="ln" stroke-width="2.4" d="M254 246 q20 -6 40 0 q3 28 -4 42 q-8 11 -16 11 q-8 0 -16 -11 q-7 -14 -4 -42 z" />
+  
+  <path d="M176 396 q64 -14 128 0 q8 92 -12 138 q-24 34 -52 34 q-28 0 -52 -34 q-20 -46 -12 -138 z" class="l" />
+  <path d="M182 470 q58 12 116 0 q-6 44 -22 64 q-18 24 -36 24 q-18 0 -36 -24 q-16 -20 -22 -64 z" class="a" opacity="0.3" />
+  <path class="ln" stroke-width="4.4" d="M176 396 q64 -14 128 0 q8 92 -12 138 q-24 34 -52 34 q-28 0 -52 -34 q-20 -46 -12 -138 z" />
+  <path class="ln" stroke-width="3.0" d="M176 396 q64 16 128 0" opacity="0.85" />
+</g>
+</g><rect x="1068" y="140" width="440" height="550" fill="none" stroke="var(--irx-vig-light)" stroke-width="3" /></g></svg>
