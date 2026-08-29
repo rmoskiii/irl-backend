@@ -6,6 +6,7 @@ const { resolvePlan } = require('./render/resolvePlan');
 const { composeFrame } = require('./render/composeFrame');
 const { cacheKey } = require('./render/cacheKey');
 const { RenderCache } = require('./render/renderCache');
+const { flattenTokens } = require('./render/flattenTokens');
 const errors = require('./render/errors');
 
 /** The only composition module the route layer touches.
@@ -18,7 +19,12 @@ const errors = require('./render/errors');
  *  no variant indices ever pass through here.
  */
 class RenderService {
-    constructor({ assetsDir, registriesPath, cacheSize = 256 } = {}) {
+    /** flattenForClient: resolve var(--irx-*) to literal colours before sending.
+     *  On by default because flutter_svg cannot resolve CSS custom properties.
+     *  Turn it off to inspect the composition exactly as the fixtures assert it. */
+    constructor({ assetsDir, registriesPath, cacheSize = 256,
+                    flattenForClient = true } = {}) {
+        this.flattenForClient = flattenForClient;
         // single source of truth: the same assets the 2B.6 gate signed off. A copy
         // under src/ would be free to drift from the audited set.
         const visual = path.join(__dirname, '..', '..', 'tools', 'visual');
@@ -35,7 +41,8 @@ class RenderService {
         if (hit) return hit;
 
         const plan = resolvePlan(renderBlock, this.contract, { nodeId });
-        const svg = composeFrame(plan, this.contract, this.store, { renderKey: key });
+        const composed = composeFrame(plan, this.contract, this.store, { renderKey: key });
+        const svg = this.flattenForClient ? flattenTokens(composed) : composed;
 
         const headAnchors = {};
         for (const c of plan.cast || []) headAnchors[c.id] = c.headAnchor;
