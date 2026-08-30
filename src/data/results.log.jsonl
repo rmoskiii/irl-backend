@@ -12,3 +12,7 @@
 {"testerId":"anonymous","scenarioId":"the_instruction","nodeId":"ask1_date","choiceId":"a1_comply","scores":{"savvy":-5,"streetSmarts":5,"integrity":-10},"terminal":false,"timestamp":"2026-08-21T09:55:44.857Z"}
 {"testerId":"anonymous","scenarioId":"the_prince","nodeId":"inbox","choiceId":"delete","scores":{"savvy":0,"streetSmarts":5,"integrity":0},"terminal":false,"timestamp":"2026-08-21T09:55:50.478Z"}
 {"testerId":"anonymous","scenarioId":"the_prince","nodeId":"act1_followup","choiceId":"look_now","scores":{"savvy":15,"streetSmarts":10,"integrity":0},"terminal":false,"timestamp":"2026-08-21T09:55:54.731Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"establish","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-08-29T15:46:16.615Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"start","choiceId":"open","scores":{"savvy":10,"streetSmarts":5,"integrity":5},"terminal":false,"timestamp":"2026-08-29T15:46:26.046Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"establish","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-08-29T15:48:53.346Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"start","choiceId":"open","scores":{"savvy":10,"streetSmarts":5,"integrity":5},"terminal":false,"timestamp":"2026-08-29T15:49:02.291Z"}

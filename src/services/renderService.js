@@ -22,9 +22,19 @@ class RenderService {
     /** flattenForClient: resolve var(--irx-*) to literal colours before sending.
      *  On by default because flutter_svg cannot resolve CSS custom properties.
      *  Turn it off to inspect the composition exactly as the fixtures assert it. */
+    /** includeBubbles: draw the dialogue balloons inside the artwork.
+     *
+     *  true  - the artwork carries the dialogue (the locked 2B composition).
+     *  false - artwork only; the client renders the prose natively, which keeps
+     *          the text selectable, reflowable and responsive to the OS text
+     *          size. The balloons cannot be any of those things.
+     *
+     *  A switch rather than a decision, because it is reversible and the right
+     *  answer is a judgement about the reading experience, not about rendering. */
     constructor({ assetsDir, registriesPath, cacheSize = 256,
-                    flattenForClient = true } = {}) {
+                    flattenForClient = true, includeBubbles = true } = {}) {
         this.flattenForClient = flattenForClient;
+        this.includeBubbles = includeBubbles;
         // single source of truth: the same assets the 2B.6 gate signed off. A copy
         // under src/ would be free to drift from the audited set.
         const visual = path.join(__dirname, '..', '..', 'tools', 'visual');
@@ -37,11 +47,16 @@ class RenderService {
 
     render(renderBlock, { nodeId } = {}) {
         const key = cacheKey(renderBlock);
-        const hit = this.cache.get(key);
+        // cacheKey stays the hash of the render block - that is the contract and
+        // the fixture identity. The cache MAP is keyed on the delivery variant too,
+        // so a bubbled and a bubble-less frame never serve each other.
+        const slot = `${key}:${this.includeBubbles ? 'b' : 'n'}`;
+        const hit = this.cache.get(slot);
         if (hit) return hit;
 
         const plan = resolvePlan(renderBlock, this.contract, { nodeId });
-        const composed = composeFrame(plan, this.contract, this.store, { renderKey: key });
+        const composed = composeFrame(plan, this.contract, this.store,
+            { renderKey: key, bubbles: this.includeBubbles });
         const svg = this.flattenForClient ? flattenTokens(composed) : composed;
 
         const headAnchors = {};
@@ -50,7 +65,7 @@ class RenderService {
         const warnings = (plan.unplaceableProps || []).map(u => ({
             code: 'PROP_NOT_PLACEABLE_IN_SCENE', ...u }));
 
-        return this.cache.set(key, {
+        return this.cache.set(slot, {
             svg, cacheKey: key, aspect: '16:9',
             canvas: this.contract.anchors.canvas.viewBox,
             headAnchors, warnings,

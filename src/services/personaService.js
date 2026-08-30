@@ -97,7 +97,12 @@ function renderer() {
   if (_render === null) {
     const { RenderService } = require("./renderService");
     const { RenderBlocks } = require("./render/renderBlocks");
-    _render = new RenderService();
+    // IRX_SCENE_BUBBLES=1 puts the dialogue inside the artwork instead.
+    // Default off: the client already renders the prose natively, and drawing
+    // it twice is worse than either option on its own.
+    _render = new RenderService({
+      includeBubbles: process.env.IRX_SCENE_BUBBLES === '1',
+    });
     _blocks = new RenderBlocks();
   }
   return { render: _render, blocks: _blocks };

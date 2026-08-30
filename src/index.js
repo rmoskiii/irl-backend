@@ -9,10 +9,7 @@ const PORT = process.env.PORT || 4000;
 
 app.use(cors({
   origin: [
-    'http://localhost:3000',
-    'http://localhost:4000',
-    'http://localhost:5000',
-    'http://localhost:8080',
+    /^http:\/\/localhost:\d+$/, // Matches http://localhost:<any_port>
     'https://irx.world',
     'https://www.irx.world'
   ],
