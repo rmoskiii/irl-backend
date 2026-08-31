@@ -8,6 +8,7 @@ const { cacheKey } = require('./render/cacheKey');
 const { RenderCache } = require('./render/renderCache');
 const { flattenTokens } = require('./render/flattenTokens');
 const { inlineStyles } = require('./render/inlineStyles');
+const { simplifyForClient } = require('./render/simplifyForClient');
 const errors = require('./render/errors');
 
 /** The only composition module the route layer touches.
@@ -63,7 +64,7 @@ class RenderService {
         // touches geometry; both exist because the client renderer supports
         // less CSS than the composition uses.
         const svg = this.flattenForClient
-            ? inlineStyles(flattenTokens(composed))
+            ? simplifyForClient(inlineStyles(flattenTokens(composed)))
             : composed;
 
         const headAnchors = {};

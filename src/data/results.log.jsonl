@@ -20,3 +20,5 @@
 {"testerId":"anonymous","scenarioId":"the_secret","nodeId":"start","choiceId":"open","scores":{"savvy":10,"streetSmarts":5,"integrity":5},"terminal":false,"timestamp":"2026-08-31T10:25:04.682Z"}
 {"testerId":"anonymous","scenarioId":"the_secret","nodeId":"establish","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-08-31T10:34:38.889Z"}
 {"testerId":"anonymous","scenarioId":"the_secret","nodeId":"start","choiceId":"open","scores":{"savvy":10,"streetSmarts":5,"integrity":5},"terminal":false,"timestamp":"2026-08-31T10:34:47.996Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"establish","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-08-31T10:41:36.651Z"}
+{"testerId":"anonymous","scenarioId":"the_secret","nodeId":"start","choiceId":"open","scores":{"savvy":10,"streetSmarts":5,"integrity":5},"terminal":false,"timestamp":"2026-08-31T10:41:46.072Z"}
