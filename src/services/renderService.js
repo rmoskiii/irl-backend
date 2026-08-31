@@ -7,6 +7,7 @@ const { composeFrame } = require('./render/composeFrame');
 const { cacheKey } = require('./render/cacheKey');
 const { RenderCache } = require('./render/renderCache');
 const { flattenTokens } = require('./render/flattenTokens');
+const { inlineStyles } = require('./render/inlineStyles');
 const errors = require('./render/errors');
 
 /** The only composition module the route layer touches.
@@ -57,7 +58,13 @@ class RenderService {
         const plan = resolvePlan(renderBlock, this.contract, { nodeId });
         const composed = composeFrame(plan, this.contract, this.store,
             { renderKey: key, bubbles: this.includeBubbles });
-        const svg = this.flattenForClient ? flattenTokens(composed) : composed;
+        // Two-step delivery adaptation, in order: resolve var() to literals,
+        // then resolve the class rules into presentation attributes. Neither
+        // touches geometry; both exist because the client renderer supports
+        // less CSS than the composition uses.
+        const svg = this.flattenForClient
+            ? inlineStyles(flattenTokens(composed))
+            : composed;
 
         const headAnchors = {};
         for (const c of plan.cast || []) headAnchors[c.id] = c.headAnchor;
