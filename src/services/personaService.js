@@ -93,10 +93,13 @@ function resolveNodeContent(node, state) {
 
 let _render = null;
 let _blocks = null;
+let _policy = null;
 function renderer() {
   if (_render === null) {
     const { RenderService } = require("./renderService");
     const { RenderBlocks } = require("./render/renderBlocks");
+    const { BubblePolicy } = require("./render/bubblePolicy");
+    _policy = new BubblePolicy();
     // IRX_SCENE_BUBBLES=1 puts the dialogue inside the artwork instead.
     // Default off: the client already renders the prose natively, and drawing
     // it twice is worse than either option on its own.
@@ -105,7 +108,7 @@ function renderer() {
     });
     _blocks = new RenderBlocks();
   }
-  return { render: _render, blocks: _blocks };
+  return { render: _render, blocks: _blocks, policy: _policy };
 }
 
 /** Composed artwork for a node, or null when it has none.
@@ -114,18 +117,41 @@ function renderer() {
  *  what the client may see, and a picture is presentation. The client receives
  *  an SVG and head coordinates - never state, never the variant index that
  *  chose them. */
-function renderFor(nodeId, variantIndex) {
+function renderFor(nodeId, variantIndex, message) {
   try {
-    const { render, blocks } = renderer();
+    const { render, blocks, policy } = renderer();
     const block = blocks.blockFor(nodeId, variantIndex);
-    if (!block) return null;                 // messages mode, or another scenario
-    return render.render(block, { nodeId });
+    if (!block) return { render: null, message };   // messages mode, or another scenario
+
+    const bubbles = block.bubbles || [];
+    const override = process.env.IRX_SCENE_BUBBLES === '1' ? true
+        : process.env.IRX_SCENE_BUBBLES === '0' ? false
+            : undefined;
+    let useBubbles = bubbles.length > 0 && policy.wants(nodeId, override);
+    let prose = message;
+
+    if (useBubbles) {
+      const stripped = policy.stripDialogue(message, bubbles);
+      // Refuse the balloons rather than ship a duplicate or an empty panel.
+      if (!stripped.complete || !stripped.message) {
+        console.warn(`[render] ${nodeId}: dialogue de-duplication incomplete ` +
+            `(${stripped.removed}/${bubbles.length}); keeping prose`);
+        useBubbles = false;
+      } else {
+        prose = stripped.message;
+      }
+    }
+
+    return {
+      render: render.render(block, { nodeId, bubbles: useBubbles }),
+      message: prose,
+    };
   } catch (e) {
     // A node the visual contract refuses to compose must not take the prose
     // down with it. act3b_alex_processes resolves 4 bubbles against a cap of 3
     // and is a known Phase 3 content issue.
     console.warn(`[render] ${nodeId}: ${e.code || e.name} - ${e.message}`);
-    return null;
+    return { render: null, message };
   }
 }
 
@@ -137,15 +163,17 @@ function publicNode(nodeId, node, state, content) {
       (c) => !c.requires || matchesAny(c.requires, currentState)
   );
 
+  const scene = renderFor(nodeId, resolved.variantIndex, resolved.message ?? '');
+
   return {
     nodeId,
-    message: resolved.message ?? null,
+    message: scene.message ?? resolved.message ?? null,
     thread: resolved.thread ?? null,
     presentation: node.presentation || null,
     reactionDelay: node.reactionDelay || null,
     interstitial: node.interstitial || null,
     choices: visibleChoices.map((c) => ({ id: c.id, label: c.label })),
-    render: renderFor(nodeId, resolved.variantIndex),
+    render: scene.render,
   };
 }
 

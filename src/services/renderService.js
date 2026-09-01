@@ -47,18 +47,19 @@ class RenderService {
         this.cache = new RenderCache(cacheSize);
     }
 
-    render(renderBlock, { nodeId } = {}) {
+    render(renderBlock, { nodeId, bubbles } = {}) {
+        const withBubbles = bubbles === undefined ? this.includeBubbles : bubbles;
         const key = cacheKey(renderBlock);
         // cacheKey stays the hash of the render block - that is the contract and
         // the fixture identity. The cache MAP is keyed on the delivery variant too,
         // so a bubbled and a bubble-less frame never serve each other.
-        const slot = `${key}:${this.includeBubbles ? 'b' : 'n'}`;
+        const slot = `${key}:${withBubbles ? 'b' : 'n'}`;
         const hit = this.cache.get(slot);
         if (hit) return hit;
 
         const plan = resolvePlan(renderBlock, this.contract, { nodeId });
         const composed = composeFrame(plan, this.contract, this.store,
-            { renderKey: key, bubbles: this.includeBubbles });
+            { renderKey: key, bubbles: withBubbles });
         // Two-step delivery adaptation, in order: resolve var() to literals,
         // then resolve the class rules into presentation attributes. Neither
         // touches geometry; both exist because the client renderer supports
@@ -74,7 +75,7 @@ class RenderService {
             code: 'PROP_NOT_PLACEABLE_IN_SCENE', ...u }));
 
         return this.cache.set(slot, {
-            svg, cacheKey: key, aspect: '16:9',
+            svg, cacheKey: key, aspect: '16:9', bubbles: withBubbles,
             canvas: this.contract.anchors.canvas.viewBox,
             headAnchors, warnings,
         });

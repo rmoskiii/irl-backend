@@ -1,0 +1,13 @@
+{
+  "note": "Which nodes render their dialogue as balloons inside the artwork instead of as prose under it. Everything not listed keeps the default: artwork carries the room, the panel carries the words.",
+  "why": "The balloon treatment costs something real - the text stops being selectable, stops reflowing, and stops responding to the OS text size. That is worth paying on the beats where seeing the line land in the room IS the beat, and not worth paying on a scene that is mostly narration. So it is a per-node decision, not a global one.",
+  "authoring": "A node listed here has its quoted dialogue removed from the message it sends the client, so the same words never appear twice. The narration around them stays. If removing the dialogue would leave nothing, the renderer keeps the prose and skips the balloons - a picture with no words under it and no narration is not a scene, it is a caption.",
+  "nodes": [
+    "confession",
+    "confession_guarded",
+    "jessica_reacts_judge",
+    "act2_alex_reveal",
+    "act3b_alex_told",
+    "act4_engagement_party"
+  ]
+}
