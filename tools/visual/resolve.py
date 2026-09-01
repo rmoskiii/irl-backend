@@ -7,6 +7,14 @@ Node/Express engine must do server-side. The client receives only the output and
 never sees state, mood, or the mapping table.
 
 READ-ONLY on the scenario. Never mutates the loaded scenario dict.
+
+2B.7A: three changes for the Career district, all inert for the_secret.
+  1. mode "none" short-circuits alongside "messages" — an authored deliberate
+     blank, distinct from a node that simply has no artwork by presentation type.
+  2. the wardrobe floor is read per character from registries rather than
+     hard-coded to "home_casual", which no Career character has.
+  3. mapping.textLayer == "native" suppresses bubbles and narration in the
+     render block, because the client carries the prose itself.
 """
 
 import json
@@ -148,8 +156,16 @@ def resolve(node_id, node, registries, mapping, variant_index=None):
     """Compile one node (optionally one messageVariant) into a render block."""
     mode = classify_mode(node_id, node, mapping)
 
-    if mode == "messages":
-        return None  # existing phone UI; no render block (§3.5)
+    # "messages" = the existing phone UI (§3.5).
+    # "none"     = an authored deliberate blank, set only through an explicit
+    #              modeOverrides entry. Never inferred from a missing visual
+    #              block, which already means "infer the scene from location".
+    if mode in ("messages", "none"):
+        return None
+
+    # The client carries dialogue and narration itself when the district uses a
+    # native text layer, so the block asserts artwork only.
+    native = mapping.get("textLayer") == "native"
 
     render = {"mode": mode}
 
@@ -180,15 +196,15 @@ def resolve(node_id, node, registries, mapping, variant_index=None):
         eb = mapping.get("exitBeats", {}).get(node_id)
         render["exitBeat"] = copy.deepcopy(eb) if eb else None
         render["cast"] = []
-        render["narration"] = strip_dialogue(message)
+        render["narration"] = None if native else strip_dialogue(message)
         return render
 
     if mode == "remote":
         render["framing"] = "empty"
         render["cast"] = []
-        render["bubbles"] = extract_bubbles(message, cid)
+        render["bubbles"] = [] if native else extract_bubbles(message, cid)
         render["remoteSpeaker"] = cid
-        render["narration"] = strip_dialogue(message)
+        render["narration"] = None if native else strip_dialogue(message)
         return render
 
     # --- scene ---
@@ -201,7 +217,7 @@ def resolve(node_id, node, registries, mapping, variant_index=None):
     if entry is None or "register" not in entry:
         raise ResolveError(f"{node_id}: no register mapping for {cid} mood {mood!r}")
     register = entry["register"]
-    wardrobe = "home_casual"
+    wardrobe = chars[cid].get("defaultWardrobe", "home_casual")
 
     cast_over = overrides.get("cast", {}).get(cid, {})
     register = cast_over.get("register", register)
@@ -223,6 +239,6 @@ def resolve(node_id, node, registries, mapping, variant_index=None):
         "wardrobe": wardrobe,
         "speaking": True,
     }]
-    render["bubbles"] = extract_bubbles(message, cid)
-    render["narration"] = strip_dialogue(message) or None
+    render["bubbles"] = [] if native else extract_bubbles(message, cid)
+    render["narration"] = None if native else (strip_dialogue(message) or None)
     return render

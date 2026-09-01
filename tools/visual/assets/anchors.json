@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "phase": "2A",
-  "note": "Canonical coordinate contract for the IRX visual asset system. compose_frame.py reads ONLY this file to place assets. If a frame needs an offset that is not in here, the contract is wrong \u2014 fix the contract, not the frame.",
+  "note": "Canonical coordinate contract for the IRX visual asset system. compose_frame.py reads ONLY this file to place assets. If a frame needs an offset that is not in here, the contract is wrong — fix the contract, not the frame.",
   "canvas": {
     "viewBox": "0 0 1600 900",
     "width": 1600,
@@ -405,6 +405,285 @@
       },
       "bubbleNote": "Bubbles sit LOWER here than in the other rooms: the string lights and bunting occupy the top third, and a bubble over them would bury the one thing that makes this room read as a party.",
       "note": "The only environment containing other people. Crowd is silhouette-only - no faces, no outlines, value close to the wall - so eighty guests are present without competing with the speaker."
+    },
+    "scene.desk_evening": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "desk top. The modesty panel must run unbroken from 600 to the floor line — no open legs, no pedestal. This is the failure that cost three environments in The Secret."
+      },
+      "propAnchors": {
+        "desk_left": {
+          "x": 430,
+          "y": 604
+        },
+        "desk_right": {
+          "x": 1180,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "note": "Act 1 throughout, plus ask1_reaction. Evening: the floor is emptying, the overhead bank is half off, the monitor is the brightest thing in the room. The monitor is environment, not a prop — it carries 'upload dialog' and 'completion date field' as a lit but illegible screen. Legible screen text would assert a document the prose does not describe."
+    },
+    "scene.desk_day": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "same desk, same surface. Geometry identical to scene.desk_evening by construction so the two rooms cannot drift."
+      },
+      "propAnchors": {
+        "desk_left": {
+          "x": 430,
+          "y": 604
+        },
+        "desk_right": {
+          "x": 1180,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "note": "ask3_redirect_response and audit_reply. Daylight, higher key, weaker vignette — the same lever scene.coffee_shop used to separate Act 3 from the evening rooms. audit_reply is the node the scenario resolves through and it happens on a Friday afternoon, which is why this is a second asset rather than a cut."
+    },
+    "scene.meeting_room": {
+      "slots": {
+        "left": {
+          "x": 480,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1120,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "meeting table. Solid apron to the floor — a table is the shape most likely to be drawn with legs, and legs are the 2B.6 P0."
+      },
+      "propAnchors": {
+        "table_left": {
+          "x": 560,
+          "y": 604
+        },
+        "table_centre": {
+          "x": 800,
+          "y": 604
+        },
+        "table_right": {
+          "x": 1010,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "note": "ask2_qa and ask2_redirect_closed. The room draws its own closed door as architecture — 'a closed door' is in unrenderableProps rather than reusing prop.door_closed, which is a domestic kitchen door."
+    },
+    "scene.review_room": {
+      "slots": {
+        "left": {
+          "x": 480,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1120,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "Dana's desk, solid front panel to the floor"
+      },
+      "propAnchors": {
+        "desk_left": {
+          "x": 520,
+          "y": 604
+        },
+        "desk_right": {
+          "x": 1060,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "note": "escalate_meeting and escalate_documented. The only room Dana appears in."
+    },
+    "scene.office_floor": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "break-out counter run, solid to the floor"
+      },
+      "propAnchors": {
+        "counter_left": {
+          "x": 430,
+          "y": 604
+        },
+        "counter_right": {
+          "x": 1196,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 268,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1340,
+          "y": 892
+        }
+      },
+      "note": "Six nodes across all four acts. Built as a break-out area rather than an open floor: it gives the continuous occluder the contract needs, and it is the kitchen the prose keeps returning to — 'Ray is perfectly friendly in the kitchen'. Two figures never share it; ask3_reaction takes the right slot only to avoid rendering an identical frame to ask2_reaction."
     }
   },
   "props": {
@@ -518,11 +797,33 @@
       "defaultAnchor": {
         "scene.kitchen": "door"
       }
+    },
+    "prop.laptop_open": {
+      "localViewBox": "0 0 260 170",
+      "basePoint": {
+        "x": 130,
+        "y": 170
+      },
+      "defaultAnchor": {
+        "scene.meeting_room": "table_centre"
+      },
+      "note": "'They slide the laptop round' — table_centre, between Ray and camera, which is what turning it round means. Same asset at the same anchor in ask2_redirect_closed, where the prose calls it 'the same laptop'."
+    },
+    "prop.notepad": {
+      "localViewBox": "0 0 180 130",
+      "basePoint": {
+        "x": 90,
+        "y": 130
+      },
+      "defaultAnchor": {
+        "scene.review_room": "desk_left"
+      },
+      "note": "The one object in Dana's office the prose names. It sits where her hands are, which the prose also names — but 'hands flat on the desk' is posture and stays in unrenderableProps."
     }
   },
   "frames": {
     "frame_1_confession": {
-      "renderBlockSource": "render_blocks.json \u2192 confession \u2192 default",
+      "renderBlockSource": "render_blocks.json → confession → default",
       "scene": "scene.kitchen",
       "time": "evening",
       "framing": "direct",
@@ -1297,6 +1598,412 @@
         "base": "figure_a",
         "slot": "centre"
       }
+    },
+    "frame_c_checkpoint": {
+      "renderBlockSource": "SYNTHETIC — the step-5 gate. First composed Career frame: one environment, one figure, nothing else. Nothing further is drawn until this passes the alpha-column occlusion test and reads at 390pt.",
+      "scene": "scene.desk_evening",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "open",
+          "wardrobe": "work"
+        }
+      ],
+      "props": [],
+      "note": "Departs from the 2B.1 precedent deliberately. Alex was checkpointed in the LOCKED kitchen because his own rooms did not exist and the kitchen was an accepted reference. Ray cannot be: the Career palette inverts the lighting family, so a Career figure in a Neighbourhood room would be judged against a value relationship that will never ship. desk_evening is drawn first and Ray is judged in it."
+    },
+    "frame_c_scale_test": {
+      "renderBlockSource": "SYNTHETIC — shipping-scale register separation, not a scenario node",
+      "scene": "scene.desk_evening",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "left",
+          "register": "open",
+          "wardrobe": "work"
+        },
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "squared",
+          "wardrobe": "work"
+        },
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "right",
+          "register": "set",
+          "wardrobe": "work"
+        }
+      ],
+      "props": [],
+      "note": "The three extremes of Ray's tilt range at +8, 0 and −15, at real slot anchors on the real canvas so head height matches shipping. The intermediate pair (guarded −5, heavy −10) is covered by the real node frames below, which is the point: unlike Jessica's `away`, every Career register appears in a live node, so no synthetic register-review frames are needed."
+    },
+    "frame_d_scale_test": {
+      "renderBlockSource": "SYNTHETIC — figure_d register separation. Dana's two registers sit at Δ6, the tightest pair in the scenario.",
+      "scene": "scene.review_room",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.dana",
+          "base": "figure_d",
+          "slot": "left",
+          "register": "level",
+          "wardrobe": "work_formal"
+        },
+        {
+          "id": "char.dana",
+          "base": "figure_d",
+          "slot": "right",
+          "register": "noting",
+          "wardrobe": "work_formal"
+        }
+      ],
+      "props": [],
+      "note": "Δ6 clears the 5° rule but only just, and Dana's hairPolicy is fixed so hair mass does no separating. If this measures under 13% at 390pt the fix is more drawn asymmetry in `noting` — deeper head-down, the glasses reading harder — not more rotation."
+    },
+    "audit_establish_northstar": {
+      "renderBlockSource": "render_blocks.json -> establish_northstar -> default",
+      "scene": "scene.office_floor",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "open",
+          "wardrobe": "work"
+        }
+      ],
+      "props": []
+    },
+    "audit_establish_delivery": {
+      "renderBlockSource": "render_blocks.json -> establish_delivery -> default",
+      "scene": "scene.desk_evening",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "heavy",
+          "wardrobe": "work_coat"
+        }
+      ],
+      "props": [],
+      "note": "First frame with the coat. The wardrobe swap is the Act 1 pressure signal and it has to read at 390pt on silhouette alone."
+    },
+    "audit_ask1_date": {
+      "renderBlockSource": "render_blocks.json -> ask1_date -> default",
+      "scene": "scene.desk_evening",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "open",
+          "wardrobe": "work_coat"
+        }
+      ],
+      "props": [],
+      "note": "The ask. Register `open` against `heavy` in the node immediately before it — Δ10, the separation the whole beat depends on."
+    },
+    "audit_ask1_reaction": {
+      "renderBlockSource": "render_blocks.json -> ask1_reaction -> default",
+      "scene": "scene.desk_evening",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "heavy",
+          "wardrobe": "work_coat"
+        }
+      ],
+      "props": []
+    },
+    "audit_ask1_reaction_v0": {
+      "renderBlockSource": "render_blocks.json -> ask1_reaction -> variant[0]",
+      "scene": "scene.desk_evening",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "guarded",
+          "wardrobe": "work_coat"
+        }
+      ],
+      "props": [],
+      "note": "variantOverride check. Identical to audit_ask1_reaction in every field except register — the same shape as frame_2_reacts_judge, and the check that caught jessica_reacts_hold rendering its default artwork on the wrong path."
+    },
+    "audit_ask1_redirect_response": {
+      "renderBlockSource": "render_blocks.json -> ask1_redirect_response -> default",
+      "scene": "scene.desk_evening",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "guarded",
+          "wardrobe": "work_coat"
+        }
+      ],
+      "props": []
+    },
+    "audit_ask1_refuse_response": {
+      "renderBlockSource": "render_blocks.json -> ask1_refuse_response -> default",
+      "scene": "scene.desk_evening",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "set",
+          "wardrobe": "work_coat"
+        }
+      ],
+      "props": []
+    },
+    "audit_ask2_qa": {
+      "renderBlockSource": "render_blocks.json -> ask2_qa -> default",
+      "scene": "scene.meeting_room",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "squared",
+          "wardrobe": "work"
+        }
+      ],
+      "props": [
+        {
+          "id": "prop.laptop_open",
+          "anchor": "table_centre"
+        }
+      ],
+      "note": "The only frame where a prop and the centre figure share a column. table_centre is directly below the slot, so the laptop sits between Ray and camera on the occluding surface — which is what turning it round means. Check it survives the prop-occlusion test: this is the ring-box position."
+    },
+    "audit_ask2_redirect_closed": {
+      "renderBlockSource": "render_blocks.json -> ask2_redirect_closed -> default",
+      "scene": "scene.meeting_room",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "set",
+          "wardrobe": "work"
+        }
+      ],
+      "props": [
+        {
+          "id": "prop.laptop_open",
+          "anchor": "table_centre"
+        }
+      ],
+      "note": "Same room, same prop, same anchor as audit_ask2_qa. Only the register changes, Δ23 — the largest single separation in the scenario, on the beat where the redirect closes."
+    },
+    "audit_ask2_reaction": {
+      "renderBlockSource": "render_blocks.json -> ask2_reaction -> default",
+      "scene": "scene.office_floor",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "open",
+          "wardrobe": "work"
+        }
+      ],
+      "props": []
+    },
+    "audit_ask2_reaction_v0": {
+      "renderBlockSource": "render_blocks.json -> ask2_reaction -> variant[0]",
+      "scene": "scene.office_floor",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "guarded",
+          "wardrobe": "work"
+        }
+      ],
+      "props": [],
+      "note": "variantIndex 0 is the record:2 entry — 'almost hurt'. record:1 is index 1 and keeps the default register, so it composes as audit_ask2_reaction."
+    },
+    "audit_ask2_refuse_response": {
+      "renderBlockSource": "render_blocks.json -> ask2_refuse_response -> default",
+      "mode": "montage",
+      "panels": [
+        {
+          "vignette": "vig.call_without_you",
+          "caption": "Monday"
+        },
+        {
+          "vignette": "vig.kitchen_pleasantry",
+          "caption": null
+        },
+        {
+          "vignette": "vig.june_two_seats",
+          "caption": "June"
+        }
+      ],
+      "note": "The absences. Three panels because anchors.montage fixes panelWidth 440 and gap 48 — four would span 1904 on a 1600 canvas. Captions are 6 and 4 characters, well inside the 40-char limit."
+    },
+    "audit_escalate_meeting": {
+      "renderBlockSource": "render_blocks.json -> escalate_meeting -> default",
+      "scene": "scene.review_room",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.dana",
+          "base": "figure_d",
+          "slot": "centre",
+          "register": "level",
+          "wardrobe": "work_formal"
+        }
+      ],
+      "props": [
+        {
+          "id": "prop.notepad",
+          "anchor": "desk_left"
+        }
+      ],
+      "note": "Dana's first frame. The notepad sits at desk_left, off the figure's column, so the prop-occlusion test should return it near fully visible."
+    },
+    "audit_escalate_documented": {
+      "renderBlockSource": "render_blocks.json -> escalate_documented -> default",
+      "scene": "scene.review_room",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.dana",
+          "base": "figure_d",
+          "slot": "centre",
+          "register": "noting",
+          "wardrobe": "work_formal"
+        }
+      ],
+      "props": [],
+      "note": "Empty prop list is correct and comes from the render block: all three of this node's prose props ('a timestamp', 'a second format', 'five quiet weeks') are unrenderable. The documented sibling of escalate_bare, which composes no frame at all."
+    },
+    "audit_escalate_aftermath": {
+      "renderBlockSource": "render_blocks.json -> escalate_aftermath -> default",
+      "scene": "scene.office_floor",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "set",
+          "wardrobe": "work"
+        }
+      ],
+      "props": []
+    },
+    "audit_ask3_reaction": {
+      "renderBlockSource": "render_blocks.json -> ask3_reaction -> default",
+      "scene": "scene.office_floor",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "right",
+          "register": "open",
+          "wardrobe": "work"
+        }
+      ],
+      "props": [],
+      "note": "The only Career frame not at centre. Same room, figure, wardrobe and register as audit_ask2_reaction; the slot is what stops the player seeing an identical frame twice. Compose the two side by side and confirm the difference is legible at 390pt — if it is not, the slot change has bought nothing and the beat needs a different answer."
+    },
+    "audit_ask3_redirect_response": {
+      "renderBlockSource": "render_blocks.json -> ask3_redirect_response -> default",
+      "scene": "scene.desk_day",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "guarded",
+          "wardrobe": "work"
+        }
+      ],
+      "props": [],
+      "note": "First frame in desk_day. Compose against audit_ask1_date to confirm the two desks read as the same room at different times rather than as two rooms."
+    },
+    "audit_ask3_refuse_response": {
+      "renderBlockSource": "render_blocks.json -> ask3_refuse_response -> default",
+      "scene": "scene.office_floor",
+      "time": "day",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "guarded",
+          "wardrobe": "work"
+        }
+      ],
+      "props": []
+    },
+    "audit_audit_reply": {
+      "renderBlockSource": "render_blocks.json -> audit_reply -> default",
+      "scene": "scene.desk_day",
+      "time": "day",
+      "framing": "empty",
+      "cast": [],
+      "props": [],
+      "note": "`absent` mode, and the node the scenario resolves through. No exitBeat — nobody has left the room, the player is simply at their own desk on a Friday afternoon, and the player is never drawn. The empty desk in daylight IS the beat."
+    },
+    "audit_resolution": {
+      "renderBlockSource": "render_blocks.json -> resolution -> default",
+      "scene": "scene.office_floor",
+      "time": "day",
+      "framing": "empty",
+      "cast": [],
+      "props": [],
+      "note": "`absent` mode, forced by modeOverrides because the node declares a character called 'You'. Three weeks later, empty. Five message variants resolve to this one frame — the room does not change with the outcome, which is most of what the ending is saying."
     }
   },
   "characters": {
@@ -1341,7 +2048,7 @@
       },
       "build": {
         "shoulderWidth": 196,
-        "note": "vs figure_a 185. Slightly smaller head on a taller body \u2014 the proportion difference that reads at shipping scale.",
+        "note": "vs figure_a 185. Slightly smaller head on a taller body — the proportion difference that reads at shipping scale.",
         "headHeight": 178
       },
       "skinTokens": {
@@ -1371,7 +2078,7 @@
       },
       "build": {
         "shoulderWidth": 196,
-        "note": "vs figure_a 185. Slightly smaller head on a taller body \u2014 the proportion difference that reads at shipping scale.",
+        "note": "vs figure_a 185. Slightly smaller head on a taller body — the proportion difference that reads at shipping scale.",
         "headHeight": 178
       },
       "skinTokens": {
@@ -1402,6 +2109,68 @@
       "hairPolicy": "fixed",
       "hairNote": "Jessica's hair CHANGES per register and that is deliberate: it is her primary silhouette lever at shipping scale. 'tight' carries a forward near-side lock, 'away' redistributes the whole mass. Forcing her registers to share one hair block would remove the only thing that separates two front-facing registers at 220px.",
       "note": "Rear view of figure_a. One register only ('rear')."
+    },
+    "figure_c": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 210,
+        "note": "figure_a's socket. Ray is built on figure_a's geometry contract."
+      },
+      "neckSpan": {
+        "x0": 81,
+        "x1": 119,
+        "y": 170,
+        "note": "inherited from figure_a. A figure_c register head MUST span x 81..119 at y 175..195 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 185,
+        "headHeight": 186,
+        "note": "figure_a's shoulder width. Head sits slightly larger on the frame than figure_a's — a middle-aged man's proportion read at shipping scale, achieved in the drawing rather than by moving the contract."
+      },
+      "skinTokens": {
+        "base": "--irx-skin-c",
+        "shade": "--irx-skin-c-shade"
+      },
+      "hairPolicy": "fixed",
+      "hairNote": "Ray's hair is FIXED across all five registers — short, receding at the temples, greying at the sides. A cut like that cannot restyle between nodes. Because registers are atomic the block is duplicated per file, so it must be enforced identical, exactly as figure_b's is.",
+      "note": "Ray Okonjo. Reuses figure_a's neck and socket contract and nothing else. Squarer jaw, heavier brow, a longer face than figure_a, visible nasolabial and forehead lines, no rear variant."
+    },
+    "figure_d": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 196,
+        "note": "figure_b's socket, 14px higher than figure_a. Dana is built on figure_b's geometry contract."
+      },
+      "neckSpan": {
+        "x0": 85,
+        "x1": 123,
+        "y": 156,
+        "note": "inherited from figure_b. A figure_d register head MUST span x 85..123 at y 161..181 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 196,
+        "headHeight": 178,
+        "note": "figure_b's build. See the open item in the manifest: this makes Dana the physically larger of the two Career figures."
+      },
+      "skinTokens": {
+        "base": "--irx-skin-d",
+        "shade": "--irx-skin-d-shade"
+      },
+      "hairPolicy": "fixed",
+      "hairNote": "Dana's hair is FIXED across both registers — a short, pinned professional cut. With only two registers the separation has to come from the drawn head-down in `noting`, not from redistributing hair mass.",
+      "note": "Dana Whitfield. Reuses figure_b's neck and socket contract and nothing else. Narrower face than figure_b, higher cheekbone, set jaw, reading glasses on the `noting` register only — which is part of why that register separates."
     }
   },
   "bubbles": {
@@ -1488,7 +2257,17 @@
     },
     "vig.saturday_quiet": {
       "localViewBox": "0 0 480 600"
+    },
+    "vig.call_without_you": {
+      "localViewBox": "0 0 480 600"
+    },
+    "vig.kitchen_pleasantry": {
+      "localViewBox": "0 0 480 600"
+    },
+    "vig.june_two_seats": {
+      "localViewBox": "0 0 480 600"
     }
   },
-  "propAnchorRule": "Every prop declares defaultAnchor per scene. Composers must use it rather than assigning anchors positionally - the full-scenario audit caught prop.jacket_chair placed on a worktop because a round-robin had put the second prop at the second anchor."
+  "propAnchorRule": "Every prop declares defaultAnchor per scene. Composers must use it rather than assigning anchors positionally - the full-scenario audit caught prop.jacket_chair placed on a worktop because a round-robin had put the second prop at the second anchor.",
+  "scenesBubbleNote": "None of the five Career scenes declares bubblePlacement, because mapping.the_instruction.json sets textLayer 'native' and no Career node composes a balloon. If bubbles are ever enabled for this district, each of these five needs a placement block for the slots it uses, and the global defaults in anchors.bubbles.placement are NOT safe to inherit — they were measured against Neighbourhood rooms."
 }

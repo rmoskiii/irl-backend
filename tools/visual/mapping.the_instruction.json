@@ -1,111 +1,149 @@
 {
-  "_meta": {
-    "scenario": "the_instruction",
-    "district": "career",
-    "shapeStatus": "PROVISIONAL — key names taken from IRX_VISUAL_SYSTEM_SCOPE.md §4. The internal shape of each key is inferred, not read from mapping.the_secret.json, which is not available in this workspace. Conform to that file before use.",
-    "bubbles": "OFF for this scenario. No node ids are added to tools/visual/bubble_nodes.json. The global bubble contract is untouched.",
-    "authoringDecisions": [
-      "Ray Okonjo is drawn as a middle-aged white man; Dana Whitfield as a middle-aged white woman. The prose uses they/them for both and does not establish this. Recorded here as an explicit art-direction decision, not as something the scenario asserts.",
-      "The player is never drawn. `resolution` declares presentation.data.character.name = 'You'; it resolves to an absent state via nodeOverrides, with no edit to scenario prose.",
-      "`escalate_bare` carries no visual block by design and is listed in suppressedNodes. No environment, cast or props are manufactured for it."
+  "schemaVersion": 1,
+  "scenario": "the_instruction",
+  "note": "Career district. Conformed to mapping.the_secret.json. Three resolver changes are required before this file resolves cleanly: mode 'none', per-character defaultWardrobe, and textLayer 'native'. See THE_INSTRUCTION_VISUAL_MANIFEST.md \u00a71.",
+  "textLayer": "native",
+  "textLayerNote": "Bubbles are OFF for the whole Career scenario. Dialogue and choices are carried by the native Flutter layer below the contained 16:9 artwork. Without this flag the resolver extracts quoted spans into bubbles, and ask2_qa variant[0] emits four \u2014 over anchors.bubbles.maxPerNode \u2014 which the composer throws on.",
+  "characterIds": {
+    "Ray": "char.ray",
+    "Dana": "char.dana"
+  },
+  "characterIdsNote": "'You' is deliberately unmapped. The player is never drawn. The only node declaring it (resolution) is forced to `absent` via modeOverrides, where character_id() is computed but unused.",
+  "settingTokens": {
+    "office": "scene.office_floor",
+    "desk": "scene.desk_evening",
+    "meeting_room": "scene.meeting_room",
+    "review_room": "scene.review_room"
+  },
+  "settingTokensNote": "'desk' resolves to the evening room because both nodes that author visual.setting 'desk' are the Wednesday evening beats. The daytime desk is reached through locationTokens only. 'phone' is not mapped: its only node (ask4_ownership) is presentation.type 'messages' and returns null before any scene resolves.",
+  "locationTokens": [
+    [
+      "Your desk, Wednesday evening",
+      "scene.desk_evening"
+    ],
+    [
+      "Your desk, later",
+      "scene.desk_evening"
+    ],
+    [
+      "Your desk, Friday afternoon",
+      "scene.desk_day"
+    ],
+    [
+      "Your desk",
+      "scene.desk_day"
+    ],
+    [
+      "The small meeting room",
+      "scene.meeting_room"
+    ],
+    [
+      "Dana's office",
+      "scene.review_room"
+    ],
+    [
+      "The office",
+      "scene.office_floor"
+    ]
+  ],
+  "locationTokensNote": "Order is load-bearing: resolve_scene_token uses startswith and returns the first hit, so 'Your desk, Wednesday evening' must precede the bare 'Your desk' or every desk beat lands in the evening room. 'The office' last, because it prefixes five different locations that all mean the same room.",
+  "moodMap": {
+    "char.ray": {
+      "warm": { "register": "open" },
+      "relieved": { "register": "open" },
+      "easy": { "register": "open" },
+      "conceding": { "register": "guarded" },
+      "polite": { "register": "guarded" },
+      "careful": { "register": "guarded" },
+      "tired": { "register": "heavy" },
+      "distracted": { "register": "heavy" },
+      "flat": { "register": "set" },
+      "immovable": { "register": "set" },
+      "distant": { "register": "set" },
+      "pressed": { "register": "squared" }
+    },
+    "char.dana": {
+      "neutral": { "register": "level" },
+      "procedural": { "register": "noting" }
+    }
+  },
+  "moodMapNote": "'careful' is unreachable \u2014 its only node (ask4_ownership) is 'messages'. Mapped anyway so a later presentation-type change cannot fail the build silently. Registers are named by posture, not emotion, per spec \u00a75.",
+  "modeOverrides": {
+    "ask2_refuse_response": "montage",
+    "audit_reply": "absent",
+    "resolution": "absent",
+    "escalate_bare": "none",
+    "ask3_client_email": "none",
+    "audit_email": "none",
+    "audit_ray_calls": "none"
+  },
+  "modeOverridesNote": "escalate_bare is the deliberate blank the scenario's testPlaythrough 5 declares. 'none' is a positive assertion of intentional absence, not a missing entry. ask3_client_email (type 'email') and audit_email (no location, no character) would otherwise fall through classify_mode to 'scene' and throw. audit_ray_calls is a native call card; the empty-desk beat it would carry is already served by audit_reply two nodes later, so a near-duplicate frame is avoided rather than drawn.",
+  "nodeOverrides": {
+    "establish_delivery": {
+      "cast": { "char.ray": { "wardrobe": "work_coat" } }
+    },
+    "ask1_date": {
+      "cast": { "char.ray": { "wardrobe": "work_coat" } }
+    },
+    "ask1_reaction": {
+      "cast": { "char.ray": { "wardrobe": "work_coat" } }
+    },
+    "ask1_redirect_response": {
+      "cast": { "char.ray": { "wardrobe": "work_coat" } }
+    },
+    "ask1_refuse_response": {
+      "cast": { "char.ray": { "wardrobe": "work_coat" } }
+    },
+    "ask3_reaction": {
+      "slot": "right"
+    }
+  },
+  "nodeOverridesNote": "The coat is a wardrobe, not a prop \u2014 'coat already on' is the Act 1 pressure signal and it is the garment Ray is wearing. Same reasoning that moved 'jacket' out of The Secret's propSynonyms. ask3_reaction takes the right slot because it resolves to the same room, figure and register as ask2_reaction; without the slot change the player sees an identical frame twice.",
+  "variantOverrides": {
+    "ask1_reaction": [
+      {
+        "variantIndex": 0,
+        "note": "record:1 \u2014 'Not annoyed. Slightly puzzled.' The node-level mood is 'distracted'; the variant prose establishes something else.",
+        "cast": { "char.ray": { "register": "guarded" } }
+      }
+    ],
+    "ask2_reaction": [
+      {
+        "variantIndex": 0,
+        "note": "record:2 \u2014 'It isn't hostile. It's almost hurt.' Node-level mood is 'relieved', which this variant contradicts in prose. variantIndex 0 is the record:2 entry; record:1 is index 1 and keeps the default register.",
+        "cast": { "char.ray": { "register": "guarded" } }
+      }
     ]
   },
-
-  "figures": {
-    "ray": {
-      "asset": "figure_c",
-      "geometryBasis": "figure_a",
-      "headSocket": 210,
-      "neckSpan": { "x0": 81, "x1": 119, "fromY": 170 },
-      "wardrobes": ["work", "work_coat"],
-      "note": "Reuses figure_a body/anchor architecture only. Face, hair, proportion, wardrobe and registers are drawn fresh."
-    },
-    "dana": {
-      "asset": "figure_d",
-      "geometryBasis": "figure_b",
-      "headSocket": 196,
-      "neckSpan": { "x0": 85, "x1": 123, "fromY": 156 },
-      "wardrobes": ["work_formal"],
-      "note": "Reuses figure_b body/anchor architecture only. Identity is drawn fresh."
-    }
+  "exitBeats": {},
+  "exitBeatsNote": "Neither absent node carries a departure line. audit_reply and resolution are both empty rooms with no one leaving them, so exitBeat resolves null.",
+  "montagePanels": {
+    "ask2_refuse_response": [
+      { "vignette": "vig.call_without_you", "caption": "Monday" },
+      { "vignette": "vig.kitchen_pleasantry", "caption": null },
+      { "vignette": "vig.june_two_seats", "caption": "June" }
+    ]
   },
-
-  "moodMap": {
-    "ray": {
-      "warm": "open",
-      "relieved": "open",
-      "easy": "open",
-      "conceding": "civil",
-      "polite": "civil",
-      "careful": "civil",
-      "tired": "tired",
-      "distracted": "tired",
-      "flat": "closed",
-      "immovable": "closed",
-      "distant": "closed",
-      "pressed": "pressed"
-    },
-    "dana": {
-      "neutral": "attentive",
-      "procedural": "procedural"
-    }
-  },
-
-  "registerTilt": {
-    "figure_c": { "open": 0, "civil": -5, "tired": -10, "closed": -15, "pressed": 8 },
-    "figure_d": { "attentive": 0, "procedural": -6 }
-  },
-
-  "locationTokens": {
-    "The office, six weeks ago": "office_floor",
-    "Your desk, Wednesday evening": "desk_evening",
-    "Your desk, later": "desk_evening",
-    "The small meeting room, Friday": "meeting_room",
-    "The office, the following week": "office_floor",
-    "Dana's office": "review_room",
-    "The office, the weeks after": "review_room",
-    "The office, over the summer": "office_floor",
-    "The office, spring into summer": "office_floor",
-    "Your desk": "desk_day",
-    "Your desk, Friday afternoon": "desk_day",
-    "The office, three weeks later": "office_floor"
-  },
-
-  "settingTokens": {
-    "office": "office_floor",
-    "desk": "desk_evening",
-    "meeting_room": "meeting_room",
-    "review_room": "review_room",
-    "phone": null
-  },
-
+  "montagePanelsNote": "Three panels, not four: anchors.montage sets panelWidth 440 and gap 48, so four panels span 1904 on a 1600 canvas. The fourth absence (never asked about the follow-on workstream) is carried by the prose.",
   "propSynonyms": {
-    "laptop turned round": "laptop_open",
-    "the same laptop": "laptop_open",
-    "a notepad": "notepad_pen"
+    "laptop turned round": "prop.laptop_open",
+    "the same laptop": "prop.laptop_open",
+    "a notepad": "prop.notepad"
   },
-
-  "environmentFeatures": {
-    "_note": "Named in prose, drawn into the environment rather than anchored as props. Not prop assets.",
-    "upload dialog": "desk_evening.monitor",
-    "completion date field": "desk_evening.monitor",
-    "a closed door": "meeting_room.door"
-  },
-
-  "wardrobeTokens": {
-    "coat already on": "work_coat",
-    "coat": "work_coat"
-  },
-
   "unrenderableProps": [
     "the rebuilt section",
     "an 11:40pm send",
     "a waved-off apology",
+    "coat already on",
     "half past eight",
     "two seats in June",
+    "upload dialog",
+    "completion date field",
+    "coat",
     "eleven lines",
     "an empty name field",
     "no Thursday",
+    "a closed door",
     "hands flat on the desk",
     "nothing in front of you",
     "a timestamp",
@@ -119,77 +157,8 @@
     "the sofa",
     "the file",
     "three questions",
-    "a note",
-    "a debt nobody has named",
-    "one name went to Dana",
-    "it's just the date",
-    "your name needs to be on it",
-    "the client call is nine tomorrow",
-    "what have you got",
-    "send me that",
-    "careful with each other",
-    "just so we're saying the same thing",
-    "what you can produce"
+    "a note"
   ],
-
-  "suppressedNodes": ["escalate_bare"],
-
-  "nodeOverrides": {
-    "escalate_bare": {
-      "render": null,
-      "reason": "Deliberate blank. The documented sibling carries a visual block; this one does not. Suppression is explicit so the generic location/setting fallback cannot manufacture a frame."
-    },
-    "escalate_documented": {
-      "scene": "review_room",
-      "reason": "location string says 'The office, the weeks after' but visual.setting says review_room; the visual block wins."
-    },
-    "resolution": {
-      "mode": "absent",
-      "scene": "office_floor",
-      "cast": [],
-      "reason": "presentation.data.character.name is 'You'. The player is never drawn. Smallest override that produces the intended empty-office state without editing prose."
-    },
-    "audit_reply": {
-      "mode": "absent",
-      "scene": "desk_day",
-      "cast": []
-    },
-    "audit_ray_calls": {
-      "mode": "remote",
-      "scene": "desk_evening",
-      "cast": [],
-      "reason": "Ray is a voice. Remote mode carries an empty cast and no tail."
-    },
-    "ask2_refuse_response": {
-      "mode": "montage",
-      "cast": []
-    },
-    "ask3_client_email": { "render": null },
-    "ask4_ownership": { "render": null },
-    "audit_email": { "render": null }
-  },
-
-  "variantOverrides": {
-    "ask1_reaction": {
-      "1": {
-        "register": "civil",
-        "reason": "record:1 variant establishes 'slightly puzzled', not the node-level 'distracted'. Prose-established, so the register may follow it."
-      }
-    },
-    "ask2_reaction": {
-      "2": {
-        "register": "civil",
-        "reason": "record:2 variant establishes 'almost hurt'. Node-level mood is 'relieved', which the variant contradicts in prose."
-      }
-    }
-  },
-
-  "montagePanels": {
-    "ask2_refuse_response": [
-      "call_without_you",
-      "kitchen_pleasantry",
-      "june_two_seats",
-      "empty_chair"
-    ]
-  }
+  "propNote": "Only two objects in this scenario are placed in a room by the prose and moved between scenes: the laptop and the notepad. Everything else is either environment (the monitor carrying 'upload dialog' and 'completion date field'; the meeting room's closed door), wardrobe (the coat), or prose-only. 'a closed door' is deliberately NOT mapped to the existing prop.door_closed \u2014 that asset is a domestic kitchen door drawn for Neighbourhood, and reusing it in a corporate meeting room is a craft mismatch. The room draws its own, exactly as scene.coffee_shop draws its own window and espresso machine.",
+  "scoringKeysNote": "No entry in this file names a state, score or derived key. registries.json scoring_keys_forbidden carries The Instruction's keys so negative_test.py can assert it."
 }

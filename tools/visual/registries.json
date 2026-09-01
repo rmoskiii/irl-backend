@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Scenario-agnostic. Lives outside scenario JSON. Spec v1.0 \u00a76.",
+  "note": "Scenario-agnostic. Lives outside scenario JSON. Spec v1.0 \u00a76. Career district (char.ray, char.dana, five scenes, two props, three vignettes) added without forking: one registry, two districts.",
   "slots": [
     "left",
     "centre",
@@ -20,14 +20,17 @@
     "montage",
     "remote",
     "absent",
-    "messages"
+    "messages",
+    "none"
   ],
+  "modesNote": "'none' is an INTENTIONAL blank: the node is a scene by presentation type but deliberately carries no artwork. It resolves to a null render block, the same shape 'messages' produces, and is set only through an explicit modeOverrides entry \u2014 never inferred from a missing visual block, which already means 'infer from location'. Added for the_instruction/escalate_bare, whose testPlaythrough declares the absence deliberate.",
   "characters": {
     "char.jessica": {
       "name": "Jessica",
       "base": "figure_a",
       "turned": "figure_a_rear",
       "palette": "neighbourhood",
+      "defaultWardrobe": "home_casual",
       "registers": [
         "open",
         "held",
@@ -47,6 +50,7 @@
       "base": "figure_b",
       "turned": "figure_b_rear",
       "palette": "neighbourhood",
+      "defaultWardrobe": "home_casual",
       "registers": [
         "open",
         "bright",
@@ -58,8 +62,43 @@
         "home_casual",
         "formal"
       ]
+    },
+    "char.ray": {
+      "name": "Ray",
+      "base": "figure_c",
+      "turned": null,
+      "palette": "career",
+      "defaultWardrobe": "work",
+      "registers": [
+        "open",
+        "guarded",
+        "heavy",
+        "set",
+        "squared"
+      ],
+      "wardrobe": [
+        "work",
+        "work_coat"
+      ],
+      "note": "Ray Okonjo, manager. figure_c reuses figure_a's geometry contract only \u2014 basePoint, headSocket, neckSpan. Face, hair, proportion and wardrobe are drawn fresh. No rear figure: nothing in The Instruction frames over a shoulder and the player is never drawn."
+    },
+    "char.dana": {
+      "name": "Dana",
+      "base": "figure_d",
+      "turned": null,
+      "palette": "career",
+      "defaultWardrobe": "work_formal",
+      "registers": [
+        "level",
+        "noting"
+      ],
+      "wardrobe": [
+        "work_formal"
+      ],
+      "note": "Dana Whitfield, engagement lead. figure_d reuses figure_b's geometry contract only. Two registers because she appears in two nodes and one of them is an alternative to the other; a third would be an orphan under validator rule 8."
     }
   },
+  "defaultWardrobeNote": "resolve.py hard-coded 'home_casual' as the wardrobe floor, which no Career character has. Reading it per character removes fifteen otherwise-identical nodeOverrides. The two Neighbourhood entries restate the existing value, so The Secret's render blocks are unchanged.",
   "scenes": {
     "scene.kitchen": {
       "times": [
@@ -90,8 +129,39 @@
         "night"
       ],
       "default_time": "night"
+    },
+    "scene.desk_evening": {
+      "times": [
+        "evening"
+      ],
+      "default_time": "evening"
+    },
+    "scene.desk_day": {
+      "times": [
+        "day"
+      ],
+      "default_time": "day"
+    },
+    "scene.meeting_room": {
+      "times": [
+        "day"
+      ],
+      "default_time": "day"
+    },
+    "scene.review_room": {
+      "times": [
+        "day"
+      ],
+      "default_time": "day"
+    },
+    "scene.office_floor": {
+      "times": [
+        "day"
+      ],
+      "default_time": "day"
     }
   },
+  "scenesNote": "resolve.py reads scene_def['default_time'] and offers no per-node override, so a room seen at two times is two scene tokens and two assets. desk_evening carries Act 1 (Wednesday, half past eight) and desk_day carries the Friday afternoon reply \u2014 the node the whole scenario resolves through.",
   "vignettes": {
     "vig.hospital_night": {
       "note": "establish beat 1 \u2014 2:00 AM"
@@ -110,6 +180,15 @@
     },
     "vig.saturday_quiet": {
       "note": "act4_avoidant_proposal panel 3"
+    },
+    "vig.call_without_you": {
+      "note": "ask2_refuse_response panel 1 \u2014 a Monday client call, seen from outside the room"
+    },
+    "vig.kitchen_pleasantry": {
+      "note": "ask2_refuse_response panel 2 \u2014 the break-out kitchen, two people, nobody asking what you're working on"
+    },
+    "vig.june_two_seats": {
+      "note": "ask2_refuse_response panel 3 \u2014 two seats taken on the June phase"
     }
   },
   "props": {
@@ -123,8 +202,11 @@
     "prop.glass_set_down": {},
     "prop.raised_glass": {},
     "prop.cigarette": {},
-    "prop.phone": {}
+    "prop.phone": {},
+    "prop.laptop_open": {},
+    "prop.notepad": {}
   },
+  "propsNote": "Two new props for the whole Career scenario. The prose places only two objects in a room and moves them between scenes; everything else the district needs is environment furniture, which the scene owns.",
   "scoring_keys_forbidden": [
     "jessicaLoyalty",
     "alexLoyalty",
@@ -133,6 +215,22 @@
     "integrity",
     "loyaltyBand",
     "jessicaStanding",
-    "alexStanding"
+    "alexStanding",
+    "complicity",
+    "record",
+    "pushedBack",
+    "managerStance",
+    "alteredDate",
+    "signedQA",
+    "emailedClient",
+    "ownedIt",
+    "redirectSpent",
+    "escalated",
+    "auditResponse",
+    "auditReply",
+    "exposureBand",
+    "recordBand",
+    "complicityBand",
+    "reviewOutcome"
   ]
 }
