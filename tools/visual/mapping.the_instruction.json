@@ -1,0 +1,195 @@
+{
+  "_meta": {
+    "scenario": "the_instruction",
+    "district": "career",
+    "shapeStatus": "PROVISIONAL — key names taken from IRX_VISUAL_SYSTEM_SCOPE.md §4. The internal shape of each key is inferred, not read from mapping.the_secret.json, which is not available in this workspace. Conform to that file before use.",
+    "bubbles": "OFF for this scenario. No node ids are added to tools/visual/bubble_nodes.json. The global bubble contract is untouched.",
+    "authoringDecisions": [
+      "Ray Okonjo is drawn as a middle-aged white man; Dana Whitfield as a middle-aged white woman. The prose uses they/them for both and does not establish this. Recorded here as an explicit art-direction decision, not as something the scenario asserts.",
+      "The player is never drawn. `resolution` declares presentation.data.character.name = 'You'; it resolves to an absent state via nodeOverrides, with no edit to scenario prose.",
+      "`escalate_bare` carries no visual block by design and is listed in suppressedNodes. No environment, cast or props are manufactured for it."
+    ]
+  },
+
+  "figures": {
+    "ray": {
+      "asset": "figure_c",
+      "geometryBasis": "figure_a",
+      "headSocket": 210,
+      "neckSpan": { "x0": 81, "x1": 119, "fromY": 170 },
+      "wardrobes": ["work", "work_coat"],
+      "note": "Reuses figure_a body/anchor architecture only. Face, hair, proportion, wardrobe and registers are drawn fresh."
+    },
+    "dana": {
+      "asset": "figure_d",
+      "geometryBasis": "figure_b",
+      "headSocket": 196,
+      "neckSpan": { "x0": 85, "x1": 123, "fromY": 156 },
+      "wardrobes": ["work_formal"],
+      "note": "Reuses figure_b body/anchor architecture only. Identity is drawn fresh."
+    }
+  },
+
+  "moodMap": {
+    "ray": {
+      "warm": "open",
+      "relieved": "open",
+      "easy": "open",
+      "conceding": "civil",
+      "polite": "civil",
+      "careful": "civil",
+      "tired": "tired",
+      "distracted": "tired",
+      "flat": "closed",
+      "immovable": "closed",
+      "distant": "closed",
+      "pressed": "pressed"
+    },
+    "dana": {
+      "neutral": "attentive",
+      "procedural": "procedural"
+    }
+  },
+
+  "registerTilt": {
+    "figure_c": { "open": 0, "civil": -5, "tired": -10, "closed": -15, "pressed": 8 },
+    "figure_d": { "attentive": 0, "procedural": -6 }
+  },
+
+  "locationTokens": {
+    "The office, six weeks ago": "office_floor",
+    "Your desk, Wednesday evening": "desk_evening",
+    "Your desk, later": "desk_evening",
+    "The small meeting room, Friday": "meeting_room",
+    "The office, the following week": "office_floor",
+    "Dana's office": "review_room",
+    "The office, the weeks after": "review_room",
+    "The office, over the summer": "office_floor",
+    "The office, spring into summer": "office_floor",
+    "Your desk": "desk_day",
+    "Your desk, Friday afternoon": "desk_day",
+    "The office, three weeks later": "office_floor"
+  },
+
+  "settingTokens": {
+    "office": "office_floor",
+    "desk": "desk_evening",
+    "meeting_room": "meeting_room",
+    "review_room": "review_room",
+    "phone": null
+  },
+
+  "propSynonyms": {
+    "laptop turned round": "laptop_open",
+    "the same laptop": "laptop_open",
+    "a notepad": "notepad_pen"
+  },
+
+  "environmentFeatures": {
+    "_note": "Named in prose, drawn into the environment rather than anchored as props. Not prop assets.",
+    "upload dialog": "desk_evening.monitor",
+    "completion date field": "desk_evening.monitor",
+    "a closed door": "meeting_room.door"
+  },
+
+  "wardrobeTokens": {
+    "coat already on": "work_coat",
+    "coat": "work_coat"
+  },
+
+  "unrenderableProps": [
+    "the rebuilt section",
+    "an 11:40pm send",
+    "a waved-off apology",
+    "half past eight",
+    "two seats in June",
+    "eleven lines",
+    "an empty name field",
+    "no Thursday",
+    "hands flat on the desk",
+    "nothing in front of you",
+    "a timestamp",
+    "a second format",
+    "five quiet weeks",
+    "the corridor",
+    "hello",
+    "summer",
+    "21:40",
+    "three dots",
+    "the sofa",
+    "the file",
+    "three questions",
+    "a note",
+    "a debt nobody has named",
+    "one name went to Dana",
+    "it's just the date",
+    "your name needs to be on it",
+    "the client call is nine tomorrow",
+    "what have you got",
+    "send me that",
+    "careful with each other",
+    "just so we're saying the same thing",
+    "what you can produce"
+  ],
+
+  "suppressedNodes": ["escalate_bare"],
+
+  "nodeOverrides": {
+    "escalate_bare": {
+      "render": null,
+      "reason": "Deliberate blank. The documented sibling carries a visual block; this one does not. Suppression is explicit so the generic location/setting fallback cannot manufacture a frame."
+    },
+    "escalate_documented": {
+      "scene": "review_room",
+      "reason": "location string says 'The office, the weeks after' but visual.setting says review_room; the visual block wins."
+    },
+    "resolution": {
+      "mode": "absent",
+      "scene": "office_floor",
+      "cast": [],
+      "reason": "presentation.data.character.name is 'You'. The player is never drawn. Smallest override that produces the intended empty-office state without editing prose."
+    },
+    "audit_reply": {
+      "mode": "absent",
+      "scene": "desk_day",
+      "cast": []
+    },
+    "audit_ray_calls": {
+      "mode": "remote",
+      "scene": "desk_evening",
+      "cast": [],
+      "reason": "Ray is a voice. Remote mode carries an empty cast and no tail."
+    },
+    "ask2_refuse_response": {
+      "mode": "montage",
+      "cast": []
+    },
+    "ask3_client_email": { "render": null },
+    "ask4_ownership": { "render": null },
+    "audit_email": { "render": null }
+  },
+
+  "variantOverrides": {
+    "ask1_reaction": {
+      "1": {
+        "register": "civil",
+        "reason": "record:1 variant establishes 'slightly puzzled', not the node-level 'distracted'. Prose-established, so the register may follow it."
+      }
+    },
+    "ask2_reaction": {
+      "2": {
+        "register": "civil",
+        "reason": "record:2 variant establishes 'almost hurt'. Node-level mood is 'relieved', which the variant contradicts in prose."
+      }
+    }
+  },
+
+  "montagePanels": {
+    "ask2_refuse_response": [
+      "call_without_you",
+      "kitchen_pleasantry",
+      "june_two_seats",
+      "empty_chair"
+    ]
+  }
+}
