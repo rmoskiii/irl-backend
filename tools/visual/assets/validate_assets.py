@@ -163,9 +163,6 @@ def main():
         for h in set(hard):
             warn(8, f"{p.relative_to(ROOT)}: hard-coded colour {h} outside <defs>")
 
-    # 9 — IDs correspond to render blocks
-    # render_blocks.json lives at tools/visual/, not tools/. compose_frame.py
-    # already probes both locations; this checked one and crashed the whole run.
     _rb = next((c for c in (ROOT.parent / "render_blocks.json",
                             ROOT.parent.parent / "render_blocks.json")
                 if c.exists()), None)
@@ -195,8 +192,12 @@ def main():
         for c in frame["cast"]:
             s = sc["slots"][c["slot"]]
             legal.add((s["x"] - cx, s["y"] - cy))
-            legal.add((A["character"]["headSocket"]["x"] - A["register"]["neckAnchor"]["x"],
-                       A["character"]["headSocket"]["y"] - A["register"]["neckAnchor"]["y"]))
+            # per-character, same reason compose_frame's cast loop is: the global
+            # anchors.character block is deprecated, and a figure_b frame legally
+            # carries translate(110,-14) which this would have called undocumented.
+            _cc = A.get("characters", {}).get(c["base"]) or A["character"]
+            legal.add((_cc["headSocket"]["x"] - A["register"]["neckAnchor"]["x"],
+                       _cc["headSocket"]["y"] - A["register"]["neckAnchor"]["y"]))
         for p_ in frame["props"]:
             m = A["props"][p_["id"]]["basePoint"]
             a = sc["propAnchors"][p_["anchor"]]

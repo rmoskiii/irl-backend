@@ -79,6 +79,54 @@
   --irx-stroke:        3.4;
   --irx-stroke-fine:   2.1;
   --irx-stroke-hair:   1.4;
+
+  /* ==== career district ==== */
+/* career: architecture */
+--irx-career-wall:          #6E757E;
+--irx-career-wall-dark:     #5C636B;
+--irx-career-wall-pattern:  #666D76;
+--irx-career-partition:     #58606A;
+--irx-career-partition-dark:#4A5158;
+--irx-career-floor:         #4A4F55;
+/* career: window, evening. The office is lit; outside is not. */
+--irx-career-sky-high:      #1E2836;
+--irx-career-sky-mid:       #26303D;
+--irx-career-sky-low:       #2E3444;
+--irx-career-outside-dark:  #161C25;
+/* career: joinery */
+--irx-career-desk:          #8A8478;
+--irx-career-desk-edge:     #6F6A60;
+--irx-career-desk-dark:     #5E5A52;
+--irx-career-metal:         #7A828A;
+--irx-career-metal-dark:    #626A72;
+/* career: light. Overhead fluorescent and one screen. */
+--irx-career-fluoro:        #E8EDF2;
+--irx-career-fluoro-dim:    #A8B2BC;
+--irx-career-screen:        #6E93A8;
+--irx-career-screen-glow:   #9FC4D8;
+/* career: figure_c (Ray) */
+--irx-career-skin-c:        #D9A886;
+--irx-career-skin-c-shade:  #B98565;
+--irx-career-hair-c:        #6E655C;
+--irx-career-hair-c-light:  #8A8076;
+--irx-career-lip-c:         #B57F66;
+--irx-career-mouth-c:       #6B4436;
+/* career: figure_d (Dana) */
+--irx-career-skin-d:        #E0B294;
+--irx-career-skin-d-shade:  #BE8D6F;
+--irx-career-hair-d:        #4A4038;
+--irx-career-hair-d-light:  #6A5C50;
+/* career: wardrobe work */
+--irx-career-shirt-c:       #9FA9B4;
+--irx-career-shirt-c-dark:  #7E8894;
+--irx-career-shirt-c-fold:  #6B7480;
+/* career: wardrobe work_coat */
+--irx-career-coat-c:        #4E5661;
+--irx-career-coat-c-dark:   #3C434D;
+--irx-career-coat-c-fold:   #5C6570;
+/* career: accent. Matches district_theme.dart Career accent 0xFF7EA6DB. */
+--irx-career-accent:        #7EA6DB;
+--irx-career-accent-dim:    #5F7FA9;
 }
 /* @tokens-end */
 .ln  { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
@@ -285,7 +333,7 @@
   <path class="ln" stroke-width="1.4" d="M284 344 q-8 58 -4 122" opacity="0.4" />
   <path d="M272 296 q15 62 13 132 q-2 60 -5 118 h-24 q4 -128 -2 -196 q-2 -32 18 -54 z" fill="var(--irx-shadow)" opacity="0.16" />
 </g>
-</g></g><g data-layer="character_head"><g transform="translate(590,100)"><g transform="translate(110,0) rotate(9,100,210)"><g id="character_head">
+</g></g><g data-layer="character_head"><g transform="translate(590,100)"><g transform="translate(110,-14) rotate(9,100,210)"><g id="character_head">
   <path d="M100 16 q44 0 56 34 q7 26 5 56 q-3 34 -18 52 q-15 18 -43 18            q-28 0 -43 -18 q-15 -18 -18 -52 q-2 -30 5 -56 q12 -34 56 -34 z" class="sk" />
   <path class="ln" stroke-width="3.8" d="M100 16 q44 0 56 34 q7 26 5 56 q-3 34 -18 52 q-15 18 -43 18            q-28 0 -43 -18 q-15 -18 -18 -52 q-2 -30 5 -56 q12 -34 56 -34 z" />
   <path class="ln" stroke-width="3.6" d="M100 176 q-28 0 -43 -18 q-9 -11 -14 -28" opacity="0.4" />

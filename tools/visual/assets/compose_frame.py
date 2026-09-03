@@ -292,7 +292,7 @@ def main(frame_id, with_bubbles=False):
     # ------------------------------------------------------------- character
     for cast in fr["cast"]:
         base = cast["base"]
-        cc = A["character"]
+        cc = A.get("characters", {}).get(base) or A["character"]
         bx, by = cc["basePoint"]["x"], cc["basePoint"]["y"]
         sx, sy = scene_cfg["slots"][cast["slot"]]["x"], scene_cfg["slots"][cast["slot"]]["y"]
         char_tx, char_ty = sx - bx, sy - by
