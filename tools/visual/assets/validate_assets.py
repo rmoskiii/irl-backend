@@ -164,18 +164,27 @@ def main():
             warn(8, f"{p.relative_to(ROOT)}: hard-coded colour {h} outside <defs>")
 
     # 9 — IDs correspond to render blocks
-    rb = json.loads((ROOT.parent.parent / "render_blocks.json").read_text(encoding="utf-8"))
-    block = rb["confession"]["default"]
-    if block["scene"]["id"] != frame["scene"]:
-        fail(9, "frame scene does not match render block")
-    if sorted(p["id"] for p in frame["props"]) != sorted(block["props"]):
-        fail(9, f"frame props {[p['id'] for p in frame['props']]} != render block {block['props']}")
-    c0, b0 = frame["cast"][0], block["cast"][0]
-    for k in ("id", "slot", "register", "wardrobe"):
-        if c0[k] != b0[k]:
-            fail(9, f"cast {k}: frame {c0[k]!r} != render block {b0[k]!r}")
-    if frame.get("framing", block["framing"]) != block["framing"]:
-        fail(9, "framing mismatch")
+    # render_blocks.json lives at tools/visual/, not tools/. compose_frame.py
+    # already probes both locations; this checked one and crashed the whole run.
+    _rb = next((c for c in (ROOT.parent / "render_blocks.json",
+                            ROOT.parent.parent / "render_blocks.json")
+                if c.exists()), None)
+    if _rb is None:
+        fail(9, "render_blocks.json not found in tools/visual/ or its parent")
+        block = None
+    else:
+        block = json.loads(_rb.read_text(encoding="utf-8"))["confession"]["default"]
+    if block is not None:
+        if block["scene"]["id"] != frame["scene"]:
+            fail(9, "frame scene does not match render block")
+        if sorted(p["id"] for p in frame["props"]) != sorted(block["props"]):
+            fail(9, f"frame props {[p['id'] for p in frame['props']]} != render block {block['props']}")
+        c0, b0 = frame["cast"][0], block["cast"][0]
+        for k in ("id", "slot", "register", "wardrobe"):
+            if c0[k] != b0[k]:
+                fail(9, f"cast {k}: frame {c0[k]!r} != render block {b0[k]!r}")
+        if frame.get("framing", block["framing"]) != block["framing"]:
+            fail(9, "framing mismatch")
 
     # 10 — no undocumented offsets in the composed frame
     fp = ROOT / "frames" / "frame_1_confession.svg"
@@ -276,7 +285,7 @@ def main():
                 fail(13, f"{vp.name}: missing layer group 'vignette'")
 
     # 12 — Phase 1 untouched
-    scn = ROOT.parent.parent / "scenarios" / "the_secret.json"
+    scn = ROOT.parents[2] / "src" / "data" / "scenarios" / "the_secret.json"
     if scn.exists():
         d = json.loads(scn.read_text(encoding="utf-8"))
         n = d["nodes"]["confession"]["presentation"]["data"]
