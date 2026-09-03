@@ -1,0 +1,293 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
+     id="scene.review_room" data-asset="scene.review_room" data-time="day"
+     data-occlusion-line="600" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYToxOTkzMGEwYS0wODVhLTQ3M2ItOTFiNS0wYTE1OGU5NzQ3YzEAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaDDUW6RfU02MHgkdKpBikeEAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoyNzY5MjMyMC0wMWMzLTQwYzMtYjM1ZS1kNzIyZTIzNDcxYWJscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNo+6kZk1KJ/WDKHPViMfCAAwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggu2LEC+wl/wAwM/9hx6JFvSEGkRJhIdojT7PUiypmGO6kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaGrUgQ4U4jkBPqQJuIrC0RUAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCD3ktKCpoQKP3trRa16sJ8MrA5KJ7sg+UEl6lK2Wg41UmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjoZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjE5OTMwYTBhLTA4NWEtNDczYi05MWI1LTBhMTU4ZTk3NDdjMS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmMxZGI3ZjFkLTJlYzAtNDJmYi04YzZjLTk1Zjk5ZWU5ZWYwZHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCC7YsQL7CX/ADAz/2HHokW9IQaREmEh2iNPs9SLKmYY7qJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggEwxmYGgt0We+ZpsgQMrIIGZ8AT9mP6gmhDZL1+mAQ4eiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFgg8sXmBVvllQglYrXbwnJQkCzzqt0qFhyL8aFE4mZwQVF0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQMdbIExyCnWLqc80b5okMkAmHmYxYy8SAqZgjvxq5L+Ef1E2GoTplshTqEJYEIBNYMRgCcW3KsfDqUUYx1oMU8E=</c2pa:manifest></metadata>
+    <!-- IRX 2B.8 = scene.review_room. Second CAREER environment. Dana's office.
+
+         TOKEN BLOCK: this file ships with the Career token set only. Run
+         inject_tokens.py after adding it so the block is rewritten to the canonical
+         tokens.css body; validate_assets.py rule 8 requires byte-identity and will
+         fail until that is done.
+
+         Carries two render states: escalate_meeting (Dana, level) and
+         escalate_documented (Dana, noting). Also frame_d_scale_test.
+
+         THE HEAD BAND IS HIGHER HERE THAN IN desk_evening, AND THAT DRIVES THE
+         ARCHITECTURE. figure_d is built on figure_b geometry, headSocket 196, not
+         figure_c's 210. basePoint (210,800) on slot (800,900) puts the register at
+         canvas y 86..306 and the shoulder line at about y 330. Fourteen pixels
+         higher than Ray. Every horizontal in the centre column therefore sits below
+         y=346: the credenza rail is at 420, and nothing else crosses x 590..1010
+         above it. A rail at desk_evening's 380 would have been fine for Ray and
+         wrong for Dana by exactly the margin nobody would have noticed.
+
+         OCCLUSION: Dana's desk is one opaque mass from y=592 to the bottom of the
+         canvas. Solid front panel, no legs, no kneehole. The kneehole is the
+         obvious thing to draw in an office and it is the thing that breaks the
+         contract.
+
+         DAY, and institutional. The window is flat overcast through half-closed
+         blinds rather than a view - this is the room where you are asked what you
+         have got, and there is nothing out there to look at. No new tokens: the
+         glass is carried by the fluorescent pair, which is what an overcast
+         window reads as anyway. -->
+    <defs><style>
+        /* @tokens-begin */
+        :root {
+        /* line and stroke: GLOBAL craft language, identical in both districts.
+        Not namespaced - the line weight and colour are the thing the two
+        districts have in common, and forking them would fork the craft. */
+        --irx-line:                 #241D19;
+        --irx-line-soft:            #3B302A;
+        --irx-shadow:               #2A231E;
+
+        /* career: architecture */
+        --irx-career-wall:          #6E757E;
+        --irx-career-wall-dark:     #5C636B;
+        --irx-career-wall-pattern:  #666D76;
+        --irx-career-partition:     #58606A;
+        --irx-career-partition-dark:#4A5158;
+        --irx-career-floor:         #4A4F55;
+
+        /* career: window, evening. The office is lit; outside is not. */
+        --irx-career-sky-high:      #1E2836;
+        --irx-career-sky-mid:       #26303D;
+        --irx-career-sky-low:       #2E3444;
+        --irx-career-outside-dark:  #161C25;
+
+        /* career: joinery */
+        --irx-career-desk:          #8A8478;
+        --irx-career-desk-edge:     #6F6A60;
+        --irx-career-desk-dark:     #5E5A52;
+        --irx-career-metal:         #7A828A;
+        --irx-career-metal-dark:    #626A72;
+
+        /* career: light. Overhead fluorescent and one screen. */
+        --irx-career-fluoro:        #E8EDF2;
+        --irx-career-fluoro-dim:    #A8B2BC;
+        --irx-career-screen:        #6E93A8;
+        --irx-career-screen-glow:   #9FC4D8;
+
+        /* career: figure_c (Ray) */
+        --irx-career-skin-c:        #D9A886;
+        --irx-career-skin-c-shade:  #B98565;
+        --irx-career-hair-c:        #6E655C;
+        --irx-career-hair-c-light:  #8A8076;
+        --irx-career-lip-c:         #B57F66;
+        --irx-career-mouth-c:       #6B4436;
+
+        /* career: figure_d (Dana) */
+        --irx-career-skin-d:        #E0B294;
+        --irx-career-skin-d-shade:  #BE8D6F;
+        --irx-career-hair-d:        #4A4038;
+        --irx-career-hair-d-light:  #6A5C50;
+
+        /* career: wardrobe work */
+        --irx-career-shirt-c:       #9FA9B4;
+        --irx-career-shirt-c-dark:  #7E8894;
+        --irx-career-shirt-c-fold:  #6B7480;
+
+        /* career: wardrobe work_coat */
+        --irx-career-coat-c:        #4E5661;
+        --irx-career-coat-c-dark:   #3C434D;
+        --irx-career-coat-c-fold:   #5C6570;
+
+        /* career: accent. Matches district_theme.dart Career accent 0xFF7EA6DB. */
+        --irx-career-accent:        #7EA6DB;
+        --irx-career-accent-dim:    #5F7FA9;
+
+        /* vignettes: montage panels only. Global ramp, shared with neighbourhood. */
+        --irx-vig-light:            #B3ABA0;
+        --irx-vig-base:             #8C857C;
+        --irx-vig-mid:              #635D56;
+        --irx-vig-dark:             #3B3733;
+
+        /* stroke weights: global */
+        --irx-stroke-xheavy: 6.6;
+        --irx-stroke-heavy:  5;
+        --irx-stroke:        3.4;
+        --irx-stroke-fine:   2.1;
+        --irx-stroke-hair:   1.4;
+        }
+        /* @tokens-end */
+        .ln    { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .wall  { fill: var(--irx-career-wall); }
+        .walld { fill: var(--irx-career-wall-dark); }
+        .wallp { fill: var(--irx-career-wall-pattern); }
+        .part  { fill: var(--irx-career-partition); }
+        .partd { fill: var(--irx-career-partition-dark); }
+        .desk  { fill: var(--irx-career-desk); }
+        .deske { fill: var(--irx-career-desk-edge); }
+        .deskd { fill: var(--irx-career-desk-dark); }
+        .met   { fill: var(--irx-career-metal); }
+        .metd  { fill: var(--irx-career-metal-dark); }
+        .flr   { fill: var(--irx-career-floor); }
+        .shad  { fill: var(--irx-shadow); }
+        .fluo  { fill: var(--irx-career-fluoro); }
+        .fluod { fill: var(--irx-career-fluoro-dim); }
+        .acc   { fill: var(--irx-career-accent); }
+        .accd  { fill: var(--irx-career-accent-dim); }
+    </style>
+
+        <pattern id="r-carpet" width="72" height="72" patternUnits="userSpaceOnUse">
+            <path d="M0 36 h72" stroke="var(--irx-career-wall-dark)" stroke-width="2" opacity="0.30"/>
+            <path d="M36 0 v72" stroke="var(--irx-career-wall-dark)" stroke-width="2" opacity="0.18"/>
+        </pattern>
+
+        <filter id="r-grain" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="4" seed="67" result="n"/>
+            <feColorMatrix in="n" type="saturate" values="0"/>
+        </filter>
+
+        <radialGradient id="r-vignette" cx="50%" cy="46%" r="74%">
+            <stop offset="52%" stop-color="#0B0E12" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#0B0E12" stop-opacity="0.40"/>
+        </radialGradient>
+        <linearGradient id="r-daylight" x1="0.06" y1="0.1" x2="0.7" y2="0.8">
+            <stop offset="0%"   stop-color="#E8EDF2" stop-opacity="0.26"/>
+            <stop offset="100%" stop-color="#E8EDF2" stop-opacity="0"/>
+        </linearGradient>
+        <!-- Two lighting gradients and a vignette. The vignette is weaker than
+             desk_evening's: this room is fully lit, and nothing here is hiding. -->
+    </defs>
+
+    <!-- ============================== background ============================== -->
+    <g id="background">
+        <path d="M0 0 h1600 v880 q-402 6 -800 0 q-398 -6 -800 2 z" class="wall"/>
+        <path d="M0 0 h1600 v420 q-402 6 -800 0 q-398 -6 -800 2 z" fill="url(#r-carpet)" opacity="0.20"/>
+        <!-- No corner-falloff shape here. desk_evening lost the same one: its curve
+             crossed the architecture and read as a crease in the wall, and the
+             vignette in the foreground group already darkens the ends. -->
+        <!-- ceiling band and the line under it -->
+        <path d="M0 0 h1600 v96 q-402 6 -800 0 q-398 -6 -800 2 z" class="walld" opacity="0.42"/>
+        <path class="ln" stroke-width="3.0" d="M0 98 q400 -6 800 0 q400 6 800 -2" opacity="0.62"/>
+        <!-- skirting, well below the shoulder line -->
+        <path class="ln" stroke-width="2.0" d="M0 566 q400 -5 800 0 q400 5 800 -3" opacity="0.20"/>
+    </g>
+
+    <!-- ============================= architecture ============================= -->
+    <g id="architecture">
+
+        <!-- window, left. Half-closed blinds: flat overcast, no view. -->
+        <g id="r-window">
+            <path d="M126 132 q186 -5 370 3 q6 148 2 314 q-186 5 -374 0 q-4 -160 2 -317 z"
+                  class="fluod"/>
+            <path d="M138 146 q176 -5 350 3 q5 138 2 292 q-176 4 -354 0 q-4 -150 2 -295 z"
+                  class="fluo" opacity="0.72"/>
+            <!-- slats. Tighter toward the bottom: the blind is pulled part way. -->
+            <g class="ln" stroke-width="2.6" opacity="0.34">
+                <path d="M140 178 q174 -4 346 2"/><path d="M140 206 q174 -4 346 2"/>
+                <path d="M140 234 q174 -4 346 2"/><path d="M140 262 q174 -4 346 2"/>
+                <path d="M140 290 q174 -4 346 2"/><path d="M140 316 q174 -4 346 2"/>
+                <path d="M140 340 q174 -4 346 2"/><path d="M140 362 q174 -4 346 2"/>
+                <path d="M140 382 q174 -4 346 2"/><path d="M140 400 q174 -4 346 2"/>
+                <path d="M140 416 q174 -4 346 2"/><path d="M140 430 q174 -4 346 2"/>
+            </g>
+            <path class="ln" stroke-width="6.2"
+                  d="M126 132 q186 -5 370 3 q6 148 2 314 q-186 5 -374 0 q-4 -160 2 -317 z"/>
+            <path d="M112 118 q200 -5 398 3 q3 10 1 20 q-200 -6 -400 0 z" class="metd"/>
+            <path class="ln" stroke-width="3.4" d="M112 118 q200 -5 398 3 q3 10 1 20 q-200 -6 -400 0 z"/>
+            <!-- pull cord, the one vertical in this half of the room -->
+            <path class="ln" stroke-width="1.8" d="M474 140 q4 130 2 250" opacity="0.4"/>
+        </g>
+
+        <!-- framed something on the right wall. Institutional, unreadable, and
+             deliberately not a picture: a certificate, a floor plan, a policy. -->
+        <g id="r-frame">
+            <path d="M1184 176 h232 v168 h-232 z" class="metd"/>
+            <path d="M1198 190 h204 v140 h-204 z" class="wallp"/>
+            <path class="ln" stroke-width="4.0" d="M1184 176 h232 v168 h-232 z"/>
+            <path class="ln" stroke-width="2.0" d="M1198 190 h204 v140 h-204 z" opacity="0.6"/>
+            <g class="ln" stroke-width="1.6" opacity="0.22">
+                <path d="M1220 220 h140"/><path d="M1220 244 h164"/>
+                <path d="M1220 268 h122"/><path d="M1220 292 h150"/>
+            </g>
+        </g>
+    </g>
+
+    <!-- ========================= environmental_detail =========================
+         Everything in this group sits BELOW y=420, clear of the head band at
+         y 86..306 and the shoulder line at ~330. -->
+    <g id="environmental_detail">
+
+        <!-- credenza behind the desk. Rail at 420. -->
+        <path d="M520 420 q386 -6 772 -1 v148 q-386 6 -772 1 z" class="part"/>
+        <path d="M520 420 q386 -6 772 -1 v18 q-386 6 -772 1 z" class="partd"/>
+        <path class="ln" stroke-width="3.4" d="M520 420 q386 -6 772 -1"/>
+        <path class="ln" stroke-width="3.4" d="M520 420 v148"/>
+        <path class="ln" stroke-width="3.4" d="M1292 419 v149"/>
+        <path class="ln" stroke-width="2.2" d="M520 566 q386 -6 772 -1" opacity="0.5"/>
+        <!-- three cupboard doors, seams only, none in the centre column -->
+        <g class="ln" stroke-width="1.8" opacity="0.30">
+            <path d="M778 438 q3 62 1 126"/>
+            <path d="M1036 438 q3 62 1 126"/>
+        </g>
+        <g class="ln" stroke-width="2.0" opacity="0.42">
+            <path d="M640 500 h48"/><path d="M1160 500 h48"/>
+        </g>
+
+        <!-- box files on top of the credenza, right of the centre column. Silhouette
+             only, value close to the wall - the room is used, without competing. -->
+        <g opacity="0.62">
+            <path d="M1028 356 h44 v64 h-44 z" class="partd"/>
+            <path d="M1076 348 h40 v72 h-40 z" class="partd"/>
+            <path d="M1120 362 h38 v58 h-38 z" class="partd"/>
+            <path class="ln" stroke-width="2.2" d="M1028 356 h44 v64 h-44 z"/>
+            <path class="ln" stroke-width="2.2" d="M1076 348 h40 v72 h-40 z"/>
+            <path class="ln" stroke-width="2.2" d="M1120 362 h38 v58 h-38 z"/>
+        </g>
+
+        <!-- a phone on the credenza, left. The one accent in the room. -->
+        <path d="M552 392 h68 v28 h-68 z" class="metd"/>
+        <path class="ln" stroke-width="2.4" d="M552 392 h68 v28 h-68 z"/>
+        <circle cx="608" cy="406" r="4" class="acc" opacity="0.62"/>
+    </g>
+
+    <!-- ============================== furniture ==============================
+         Drawn AFTER character_head. One continuous opaque mass, y=592 to y=902. -->
+    <g id="furniture">
+
+        <!-- the mass. Nothing interrupts this. -->
+        <path d="M0 592 q400 -4 800 0 q400 4 800 -2 v312 h-1600 z" class="deske"/>
+
+        <!-- desk top -->
+        <path d="M0 592 q400 -4 800 0 q400 4 800 -2 v42 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="desk"/>
+        <path d="M0 592 q400 -4 800 0 q400 4 800 -2 v9 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="fluod" opacity="0.24"/>
+        <path class="ln" stroke-width="6.8" d="M0 592 q400 -4 800 0 q400 4 800 -2"/>
+        <path class="ln" stroke-width="2.2" d="M0 634 q400 -4 800 0 q400 4 800 -2" opacity="0.6"/>
+        <!-- this desk is tidy. Two marks, no more. -->
+        <path class="ln" stroke-width="1.4" d="M420 610 q24 5 42 -3" opacity="0.20"/>
+        <path class="ln" stroke-width="1.4" d="M1160 608 q26 4 44 -3" opacity="0.18"/>
+
+        <!-- front panel, solid to the floor line. No kneehole. -->
+        <path d="M0 634 q400 -4 800 0 q400 4 800 -2 v178 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="deskd"/>
+        <path d="M0 634 q400 -4 800 0 q400 4 800 -2 v40 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="shad" opacity="0.24"/>
+        <path class="ln" stroke-width="2.4" d="M0 674 q400 -4 800 0 q400 4 800 -2" opacity="0.32"/>
+        <g class="ln" stroke-width="2.0" opacity="0.28">
+            <path d="M452 640 q3 82 1 168"/>
+            <path d="M1148 640 q3 82 1 168"/>
+        </g>
+        <path class="ln" stroke-width="5.0" d="M0 812 q400 -4 800 0 q400 4 800 -2"/>
+
+        <!-- floor -->
+        <path d="M0 812 q400 -4 800 0 q400 4 800 -2 v92 h-1600 z" class="flr"/>
+        <path d="M0 812 q400 -4 800 0 q400 4 800 -2 v24 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="shad" opacity="0.30"/>
+        <g class="ln" stroke-width="1.6" opacity="0.18">
+            <path d="M340 900 q8 -42 18 -86"/>
+            <path d="M820 900 q2 -42 4 -86"/>
+            <path d="M1280 900 q-8 -42 -18 -86"/>
+        </g>
+    </g>
+
+    <!-- ============================== foreground ============================== -->
+    <g id="foreground">
+        <rect x="0" y="0" width="1600" height="900" fill="url(#r-daylight)" pointer-events="none"/>
+        <rect x="0" y="0" width="1600" height="900" fill="url(#r-vignette)" pointer-events="none"/>
+        <rect x="0" y="0" width="1600" height="900" filter="url(#r-grain)" opacity="0.08"
+              style="mix-blend-mode:multiply" pointer-events="none"/>
+    </g>
+</svg>
