@@ -1616,6 +1616,18 @@
       "props": [],
       "note": "Departs from the 2B.1 precedent deliberately. Alex was checkpointed in the LOCKED kitchen because his own rooms did not exist and the kitchen was an accepted reference. Ray cannot be: the Career palette inverts the lighting family, so a Career figure in a Neighbourhood room would be judged against a value relationship that will never ship. desk_evening is drawn first and Ray is judged in it."
     },
+  "frame_c_set": {
+    "renderBlockSource": "SYNTHETIC — register swap partner for frame_c_checkpoint. Differs in exactly one render-block field.",
+    "scene": "scene.desk_evening",
+    "time": "evening",
+    "framing": "direct",
+    "cast": [
+      { "id": "char.ray", "base": "figure_c", "slot": "centre",
+        "register": "set", "wardrobe": "work" }
+    ],
+    "props": [],
+    "note": "set is the right partner for open: 23 degrees of tilt apart, the largest separation in Ray's matrix, so a head layer that failed to swap would be unmissable."
+},
     "frame_c_scale_test": {
       "renderBlockSource": "SYNTHETIC — shipping-scale register separation, not a scenario node",
       "scene": "scene.desk_evening",

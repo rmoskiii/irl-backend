@@ -30,83 +30,133 @@
          text would assert a document the prose does not describe. -->
     <defs><style>
         /* @tokens-begin */
-        :root {
-        /* line and stroke: GLOBAL craft language, identical in both districts.
-        Not namespaced - the line weight and colour are the thing the two
-        districts have in common, and forking them would fork the craft. */
-        --irx-line:                 #241D19;
-        --irx-line-soft:            #3B302A;
-        --irx-shadow:               #2A231E;
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
 
-        /* career: architecture */
-        --irx-career-wall:          #6E757E;
-        --irx-career-wall-dark:     #5C636B;
-        --irx-career-wall-pattern:  #666D76;
-        --irx-career-partition:     #58606A;
-        --irx-career-partition-dark:#4A5158;
-        --irx-career-floor:         #4A4F55;
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
 
-        /* career: window, evening. The office is lit; outside is not. */
-        --irx-career-sky-high:      #1E2836;
-        --irx-career-sky-mid:       #26303D;
-        --irx-career-sky-low:       #2E3444;
-        --irx-career-outside-dark:  #161C25;
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
 
-        /* career: joinery */
-        --irx-career-desk:          #8A8478;
-        --irx-career-desk-edge:     #6F6A60;
-        --irx-career-desk-dark:     #5E5A52;
-        --irx-career-metal:         #7A828A;
-        --irx-career-metal-dark:    #626A72;
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
 
-        /* career: light. Overhead fluorescent and one screen. */
-        --irx-career-fluoro:        #E8EDF2;
-        --irx-career-fluoro-dim:    #A8B2BC;
-        --irx-career-screen:        #6E93A8;
-        --irx-career-screen-glow:   #9FC4D8;
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
 
-        /* career: figure_c (Ray) */
-        --irx-career-skin-c:        #D9A886;
-        --irx-career-skin-c-shade:  #B98565;
-        --irx-career-hair-c:        #6E655C;
-        --irx-career-hair-c-light:  #8A8076;
-        --irx-career-lip-c:         #B57F66;
-        --irx-career-mouth-c:       #6B4436;
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
 
-        /* career: figure_d (Dana) */
-        --irx-career-skin-d:        #E0B294;
-        --irx-career-skin-d-shade:  #BE8D6F;
-        --irx-career-hair-d:        #4A4038;
-        --irx-career-hair-d-light:  #6A5C50;
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
 
-        /* career: wardrobe work */
-        --irx-career-shirt-c:       #9FA9B4;
-        --irx-career-shirt-c-dark:  #7E8894;
-        --irx-career-shirt-c-fold:  #6B7480;
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
 
-        /* career: wardrobe work_coat */
-        --irx-career-coat-c:        #4E5661;
-        --irx-career-coat-c-dark:   #3C434D;
-        --irx-career-coat-c-fold:   #5C6570;
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
 
-        /* career: accent. Matches district_theme.dart Career accent 0xFF7EA6DB. */
-        --irx-career-accent:        #7EA6DB;
-        --irx-career-accent-dim:    #5F7FA9;
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
 
-        /* vignettes: montage panels only. Global ramp, shared with neighbourhood. */
-        --irx-vig-light:            #B3ABA0;
-        --irx-vig-base:             #8C857C;
-        --irx-vig-mid:              #635D56;
-        --irx-vig-dark:             #3B3733;
-
-        /* stroke weights: global */
-        --irx-stroke-xheavy: 6.6;
-        --irx-stroke-heavy:  5;
-        --irx-stroke:        3.4;
-        --irx-stroke-fine:   2.1;
-        --irx-stroke-hair:   1.4;
-        }
-        /* @tokens-end */
+  /* ==== career district ==== */
+/* career: architecture */
+--irx-career-wall:          #6E757E;
+--irx-career-wall-dark:     #5C636B;
+--irx-career-wall-pattern:  #666D76;
+--irx-career-partition:     #58606A;
+--irx-career-partition-dark:#4A5158;
+--irx-career-floor:         #4A4F55;
+/* career: window, evening. The office is lit; outside is not. */
+--irx-career-sky-high:      #1E2836;
+--irx-career-sky-mid:       #26303D;
+--irx-career-sky-low:       #2E3444;
+--irx-career-outside-dark:  #161C25;
+/* career: joinery */
+--irx-career-desk:          #8A8478;
+--irx-career-desk-edge:     #6F6A60;
+--irx-career-desk-dark:     #5E5A52;
+--irx-career-metal:         #7A828A;
+--irx-career-metal-dark:    #626A72;
+/* career: light. Overhead fluorescent and one screen. */
+--irx-career-fluoro:        #E8EDF2;
+--irx-career-fluoro-dim:    #A8B2BC;
+--irx-career-screen:        #6E93A8;
+--irx-career-screen-glow:   #9FC4D8;
+/* career: figure_c (Ray) */
+--irx-career-skin-c:        #D9A886;
+--irx-career-skin-c-shade:  #B98565;
+--irx-career-hair-c:        #6E655C;
+--irx-career-hair-c-light:  #8A8076;
+--irx-career-lip-c:         #B57F66;
+--irx-career-mouth-c:       #6B4436;
+/* career: figure_d (Dana) */
+--irx-career-skin-d:        #E0B294;
+--irx-career-skin-d-shade:  #BE8D6F;
+--irx-career-hair-d:        #4A4038;
+--irx-career-hair-d-light:  #6A5C50;
+/* career: wardrobe work */
+--irx-career-shirt-c:       #9FA9B4;
+--irx-career-shirt-c-dark:  #7E8894;
+--irx-career-shirt-c-fold:  #6B7480;
+/* career: wardrobe work_coat */
+--irx-career-coat-c:        #4E5661;
+--irx-career-coat-c-dark:   #3C434D;
+--irx-career-coat-c-fold:   #5C6570;
+/* career: accent. Matches district_theme.dart Career accent 0xFF7EA6DB. */
+--irx-career-accent:        #7EA6DB;
+--irx-career-accent-dim:    #5F7FA9;
+}
+/* @tokens-end */
         .ln    { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
         .wall  { fill: var(--irx-career-wall); }
         .walld { fill: var(--irx-career-wall-dark); }
