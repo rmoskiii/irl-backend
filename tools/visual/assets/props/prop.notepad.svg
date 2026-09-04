@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 130"
+     id="prop.notepad" data-asset="prop.notepad" data-kind="prop"
+     data-base-point="90,130" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo0YWVlYzg0MC05YTI2LTRmZjUtOTUzMC00MjBlZTQxMGZjNDQAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaDUS+2z5N9q7kMV3+pQ12hUAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDphYjM0YzBhNi00Mjc1LTQzMWYtOTNlMC02YzExZjJiNzUyYzZscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNo1NHd+UEK4N8d77JxpTCFPgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg9+XrvxqN7ys6oyvh0m1WhW9IwqagkGE+jNctizwPf5qkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaF39BP4SibnWIPOEx3OPYqwAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCBALjabbeoUhZgkwa36cVP3wjTe4x/LVFOPB63NGIlvtmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjdZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjRhZWVjODQwLTlhMjYtNGZmNS05NTMwLTQyMGVlNDEwZmM0NC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmE2OTE2NmUwLTU5ZTMtNDJmNC05MDcwLTNkZjk0M2E3NGIzNXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCD35eu/Go3vKzqjK+HSbVaFb0jCpqCQYT6M1y2LPA9/mqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggHheVcoY0KIy8Dp+nKwHDpLApwyOfirMEvNZXdPCC5peiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggyywKGvQ1klwzEIN+iXZpdrwd7H8PJYIObopneAxTWRN0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQGKtwH5aikDlfH8WK7ZTBQAJpDTJQjhcLc7joQwFrtGDRzjjNsaLKuOGImhz4AQ2u/PWmAZ4UyETjvNn/WITsR0=</c2pa:manifest></metadata>
+    <!-- IRX 2B.8 = prop.notepad. Second CAREER prop, and the last one the scenario
+         asks for.
+
+         TOKEN BLOCK: ships with the Career set only. Run inject_tokens.py after
+         adding this file.
+
+         CONTRACT, taken from anchors.json and not restated as a new decision:
+           localViewBox   0 0 180 130
+           basePoint      90,130          (bottom-centre, lands on the anchor)
+           defaultAnchor  scene.review_room -> desk_left (520,604)
+         which resolves to translate(430,474) and a canvas footprint of
+         x430..610, y474..604. Dana occupies x672..927, so the pad sits clear of her
+         on the left of the desk with about 62 of daylight between them.
+
+         THE PROP LAYER DRAWS AFTER FURNITURE, per anchors.layerOrder, so this is
+         ON the desk rather than behind it. That is the right way round: the desk
+         occludes the figure, not the objects resting on it.
+
+         WHAT IT IS AND IS NOT. The prose gives Dana exactly one object: a notepad.
+         She listens with her hands flat on the desk and does not interrupt once,
+         and when you finish she asks what you have got. So: a pad, squared to the
+         desk, closed and unwritten-on. No pen, because the prose does not put one
+         there. No writing, because legible marks would assert a content the
+         scenario never describes, and because at 44pt wide nothing would read
+         anyway. The ruled lines are tone, not text.
+
+         Squared rather than angled on purpose. A pad set straight is the same
+         institutional register as hands flat on the desk. -->
+    <defs><style>
+        /* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
+
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
+
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
+
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
+
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
+
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
+
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
+
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
+
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+
+  /* ==== career district ==== */
+/* career: architecture */
+--irx-career-wall:          #6E757E;
+--irx-career-wall-dark:     #5C636B;
+--irx-career-wall-pattern:  #666D76;
+--irx-career-partition:     #58606A;
+--irx-career-partition-dark:#4A5158;
+--irx-career-floor:         #4A4F55;
+/* career: window, evening. The office is lit; outside is not. */
+--irx-career-sky-high:      #1E2836;
+--irx-career-sky-mid:       #26303D;
+--irx-career-sky-low:       #2E3444;
+--irx-career-outside-dark:  #161C25;
+/* career: joinery */
+--irx-career-desk:          #8A8478;
+--irx-career-desk-edge:     #6F6A60;
+--irx-career-desk-dark:     #5E5A52;
+--irx-career-metal:         #7A828A;
+--irx-career-metal-dark:    #626A72;
+/* career: light. Overhead fluorescent and one screen. */
+--irx-career-fluoro:        #E8EDF2;
+--irx-career-fluoro-dim:    #A8B2BC;
+--irx-career-screen:        #6E93A8;
+--irx-career-screen-glow:   #9FC4D8;
+/* career: figure_c (Ray) */
+--irx-career-skin-c:        #D9A886;
+--irx-career-skin-c-shade:  #B98565;
+--irx-career-hair-c:        #6E655C;
+--irx-career-hair-c-light:  #8A8076;
+--irx-career-lip-c:         #B57F66;
+--irx-career-mouth-c:       #6B4436;
+/* career: figure_d (Dana) */
+--irx-career-skin-d:        #E0B294;
+--irx-career-skin-d-shade:  #BE8D6F;
+--irx-career-hair-d:        #4A4038;
+--irx-career-hair-d-light:  #6A5C50;
+/* career: wardrobe work */
+--irx-career-shirt-c:       #9FA9B4;
+--irx-career-shirt-c-dark:  #7E8894;
+--irx-career-shirt-c-fold:  #6B7480;
+/* career: wardrobe work_coat */
+--irx-career-coat-c:        #4E5661;
+--irx-career-coat-c-dark:   #3C434D;
+--irx-career-coat-c-fold:   #5C6570;
+/* career: accent. Matches district_theme.dart Career accent 0xFF7EA6DB. */
+--irx-career-accent:        #7EA6DB;
+--irx-career-accent-dim:    #5F7FA9;
+  --irx-career-suit-d:        #7A3B47;
+  --irx-career-suit-d-dark:   #5E2C36;
+  --irx-career-suit-d-fold:   #8E4A57;
+}
+/* @tokens-end */
+        .ln   { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .card { fill: var(--irx-career-metal-dark); }
+        .page { fill: var(--irx-career-fluoro-dim); }
+        .lit  { fill: var(--irx-career-fluoro); }
+        .bind { fill: var(--irx-career-metal); }
+        .shad { fill: var(--irx-shadow); }
+    </style></defs>
+
+    <g id="prop">
+        <!-- LYING FLAT, and the ink occupies only the lower third of the contract
+             box. The first pass filled all 130 of it and the pad stood upright like a
+             framed sign: review_room's desk surface is only about 42 deep on screen,
+             so anything taller than that reads as propped rather than resting. The
+             box is the contract; the ink does not have to fill it. -->
+
+        <!-- contact shadow. Without it the pad floats above the surface. -->
+        <path d="M20 122 L 164 118 L 168 128 L 22 130 Z" class="shad" opacity="0.24"/>
+
+        <!-- backing card, showing as a thin edge along the near and right sides -->
+        <path d="M40 88 L 146 84 L 166 126 L 18 129 Z" class="card"/>
+        <path class="ln" stroke-width="2.6" d="M40 88 L 146 84 L 166 126 L 18 129 Z"/>
+
+        <!-- the page. The far edge is shorter than the near one, which is the whole
+             of what puts it flat on the desk. -->
+        <path d="M44 92 L 142 88 L 160 123 L 25 126 Z" class="page"/>
+        <!-- the near half catches the room light -->
+        <path d="M34 110 L 152 106 L 160 123 L 25 126 Z" class="lit" opacity="0.30"/>
+        <path class="ln" stroke-width="2.0" d="M44 92 L 142 88 L 160 123 L 25 126 Z"/>
+
+        <!-- binding wire along the far edge -->
+        <path d="M42 90 L 144 86 L 146 95 L 43 99 Z" class="bind"/>
+        <path class="ln" stroke-width="1.8" d="M42 90 L 144 86 L 146 95 L 43 99 Z"/>
+        <g class="ln" stroke-width="1.6" opacity="0.5">
+            <path d="M58 90 L 59 98"/><path d="M76 89 L 77 97"/><path d="M94 89 L 95 97"/>
+            <path d="M112 88 L 113 96"/><path d="M130 87 L 131 95"/>
+        </g>
+
+        <!-- ruled lines: tone, not text. Legible marks would assert a content the
+             prose never gives, and at 40pt wide nothing would read anyway. -->
+        <g class="ln" stroke-width="1.4" opacity="0.24">
+            <path d="M40 104 L 146 100"/>
+            <path d="M37 112 L 150 108"/>
+            <path d="M33 120 L 155 116"/>
+        </g>
+    </g>
+
+</svg>

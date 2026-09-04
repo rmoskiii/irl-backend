@@ -153,6 +153,9 @@
 /* career: accent. Matches district_theme.dart Career accent 0xFF7EA6DB. */
 --irx-career-accent:        #7EA6DB;
 --irx-career-accent-dim:    #5F7FA9;
+  --irx-career-suit-d:        #7A3B47;
+  --irx-career-suit-d-dark:   #5E2C36;
+  --irx-career-suit-d-fold:   #8E4A57;
 }
 /* @tokens-end */
         .ln  { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
