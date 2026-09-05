@@ -1,0 +1,227 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 170"
+     id="prop.laptop_open" data-asset="prop.laptop_open" data-kind="prop"
+     data-base-point="130,170" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYToyMjVhZWY4Yi0yMDBmLTRjODYtYmNlZi04ZTQ1NTYyOTQwOGUAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaPfTHGqHF2OnSed/m17YKXYAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoyMjkzZTI5OC1jZWJjLTRmNDUtODA0MC1iMjBjNDFhNDkxMGNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNo6YG0jSDA1htoLUhammLfBwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggKhB8QiwrnSwh7+r/zyMvunRPD2WvshaBRH5gpk5rqeykZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaKcrsedhLNnWxJiRP3q9txMAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCA/n+mJdcqC8tNvdoIupecgP8uygn0kXtdQdZfenb6RcmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjmZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjIyNWFlZjhiLTIwMGYtNGM4Ni1iY2VmLThlNDU1NjI5NDA4ZS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjI2ZTM2YjU2LWMwMGUtNDRiZS04NjNkLTJlZDgyMmIxZGZiMHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAqEHxCLCudLCHv6v/PIy+6dE8PZa+yFoFEfmCmTmup7KJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggfhDkyWcs7lYlrcXYV2wbxCaJ+E2pzC/E8FMfhC6kxvmiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggP7m5SclLWvLhSx8W2vvIUuH+Z/KHKvZrKrwz7LDKJbt0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQNG92iC+xKHiHmhgiw6jhLJbUfdj97LXEAAx8JYQmNv/DmXCDhzsGE3hnmbAQoS1apojb/D29z9+KWXLhc2rnfw=</c2pa:manifest></metadata>
+    <!-- IRX 2B.9 = prop.laptop_open. The last CAREER prop.
+
+         TOKEN BLOCK: ships with the Career set only. Run inject_tokens.py after
+         adding this file.
+
+         CONTRACT, from anchors.json and not restated as a new decision:
+           localViewBox   0 0 260 170
+           basePoint      130,170
+           defaultAnchor  scene.meeting_room -> table_centre (800,604)
+         resolving to translate(670,434), footprint x670..930, y434..604.
+
+         TURNED ROUND, WHICH IS WHY THE SCREEN FACES CAMERA. The prose is 'they
+         slide the laptop round'. A laptop turned round is one you are being shown,
+         so we see the display and the deck recedes away from us. If it faced the
+         other way this prop would be a grey wedge and the beat would be invisible.
+
+         IT SITS IN FRONT OF RAY, ON PURPOSE. table_centre is directly below the
+         centre slot, so this covers a centre-slot figure's chest from y434 to the
+         table line, stopping 114 short of his chin. Layer order does the rest:
+         furniture, then prop, then character_front, so the table occludes him, the
+         laptop covers his chest, and his hands land on top of the laptop.
+
+         THE SCREEN IS BRIGHT, AND THAT IS A SEPARATION DECISION MADE TWICE. The
+         first pass used the dimmer of the fluorescent pair and measured 15 steps
+         against Ray's shirt behind it and 12 against the table below it - the
+         object the whole beat is about, sinking into both. The display is now the
+         brighter token with dark content bands on it, which is also what a document
+         on a screen actually looks like and gives the screen internal contrast
+         rather than relying on its frame.
+
+         NO LEGIBLE CONTENT, AND NO FIELD. The desk_evening monitor carries an
+         accent bar that reads as a highlighted control; this one deliberately does
+         not. ask2_qa's prose props include 'eleven lines' and 'an empty name field',
+         both of which the mapping puts in unrenderableProps - drawing a distinct
+         empty field here would be literalising the one detail the scenario most
+         wants you to go and look at yourself. Bands of value, nothing more. -->
+    <defs><style>
+        /* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
+
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
+
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
+
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
+
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
+
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
+
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
+
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
+
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+
+  /* ==== career district ==== */
+/* career: architecture */
+--irx-career-wall:          #6E757E;
+--irx-career-wall-dark:     #5C636B;
+--irx-career-wall-pattern:  #666D76;
+--irx-career-partition:     #58606A;
+--irx-career-partition-dark:#4A5158;
+--irx-career-floor:         #4A4F55;
+/* career: window, evening. The office is lit; outside is not. */
+--irx-career-sky-high:      #1E2836;
+--irx-career-sky-mid:       #26303D;
+--irx-career-sky-low:       #2E3444;
+--irx-career-outside-dark:  #161C25;
+/* career: joinery */
+--irx-career-desk:          #8A8478;
+--irx-career-desk-edge:     #6F6A60;
+--irx-career-desk-dark:     #5E5A52;
+--irx-career-metal:         #7A828A;
+--irx-career-metal-dark:    #626A72;
+/* career: light. Overhead fluorescent and one screen. */
+--irx-career-fluoro:        #E8EDF2;
+--irx-career-fluoro-dim:    #A8B2BC;
+--irx-career-screen:        #6E93A8;
+--irx-career-screen-glow:   #9FC4D8;
+/* career: figure_c (Ray) */
+--irx-career-skin-c:        #D9A886;
+--irx-career-skin-c-shade:  #B98565;
+--irx-career-hair-c:        #6E655C;
+--irx-career-hair-c-light:  #8A8076;
+--irx-career-lip-c:         #B57F66;
+--irx-career-mouth-c:       #6B4436;
+/* career: figure_d (Dana) */
+--irx-career-skin-d:        #E0B294;
+--irx-career-skin-d-shade:  #BE8D6F;
+--irx-career-hair-d:        #4A4038;
+--irx-career-hair-d-light:  #6A5C50;
+/* career: wardrobe work */
+--irx-career-shirt-c:       #9FA9B4;
+--irx-career-shirt-c-dark:  #7E8894;
+--irx-career-shirt-c-fold:  #6B7480;
+/* career: wardrobe work_coat */
+--irx-career-coat-c:        #4E5661;
+--irx-career-coat-c-dark:   #3C434D;
+--irx-career-coat-c-fold:   #5C6570;
+/* career: accent. Matches district_theme.dart Career accent 0xFF7EA6DB. */
+--irx-career-accent:        #7EA6DB;
+--irx-career-accent-dim:    #5F7FA9;
+  --irx-career-suit-d:        #7A3B47;
+  --irx-career-suit-d-dark:   #5E2C36;
+  --irx-career-suit-d-fold:   #8E4A57;
+}
+/* @tokens-end */
+        .ln    { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .chas  { fill: var(--irx-career-metal-dark); }
+        .deck  { fill: var(--irx-career-metal); }
+        .disp  { fill: var(--irx-career-fluoro); }
+        .lit   { fill: var(--irx-career-fluoro); }
+        .cool  { fill: var(--irx-career-screen); }
+        .shad  { fill: var(--irx-shadow); }
+    </style></defs>
+
+    <g id="prop">
+        <!-- contact shadow on the table -->
+        <path d="M16 160 L 244 160 L 250 170 L 10 170 Z" class="shad" opacity="0.24"/>
+
+        <!-- deck, receding away from camera. Near edge longer than the far edge,
+             which is what lays it flat on the table. -->
+        <path d="M14 168 L 44 134 L 216 134 L 246 168 Z" class="deck"/>
+        <path d="M14 168 L 44 134 L 216 134 L 246 168 Z" class="chas" opacity="0.30"/>
+        <path class="ln" stroke-width="3.0" d="M14 168 L 44 134 L 216 134 L 246 168 Z"/>
+        <!-- front lip, and a keyboard suggested rather than drawn -->
+        <path d="M18 162 L 242 162 L 246 168 L 14 168 Z" class="chas"/>
+        <path class="ln" stroke-width="1.8" d="M18 162 L 242 162" opacity="0.5"/>
+        <g class="ln" stroke-width="1.4" opacity="0.22">
+            <path d="M52 142 L 208 142"/>
+            <path d="M46 150 L 214 150"/>
+            <path d="M39 158 L 221 158"/>
+        </g>
+
+        <!-- hinge -->
+        <path d="M40 130 L 220 130 L 216 136 L 44 136 Z" class="chas"/>
+        <path class="ln" stroke-width="2.0" d="M40 130 L 220 130" opacity="0.7"/>
+
+        <!-- screen. Tilted back, so the top edge is further away and narrower. -->
+        <path d="M40 130 L 220 130 L 214 10 L 46 10 Z" class="chas"/>
+        <path class="ln" stroke-width="3.4" d="M40 130 L 220 130 L 214 10 L 46 10 Z"/>
+
+        <!-- display -->
+        <path d="M50 120 L 210 120 L 205 20 L 55 20 Z" class="disp"/>
+        <path d="M50 120 L 210 120 L 205 20 L 55 20 Z" class="cool" opacity="0.10"/>
+        <!-- the sheen a screen has when it is angled toward you -->
+        <path d="M55 20 L 205 20 L 203 56 L 53 56 Z" class="cool" opacity="0.14"/>
+        <path class="ln" stroke-width="1.8" d="M50 120 L 210 120 L 205 20 L 55 20 Z" opacity="0.6"/>
+
+        <!-- content: bands of value, no glyphs and no field -->
+        <g fill="var(--irx-line)" opacity="0.34">
+            <path d="M64 32 L 150 32 L 150 40 L 64 40 Z"/>
+            <path d="M64 52 L 190 52 L 190 58 L 64 58 Z"/>
+            <path d="M64 66 L 172 66 L 172 72 L 64 72 Z"/>
+            <path d="M64 80 L 186 80 L 186 86 L 64 86 Z"/>
+            <path d="M64 94 L 158 94 L 158 100 L 64 100 Z"/>
+        </g>
+        <g class="ln" stroke-width="1.3" opacity="0.14">
+            <path d="M60 46 L 200 46"/><path d="M60 60 L 200 60"/><path d="M60 74 L 200 74"/>
+            <path d="M60 88 L 200 88"/><path d="M60 102 L 200 102"/>
+        </g>
+    </g>
+</svg>

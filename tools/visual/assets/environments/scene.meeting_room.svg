@@ -1,0 +1,345 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
+     id="scene.meeting_room" data-asset="scene.meeting_room" data-time="day"
+     data-occlusion-line="600" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpmZWE1ZmRiYi1lOWRjLTRhNGUtYjRiNi1kYTk0NmYwMWJmMzYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaA4w8z2uRndGq61jUlodiG4AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDowNTVjYmI4Ni0wMDhmLTRlOGQtYjliNy1mMzA5MzFiN2VhMTRscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNodTWv012Qg70nmRxbZrqGHAAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggNifGLo3eEwPC2l4VLv6i+jxrT/rdkAEhsAzmetm7mK6kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaPQ+ZlPetHJMkP/2++qlXBwAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCC7SKF/MVa/lWTg7Dm80NuSJHL+cQCrcRNdg/FlYMdZdmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjqZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmZlYTVmZGJiLWU5ZGMtNGE0ZS1iNGI2LWRhOTQ2ZjAxYmYzNi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjkxMWVhYTBlLTUzZjMtNDZjYS05NGM4LTljZTYwYjkwOTAzM3JjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCA2J8Yujd4TA8LaXhUu/qL6PGtP+t2QASGwDOZ62buYrqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggHuuC7i8OBjpy8PxxGLm3IIvu/+E69gqBc34OIjTohvmiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggWxAhZ3qmY2g1DHmaPnhgClLjiAKiSreiYw8wLbXz1+x0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQByin/6fS4jhjNWL6A0kXXd0ULJmmUzARnd4bCLIfaBzs1zO8HOzduZshoHLHvg/YH7qFS6b0LYZ8pI8H1mBkbM=</c2pa:manifest></metadata>
+    <!-- IRX 2B.9 = scene.meeting_room. Fourth CAREER environment.
+
+         TOKEN BLOCK: ships with the Career set only. Run inject_tokens.py after
+         adding this file.
+
+         Carries four render states: ask2_qa (default and both variants) and
+         ask2_redirect_closed. The QA signature and the beat where the redirect
+         closes. It is the room where Ray asks for your name on a check you did not
+         run, and where he tells you there is no Thursday.
+
+         THE ONLY CAREER ROOM WHERE A PROP SHARES A COLUMN WITH THE FIGURE.
+         prop.laptop_open anchors to table_centre (800,604) with basePoint (130,170),
+         which resolves to translate(670,434) and occupies x670..930, y434..604 -
+         directly in front of a centre-slot figure whose torso runs x707..893. That
+         is not a collision, it is the staging: the prose says Ray slides the laptop
+         round, and turning a laptop round means putting it between him and you. The
+         prop layer draws after furniture and before character_front, so the laptop
+         covers his chest and his hands still land on top of it.
+
+         Everything in this room is therefore built around leaving that column
+         legible. Ray's head band at the centre slot is canvas y100..320 with the
+         shoulder line near y346 - fourteen lower than Dana in review_room, because
+         figure_c's headSocket is 210 and figure_d's is 196. No horizontal crosses
+         x590..1010 above y346, and no ceiling fitting sits over the centre.
+
+         THE DOOR IS ARCHITECTURE, NOT A PROP. ask2_redirect_closed lists 'a closed
+         door' among its prose props and the mapping puts it in unrenderableProps:
+         prop.door_closed is a domestic kitchen door drawn for Neighbourhood and
+         would be the wrong object in a corporate meeting room. This room draws its
+         own, the same way scene.coffee_shop draws its own window.
+
+         OCCLUSION: the table is one opaque mass from y=592 to the bottom of the
+         canvas. Solid apron, no legs. A table is the shape most likely to be drawn
+         with legs and legs are the failure that cost three Secret environments. -->
+    <defs><style>
+        /* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
+
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
+
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
+
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
+
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
+
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
+
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
+
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
+
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+
+  /* ==== career district ==== */
+/* career: architecture */
+--irx-career-wall:          #6E757E;
+--irx-career-wall-dark:     #5C636B;
+--irx-career-wall-pattern:  #666D76;
+--irx-career-partition:     #58606A;
+--irx-career-partition-dark:#4A5158;
+--irx-career-floor:         #4A4F55;
+/* career: window, evening. The office is lit; outside is not. */
+--irx-career-sky-high:      #1E2836;
+--irx-career-sky-mid:       #26303D;
+--irx-career-sky-low:       #2E3444;
+--irx-career-outside-dark:  #161C25;
+/* career: joinery */
+--irx-career-desk:          #8A8478;
+--irx-career-desk-edge:     #6F6A60;
+--irx-career-desk-dark:     #5E5A52;
+--irx-career-metal:         #7A828A;
+--irx-career-metal-dark:    #626A72;
+/* career: light. Overhead fluorescent and one screen. */
+--irx-career-fluoro:        #E8EDF2;
+--irx-career-fluoro-dim:    #A8B2BC;
+--irx-career-screen:        #6E93A8;
+--irx-career-screen-glow:   #9FC4D8;
+/* career: figure_c (Ray) */
+--irx-career-skin-c:        #D9A886;
+--irx-career-skin-c-shade:  #B98565;
+--irx-career-hair-c:        #6E655C;
+--irx-career-hair-c-light:  #8A8076;
+--irx-career-lip-c:         #B57F66;
+--irx-career-mouth-c:       #6B4436;
+/* career: figure_d (Dana) */
+--irx-career-skin-d:        #E0B294;
+--irx-career-skin-d-shade:  #BE8D6F;
+--irx-career-hair-d:        #4A4038;
+--irx-career-hair-d-light:  #6A5C50;
+/* career: wardrobe work */
+--irx-career-shirt-c:       #9FA9B4;
+--irx-career-shirt-c-dark:  #7E8894;
+--irx-career-shirt-c-fold:  #6B7480;
+/* career: wardrobe work_coat */
+--irx-career-coat-c:        #4E5661;
+--irx-career-coat-c-dark:   #3C434D;
+--irx-career-coat-c-fold:   #5C6570;
+/* career: accent. Matches district_theme.dart Career accent 0xFF7EA6DB. */
+--irx-career-accent:        #7EA6DB;
+--irx-career-accent-dim:    #5F7FA9;
+  --irx-career-suit-d:        #7A3B47;
+  --irx-career-suit-d-dark:   #5E2C36;
+  --irx-career-suit-d-fold:   #8E4A57;
+}
+/* @tokens-end */
+        .ln    { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .wall  { fill: var(--irx-career-wall); }
+        .walld { fill: var(--irx-career-wall-dark); }
+        .wallp { fill: var(--irx-career-wall-pattern); }
+        .part  { fill: var(--irx-career-partition); }
+        .partd { fill: var(--irx-career-partition-dark); }
+        .tbl   { fill: var(--irx-career-desk); }
+        .tble  { fill: var(--irx-career-desk-edge); }
+        .tbld  { fill: var(--irx-career-desk-dark); }
+        .met   { fill: var(--irx-career-metal); }
+        .metd  { fill: var(--irx-career-metal-dark); }
+        .flr   { fill: var(--irx-career-floor); }
+        .shad  { fill: var(--irx-shadow); }
+        .fluo  { fill: var(--irx-career-fluoro); }
+        .fluod { fill: var(--irx-career-fluoro-dim); }
+        .acc   { fill: var(--irx-career-accent); }
+    </style>
+
+        <pattern id="m-carpet" width="72" height="72" patternUnits="userSpaceOnUse">
+            <path d="M0 36 h72" stroke="var(--irx-career-wall-dark)" stroke-width="2" opacity="0.28"/>
+            <path d="M36 0 v72" stroke="var(--irx-career-wall-dark)" stroke-width="2" opacity="0.16"/>
+        </pattern>
+
+        <filter id="m-grain" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="4" seed="83" result="n"/>
+            <feColorMatrix in="n" type="saturate" values="0"/>
+        </filter>
+
+        <radialGradient id="m-vignette" cx="50%" cy="44%" r="70%">
+            <stop offset="44%" stop-color="#0B0E12" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#0B0E12" stop-opacity="0.46"/>
+        </radialGradient>
+        <radialGradient id="m-overhead" cx="30%" cy="2%" r="64%">
+            <stop offset="0%"   stop-color="#E8EDF2" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#E8EDF2" stop-opacity="0"/>
+        </radialGradient>
+        <!-- Two lighting gradients and a vignette. The key stays LEFT, as in every
+             Career asset. The vignette is stronger than review_room's: this room has no
+             window, and a small internal meeting room closes in at the edges. That is
+             the one thing the room is doing dramatically, and it is doing it with
+             light rather than with objects. -->
+    </defs>
+
+    <!-- ============================== background ============================== -->
+    <g id="background">
+        <path d="M0 0 h1600 v880 q-402 6 -800 0 q-398 -6 -800 2 z" class="wall"/>
+        <path d="M0 0 h1600 v460 q-402 6 -800 0 q-398 -6 -800 2 z" fill="url(#m-carpet)" opacity="0.18"/>
+        <!-- ceiling band, lower than the other Career rooms: this is a small room -->
+        <path d="M0 0 h1600 v104 q-402 6 -800 0 q-398 -6 -800 2 z" class="walld" opacity="0.44"/>
+        <path class="ln" stroke-width="3.0" d="M0 106 q400 -6 800 0 q400 6 800 -2" opacity="0.6"/>
+        <!-- skirting, well below the shoulder line -->
+        <path class="ln" stroke-width="2.0" d="M0 560 q400 -5 800 0 q400 5 800 -3" opacity="0.20"/>
+        <!-- a wall seam, deliberately off the centre column -->
+        <path class="ln" stroke-width="1.8" d="M1092 108 q3 240 1 486" opacity="0.16"/>
+    </g>
+
+    <!-- ============================= architecture ============================= -->
+    <g id="architecture">
+
+        <!-- ceiling: two flush fittings, BOTH off centre. A lit panel directly above
+             a face pulls the eye off it, which desk_evening learned the hard way. -->
+        <g id="m-ceiling">
+            <path d="M214 24 h300 v54 h-300 z" class="fluo" opacity="0.86"/>
+            <path class="ln" stroke-width="2.6" d="M214 24 h300 v54 h-300 z"/>
+            <g class="ln" stroke-width="1.4" opacity="0.28">
+                <path d="M214 42 h300"/><path d="M214 60 h300"/>
+            </g>
+            <path d="M1086 24 h300 v54 h-300 z" class="fluo" opacity="0.86"/>
+            <path class="ln" stroke-width="2.6" d="M1086 24 h300 v54 h-300 z"/>
+            <g class="ln" stroke-width="1.4" opacity="0.28">
+                <path d="M1086 42 h300"/><path d="M1086 60 h300"/>
+            </g>
+        </g>
+
+        <!-- whiteboard, left. Wiped, not blank: a board nobody has cleaned properly
+             carries ghosting, and ghosting is tone rather than text. -->
+        <g id="m-board">
+            <path d="M112 176 h316 v226 h-316 z" class="metd"/>
+            <path d="M124 188 h292 v202 h-292 z" class="fluod"/>
+            <path d="M124 188 h292 v72 h-292 z" class="fluo" opacity="0.44"/>
+            <path class="ln" stroke-width="4.0" d="M112 176 h316 v226 h-316 z"/>
+            <path class="ln" stroke-width="2.0" d="M124 188 h292 v202 h-292 z" opacity="0.55"/>
+            <g class="ln" stroke-width="2.2" opacity="0.13">
+                <path d="M148 232 q54 -14 104 4"/>
+                <path d="M170 276 q44 12 86 -6"/>
+                <path d="M152 322 q70 -10 130 6"/>
+                <path d="M300 250 q26 30 8 62"/>
+            </g>
+            <!-- pen tray -->
+            <path d="M118 402 h304 v14 h-304 z" class="met"/>
+            <path class="ln" stroke-width="2.2" d="M118 402 h304 v14 h-304 z"/>
+        </g>
+
+        <!-- the closed door, right. Drawn by the room, not borrowed from the kitchen.
+             Its lower half is behind the table, which is why a meeting room door is
+             mostly a vertical line and a handle. -->
+        <g id="m-door">
+            <path d="M1168 138 h286 v462 h-286 z" class="part"/>
+            <path d="M1168 138 h286 v462 h-286 z" class="partd" opacity="0.30"/>
+            <path d="M1192 166 h238 v186 h-238 z" class="partd" opacity="0.45"/>
+            <path d="M1192 372 h238 v186 h-238 z" class="partd" opacity="0.45"/>
+            <path class="ln" stroke-width="5.0" d="M1168 138 h286 v462 h-286 z"/>
+            <path class="ln" stroke-width="2.2" d="M1192 166 h238 v186 h-238 z" opacity="0.6"/>
+            <path class="ln" stroke-width="2.2" d="M1192 372 h238 v186 h-238 z" opacity="0.6"/>
+            <!-- frame and handle -->
+            <path d="M1152 124 h318 v16 h-318 z" class="metd"/>
+            <path class="ln" stroke-width="3.0" d="M1152 124 h318 v16 h-318 z"/>
+            <path d="M1196 364 h44 v12 h-44 z" class="met"/>
+            <path class="ln" stroke-width="2.4" d="M1196 364 h44 v12 h-44 z"/>
+        </g>
+    </g>
+
+    <!-- ========================= environmental_detail =========================
+         Nothing in this group crosses x590..1010 above y346: that column belongs to
+         the figure, and in this room it is already sharing the space below with a
+         laptop. -->
+    <g id="environmental_detail">
+        <!-- a small wall-mounted room panel by the door: booked, in use, unreadable -->
+        <path d="M1076 300 h60 v40 h-60 z" class="metd"/>
+        <path class="ln" stroke-width="2.2" d="M1076 300 h60 v40 h-60 z"/>
+        <path d="M1084 308 h44 v14 h-44 z" class="fluod" opacity="0.55"/>
+        <circle cx="1106" cy="332" r="4" class="acc" opacity="0.6"/>
+        <!-- power and data grommet on the wall behind the table -->
+        <path d="M470 520 h52 v26 h-52 z" class="partd" opacity="0.7"/>
+        <path class="ln" stroke-width="2.0" d="M470 520 h52 v26 h-52 z" opacity="0.7"/>
+    </g>
+
+    <!-- ============================== furniture ==============================
+         Drawn AFTER character_head. One continuous opaque mass, y=592 to y=902. -->
+    <g id="furniture">
+
+        <!-- the mass. Nothing interrupts this. -->
+        <path d="M0 592 q400 -4 800 0 q400 4 800 -2 v312 h-1600 z" class="tble"/>
+
+        <!-- table top. Deeper band than a desk: a meeting table is wider across. -->
+        <path d="M0 592 q400 -4 800 0 q400 4 800 -2 v50 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="tbl"/>
+        <path d="M0 592 q400 -4 800 0 q400 4 800 -2 v10 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="fluod" opacity="0.22"/>
+        <path class="ln" stroke-width="6.8" d="M0 592 q400 -4 800 0 q400 4 800 -2"/>
+        <path class="ln" stroke-width="2.2" d="M0 642 q400 -4 800 0 q400 4 800 -2" opacity="0.6"/>
+        <!-- surface marks. A room that gets booked back to back. -->
+        <path class="ln" stroke-width="1.5" d="M330 612 q26 5 46 -3" opacity="0.22"/>
+        <path class="ln" stroke-width="1.4" d="M1120 610 q28 4 48 -3" opacity="0.20"/>
+
+        <!-- solid apron. No legs, no rail, no gap. -->
+        <path d="M0 642 q400 -4 800 0 q400 4 800 -2 v172 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="tbld"/>
+        <path d="M0 642 q400 -4 800 0 q400 4 800 -2 v40 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="shad" opacity="0.26"/>
+        <path class="ln" stroke-width="2.4" d="M0 682 q400 -4 800 0 q400 4 800 -2" opacity="0.34"/>
+        <g class="ln" stroke-width="2.0" opacity="0.26">
+            <path d="M432 648 q3 80 1 164"/>
+            <path d="M1168 648 q3 80 1 164"/>
+        </g>
+        <path class="ln" stroke-width="5.0" d="M0 812 q400 -4 800 0 q400 4 800 -2"/>
+
+        <!-- floor -->
+        <path d="M0 812 q400 -4 800 0 q400 4 800 -2 v92 h-1600 z" class="flr"/>
+        <path d="M0 812 q400 -4 800 0 q400 4 800 -2 v26 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="shad" opacity="0.32"/>
+        <g class="ln" stroke-width="1.6" opacity="0.18">
+            <path d="M300 900 q9 -44 20 -86"/>
+            <path d="M780 900 q2 -44 4 -86"/>
+            <path d="M1300 900 q-9 -44 -20 -86"/>
+        </g>
+    </g>
+
+    <!-- ============================== foreground ============================== -->
+    <g id="foreground">
+        <rect x="0" y="0" width="1600" height="900" fill="url(#m-overhead)" pointer-events="none"/>
+        <rect x="0" y="0" width="1600" height="900" fill="url(#m-vignette)" pointer-events="none"/>
+        <rect x="0" y="0" width="1600" height="900" filter="url(#m-grain)" opacity="0.08"
+              style="mix-blend-mode:multiply" pointer-events="none"/>
+    </g>
+</svg>

@@ -1,0 +1,419 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
+     id="scene.office_floor" data-asset="scene.office_floor" data-time="day"
+     data-occlusion-line="600" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo2M2Q1OWI4YS1lOGY0LTRjYjUtOWNhMS00YTlmNmM4YjBhYmYAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaJUhp6BItzHRwTMd/32ZlxcAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpkNTQ3YjkwZi0xOTZhLTRjZGQtOWZjNC0wOThiMDgyZDk2ZmNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoB/Pi8qGEE4ZfhUFn87Rk3AAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggC9TEJkN1oCTJYQBLvw4Ul4BDRdzmFxBzYaKpvDM+9TWkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaPOs3/AQ11kaykGCpb9WT0sAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCCq00zAaOq/CQTr8ZRkd2yOtkXTG8Bh74WmZjbVBmMOkGRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBjqZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjYzZDU5YjhhLWU4ZjQtNGNiNS05Y2ExLTRhOWY2YzhiMGFiZi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjNhNjQ5NDg2LWUzNTktNDY2OC04Y2I0LTg1MzA0OGE3YjdjMnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAL1MQmQ3WgJMlhAEu/DhSXgENF3OYXEHNhoqm8Mz71NaJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggu2FwzSGSpgS1k28DoLbhyA4NRseIEq6OHY4xz3ElMOeiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggNG1gWSar2ZKX10YF1YKBb7rXFhMzb0fXnohKH+Q6cAl0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQND5vyUgyJSeoGQkNn3q45QzV0hmHD4IteaW5LufUDC8nYuY7ELyd4iiQvD2K64aNczKm6OIccE/v6fryl9lV5g=</c2pa:manifest></metadata>
+    <!-- IRX 2B.9 = scene.office_floor. Fifth and last CAREER environment.
+
+         TOKEN BLOCK: ships with the Career set only. Run inject_tokens.py after
+         adding this file.
+
+         THE MOST USED ROOM IN THE DISTRICT. Six render states across all four acts:
+         establish_northstar, ask2_reaction (and its guarded variant),
+         escalate_aftermath, ask3_reaction, ask3_refuse_response, and resolution.
+         The first and the last beats of the scenario both happen here.
+
+         TWO QUIET COLUMNS, NOT ONE. Every other Career room only has to keep the
+         centre clear. ask3_reaction takes the RIGHT slot - a nodeOverride whose only
+         job is to stop it rendering a frame identical to ask2_reaction - so a
+         centre-slot head at x590..1010 and a right-slot head at x920..1340 both
+         need a plain field behind them. Together that is x590..1340 above y346,
+         which is nearly half the canvas. Every piece of detail in this room
+         therefore lives left of 590 or right of 1340, and the middle is wall.
+
+         A CUBICLE FLOOR, AND THE ONE ROOM IN THE DISTRICT WITH DEPTH. The other
+         four Career environments are all a flat wall and a single horizontal
+         surface, because that is what the occlusion contract wants. This one has to
+         carry six beats including the first and the last of the scenario, so it
+         earns a third dimension: a near desk you stand behind, a floor, a back row
+         of pods, and an aisle running out of frame.
+
+         The occluder is unchanged. A cubicle desk with a solid modesty panel does
+         exactly what the counter run did, and the anchors entry only ever specified
+         a surface at y=600 solid to the floor. Note that anchors.json still
+         describes it as a 'break-out counter run' - a one line doc correction, not
+         a geometry change, and anchors is not edited here.
+
+         RESOLUTION IS AN EMPTY ROOM. This scene has to carry a frame with nobody in
+         it - three weeks later, absent mode, empty cast. That is the one Career
+         frame where the environment is the whole image, which is why two pods are
+         working and four are not, and why the near desk has a monitor left on and a
+         mug nobody emptied.
+
+         CEILING IS A CONTINUOUS STRIP, NOT PANELS. Panels force a choice about what
+         sits above each face and desk_evening had to kill its centre fitting to
+         avoid competing with one. A strip is uniform, so it competes with nobody.
+
+         OCCLUSION: the counter is one opaque mass from y=592 to the bottom of the
+         canvas. Solid to the floor, no legs, no plinth gap. -->
+    <defs><style>
+        /* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
+
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
+
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
+
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
+
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
+
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
+
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
+
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
+
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+
+  /* ==== career district ==== */
+/* career: architecture */
+--irx-career-wall:          #6E757E;
+--irx-career-wall-dark:     #5C636B;
+--irx-career-wall-pattern:  #666D76;
+--irx-career-partition:     #58606A;
+--irx-career-partition-dark:#4A5158;
+--irx-career-floor:         #4A4F55;
+/* career: window, evening. The office is lit; outside is not. */
+--irx-career-sky-high:      #1E2836;
+--irx-career-sky-mid:       #26303D;
+--irx-career-sky-low:       #2E3444;
+--irx-career-outside-dark:  #161C25;
+/* career: joinery */
+--irx-career-desk:          #8A8478;
+--irx-career-desk-edge:     #6F6A60;
+--irx-career-desk-dark:     #5E5A52;
+--irx-career-metal:         #7A828A;
+--irx-career-metal-dark:    #626A72;
+/* career: light. Overhead fluorescent and one screen. */
+--irx-career-fluoro:        #E8EDF2;
+--irx-career-fluoro-dim:    #A8B2BC;
+--irx-career-screen:        #6E93A8;
+--irx-career-screen-glow:   #9FC4D8;
+/* career: figure_c (Ray) */
+--irx-career-skin-c:        #D9A886;
+--irx-career-skin-c-shade:  #B98565;
+--irx-career-hair-c:        #6E655C;
+--irx-career-hair-c-light:  #8A8076;
+--irx-career-lip-c:         #B57F66;
+--irx-career-mouth-c:       #6B4436;
+/* career: figure_d (Dana) */
+--irx-career-skin-d:        #E0B294;
+--irx-career-skin-d-shade:  #BE8D6F;
+--irx-career-hair-d:        #4A4038;
+--irx-career-hair-d-light:  #6A5C50;
+/* career: wardrobe work */
+--irx-career-shirt-c:       #9FA9B4;
+--irx-career-shirt-c-dark:  #7E8894;
+--irx-career-shirt-c-fold:  #6B7480;
+/* career: wardrobe work_coat */
+--irx-career-coat-c:        #4E5661;
+--irx-career-coat-c-dark:   #3C434D;
+--irx-career-coat-c-fold:   #5C6570;
+/* career: accent. Matches district_theme.dart Career accent 0xFF7EA6DB. */
+--irx-career-accent:        #7EA6DB;
+--irx-career-accent-dim:    #5F7FA9;
+  --irx-career-suit-d:        #7A3B47;
+  --irx-career-suit-d-dark:   #5E2C36;
+  --irx-career-suit-d-fold:   #8E4A57;
+}
+/* @tokens-end */
+        .ln    { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+        .wall  { fill: var(--irx-career-wall); }
+        .walld { fill: var(--irx-career-wall-dark); }
+        .wallp { fill: var(--irx-career-wall-pattern); }
+        .part  { fill: var(--irx-career-partition); }
+        .partd { fill: var(--irx-career-partition-dark); }
+        .cnt   { fill: var(--irx-career-desk); }
+        .cnte  { fill: var(--irx-career-desk-edge); }
+        .cntd  { fill: var(--irx-career-desk-dark); }
+        .met   { fill: var(--irx-career-metal); }
+        .metd  { fill: var(--irx-career-metal-dark); }
+        .flr   { fill: var(--irx-career-floor); }
+        .dark  { fill: var(--irx-career-outside-dark); }
+        .shad  { fill: var(--irx-shadow); }
+        .fluo  { fill: var(--irx-career-fluoro); }
+        .fluod { fill: var(--irx-career-fluoro-dim); }
+        .acc   { fill: var(--irx-career-accent); }
+    </style>
+
+        <pattern id="o-carpet" width="72" height="72" patternUnits="userSpaceOnUse">
+            <path d="M0 36 h72" stroke="var(--irx-career-wall-dark)" stroke-width="2" opacity="0.26"/>
+            <path d="M36 0 v72" stroke="var(--irx-career-wall-dark)" stroke-width="2" opacity="0.15"/>
+        </pattern>
+
+        <filter id="o-grain" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.88" numOctaves="4" seed="97" result="n"/>
+            <feColorMatrix in="n" type="saturate" values="0"/>
+        </filter>
+
+        <radialGradient id="o-vignette" cx="50%" cy="46%" r="76%">
+            <stop offset="54%" stop-color="#0B0E12" stop-opacity="0"/>
+            <stop offset="100%" stop-color="#0B0E12" stop-opacity="0.34"/>
+        </radialGradient>
+        <radialGradient id="o-overhead" cx="32%" cy="2%" r="70%">
+            <stop offset="0%"   stop-color="#E8EDF2" stop-opacity="0.24"/>
+            <stop offset="100%" stop-color="#E8EDF2" stop-opacity="0"/>
+        </radialGradient>
+        <!-- Key from the left, as in every Career asset. The vignette is the weakest of
+             the five rooms: an open floor in the middle of a working day does not close
+             in at the edges, and this room has to hold six beats from a promotion
+             conversation to an empty room three weeks after it all ended. -->
+    </defs>
+
+    <!-- ============================== background ============================== -->
+    <g id="background">
+        <path d="M0 0 h1600 v880 q-402 6 -800 0 q-398 -6 -800 2 z" class="wall"/>
+        <path d="M0 0 h1600 v480 q-402 6 -800 0 q-398 -6 -800 2 z" fill="url(#o-carpet)" opacity="0.16"/>
+        <path d="M0 0 h1600 v100 q-402 6 -800 0 q-398 -6 -800 2 z" class="walld" opacity="0.40"/>
+        <path class="ln" stroke-width="3.0" d="M0 102 q400 -6 800 0 q400 6 800 -2" opacity="0.58"/>
+        <!-- splashback band behind the counter. Below the shoulder line at 346, so it
+             crosses a torso and never a face. -->
+        <path d="M0 470 q400 -5 800 0 q400 5 800 -3 v122 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="wallp" opacity="0.42"/>
+        <path class="ln" stroke-width="2.2" d="M0 470 q400 -5 800 0 q400 5 800 -3" opacity="0.30"/>
+    </g>
+
+    <!-- ============================= architecture ============================= -->
+    <g id="architecture">
+
+        <!-- ceiling: one continuous recessed strip. No panel sits above any one face. -->
+        <path d="M0 30 q400 -5 800 0 q400 5 800 -3 v34 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="fluo" opacity="0.72"/>
+        <path class="ln" stroke-width="2.4" d="M0 30 q400 -5 800 0 q400 5 800 -3" opacity="0.55"/>
+        <path class="ln" stroke-width="2.4" d="M0 64 q400 -5 800 0 q400 5 800 -3" opacity="0.55"/>
+
+        <!-- structural column, far left. The one full-height element in the room and
+             the cheapest way to say the floor is bigger than the frame. It lives left
+             of 590 because both head columns are spoken for. -->
+        <path d="M46 100 h94 v492 h-94 z" class="part"/>
+        <path d="M46 100 h32 v492 h-32 z" class="partd"/>
+        <path class="ln" stroke-width="4.6" d="M46 100 h94 v492 h-94 z"/>
+        <path class="ln" stroke-width="2.4" d="M78 100 v492" opacity="0.55"/>
+
+        <!-- floor, between the pod run and the near desk. Darker than both, which is
+             what puts the pods in front of the wall and behind the desk. -->
+        <path d="M0 500 q400 -5 800 0 q400 5 800 -3 v96 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="flr"/>
+        <path d="M0 500 q400 -5 800 0 q400 5 800 -3 v18 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="shad" opacity="0.22"/>
+        <path class="ln" stroke-width="2.6" d="M0 500 q400 -5 800 0 q400 5 800 -3" opacity="0.42"/>
+    </g>
+
+    <!-- ========================= environmental_detail =========================
+         THE CUBICLE RUN, and the only depth in the district. Four Career rooms are
+         a flat wall and one horizontal surface, because that is what the occlusion
+         contract wants. This one carries six beats including the first and the last
+         of the scenario, so it earns three planes: wall behind, pods in the middle,
+         near desk in front. They are separated by VALUE, not by outline - pods sit
+         about 45 steps under the wall and the floor another 15 under them.
+
+         EVERY PARTITION TOP IS AT y=396, fifty clear of the shoulder line at 346.
+         That is the constraint this room is built around: a centre-slot head at
+         x590..1010 and a right-slot head at x920..1340 both need plain wall behind
+         them, so the floor has to be legible from the shoulders down and invisible
+         above them.
+
+         A HANDFUL OF PEOPLE. Six bays, two of them working. Two monitors, two
+         chairs pulled out, four bays empty. establish_northstar and resolution are
+         the first and last beats of the scenario and they happen here, so the room
+         has to hold a promotion conversation and an empty floor three weeks after
+         everything ended. Mostly empty does both. -->
+    <g id="environmental_detail">
+
+        <!-- two monitors, standing above the pod line. Screens face away, so they are
+             dark backs with a rim of spill rather than lit panels: a glowing screen
+             behind a figure would compete with the figure. -->
+        <g>
+            <path d="M268 330 h112 v70 h-112 z" class="metd"/>
+            <path d="M268 330 h112 v8 h-112 z" class="fluod" opacity="0.42"/>
+            <path class="ln" stroke-width="3.0" d="M268 330 h112 v70 h-112 z"/>
+            <path d="M852 336 h112 v64 h-112 z" class="metd"/>
+            <path d="M852 336 h112 v8 h-112 z" class="fluod" opacity="0.42"/>
+            <path class="ln" stroke-width="3.0" d="M852 336 h112 v64 h-112 z"/>
+        </g>
+
+        <!-- the pod run. Six bays, two aisles cut through it. -->
+        <g id="o-pods">
+            <path d="M160 396 h380 v128 h-380 z" class="partd"/>
+            <path d="M160 396 h380 v14 h-380 z" class="met" opacity="0.62"/>
+            <path class="ln" stroke-width="3.4" d="M160 396 h380 v128 h-380 z"/>
+            <path class="ln" stroke-width="2.4" d="M350 410 v114" opacity="0.5"/>
+
+            <path d="M612 396 h420 v128 h-420 z" class="partd"/>
+            <path d="M612 396 h420 v14 h-420 z" class="met" opacity="0.62"/>
+            <path class="ln" stroke-width="3.4" d="M612 396 h420 v128 h-420 z"/>
+            <path class="ln" stroke-width="2.4" d="M822 410 v114" opacity="0.5"/>
+
+            <path d="M1104 396 h336 v128 h-336 z" class="partd"/>
+            <path d="M1104 396 h336 v14 h-336 z" class="met" opacity="0.62"/>
+            <path class="ln" stroke-width="3.4" d="M1104 396 h336 v128 h-336 z"/>
+            <path class="ln" stroke-width="2.4" d="M1272 410 v114" opacity="0.5"/>
+        </g>
+
+        <!-- the two aisles. Darker at the far end, which is the only perspective this
+             room needs: escalate_aftermath is a man you pass in a corridor twice a
+             week, and these are the gaps he passes through. -->
+        <g>
+            <path d="M540 420 h72 v104 h-72 z" class="dark" opacity="0.34"/>
+            <path class="ln" stroke-width="2.2" d="M540 420 h72 v104 h-72 z" opacity="0.5"/>
+            <path d="M1032 420 h72 v104 h-72 z" class="dark" opacity="0.34"/>
+            <path class="ln" stroke-width="2.2" d="M1032 420 h72 v104 h-72 z" opacity="0.5"/>
+        </g>
+
+        <!-- two chairs pulled out from the working bays, standing on the floor in
+             front of the pods -->
+        <g>
+            <path d="M420 470 q54 -8 54 40 v50 h-54 z" class="metd"/>
+            <path class="ln" stroke-width="3.0" d="M420 470 q54 -8 54 40 v50 h-54 z"/>
+            <path d="M900 476 q54 -8 54 40 v44 h-54 z" class="metd"/>
+            <path class="ln" stroke-width="3.0" d="M900 476 q54 -8 54 40 v44 h-54 z"/>
+        </g>
+
+        <!-- a notice on the pod fabric, below the shoulder line -->
+        <path d="M1176 424 h64 v76 h-64 z" class="fluod" opacity="0.62"/>
+        <path class="ln" stroke-width="2.2" d="M1176 424 h64 v76 h-64 z" opacity="0.7"/>
+        <g class="ln" stroke-width="1.4" opacity="0.24">
+            <path d="M1186 444 h44"/><path d="M1186 458 h38"/><path d="M1186 472 h44"/>
+        </g>
+    </g>
+
+    <!-- ============================== furniture ==============================
+         Drawn AFTER character_head. One continuous opaque mass, y=592 to y=902.
+         Anything standing ON the counter also lives here, because a figure stands
+         BEHIND the counter and a kettle in front of him must draw over him. -->
+    <g id="furniture">
+
+        <!-- the mass. Nothing interrupts this. -->
+        <path d="M0 592 q400 -4 800 0 q400 4 800 -2 v312 h-1600 z" class="cnte"/>
+
+        <!-- worktop -->
+        <path d="M0 592 q400 -4 800 0 q400 4 800 -2 v44 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="cnt"/>
+        <path d="M0 592 q400 -4 800 0 q400 4 800 -2 v9 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="fluod" opacity="0.24"/>
+        <path class="ln" stroke-width="6.8" d="M0 592 q400 -4 800 0 q400 4 800 -2"/>
+        <path class="ln" stroke-width="2.2" d="M0 636 q400 -4 800 0 q400 4 800 -2" opacity="0.6"/>
+        <path class="ln" stroke-width="1.5" d="M880 612 q28 5 48 -3" opacity="0.20"/>
+
+        <!-- cupboard run below. Solid to the floor line. -->
+        <path d="M0 636 q400 -4 800 0 q400 4 800 -2 v176 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="cntd"/>
+        <path d="M0 636 q400 -4 800 0 q400 4 800 -2 v40 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="shad" opacity="0.24"/>
+        <path class="ln" stroke-width="2.4" d="M0 676 q400 -4 800 0 q400 4 800 -2" opacity="0.32"/>
+        <g class="ln" stroke-width="2.0" opacity="0.26">
+            <path d="M300 642 q3 84 1 170"/>
+            <path d="M700 642 q3 84 1 170"/>
+            <path d="M1100 642 q3 84 1 170"/>
+        </g>
+        <g class="met" opacity="0.8">
+            <path d="M470 726 h58 v10 h-58 z"/><path d="M870 726 h58 v10 h-58 z"/>
+            <path d="M1270 726 h58 v10 h-58 z"/>
+        </g>
+        <path class="ln" stroke-width="5.0" d="M0 812 q400 -4 800 0 q400 4 800 -2"/>
+
+        <!-- floor -->
+        <path d="M0 812 q400 -4 800 0 q400 4 800 -2 v92 h-1600 z" class="flr"/>
+        <path d="M0 812 q400 -4 800 0 q400 4 800 -2 v26 q-402 5 -800 1 q-398 -4 -800 3 z"
+              class="shad" opacity="0.30"/>
+        <g class="ln" stroke-width="1.6" opacity="0.17">
+            <path d="M260 900 q9 -44 20 -86"/>
+            <path d="M760 900 q2 -44 4 -86"/>
+            <path d="M1320 900 q-9 -44 -20 -86"/>
+        </g>
+
+        <!-- ON the near desk, left end: a monitor left on and a mug nobody emptied.
+             resolution is this room with an empty cast, three weeks after everything
+             ended. An empty floor that was never used reads as unfinished; an empty
+             floor that WAS reads as after. These two objects are the difference, and
+             they live left of x590, clear of both head columns. -->
+        <g id="o-desk-monitor">
+            <path d="M150 592 h84 v-12 h-84 z" class="metd"/>
+            <path class="ln" stroke-width="2.4" d="M150 592 h84 v-12 h-84 z"/>
+            <path d="M180 580 h24 v-42 h-24 z" class="met"/>
+            <path class="ln" stroke-width="2.4" d="M180 580 h24 v-42 h-24 z"/>
+            <path d="M74 400 h236 v140 h-236 z" class="metd"/>
+            <path class="ln" stroke-width="4.6" d="M74 400 h236 v140 h-236 z"/>
+            <path d="M86 412 h212 v116 h-212 z" class="fluod" opacity="0.72"/>
+            <g fill="var(--irx-line)" opacity="0.26">
+                <path d="M100 430 h122 v10 h-122 z"/>
+                <path d="M100 452 h168 v8 h-168 z"/>
+                <path d="M100 470 h146 v8 h-146 z"/>
+                <path d="M100 488 h158 v8 h-158 z"/>
+            </g>
+            <path class="ln" stroke-width="1.8" d="M86 412 h212 v116 h-212 z" opacity="0.55"/>
+        </g>
+        <g id="o-mug">
+            <path d="M356 592 h50 v-42 h-50 z" class="fluod"/>
+            <path class="ln" stroke-width="3.0" d="M356 592 h50 v-42 h-50 z"/>
+            <path class="ln" stroke-width="2.6" d="M406 560 q18 6 16 22 q-2 12 -14 12" opacity="0.8"/>
+        </g>
+    </g>
+
+    <!-- ============================== foreground ============================== -->
+    <g id="foreground">
+        <rect x="0" y="0" width="1600" height="900" fill="url(#o-overhead)" pointer-events="none"/>
+        <rect x="0" y="0" width="1600" height="900" fill="url(#o-vignette)" pointer-events="none"/>
+        <rect x="0" y="0" width="1600" height="900" filter="url(#o-grain)" opacity="0.08"
+              style="mix-blend-mode:multiply" pointer-events="none"/>
+    </g>
+</svg>
