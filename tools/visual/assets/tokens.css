@@ -135,4 +135,13 @@
   --irx-career-suit-d:        #7A3B47;
   --irx-career-suit-d-dark:   #5E2C36;
   --irx-career-suit-d-fold:   #8E4A57;
+
+  --irx-neighbourhood-brick:        #7A6459;
+  --irx-neighbourhood-brick-dark:   #64514A;
+  --irx-neighbourhood-roof:         #55606B;
+  --irx-neighbourhood-pavement:     #5A616A;
+  --irx-neighbourhood-kerb:         #3C424A;
+  --irx-neighbourhood-foliage:      #46584B;
+  --irx-neighbourhood-foliage-dark: #35463A;
+  --irx-neighbourhood-car:          #5A5F66;
 }
