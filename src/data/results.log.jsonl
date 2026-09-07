@@ -33,3 +33,8 @@
 {"testerId":"anonymous","scenarioId":"the_secret","nodeId":"act3_hand_back_response","choiceId":"dont_know","scores":{"savvy":-5,"streetSmarts":0,"integrity":-5},"terminal":false,"timestamp":"2026-09-01T08:52:58.220Z"}
 {"testerId":"anonymous","scenarioId":"the_secret","nodeId":"act4_engagement_party","choiceId":"late_disclosure","scores":{"savvy":5,"streetSmarts":-20,"integrity":15},"terminal":false,"timestamp":"2026-09-01T08:53:19.987Z"}
 {"testerId":"anonymous","scenarioId":"the_secret","nodeId":"act4_late_disclosure","choiceId":"outside","scores":{"savvy":15,"streetSmarts":5,"integrity":10},"terminal":true,"timestamp":"2026-09-01T08:53:39.845Z"}
+{"testerId":"anonymous","scenarioId":"the_prince","nodeId":"inbox","choiceId":"confirm","scores":{"savvy":-10,"streetSmarts":-10,"integrity":0},"terminal":false,"timestamp":"2026-09-06T22:19:48.362Z"}
+{"testerId":"anonymous","scenarioId":"the_instruction","nodeId":"establish_northstar","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-09-06T22:20:21.119Z"}
+{"testerId":"anonymous","scenarioId":"the_instruction","nodeId":"establish_delivery","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-09-06T22:20:31.982Z"}
+{"testerId":"anonymous","scenarioId":"the_instruction","nodeId":"ask1_date","choiceId":"a1_comply","scores":{"savvy":-5,"streetSmarts":5,"integrity":-10},"terminal":false,"timestamp":"2026-09-06T22:20:43.819Z"}
+{"testerId":"anonymous","scenarioId":"the_instruction","nodeId":"ask1_reaction","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-09-06T22:20:50.035Z"}
