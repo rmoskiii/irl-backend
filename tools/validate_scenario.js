@@ -469,11 +469,19 @@ function layerAStreets(scenario, report, ctx) {
             report.fail("S05", id, `nodes.${nodeId}.day`, `day ${node.day} is outside 1..${LIMITS.finalDay}`);
         }
 
-        // S07 - node id prefix. Node ids are a global namespace across scenarios
-        // (renderBlocks keys by nodeId alone), so the prefix is what makes a
-        // collision nearly impossible before the cross-scenario check even runs.
-        if (typeof node.day === "number" && !new RegExp(`^d${node.day}_`).test(nodeId)) {
-            report.fail("S07", id, `nodes.${nodeId}`, `id does not carry its day prefix "d${node.day}_"`);
+        // S07 - scenario-qualified node id prefix: s<scenario>d<day>_<descriptor>.
+        //
+        // Node ids are a GLOBAL namespace across scenarios - renderBlocks.js keys on
+        // nodeId alone, and blockFor falls back `node[key] || node.default || null`,
+        // so a collision does not throw. It silently returns another scenario's
+        // artwork. The Streets is a set of independent seven-day scenarios that each
+        // have their own Day 1, so an unqualified "d1_open" collides by construction.
+        // The scenario number in the prefix is what prevents that, and A11 remains
+        // the backstop rather than being relaxed.
+        if (typeof node.day === "number" &&
+            !new RegExp(`^s\\d+d${node.day}_`).test(nodeId)) {
+            report.fail("S07", id, `nodes.${nodeId}`,
+                `id does not match the scenario-qualified convention s<n>d${node.day}_<descriptor>`);
         }
 
         // S06 - no terminal before the final day

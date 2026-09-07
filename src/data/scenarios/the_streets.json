@@ -967,7 +967,7 @@
     },
     "d2_ask": {
       "day": 2,
-      "message": "[PLACEHOLDER] He needs you to come somewhere and stand there. That's the whole ask. He is careful not to say more than that.",
+      "message": "[PLACEHOLDER] He needs you to come with him and be seen doing it. Turn up, be next to him, leave when he leaves. That's the whole ask, and he is careful not to say why it matters.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -1045,7 +1045,7 @@
     },
     "d2_help": {
       "day": 2,
-      "message": "[PLACEHOLDER] You stand where you're told for forty minutes. Nothing happens. That is not the same as nothing having happened.",
+      "message": "[PLACEHOLDER] You turn up and you are next to him for forty minutes. Nothing happens. That is not the same as nothing having happened.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -1333,7 +1333,7 @@
           "when": {
             "helped_jay": true
           },
-          "message": "[PLACEHOLDER] He knows your name and where you were standing on Saturday."
+          "message": "[PLACEHOLDER] He knows your name, and who you turned up with on Saturday."
         },
         {
           "when": {

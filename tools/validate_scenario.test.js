@@ -310,19 +310,19 @@ describe("Layer A - the streets profile", () => {
         const s = base();
         s.id = "the_streets";
         s.nodes = {
-            d1_start: {
+            s1d1_start: {
                 day: 1,
                 message: "x",
-                choices: [{ id: "go", setState: { count: 1 }, next: "d7_end" }],
+                choices: [{ id: "go", setState: { count: 1 }, next: "s1d7_end" }],
             },
-            d7_end: {
+            s1d7_end: {
                 day: 7,
                 message: "y",
                 messageVariants: [{ when: { countBand: "low" }, message: "v" }],
                 choices: [{ id: "fin", terminal: { consequence: "done" } }],
             },
         };
-        s.rootNode = "d1_start";
+        s.rootNode = "s1d1_start";
         return s;
     }
 
@@ -333,19 +333,19 @@ describe("Layer A - the streets profile", () => {
 
     test("S01 raw integer in a when", () => {
         const s = streetsBase();
-        s.nodes.d7_end.messageVariants[0].when = { count: 1 };
+        s.nodes.s1d7_end.messageVariants[0].when = { count: 1 };
         assert.ok(rules(runA(s, "streets")).includes("S01"));
     });
 
     test("S01 does NOT fire under the baseline profile", () => {
         const s = streetsBase();
-        s.nodes.d7_end.messageVariants[0].when = { count: 1 };
+        s.nodes.s1d7_end.messageVariants[0].when = { count: 1 };
         assert.ok(!rules(runA(s, "baseline")).includes("S01"));
     });
 
     test("S02 more than three message variants", () => {
         const s = streetsBase();
-        s.nodes.d7_end.messageVariants = [1, 2, 3, 4].map((n) => ({
+        s.nodes.s1d7_end.messageVariants = [1, 2, 3, 4].map((n) => ({
             when: { countBand: "low" },
             message: `v${n}`,
         }));
@@ -354,27 +354,28 @@ describe("Layer A - the streets profile", () => {
 
     test("S05 node without a day", () => {
         const s = streetsBase();
-        delete s.nodes.d7_end.day;
+        delete s.nodes.s1d7_end.day;
         assert.ok(rules(runA(s, "streets")).includes("S05"));
     });
 
     test("S06 terminal block before day 7", () => {
         const s = streetsBase();
-        s.nodes.d1_start.choices.push({ id: "early", terminal: { consequence: "no" } });
+        s.nodes.s1d1_start.choices.push({ id: "early", terminal: { consequence: "no" } });
         assert.ok(rules(runA(s, "streets")).includes("S06"));
     });
 
-    test("S07 node id missing its day prefix", () => {
+    test("S07 node id missing its scenario qualifier", () => {
         const s = streetsBase();
-        s.nodes.wrongname = s.nodes.d7_end;
-        delete s.nodes.d7_end;
-        s.nodes.d1_start.choices[0].next = "wrongname";
+        // an id that carries the day but not the scenario qualifier
+        s.nodes.d7_end = s.nodes.s1d7_end;
+        delete s.nodes.s1d7_end;
+        s.nodes.s1d1_start.choices[0].next = "d7_end";
         assert.ok(rules(runA(s, "streets")).includes("S07"));
     });
 
     test("S08 native message over the guidance length warns, does not fail", () => {
         const s = streetsBase();
-        s.nodes.d7_end.message = "x".repeat(A.LIMITS.nativeChars + 1);
+        s.nodes.s1d7_end.message = "x".repeat(A.LIMITS.nativeChars + 1);
         const r = runA(s, "streets");
         assert.ok(warnRules(r).includes("S08"));
         assert.ok(!rules(r).includes("S08"));
