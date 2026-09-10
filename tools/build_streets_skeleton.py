@@ -278,14 +278,14 @@ node("s1d4_tunde_2", 4, P + "Afterwards Tunde is careful not to ask whether you 
 # --- lane C: Kai
 node("s1d4_kai_1", 4, P + "The stairwell end of the walkway. Twelve people who all want to be able to say they were there.",
      [ch("d4k_film", "Film it.", nxt="s1d4_kai_2",
-         set_state={"filmed_the_fight": True, "rep": 2, "heat": 2, "kaiStrain": 2}, scores=(-5, 10, -15)),
+         set_state={"stop_was_filmed": True, "rep": 2, "heat": 2, "kaiStrain": 2}, scores=(-5, 10, -15)),
       ch("d4k_stop", "Get in the middle of it.", nxt="s1d4_kai_2",
          set_state={"rep": 2, "heat": 1, "kaiStrain": -1, "walked_away": True}, scores=(10, -5, 15)),
       ch("d4k_watch", "Stand there.", nxt="s1d4_kai_2",
          set_state={"heat": 1, "rep": 1}, scores=(0, 5, -5))])
 node("s1d4_kai_2", 4, P + "It ends the way these end. Someone's phone has it.",
      cont("s1d4_after"),
-     variants=[{"when": {"filmed_the_fight": True}, "message": P + "It ends. Your phone has it. You have not decided anything yet."},
+     variants=[{"when": {"stop_was_filmed": True}, "message": P + "It ends. Your phone has it. You have not decided anything yet."},
                {"when": {"kaiBand": "hostile"}, "message": P + "It ends, and Kai looks at you specifically on the way out."}])
 
 # --- lane D: nowhere
@@ -330,13 +330,13 @@ node("s1d5_ask", 5,
          set_state={"dayFive": "took_limited", "heat": 2, "deeTrust": 1, "money": 30, "kept_the_receipt": True},
          scores=(10, 10, -5)),
       ch("d5_decline", "No.", nxt="s1d5_declined",
-         set_state={"dayFive": "declined", "deeStrain": 2, "refused_the_bag": True},
+         set_state={"dayFive": "declined", "deeStrain": 2, "refused_the_offer": True},
          scores=(10, -10, 20)),
       ch("d5_redirect", "Not that — I'll do the other thing.",
          requires=[{"creditBand": "owed"}],
          locked="Not that — I'll do the other thing. — there's nothing left to offer him",
          nxt="s1d5_redirect_n",
-         set_state={"dayFive": "declined", "credit": -2, "deeTrust": 1, "refused_the_bag": True},
+         set_state={"dayFive": "declined", "credit": -2, "deeTrust": 1, "refused_the_offer": True},
          scores=(20, 5, 15))])
 
 node("s1d5_took", 5, P + "It is in your bag and it weighs nothing at all.", cont("s1d5_react"))
@@ -372,7 +372,7 @@ node("s1d6_news", 6,
      cont("s1d6_act"), delay="long",
      variants=[{"when": {"kept_the_receipt": True}, "message": P + "Jay is holding it. You still have the thing you wrote down in March."},
                {"when": {"helped_jay": True}, "message": P + "Jay is holding it, and part of what he is holding has your Saturday in it."},
-               {"when": {"filmed_the_fight": True}, "message": P + "Jay is holding it, and there is a video going round that you took."}])
+               {"when": {"stop_was_filmed": True}, "message": P + "Jay is holding it, and there is a video going round that you took."}])
 
 node("s1d6_act", 6,
      P + "You can put your name on it, keep it off, or let it sit where it landed.",
@@ -488,8 +488,8 @@ STATE = {
     "dayFourSaid": {"type": "enum", "initial": "none", "values": ["none", "true", "lied", "silent"]},
     "daySixAct": {"type": "enum", "initial": "none", "values": ["none", "fronted", "covered", "sat"]},
     "helped_jay": {"type": "bool", "initial": False},
-    "refused_the_bag": {"type": "bool", "initial": False},
-    "filmed_the_fight": {"type": "bool", "initial": False},
+    "refused_the_offer": {"type": "bool", "initial": False},
+    "stop_was_filmed": {"type": "bool", "initial": False},
     "missed_training": {"type": "bool", "initial": False},
     "told_jay_about_dee": {"type": "bool", "initial": False},
     "lied_to_mum": {"type": "bool", "initial": False},
@@ -562,7 +562,16 @@ SCENARIO = {
     "contentRating": {"minAge": 14,
                       "excluded": ["substance procedure", "weapon handling", "sexual content",
                                    "evasion technique", "violence choreography"]},
-    "scoring": {"dimensions": ["savvy", "streetSmarts", "integrity"], "revealTiming": "end_only"},
+    "scoring": {
+        "dimensions": ["savvy", "streetSmarts", "integrity"],
+        "revealTiming": "end_only",
+        "playerVisible": False,
+        "note": "Scores are retained for schema compatibility and for the results log, and "
+                "the values are real. playerVisible: false means they are never surfaced in "
+                "player-facing scoring UI and never applied to the client's global stat pool. "
+                "The Streets ends on trajectory and authored evidence, not on a number labelled "
+                "INTEGRITY.",
+    },
     "cast": [
         {"id": "jay", "name": "Jay", "role": "Oldest friend"},
         {"id": "tunde", "name": "Tunde", "role": "Friend with a plan"},
@@ -582,7 +591,7 @@ SCENARIO = {
     "reflections": [
         {"when": {"daySixAct": "fronted"}, "title": "PLACEHOLDER", "text": P + "You took someone else's Thursday."},
         {"when": {"dayFive": "took"}, "title": "PLACEHOLDER", "text": P + "Wednesday was the hinge and you did not feel it as one."},
-        {"when": {"refused_the_bag": True}, "title": "PLACEHOLDER", "text": P + "You said no on Wednesday and paid for it all week."},
+        {"when": {"refused_the_offer": True}, "title": "PLACEHOLDER", "text": P + "You said no on Wednesday and paid for it all week."},
         {"when": {"disciplineBand": "held"}, "title": "PLACEHOLDER", "text": P + "You did the boring thing every day it was available."},
     ],
     "defaultReflection": {"title": "PLACEHOLDER", "text": P + "A week."},
@@ -596,7 +605,7 @@ SCENARIO = {
                 {"when": {"answered_mum": True}, "text": P + "She notices that you picked up, every time, all week."},
                 {"when": {"mumBand": "tight"}, "text": P + "She stops waiting up."}],
         "dee": [{"when": {"dayFive": "took"}, "text": P + "Dee remembers reliable people."},
-                {"when": {"refused_the_bag": True}, "text": P + "Dee is warm to you for the rest of the year, and never asks again."}],
+                {"when": {"refused_the_offer": True}, "text": P + "Dee is warm to you for the rest of the year, and never asks again."}],
         "kai": [{"when": {"apologised_to_kai": True}, "text": P + "It stays ended."},
                 {"when": {"kaiBand": "hostile"}, "text": P + "It does not stay ended."}],
         "amara": [{"when": {"amaraBand": "tight"}, "text": P + "Amara is still there in August."},

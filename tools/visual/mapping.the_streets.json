@@ -20,5 +20,20 @@
   "montagePanels": {},
   "propSynonyms": {},
   "unrenderableProps": [],
-  "scoringKeysNote": "No entry in this file names a state, score or derived key. The firewall holds: registers resolve from authored mood only."
+  "scoringKeysNote": "No entry in this file names a state, score or derived key. The firewall holds: registers resolve from authored mood only.",
+  "plannedScenes": {
+    "scene.jay_flat": {
+      "times": [
+        "evening"
+      ],
+      "default_time": "evening",
+      "usedBy": [
+        "day 2 - the plate",
+        "day 4 - the birthday"
+      ],
+      "status": "declared, not yet in registries.json, no asset",
+      "note": "One token, not two. registries.scenesNote: resolve.py reads scene_def['default_time'] with no per-node override, so a room seen at two times is two scene tokens and two assets. Day 2 and Day 4 are both evening in the same flat, so they share a single token and a single asset."
+    }
+  },
+  "plannedScenesNote": "Environments declared by the locked Scenario 1 design but not yet produced. Promote each entry into registries.json only when its SVG exists and passes validate_assets.py; registries.json is the shared asset contract and an entry there is a claim that the asset is real."
 }

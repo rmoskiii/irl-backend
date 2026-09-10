@@ -32,7 +32,9 @@
       "streetSmarts",
       "integrity"
     ],
-    "revealTiming": "end_only"
+    "revealTiming": "end_only",
+    "playerVisible": false,
+    "note": "Scores are retained for schema compatibility and for the results log, and the values are real. playerVisible: false means they are never surfaced in player-facing scoring UI and never applied to the client's global stat pool. The Streets ends on trajectory and authored evidence, not on a number labelled INTEGRITY."
   },
   "cast": [
     {
@@ -251,11 +253,11 @@
       "type": "bool",
       "initial": false
     },
-    "refused_the_bag": {
+    "refused_the_offer": {
       "type": "bool",
       "initial": false
     },
-    "filmed_the_fight": {
+    "stop_was_filmed": {
       "type": "bool",
       "initial": false
     },
@@ -551,9 +553,9 @@
     "carrying_it",
     "holding"
   ],
-  "rootNode": "d1_open",
+  "rootNode": "s1d1_open",
   "nodes": {
-    "d1_open": {
+    "s1d1_open": {
       "day": 1,
       "message": "[PLACEHOLDER] Friday. Nothing is happening. The block, the flat, the last week of a term you have been half-attending.",
       "presentation": {
@@ -577,11 +579,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d1_kitchen"
+          "next": "s1d1_kitchen"
         }
       ]
     },
-    "d1_kitchen": {
+    "s1d1_kitchen": {
       "day": 1,
       "message": "[PLACEHOLDER] Mum is on a shift changeover and wants ten minutes. She asks about college in the way that means she already knows.",
       "presentation": {
@@ -610,7 +612,7 @@
             "discipline": 1,
             "answered_mum": true
           },
-          "next": "d1_kitchen_react"
+          "next": "s1d1_kitchen_react"
         },
         {
           "id": "d1k_manage",
@@ -624,7 +626,7 @@
             "mumStrain": 1,
             "answered_mum": true
           },
-          "next": "d1_kitchen_react"
+          "next": "s1d1_kitchen_react"
         },
         {
           "id": "d1k_lie",
@@ -639,11 +641,11 @@
             "lied_to_mum": true,
             "discipline": -1
           },
-          "next": "d1_kitchen_react"
+          "next": "s1d1_kitchen_react"
         }
       ]
     },
-    "d1_kitchen_react": {
+    "s1d1_kitchen_react": {
       "day": 1,
       "message": "[PLACEHOLDER] She takes it, or takes what she's given. Either way she's out the door in four minutes.",
       "messageVariants": [
@@ -681,11 +683,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d1_street"
+          "next": "s1d1_street"
         }
       ]
     },
-    "d1_street": {
+    "s1d1_street": {
       "day": 1,
       "message": "[PLACEHOLDER] Outside, both of them want you. Jay has an evening planned. Tunde has a session at the cage and has asked twice already.",
       "presentation": {
@@ -714,7 +716,7 @@
             "tundeStrain": 1,
             "stayed_out": true
           },
-          "next": "d1_evening_jay"
+          "next": "s1d1_evening_jay"
         },
         {
           "id": "d1s_tunde",
@@ -729,7 +731,7 @@
             "jayStrain": 1,
             "discipline": 1
           },
-          "next": "d1_evening_tunde"
+          "next": "s1d1_evening_tunde"
         },
         {
           "id": "d1s_neither",
@@ -744,11 +746,11 @@
             "tundeStrain": 1,
             "discipline": 1
           },
-          "next": "d1_evening_alone"
+          "next": "s1d1_evening_alone"
         }
       ]
     },
-    "d1_evening_jay": {
+    "s1d1_evening_jay": {
       "day": 1,
       "message": "[PLACEHOLDER] Chicken shop. Jay is funny for two hours and then, near the end, is briefly not.",
       "presentation": {
@@ -775,7 +777,7 @@
           "setState": {
             "jayTrust": 1
           },
-          "next": "d1_close"
+          "next": "s1d1_close"
         },
         {
           "id": "d1j_leave",
@@ -788,11 +790,11 @@
           "setState": {
             "jayStrain": 1
           },
-          "next": "d1_close"
+          "next": "s1d1_close"
         }
       ]
     },
-    "d1_evening_tunde": {
+    "s1d1_evening_tunde": {
       "day": 1,
       "message": "[PLACEHOLDER] The cage. Tunde is training for something specific and does not make a thing of it.",
       "presentation": {
@@ -820,7 +822,7 @@
             "tundeTrust": 1,
             "discipline": 1
           },
-          "next": "d1_close"
+          "next": "s1d1_close"
         },
         {
           "id": "d1t_vague",
@@ -835,11 +837,11 @@
             "tundeTrust": -1,
             "missed_training": true
           },
-          "next": "d1_close"
+          "next": "s1d1_close"
         }
       ]
     },
-    "d1_evening_alone": {
+    "s1d1_evening_alone": {
       "day": 1,
       "message": "[PLACEHOLDER] Your room. The phone does most of the talking.",
       "presentation": {
@@ -866,7 +868,7 @@
           "setState": {
             "amaraTrust": 1
           },
-          "next": "d1_close"
+          "next": "s1d1_close"
         },
         {
           "id": "d1a_scroll",
@@ -879,11 +881,11 @@
           "setState": {
             "amaraStrain": 1
           },
-          "next": "d1_close"
+          "next": "s1d1_close"
         }
       ]
     },
-    "d1_close": {
+    "s1d1_close": {
       "day": 1,
       "message": "[PLACEHOLDER] 23:40. A message from a number you don't have saved.",
       "messageVariants": [
@@ -915,11 +917,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d2_open"
+          "next": "s1d2_open"
         }
       ]
     },
-    "d2_open": {
+    "s1d2_open": {
       "day": 2,
       "message": "[PLACEHOLDER] Saturday. Jay is outside before you've eaten.",
       "messageVariants": [
@@ -961,13 +963,13 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d2_ask"
+          "next": "s1d2_ask"
         }
       ]
     },
-    "d2_ask": {
+    "s1d2_ask": {
       "day": 2,
-      "message": "[PLACEHOLDER] He needs you to come with him and be seen doing it. Turn up, be next to him, leave when he leaves. That's the whole ask, and he is careful not to say why it matters.",
+      "message": "[PLACEHOLDER] He needs you to come somewhere and stand there. That's the whole ask. He is careful not to say more than that.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -995,7 +997,7 @@
             "helped_jay": true,
             "credit": 1
           },
-          "next": "d2_help"
+          "next": "s1d2_help"
         },
         {
           "id": "d2a_limited",
@@ -1010,7 +1012,7 @@
             "heat": 1,
             "helped_jay": true
           },
-          "next": "d2_limited"
+          "next": "s1d2_limited"
         },
         {
           "id": "d2a_decline",
@@ -1024,7 +1026,7 @@
             "jayStrain": 2,
             "jayTrust": -1
           },
-          "next": "d2_decline"
+          "next": "s1d2_decline"
         },
         {
           "id": "d2a_redirect",
@@ -1039,13 +1041,13 @@
             "credit": 1,
             "kept_the_receipt": true
           },
-          "next": "d2_redirect"
+          "next": "s1d2_redirect"
         }
       ]
     },
-    "d2_help": {
+    "s1d2_help": {
       "day": 2,
-      "message": "[PLACEHOLDER] You turn up and you are next to him for forty minutes. Nothing happens. That is not the same as nothing having happened.",
+      "message": "[PLACEHOLDER] You stand where you're told for forty minutes. Nothing happens. That is not the same as nothing having happened.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -1067,11 +1069,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d2_react"
+          "next": "s1d2_react"
         }
       ]
     },
-    "d2_limited": {
+    "s1d2_limited": {
       "day": 2,
       "message": "[PLACEHOLDER] You come. You say the sentence once, in front of the person it was for. Jay looks at you a second longer than he needs to.",
       "presentation": {
@@ -1095,11 +1097,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d2_react"
+          "next": "s1d2_react"
         }
       ]
     },
-    "d2_decline": {
+    "s1d2_decline": {
       "day": 2,
       "message": "[PLACEHOLDER] He doesn't argue. He says fine in the voice that means the opposite and goes anyway.",
       "presentation": {
@@ -1123,11 +1125,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d2_react"
+          "next": "s1d2_react"
         }
       ]
     },
-    "d2_redirect": {
+    "s1d2_redirect": {
       "day": 2,
       "message": "[PLACEHOLDER] You offer the version that costs you and not him. He takes it, surprised, and writes nothing down. You do.",
       "presentation": {
@@ -1151,11 +1153,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d2_react"
+          "next": "s1d2_react"
         }
       ]
     },
-    "d2_react": {
+    "s1d2_react": {
       "day": 2,
       "message": "[PLACEHOLDER] Afterwards.",
       "messageVariants": [
@@ -1199,11 +1201,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d2_kai"
+          "next": "s1d2_kai"
         }
       ]
     },
-    "d2_kai": {
+    "s1d2_kai": {
       "day": 2,
       "message": "[PLACEHOLDER] Kai is on the walkway with two others. Something gets said that is meant to be heard.",
       "presentation": {
@@ -1231,7 +1233,7 @@
             "kaiStrain": 2,
             "rep": 1
           },
-          "next": "d2_close"
+          "next": "s1d2_close"
         },
         {
           "id": "d2k_past",
@@ -1246,7 +1248,7 @@
             "walked_away": true,
             "rep": -1
           },
-          "next": "d2_close"
+          "next": "s1d2_close"
         },
         {
           "id": "d2k_defuse",
@@ -1261,11 +1263,11 @@
             "walked_away": true,
             "credit": 1
           },
-          "next": "d2_close"
+          "next": "s1d2_close"
         }
       ]
     },
-    "d2_close": {
+    "s1d2_close": {
       "day": 2,
       "message": "[PLACEHOLDER] Home. Nothing has changed that anyone could point to.",
       "presentation": {
@@ -1289,11 +1291,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d3_open"
+          "next": "s1d3_open"
         }
       ]
     },
-    "d3_open": {
+    "s1d3_open": {
       "day": 3,
       "message": "[PLACEHOLDER] Sunday. Word comes that you should come by.",
       "interstitial": {
@@ -1321,11 +1323,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d3_arrive"
+          "next": "s1d3_arrive"
         }
       ]
     },
-    "d3_arrive": {
+    "s1d3_arrive": {
       "day": 3,
       "message": "[PLACEHOLDER] A flat above the shops that is nicer than any flat you have been in. Dee knows your name and one thing about you that you did not tell him.",
       "messageVariants": [
@@ -1333,7 +1335,7 @@
           "when": {
             "helped_jay": true
           },
-          "message": "[PLACEHOLDER] He knows your name, and who you turned up with on Saturday."
+          "message": "[PLACEHOLDER] He knows your name and where you were standing on Saturday."
         },
         {
           "when": {
@@ -1364,11 +1366,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d3_dee"
+          "next": "s1d3_dee"
         }
       ]
     },
-    "d3_dee": {
+    "s1d3_dee": {
       "day": 3,
       "message": "[PLACEHOLDER] He asks what you're doing with yourself. It is a real question and he waits for the answer.",
       "presentation": {
@@ -1397,7 +1399,7 @@
             "deeTrust": 2,
             "rep": 1
           },
-          "next": "d3_impress"
+          "next": "s1d3_impress"
         },
         {
           "id": "d3d_true",
@@ -1411,7 +1413,7 @@
             "standing": "around",
             "deeTrust": 1
           },
-          "next": "d3_true"
+          "next": "s1d3_true"
         },
         {
           "id": "d3d_leave",
@@ -1426,11 +1428,11 @@
             "deeStrain": 1,
             "rep": -1
           },
-          "next": "d3_leave"
+          "next": "s1d3_leave"
         }
       ]
     },
-    "d3_impress": {
+    "s1d3_impress": {
       "day": 3,
       "message": "[PLACEHOLDER] He likes it. You can feel exactly how much, and how easy it would be to keep doing.",
       "presentation": {
@@ -1454,11 +1456,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d3_react"
+          "next": "s1d3_react"
         }
       ]
     },
-    "d3_true": {
+    "s1d3_true": {
       "day": 3,
       "message": "[PLACEHOLDER] He doesn't flinch. He says something about his own eighteenth year that you don't know how to hold.",
       "presentation": {
@@ -1482,11 +1484,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d3_react"
+          "next": "s1d3_react"
         }
       ]
     },
-    "d3_leave": {
+    "s1d3_leave": {
       "day": 3,
       "message": "[PLACEHOLDER] He walks you to the door and is nice about it, which is worse.",
       "presentation": {
@@ -1510,11 +1512,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d3_react"
+          "next": "s1d3_react"
         }
       ]
     },
-    "d3_react": {
+    "s1d3_react": {
       "day": 3,
       "message": "[PLACEHOLDER] On the walkway home.",
       "messageVariants": [
@@ -1552,11 +1554,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d3_tell"
+          "next": "s1d3_tell"
         }
       ]
     },
-    "d3_tell": {
+    "s1d3_tell": {
       "day": 3,
       "message": "[PLACEHOLDER] Jay asks where you were.",
       "presentation": {
@@ -1584,7 +1586,7 @@
             "jayTrust": 1,
             "told_jay_about_dee": true
           },
-          "next": "d3_close"
+          "next": "s1d3_close"
         },
         {
           "id": "d3t_partial",
@@ -1597,7 +1599,7 @@
           "setState": {
             "jayStrain": 1
           },
-          "next": "d3_close"
+          "next": "s1d3_close"
         },
         {
           "id": "d3t_nothing",
@@ -1611,11 +1613,11 @@
             "jayStrain": 2,
             "jayTrust": -1
           },
-          "next": "d3_close"
+          "next": "s1d3_close"
         }
       ]
     },
-    "d3_close": {
+    "s1d3_close": {
       "day": 3,
       "message": "[PLACEHOLDER] Sunday ends the way Sundays do.",
       "presentation": {
@@ -1639,11 +1641,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d4_open"
+          "next": "s1d4_open"
         }
       ]
     },
-    "d4_open": {
+    "s1d4_open": {
       "day": 4,
       "message": "[PLACEHOLDER] Monday. Three things want the same evening.",
       "messageVariants": [
@@ -1685,11 +1687,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d4_choose"
+          "next": "s1d4_choose"
         }
       ]
     },
-    "d4_choose": {
+    "s1d4_choose": {
       "day": 4,
       "message": "[PLACEHOLDER] Amara. Tunde's session. Or the thing with Kai that is going to happen whether you are there or not.",
       "presentation": {
@@ -1727,7 +1729,7 @@
             "amaraTrust": 1
           },
           "lockedLabel": "Amara. \u2014 she hasn't asked you anywhere",
-          "next": "d4_amara_1"
+          "next": "s1d4_amara_1"
         },
         {
           "id": "d4c_tunde",
@@ -1742,7 +1744,7 @@
             "discipline": 2,
             "amaraStrain": 1
           },
-          "next": "d4_tunde_1"
+          "next": "s1d4_tunde_1"
         },
         {
           "id": "d4c_kai",
@@ -1758,7 +1760,7 @@
             "heat": 1,
             "discipline": -1
           },
-          "next": "d4_kai_1"
+          "next": "s1d4_kai_1"
         },
         {
           "id": "d4c_none",
@@ -1777,11 +1779,11 @@
             "tundeTrust": -1,
             "missed_training": true
           },
-          "next": "d4_none_1"
+          "next": "s1d4_none_1"
         }
       ]
     },
-    "d4_amara_1": {
+    "s1d4_amara_1": {
       "day": 4,
       "message": "[PLACEHOLDER] The bus stop, then somewhere neither of you picked. She asks a question about Dee that she should not know to ask.",
       "presentation": {
@@ -1808,7 +1810,7 @@
           "setState": {
             "amaraTrust": 2
           },
-          "next": "d4_amara_2"
+          "next": "s1d4_amara_2"
         },
         {
           "id": "d4a_deflect",
@@ -1821,11 +1823,11 @@
           "setState": {
             "amaraStrain": 2
           },
-          "next": "d4_amara_2"
+          "next": "s1d4_amara_2"
         }
       ]
     },
-    "d4_amara_2": {
+    "s1d4_amara_2": {
       "day": 4,
       "message": "[PLACEHOLDER] Later, walking back. She says the thing she came to say.",
       "messageVariants": [
@@ -1857,11 +1859,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d4_after"
+          "next": "s1d4_after"
         }
       ]
     },
-    "d4_tunde_1": {
+    "s1d4_tunde_1": {
       "day": 4,
       "message": "[PLACEHOLDER] The cage. Tunde has brought someone who runs the programme he keeps talking about.",
       "presentation": {
@@ -1890,7 +1892,7 @@
             "discipline": 1,
             "credit": 1
           },
-          "next": "d4_tunde_2"
+          "next": "s1d4_tunde_2"
         },
         {
           "id": "d4t_hang",
@@ -1903,11 +1905,11 @@
           "setState": {
             "tundeStrain": 1
           },
-          "next": "d4_tunde_2"
+          "next": "s1d4_tunde_2"
         }
       ]
     },
-    "d4_tunde_2": {
+    "s1d4_tunde_2": {
       "day": 4,
       "message": "[PLACEHOLDER] Afterwards Tunde is careful not to ask whether you meant it.",
       "messageVariants": [
@@ -1939,11 +1941,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d4_after"
+          "next": "s1d4_after"
         }
       ]
     },
-    "d4_kai_1": {
+    "s1d4_kai_1": {
       "day": 4,
       "message": "[PLACEHOLDER] The stairwell end of the walkway. Twelve people who all want to be able to say they were there.",
       "presentation": {
@@ -1968,12 +1970,12 @@
             "integrity": -15
           },
           "setState": {
-            "filmed_the_fight": true,
+            "stop_was_filmed": true,
             "rep": 2,
             "heat": 2,
             "kaiStrain": 2
           },
-          "next": "d4_kai_2"
+          "next": "s1d4_kai_2"
         },
         {
           "id": "d4k_stop",
@@ -1989,7 +1991,7 @@
             "kaiStrain": -1,
             "walked_away": true
           },
-          "next": "d4_kai_2"
+          "next": "s1d4_kai_2"
         },
         {
           "id": "d4k_watch",
@@ -2003,17 +2005,17 @@
             "heat": 1,
             "rep": 1
           },
-          "next": "d4_kai_2"
+          "next": "s1d4_kai_2"
         }
       ]
     },
-    "d4_kai_2": {
+    "s1d4_kai_2": {
       "day": 4,
       "message": "[PLACEHOLDER] It ends the way these end. Someone's phone has it.",
       "messageVariants": [
         {
           "when": {
-            "filmed_the_fight": true
+            "stop_was_filmed": true
           },
           "message": "[PLACEHOLDER] It ends. Your phone has it. You have not decided anything yet."
         },
@@ -2045,11 +2047,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d4_after"
+          "next": "s1d4_after"
         }
       ]
     },
-    "d4_none_1": {
+    "s1d4_none_1": {
       "day": 4,
       "message": "[PLACEHOLDER] Your room. Three conversations you are not in.",
       "presentation": {
@@ -2076,7 +2078,7 @@
           "setState": {
             "heat": 1
           },
-          "next": "d4_none_2"
+          "next": "s1d4_none_2"
         },
         {
           "id": "d4n_off",
@@ -2090,11 +2092,11 @@
             "discipline": 1,
             "rep": -1
           },
-          "next": "d4_none_2"
+          "next": "s1d4_none_2"
         }
       ]
     },
-    "d4_none_2": {
+    "s1d4_none_2": {
       "day": 4,
       "message": "[PLACEHOLDER] By eleven it has happened without you.",
       "presentation": {
@@ -2118,11 +2120,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d4_after"
+          "next": "s1d4_after"
         }
       ]
     },
-    "d4_after": {
+    "s1d4_after": {
       "day": 4,
       "message": "[PLACEHOLDER] Tuesday morning. Two people ask you where you were.",
       "messageVariants": [
@@ -2163,7 +2165,7 @@
           "setState": {
             "dayFourSaid": "true"
           },
-          "next": "d4_close"
+          "next": "s1d4_close"
         },
         {
           "id": "d4s_lie",
@@ -2179,7 +2181,7 @@
             "tundeStrain": 1,
             "tundeTrust": -1
           },
-          "next": "d4_close"
+          "next": "s1d4_close"
         },
         {
           "id": "d4s_silent",
@@ -2192,11 +2194,11 @@
           "setState": {
             "dayFourSaid": "silent"
           },
-          "next": "d4_close"
+          "next": "s1d4_close"
         }
       ]
     },
-    "d4_close": {
+    "s1d4_close": {
       "day": 4,
       "message": "[PLACEHOLDER] Tuesday closes quietly.",
       "presentation": {
@@ -2220,11 +2222,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d5_open"
+          "next": "s1d5_open"
         }
       ]
     },
-    "d5_open": {
+    "s1d5_open": {
       "day": 5,
       "message": "[PLACEHOLDER] Wednesday. Dee asks you to come by. It is phrased as an invitation.",
       "messageVariants": [
@@ -2266,11 +2268,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d5_stairwell"
+          "next": "s1d5_stairwell"
         }
       ]
     },
-    "d5_stairwell": {
+    "s1d5_stairwell": {
       "day": 5,
       "message": "[PLACEHOLDER] The stairwell. He is exactly as warm as he was on Sunday. He asks how the week has been and listens to the answer.",
       "reactionDelay": "long",
@@ -2295,11 +2297,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d5_ask"
+          "next": "s1d5_ask"
         }
       ]
     },
-    "d5_ask": {
+    "s1d5_ask": {
       "day": 5,
       "message": "[PLACEHOLDER] Then the ask. Small, specific, phrased as trust. He does not say what it is and you do not need him to.",
       "presentation": {
@@ -2330,7 +2332,7 @@
             "money": 60,
             "standing": "named"
           },
-          "next": "d5_took"
+          "next": "s1d5_took"
         },
         {
           "id": "d5_limited",
@@ -2347,7 +2349,7 @@
             "money": 30,
             "kept_the_receipt": true
           },
-          "next": "d5_limited_n"
+          "next": "s1d5_limited_n"
         },
         {
           "id": "d5_decline",
@@ -2360,9 +2362,9 @@
           "setState": {
             "dayFive": "declined",
             "deeStrain": 2,
-            "refused_the_bag": true
+            "refused_the_offer": true
           },
-          "next": "d5_declined"
+          "next": "s1d5_declined"
         },
         {
           "id": "d5_redirect",
@@ -2381,14 +2383,14 @@
             "dayFive": "declined",
             "credit": -2,
             "deeTrust": 1,
-            "refused_the_bag": true
+            "refused_the_offer": true
           },
           "lockedLabel": "Not that \u2014 I'll do the other thing. \u2014 there's nothing left to offer him",
-          "next": "d5_redirect_n"
+          "next": "s1d5_redirect_n"
         }
       ]
     },
-    "d5_took": {
+    "s1d5_took": {
       "day": 5,
       "message": "[PLACEHOLDER] It is in your bag and it weighs nothing at all.",
       "presentation": {
@@ -2412,11 +2414,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d5_react"
+          "next": "s1d5_react"
         }
       ]
     },
-    "d5_limited_n": {
+    "s1d5_limited_n": {
       "day": 5,
       "message": "[PLACEHOLDER] He agrees to the condition immediately, which tells you what the condition was worth.",
       "presentation": {
@@ -2440,11 +2442,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d5_react"
+          "next": "s1d5_react"
         }
       ]
     },
-    "d5_declined": {
+    "s1d5_declined": {
       "day": 5,
       "message": "[PLACEHOLDER] He is not angry. He is disappointed in a way that costs more than anger would.",
       "presentation": {
@@ -2468,11 +2470,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d5_react"
+          "next": "s1d5_react"
         }
       ]
     },
-    "d5_redirect_n": {
+    "s1d5_redirect_n": {
       "day": 5,
       "message": "[PLACEHOLDER] You spend what you were owed. He takes it, and something in the room resets.",
       "presentation": {
@@ -2496,11 +2498,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d5_react"
+          "next": "s1d5_react"
         }
       ]
     },
-    "d5_react": {
+    "s1d5_react": {
       "day": 5,
       "message": "[PLACEHOLDER] Outside. The walk home is the same walk.",
       "messageVariants": [
@@ -2545,11 +2547,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d5_close"
+          "next": "s1d5_close"
         }
       ]
     },
-    "d5_close": {
+    "s1d5_close": {
       "day": 5,
       "message": "[PLACEHOLDER] Wednesday, late.",
       "messageVariants": [
@@ -2581,11 +2583,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d6_open"
+          "next": "s1d6_open"
         }
       ]
     },
-    "d6_open": {
+    "s1d6_open": {
       "day": 6,
       "message": "[PLACEHOLDER] Thursday. It has landed, and not on you.",
       "messageVariants": [
@@ -2627,11 +2629,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d6_news"
+          "next": "s1d6_news"
         }
       ]
     },
-    "d6_news": {
+    "s1d6_news": {
       "day": 6,
       "message": "[PLACEHOLDER] Jay is the one holding it. What he is holding is partly yours.",
       "messageVariants": [
@@ -2649,7 +2651,7 @@
         },
         {
           "when": {
-            "filmed_the_fight": true
+            "stop_was_filmed": true
           },
           "message": "[PLACEHOLDER] Jay is holding it, and there is a video going round that you took."
         }
@@ -2676,11 +2678,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d6_act"
+          "next": "s1d6_act"
         }
       ]
     },
-    "d6_act": {
+    "s1d6_act": {
       "day": 6,
       "message": "[PLACEHOLDER] You can put your name on it, keep it off, or let it sit where it landed.",
       "presentation": {
@@ -2711,7 +2713,7 @@
             "rep": 2,
             "credit": 1
           },
-          "next": "d6_fronted"
+          "next": "s1d6_fronted"
         },
         {
           "id": "d6a_cover",
@@ -2728,7 +2730,7 @@
             "lied_to_mum": true,
             "rep": 1
           },
-          "next": "d6_covered"
+          "next": "s1d6_covered"
         },
         {
           "id": "d6a_sit",
@@ -2744,11 +2746,11 @@
             "jayTrust": -1,
             "rep": -1
           },
-          "next": "d6_sat"
+          "next": "s1d6_sat"
         }
       ]
     },
-    "d6_fronted": {
+    "s1d6_fronted": {
       "day": 6,
       "message": "[PLACEHOLDER] You say it was you. It is true enough to survive being said out loud.",
       "presentation": {
@@ -2772,11 +2774,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d6_tell_first"
+          "next": "s1d6_tell_first"
         }
       ]
     },
-    "d6_covered": {
+    "s1d6_covered": {
       "day": 6,
       "message": "[PLACEHOLDER] You put a version together that holds. It holds.",
       "presentation": {
@@ -2800,11 +2802,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d6_tell_first"
+          "next": "s1d6_tell_first"
         }
       ]
     },
-    "d6_sat": {
+    "s1d6_sat": {
       "day": 6,
       "message": "[PLACEHOLDER] You do nothing, and doing nothing turns out to be a thing you did.",
       "presentation": {
@@ -2828,11 +2830,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d6_tell_first"
+          "next": "s1d6_tell_first"
         }
       ]
     },
-    "d6_tell_first": {
+    "s1d6_tell_first": {
       "day": 6,
       "message": "[PLACEHOLDER] Someone has to hear it from you first.",
       "presentation": {
@@ -2860,7 +2862,7 @@
             "mumTrust": 2,
             "answered_mum": true
           },
-          "next": "d6_close"
+          "next": "s1d6_close"
         },
         {
           "id": "d6t_jay",
@@ -2873,7 +2875,7 @@
           "setState": {
             "jayTrust": 1
           },
-          "next": "d6_close"
+          "next": "s1d6_close"
         },
         {
           "id": "d6t_tunde",
@@ -2887,7 +2889,7 @@
             "tundeTrust": 1,
             "tundeStrain": 1
           },
-          "next": "d6_close"
+          "next": "s1d6_close"
         },
         {
           "id": "d6t_none",
@@ -2902,11 +2904,11 @@
             "jayStrain": 1,
             "tundeStrain": 2
           },
-          "next": "d6_close"
+          "next": "s1d6_close"
         }
       ]
     },
-    "d6_close": {
+    "s1d6_close": {
       "day": 6,
       "message": "[PLACEHOLDER] Thursday, late. It is not over.",
       "messageVariants": [
@@ -2944,11 +2946,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d7_open"
+          "next": "s1d7_open"
         }
       ]
     },
-    "d7_open": {
+    "s1d7_open": {
       "day": 7,
       "message": "[PLACEHOLDER] Friday. A week.",
       "messageVariants": [
@@ -2990,11 +2992,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d7_situation"
+          "next": "s1d7_situation"
         }
       ]
     },
-    "d7_situation": {
+    "s1d7_situation": {
       "day": 7,
       "message": "[PLACEHOLDER] It needs something from you today that you either have or don't.",
       "messageVariants": [
@@ -3033,11 +3035,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d7_move"
+          "next": "s1d7_move"
         }
       ]
     },
-    "d7_move": {
+    "s1d7_move": {
       "day": 7,
       "message": "[PLACEHOLDER] Four doors. Some of them are shut.",
       "presentation": {
@@ -3075,7 +3077,7 @@
             "heat": -2
           },
           "lockedLabel": "Pay it and be done. \u2014 you don't have it",
-          "next": "d7_paid"
+          "next": "s1d7_paid"
         },
         {
           "id": "d7m_call",
@@ -3098,7 +3100,7 @@
             "rep": 1
           },
           "lockedLabel": "Call in what you're owed. \u2014 there's nobody left to call",
-          "next": "d7_called"
+          "next": "s1d7_called"
         },
         {
           "id": "d7m_jay",
@@ -3121,7 +3123,7 @@
             "heat": 1
           },
           "lockedLabel": "Go to Jay. \u2014 you two aren't there any more",
-          "next": "d7_jay"
+          "next": "s1d7_jay"
         },
         {
           "id": "d7m_alone",
@@ -3135,11 +3137,11 @@
             "heat": 1,
             "rep": 1
           },
-          "next": "d7_alone"
+          "next": "s1d7_alone"
         }
       ]
     },
-    "d7_paid": {
+    "s1d7_paid": {
       "day": 7,
       "message": "[PLACEHOLDER] It costs what it costs and then it is closed.",
       "presentation": {
@@ -3163,11 +3165,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d7_final"
+          "next": "s1d7_final"
         }
       ]
     },
-    "d7_called": {
+    "s1d7_called": {
       "day": 7,
       "message": "[PLACEHOLDER] Two calls. Both answered. You notice that you counted.",
       "presentation": {
@@ -3191,11 +3193,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d7_final"
+          "next": "s1d7_final"
         }
       ]
     },
-    "d7_jay": {
+    "s1d7_jay": {
       "day": 7,
       "message": "[PLACEHOLDER] Jay does not ask what it is for.",
       "messageVariants": [
@@ -3227,11 +3229,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d7_final"
+          "next": "s1d7_final"
         }
       ]
     },
-    "d7_alone": {
+    "s1d7_alone": {
       "day": 7,
       "message": "[PLACEHOLDER] You do it on your own, which works, and costs something you can't name yet.",
       "presentation": {
@@ -3255,11 +3257,11 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "d7_final"
+          "next": "s1d7_final"
         }
       ]
     },
-    "d7_final": {
+    "s1d7_final": {
       "day": 7,
       "message": "[PLACEHOLDER] Friday night. The block, the same as it was seven days ago, except for everything.",
       "messageVariants": [
@@ -3431,7 +3433,7 @@
     },
     {
       "when": {
-        "refused_the_bag": true
+        "refused_the_offer": true
       },
       "title": "PLACEHOLDER",
       "text": "[PLACEHOLDER] You said no on Wednesday and paid for it all week."
@@ -3512,7 +3514,7 @@
       },
       {
         "when": {
-          "refused_the_bag": true
+          "refused_the_offer": true
         },
         "text": "[PLACEHOLDER] Dee is warm to you for the rest of the year, and never asks again."
       }

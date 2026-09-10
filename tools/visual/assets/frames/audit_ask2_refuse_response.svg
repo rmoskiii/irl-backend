@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" id="audit_ask2_refuse_response" data-frame="audit_ask2_refuse_response" data-mode="montage" data-render-block="render_blocks.json -&gt; ask2_refuse_response -&gt; default"><defs><style>
+/* @tokens-begin */
+:root {
+  /* line */
+  --irx-line:          #241D19;
+  --irx-line-soft:     #3B302A;
+  --irx-shadow:        #2A231E;
+
+  /* architecture */
+  --irx-wall:          #5C6A5F;
+  --irx-wall-dark:     #4E5A51;
+  --irx-wall-pattern:  #556359;
+  --irx-tile:          #B5A992;
+  --irx-tile-alt:      #A49980;
+  --irx-floor:         #5E4D3E;
+
+  /* window */
+  --irx-sky-high:      #334051;
+  --irx-sky-mid:       #4D4656;
+  --irx-sky-low:       #785A4F;
+  --irx-outside-dark:  #2A333E;
+  --irx-curtain:       #424E56;
+  --irx-curtain-dark:  #38424A;
+
+  /* joinery */
+  --irx-cabinet:       #785D44;
+  --irx-cabinet-dark:  #634C36;
+  --irx-counter:       #947553;
+  --irx-counter-edge:  #7B5F43;
+
+  /* character */
+  --irx-skin:          #A87A5A;
+  --irx-skin-shade:    #875D42;
+  /* figure_b: same warm hazel family, one step deeper than figure_a */
+  --irx-skin-b:        #8E6244;
+  --irx-skin-b-shade:  #6E4A32;
+  /* lips: figure_b skin with a pink shift. NOT the line colour - filling the
+     mouth with --irx-line reads as black lips. */
+  --irx-lip-b:         #96604F;
+  --irx-mouth-b:       #4A2C24;
+  --irx-hair:          #41322A;
+  --irx-hair-light:    #554136;
+  /* figure_b: 4C coil texture. near-black with a warm lift for the key light */
+  --irx-hair-b:        #241A16;
+  --irx-hair-b-light:  #3D2C24;
+
+  /* wardrobe: home_casual */
+  --irx-cloth:         #A8603F;
+  --irx-cloth-dark:    #894C31;
+  --irx-cloth-inner:   #D9CDBC;
+
+  /* props */
+  --irx-glass:         #BCC8C3;
+  --irx-glass-dark:    #9AA8A2;
+  --irx-highlight:     #FFFFFF;
+  --irx-jacket:        #4F5A63;
+  --irx-jacket-dark:   #3D464E;
+
+  /* accent — neighbourhood district, warm light only */
+  --irx-accent:        #FFC15E;
+  --irx-accent-dim:    #C89A4E;
+  --irx-lamp-warm:     #F2C77E;
+  --irx-cool-spill:    #7E93A8;
+
+  /* vignettes: montage panels only. Desaturated and reduced, so compressed
+     time reads differently from present tense without a caption saying so.
+     A vignette may use ONLY these, --irx-line and --irx-accent. Enforced by
+     validate_assets.py rule 13. */
+  --irx-vig-light:     #B3ABA0;
+  --irx-vig-base:      #8C857C;
+  --irx-vig-mid:       #635D56;
+  --irx-vig-dark:      #3B3733;
+
+  /* stroke weights */
+  --irx-stroke-xheavy: 6.6;
+  --irx-stroke-heavy:  5;
+  --irx-stroke:        3.4;
+  --irx-stroke-fine:   2.1;
+  --irx-stroke-hair:   1.4;
+
+  /* ==== career district ==== */
+/* career: architecture */
+--irx-career-wall:          #6E757E;
+--irx-career-wall-dark:     #5C636B;
+--irx-career-wall-pattern:  #666D76;
+--irx-career-partition:     #58606A;
+--irx-career-partition-dark:#4A5158;
+--irx-career-floor:         #4A4F55;
+/* career: window, evening. The office is lit; outside is not. */
+--irx-career-sky-high:      #1E2836;
+--irx-career-sky-mid:       #26303D;
+--irx-career-sky-low:       #2E3444;
+--irx-career-outside-dark:  #161C25;
+/* career: joinery */
+--irx-career-desk:          #8A8478;
+--irx-career-desk-edge:     #6F6A60;
+--irx-career-desk-dark:     #5E5A52;
+--irx-career-metal:         #7A828A;
+--irx-career-metal-dark:    #626A72;
+/* career: light. Overhead fluorescent and one screen. */
+--irx-career-fluoro:        #E8EDF2;
+--irx-career-fluoro-dim:    #A8B2BC;
+--irx-career-screen:        #6E93A8;
+--irx-career-screen-glow:   #9FC4D8;
+/* career: figure_c (Ray) */
+--irx-career-skin-c:        #D9A886;
+--irx-career-skin-c-shade:  #B98565;
+--irx-career-hair-c:        #6E655C;
+--irx-career-hair-c-light:  #8A8076;
+--irx-career-lip-c:         #B57F66;
+--irx-career-mouth-c:       #6B4436;
+/* career: figure_d (Dana) */
+--irx-career-skin-d:        #E0B294;
+--irx-career-skin-d-shade:  #BE8D6F;
+--irx-career-hair-d:        #4A4038;
+--irx-career-hair-d-light:  #6A5C50;
+/* career: wardrobe work */
+--irx-career-shirt-c:       #9FA9B4;
+--irx-career-shirt-c-dark:  #7E8894;
+--irx-career-shirt-c-fold:  #6B7480;
+/* career: wardrobe work_coat */
+--irx-career-coat-c:        #4E5661;
+--irx-career-coat-c-dark:   #3C434D;
+--irx-career-coat-c-fold:   #5C6570;
+/* career: accent. Matches district_theme.dart Career accent 0xFF7EA6DB. */
+--irx-career-accent:        #7EA6DB;
+--irx-career-accent-dim:    #5F7FA9;
+  --irx-career-suit-d:        #7A3B47;
+  --irx-career-suit-d-dark:   #5E2C36;
+  --irx-career-suit-d-fold:   #8E4A57;
+}
+/* @tokens-end */
+        .ln  { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.vl  { fill: var(--irx-vig-light); }
+.vb  { fill: var(--irx-vig-base); }
+.vm  { fill: var(--irx-vig-mid); }
+.vd  { fill: var(--irx-vig-dark); }
+</style></defs><g data-layer="montage"><rect x="0" y="0" width="1600" height="900" fill="var(--irx-vig-dark)" /><g transform="translate(92,140) scale(0.916667)"><g id="vignette">
+        
+        <path d="M0 0 h480 v600 h-480 z" class="vm" />
+        <path d="M40 58 h400 v486 h-400 z" class="vb" />
+
+        
+        <path d="M40 58 h400 v54 h-400 z" class="vm" />
+        <path d="M40 486 h400 v58 h-400 z" class="vm" />
+
+        
+        <path d="M74 384 h332 v46 h-332 z" class="vl" />
+        <path d="M74 384 h332 v10 h-332 z" class="vd" opacity="0.20" />
+        <g class="vd">
+            <circle cx="140" cy="300" r="30" />
+            <path d="M140 336 q-52 8 -60 48 h120 q-8 -40 -60 -48 z" />
+            <circle cx="240" cy="288" r="30" />
+            <path d="M240 324 q-52 8 -60 60 h120 q-8 -52 -60 -60 z" />
+            <circle cx="340" cy="300" r="30" />
+            <path d="M340 336 q-52 8 -60 48 h120 q-8 -40 -60 -48 z" />
+        </g>
+        
+        <path d="M214 360 h52 l10 24 h-72 z" class="vm" />
+        <path class="ln" stroke-width="2.2" d="M214 360 h52 l10 24 h-72 z" />
+
+        
+        <path d="M176 58 h10 v486 h-10 z" class="vd" />
+        <path d="M294 58 h10 v486 h-10 z" class="vd" />
+        <g class="vl" opacity="0.16">
+            <path d="M60 544 L 250 58 h56 L 116 544 z" />
+            <path d="M330 544 L 440 262 v90 L 386 544 z" />
+        </g>
+        <path class="ln" stroke-width="3.4" d="M40 58 h400 v486 h-400 z" />
+
+        
+        <path d="M0 0 h40 v600 h-40 z" class="vd" />
+        <path d="M440 0 h40 v600 h-40 z" class="vd" />
+        <path class="ln" stroke-width="3.0" d="M40 0 v600" />
+        <path class="ln" stroke-width="3.0" d="M440 0 v600" />
+    </g>
+</g><rect x="92" y="140" width="440" height="550" fill="none" stroke="var(--irx-vig-light)" stroke-width="3" /><text x="312" y="738" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="1.6" fill="var(--irx-vig-light)">MONDAY</text><g transform="translate(580,140) scale(0.916667)"><g id="vignette">
+        <path d="M0 0 h480 v600 h-480 z" class="vm" />
+
+        
+        <path d="M46 96 h388 v150 h-388 z" class="vb" />
+        <path d="M46 96 h388 v16 h-388 z" class="vd" opacity="0.34" />
+        <g class="ln" stroke-width="2.6" opacity="0.5">
+            <path d="M143 112 v134" /><path d="M240 112 v134" /><path d="M337 112 v134" />
+        </g>
+        <path class="ln" stroke-width="3.4" d="M46 96 h388 v150 h-388 z" />
+
+        
+        <g class="vd">
+            <circle cx="146" cy="286" r="38" />
+            <path d="M146 330 q-70 12 -80 106 h160 q-10 -94 -80 -106 z" />
+            <circle cx="336" cy="272" r="38" />
+            <path d="M336 316 q-70 12 -80 120 h160 q-10 -108 -80 -120 z" />
+        </g>
+
+        
+        <path d="M204 396 h34 v42 h-34 z" class="vl" />
+        <path class="ln" stroke-width="2.4" d="M204 396 h34 v42 h-34 z" />
+        <path d="M252 402 h30 v36 h-30 z" class="vl" opacity="0.82" />
+        <path class="ln" stroke-width="2.4" d="M252 402 h30 v36 h-30 z" />
+        <path d="M0 438 h480 v34 h-480 z" class="vl" />
+        <path d="M0 472 h480 v128 h-480 z" class="vb" />
+        <path d="M0 472 h480 v22 h-480 z" class="vd" opacity="0.26" />
+        <path class="ln" stroke-width="4.6" d="M0 438 h480" />
+        <path class="ln" stroke-width="2.4" d="M0 472 h480" opacity="0.6" />
+        <g class="ln" stroke-width="2.2" opacity="0.34">
+            <path d="M160 494 v106" /><path d="M330 494 v106" />
+        </g>
+    </g>
+</g><rect x="580" y="140" width="440" height="550" fill="none" stroke="var(--irx-vig-light)" stroke-width="3" /><g transform="translate(1068,140) scale(0.916667)"><g id="vignette">
+        <path d="M0 0 h480 v600 h-480 z" class="vm" />
+
+        
+        <path d="M0 0 L 186 236 h108 L 480 0 z" class="vb" />
+        <path d="M0 600 L 186 316 h108 L 480 600 z" class="vb" />
+        <path d="M0 0 L 186 236 v80 L 0 600 z" class="vm" />
+        <path d="M480 0 L 294 236 v80 L 480 600 z" class="vm" />
+        <path d="M186 236 h108 v80 h-108 z" class="vl" opacity="0.55" />
+        <path class="ln" stroke-width="3.0" d="M186 236 h108 v80 h-108 z" />
+
+        
+        <g class="vd" opacity="0.68">
+            <path d="M14 140 L 78 210 v212 L 14 492 z" />
+            <path d="M106 226 L 148 272 v112 L 106 430 z" />
+            <path d="M466 140 L 402 210 v212 L 466 492 z" />
+            <path d="M374 226 L 332 272 v112 L 374 430 z" />
+        </g>
+        <g class="ln" stroke-width="2.4" opacity="0.45">
+            <path d="M0 0 L 186 236" /><path d="M480 0 L 294 236" />
+            <path d="M0 600 L 186 316" /><path d="M480 600 L 294 316" />
+        </g>
+
+        
+        <g class="vd" opacity="0.22">
+            <path d="M120 520 h150 l60 80 h-260 z" />
+            <path d="M228 512 h150 l60 88 h-260 z" />
+        </g>
+
+        
+        <g class="vd">
+            <circle cx="192" cy="382" r="36" />
+            <path d="M192 424 q-66 12 -74 116 h148 q-8 -104 -74 -116 z" />
+            <circle cx="292" cy="366" r="36" />
+            <path d="M292 408 q-66 12 -74 132 h148 q-8 -120 -74 -132 z" />
+        </g>
+    </g>
+</g><rect x="1068" y="140" width="440" height="550" fill="none" stroke="var(--irx-vig-light)" stroke-width="3" /><text x="1288" y="738" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="1.6" fill="var(--irx-vig-light)">JUNE</text></g></svg>

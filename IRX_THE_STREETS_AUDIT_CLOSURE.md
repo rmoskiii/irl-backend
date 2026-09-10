@@ -822,10 +822,24 @@ establishes nothing and must not survive into production.
 
 ### What the intro may and may not say
 
-**May.** The seven-day / seven-session shape. That the player returns to continue. That the
-experience is built around consequences carrying across days. These are product rules a player is
-entitled to know before starting, and no shipped scenario needed them because all three are single
-sittings.
+**Must, and prominently.** The seven-day / seven-session shape is **part of the product promise,
+not a rules-of-play footnote.** The Streets is not a 35-minute story the player happens to pause; it
+is a story that unfolds over a week, and that is the thing being sold. A player who does not
+understand the shape before they start will read Day 1 as a short scenario that ended abruptly.
+No shipped scenario needed this, because all three are single sittings.
+
+Two consequences follow.
+
+**It is not only intro copy.** The promise has to survive contact with every surface the player sees
+before and between sessions: the `duration` string, the day card at session open (§B.2), and the
+home-screen card, which currently shows district and difficulty and has no concept of an active run.
+`day` is already in the visible state set (§D.2) alongside `money`, so a day indicator during play is
+sanctioned rather than a new exception.
+
+**Orientation, not a progress bar.** Showing *where you are in the week* is the promise being kept.
+Showing *percentage complete*, streak pressure or days-remaining urgency converts the week into a
+task to finish, and a player finishing a task is not a player living with a decision. The line is
+that the display answers "which day is this", never "how much is left".
 
 **Must not.** Hidden state key names · relationship values · trajectory rules · band names or
 thresholds · scoring logic · anything resembling optimal strategy.
@@ -853,6 +867,15 @@ been authored yet. Sequence:
 - **The Streets-specific `rules` entry** covering the seven-day structure, returning between
   sessions, and the day-boundary checkpoint (a day quit mid-way restarts at its opening, per
   SPEC-08). Rules of play, not a hint. Exact wording decided with the copy, not fixed here.
+
+### Sequencing consequence: the promise and the mechanism land at different steps
+
+The intro promises a week at sequencing step 6. Client persistence — the thing that lets a player
+actually return — is step 9. That gap is deliberate and survivable, but it must be understood rather
+than discovered: **the Day 1 playtest at step 8 measures whether players *want* to come back, not
+whether they *do*.** Intent is the right question at step 8; behaviour is the Days 2–3 retention gate
+at step 11. If the playtest is run without knowing which of the two it is measuring, a good intent
+signal will be mistaken for a retention result.
 
 ### Product-structure note
 

@@ -183,6 +183,16 @@ function revealTimingFor(scenario) {
       : "immediate";
 }
 
+/* playerVisible is deliberately NOT folded into revealTimingFor. They answer
+ * different questions: revealTiming is WHEN per-choice feedback appears during
+ * play; playerVisible is WHETHER the score dimensions reach the player at all.
+ *
+ * Only an explicit `false` disables. Absent, null and true all mean visible, so
+ * every scenario that predates the field behaves exactly as it did. The
+ * dimensions still exist on every choice, still flow back through /respond and
+ * still reach resultsLog — this governs presentation and the client's global
+ * stat pool, nothing else. */
+
 function getRootView(scenarioId) {
   const scenario = loadScenario(scenarioId);
   if (!scenario) return null;
@@ -197,6 +207,7 @@ function getRootView(scenarioId) {
     difficulty: scenario.difficulty,
     persona: scenario.persona,
     revealTiming: revealTimingFor(scenario),
+    playerVisible: scenario.scoring?.playerVisible !== false,
     state,
     node: publicNode(scenario.rootNode, rootNode, state),
   };
