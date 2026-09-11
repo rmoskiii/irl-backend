@@ -193,6 +193,52 @@ function revealTimingFor(scenario) {
  * still reach resultsLog — this governs presentation and the client's global
  * stat pool, nothing else. */
 
+/* contentRevision versions the authored CONTENT, not the record format. A
+ * client stores it with a run and compares on resume: if the scenario has been
+ * re-authored since, the stored state may reference keys or values that no
+ * longer exist, and every `when` touching them silently goes false. Absent
+ * means 0, so scenarios that never declare one keep resuming exactly as before.
+ * SPEC-08 / RF-2. */
+function contentRevisionFor(scenario) {
+  return Number.isInteger(scenario.contentRevision) ? scenario.contentRevision : 0;
+}
+
+/* Resolve one node against supplied raw state, for resume. Stateless: the
+ * caller owns the state, the server owns the content. Derived bands are
+ * recomputed here rather than read from the caller, so a snapshot written
+ * before a threshold change still resolves against current content.
+ * Returns null for an unknown scenario or node. */
+function readNode(scenarioId, nodeId, rawState) {
+  // Required at call time, not at module load: evaluationService requires this
+  // module, so a top-level require here would be circular and applyDerived
+  // would be undefined at destructure time. Same pattern as routes/scenarios.js.
+  const { applyDerived } = require("./evaluationService");
+
+  const scenario = loadScenario(scenarioId);
+  if (!scenario) return null;
+
+  const node = scenario.nodes[nodeId];
+  if (!node) return null;
+
+  const state = applyDerived(
+      { ...initialState(scenario), ...(rawState || {}) },
+      scenario.derivedState,
+  );
+
+  return {
+    scenarioId: scenario.id,
+    title: scenario.title,
+    district: scenario.district,
+    difficulty: scenario.difficulty,
+    persona: scenario.persona,
+    revealTiming: revealTimingFor(scenario),
+    playerVisible: scenario.scoring?.playerVisible !== false,
+    contentRevision: contentRevisionFor(scenario),
+    state,
+    node: publicNode(nodeId, node, state),
+  };
+}
+
 function getRootView(scenarioId) {
   const scenario = loadScenario(scenarioId);
   if (!scenario) return null;
@@ -208,6 +254,7 @@ function getRootView(scenarioId) {
     persona: scenario.persona,
     revealTiming: revealTimingFor(scenario),
     playerVisible: scenario.scoring?.playerVisible !== false,
+    contentRevision: contentRevisionFor(scenario),
     state,
     node: publicNode(scenario.rootNode, rootNode, state),
   };
@@ -240,6 +287,8 @@ module.exports = {
   renderHealth,
   loadScenario,
   getRootView,
+  readNode,
+  contentRevisionFor,
   publicNode,
   listScenarios,
   initialState,

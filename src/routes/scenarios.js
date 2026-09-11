@@ -1,5 +1,5 @@
 const express = require("express");
-const { getRootView, listScenarios } = require("../services/personaService");
+const { getRootView, listScenarios, readNode } = require("../services/personaService");
 const { resolveChoice } = require("../services/evaluationService");
 const { logResult } = require("../services/resultsLog");
 
@@ -27,6 +27,25 @@ router.get("/list", (req, res) => {
 router.get("/render/health", (req, res) => {
   const { renderHealth } = require("../services/personaService");
   res.json(renderHealth());
+});
+
+/* Resume. Stateless: the client owns the run, the server owns the content.
+ * Takes the raw state a client stored at a day boundary and returns the same
+ * publicNode payload /today returns, with derived bands recomputed rather than
+ * trusted. SPEC-08. */
+router.post("/node", (req, res) => {
+  const { scenarioId, nodeId, state } = req.body;
+
+  if (!scenarioId || !nodeId) {
+    return res.status(400).json({ error: "scenarioId and nodeId are required." });
+  }
+
+  const view = readNode(scenarioId, nodeId, state);
+  if (!view) {
+    return res.status(404).json({ error: "Unknown scenario or node." });
+  }
+
+  res.json(view);
 });
 
 router.post("/respond", (req, res) => {

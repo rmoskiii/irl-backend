@@ -295,4 +295,8 @@ function resolveChoice({ scenarioId, nodeId, choiceId, runningTotal, state }) {
 
 module.exports = {
   resolveChoice,
+  // Exported for the resume endpoint only. Bands are recomputed from raw
+  // state on every read; they are never treated as an authoritative
+  // persisted value. SPEC-08 invariant 8.
+  applyDerived,
 };

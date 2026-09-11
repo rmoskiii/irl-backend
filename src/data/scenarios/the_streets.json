@@ -4,17 +4,18 @@
   "title": "The Streets: 7 Days",
   "district": "streets",
   "difficulty": 2,
-  "estimatedMinutes": 35,
-  "premise": "Seven days on the block. Every decision is small. None of them stay small.",
-  "skeletonNote": "PHASE 2 STRUCTURAL SKELETON. All prose is placeholder and marked [PLACEHOLDER]. No visual blocks: registries.json carries no Streets assets, and inventing cast/scene/prop references to make the skeleton look complete is out of scope.",
+  "estimatedMinutes": 30,
+  "contentRevision": 1,
+  "premise": "Seven days in March. He is nineteen, the money at home is tight, and everybody who has ever helped him wants something this week.",
   "persona": {
-    "name": "Jay",
-    "role": "Best friend"
+    "name": "Bola",
+    "role": "Mum"
   },
   "design": {
     "noCorrectAnswer": true,
-    "deeIsNotAVillain": "Dee never threatens and never punishes refusal. If he reads as menacing the player refuses on Day 3 and there is no scenario.",
-    "authoringRule": "The player is not choosing between right and wrong. They are choosing what they are willing to spend, and what they have left on Day 7."
+    "deeIsNotAVillain": "Dee never threatens and never punishes a refusal. \"No, that's fair\", and he means it, and he does not ask twice.",
+    "bagBoundary": "The bag is an active object on Days 1-2 only. After Day 2 it is never the subject of a scene, choice, consequence or line of dialogue, and the sender is never identified.",
+    "authoringRule": "The player is not choosing between right and wrong. He is choosing what he is willing to spend, and what he has left on Monday."
   },
   "contentRating": {
     "minAge": 14,
@@ -557,16 +558,16 @@
   "nodes": {
     "s1d1_open": {
       "day": 1,
-      "message": "[PLACEHOLDER] Friday. Nothing is happening. The block, the flat, the last week of a term you have been half-attending.",
+      "message": "Half five, and he has been up since eleven, which he is aware of.\n\nMum is doing the thing she does before a shift — moving through the flat picking things up and putting them somewhere else, coat already half on. There is a letter on the side that has been there four days, face down, which is its own kind of statement.\n\nShe is not angry. She is doing sums in her head while talking about something else, and he can tell, because he has watched her do it since he was twelve.",
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "The block, late afternoon",
+          "location": "The flat, half five",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Bola",
+            "role": "Mum",
+            "mood": "distracted"
           }
         }
       },
@@ -585,23 +586,24 @@
     },
     "s1d1_kitchen": {
       "day": 1,
-      "message": "[PLACEHOLDER] Mum is on a shift changeover and wants ten minutes. She asks about college in the way that means she already knows.",
+      "message": "\"You're still putting something in Friday, yeah?\"\n\nShe says it lightly and once, which is worse than if she pushed, and then waits.\n\nIt is Tuesday.",
+      "reactionDelay": "medium",
       "presentation": {
         "type": "scene",
-        "modal": false,
+        "modal": true,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The kitchen",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Bola",
+            "role": "Mum",
+            "mood": "waiting"
           }
         }
       },
       "choices": [
         {
-          "id": "d1k_straight",
-          "label": "Tell her where you actually are with it.",
+          "id": "d1_truth",
+          "label": "\"I haven't got it.\"",
           "scores": {
             "savvy": 10,
             "streetSmarts": 0,
@@ -609,37 +611,34 @@
           },
           "setState": {
             "mumTrust": 1,
-            "discipline": 1,
-            "answered_mum": true
+            "mumStrain": 1
           },
+          "beat": "She stops moving. \"How short?\" — which is not the question he wanted.",
           "next": "s1d1_kitchen_react"
         },
         {
-          "id": "d1k_manage",
-          "label": "Give her the version that ends the conversation.",
+          "id": "d1_manage",
+          "label": "\"Friday. I'll have it Friday.\"",
           "scores": {
             "savvy": 5,
             "streetSmarts": 5,
-            "integrity": -5
+            "integrity": 0
           },
           "setState": {
-            "mumStrain": 1,
-            "answered_mum": true
+            "mumStrain": 1
           },
           "next": "s1d1_kitchen_react"
         },
         {
-          "id": "d1k_lie",
-          "label": "Tell her it's handled.",
+          "id": "d1_lie",
+          "label": "\"It's sorted.\"",
           "scores": {
             "savvy": 0,
             "streetSmarts": 5,
             "integrity": -15
           },
           "setState": {
-            "mumStrain": 2,
-            "lied_to_mum": true,
-            "discipline": -1
+            "lied_to_mum": true
           },
           "next": "s1d1_kitchen_react"
         }
@@ -647,30 +646,24 @@
     },
     "s1d1_kitchen_react": {
       "day": 1,
-      "message": "[PLACEHOLDER] She takes it, or takes what she's given. Either way she's out the door in four minutes.",
+      "message": "\"Alright.\" She finds her keys where she left them, which takes a while.\n\nFour minutes later the door goes and the flat is the flat again.",
       "messageVariants": [
         {
           "when": {
             "lied_to_mum": true
           },
-          "message": "[PLACEHOLDER] She doesn't push. That is not the same as believing you."
-        },
-        {
-          "when": {
-            "mumBand": "tight"
-          },
-          "message": "[PLACEHOLDER] She stops in the doorway and says something that isn't about college."
+          "message": "\"Alright then.\" She takes it. She takes it slightly too easily, and is out the door before he has worked out whether that means anything.\n\nFour minutes later the flat is the flat again."
         }
       ],
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The kitchen",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Bola",
+            "role": "Mum",
+            "mood": "tired"
           }
         }
       },
@@ -683,59 +676,72 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "s1d1_street"
+          "next": "s1d1_walkway"
         }
       ]
     },
-    "s1d1_street": {
+    "s1d1_walkway": {
       "day": 1,
-      "message": "[PLACEHOLDER] Outside, both of them want you. Jay has an evening planned. Tunde has a session at the cage and has asked twice already.",
+      "message": "Jay is on the walkway and has been for a while, which he does when he wants to be found without having asked.\n\nHe is funny for about ninety seconds and then isn't, and the gap between those two things is visible if you know him. Jay's flat is where he ate for a stretch when things were bad, and neither of them has ever said a word about it.\n\nTunde's message arrives while Jay is talking. *Cage, eight. You coming or not.*",
+      "reactionDelay": "medium",
       "presentation": {
         "type": "scene",
-        "modal": false,
+        "modal": true,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The walkway, seven",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Jay",
+            "role": "Oldest friend",
+            "mood": "off"
           }
         }
       },
       "choices": [
         {
-          "id": "d1s_jay",
-          "label": "Jay.",
+          "id": "d1_jay_asked",
+          "label": "Walk with him. Ask what's wrong.",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 5,
+            "integrity": 10
+          },
+          "setState": {
+            "jayTrust": 2
+          },
+          "next": "s1d1_jay_asked"
+        },
+        {
+          "id": "d1_jay_quiet",
+          "label": "Walk with him. Leave it.",
           "scores": {
             "savvy": 0,
             "streetSmarts": 10,
             "integrity": 0
           },
           "setState": {
-            "jayTrust": 1,
-            "tundeStrain": 1,
-            "stayed_out": true
+            "jayTrust": 1
           },
-          "next": "s1d1_evening_jay"
+          "next": "s1d1_jay_quiet"
         },
         {
-          "id": "d1s_tunde",
-          "label": "Tunde.",
+          "id": "d1_cage",
+          "label": "\"I'm going to the cage.\"",
           "scores": {
             "savvy": 10,
             "streetSmarts": 0,
-            "integrity": 5
+            "integrity": 10
           },
           "setState": {
             "tundeTrust": 1,
-            "jayStrain": 1,
-            "discipline": 1
+            "discipline": 1,
+            "jayStrain": 1
           },
-          "next": "s1d1_evening_tunde"
+          "beat": "Jay says \"yeah, safe\" in the voice that means the opposite.",
+          "next": "s1d1_cage"
         },
         {
-          "id": "d1s_neither",
-          "label": "Neither. Go home.",
+          "id": "d1_neither",
+          "label": "Neither.",
           "scores": {
             "savvy": 5,
             "streetSmarts": -5,
@@ -743,164 +749,104 @@
           },
           "setState": {
             "jayStrain": 1,
-            "tundeStrain": 1,
-            "discipline": 1
+            "tundeStrain": 1
           },
-          "next": "s1d1_evening_alone"
+          "next": "s1d1_alone"
         }
       ]
     },
-    "s1d1_evening_jay": {
+    "s1d1_jay_asked": {
       "day": 1,
-      "message": "[PLACEHOLDER] Chicken shop. Jay is funny for two hours and then, near the end, is briefly not.",
+      "message": "He's annoyed for about four seconds — the specific annoyance of someone who wanted to be asked and hasn't decided how to be — and then tells him.\n\nHis sister has a course place. There's a deposit. The date has already been moved once and can't be again.\n\nHe tells it in pieces, out of order, and stops before the part where he explains what he's going to do about it. The player notices him stop.",
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "Walking, the long way",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Jay",
+            "role": "Oldest friend",
+            "mood": "exposed"
           }
         }
       },
       "choices": [
         {
-          "id": "d1j_ask",
-          "label": "Ask what that was.",
-          "scores": {
-            "savvy": 15,
-            "streetSmarts": 5,
-            "integrity": 10
-          },
-          "setState": {
-            "jayTrust": 1
-          },
-          "next": "s1d1_close"
-        },
-        {
-          "id": "d1j_leave",
-          "label": "Let it go.",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 5,
-            "integrity": -5
-          },
-          "setState": {
-            "jayStrain": 1
-          },
-          "next": "s1d1_close"
-        }
-      ]
-    },
-    "s1d1_evening_tunde": {
-      "day": 1,
-      "message": "[PLACEHOLDER] The cage. Tunde is training for something specific and does not make a thing of it.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d1t_in",
-          "label": "Say you'll come Thursday.",
-          "scores": {
-            "savvy": 10,
-            "streetSmarts": 0,
-            "integrity": 10
-          },
-          "setState": {
-            "tundeTrust": 1,
-            "discipline": 1
-          },
-          "next": "s1d1_close"
-        },
-        {
-          "id": "d1t_vague",
-          "label": "Say maybe.",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 5,
-            "integrity": -5
-          },
-          "setState": {
-            "tundeStrain": 1,
-            "tundeTrust": -1,
-            "missed_training": true
-          },
-          "next": "s1d1_close"
-        }
-      ]
-    },
-    "s1d1_evening_alone": {
-      "day": 1,
-      "message": "[PLACEHOLDER] Your room. The phone does most of the talking.",
-      "presentation": {
-        "type": "messages",
-        "modal": true,
-        "data": {
-          "location": "Your room, late",
-          "character": {
-            "name": "Amara",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d1a_reply",
-          "label": "Reply to Amara properly.",
-          "scores": {
-            "savvy": 10,
-            "streetSmarts": 5,
-            "integrity": 5
-          },
-          "setState": {
-            "amaraTrust": 1
-          },
-          "next": "s1d1_close"
-        },
-        {
-          "id": "d1a_scroll",
-          "label": "Don't.",
+          "id": "continue",
+          "label": "Continue",
           "scores": {
             "savvy": 0,
             "streetSmarts": 0,
             "integrity": 0
           },
-          "setState": {
-            "amaraStrain": 1
+          "next": "s1d1_close"
+        }
+      ]
+    },
+    "s1d1_jay_quiet": {
+      "day": 1,
+      "message": "They walk. It's a good two hours and genuinely funny in places.\n\nTwice, unprompted, Jay says he's fine.\n\nThe second one is what stays with him on the way home, because nobody says it twice.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Walking, the long way",
+          "character": {
+            "name": "Jay",
+            "role": "Oldest friend",
+            "mood": "easy"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
           },
           "next": "s1d1_close"
         }
       ]
     },
-    "s1d1_close": {
+    "s1d1_cage": {
       "day": 1,
-      "message": "[PLACEHOLDER] 23:40. A message from a number you don't have saved.",
-      "messageVariants": [
-        {
-          "when": {
-            "jayBand": "tight"
-          },
-          "message": "[PLACEHOLDER] Jay's name is on the screen when it lights up."
-        }
-      ],
+      "message": "Tunde is training for something specific and doesn't make a thing of it.\n\nAfterwards he asks a direct question about what the player is actually doing with himself, and takes the answer seriously enough to be unsatisfied by it.\n\nHe isn't unkind. He just doesn't pretend.",
       "presentation": {
-        "type": "messages",
-        "modal": true,
+        "type": "scene",
+        "modal": false,
         "data": {
-          "location": "Your room, 23:40",
+          "location": "The cage, eight",
+          "character": {
+            "name": "Tunde",
+            "role": "Friend with a plan",
+            "mood": "direct"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d1_close"
+        }
+      ]
+    },
+    "s1d1_alone": {
+      "day": 1,
+      "message": "His room. The flat is empty because Mum is on nights.\n\nIt's the first hour he's had to himself in a week, and it's fine, and he checks his phone eleven times.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "His room",
           "character": {
             "name": "",
             "role": "",
@@ -917,41 +863,337 @@
             "streetSmarts": 0,
             "integrity": 0
           },
+          "next": "s1d1_close"
+        }
+      ]
+    },
+    "s1d1_close": {
+      "day": 1,
+      "thread": [
+        {
+          "narration": "Two things on the phone."
+        },
+        {
+          "from": "Amara",
+          "text": "you disappeared again"
+        },
+        {
+          "from": "Amara",
+          "text": "you alright?"
+        },
+        {
+          "narration": "Twenty minutes between them. He hasn't answered either."
+        },
+        {
+          "narration": "And a number he doesn't have saved."
+        },
+        {
+          "from": "Unknown number",
+          "text": "can you hold something till morning"
+        },
+        {
+          "narration": "No greeting. No name. Nothing else."
+        }
+      ],
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "messages",
+        "modal": true,
+        "data": {
+          "location": "23:41",
+          "sender": "Unknown number",
+          "character": {
+            "name": "Unknown number",
+            "role": "",
+            "mood": "flat"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "d1_yes",
+          "label": "\"yeah\"",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": 10,
+            "integrity": -10
+          },
+          "setState": {
+            "heat": 2,
+            "stayed_out": true
+          },
+          "beat": "*10 mins.* Nothing else. He is outside for four minutes and back inside by ten past.",
+          "next": "s1d2_open"
+        },
+        {
+          "id": "d1_ask",
+          "label": "\"what is it\"",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 0,
+            "integrity": 5
+          },
+          "next": "s1d1_asked"
+        },
+        {
+          "id": "d1_limit",
+          "label": "\"till the morning. then it's gone.\"",
+          "scores": {
+            "savvy": 20,
+            "streetSmarts": 5,
+            "integrity": 10
+          },
+          "setState": {
+            "heat": 2,
+            "stayed_out": true,
+            "kept_the_receipt": true
+          },
+          "beat": "*yeah course.* Immediate, easy, and the ease is not reassuring.",
+          "next": "s1d2_open"
+        },
+        {
+          "id": "d1_nothing",
+          "label": "Put the phone down.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": -5,
+            "integrity": 10
+          },
+          "next": "s1d2_open"
+        }
+      ]
+    },
+    "s1d1_asked": {
+      "day": 1,
+      "thread": [
+        {
+          "from": "Unknown number",
+          "text": "nothing dodgy. 10 mins."
+        },
+        {
+          "narration": "That is the entire reply."
+        }
+      ],
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "messages",
+        "modal": true,
+        "data": {
+          "location": "23:47",
+          "sender": "Unknown number",
+          "character": {
+            "name": "Unknown number",
+            "role": "",
+            "mood": "flat"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "d1a_agree",
+          "label": "\"alright\"",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 10,
+            "integrity": -10
+          },
+          "setState": {
+            "heat": 2,
+            "stayed_out": true,
+            "kept_the_receipt": true
+          },
+          "beat": "The question is still in the thread. It doesn't protect him from anything.",
+          "next": "s1d2_open"
+        },
+        {
+          "id": "d1a_leave",
+          "label": "Leave it there.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": -5,
+            "integrity": 10
+          },
+          "setState": {
+            "kept_the_receipt": true
+          },
           "next": "s1d2_open"
         }
       ]
     },
     "s1d2_open": {
       "day": 2,
-      "message": "[PLACEHOLDER] Saturday. Jay is outside before you've eaten.",
-      "messageVariants": [
+      "thread": [
+        {
+          "from": "Jay",
+          "text": "you about today. need you for something. before 4 tho"
+        },
+        {
+          "narration": "Mum isn't in. Her shoes aren't by the door, which means she went straight from the night to the day and won't be back until after six. There's a mug in the sink she didn't have time to wash, and that's the whole of what the flat has to say this morning."
+        }
+      ],
+      "threadVariants": [
         {
           "when": {
-            "jayBand": "frayed"
+            "stayed_out": true,
+            "kept_the_receipt": true
           },
-          "message": "[PLACEHOLDER] Jay is outside and has clearly decided not to mention last night."
+          "thread": [
+            {
+              "narration": "Two threads."
+            },
+            {
+              "from": "Jay",
+              "text": "you about today. need you for something. before 4 tho"
+            },
+            {
+              "narration": "And under last night's unanswered question of his own:"
+            },
+            {
+              "from": "Unknown number",
+              "text": "can you bring it down"
+            },
+            {
+              "narration": "Mum isn't in. Her shoes aren't by the door."
+            }
+          ]
         },
         {
           "when": {
             "stayed_out": true
           },
-          "message": "[PLACEHOLDER] Jay is outside, four hours after you left him."
+          "thread": [
+            {
+              "narration": "Two threads."
+            },
+            {
+              "from": "Jay",
+              "text": "you about today. need you for something. before 4 tho"
+            },
+            {
+              "from": "Unknown number",
+              "text": "can you bring it down"
+            },
+            {
+              "narration": "Mum isn't in. Her shoes aren't by the door, which means she went straight from the night to the day."
+            }
+          ]
         }
       ],
       "interstitial": {
-        "label": "Saturday",
+        "label": "Wednesday",
         "durationMs": 2000
       },
+      "presentation": {
+        "type": "messages",
+        "modal": true,
+        "data": {
+          "location": "Half nine",
+          "sender": "Jay",
+          "character": {
+            "name": "Jay",
+            "role": "",
+            "mood": "flat"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "nextRules": [
+            {
+              "when": {
+                "stayed_out": true
+              },
+              "next": "s1d2_bag"
+            }
+          ],
+          "next": "s1d2_walkway"
+        }
+      ]
+    },
+    "s1d2_bag": {
+      "day": 2,
+      "message": "Somebody is on the walkway who he half-recognises and can't place.\n\nTwo people on the balcony above are hanging washing.",
+      "presentation": {
+        "type": "none",
+        "modal": false,
+        "data": {
+          "location": "The walkway, morning"
+        }
+      },
+      "choices": [
+        {
+          "id": "d2_down",
+          "label": "Take it down.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 5,
+            "integrity": 0
+          },
+          "setState": {
+            "heat": 1
+          },
+          "beat": "Eleven seconds. Nobody says thanks. Nobody explains. The walkway is the walkway again.",
+          "next": "s1d2_walkway"
+        },
+        {
+          "id": "d2_up",
+          "label": "\"Come up then.\"",
+          "scores": {
+            "savvy": -10,
+            "streetSmarts": 5,
+            "integrity": 0
+          },
+          "setState": {
+            "heat": 2
+          },
+          "beat": "They come up. It takes longer. Somebody now knows which door.",
+          "next": "s1d2_walkway"
+        }
+      ]
+    },
+    "s1d2_walkway": {
+      "day": 2,
+      "message": "Jay is outside before he's finished getting ready, which is how you know it matters.\n\nWhat he needs is a lift with an errand. His aunt has put food aside and it has to be picked up before she shuts at four, and it's a bus and a walk each way, and he doesn't want to do it on his own.\n\nThat's genuinely all he says.",
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The walkway, eleven",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Jay",
+            "role": "Oldest friend",
+            "mood": "restless"
           }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d2_run"
+        }
+      ]
+    },
+    "s1d2_run": {
+      "day": 2,
+      "message": "Two buses and forty minutes of not much. Jay is fine for about twenty of them.\n\nThen it comes out — the sister, the course place, the deposit, the date that got moved once already and can't be moved again. He tells it in pieces, out of order.\n\nThis time he doesn't stop before the end.",
+      "presentation": {
+        "type": "montage",
+        "modal": false,
+        "data": {
+          "location": "The bus, then the street"
         }
       },
       "choices": [
@@ -969,94 +1211,112 @@
     },
     "s1d2_ask": {
       "day": 2,
-      "message": "[PLACEHOLDER] He needs you to come somewhere and stand there. That's the whole ask. He is careful not to say more than that.",
+      "message": "He doesn't ask. That's the whole difficulty.\n\nHe describes the situation and then goes quiet and lets the silence do the asking, and both of them know exactly what is happening.\n\nThere is forty pounds in the player's pocket. The deposit is not forty pounds.",
+      "reactionDelay": "long",
       "presentation": {
         "type": "scene",
-        "modal": false,
+        "modal": true,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The bus stop back",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Jay",
+            "role": "Oldest friend",
+            "mood": "quiet"
           }
         }
       },
       "choices": [
         {
-          "id": "d2a_help",
-          "label": "Come. Don't ask.",
+          "id": "d2_money",
+          "label": "Give him what you've got.",
           "scores": {
             "savvy": 0,
-            "streetSmarts": 10,
-            "integrity": -5
+            "streetSmarts": 0,
+            "integrity": 20
           },
           "setState": {
+            "money": -40,
             "jayTrust": 1,
-            "heat": 2,
             "helped_jay": true,
             "credit": 1
           },
-          "next": "s1d2_help"
+          "beat": "He tries to refuse it once, badly, and then takes it. It doesn't cover it. Both of them know it doesn't cover it.",
+          "next": "s1d2_plate"
         },
         {
-          "id": "d2a_limited",
-          "label": "Come, but you're not holding anything.",
+          "id": "d2_tunde",
+          "label": "\"Let me ask Tunde.\"",
           "scores": {
-            "savvy": 15,
+            "savvy": 10,
             "streetSmarts": 5,
-            "integrity": 10
+            "integrity": 5
+          },
+          "setState": {
+            "credit": -1,
+            "tundeStrain": 1,
+            "jayTrust": 1,
+            "helped_jay": true
+          },
+          "beat": "Tunde says yes without hesitating, which is somehow worse.",
+          "next": "s1d2_plate"
+        },
+        {
+          "id": "d2_number",
+          "label": "Message the number back.",
+          "scores": {
+            "savvy": -5,
+            "streetSmarts": 15,
+            "integrity": -10
+          },
+          "setState": {
+            "heat": 2
+          },
+          "beat": "**nothing right now.** That is the entire reply. Nothing happens today.",
+          "next": "s1d2_plate"
+        },
+        {
+          "id": "d2_present",
+          "label": "Go with him. Don't pay.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 0,
+            "integrity": 5
           },
           "setState": {
             "jayTrust": 1,
-            "heat": 1,
-            "helped_jay": true
+            "jayStrain": 1
           },
-          "next": "s1d2_limited"
+          "beat": "\"Nah, you're alright. I'll sort it.\" He means about half of it.",
+          "next": "s1d2_plate"
         },
         {
-          "id": "d2a_decline",
-          "label": "No.",
+          "id": "d2_decline",
+          "label": "\"I can't do this today.\"",
           "scores": {
             "savvy": 5,
             "streetSmarts": -10,
             "integrity": 10
           },
           "setState": {
-            "jayStrain": 2,
-            "jayTrust": -1
+            "jayStrain": 2
           },
-          "next": "s1d2_decline"
-        },
-        {
-          "id": "d2a_redirect",
-          "label": "Not that. I'll do the other thing instead.",
-          "scores": {
-            "savvy": 20,
-            "streetSmarts": 5,
-            "integrity": 15
-          },
-          "setState": {
-            "jayTrust": 1,
-            "credit": 1,
-            "kept_the_receipt": true
-          },
-          "next": "s1d2_redirect"
+          "beat": "\"Yeah, no, course.\" He is normal for the rest of the walk, and it's the normal that stings.",
+          "next": "s1d2_plate"
         }
       ]
     },
-    "s1d2_help": {
+    "s1d2_plate": {
       "day": 2,
-      "message": "[PLACEHOLDER] You stand where you're told for forty minutes. Nothing happens. That is not the same as nothing having happened.",
+      "message": "On the landing outside his flat, Jay splits it — one container for his, one held out.\n\n\"That one's your mum's. She likes the rice.\"\n\nHe says it like it's nothing, because to him it is. His aunt made too much, the way she has made too much for eleven years.",
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "His landing, six",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Jay",
+            "role": "Oldest friend",
+            "mood": "easy"
           }
         }
       },
@@ -1068,200 +1328,6 @@
             "savvy": 0,
             "streetSmarts": 0,
             "integrity": 0
-          },
-          "next": "s1d2_react"
-        }
-      ]
-    },
-    "s1d2_limited": {
-      "day": 2,
-      "message": "[PLACEHOLDER] You come. You say the sentence once, in front of the person it was for. Jay looks at you a second longer than he needs to.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d2_react"
-        }
-      ]
-    },
-    "s1d2_decline": {
-      "day": 2,
-      "message": "[PLACEHOLDER] He doesn't argue. He says fine in the voice that means the opposite and goes anyway.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d2_react"
-        }
-      ]
-    },
-    "s1d2_redirect": {
-      "day": 2,
-      "message": "[PLACEHOLDER] You offer the version that costs you and not him. He takes it, surprised, and writes nothing down. You do.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d2_react"
-        }
-      ]
-    },
-    "s1d2_react": {
-      "day": 2,
-      "message": "[PLACEHOLDER] Afterwards.",
-      "messageVariants": [
-        {
-          "when": {
-            "jayBand": "tight"
-          },
-          "message": "[PLACEHOLDER] Afterwards he is easier with you than he has been in weeks."
-        },
-        {
-          "when": {
-            "jayBand": "frayed"
-          },
-          "message": "[PLACEHOLDER] Afterwards there is a gap in it that neither of you names."
-        },
-        {
-          "when": {
-            "heatBand": "warm"
-          },
-          "message": "[PLACEHOLDER] Afterwards you notice you are thinking about who saw you there."
-        }
-      ],
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d2_kai"
-        }
-      ]
-    },
-    "s1d2_kai": {
-      "day": 2,
-      "message": "[PLACEHOLDER] Kai is on the walkway with two others. Something gets said that is meant to be heard.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d2k_answer",
-          "label": "Answer it.",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 5,
-            "integrity": 0
-          },
-          "setState": {
-            "kaiStrain": 2,
-            "rep": 1
-          },
-          "next": "s1d2_close"
-        },
-        {
-          "id": "d2k_past",
-          "label": "Walk past.",
-          "scores": {
-            "savvy": 10,
-            "streetSmarts": 0,
-            "integrity": 5
-          },
-          "setState": {
-            "kaiStrain": 1,
-            "walked_away": true,
-            "rep": -1
-          },
-          "next": "s1d2_close"
-        },
-        {
-          "id": "d2k_defuse",
-          "label": "Say the thing that ends it.",
-          "scores": {
-            "savvy": 15,
-            "streetSmarts": 10,
-            "integrity": 10
-          },
-          "setState": {
-            "rep": 1,
-            "walked_away": true,
-            "credit": 1
           },
           "next": "s1d2_close"
         }
@@ -1269,12 +1335,12 @@
     },
     "s1d2_close": {
       "day": 2,
-      "message": "[PLACEHOLDER] Home. Nothing has changed that anyone could point to.",
+      "message": "He puts a container of somebody else's aunt's food in his own fridge, in a flat where the money is tight, on the day he decided what he was and wasn't going to do about Jay's sister.\n\nMum's shoes are still not by the door.",
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The kitchen, half seven",
           "character": {
             "name": "",
             "role": "",
@@ -1297,16 +1363,30 @@
     },
     "s1d3_open": {
       "day": 3,
-      "message": "[PLACEHOLDER] Sunday. Word comes that you should come by.",
+      "message": "Two days since he decided what he was and wasn't going to do about Jay's sister.\n\nJay hasn't messaged. That's not a falling-out; it's just Thursday. But it's the first morning since Sunday that he's woken up without somebody wanting something, and the quiet is not as good as he expected it to be.",
+      "messageVariants": [
+        {
+          "when": {
+            "moneyBand": "short"
+          },
+          "message": "Two days, and nothing in his pocket since Wednesday.\n\nJay hasn't messaged. That's not a falling-out; it's just Thursday. But it's the first morning since Sunday that he's woken up without somebody wanting something, and the quiet is not as good as he expected it to be."
+        },
+        {
+          "when": {
+            "helped_jay": true
+          },
+          "message": "Two days since he did something about it, and nothing since.\n\nJay hasn't messaged. Not a falling-out — just Thursday. It's the first morning since Sunday nobody has wanted anything, and the quiet is not as good as he expected."
+        }
+      ],
       "interstitial": {
-        "label": "Sunday",
+        "label": "Thursday",
         "durationMs": 2000
       },
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The block, morning",
           "character": {
             "name": "",
             "role": "",
@@ -1323,33 +1403,127 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "s1d3_arrive"
+          "next": "s1d3_tunde"
         }
       ]
     },
-    "s1d3_arrive": {
+    "s1d3_tunde": {
       "day": 3,
-      "message": "[PLACEHOLDER] A flat above the shops that is nicer than any flat you have been in. Dee knows your name and one thing about you that you did not tell him.",
-      "messageVariants": [
-        {
-          "when": {
-            "helped_jay": true
-          },
-          "message": "[PLACEHOLDER] He knows your name and where you were standing on Saturday."
-        },
-        {
-          "when": {
-            "repBand": "quiet"
-          },
-          "message": "[PLACEHOLDER] He knows your name, which is more than you expected."
-        }
-      ],
-      "reactionDelay": "long",
+      "message": "Tunde finds him, which Tunde does, because Tunde plans things.\n\nThere's a trial. Saturday, ten till two, at the place he's been talking about since March. The man who runs it will be there and Tunde has already said his name — not put him forward formally, just said it, in the way that gets you looked at once.\n\n\"It's one Saturday. If you're coming, come properly.\"\n\nHe isn't selling it. He's about half embarrassed to have mentioned it, because he knows exactly how it sounds to say *there might be something in September* to somebody who needs money now.",
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "College corridor",
+          "character": {
+            "name": "Tunde",
+            "role": "Friend with a plan",
+            "mood": "careful"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d3_stop"
+        }
+      ]
+    },
+    "s1d3_stop": {
+      "day": 3,
+      "message": "Two of them are already out of the car by the time he clocks them.\n\nIt isn't a shout. Nobody grabs anybody. Names, where he's going, where he's come from, and one of them looking past him at the road the whole time.\n\nHe is carrying nothing. There is nothing to find and nothing is looked for.\n\nAcross the walkway, outside the shops, Kai is with three or four others and his phone is up, and it has been up since about the second sentence.\n\nTwo years ago Kai did this to somebody else in front of everyone, and the player laughed. Not loudly. He laughed.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "The walkway, one o'clock",
+          "character": {
+            "name": "Kai",
+            "role": "Friction",
+            "mood": "performing"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "d3_flat",
+          "label": "Answer everything. Flat.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 10,
+            "integrity": 0
+          },
+          "setState": {
+            "heat": 1,
+            "rep": 1,
+            "stop_was_filmed": true
+          },
+          "beat": "Four minutes. He hears himself being polite and doesn't enjoy it.",
+          "next": "s1d3_after"
+        },
+        {
+          "id": "d3_askwhy",
+          "label": "\"Can I ask what this is about?\"",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": -5,
+            "integrity": 10
+          },
+          "setState": {
+            "heat": 2,
+            "rep": 2,
+            "stop_was_filmed": true
+          },
+          "beat": "\"Just a chat.\" Said with no edge at all, which is worse. Eight minutes instead of four.",
+          "next": "s1d3_after"
+        },
+        {
+          "id": "d3_kai",
+          "label": "\"Kai. Put the phone down.\"",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": -10,
+            "integrity": 15
+          },
+          "setState": {
+            "heat": 1,
+            "rep": 1,
+            "kaiStrain": 2
+          },
+          "beat": "The phone goes down. Kai says nothing at all, in front of four people.",
+          "next": "s1d3_after"
+        }
+      ]
+    },
+    "s1d3_after": {
+      "day": 3,
+      "message": "They get back in the car and go. Four minutes, start to finish.\n\nNothing happened. Nothing is on any record anywhere. There is no charge, no note, no follow-up, and in a week nobody official will remember it at all.",
+      "messageVariants": [
+        {
+          "when": {
+            "stop_was_filmed": true
+          },
+          "message": "They get back in the car and go. Four minutes, start to finish.\n\nNothing happened. No charge, no note, no follow-up, and in a week nobody official will remember it at all.\n\nBy half one it is on three phones. By four it is on a lot more than three."
+        },
+        {
+          "when": {
+            "kaiBand": "needled"
+          },
+          "message": "They get back in the car and go. Four minutes, start to finish.\n\nNothing happened, and nothing exists of it. Forty people saw him square up to Kai over nothing, and Kai has to live with having put it down."
+        }
+      ],
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The walkway",
           "character": {
             "name": "",
             "role": "",
@@ -1372,261 +1546,103 @@
     },
     "s1d3_dee": {
       "day": 3,
-      "message": "[PLACEHOLDER] He asks what you're doing with yourself. It is a real question and he waits for the answer.",
+      "message": "Dee comes to him, which is not how it normally goes.\n\nHe is not a stranger. Two summers ago Dee got him a fortnight's work when he needed it, paid him on the Friday like he said he would, and drove him home the night the buses stopped. Neither of them has mentioned it since and neither of them needs to.\n\nHe's got a unit for a fortnight — phone cases, chargers, the usual — and he needs somebody on it Saturday, ten till six. Eighty quid, cash, end of the day.\n\nHe asks for the player by name. He doesn't say why him, and it doesn't occur to him that he should, and eighty is a bit more than the day is worth.\n\nSaturday is Saturday.",
+      "reactionDelay": "long",
       "presentation": {
         "type": "scene",
-        "modal": false,
+        "modal": true,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "Outside the shops, six",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Dee",
+            "role": "Older, generous, genuinely good company",
+            "mood": "easy"
           }
         }
       },
       "choices": [
         {
-          "id": "d3d_impress",
-          "label": "Give him the version that sounds like something.",
+          "id": "d3_take",
+          "label": "\"Yeah, I'll do it.\"",
           "scores": {
-            "savvy": 5,
-            "streetSmarts": 10,
+            "savvy": 0,
+            "streetSmarts": 15,
             "integrity": -5
-          },
-          "setState": {
-            "standing": "known",
-            "deeTrust": 2,
-            "rep": 1
-          },
-          "next": "s1d3_impress"
-        },
-        {
-          "id": "d3d_true",
-          "label": "Tell him the actual answer.",
-          "scores": {
-            "savvy": 15,
-            "streetSmarts": 0,
-            "integrity": 15
           },
           "setState": {
             "standing": "around",
-            "deeTrust": 1
+            "deeTrust": 1,
+            "heat": 1
           },
-          "next": "s1d3_true"
+          "beat": "\"Ten o'clock. Don't be late, I'll have to sack you.\" He's joking. It's also the only instruction.",
+          "next": "s1d3_close"
         },
         {
-          "id": "d3d_leave",
-          "label": "Say very little and leave early.",
+          "id": "d3_askthentake",
+          "label": "\"What is it, actually?\"",
           "scores": {
-            "savvy": 5,
-            "streetSmarts": 5,
-            "integrity": 5
+            "savvy": 15,
+            "streetSmarts": 10,
+            "integrity": 0
           },
           "setState": {
-            "standing": "new",
-            "deeStrain": 1,
-            "rep": -1
+            "standing": "around",
+            "deeTrust": 2,
+            "heat": 1
           },
-          "next": "s1d3_leave"
-        }
-      ]
-    },
-    "s1d3_impress": {
-      "day": 3,
-      "message": "[PLACEHOLDER] He likes it. You can feel exactly how much, and how easy it would be to keep doing.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d3_react"
-        }
-      ]
-    },
-    "s1d3_true": {
-      "day": 3,
-      "message": "[PLACEHOLDER] He doesn't flinch. He says something about his own eighteenth year that you don't know how to hold.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d3_react"
-        }
-      ]
-    },
-    "s1d3_leave": {
-      "day": 3,
-      "message": "[PLACEHOLDER] He walks you to the door and is nice about it, which is worse.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d3_react"
-        }
-      ]
-    },
-    "s1d3_react": {
-      "day": 3,
-      "message": "[PLACEHOLDER] On the walkway home.",
-      "messageVariants": [
-        {
-          "when": {
-            "standing": "known"
-          },
-          "message": "[PLACEHOLDER] You get to the bottom of the stairs before you notice you are pleased."
+          "beat": "He answers completely and plainly — the unit, the stock, the hours, where the float lives — and says nothing at all about why him.",
+          "next": "s1d3_close"
         },
         {
-          "when": {
-            "standing": "new"
-          },
-          "message": "[PLACEHOLDER] You get to the bottom of the stairs and feel like you failed a test you didn't sit."
-        }
-      ],
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d3_tell"
-        }
-      ]
-    },
-    "s1d3_tell": {
-      "day": 3,
-      "message": "[PLACEHOLDER] Jay asks where you were.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d3t_tell",
-          "label": "Tell him.",
+          "id": "d3_decline",
+          "label": "\"I can't Saturday.\"",
           "scores": {
             "savvy": 10,
-            "streetSmarts": -5,
+            "streetSmarts": -10,
             "integrity": 15
           },
           "setState": {
-            "jayTrust": 1,
-            "told_jay_about_dee": true
+            "deeStrain": 1,
+            "tundeTrust": 1,
+            "discipline": 1
           },
-          "next": "s1d3_close"
-        },
-        {
-          "id": "d3t_partial",
-          "label": "Tell him a version.",
-          "scores": {
-            "savvy": 5,
-            "streetSmarts": 10,
-            "integrity": -5
-          },
-          "setState": {
-            "jayStrain": 1
-          },
-          "next": "s1d3_close"
-        },
-        {
-          "id": "d3t_nothing",
-          "label": "Nothing.",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 5,
-            "integrity": -10
-          },
-          "setState": {
-            "jayStrain": 2,
-            "jayTrust": -1
-          },
+          "beat": "\"No, that's fair.\" He means it, and he doesn't ask what's on, and he doesn't ask twice.",
           "next": "s1d3_close"
         }
       ]
     },
     "s1d3_close": {
       "day": 3,
-      "message": "[PLACEHOLDER] Sunday ends the way Sundays do.",
+      "thread": [
+        {
+          "narration": "Whatever he said, it's said."
+        },
+        {
+          "narration": "He opens the thread with Amara in it."
+        },
+        {
+          "from": "Amara",
+          "text": "you disappeared again"
+        },
+        {
+          "from": "Amara",
+          "text": "you alright?"
+        },
+        {
+          "narration": "Tuesday. There is nothing new underneath. She hasn't messaged since."
+        },
+        {
+          "narration": "He types something and doesn't send it, which is a thing he has now done twice."
+        }
+      ],
       "presentation": {
-        "type": "scene",
-        "modal": false,
+        "type": "messages",
+        "modal": true,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "His room, night",
+          "sender": "Amara",
           "character": {
-            "name": "",
+            "name": "Amara",
             "role": "",
             "mood": "flat"
           }
@@ -1647,30 +1663,16 @@
     },
     "s1d4_open": {
       "day": 4,
-      "message": "[PLACEHOLDER] Monday. Three things want the same evening.",
-      "messageVariants": [
-        {
-          "when": {
-            "amaraBand": "steady"
-          },
-          "message": "[PLACEHOLDER] Monday. Amara has asked, which she does not usually do."
-        },
-        {
-          "when": {
-            "tundeBand": "tight"
-          },
-          "message": "[PLACEHOLDER] Monday. Tunde has been counting on Thursday since Thursday."
-        }
-      ],
+      "message": "You can hear it from the stairs. Somebody has put the music slightly too loud and nobody has said anything about it because it's her night.\n\nHe has been coming to this door since he was nine. He ate in this kitchen for four months.\n\nHe is carrying a card because his mum told him to bring a card.",
       "interstitial": {
-        "label": "Monday",
+        "label": "Friday",
         "durationMs": 2000
       },
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The landing outside Jay's flat, seven",
           "character": {
             "name": "",
             "role": "",
@@ -1687,68 +1689,30 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "s1d4_choose"
+          "next": "s1d4_frontroom"
         }
       ]
     },
-    "s1d4_choose": {
+    "s1d4_frontroom": {
       "day": 4,
-      "message": "[PLACEHOLDER] Amara. Tunde's session. Or the thing with Kai that is going to happen whether you are there or not.",
+      "message": "She has him by the arm inside six seconds and doesn't let go for another minute. He gets introduced to two aunties as *the sensible one*, which is a thing she has called him since before it was true. There is a plate in his hand he does not remember accepting.\n\nMum is here. She knows this family. She is in the corner with Jay's mum and one of the aunties, and she has taken her shoes off, which he has not seen her do since Christmas.\n\nThrough the doorway he can see the shape of the evening. Kai has the kitchen and four people. Tunde is by the balcony door with a drink he isn't drinking, out of place in the specific way of somebody who came because you asked him to, weeks ago, before any of this. Amara is in the hallway looking at the photographs, and hasn't messaged since Tuesday.\n\nJay is somewhere. Jay has been somewhere all evening.",
+      "reactionDelay": "medium",
       "presentation": {
         "type": "scene",
-        "modal": false,
+        "modal": true,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The front room",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Bola",
+            "role": "Mum",
+            "mood": "at ease"
           }
         }
       },
       "choices": [
         {
-          "id": "d4c_amara",
-          "label": "Amara.",
-          "scores": {
-            "savvy": 10,
-            "streetSmarts": 0,
-            "integrity": 5
-          },
-          "requires": [
-            {
-              "amaraBand": "steady"
-            },
-            {
-              "amaraBand": "tight"
-            }
-          ],
-          "setState": {
-            "dayFourWent": "amara",
-            "tundeStrain": 1,
-            "amaraTrust": 1
-          },
-          "lockedLabel": "Amara. \u2014 she hasn't asked you anywhere",
-          "next": "s1d4_amara_1"
-        },
-        {
-          "id": "d4c_tunde",
-          "label": "Tunde's session.",
-          "scores": {
-            "savvy": 10,
-            "streetSmarts": 0,
-            "integrity": 10
-          },
-          "setState": {
-            "dayFourWent": "tunde",
-            "discipline": 2,
-            "amaraStrain": 1
-          },
-          "next": "s1d4_tunde_1"
-        },
-        {
-          "id": "d4c_kai",
-          "label": "The thing with Kai.",
+          "id": "d4_kitchen",
+          "label": "The kitchen.",
           "scores": {
             "savvy": 0,
             "streetSmarts": 10,
@@ -1756,285 +1720,80 @@
           },
           "setState": {
             "dayFourWent": "kai",
-            "kaiStrain": 1,
-            "heat": 1,
-            "discipline": -1
+            "rep": 1
           },
-          "next": "s1d4_kai_1"
+          "next": "s1d4_kitchen"
         },
         {
-          "id": "d4c_none",
-          "label": "None of it.",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": -5,
-            "integrity": 0
-          },
-          "setState": {
-            "dayFourWent": "nowhere",
-            "amaraStrain": 1,
-            "tundeStrain": 1,
-            "discipline": -1,
-            "rep": -1,
-            "tundeTrust": -1,
-            "missed_training": true
-          },
-          "next": "s1d4_none_1"
-        }
-      ]
-    },
-    "s1d4_amara_1": {
-      "day": 4,
-      "message": "[PLACEHOLDER] The bus stop, then somewhere neither of you picked. She asks a question about Dee that she should not know to ask.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d4a_honest",
-          "label": "Answer it.",
+          "id": "d4_balcony",
+          "label": "The balcony.",
           "scores": {
             "savvy": 10,
-            "streetSmarts": -5,
-            "integrity": 15
+            "streetSmarts": 0,
+            "integrity": 5
           },
           "setState": {
-            "amaraTrust": 2
+            "dayFourWent": "tunde",
+            "tundeTrust": 1
           },
-          "next": "s1d4_amara_2"
+          "next": "s1d4_balcony"
         },
         {
-          "id": "d4a_deflect",
-          "label": "Move it along.",
+          "id": "d4_photos",
+          "label": "The hallway.",
           "scores": {
-            "savvy": 5,
-            "streetSmarts": 10,
-            "integrity": -10
-          },
-          "setState": {
-            "amaraStrain": 2
-          },
-          "next": "s1d4_amara_2"
-        }
-      ]
-    },
-    "s1d4_amara_2": {
-      "day": 4,
-      "message": "[PLACEHOLDER] Later, walking back. She says the thing she came to say.",
-      "messageVariants": [
-        {
-          "when": {
-            "amaraBand": "tight"
-          },
-          "message": "[PLACEHOLDER] She says it plainly, and waits."
-        }
-      ],
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
+            "savvy": 10,
             "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d4_after"
-        }
-      ]
-    },
-    "s1d4_tunde_1": {
-      "day": 4,
-      "message": "[PLACEHOLDER] The cage. Tunde has brought someone who runs the programme he keeps talking about.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d4t_ask",
-          "label": "Ask about it properly.",
-          "scores": {
-            "savvy": 15,
-            "streetSmarts": 5,
             "integrity": 10
           },
           "setState": {
-            "tundeTrust": 2,
-            "discipline": 1,
-            "credit": 1
+            "dayFourWent": "amara",
+            "amaraTrust": 1
           },
-          "next": "s1d4_tunde_2"
+          "next": "s1d4_photos"
         },
         {
-          "id": "d4t_hang",
-          "label": "Stay at the edge of it.",
+          "id": "d4_stay",
+          "label": "Stay where you are.",
           "scores": {
-            "savvy": 0,
+            "savvy": 5,
             "streetSmarts": 0,
-            "integrity": 0
+            "integrity": 10
           },
           "setState": {
-            "tundeStrain": 1
+            "dayFourWent": "nowhere",
+            "mumTrust": 1
           },
-          "next": "s1d4_tunde_2"
+          "next": "s1d4_stay"
         }
       ]
     },
-    "s1d4_tunde_2": {
+    "s1d4_kitchen": {
       "day": 4,
-      "message": "[PLACEHOLDER] Afterwards Tunde is careful not to ask whether you meant it.",
-      "messageVariants": [
-        {
-          "when": {
-            "disciplineBand": "held"
-          },
-          "message": "[PLACEHOLDER] Afterwards he tells the other man you'll be there Thursday, and looks at you while he does."
-        }
-      ],
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d4_after"
-        }
-      ]
-    },
-    "s1d4_kai_1": {
-      "day": 4,
-      "message": "[PLACEHOLDER] The stairwell end of the walkway. Twelve people who all want to be able to say they were there.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d4k_film",
-          "label": "Film it.",
-          "scores": {
-            "savvy": -5,
-            "streetSmarts": 10,
-            "integrity": -15
-          },
-          "setState": {
-            "stop_was_filmed": true,
-            "rep": 2,
-            "heat": 2,
-            "kaiStrain": 2
-          },
-          "next": "s1d4_kai_2"
-        },
-        {
-          "id": "d4k_stop",
-          "label": "Get in the middle of it.",
-          "scores": {
-            "savvy": 10,
-            "streetSmarts": -5,
-            "integrity": 15
-          },
-          "setState": {
-            "rep": 2,
-            "heat": 1,
-            "kaiStrain": -1,
-            "walked_away": true
-          },
-          "next": "s1d4_kai_2"
-        },
-        {
-          "id": "d4k_watch",
-          "label": "Stand there.",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 5,
-            "integrity": -5
-          },
-          "setState": {
-            "heat": 1,
-            "rep": 1
-          },
-          "next": "s1d4_kai_2"
-        }
-      ]
-    },
-    "s1d4_kai_2": {
-      "day": 4,
-      "message": "[PLACEHOLDER] It ends the way these end. Someone's phone has it.",
+      "message": "Kai is doing Thursday from memory to four people who half believe him, and that is worse for Kai and better for nobody.\n\nHe doesn't stop when the player comes in, which is either confidence or courtesy and there is no way to tell.",
       "messageVariants": [
         {
           "when": {
             "stop_was_filmed": true
           },
-          "message": "[PLACEHOLDER] It ends. Your phone has it. You have not decided anything yet."
+          "message": "Kai is doing Thursday. He plays it twice — once for the people who came in late — and the player is in the room while his own name is used.\n\nHe doesn't stop when the player comes in, which is either confidence or courtesy and there is no way to tell."
         },
         {
           "when": {
-            "kaiBand": "hostile"
+            "kaiBand": "needled"
           },
-          "message": "[PLACEHOLDER] It ends, and Kai looks at you specifically on the way out."
+          "message": "Kai stops talking when the player comes in. Everybody notices. Nobody says anything, and after about four seconds he starts again, on something else."
         }
       ],
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The kitchen",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Kai",
+            "role": "Friction",
+            "mood": "performing"
           }
         }
       },
@@ -2047,129 +1806,179 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "s1d4_after"
+          "next": "s1d4_speech"
         }
       ]
     },
-    "s1d4_none_1": {
+    "s1d4_balcony": {
       "day": 4,
-      "message": "[PLACEHOLDER] Your room. Three conversations you are not in.",
-      "presentation": {
-        "type": "messages",
-        "modal": true,
-        "data": {
-          "location": "Your room",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d4n_watch",
-          "label": "Follow it on your phone anyway.",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 5,
-            "integrity": -5
-          },
-          "setState": {
-            "heat": 1
-          },
-          "next": "s1d4_none_2"
-        },
-        {
-          "id": "d4n_off",
-          "label": "Put it face down.",
-          "scores": {
-            "savvy": 5,
-            "streetSmarts": -5,
-            "integrity": 5
-          },
-          "setState": {
-            "discipline": 1,
-            "rep": -1
-          },
-          "next": "s1d4_none_2"
-        }
-      ]
-    },
-    "s1d4_none_2": {
-      "day": 4,
-      "message": "[PLACEHOLDER] By eleven it has happened without you.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d4_after"
-        }
-      ]
-    },
-    "s1d4_after": {
-      "day": 4,
-      "message": "[PLACEHOLDER] Tuesday morning. Two people ask you where you were.",
+      "message": "Tunde talks about tomorrow like it's settled, because as far as he knows it is.\n\nIt's cold and neither of them goes back in for eleven minutes.",
       "messageVariants": [
         {
           "when": {
-            "dayFourWent": "kai"
+            "standing": "around"
           },
-          "message": "[PLACEHOLDER] Tuesday morning. Everyone already knows where you were."
+          "message": "Tunde talks about tomorrow like it's settled, because as far as he knows it is. He mentions the time twice.\n\nIt's cold and neither of them goes back in for eleven minutes, and the player does not correct him."
         },
         {
           "when": {
-            "dayFourWent": "nowhere"
+            "disciplineBand": "held"
           },
-          "message": "[PLACEHOLDER] Tuesday morning. Nobody asks, which is its own answer."
+          "message": "Tunde talks about tomorrow and doesn't oversell it, which is how he is when he has stopped worrying about somebody.\n\nIt's cold and neither of them goes back in for eleven minutes."
         }
       ],
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The balcony",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Tunde",
+            "role": "Friend with a plan",
+            "mood": "open"
           }
         }
       },
       "choices": [
         {
-          "id": "d4s_true",
-          "label": "Tell them.",
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d4_speech"
+        }
+      ]
+    },
+    "s1d4_photos": {
+      "day": 4,
+      "message": "\"You're in about four of these,\" Amara says.\n\nShe isn't making a point. She's working something out, and she says the thing about Tuesday exactly once and then lets it go.\n\nTwenty minutes.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The hallway",
+          "character": {
+            "name": "Amara",
+            "role": "Has her own life and her own read",
+            "mood": "reserved"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d4_speech"
+        }
+      ]
+    },
+    "s1d4_stay": {
+      "day": 4,
+      "message": "He stays. He holds the plate. He is told about somebody's hip and somebody's daughter and he says the right things in the right places.\n\nThrough two doorways he can watch all of it happening without him.\n\nHis mum looks over twice and doesn't say anything either time.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The front room",
+          "character": {
+            "name": "Bola",
+            "role": "Mum",
+            "mood": "watching"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d4_speech"
+        }
+      ]
+    },
+    "s1d4_speech": {
+      "day": 4,
+      "message": "Somebody bangs a glass.\n\nJay does four sentences about his mum and gets through about three. Everybody claps. She cries in the way you're allowed to at your own birthday.\n\nHe looks over once, in the middle of it.",
+      "messageVariants": [
+        {
+          "when": {
+            "helped_jay": true
+          },
+          "message": "Somebody bangs a glass.\n\nJay does four sentences about his mum and gets through about three. The part he can't finish is about people who turn up.\n\nHe looks over once, in the middle of it, and it is not subtle, and nobody else sees it."
+        }
+      ],
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The front room",
+          "character": {
+            "name": "Jay",
+            "role": "Oldest friend",
+            "mood": "undone"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d4_landing"
+        }
+      ]
+    },
+    "s1d4_landing": {
+      "day": 4,
+      "message": "Jay comes out after him.\n\nHe isn't angry. He's his mum's son and it's her night and he's had four cans, and he is going to ask one question and then go back inside.\n\n\"Where'd you get to?\"",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "The landing, half eleven",
+          "character": {
+            "name": "Jay",
+            "role": "Oldest friend",
+            "mood": "open"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "d4_true",
+          "label": "Tell him.",
           "scores": {
             "savvy": 10,
             "streetSmarts": -5,
             "integrity": 15
           },
           "setState": {
-            "dayFourSaid": "true"
+            "dayFourSaid": "true",
+            "jayTrust": 1
           },
+          "beat": "\"Yeah, no, fair.\" Then, going back in: \"You could've said.\"",
           "next": "s1d4_close"
         },
         {
-          "id": "d4s_lie",
-          "label": "Don't.",
+          "id": "d4_lied",
+          "label": "Give him a version.",
           "scores": {
             "savvy": 0,
             "streetSmarts": 10,
@@ -2177,39 +1986,54 @@
           },
           "setState": {
             "dayFourSaid": "lied",
-            "amaraStrain": 1,
-            "tundeStrain": 1,
-            "tundeTrust": -1
+            "jayStrain": 2
           },
+          "beat": "He accepts it and holds the door open and neither of them moves for a second.",
           "next": "s1d4_close"
         },
         {
-          "id": "d4s_silent",
-          "label": "Say nothing at all.",
+          "id": "d4_silent",
+          "label": "\"Nothing. I'm just tired.\"",
           "scores": {
             "savvy": 5,
             "streetSmarts": 5,
             "integrity": 0
           },
           "setState": {
-            "dayFourSaid": "silent"
+            "dayFourSaid": "silent",
+            "jayStrain": 1
           },
+          "beat": "\"Alright.\" He goes back in.",
           "next": "s1d4_close"
         }
       ]
     },
     "s1d4_close": {
       "day": 4,
-      "message": "[PLACEHOLDER] Tuesday closes quietly.",
+      "message": "Two floors and a walkway. Mum has her shoes in her hand.\n\nShe says one thing about Tuesday. Not the money — Tuesday.\n\nAnd then she talks about somebody's hip for the rest of the walk, and he can't tell whether the first thing was the point or whether he just made it the point.",
+      "messageVariants": [
+        {
+          "when": {
+            "lied_to_mum": true
+          },
+          "message": "Two floors and a walkway. Mum has her shoes in her hand.\n\n\"You said it was sorted, on Tuesday.\" She doesn't look at him. It isn't a question and she doesn't wait for an answer.\n\nThen she talks about somebody's hip for the rest of the walk."
+        },
+        {
+          "when": {
+            "mumBand": "tight"
+          },
+          "message": "Two floors and a walkway. Mum has her shoes in her hand.\n\n\"They're good to you, that family.\" A pause. \"They always were.\"\n\nThen she talks about somebody's hip for the rest of the walk."
+        }
+      ],
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "Stairs and walkway",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Bola",
+            "role": "Mum",
+            "mood": "unreadable"
           }
         }
       },
@@ -2228,30 +2052,16 @@
     },
     "s1d5_open": {
       "day": 5,
-      "message": "[PLACEHOLDER] Wednesday. Dee asks you to come by. It is phrased as an invitation.",
-      "messageVariants": [
-        {
-          "when": {
-            "standing": "known"
-          },
-          "message": "[PLACEHOLDER] Wednesday. Dee asks for you by name, through someone else."
-        },
-        {
-          "when": {
-            "deeBand": "steady"
-          },
-          "message": "[PLACEHOLDER] Wednesday. Dee texts directly, which he has not done before."
-        }
-      ],
+      "message": "The thing he said on Thursday is now the thing he's doing.\n\nMum went in at six. There's a note about Sunday afternoon — she needs him around for something, she hasn't said what, and the note doesn't ask so much as assume.",
       "interstitial": {
-        "label": "Wednesday",
+        "label": "Saturday",
         "durationMs": 2000
       },
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The flat, quarter to ten",
           "character": {
             "name": "",
             "role": "",
@@ -2268,310 +2078,286 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "s1d5_stairwell"
+          "nextRules": [
+            {
+              "when": {
+                "standing": "around"
+              },
+              "next": "s1d5_stall"
+            }
+          ],
+          "next": "s1d5_trial"
         }
       ]
     },
-    "s1d5_stairwell": {
+    "s1d5_stall": {
       "day": 5,
-      "message": "[PLACEHOLDER] The stairwell. He is exactly as warm as he was on Sunday. He asks how the week has been and listens to the answer.",
+      "message": "Eight hours and it is boring. Phone cases, chargers, a card reader that works about half the time. Four people ask if he's got a specific thing and he hasn't. Around two he serves somebody's mum who knows his mum. Around four he stops checking the time.\n\nAt six Dee comes by, counts out eighty in twenties, and says \"same next Saturday if you want it\" — which is the first time anybody has offered him something twice.",
+      "presentation": {
+        "type": "montage",
+        "modal": false,
+        "data": {
+          "location": "The unit, ten till six"
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d5_tunde_missed",
+          "setState": {
+            "money": 80,
+            "standing": "known",
+            "heat": 1
+          }
+        }
+      ]
+    },
+    "s1d5_trial": {
+      "day": 5,
+      "message": "Two hours, and about forty minutes of it is standing about. The man Tunde talked about watches for maybe nine minutes total.\n\nNobody says anything at the end except *cheers lads*, and Tunde is quiet on the way back in a way that could mean anything.\n\nThere is no money in it. There won't be any money in it until September, if there's any at all.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The cage, ten till twelve",
+          "character": {
+            "name": "Tunde",
+            "role": "Friend with a plan",
+            "mood": "unreadable"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d5_tunde_went",
+          "setState": {
+            "discipline": 1
+          }
+        }
+      ]
+    },
+    "s1d5_tunde_missed": {
+      "day": 5,
+      "message": "Tunde isn't angry, and it takes about four seconds to work out that not being angry is worse.\n\nHe asks if everything's alright. He genuinely wants to know if everything's alright.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "call",
+        "modal": true,
+        "data": {
+          "location": "Phone, seven",
+          "sender": "Tunde",
+          "callerName": "Tunde",
+          "callerLabel": "Phone, seven"
+        }
+      },
+      "choices": [
+        {
+          "id": "d5_t_truth",
+          "label": "Tell him where you were.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": -5,
+            "integrity": 15
+          },
+          "setState": {
+            "missed_training": true,
+            "tundeTrust": 1,
+            "tundeStrain": 1
+          },
+          "beat": "\"Right.\" A pause. \"You could've told me Thursday and I'd have said do the money.\" And he means that too.",
+          "next": "s1d5_dee"
+        },
+        {
+          "id": "d5_t_reason",
+          "label": "Give him a reason.",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 10,
+            "integrity": -10
+          },
+          "setState": {
+            "missed_training": true,
+            "tundeStrain": 2
+          },
+          "beat": "He takes it. He doesn't ask a follow-up, which he would have if he believed it.",
+          "next": "s1d5_dee"
+        },
+        {
+          "id": "d5_t_move",
+          "label": "\"Can it be moved?\"",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 5,
+            "integrity": 0
+          },
+          "setState": {
+            "missed_training": true,
+            "tundeStrain": 1,
+            "credit": -1
+          },
+          "beat": "\"I'll ask.\" He will ask. He'll be asking on the player's behalf for the second time in a fortnight.",
+          "next": "s1d5_dee"
+        }
+      ]
+    },
+    "s1d5_tunde_went": {
+      "day": 5,
+      "message": "Tunde rings straight after and gets to it.\n\nThe man asked what he's like. Tunde has to tell him something by Wednesday and he'd rather tell him the true thing.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "call",
+        "modal": true,
+        "data": {
+          "location": "Phone, seven",
+          "sender": "Tunde",
+          "callerName": "Tunde",
+          "callerLabel": "Phone, seven"
+        }
+      },
+      "choices": [
+        {
+          "id": "d5_t_commit",
+          "label": "\"Yeah. I'm serious.\"",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 0,
+            "integrity": 15
+          },
+          "setState": {
+            "discipline": 1,
+            "tundeTrust": 1
+          },
+          "beat": "\"Alright. I'll tell him that then.\" And now somebody has said it on his behalf.",
+          "next": "s1d5_dee"
+        },
+        {
+          "id": "d5_t_hedge",
+          "label": "\"I don't know yet.\"",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 5,
+            "integrity": 5
+          },
+          "setState": {
+            "tundeStrain": 1
+          },
+          "beat": "\"Yeah, no, fair enough.\" He goes quiet a bit early.",
+          "next": "s1d5_dee"
+        },
+        {
+          "id": "d5_t_money",
+          "label": "\"I can't do September for nothing.\"",
+          "scores": {
+            "savvy": 15,
+            "streetSmarts": 5,
+            "integrity": 10
+          },
+          "setState": {
+            "tundeTrust": 1,
+            "tundeStrain": 1,
+            "credit": -1
+          },
+          "beat": "He hadn't thought about it, and you can hear him thinking about it. \"Let me ask.\"",
+          "next": "s1d5_dee"
+        }
+      ]
+    },
+    "s1d5_dee": {
+      "day": 5,
+      "message": "He has a cousin. Thirteen. He's started being around people Dee doesn't want him around, and Dee can't say that to him — \"because look at me.\"\n\nTraining's Tuesdays and Thursdays, six till half seven. Take him, bring him back, be about. He'll sort him weekly for it.\n\nHe isn't selling it. He looks slightly embarrassed to be asking, which is not a thing the player has seen on him before.\n\n\"You're the only one round here I'd have him with.\"\n\nHe means it. That is the entire difficulty.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
-        "modal": false,
+        "modal": true,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "Outside the shops, eight",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Dee",
+            "role": "Older, generous, genuinely good company",
+            "mood": "exposed"
           }
         }
       },
       "choices": [
         {
-          "id": "continue",
-          "label": "Continue",
+          "id": "d5_took",
+          "label": "\"Yeah, course.\"",
           "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d5_ask"
-        }
-      ]
-    },
-    "s1d5_ask": {
-      "day": 5,
-      "message": "[PLACEHOLDER] Then the ask. Small, specific, phrased as trust. He does not say what it is and you do not need him to.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d5_take",
-          "label": "Take it.",
-          "scores": {
-            "savvy": -10,
-            "streetSmarts": 15,
-            "integrity": -20
+            "savvy": 5,
+            "streetSmarts": 10,
+            "integrity": 10
           },
           "setState": {
             "dayFive": "took",
-            "heat": 3,
             "deeTrust": 2,
-            "money": 60,
-            "standing": "named"
+            "discipline": 1
           },
-          "next": "s1d5_took"
+          "beat": "\"Safe.\" He doesn't make anything of it, which is how you know he was worried about asking.",
+          "next": "s1d5_close"
         },
         {
           "id": "d5_limited",
-          "label": "Take it, with one condition.",
+          "label": "\"Tuesdays. I can't do Thursdays.\"",
           "scores": {
-            "savvy": 10,
-            "streetSmarts": 10,
-            "integrity": -5
+            "savvy": 15,
+            "streetSmarts": 5,
+            "integrity": 10
           },
           "setState": {
             "dayFive": "took_limited",
-            "heat": 2,
             "deeTrust": 1,
-            "money": 30,
-            "kept_the_receipt": true
+            "discipline": 1
           },
-          "next": "s1d5_limited_n"
+          "beat": "\"Tuesdays is better than nothing.\" Slight disappointment, immediately packed away. He respects it.",
+          "next": "s1d5_close"
         },
         {
-          "id": "d5_decline",
-          "label": "No.",
+          "id": "d5_declined",
+          "label": "\"I can't take that on.\"",
           "scores": {
             "savvy": 10,
             "streetSmarts": -10,
-            "integrity": 20
+            "integrity": 10
           },
           "setState": {
             "dayFive": "declined",
-            "deeStrain": 2,
-            "refused_the_offer": true
+            "refused_the_offer": true,
+            "deeStrain": 1
           },
-          "next": "s1d5_declined"
-        },
-        {
-          "id": "d5_redirect",
-          "label": "Not that \u2014 I'll do the other thing.",
-          "scores": {
-            "savvy": 20,
-            "streetSmarts": 5,
-            "integrity": 15
-          },
-          "requires": [
-            {
-              "creditBand": "owed"
-            }
-          ],
-          "setState": {
-            "dayFive": "declined",
-            "credit": -2,
-            "deeTrust": 1,
-            "refused_the_offer": true
-          },
-          "lockedLabel": "Not that \u2014 I'll do the other thing. \u2014 there's nothing left to offer him",
-          "next": "s1d5_redirect_n"
-        }
-      ]
-    },
-    "s1d5_took": {
-      "day": 5,
-      "message": "[PLACEHOLDER] It is in your bag and it weighs nothing at all.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d5_react"
-        }
-      ]
-    },
-    "s1d5_limited_n": {
-      "day": 5,
-      "message": "[PLACEHOLDER] He agrees to the condition immediately, which tells you what the condition was worth.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d5_react"
-        }
-      ]
-    },
-    "s1d5_declined": {
-      "day": 5,
-      "message": "[PLACEHOLDER] He is not angry. He is disappointed in a way that costs more than anger would.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d5_react"
-        }
-      ]
-    },
-    "s1d5_redirect_n": {
-      "day": 5,
-      "message": "[PLACEHOLDER] You spend what you were owed. He takes it, and something in the room resets.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d5_react"
-        }
-      ]
-    },
-    "s1d5_react": {
-      "day": 5,
-      "message": "[PLACEHOLDER] Outside. The walk home is the same walk.",
-      "messageVariants": [
-        {
-          "when": {
-            "dayFive": "took"
-          },
-          "message": "[PLACEHOLDER] Outside. You take a different route home and do not examine why."
-        },
-        {
-          "when": {
-            "dayFourSaid": "lied"
-          },
-          "message": "[PLACEHOLDER] Outside. You are still carrying Tuesday's version of Monday."
-        },
-        {
-          "when": {
-            "dayFive": "declined",
-            "deeBand": "frayed"
-          },
-          "message": "[PLACEHOLDER] Outside. Nobody is following you. That was never the shape of it."
-        }
-      ],
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
+          "beat": "\"No, that's fair.\" He asks after the player's mum on the way out. He does not ask again.",
           "next": "s1d5_close"
         }
       ]
     },
     "s1d5_close": {
       "day": 5,
-      "message": "[PLACEHOLDER] Wednesday, late.",
+      "message": "The flat is empty. The note about Sunday is still on the side.\n\nWhatever he agreed to or didn't, Tuesday is in three days and it is somebody else's Tuesday now.",
       "messageVariants": [
         {
           "when": {
             "moneyBand": "flush"
           },
-          "message": "[PLACEHOLDER] Wednesday, late. There is more in your pocket than there was."
+          "message": "The flat is empty. The note about Sunday is still on the side.\n\nThere is eighty quid in twenties in his jacket and nobody in the flat to mention it to."
         }
       ],
       "presentation": {
-        "type": "scene",
+        "type": "none",
         "modal": false,
         "data": {
-          "location": "Your room, late",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
+          "location": "The flat, late"
         }
       },
       "choices": [
@@ -2589,34 +2375,20 @@
     },
     "s1d6_open": {
       "day": 6,
-      "message": "[PLACEHOLDER] Thursday. It has landed, and not on you.",
-      "messageVariants": [
-        {
-          "when": {
-            "exposureBand": "exposed"
-          },
-          "message": "[PLACEHOLDER] Thursday. Two people have already messaged you about it."
-        },
-        {
-          "when": {
-            "exposureBand": "clear"
-          },
-          "message": "[PLACEHOLDER] Thursday. You hear about it fourth-hand, which is its own kind of information."
-        }
-      ],
+      "message": "Mum is in the kitchen and she has already made tea for two, which she does not do.\n\nShe needs him at three. Her sister's, an hour, back by five. She doesn't say why and it clearly isn't important, and she asks once, in the way that means she has decided not to ask twice.\n\nIt is the first thing she has asked him for all week.",
       "interstitial": {
-        "label": "Thursday",
+        "label": "Sunday",
         "durationMs": 2000
       },
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The kitchen, half nine",
           "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
+            "name": "Bola",
+            "role": "Mum",
+            "mood": "careful"
           }
         }
       },
@@ -2629,41 +2401,155 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "s1d6_news"
+          "next": "s1d6_calls"
         }
       ]
     },
-    "s1d6_news": {
+    "s1d6_calls": {
       "day": 6,
-      "message": "[PLACEHOLDER] Jay is the one holding it. What he is holding is partly yours.",
-      "messageVariants": [
+      "thread": [
         {
-          "when": {
-            "kept_the_receipt": true
-          },
-          "message": "[PLACEHOLDER] Jay is holding it. You still have the thing you wrote down in March."
+          "narration": "Twenty past eleven."
         },
         {
+          "from": "Jay",
+          "text": "you about this afternoon"
+        },
+        {
+          "narration": "Four minutes later, before he's replied:"
+        },
+        {
+          "from": "Jay",
+          "text": "it's tomorrow. the deposit thing."
+        },
+        {
+          "narration": "He doesn't say what he wants. He has never once said what he wants."
+        },
+        {
+          "narration": "Half twelve."
+        },
+        {
+          "from": "Dee",
+          "text": "tuesday still good yeah"
+        },
+        {
+          "narration": "Five words, and it is not a check-up. It is a man who has told a thirteen-year-old that somebody is coming."
+        },
+        {
+          "narration": "One o'clock. Tunde rings rather than messages. He needs to tell the man something and he'd rather tell him the true thing, and he has said this before, in almost these words."
+        },
+        {
+          "narration": "None of them knows about any of the others. That is the whole of Sunday."
+        }
+      ],
+      "threadVariants": [
+        {
           "when": {
-            "helped_jay": true
+            "stop_was_filmed": true,
+            "dayFive": "declined"
           },
-          "message": "[PLACEHOLDER] Jay is holding it, and part of what he is holding has your Saturday in it."
+          "thread": [
+            {
+              "narration": "Twenty past eleven."
+            },
+            {
+              "from": "Jay",
+              "text": "you about this afternoon"
+            },
+            {
+              "from": "Jay",
+              "text": "it's tomorrow. the deposit thing."
+            },
+            {
+              "narration": "One o'clock. Tunde rings rather than messages. He needs to tell the man something by Wednesday."
+            },
+            {
+              "narration": "And a number in a group he isn't really in:"
+            },
+            {
+              "from": "Unknown",
+              "text": "is this you"
+            },
+            {
+              "narration": "Four minutes of Thursday, sent to somebody who sent it to somebody who sent it to him."
+            },
+            {
+              "narration": "Dee doesn't call. None of them knows about any of the others."
+            }
+          ]
         },
         {
           "when": {
             "stop_was_filmed": true
           },
-          "message": "[PLACEHOLDER] Jay is holding it, and there is a video going round that you took."
+          "thread": [
+            {
+              "narration": "Twenty past eleven."
+            },
+            {
+              "from": "Jay",
+              "text": "you about this afternoon"
+            },
+            {
+              "from": "Jay",
+              "text": "it's tomorrow. the deposit thing."
+            },
+            {
+              "narration": "Half twelve."
+            },
+            {
+              "from": "Dee",
+              "text": "tuesday still good yeah"
+            },
+            {
+              "narration": "One o'clock. Tunde rings rather than messages."
+            },
+            {
+              "narration": "And a number in a group he isn't really in:"
+            },
+            {
+              "from": "Unknown",
+              "text": "is this you"
+            },
+            {
+              "narration": "Four minutes of Thursday. None of them knows about any of the others."
+            }
+          ]
+        },
+        {
+          "when": {
+            "dayFive": "declined"
+          },
+          "thread": [
+            {
+              "narration": "Twenty past eleven."
+            },
+            {
+              "from": "Jay",
+              "text": "you about this afternoon"
+            },
+            {
+              "from": "Jay",
+              "text": "it's tomorrow. the deposit thing."
+            },
+            {
+              "narration": "One o'clock. Tunde rings rather than messages. He needs to tell the man something by Wednesday and he'd rather tell him the true thing."
+            },
+            {
+              "narration": "Dee doesn't call. None of them knows about any of the others."
+            }
+          ]
         }
       ],
       "reactionDelay": "long",
       "presentation": {
-        "type": "scene",
-        "modal": false,
+        "type": "messages",
+        "modal": true,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "Eleven to one",
+          "sender": "Jay",
           "character": {
-            "name": "",
+            "name": "Jay",
             "role": "",
             "mood": "flat"
           }
@@ -2678,18 +2564,19 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "s1d6_act"
+          "next": "s1d6_afternoon"
         }
       ]
     },
-    "s1d6_act": {
+    "s1d6_afternoon": {
       "day": 6,
-      "message": "[PLACEHOLDER] You can put your name on it, keep it off, or let it sit where it landed.",
+      "message": "He cannot do all of it. He can't even do two of it properly.",
+      "reactionDelay": "long",
       "presentation": {
         "type": "scene",
-        "modal": false,
+        "modal": true,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "His room, three",
           "character": {
             "name": "",
             "role": "",
@@ -2699,242 +2586,259 @@
       },
       "choices": [
         {
-          "id": "d6a_front",
-          "label": "Front it.",
+          "id": "d6_fronted",
+          "label": "Tell Jay's mum.",
           "scores": {
             "savvy": 5,
-            "streetSmarts": -10,
+            "streetSmarts": -15,
             "integrity": 20
           },
           "setState": {
             "daySixAct": "fronted",
-            "heat": 2,
-            "jayTrust": 2,
+            "jayTrust": 1,
+            "jayStrain": 2,
             "rep": 2,
             "credit": 1
           },
           "next": "s1d6_fronted"
         },
         {
-          "id": "d6a_cover",
-          "label": "Keep it off you and off him.",
+          "id": "d6_sat",
+          "label": "Sit with him.",
           "scores": {
-            "savvy": 15,
+            "savvy": 10,
+            "streetSmarts": 0,
+            "integrity": 15
+          },
+          "setState": {
+            "daySixAct": "sat",
+            "jayTrust": 2,
+            "told_jay_about_dee": true,
+            "credit": 1
+          },
+          "next": "s1d6_sat"
+        },
+        {
+          "id": "d6_covered",
+          "label": "Say yes to everyone.",
+          "scores": {
+            "savvy": -10,
             "streetSmarts": 10,
-            "integrity": -10
+            "integrity": -15
           },
           "setState": {
             "daySixAct": "covered",
-            "heat": 1,
-            "jayTrust": 1,
-            "lied_to_mum": true,
-            "rep": 1
+            "jayStrain": 1,
+            "mumStrain": 1,
+            "deeStrain": 1
           },
           "next": "s1d6_covered"
         },
         {
-          "id": "d6a_sit",
-          "label": "Let it sit.",
+          "id": "d6_mum",
+          "label": "Go with your mum.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": -5,
+            "integrity": 10
+          },
+          "setState": {
+            "mumTrust": 2,
+            "jayStrain": 2
+          },
+          "next": "s1d6_mum"
+        }
+      ]
+    },
+    "s1d6_fronted": {
+      "day": 6,
+      "message": "He goes to Jay's flat and says it to Jay's mum in her own kitchen — the deposit, the date, the fact that Jay has been carrying it alone since before the birthday.\n\nJay is standing right there while he does it.\n\nIt is the correct thing to do and Jay does not look at him once.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "Jay's kitchen",
+          "character": {
+            "name": "Jay",
+            "role": "Oldest friend",
+            "mood": "closed"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d6_late"
+        }
+      ]
+    },
+    "s1d6_sat": {
+      "day": 6,
+      "message": "Two hours on the wall outside the flats, and they don't solve anything.\n\nAt some point Jay says \"I know you were working Saturday\" — not as an accusation, just as a thing he knows — and after that it is easier rather than harder.",
+      "presentation": {
+        "type": "scene",
+        "modal": false,
+        "data": {
+          "location": "The wall outside the flats",
+          "character": {
+            "name": "Jay",
+            "role": "Oldest friend",
+            "mood": "level"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d6_late"
+        }
+      ]
+    },
+    "s1d6_covered": {
+      "day": 6,
+      "message": "He tells his mum he'll be back by four. He tells Jay he's coming. He tells Dee Tuesday's fine.\n\nThen it's six and he has been in his room and every one of those three sentences is still technically true and none of them happened.",
+      "presentation": {
+        "type": "none",
+        "modal": false,
+        "data": {
+          "location": "His room, six"
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d6_late"
+        }
+      ]
+    },
+    "s1d6_mum": {
+      "day": 6,
+      "message": "An hour at her sister's. She talks to her sister and he sits there and is, for the first time in six days, somewhere he said he'd be.\n\nHis phone goes twice and he doesn't look at it, and she notices that he doesn't look at it.",
+      "presentation": {
+        "type": "montage",
+        "modal": false,
+        "data": {
+          "location": "Her sister's, the afternoon"
+        }
+      },
+      "choices": [
+        {
+          "id": "continue",
+          "label": "Continue",
+          "scores": {
+            "savvy": 0,
+            "streetSmarts": 0,
+            "integrity": 0
+          },
+          "next": "s1d6_late"
+        }
+      ]
+    },
+    "s1d6_late": {
+      "day": 6,
+      "message": "Mum comes in and puts her bag down and doesn't take her coat off.\n\nShe has heard something. Not the whole thing — a version, from her sister, from somebody on the walkway, from the specific and unreliable network that has been running all week without him in it.\n\nShe asks him one question directly.",
+      "reactionDelay": "long",
+      "presentation": {
+        "type": "scene",
+        "modal": true,
+        "data": {
+          "location": "The kitchen, half nine",
+          "character": {
+            "name": "Bola",
+            "role": "Mum",
+            "mood": "direct"
+          }
+        }
+      },
+      "choices": [
+        {
+          "id": "d6_all",
+          "label": "Tell her all of it.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": -10,
+            "integrity": 20
+          },
+          "setState": {
+            "answered_mum": true,
+            "mumTrust": 2,
+            "mumStrain": 1
+          },
+          "beat": "She sits down. She doesn't shout, and she doesn't say it's alright either.",
+          "next": "s1d6_close"
+        },
+        {
+          "id": "d6_part",
+          "label": "Tell her the part that's true now.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 5,
+            "integrity": 5
+          },
+          "setState": {
+            "answered_mum": true,
+            "mumTrust": 1
+          },
+          "beat": "She asks one follow-up and accepts the answer, and you can see her decide to accept it.",
+          "next": "s1d6_close"
+        },
+        {
+          "id": "d6_fine",
+          "label": "\"I'm fine.\"",
           "scores": {
             "savvy": 0,
             "streetSmarts": 5,
             "integrity": -15
           },
           "setState": {
-            "daySixAct": "sat",
-            "jayStrain": 2,
-            "jayTrust": -1,
-            "rep": -1
+            "mumStrain": 2
           },
-          "next": "s1d6_sat"
-        }
-      ]
-    },
-    "s1d6_fronted": {
-      "day": 6,
-      "message": "[PLACEHOLDER] You say it was you. It is true enough to survive being said out loud.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d6_tell_first"
-        }
-      ]
-    },
-    "s1d6_covered": {
-      "day": 6,
-      "message": "[PLACEHOLDER] You put a version together that holds. It holds.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d6_tell_first"
-        }
-      ]
-    },
-    "s1d6_sat": {
-      "day": 6,
-      "message": "[PLACEHOLDER] You do nothing, and doing nothing turns out to be a thing you did.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d6_tell_first"
-        }
-      ]
-    },
-    "s1d6_tell_first": {
-      "day": 6,
-      "message": "[PLACEHOLDER] Someone has to hear it from you first.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d6t_mum",
-          "label": "Mum.",
-          "scores": {
-            "savvy": 10,
-            "streetSmarts": -5,
-            "integrity": 15
-          },
-          "setState": {
-            "mumTrust": 2,
-            "answered_mum": true
-          },
-          "next": "s1d6_close"
-        },
-        {
-          "id": "d6t_jay",
-          "label": "Jay.",
-          "scores": {
-            "savvy": 5,
-            "streetSmarts": 5,
-            "integrity": 10
-          },
-          "setState": {
-            "jayTrust": 1
-          },
-          "next": "s1d6_close"
-        },
-        {
-          "id": "d6t_tunde",
-          "label": "Tunde.",
-          "scores": {
-            "savvy": 5,
-            "streetSmarts": 0,
-            "integrity": 5
-          },
-          "setState": {
-            "tundeTrust": 1,
-            "tundeStrain": 1
-          },
-          "next": "s1d6_close"
-        },
-        {
-          "id": "d6t_none",
-          "label": "Nobody.",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 10,
-            "integrity": -10
-          },
-          "setState": {
-            "mumStrain": 1,
-            "jayStrain": 1,
-            "tundeStrain": 2
-          },
+          "beat": "She takes her coat off and puts the kettle on and doesn't ask again.",
           "next": "s1d6_close"
         }
       ]
     },
     "s1d6_close": {
       "day": 6,
-      "message": "[PLACEHOLDER] Thursday, late. It is not over.",
+      "message": "Tuesday is in two days. Tomorrow is the deposit. Wednesday is Tunde's answer.\n\nNothing has been resolved. One thing has been said out loud that hadn't been.",
       "messageVariants": [
+        {
+          "when": {
+            "lied_to_mum": true,
+            "answered_mum": true
+          },
+          "message": "Somewhere in it she said \"Tuesday you told me it was sorted\", and she said it once.\n\nTuesday is in two days. Tomorrow is the deposit. Wednesday is Tunde's answer. Nothing has been resolved."
+        },
         {
           "when": {
             "daySixAct": "fronted"
           },
-          "message": "[PLACEHOLDER] Thursday, late. You are holding something that was not yours to hold."
-        },
-        {
-          "when": {
-            "daySixAct": "sat"
-          },
-          "message": "[PLACEHOLDER] Thursday, late. Nobody has said your name. That is what you chose."
+          "message": "Tuesday is in two days. Tomorrow is the deposit — and somebody else is dealing with it now, because he made that happen in her kitchen with her son standing there.\n\nNothing has been resolved."
         }
       ],
       "presentation": {
-        "type": "scene",
+        "type": "none",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
+          "location": "His room, late"
         }
       },
       "choices": [
@@ -2952,30 +2856,16 @@
     },
     "s1d7_open": {
       "day": 7,
-      "message": "[PLACEHOLDER] Friday. A week.",
-      "messageVariants": [
-        {
-          "when": {
-            "heatBand": "burnt"
-          },
-          "message": "[PLACEHOLDER] Friday. There is a version of this week that is now a thing that happened to you."
-        },
-        {
-          "when": {
-            "missed_training": true
-          },
-          "message": "[PLACEHOLDER] Friday. Tunde has stopped putting the sessions in the group chat."
-        }
-      ],
+      "message": "Nobody has messaged.\n\nThat is the first thing. Six days of somebody wanting something by four, and this morning the phone has one notification and it's the bank telling him what his balance is.\n\nMum went at six. The mug is washed.",
       "interstitial": {
-        "label": "Friday",
+        "label": "Monday",
         "durationMs": 2400
       },
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The flat, ten past eight",
           "character": {
             "name": "",
             "role": "",
@@ -2998,27 +2888,13 @@
     },
     "s1d7_situation": {
       "day": 7,
-      "message": "[PLACEHOLDER] It needs something from you today that you either have or don't.",
-      "messageVariants": [
-        {
-          "when": {
-            "creditBand": "owed"
-          },
-          "message": "[PLACEHOLDER] It needs something today, and there are two people who owe you a phone call."
-        },
-        {
-          "when": {
-            "creditBand": "owing"
-          },
-          "message": "[PLACEHOLDER] It needs something today, and you have already spent everything you had with everyone."
-        }
-      ],
+      "message": "The deposit was today and it either happened or it didn't, and he will find out from somebody else rather than from Jay.\n\nTunde has to tell the man something on Wednesday.\n\nTuesday is tomorrow, and a thirteen-year-old either has somebody coming or he hasn't.\n\nAmara's two messages from Tuesday are still the last thing in that thread.\n\nNone of these are problems he can solve today. They are things that have arrived at the shape they are going to be in.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The block, midday",
           "character": {
             "name": "",
             "role": "",
@@ -3035,18 +2911,19 @@
             "streetSmarts": 0,
             "integrity": 0
           },
-          "next": "s1d7_move"
+          "next": "s1d7_action"
         }
       ]
     },
-    "s1d7_move": {
+    "s1d7_action": {
       "day": 7,
-      "message": "[PLACEHOLDER] Four doors. Some of them are shut.",
+      "message": "He has one afternoon and he can do one thing with it.\n\nNot fix the week. Do one thing.",
+      "reactionDelay": "long",
       "presentation": {
         "type": "scene",
-        "modal": false,
+        "modal": true,
         "data": {
-          "location": "PLACEHOLDER",
+          "location": "The block, the afternoon",
           "character": {
             "name": "",
             "role": "",
@@ -3056,276 +2933,129 @@
       },
       "choices": [
         {
-          "id": "d7m_pay",
-          "label": "Pay it and be done.",
+          "id": "d7_amara",
+          "label": "Answer her.",
           "scores": {
             "savvy": 10,
-            "streetSmarts": 10,
-            "integrity": 10
+            "streetSmarts": 0,
+            "integrity": 15
+          },
+          "setState": {
+            "amaraTrust": 1
+          },
+          "terminal": {
+            "consequence": "She reads it and doesn't reply for two hours and then replies properly, and the reply is longer than his was.",
+            "landing": "\"You could've just said that on Tuesday.\" She isn't being unkind. She's stating the thing that was true all week."
+          }
+        },
+        {
+          "id": "d7_repay",
+          "label": "Give your mum what you've got.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 5,
+            "integrity": 15
           },
           "requires": [
-            {
-              "moneyBand": "flush"
-            },
             {
               "moneyBand": "enough"
-            }
-          ],
-          "setState": {
-            "money": -40,
-            "paid_it_back": true,
-            "heat": -2
-          },
-          "lockedLabel": "Pay it and be done. \u2014 you don't have it",
-          "next": "s1d7_paid"
-        },
-        {
-          "id": "d7m_call",
-          "label": "Call in what you're owed.",
-          "scores": {
-            "savvy": 15,
-            "streetSmarts": 10,
-            "integrity": 5
-          },
-          "requires": [
-            {
-              "creditBand": "owed"
             },
             {
-              "creditBand": "even"
+              "moneyBand": "flush"
             }
           ],
+          "lockedLabel": "Give your mum what you've got. — you haven't got it",
           "setState": {
-            "credit": -2,
-            "rep": 1
+            "money": -60,
+            "paid_it_back": true
           },
-          "lockedLabel": "Call in what you're owed. \u2014 there's nobody left to call",
-          "next": "s1d7_called"
+          "terminal": {
+            "consequence": "Sixty of it on the side, under the kettle, where she'll find it and he won't have to hand it over. She doesn't mention it. It's gone in the morning and she doesn't mention that either.",
+            "landing": "On Thursday she buys him something he didn't ask for and doesn't mention that. He counts what's left twice on the bus and it isn't very much."
+          }
         },
         {
-          "id": "d7m_jay",
-          "label": "Go to Jay.",
+          "id": "d7_man",
+          "label": "Go and see the man yourself.",
           "scores": {
-            "savvy": 5,
-            "streetSmarts": 5,
+            "savvy": 15,
+            "streetSmarts": 0,
             "integrity": 10
           },
           "requires": [
             {
-              "jayBand": "tight"
+              "tundeBand": "steady"
             },
             {
-              "jayBand": "steady"
+              "tundeBand": "tight"
             }
           ],
+          "lockedLabel": "Go and see the man yourself. — that door went a while ago",
           "setState": {
-            "jayTrust": 1,
-            "heat": 1
+            "discipline": 1
           },
-          "lockedLabel": "Go to Jay. \u2014 you two aren't there any more",
-          "next": "s1d7_jay"
+          "terminal": {
+            "consequence": "Without Tunde, without telling Tunde, on a Monday afternoon, at a place he has been to twice. The man is busy and gives him four minutes. Four minutes is more than he had this morning.",
+            "landing": "Tunde rings that night. \"He said you turned up.\" That's the whole call, and Tunde sounds like somebody who has just got something back."
+          }
         },
         {
-          "id": "d7m_alone",
-          "label": "Handle it yourself.",
+          "id": "d7_dee",
+          "label": "Tell Dee you can't do Tuesdays.",
+          "scores": {
+            "savvy": 10,
+            "streetSmarts": 0,
+            "integrity": 15
+          },
+          "requires": [
+            {
+              "dayFive": "took"
+            },
+            {
+              "dayFive": "took_limited"
+            }
+          ],
+          "lockedLabel": "Tell Dee you can't do Tuesdays. — there's nothing to give back",
+          "setState": {
+            "deeTrust": 1,
+            "deeStrain": 1
+          },
+          "terminal": {
+            "consequence": "The day before it starts. Face to face, because doing it by message would be the other thing. \"Nah, that's better than Tuesday night.\" He means it, and he is also now sorting something out at short notice for a thirteen-year-old.",
+            "landing": "He doesn't ask why. He asks after the player's mum, the way he always does, and then he's gone."
+          }
+        },
+        {
+          "id": "d7_jay",
+          "label": "Say it to Jay. Don't ask for anything.",
           "scores": {
             "savvy": 5,
             "streetSmarts": 0,
-            "integrity": 5
+            "integrity": 15
           },
+          "requires": [
+            {
+              "daySixAct": "fronted"
+            },
+            {
+              "daySixAct": "covered"
+            },
+            {
+              "dayFourSaid": "lied"
+            }
+          ],
+          "lockedLabel": "Say it to Jay. — there's nothing owed that way",
           "setState": {
-            "heat": 1,
-            "rep": 1
-          },
-          "next": "s1d7_alone"
-        }
-      ]
-    },
-    "s1d7_paid": {
-      "day": 7,
-      "message": "[PLACEHOLDER] It costs what it costs and then it is closed.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d7_final"
-        }
-      ]
-    },
-    "s1d7_called": {
-      "day": 7,
-      "message": "[PLACEHOLDER] Two calls. Both answered. You notice that you counted.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d7_final"
-        }
-      ]
-    },
-    "s1d7_jay": {
-      "day": 7,
-      "message": "[PLACEHOLDER] Jay does not ask what it is for.",
-      "messageVariants": [
-        {
-          "when": {
-            "told_jay_about_dee": true
-          },
-          "message": "[PLACEHOLDER] Jay does not ask what it is for, because you told him in March."
-        }
-      ],
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d7_final"
-        }
-      ]
-    },
-    "s1d7_alone": {
-      "day": 7,
-      "message": "[PLACEHOLDER] You do it on your own, which works, and costs something you can't name yet.",
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "continue",
-          "label": "Continue",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 0,
-            "integrity": 0
-          },
-          "next": "s1d7_final"
-        }
-      ]
-    },
-    "s1d7_final": {
-      "day": 7,
-      "message": "[PLACEHOLDER] Friday night. The block, the same as it was seven days ago, except for everything.",
-      "messageVariants": [
-        {
-          "when": {
-            "moneyBand": "short"
-          },
-          "message": "[PLACEHOLDER] Friday night. Four pounds and a week."
-        },
-        {
-          "when": {
-            "walked_away": true
-          },
-          "message": "[PLACEHOLDER] Friday night. Nobody on the walkway has a reason to stop you."
-        }
-      ],
-      "presentation": {
-        "type": "scene",
-        "modal": false,
-        "data": {
-          "location": "PLACEHOLDER",
-          "character": {
-            "name": "",
-            "role": "",
-            "mood": "flat"
-          }
-        }
-      },
-      "choices": [
-        {
-          "id": "d7f_out",
-          "label": "Go out.",
-          "scores": {
-            "savvy": 0,
-            "streetSmarts": 5,
-            "integrity": 0
-          },
-          "setState": {
-            "stayed_out": true
+            "jayTrust": 1
           },
           "terminal": {
-            "consequence": "[PLACEHOLDER] A week ends. It does not announce itself.",
-            "landing": "[PLACEHOLDER] You work out on the walk back that the whole thing turned on about four minutes on Wednesday."
+            "consequence": "On the walkway, standing up, in under a minute, without asking whether they're alright now. Jay says \"yeah, I know\" and then nothing for a while, and then something about his sister that is not an answer to anything.",
+            "landing": "They stand there another minute. Neither of them says the week is finished, because it isn't."
           }
         },
         {
-          "id": "d7f_home",
-          "label": "Go home.",
-          "scores": {
-            "savvy": 5,
-            "streetSmarts": 0,
-            "integrity": 5
-          },
-          "setState": {
-            "answered_mum": true
-          },
-          "terminal": {
-            "consequence": "[PLACEHOLDER] A week ends the way most weeks end, which is quietly.",
-            "landing": "[PLACEHOLDER] Mum is on the sofa with the TV on and does not ask where you have been."
-          }
-        },
-        {
-          "id": "d7f_apologise",
-          "label": "Say the thing to Kai.",
+          "id": "d7_kai",
+          "label": "Say it to Kai.",
           "scores": {
             "savvy": 15,
             "streetSmarts": 5,
@@ -3333,20 +3063,36 @@
           },
           "requires": [
             {
-              "kaiBand": "hostile"
+              "kaiBand": "needled"
             },
             {
-              "kaiBand": "needled"
+              "kaiBand": "hostile"
             }
           ],
+          "lockedLabel": "Say it to Kai. — there is nothing between you to settle",
           "setState": {
             "apologised_to_kai": true,
             "kaiStrain": -2
           },
-          "lockedLabel": "Say the thing to Kai. \u2014 there is nothing between you to settle",
           "terminal": {
-            "consequence": "[PLACEHOLDER] It does not fix it. It ends it, which is different and enough.",
-            "landing": "[PLACEHOLDER] He nods once. Neither of you mentions it again."
+            "consequence": "Two years late for one thing and five days late for another, and he doesn't separate them. Kai is thrown, and covers it badly, and says \"yeah, you're alright\" — which from Kai is a lot.",
+            "landing": "It doesn't come up again. Six weeks later they're civil in a shop queue and it is genuinely fine, which nobody could have predicted in March."
+          }
+        },
+        {
+          "id": "d7_out",
+          "label": "Get on a bus and go somewhere else.",
+          "scores": {
+            "savvy": 5,
+            "streetSmarts": 0,
+            "integrity": 5
+          },
+          "setState": {
+            "walked_away": true
+          },
+          "terminal": {
+            "consequence": "Not running. Not sulking. One afternoon somewhere nobody knows him, and back by nine. Four hours where nobody wants anything. He doesn't do anything with them. He doesn't need to.",
+            "landing": "Coming back over the bridge he works out that the whole thing turned on about nine seconds on Tuesday, and that he did not experience those nine seconds as a decision at the time."
           }
         }
       ]
@@ -3364,56 +3110,96 @@
     },
     {
       "when": {
-        "heatBand": "burnt"
+        "dayFive": "took",
+        "standing": "known"
       },
       "value": "in_it"
     },
     {
       "when": {
-        "daySixAct": "fronted"
+        "daySixAct": "covered",
+        "lied_to_mum": true
       },
       "value": "carrying_it"
     },
     {
       "when": {
-        "dayFive": "took",
+        "dayFourSaid": "lied",
+        "missed_training": true
+      },
+      "value": "carrying_it"
+    },
+    {
+      "when": {
+        "daySixAct": "fronted",
         "creditBand": "owed"
       },
-      "value": "useful"
+      "value": "the_one_they_call"
     },
     {
       "when": {
-        "disciplineBand": "held",
-        "jayBand": "tight"
-      },
-      "value": "kept_both"
-    },
-    {
-      "when": {
-        "disciplineBand": "held"
-      },
-      "value": "moving"
-    },
-    {
-      "when": {
-        "jayBand": "broken",
-        "tundeBand": "broken"
-      },
-      "value": "on_your_own"
-    },
-    {
-      "when": {
-        "creditBand": "owed",
+        "daySixAct": "fronted",
         "repBand": "known"
       },
       "value": "the_one_they_call"
     },
     {
       "when": {
-        "repBand": "nobody",
-        "heatBand": "clear"
+        "helped_jay": true,
+        "creditBand": "owed"
+      },
+      "value": "useful"
+    },
+    {
+      "when": {
+        "jayBand": "tight",
+        "tundeBand": "tight"
+      },
+      "value": "kept_both"
+    },
+    {
+      "when": {
+        "jayBand": "tight",
+        "tundeBand": "steady",
+        "disciplineBand": "held"
+      },
+      "value": "kept_both"
+    },
+    {
+      "when": {
+        "disciplineBand": "held",
+        "tundeBand": "tight"
+      },
+      "value": "moving"
+    },
+    {
+      "when": {
+        "refused_the_offer": true,
+        "creditBand": "owing"
+      },
+      "value": "on_your_own"
+    },
+    {
+      "when": {
+        "refused_the_offer": true,
+        "kept_the_receipt": true,
+        "dayFourSaid": "true"
+      },
+      "value": "on_your_own"
+    },
+    {
+      "when": {
+        "dayFourWent": "nowhere",
+        "repBand": "quiet"
       },
       "value": "invisible"
+    },
+    {
+      "when": {
+        "dayFourSaid": "true",
+        "kept_the_receipt": true
+      },
+      "value": "holding"
     }
   ],
   "reflections": [
@@ -3421,54 +3207,143 @@
       "when": {
         "daySixAct": "fronted"
       },
-      "title": "PLACEHOLDER",
-      "text": "[PLACEHOLDER] You took someone else's Thursday."
+      "title": "The One Who Said It",
+      "text": "He stood in somebody else's kitchen and said the thing his friend couldn't, in front of his friend, and it was the right call and it wasn't his to make. Both of those stayed true. Nobody in that flat has mentioned it since."
+    },
+    {
+      "when": {
+        "daySixAct": "covered",
+        "lied_to_mum": true
+      },
+      "title": "Three True Sentences",
+      "text": "He told his mum he'd be back by four, told Jay he was coming, told Dee Tuesday was fine. Every one of those was true when he said it and none of them happened, and the week ended with three people each holding a slightly different version of a person who was, that Sunday, in his room."
+    },
+    {
+      "when": {
+        "dayFourSaid": "lied",
+        "missed_training": true
+      },
+      "title": "Two Small Ones",
+      "text": "A version on Friday night, on a landing, at a party. A Saturday morning somebody had arranged for him. Neither was a lie he'd have called a lie at the time, and by Sunday there were two people carrying something he'd told them that wasn't so."
+    },
+    {
+      "when": {
+        "refused_the_offer": true,
+        "kept_the_receipt": true
+      },
+      "title": "Said What He Could Do",
+      "text": "He put a limit on something on the Tuesday, in writing, before he knew any of it mattered. On the Saturday he said no to a good thing he couldn't carry.\n\nNeither of those is impressive. Both of them are rarer than they sound."
+    },
+    {
+      "when": {
+        "dayFive": "took_limited"
+      },
+      "title": "Tuesdays, Not Thursdays",
+      "text": "He said what he could actually do rather than what he wanted to be the kind of person who does, and then he did it. There's no story in that, which is why almost nobody manages it."
     },
     {
       "when": {
         "dayFive": "took"
       },
-      "title": "PLACEHOLDER",
-      "text": "[PLACEHOLDER] Wednesday was the hinge and you did not feel it as one."
-    },
-    {
-      "when": {
-        "refused_the_offer": true
-      },
-      "title": "PLACEHOLDER",
-      "text": "[PLACEHOLDER] You said no on Wednesday and paid for it all week."
+      "title": "Somebody Trusted Him With Somebody",
+      "text": "A man who knows exactly what he is asked him to be near a thirteen-year-old twice a week, and he said yes, and the money was real and so was the reason.\n\nHe's on somebody's payroll now. He knew that when he said it."
     },
     {
       "when": {
         "disciplineBand": "held"
       },
-      "title": "PLACEHOLDER",
-      "text": "[PLACEHOLDER] You did the boring thing every day it was available."
+      "title": "He Kept Turning Up",
+      "text": "On the days it was available, he did the boring thing. That's most of it. It doesn't feel like a decision at the time, which is exactly why it's so easy not to."
+    },
+    {
+      "when": {
+        "dayFourWent": "nowhere"
+      },
+      "title": "He Stayed in the Front Room",
+      "text": "He was invited, he came, he held a plate for four hours and talked to two aunties about a hip, and through two doorways the rest of the week happened without him.\n\nHe owed that flat. It was also the easiest place in it to stand."
+    },
+    {
+      "when": {
+        "kept_the_receipt": true
+      },
+      "title": "He Asked",
+      "text": "At midnight, to a number he didn't have saved, he typed *what is it* and sent it. He didn't get an answer.\n\nThe question's still in the phone. It didn't protect him from anything. It just means he was the only person in it who said a true thing at the start."
     }
   ],
   "defaultReflection": {
-    "title": "PLACEHOLDER",
-    "text": "[PLACEHOLDER] A week."
+    "title": "Seven Days",
+    "text": "On the Tuesday, nobody could have told you a single thing about who he was. By the Monday, four or five people could, and they'd each say something different, and not one of them would be wrong."
   },
   "aftermath": {
     "jay": [
       {
         "when": {
+          "told_jay_about_dee": true
+        },
+        "text": "Jay knows about Dee, because he told him on a wall on a Sunday when there was nothing else to do.\n\nIt doesn't become a thing. What it becomes is the reason that, in August, when Jay hears something about Dee from somebody who has it wrong, he comes and asks rather than assumes."
+      },
+      {
+        "when": {
+          "daySixAct": "fronted"
+        },
+        "text": "Jay's sister goes in September. Nobody in that flat has ever said out loud that it was because of a Sunday afternoon in March, and Jay has never once thanked him for it, and both of those are correct.\n\nThey're alright. It took until about July."
+      },
+      {
+        "when": {
           "jayBand": "tight"
         },
-        "text": "[PLACEHOLDER] Jay is still Jay."
+        "text": "Jay is still Jay. He's careful with him now in a way he wasn't before — asks before assuming, which he never used to do — and neither of them has worked out whether that's better."
       },
       {
         "when": {
           "jayBand": "broken"
         },
-        "text": "[PLACEHOLDER] Jay stops coming to the door."
+        "text": "Jay stops coming to the door. Not dramatically, not with a conversation. He just stops, and after a while it's hard to remember which week it was that he stopped.\n\nHis mum still says hello on the walkway. She always will."
+      },
+      {
+        "text": "They're fine. That's the accurate word for it. Same walkway, same shop, same jokes — and one subject that neither of them is ever going to go near again."
+      }
+    ],
+    "mum": [
+      {
+        "when": {
+          "paid_it_back": true
+        },
+        "text": "She never mentions the money. Not that week, not later.\n\nWhat changes is that she starts saying the numbers out loud — not asking him for anything, just saying them, the way you do with somebody who has turned out to be in it with you."
       },
       {
         "when": {
-          "trajectory": "carrying_it"
+          "lied_to_mum": true,
+          "answered_mum": true
         },
-        "text": "[PLACEHOLDER] Jay knows exactly what you did and never says so."
+        "text": "She knows about the Tuesday and she knows about the Sunday, and she has decided to keep exactly one of those.\n\nShe doesn't bring it up. She does start telling him things about the money before he asks, which she has never done, and it takes him about a month to work out that's what it is."
+      },
+      {
+        "when": {
+          "mumBand": "frayed"
+        },
+        "text": "She is careful with him now, and being careful is not a thing she has ever had to be with him.\n\nShe still cooks for two. She just doesn't wait up any more, and she has stopped asking what time he'll be back, and neither of those was a decision she announced."
+      },
+      {
+        "when": {
+          "answered_mum": true
+        },
+        "text": "She stops managing what he knows. It's small and it's most of what he wanted — she says the number out loud one Thursday, in the kitchen, like it's nothing, and then carries on making tea."
+      },
+      {
+        "when": {
+          "mumBand": "tight"
+        },
+        "text": "Something loosened. She tells him things she used to handle on her own — not the whole of it, but more than none — and the first time she does it she watches his face to see whether it was a mistake.\n\nIt wasn't."
+      },
+      {
+        "when": {
+          "lied_to_mum": true
+        },
+        "text": "She works it out in her own time, the way she works everything out, and never tells him that she has.\n\nWhat changes is that she stops waiting up. He notices in about May and doesn't mention it."
+      },
+      {
+        "text": "She's the same. Still on the extra shifts, still doing sums in her head while talking about something else.\n\nShe asks him less. He couldn't tell you when that started."
       }
     ],
     "tunde": [
@@ -3476,33 +3351,22 @@
         "when": {
           "disciplineBand": "held"
         },
-        "text": "[PLACEHOLDER] Tunde puts your name forward."
+        "text": "Tunde puts his name forward again in September, for something else, and doesn't mention that he did it the first time and it didn't take."
       },
       {
         "when": {
-          "tundeBand": "broken"
+          "missed_training": true
         },
-        "text": "[PLACEHOLDER] Tunde stops asking."
-      }
-    ],
-    "mum": [
-      {
-        "when": {
-          "lied_to_mum": true
-        },
-        "text": "[PLACEHOLDER] She works it out in her own time."
+        "text": "Tunde starts in September. There's a photo of him in the polo shirt in a group chat and it's genuinely good news and he looks at it for slightly too long."
       },
       {
         "when": {
-          "answered_mum": true
+          "tundeBand": "frayed"
         },
-        "text": "[PLACEHOLDER] She notices that you picked up, every time, all week."
+        "text": "Tunde stops asking. He isn't cold about it. He's just got a start date and a bus route and a life that begins on the ninth."
       },
       {
-        "when": {
-          "mumBand": "tight"
-        },
-        "text": "[PLACEHOLDER] She stops waiting up."
+        "text": "Tunde's around. They still play. He doesn't bring up the trial and he doesn't bring up September, and the not-bringing-it-up is new."
       }
     ],
     "dee": [
@@ -3510,27 +3374,22 @@
         "when": {
           "dayFive": "took"
         },
-        "text": "[PLACEHOLDER] Dee remembers reliable people."
+        "text": "The cousin gets to training on Tuesdays and Thursdays and is, by Christmas, quite good. Dee pays on the Friday, every Friday, exactly like he said he would.\n\nHe's on Dee's phone now under his actual name. He hadn't thought about what that meant until he saw it."
+      },
+      {
+        "when": {
+          "dayFive": "took_limited"
+        },
+        "text": "Dee tells people he wouldn't do Thursdays. He tells it as a good story about somebody knowing what they can manage, and it is one — and it also means a lot of people who didn't know his name know it now."
       },
       {
         "when": {
           "refused_the_offer": true
         },
-        "text": "[PLACEHOLDER] Dee is warm to you for the rest of the year, and never asks again."
-      }
-    ],
-    "kai": [
-      {
-        "when": {
-          "apologised_to_kai": true
-        },
-        "text": "[PLACEHOLDER] It stays ended."
+        "text": "Dee's warm to him for the rest of the year and never asks him for anything again.\n\nHe sees the cousin around sometimes, at the shops, with other people. He's got no way of knowing whether that means anything."
       },
       {
-        "when": {
-          "kaiBand": "hostile"
-        },
-        "text": "[PLACEHOLDER] It does not stay ended."
+        "text": "Dee's Dee. Says hello, asks after his mum, remembers things.\n\nThere's no second offer. It's not a snub — he's just somebody who got asked once."
       }
     ],
     "amara": [
@@ -3538,50 +3397,608 @@
         "when": {
           "amaraBand": "tight"
         },
-        "text": "[PLACEHOLDER] Amara is still there in August."
-      },
+        "text": "Amara's still there in August. She asked him one straight question in March and got a straight answer, and it turns out that was the whole of it.\n\nShe's doing her thing. He knows what her thing is now, which he didn't in February."
+      }
+    ],
+    "kai": [
       {
         "when": {
-          "amaraBand": "broken"
+          "apologised_to_kai": true
         },
-        "text": "[PLACEHOLDER] Amara is not."
+        "text": "It stays ended. Six weeks later they're civil in a shop queue and it's genuinely fine, which nobody could have predicted in March.\n\nHe's the first person to text when something good happens in September."
+      }
+    ],
+    "afterwards": [
+      {
+        "when": {
+          "walked_away": true
+        },
+        "text": "He doesn't tell anybody where he went that afternoon, and nobody asks.\n\nIt becomes a thing he does. Four or five times that year, always on his own, always back the same night. He would not be able to tell you what it's for."
       }
     ]
   },
   "finalMessage": [
     {
       "when": {
-        "trajectory": "kept_both"
+        "trajectory": "carrying_it"
       },
-      "text": "[PLACEHOLDER] You paid for both and it cost more than either."
+      "text": "Nothing broke.\n\nThat's the achievement and it's the whole problem. Three or four people are walking around with a version of March that he gave them, and every one of those versions is going to have to survive contact with somebody else's. Not this month. Probably not this year.\n\nThe longer it holds, the more it'll cost to say."
     },
     {
       "when": {
         "trajectory": "in_it"
       },
-      "text": "[PLACEHOLDER] It is not a story about a bag. It is a story about a Wednesday."
+      "text": "It's not a story about a bag.\n\nIt's a story about nine seconds on a Tuesday, and about being the one nobody looked at right up until they did. He's got money coming in and a place to be on Saturdays and somebody's phone with his actual name in it.\n\nNone of that is a trap. All of it narrows what next year can look like, and he won't feel it narrowing."
     },
     {
       "when": {
-        "paid_it_back": true
+        "trajectory": "the_one_they_call"
       },
-      "text": "[PLACEHOLDER] You closed it yourself, and nobody will ever know."
+      "text": "People come to him now.\n\nHe earned that on a Wednesday with forty quid he didn't have and on a Sunday in somebody's kitchen, and it's real — there are three or four people who'd answer for him and mean it.\n\nWhich means every one of their problems is now slightly his. One day he's going to not pick up, and somebody is going to experience that as a betrayal, and they won't be entirely wrong."
+    },
+    {
+      "when": {
+        "trajectory": "useful"
+      },
+      "text": "He's good at this. That's the thing nobody expected, including him.\n\nMoney, access, people who'd vouch — all of it came from being the one who sorts things out, and it works, and he likes that it works.\n\nWhat he hasn't noticed yet is that every one of those relationships is about what he does. At some point he'll have to ask for something back, and find out which of them were about him."
+    },
+    {
+      "when": {
+        "trajectory": "kept_both"
+      },
+      "text": "He didn't drop anybody.\n\nJay's still there and so is Tunde, and holding both of them cost more than either would have on its own — the week was longer for him than it was for anyone else in it and nobody knows that.\n\nIt isn't sustainable and it hasn't stopped. Both of them are going to keep asking, and neither of them has any idea they're asking somebody who is already at the limit."
+    },
+    {
+      "when": {
+        "trajectory": "moving"
+      },
+      "text": "There's a route now. September is real rather than a thing people say.\n\nWhat it cost is small and permanent: he's around less, he says no more, and the block has noticed and adjusted. Nobody's angry. They've just stopped including him in the first round of asking.\n\nHe'll have to prove the new direction was worth it to people who aren't going to see any of it."
+    },
+    {
+      "when": {
+        "trajectory": "on_your_own"
+      },
+      "text": "He said what he could do and what he couldn't, every time, out loud.\n\nHe was right nearly every time as well — you could go through the week day by day and find the sentence where he was right.\n\nThere's nobody left to say it to. The line between not needing help and not letting anyone give you any is somewhere behind him, and he's going to have to find it going backwards."
     },
     {
       "when": {
         "trajectory": "invisible"
       },
-      "text": "[PLACEHOLDER] A quiet week is a real outcome."
+      "text": "Nobody looks at him again.\n\nThat's what he had on the Monday before any of it, and it took a week of saying no to people — including the ones being kind — to get it back. It's worth exactly what it was worth to somebody at midnight on Tuesday.\n\nHe's the only one who knows it cost anything. If he leaves it much longer, it stops being a week he had and starts being who he is."
     },
     {
       "when": {
-        "trajectory": "carrying_it"
+        "dayFourSaid": "true",
+        "kept_the_receipt": true
       },
-      "text": "[PLACEHOLDER] You are still holding it."
+      "text": "He didn't solve any of it.\n\nWhat he did was say one true thing on a landing at half eleven when a version would have been easier, and put a limit on something at midnight before he knew it mattered. Nobody thanked him for either.\n\nSome people are still disappointed and they're entitled to be. The next honest thing is going to be available on an ordinary day, not in a crisis, and that's the one that's hard."
     }
   ],
   "defaultFinalMessage": {
-    "text": "[PLACEHOLDER] Seven days."
+    "text": "Seven days.\n\nNothing landed and nothing broke. He's got roughly what he had on the Monday, minus a bit of money and plus the specific knowledge of what he does when four people want the same afternoon.\n\nNone of it is finished. Tuesday is training, Wednesday is an answer somebody's waiting for, and the deposit was yesterday. It just carries on from here, which is what most weeks do."
   },
-  "testPlaythroughs": []
+  "testPlaythroughs": [
+    {
+      "name": "1 — in_it via exposure: took the cousin, high heat",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_lie",
+        "s1d1_walkway:d1_jay_quiet",
+        "s1d1_jay_quiet:continue",
+        "s1d1_close:d1_yes",
+        "s1d2_open:continue",
+        "s1d2_bag:d2_up",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_number",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_askwhy",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_take",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_kitchen",
+        "s1d4_kitchen:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_lied",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_stall:continue",
+        "s1d5_tunde_missed:d5_t_reason",
+        "s1d5_dee:d5_took",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_covered",
+        "s1d6_covered:continue",
+        "s1d6_late:d6_fine",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_out"
+      ],
+      "expect": "dayFive=took with exposureBand=exposed fires rule 0."
+    },
+    {
+      "name": "2 — in_it via standing: took the cousin and worked the unit",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_truth",
+        "s1d1_walkway:d1_jay_asked",
+        "s1d1_jay_asked:continue",
+        "s1d1_close:d1_nothing",
+        "s1d2_open:continue",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_present",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_flat",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_take",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_photos",
+        "s1d4_photos:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_true",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_stall:continue",
+        "s1d5_tunde_missed:d5_t_truth",
+        "s1d5_dee:d5_took",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_sat",
+        "s1d6_sat:continue",
+        "s1d6_late:d6_part",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_dee"
+      ],
+      "expect": "standing=known via the unit; rule 1 fires where rule 0 does not."
+    },
+    {
+      "name": "3 — carrying_it via Sunday: covered, and lied on Tuesday",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_lie",
+        "s1d1_walkway:d1_cage",
+        "s1d1_cage:continue",
+        "s1d1_close:d1_nothing",
+        "s1d2_open:continue",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_decline",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_flat",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_decline",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_balcony",
+        "s1d4_balcony:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_silent",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_trial:continue",
+        "s1d5_tunde_went:d5_t_hedge",
+        "s1d5_dee:d5_declined",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_covered",
+        "s1d6_covered:continue",
+        "s1d6_late:d6_fine",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_out"
+      ],
+      "expect": "Rule 2: daySixAct=covered + lied_to_mum from Day 1. Five days apart."
+    },
+    {
+      "name": "4 — carrying_it via Friday/Saturday: lied to Jay, missed the trial",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_manage",
+        "s1d1_walkway:d1_jay_quiet",
+        "s1d1_jay_quiet:continue",
+        "s1d1_close:d1_yes",
+        "s1d2_open:continue",
+        "s1d2_bag:d2_down",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_present",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_flat",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_take",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_kitchen",
+        "s1d4_kitchen:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_lied",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_stall:continue",
+        "s1d5_tunde_missed:d5_t_reason",
+        "s1d5_dee:d5_declined",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_mum",
+        "s1d6_mum:continue",
+        "s1d6_late:d6_part",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_jay"
+      ],
+      "expect": "Rule 3: dayFourSaid=lied + missed_training. Two days, two relationships."
+    },
+    {
+      "name": "5 — the_one_they_call via credit: gave Jay the forty, fronted on Sunday",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_truth",
+        "s1d1_walkway:d1_jay_asked",
+        "s1d1_jay_asked:continue",
+        "s1d1_close:d1_yes",
+        "s1d2_open:continue",
+        "s1d2_bag:d2_down",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_money",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_flat",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_take",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_kitchen",
+        "s1d4_kitchen:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_true",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_stall:continue",
+        "s1d5_tunde_missed:d5_t_truth",
+        "s1d5_dee:d5_took",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_fronted",
+        "s1d6_fronted:continue",
+        "s1d6_late:d6_all",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_amara"
+      ],
+      "expect": "credit 2 +1 (Wed) +1 (Sun) = 4 -> owed. Rule 4. The only credit route that also fronts."
+    },
+    {
+      "name": "6 — the_one_they_call via reputation: visible Thu, present Fri, told her Sun",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_truth",
+        "s1d1_walkway:d1_jay_asked",
+        "s1d1_jay_asked:continue",
+        "s1d1_close:d1_yes",
+        "s1d2_open:continue",
+        "s1d2_bag:d2_down",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_money",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_askwhy",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_take",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_kitchen",
+        "s1d4_kitchen:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_true",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_stall:continue",
+        "s1d5_tunde_missed:d5_t_truth",
+        "s1d5_dee:d5_took",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_fronted",
+        "s1d6_fronted:continue",
+        "s1d6_late:d6_all",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_amara"
+      ],
+      "expect": "rep 3 +2 (Thu) +1 (Fri) +2 (Sun) = 8 -> known. Rule 5 is available; rule 4 claims it first."
+    },
+    {
+      "name": "7 — useful: gave Jay the forty, sat with him on Sunday",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_truth",
+        "s1d1_walkway:d1_jay_asked",
+        "s1d1_jay_asked:continue",
+        "s1d1_close:d1_yes",
+        "s1d2_open:continue",
+        "s1d2_bag:d2_down",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_money",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_flat",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_take",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_kitchen",
+        "s1d4_kitchen:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_true",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_stall:continue",
+        "s1d5_tunde_missed:d5_t_truth",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_sat",
+        "s1d6_sat:continue",
+        "s1d6_late:d6_all",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_dee"
+      ],
+      "expect": "credit 2 +1 (Wed) +1 (Sun sat) = 4 -> owed, with daySixAct=sat so rules 4 and 5 do not fire. This is the route the d6_sat correction exists to create."
+    },
+    {
+      "name": "8 — kept_both: turned up for Jay and Tunde all week",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_truth",
+        "s1d1_walkway:d1_jay_asked",
+        "s1d1_jay_asked:continue",
+        "s1d1_close:d1_nothing",
+        "s1d2_open:continue",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_money",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_flat",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_decline",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_balcony",
+        "s1d4_balcony:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_true",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_trial:continue",
+        "s1d5_tunde_went:d5_t_commit",
+        "s1d5_dee:d5_limited",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_sat",
+        "s1d6_sat:continue",
+        "s1d6_late:d6_all",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_man"
+      ],
+      "expect": "jayBand tight and tundeBand tight. Rule 7."
+    },
+    {
+      "name": "9 — moving: the legitimate route, and the distance it costs",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_manage",
+        "s1d1_walkway:d1_cage",
+        "s1d1_cage:continue",
+        "s1d1_close:d1_nothing",
+        "s1d2_open:continue",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_decline",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_flat",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_decline",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_balcony",
+        "s1d4_balcony:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_silent",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_trial:continue",
+        "s1d5_tunde_went:d5_t_commit",
+        "s1d5_dee:d5_limited",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_mum",
+        "s1d6_mum:continue",
+        "s1d6_late:d6_part",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_man"
+      ],
+      "expect": "disciplineBand held + tundeBand tight, with Jay not tight. Rule 9."
+    },
+    {
+      "name": "10 — on_your_own: three boundaries, and the cost",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_truth",
+        "s1d1_walkway:d1_neither",
+        "s1d1_alone:continue",
+        "s1d1_close:d1_ask",
+        "s1d1_asked:d1a_leave",
+        "s1d2_open:continue",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_tunde",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_flat",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_take",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_stay",
+        "s1d4_stay:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_true",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_stall:continue",
+        "s1d5_tunde_missed:d5_t_move",
+        "s1d5_dee:d5_declined",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_mum",
+        "s1d6_mum:continue",
+        "s1d6_late:d6_part",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_out"
+      ],
+      "expect": "refused_the_offer + creditBand owing (two Tunde asks). Rule 10."
+    },
+    {
+      "name": "11 — invisible: stayed in the front room, name never travelled",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_lie",
+        "s1d1_walkway:d1_neither",
+        "s1d1_alone:continue",
+        "s1d1_close:d1_yes",
+        "s1d2_open:continue",
+        "s1d2_bag:d2_down",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_money",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_flat",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_take",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_stay",
+        "s1d4_stay:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_true",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_stall:continue",
+        "s1d5_tunde_missed:d5_t_reason",
+        "s1d5_dee:d5_limited",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_covered",
+        "s1d6_covered:continue",
+        "s1d6_late:d6_fine",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_out"
+      ],
+      "expect": "dayFourWent=nowhere with repBand quiet. Rule 12 — reachable only after nobody->quiet."
+    },
+    {
+      "name": "12 — holding, earned: one true thing on a landing, one limit at midnight",
+      "path": [
+        "s1d1_open:continue",
+        "s1d1_kitchen:d1_manage",
+        "s1d1_walkway:d1_jay_quiet",
+        "s1d1_jay_quiet:continue",
+        "s1d1_close:d1_limit",
+        "s1d2_open:continue",
+        "s1d2_bag:d2_down",
+        "s1d2_walkway:continue",
+        "s1d2_run:continue",
+        "s1d2_ask:d2_present",
+        "s1d2_plate:continue",
+        "s1d2_close:continue",
+        "s1d3_open:continue",
+        "s1d3_tunde:continue",
+        "s1d3_stop:d3_kai",
+        "s1d3_after:continue",
+        "s1d3_dee:d3_take",
+        "s1d3_close:continue",
+        "s1d4_open:continue",
+        "s1d4_frontroom:d4_kitchen",
+        "s1d4_kitchen:continue",
+        "s1d4_speech:continue",
+        "s1d4_landing:d4_true",
+        "s1d4_close:continue",
+        "s1d5_open:continue",
+        "s1d5_stall:continue",
+        "s1d5_tunde_missed:d5_t_reason",
+        "s1d5_dee:d5_limited",
+        "s1d5_close:continue",
+        "s1d6_open:continue",
+        "s1d6_calls:continue",
+        "s1d6_afternoon:d6_covered",
+        "s1d6_covered:continue",
+        "s1d6_late:d6_fine",
+        "s1d6_close:continue",
+        "s1d7_open:continue",
+        "s1d7_situation:continue",
+        "s1d7_action:d7_kai"
+      ],
+      "expect": "Rule 13: dayFourSaid=true + kept_the_receipt, with no earlier rule matching. Earned holding — its finalMessage is gated on the evidence, never on trajectory."
+    }
+  ]
 }
