@@ -167,6 +167,10 @@ function publicNode(nodeId, node, state, content) {
 
   return {
     nodeId,
+    // Authored day, projected so the client can detect a day BOUNDARY — the
+    // only moment a run is persisted. Null for scenarios that aren't
+    // day-structured, which is a normal state, not an error. SPEC-08.
+    day: typeof node.day === "number" ? node.day : null,
     message: scene.message ?? resolved.message ?? null,
     thread: resolved.thread ?? null,
     presentation: node.presentation || null,
