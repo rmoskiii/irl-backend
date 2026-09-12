@@ -19,6 +19,8 @@ ROOT = pathlib.Path(__file__).resolve().parent
 SVG = "http://www.w3.org/2000/svg"
 ET.register_namespace("", SVG)
 
+URL_REF_RE = re.compile(r"url\(#([^)\s]+)\)")
+
 
 def load(p):
     return ET.parse(p).getroot()
@@ -45,6 +47,69 @@ def defs_children(root):
 def style_blocks(root):
     return [c.text or "" for d in root.findall(f"{{{SVG}}}defs")
             for c in d if c.tag.endswith("style")]
+
+
+def filter_time(root, time):
+    """D1: keep elements whose `data-time` matches, and everything untagged.
+
+    One rule, and it is the whole of the time mechanism on the asset side:
+
+        an element carrying `data-time` is included ONLY when the resolved time
+        matches its value; an element with no `data-time` is ALWAYS included.
+
+    Spec v1.0 §6.2 always described time as "a lighting variant, not a separate
+    asset". The resolver never implemented it, so a room at two hours became two
+    full assets - scene.desk_evening and scene.desk_day are one desk drawn twice.
+    This is the other half of that fix.
+
+    The rule covers more than atmosphere. A lit window, a lamp glow, an open
+    curtain, a strip light and a party's dressing are all facts about the hour
+    rather than about the room, and all of them are just tagged elements.
+
+    Scoped to the ENVIRONMENT. A character, prop or vignette is not time-varying:
+    a wardrobe is a fact about the person and a prop is a fact about the scene's
+    props list, both of which the render block already decides.
+
+    Returns the list of removed element identifiers, for the composer log. An
+    existing asset carries no `data-time` at all, so this is a no-op on every
+    frame that exists today and Level 2 output stays byte-identical."""
+    if not time:
+        return []
+    removed = []
+
+    def walk(parent):
+        for child in list(parent):
+            t = child.get("data-time")
+            if t is not None and t != time:
+                removed.append(child.get("id") or child.tag.split("}")[-1])
+                parent.remove(child)
+            else:
+                walk(child)
+
+    walk(root)
+    return removed
+
+
+def dangling_refs(out):
+    """Every url(#id) in the composed frame must resolve.
+
+    Filtering can remove a <defs> child that a surviving element still points
+    at - a gradient used only by the night keylight, say. The result is not a
+    crash; it is a shape that renders with no paint, which passes inspection at
+    1600px and is invisible until someone looks at the phone. Checked here so a
+    dropped branch fails loudly at compose time instead."""
+    ids = {e.get("id") for e in out.iter() if e.get("id")}
+    missing = set()
+    for e in out.iter():
+        for v in e.attrib.values():
+            for m in URL_REF_RE.finditer(v):
+                if m.group(1) not in ids:
+                    missing.add(m.group(1))
+        if e.text and "url(#" in e.text:
+            for m in URL_REF_RE.finditer(e.text):
+                if m.group(1) not in ids:
+                    missing.add(m.group(1))
+    return sorted(missing)
 
 
 def render_blocks_path():
@@ -116,7 +181,7 @@ def build_bubbles(A, fr, scene_cfg, node):
     speaker_slot = spk["slot"]
     # a scene may override where bubbles sit; the free area is a fact about the room
     place = (scene_cfg.get("bubblePlacement") or {}).get(speaker_slot) \
-        or cfg["placement"].get(speaker_slot)
+            or cfg["placement"].get(speaker_slot)
     if place is None:
         raise SystemExit(f"bubbles: no placement defined for slot '{speaker_slot}'")
 
@@ -278,6 +343,14 @@ def main(frame_id, with_bubbles=False):
     scene_id = fr["scene"]
     scene_cfg = A["scenes"][scene_id]
     env = load(ROOT / "environments" / f"{scene_id}.svg")
+
+    # D1: the frame's `time` has been in anchors.json since 2A and was read by
+    # nothing. It is the contract value the environment is filtered against, and
+    # it matches render_blocks.json -> <node> -> scene.time by construction.
+    # A frame with no `time` filters nothing, which is the pre-D1 behaviour.
+    frame_time = fr.get("time")
+    dropped = filter_time(env, frame_time)
+
     layers = {}
     for name in ("background", "architecture", "environmental_detail",
                  "furniture", "foreground"):
@@ -403,6 +476,14 @@ def main(frame_id, with_bubbles=False):
         if gb is not None:
             out.append(gb)
 
+    missing = dangling_refs(out)
+    if missing:
+        raise SystemExit(
+            f"{frame_id}: {len(missing)} unresolved url(#...) reference(s) after "
+            f"time filtering at time={frame_time!r}: {missing}. A def used by a "
+            f"surviving element was dropped with its time branch. Move the def "
+            f"out of the tagged group, or tag the consumer to match.")
+
     dest = ROOT / "frames" / f"{frame_id}.svg"
     dest.parent.mkdir(exist_ok=True)
     ET.ElementTree(out).write(dest, encoding="unicode", xml_declaration=False)
@@ -413,6 +494,9 @@ def main(frame_id, with_bubbles=False):
         encoding="utf-8")
     print(f"composed {dest.relative_to(ROOT)}")
     print(f"  layers: {[n for n in A['layerOrder'] if layers.get(n)]}")
+    if frame_time:
+        print(f"  time:   {frame_time}"
+              + (f" — dropped {len(dropped)}: {dropped}" if dropped else " — dropped 0"))
     return 0
 
 
