@@ -9,11 +9,33 @@ const { NoPlacementForSlot, NoSpeakerTarget, MaxPerNodeExceeded } = require('./e
  *  carried - asset base, register, wardrobe, prop anchor - has to be derived
  *  from the block plus the contract. Level 1 fixtures assert exactly this.
  */
+
+/** anchors.character is DEPRECATED as a global (anchors.json says so in its own
+ *  note) and holds figure_a's contract: headSocket y=210. Reading it for every
+ *  base placed figure_b and figure_d heads 14px low, because their socket is at
+ *  y=196. basePoint is 210,800 on every figure so `transform` was unaffected and
+ *  the error only ever surfaced in headAnchor - which is what a bubble tail aims
+ *  at. compose_frame.py has done this lookup correctly since 2B; the runtime
+ *  never did, so the composed reference and the served plan disagreed for every
+ *  figure_b character.
+ *
+ *  The global stays as the fallback: a base with no anchors.characters entry
+ *  behaves exactly as it did before. */
+function contractFor(A, base) {
+    return (A.characters && A.characters[base]) || A.character;
+}
+
 function resolvePlan(block, contract, opts = {}) {
     const { anchors: A, registries: R } = contract;
     if (block.mode === 'montage') return montagePlan(block, A);
 
     const sceneId = block.scene.id;
+    // D1: the render block has always carried scene.time; the resolver simply
+    // computed it from default_time and nothing downstream read it. The plan now
+    // carries it through, because the composer filters elements on `data-time`
+    // and the client cannot re-derive the value - the mapping is server-side.
+    // Shape change to the PLAN only. The render block is untouched.
+    const sceneTime = block.scene.time;
     const scene = A.scenes[sceneId];
     const turned = block.framing === 'turned';
 
@@ -24,7 +46,7 @@ function resolvePlan(block, contract, opts = {}) {
             const base = turned ? reg.turned : reg.base;
             const register = turned ? 'rear' : c.register;
             const slot = scene.slots[c.slot];
-            const cc = A.character;
+            const cc = contractFor(A, base);
             return {
                 id: c.id, base, slot: c.slot, register, wardrobe: c.wardrobe,
                 transform: `translate(${slot.x - cc.basePoint.x},${slot.y - cc.basePoint.y})`,
@@ -63,22 +85,27 @@ function resolvePlan(block, contract, opts = {}) {
         });
     }
 
+    // every environment layer carries the resolved time, so a consumer that
+    // reads one layer at a time never has to reach back up to the plan root
+    const envLayer = l => ({ layer: l, source: `environments/${sceneId}.svg`,
+        group: l, time: sceneTime });
+
     const layers = [];
     for (const l of ['background', 'architecture', 'environmental_detail'])
-        layers.push({ layer: l, source: `environments/${sceneId}.svg`, group: l });
+        layers.push(envLayer(l));
     for (const l of ['character_back', 'character_body', 'character_clothing', 'character_head'])
         for (const c of cast) layers.push({ layer: l, cast: c.id, transform: c.transform });
-    layers.push({ layer: 'furniture', source: `environments/${sceneId}.svg`, group: 'furniture' });
+    layers.push(envLayer('furniture'));
     for (const p of props)
         layers.push({ layer: 'prop', id: p.id, anchor: p.anchor, source: p.source, transform: p.transform });
     for (const l of ['character_contact', 'character_front'])
         for (const c of cast) layers.push({ layer: l, cast: c.id, transform: c.transform });
-    layers.push({ layer: 'foreground', source: `environments/${sceneId}.svg`, group: 'foreground' });
+    layers.push(envLayer('foreground'));
 
     const bubbles = resolveBubbles(block, cast, scene, A, opts.nodeId);
     if (bubbles) layers.push(bubbles);
 
-    return { canvas: A.canvas, scene: sceneId, mode: block.mode,
+    return { canvas: A.canvas, scene: sceneId, time: sceneTime, mode: block.mode,
         framing: block.framing, cast, props, layers, unplaceableProps };
 }
 
