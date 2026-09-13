@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "note": "Scenario-agnostic. Lives outside scenario JSON. Spec v1.0 \u00a76. Career district (char.ray, char.dana, five scenes, two props, three vignettes) added without forking: one registry, two districts.",
+  "note": "Scenario-agnostic. Lives outside scenario JSON. Spec v1.0 §6. Career district (char.ray, char.dana, five scenes, two props, three vignettes) added without forking: one registry, two districts.",
   "slots": [
     "left",
     "centre",
@@ -23,7 +23,7 @@
     "messages",
     "none"
   ],
-  "modesNote": "'none' is an INTENTIONAL blank: the node is a scene by presentation type but deliberately carries no artwork. It resolves to a null render block, the same shape 'messages' produces, and is set only through an explicit modeOverrides entry \u2014 never inferred from a missing visual block, which already means 'infer from location'. Added for the_instruction/escalate_bare, whose testPlaythrough declares the absence deliberate.",
+  "modesNote": "'none' is an INTENTIONAL blank: the node is a scene by presentation type but deliberately carries no artwork. It resolves to a null render block, the same shape 'messages' produces, and is set only through an explicit modeOverrides entry — never inferred from a missing visual block, which already means 'infer from location'. Added for the_instruction/escalate_bare, whose testPlaythrough declares the absence deliberate.",
   "characters": {
     "char.jessica": {
       "name": "Jessica",
@@ -80,7 +80,7 @@
         "work",
         "work_coat"
       ],
-      "note": "Ray Okonjo, manager. figure_c reuses figure_a's geometry contract only \u2014 basePoint, headSocket, neckSpan. Face, hair, proportion and wardrobe are drawn fresh. No rear figure: nothing in The Instruction frames over a shoulder and the player is never drawn."
+      "note": "Ray Okonjo, manager. figure_c reuses figure_a's geometry contract only — basePoint, headSocket, neckSpan. Face, hair, proportion and wardrobe are drawn fresh. No rear figure: nothing in The Instruction frames over a shoulder and the player is never drawn."
     },
     "char.dana": {
       "name": "Dana",
@@ -96,6 +96,106 @@
         "work_formal"
       ],
       "note": "Dana Whitfield, engagement lead. figure_d reuses figure_b's geometry contract only. Two registers because she appears in two nodes and one of them is an alternative to the other; a third would be an orphan under validator rule 8."
+    },
+    "char.bola": {
+      "name": "Bola",
+      "base": "figure_e",
+      "turned": null,
+      "palette": "neighbourhood",
+      "defaultWardrobe": "coat",
+      "registers": [
+        "tired",
+        "waiting",
+        "at_ease",
+        "direct"
+      ],
+      "wardrobe": [
+        "coat",
+        "party",
+        "home_casual"
+      ],
+      "note": "Mum. figure_e reuses figure_a's geometry contract only - basePoint, headSocket, neckSpan. Face, hair, proportion and wardrobe drawn fresh. No rear: no authored node frames over her shoulder. Four registers carry eight authored moods."
+    },
+    "char.jay": {
+      "name": "Jay",
+      "base": "figure_f",
+      "turned": "figure_f_rear",
+      "palette": "neighbourhood",
+      "defaultWardrobe": "day",
+      "registers": [
+        "easy",
+        "off",
+        "exposed",
+        "closed",
+        "open"
+      ],
+      "wardrobe": [
+        "day",
+        "party"
+      ],
+      "note": "Oldest friend. figure_f reuses figure_b's geometry contract. The only rear figure in the district: he walks ahead in s1d1_jay_asked and s1d1_jay_quiet, which are alternatives to each other rather than consecutive, so both resolving to the same rear frame is correct - a player sees one or the other, never both."
+    },
+    "char.tunde": {
+      "name": "Tunde",
+      "base": "figure_g",
+      "turned": null,
+      "palette": "neighbourhood",
+      "defaultWardrobe": "training",
+      "registers": [
+        "open",
+        "direct",
+        "unreadable"
+      ],
+      "wardrobe": [
+        "training",
+        "day",
+        "party"
+      ],
+      "note": "The legitimate route. figure_g on figure_a's contract, second body on it after figure_e. A working athlete, not a model. figure_g_rear deferred (D4): no authored node requires the framing."
+    },
+    "char.dee": {
+      "name": "Dee",
+      "base": "figure_h",
+      "turned": null,
+      "palette": "neighbourhood",
+      "defaultWardrobe": "day",
+      "registers": [
+        "easy",
+        "exposed"
+      ],
+      "wardrobe": [
+        "day"
+      ],
+      "note": "figure_h on figure_a's contract. Nothing menacing in the build - if he reads as a threat the scenario collapses on Day 3. `exposed` is the cousin ask, the only time he is not comfortable."
+    },
+    "char.kai": {
+      "name": "Kai",
+      "base": "figure_i",
+      "turned": null,
+      "palette": "neighbourhood",
+      "defaultWardrobe": "day",
+      "registers": [
+        "performing"
+      ],
+      "wardrobe": [
+        "day",
+        "party"
+      ],
+      "note": "Friction. figure_i on figure_b's contract. ONE register: both his on-frame nodes declare mood 'performing' and nothing else. A second would be an orphan under validator rule 8, and inventing a mood to feed it would assert what the prose has not established."
+    },
+    "char.amara": {
+      "name": "Amara",
+      "base": "figure_j",
+      "turned": null,
+      "palette": "neighbourhood",
+      "defaultWardrobe": "party",
+      "registers": [
+        "reserved"
+      ],
+      "wardrobe": [
+        "party"
+      ],
+      "note": "The outside read. figure_j on figure_b's contract. One on-frame node, s1d4_photos. Her other mood, 'flat', is on a messages node and draws nothing."
     }
   },
   "defaultWardrobeNote": "resolve.py hard-coded 'home_casual' as the wardrobe floor, which no Career character has. Reading it per character removes fifteen otherwise-identical nodeOverrides. The two Neighbourhood entries restate the existing value, so The Secret's render blocks are unchanged.",
@@ -159,18 +259,93 @@
         "day"
       ],
       "default_time": "day"
+    },
+    "scene.block": {
+      "times": [
+        "day",
+        "night"
+      ],
+      "default_time": "night",
+      "note": "16 nodes - the district anchor. Absorbs the landing nodes (D2), the shops, the wall and the long walk home: one deck-access exterior, doors one side and the drop the other. The walkway parapet is the occluding surface at y=600 and doubles as the wall in s1d6_sat."
+    },
+    "scene.home_kitchen": {
+      "times": [
+        "day",
+        "evening"
+      ],
+      "default_time": "evening",
+      "note": "8 nodes, highest interior traffic. Five evening, three morning."
+    },
+    "scene.jay_frontroom": {
+      "times": [
+        "night"
+      ],
+      "default_time": "night",
+      "note": "Day 4 only. Sofa back plus sideboard, both solid to the floor - legs are the 2B.6 P0."
+    },
+    "scene.jay_kitchen": {
+      "times": [
+        "day",
+        "night"
+      ],
+      "default_time": "night",
+      "note": "Two nodes whose branches differ in DRESSING as well as light: Friday's party against Sunday afternoon. The one scene where data-time carries more than atmosphere."
+    },
+    "scene.bedroom": {
+      "times": [
+        "day",
+        "night"
+      ],
+      "default_time": "night",
+      "note": "Both nodes empty-cast, so this is the only scene exempt from the y=600 occlusion rule - no figure, no hands."
+    },
+    "scene.cage": {
+      "times": [
+        "day",
+        "night"
+      ],
+      "default_time": "night",
+      "note": "Floodlit Tuesday, daylight trial Saturday. The mesh fence is transparent and does not occlude: use the kerb wall or kit bags."
+    },
+    "scene.jay_hallway": {
+      "times": [
+        "night"
+      ],
+      "default_time": "night",
+      "note": "The photographs. HIGHEST occlusion risk in the set - a hallway has no natural waist-height solid. Use a built-in; a console table is exactly what failed in The Secret."
+    },
+    "scene.jay_balcony": {
+      "times": [
+        "night"
+      ],
+      "default_time": "night",
+      "note": "The threshold. Concrete parapet, NOT railings - railings fail continuous occlusion by construction."
+    },
+    "scene.corridor": {
+      "times": [
+        "day"
+      ],
+      "default_time": "day",
+      "note": "College, Day 3. Lockers or a fixed bench, boxed to the floor."
+    },
+    "scene.bus_stop": {
+      "times": [
+        "day"
+      ],
+      "default_time": "day",
+      "note": "Day 2's decision. The shelter's lower panel is the occluder."
     }
   },
-  "scenesNote": "resolve.py reads scene_def['default_time'] and offers no per-node override, so a room seen at two times is two scene tokens and two assets. desk_evening carries Act 1 (Wednesday, half past eight) and desk_day carries the Friday afternoon reply \u2014 the node the whole scenario resolves through.",
+  "scenesNote": "D1: resolve.py now reads nodeOverrides.<id>.time first and falls back to default_time, so a room at two hours is ONE token with two atmosphere branches. The Career pair desk_evening/desk_day predates that and can collapse on a later approved pass - not this one. Streets declares five dual-time scenes against a SPEC-13 budget of ten tokens.",
   "vignettes": {
     "vig.hospital_night": {
-      "note": "establish beat 1 \u2014 2:00 AM"
+      "note": "establish beat 1 — 2:00 AM"
     },
     "vig.flat_curtained": {
-      "note": "establish beat 2 \u2014 the week after"
+      "note": "establish beat 2 — the week after"
     },
     "vig.table_three": {
-      "note": "establish beat 3 \u2014 player POV, third glass in foreground (\u00a711.2)"
+      "note": "establish beat 3 — player POV, third glass in foreground (§11.2)"
     },
     "vig.group_chat": {
       "note": "act4_avoidant_proposal panel 1"
@@ -182,13 +357,40 @@
       "note": "act4_avoidant_proposal panel 3"
     },
     "vig.call_without_you": {
-      "note": "ask2_refuse_response panel 1 \u2014 a Monday client call, seen from outside the room"
+      "note": "ask2_refuse_response panel 1 — a Monday client call, seen from outside the room"
     },
     "vig.kitchen_pleasantry": {
-      "note": "ask2_refuse_response panel 2 \u2014 the break-out kitchen, two people, nobody asking what you're working on"
+      "note": "ask2_refuse_response panel 2 — the break-out kitchen, two people, nobody asking what you're working on"
     },
     "vig.june_two_seats": {
-      "note": "ask2_refuse_response panel 3 \u2014 two seats taken on the June phase"
+      "note": "ask2_refuse_response panel 3 — two seats taken on the June phase"
+    },
+    "vig.bus_window": {
+      "note": "s1d2_run panel 1"
+    },
+    "vig.top_deck_two_seats": {
+      "note": "s1d2_run panel 2"
+    },
+    "vig.aunt_door": {
+      "note": "s1d2_run panel 3"
+    },
+    "vig.unit_ten": {
+      "note": "s1d5_stall panel 1"
+    },
+    "vig.card_reader": {
+      "note": "s1d5_stall panel 2"
+    },
+    "vig.eighty_in_twenties": {
+      "note": "s1d5_stall panel 3 - the only counted money in the scenario. A prose fact, not a state read, but the panel to check against scoring_keys_forbidden."
+    },
+    "vig.sister_frontroom": {
+      "note": "s1d6_mum panel 1"
+    },
+    "vig.tea_going_cold": {
+      "note": "s1d6_mum panel 2"
+    },
+    "vig.phone_facedown_lit": {
+      "note": "s1d6_mum panel 3"
     }
   },
   "props": {
@@ -204,33 +406,89 @@
     "prop.cigarette": {},
     "prop.phone": {},
     "prop.laptop_open": {},
-    "prop.notepad": {}
+    "prop.notepad": {},
+    "prop.letter_facedown": {},
+    "prop.keys": {},
+    "prop.food_container": {},
+    "prop.card": {},
+    "prop.plate_held": {},
+    "prop.coats_pile": {},
+    "prop.drink_untouched": {},
+    "prop.shoes_in_hand": {},
+    "prop.mug_pair": {},
+    "prop.note": {}
   },
   "propsNote": "Two new props for the whole Career scenario. The prose places only two objects in a room and moves them between scenes; everything else the district needs is environment furniture, which the scene owns.",
   "scoring_keys_forbidden": [
-    "jessicaLoyalty",
     "alexLoyalty",
-    "savvy",
-    "streetSmarts",
-    "integrity",
-    "loyaltyBand",
-    "jessicaStanding",
     "alexStanding",
-    "complicity",
-    "record",
-    "pushedBack",
-    "managerStance",
     "alteredDate",
-    "signedQA",
-    "emailedClient",
-    "ownedIt",
-    "redirectSpent",
-    "escalated",
-    "auditResponse",
+    "amaraBand",
+    "amaraStrain",
+    "amaraTrust",
+    "answered_mum",
+    "apologised_to_kai",
     "auditReply",
-    "exposureBand",
-    "recordBand",
+    "auditResponse",
+    "complicity",
     "complicityBand",
-    "reviewOutcome"
-  ]
+    "credit",
+    "creditBand",
+    "dayFive",
+    "dayFourSaid",
+    "dayFourWent",
+    "daySixAct",
+    "deeBand",
+    "deeStrain",
+    "deeTrust",
+    "discipline",
+    "disciplineBand",
+    "emailedClient",
+    "escalated",
+    "exposureBand",
+    "heat",
+    "heatBand",
+    "helped_jay",
+    "integrity",
+    "jayBand",
+    "jayStrain",
+    "jayTrust",
+    "jessicaLoyalty",
+    "jessicaStanding",
+    "kaiBand",
+    "kaiStrain",
+    "kept_the_receipt",
+    "lied_to_mum",
+    "loyaltyBand",
+    "managerStance",
+    "missed_training",
+    "money",
+    "moneyBand",
+    "mumBand",
+    "mumStrain",
+    "mumTrust",
+    "ownedIt",
+    "paid_it_back",
+    "pushedBack",
+    "record",
+    "recordBand",
+    "redirectSpent",
+    "refused_the_offer",
+    "rep",
+    "repBand",
+    "reviewOutcome",
+    "savvy",
+    "signedQA",
+    "standing",
+    "stayed_out",
+    "stop_was_filmed",
+    "streetSmarts",
+    "told_jay_about_dee",
+    "trajectory",
+    "tundeBand",
+    "tundeStrain",
+    "tundeTrust",
+    "walked_away"
+  ],
+  "scoring_keys_forbiddenNote": "Union across all three districts. The Streets contributes 33 state keys, 12 derived bands, 3 dimensions and the outcome key. Without them negative_test.py passes against mapping.the_streets.json by having nothing to catch - a green firewall that is switched off. 'exposureBand', 'savvy', 'streetSmarts' and 'integrity' were already present from the other two districts; a denylist takes the collision harmlessly."
 }

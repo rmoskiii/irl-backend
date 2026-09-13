@@ -1,39 +1,421 @@
 {
   "schemaVersion": 1,
   "scenario": "the_streets",
-  "note": "PHASE 2 SKELETON. Mode and text-layer policy only. No moodMap, settingTokens, propSynonyms or characterIds yet: registries.json carries no Streets assets, and mapping prose to tokens that do not exist would be inventing assets to make the skeleton look finished.",
-  "textLayer": "native",
-  "textLayerNote": "SPEC v1.1 SPEC-14. Bubbles OFF district-wide; native text is selectable, reflows and honours OS text size, which on 63 prose-led nodes for a 14-24 audience is an accessibility floor. Bubbles are opt-in per node via bubble_nodes.json, capped at 8, and none are claimed yet - that decision belongs with the first composed frames, not with the skeleton.",
-  "modeOverrides": {
-    "s1d1_close": "messages",
-    "s1d1_evening_alone": "messages",
-    "s1d4_none_1": "messages",
-    "s1d2_close": "absent",
-    "s1d3_close": "absent",
-    "s1d5_stairwell": "none",
-    "s1d6_open": "montage",
-    "s1d4_close": "montage",
-    "s1d7_situation": "remote"
+  "note": "The Streets, district Neighbourhood. Written from the built the_streets.json (51 nodes, 91 choices, contentRevision 1), not from the stale mapping.the_streets.json, which predates the V5 rewrite and references three node ids that no longer exist. Ten scene tokens, five dual-time, per the frozen 66-asset set. No textLayer: the district draws balloons, and which nodes get them is BubblePolicy's decision, not this file's.",
+  "characterIds": {
+    "Bola": "char.bola",
+    "Jay": "char.jay",
+    "Tunde": "char.tunde",
+    "Amara": "char.amara",
+    "Dee": "char.dee",
+    "Kai": "char.kai"
   },
-  "modeOverridesNote": "All six modes exercised. 'none' on s1d5_stairwell is the deliberate blank required by the safety rule: the Day 5 ask is named and answered, never depicted. It is a positive assertion of intentional absence, not an asset that failed to resolve.",
-  "exitBeats": {},
-  "montagePanels": {},
-  "propSynonyms": {},
-  "unrenderableProps": [],
-  "scoringKeysNote": "No entry in this file names a state, score or derived key. The firewall holds: registers resolve from authored mood only.",
-  "plannedScenes": {
-    "scene.jay_flat": {
-      "times": [
-        "evening"
-      ],
-      "default_time": "evening",
-      "usedBy": [
-        "day 2 - the plate",
-        "day 4 - the birthday"
-      ],
-      "status": "declared, not yet in registries.json, no asset",
-      "note": "One token, not two. registries.scenesNote: resolve.py reads scene_def['default_time'] with no per-node override, so a room seen at two times is two scene tokens and two assets. Day 2 and Day 4 are both evening in the same flat, so they share a single token and a single asset."
+  "characterIdsNote": "'Unknown number' sends two message threads and is deliberately absent here: an unmapped name resolves to no character, and both its nodes are messages mode, which draws nothing. The system cannot draw an anonymous person and the scenario declines to.",
+  "settingTokens": {},
+  "settingTokensNote": "Empty by construction. No node in the_streets.json carries a presentation.data.visual block, so the authored-setting path never runs and every scene resolves through locationTokens or an override.",
+  "locationTokens": [
+    [
+      "Jay's kitchen",
+      "scene.jay_kitchen"
+    ],
+    [
+      "The landing outside Jay's",
+      "scene.block"
+    ],
+    [
+      "The wall outside the flats",
+      "scene.block"
+    ],
+    [
+      "Outside the shops",
+      "scene.block"
+    ],
+    [
+      "Walking, the long way",
+      "scene.block"
+    ],
+    [
+      "Stairs and walkway",
+      "scene.block"
+    ],
+    [
+      "College corridor",
+      "scene.corridor"
+    ],
+    [
+      "The bus stop",
+      "scene.bus_stop"
+    ],
+    [
+      "The front room",
+      "scene.jay_frontroom"
+    ],
+    [
+      "The hallway",
+      "scene.jay_hallway"
+    ],
+    [
+      "The balcony",
+      "scene.jay_balcony"
+    ],
+    [
+      "The walkway",
+      "scene.block"
+    ],
+    [
+      "The landing",
+      "scene.block"
+    ],
+    [
+      "His landing",
+      "scene.block"
+    ],
+    [
+      "The block",
+      "scene.block"
+    ],
+    [
+      "The kitchen",
+      "scene.home_kitchen"
+    ],
+    [
+      "The flat",
+      "scene.home_kitchen"
+    ],
+    [
+      "His room",
+      "scene.bedroom"
+    ],
+    [
+      "The cage",
+      "scene.cage"
+    ]
+  ],
+  "moodMap": {
+    "char.bola": {
+      "distracted": {
+        "register": "tired"
+      },
+      "tired": {
+        "register": "tired"
+      },
+      "unreadable": {
+        "register": "tired"
+      },
+      "waiting": {
+        "register": "waiting"
+      },
+      "careful": {
+        "register": "waiting"
+      },
+      "at ease": {
+        "register": "at_ease"
+      },
+      "watching": {
+        "register": "direct"
+      },
+      "direct": {
+        "register": "direct"
+      }
+    },
+    "char.jay": {
+      "off": {
+        "register": "off"
+      },
+      "restless": {
+        "register": "off"
+      },
+      "exposed": {
+        "register": "exposed"
+      },
+      "undone": {
+        "register": "exposed"
+      },
+      "easy": {
+        "register": "easy"
+      },
+      "quiet": {
+        "register": "closed"
+      },
+      "closed": {
+        "register": "closed"
+      },
+      "open": {
+        "register": "open"
+      },
+      "level": {
+        "register": "open"
+      }
+    },
+    "char.tunde": {
+      "direct": {
+        "register": "direct"
+      },
+      "open": {
+        "register": "open"
+      },
+      "careful": {
+        "register": "unreadable"
+      },
+      "unreadable": {
+        "register": "unreadable"
+      }
+    },
+    "char.dee": {
+      "easy": {
+        "register": "easy"
+      },
+      "exposed": {
+        "register": "exposed"
+      }
+    },
+    "char.kai": {
+      "performing": {
+        "register": "performing"
+      }
+    },
+    "char.amara": {
+      "reserved": {
+        "register": "reserved"
+      }
     }
   },
-  "plannedScenesNote": "Environments declared by the locked Scenario 1 design but not yet produced. Promote each entry into registries.json only when its SVG exists and passes validate_assets.py; registries.json is the shared asset contract and an entry there is a claim that the asset is real."
+  "moodMapNote": "Sixteen registers across six characters, derived from the 27 on-frame moods the file actually declares. Every register has at least one mood pointing at it: a register with none is an orphan under validator rule 8, and inventing the mood to feed it would be the visual layer asserting what the prose has not established.",
+  "modeOverrides": {
+    "s1d1_alone": "absent",
+    "s1d2_bag": "none",
+    "s1d2_close": "absent",
+    "s1d2_run": "montage",
+    "s1d3_after": "absent",
+    "s1d3_open": "absent",
+    "s1d4_open": "absent",
+    "s1d5_close": "none",
+    "s1d5_open": "absent",
+    "s1d5_stall": "montage",
+    "s1d5_tunde_missed": "none",
+    "s1d5_tunde_went": "none",
+    "s1d6_afternoon": "absent",
+    "s1d6_close": "none",
+    "s1d6_covered": "none",
+    "s1d6_mum": "montage",
+    "s1d7_action": "absent",
+    "s1d7_open": "absent",
+    "s1d7_situation": "absent"
+  },
+  "modeOverridesNote": "classify_mode only special-cases presentation.type 'messages'; montage, none and call would all fall through to 'scene'. Ten empty-cast scene nodes resolve to 'absent' - all of Day 7 among them, which is the point of Day 7. The two 'call' nodes resolve to 'none' rather than 'remote': remote still requires a scene token, and 'Phone, seven' is an hour, not a place (D5). The client already draws them through CallModal.",
+  "nodeOverrides": {
+    "s1d1_jay_asked": {
+      "framing": "turned"
+    },
+    "s1d1_jay_quiet": {
+      "framing": "turned"
+    },
+    "s1d2_plate": {
+      "note": "'His landing' is the PLAYER's landing, not Jay's - Jay comes to him with the food. Jay's landing is named separately in s1d4_open. Both resolve to scene.block after the landing fold (D2), so this note exists to stop a later reader 'correcting' it."
+    },
+    "s1d2_walkway": {
+      "time": "day"
+    },
+    "s1d3_after": {
+      "time": "day"
+    },
+    "s1d3_open": {
+      "time": "day"
+    },
+    "s1d3_stop": {
+      "time": "day"
+    },
+    "s1d3_tunde": {
+      "cast": {
+        "char.tunde": {
+          "wardrobe": "day"
+        }
+      }
+    },
+    "s1d4_balcony": {
+      "cast": {
+        "char.tunde": {
+          "wardrobe": "party"
+        }
+      }
+    },
+    "s1d4_close": {
+      "cast": {
+        "char.bola": {
+          "wardrobe": "party"
+        }
+      }
+    },
+    "s1d4_frontroom": {
+      "cast": {
+        "char.bola": {
+          "wardrobe": "party"
+        }
+      }
+    },
+    "s1d4_kitchen": {
+      "cast": {
+        "char.kai": {
+          "wardrobe": "party"
+        }
+      },
+      "note": "Location string 'The kitchen' is byte-identical to s1d1_kitchen/_react in the player's flat. Prefix matching cannot separate them and the scenario is frozen, so the disambiguation lives here. Jay's flat, Friday night.",
+      "scene": "scene.jay_kitchen"
+    },
+    "s1d4_landing": {
+      "cast": {
+        "char.jay": {
+          "wardrobe": "party"
+        }
+      }
+    },
+    "s1d4_speech": {
+      "cast": {
+        "char.jay": {
+          "wardrobe": "party"
+        }
+      }
+    },
+    "s1d4_stay": {
+      "cast": {
+        "char.bola": {
+          "wardrobe": "party"
+        }
+      }
+    },
+    "s1d5_open": {
+      "time": "day"
+    },
+    "s1d5_trial": {
+      "time": "day"
+    },
+    "s1d6_afternoon": {
+      "time": "day"
+    },
+    "s1d6_fronted": {
+      "time": "day"
+    },
+    "s1d6_open": {
+      "cast": {
+        "char.bola": {
+          "wardrobe": "home_casual"
+        }
+      },
+      "time": "day"
+    },
+    "s1d6_sat": {
+      "time": "day"
+    },
+    "s1d7_action": {
+      "time": "day"
+    },
+    "s1d7_open": {
+      "time": "day"
+    },
+    "s1d7_situation": {
+      "time": "day"
+    }
+  },
+  "variantOverrides": {},
+  "exitBeats": {},
+  "exitBeatsNote": "None authored. The Streets' absent nodes are empty rooms the player occupies, not rooms someone has just left.",
+  "montagePanels": {
+    "s1d2_run": [
+      {
+        "vignette": "vig.bus_window",
+        "caption": "Two buses."
+      },
+      {
+        "vignette": "vig.top_deck_two_seats"
+      },
+      {
+        "vignette": "vig.aunt_door"
+      }
+    ],
+    "s1d5_stall": [
+      {
+        "vignette": "vig.unit_ten",
+        "caption": "Ten till six."
+      },
+      {
+        "vignette": "vig.card_reader",
+        "caption": "Around four."
+      },
+      {
+        "vignette": "vig.eighty_in_twenties"
+      }
+    ],
+    "s1d6_mum": [
+      {
+        "vignette": "vig.sister_frontroom",
+        "caption": "An hour at her sister's."
+      },
+      {
+        "vignette": "vig.tea_going_cold"
+      },
+      {
+        "vignette": "vig.phone_facedown_lit"
+      }
+    ]
+  },
+  "nodeProps": {
+    "s1d1_open": [
+      "prop.letter_facedown"
+    ],
+    "s1d1_kitchen_react": [
+      "prop.keys"
+    ],
+    "s1d2_plate": [
+      "prop.food_container"
+    ],
+    "s1d2_close": [
+      "prop.food_container"
+    ],
+    "s1d3_stop": [
+      "prop.phone"
+    ],
+    "s1d4_open": [
+      "prop.card"
+    ],
+    "s1d4_frontroom": [
+      "prop.plate_held",
+      "prop.coats_pile"
+    ],
+    "s1d4_stay": [
+      "prop.plate_held"
+    ],
+    "s1d4_speech": [
+      "prop.raised_glass"
+    ],
+    "s1d4_balcony": [
+      "prop.drink_untouched"
+    ],
+    "s1d4_close": [
+      "prop.shoes_in_hand"
+    ],
+    "s1d5_open": [
+      "prop.note"
+    ],
+    "s1d6_open": [
+      "prop.mug_pair"
+    ]
+  },
+  "nodePropsNote": "D10. No node carries a visual block, so props reach the renderer only here. Tokens, not prose - propSynonyms is never consulted for this scenario.",
+  "propSynonyms": {},
+  "unrenderableProps": [
+    "the bag",
+    "a bag",
+    "the officers",
+    "an officer",
+    "police",
+    "the collector",
+    "the aunties",
+    "an auntie",
+    "the baby",
+    "Kai's audience",
+    "three or four others",
+    "Jay's mum",
+    "the neighbours"
+  ],
+  "unrenderablePropsNote": "The bag is never opened, named, described or shown - rule 5, and it is an active object on Days 1-2 only. Authority figures are off-frame district-wide: in s1d3_stop the frame is Kai with his phone up and the officers are behind the camera, which is the player's position. The baby in s1d4_frontroom is prose; prop.coats_pile draws the coats and nothing under them."
 }

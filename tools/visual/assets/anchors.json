@@ -684,6 +684,551 @@
         }
       },
       "note": "Six nodes across all four acts. Built as a break-out area rather than an open floor: it gives the continuous occluder the contract needs, and it is the kitchen the prose keeps returning to — 'Ray is perfectly friendly in the kitchen'. Two figures never share it; ask3_reaction takes the right slot only to avoid rendering an identical frame to ask2_reaction."
+    },
+    "scene.block": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "propAnchors": {
+        "parapet_left": {
+          "x": 470,
+          "y": 604
+        },
+        "parapet_right": {
+          "x": 1090,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "Walkway parapet — SOLID CONCRETE, not balusters. Doubles as the wall Jay sits on in s1d6_sat and as the balustrade in the landing nodes. Balusters fail continuous occlusion by construction."
+      },
+      "bubblePlacement": {
+        "centre": {
+          "x": 48,
+          "y": 112
+        },
+        "left": {
+          "x": 700,
+          "y": 112
+        },
+        "right": {
+          "x": 48,
+          "y": 112
+        }
+      },
+      "note": "16 nodes, the highest-traffic asset in the district. One deck-access exterior: front doors along one side, the drop and the rail along the other, shopfronts across the walkway. Absorbs the landings (D2), the shops, the wall and the long walk home. Serves both s1d2_plate (the PLAYER's landing) and s1d4_open/_landing (Jay's) — same drawn architecture, different doors."
+    },
+    "scene.home_kitchen": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "propAnchors": {
+        "counter_left": {
+          "x": 430,
+          "y": 604
+        },
+        "counter_right": {
+          "x": 1196,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "Counter top. scene.kitchen precedent — the one environment that satisfied the contract by accident because the counter was designed before the figure."
+      },
+      "bubblePlacement": {
+        "centre": {
+          "x": 48,
+          "y": 104
+        },
+        "left": {
+          "x": 700,
+          "y": 104
+        },
+        "right": {
+          "x": 48,
+          "y": 104
+        }
+      },
+      "note": "8 nodes. Five evening, three morning."
+    },
+    "scene.jay_frontroom": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "propAnchors": {
+        "sideboard_left": {
+          "x": 470,
+          "y": 604
+        },
+        "sideboard_right": {
+          "x": 1100,
+          "y": 604
+        },
+        "table_centre": {
+          "x": 800,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "Sofa back plus sideboard, BOTH boxed to the floor. A sofa is the shape most likely to be drawn with legs, and legs are the 2B.6 P0."
+      },
+      "note": "Day 4 only. Must read through to the kitchen doorway — Day 4's design is the player watching the evening happen through two doorways without him."
+    },
+    "scene.jay_kitchen": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "propAnchors": {
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "Counter."
+      },
+      "note": "Two nodes whose branches differ in DRESSING as well as light: Friday's party against Sunday afternoon. The only scene where data-time carries more than atmosphere."
+    },
+    "scene.bedroom": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "propAnchors": {
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "exempt": true,
+        "note": "EXEMPT — see note. Both nodes are empty-cast."
+      },
+      "note": "EXEMPT from the y=600 occlusion rule. Both nodes (s1d1_alone, s1d6_afternoon) are empty-cast and resolve to `absent`: no figure, no hands at y=600, nothing to occlude. The only exempt scene in the district — do not generalise it."
+    },
+    "scene.cage": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "propAnchors": {
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "Kerb wall around the pitch, or kit bags. THE MESH FENCE DOES NOT OCCLUDE — it is transparent and will fail the alpha test while looking like a barrier."
+      },
+      "note": "Floodlit Tuesday evening, daylight trial Saturday morning."
+    },
+    "scene.jay_hallway": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "propAnchors": {
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "HIGHEST RISK IN THE SET. A hallway has no natural waist-height solid. Use a built-in — low bookcase or boxed meter cupboard, floor to y<600, no legs and no open span. DO NOT USE A CONSOLE TABLE: that is precisely what failed in scene.flat_hallway."
+      },
+      "bubblePlacement": {
+        "centre": {
+          "x": 48,
+          "y": 104
+        },
+        "left": {
+          "x": 700,
+          "y": 104
+        },
+        "right": {
+          "x": 48,
+          "y": 104
+        }
+      },
+      "note": "One node, s1d4_photos. The photographs are architecture, not props."
+    },
+    "scene.jay_balcony": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "propAnchors": {
+        "parapet_left": {
+          "x": 500,
+          "y": 604
+        },
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "Balcony parapet — CONCRETE, not railings. Railings fail by construction."
+      },
+      "note": "One node. The threshold, with cold spill from outside against the room's amber."
+    },
+    "scene.corridor": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "propAnchors": {
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "Lockers or a fixed bench, boxed to the floor."
+      },
+      "note": "College, Day 3. Daylight."
+    },
+    "scene.bus_stop": {
+      "slots": {
+        "left": {
+          "x": 470,
+          "y": 900
+        },
+        "centre": {
+          "x": 800,
+          "y": 900
+        },
+        "right": {
+          "x": 1130,
+          "y": 900
+        },
+        "foreground_left": {
+          "x": 300,
+          "y": 980
+        },
+        "foreground_right": {
+          "x": 1300,
+          "y": 980
+        },
+        "background_left": {
+          "x": 600,
+          "y": 820
+        },
+        "background_right": {
+          "x": 1000,
+          "y": 820
+        }
+      },
+      "propAnchors": {
+        "floor_left": {
+          "x": 260,
+          "y": 892
+        },
+        "floor_right": {
+          "x": 1350,
+          "y": 892
+        }
+      },
+      "occlusionLine": {
+        "y": 600,
+        "note": "The shelter's lower panel."
+      },
+      "note": "Day 2's decision. Not on the estate — the route home from Jay's aunt's."
     }
   },
   "props": {
@@ -724,8 +1269,10 @@
         "y": 160
       },
       "defaultAnchor": {
-        "scene.party": "table_left"
-      }
+        "scene.party": "table_left",
+        "scene.jay_frontroom": "table_centre"
+      },
+      "streetsNote": "s1d4_speech: somebody bangs a glass. Added alongside the existing scene.party entry."
     },
     "prop.coffee_cup": {
       "localViewBox": "0 0 140 110",
@@ -744,8 +1291,10 @@
         "y": 76
       },
       "defaultAnchor": {
-        "scene.street_exterior": "wall_left"
-      }
+        "scene.street_exterior": "wall_left",
+        "scene.block": "parapet_right"
+      },
+      "streetsNote": "s1d3_stop: Kai's phone is up. Added alongside the existing scene.street_exterior entry — extend the map, never replace it, or The Secret loses its anchor."
     },
     "prop.cigarette": {
       "localViewBox": "0 0 70 130",
@@ -819,6 +1368,117 @@
         "scene.review_room": "desk_left"
       },
       "note": "The one object in Dana's office the prose names. It sits where her hands are, which the prose also names — but 'hands flat on the desk' is posture and stays in unrenderableProps."
+    },
+    "prop.letter_facedown": {
+      "localViewBox": "0 0 300 180",
+      "basePoint": {
+        "x": 150,
+        "y": 180
+      },
+      "defaultAnchor": {
+        "scene.home_kitchen": "counter_left"
+      },
+      "note": "On the side four days, face down. s1d1_open."
+    },
+    "prop.keys": {
+      "localViewBox": "0 0 140 90",
+      "basePoint": {
+        "x": 70,
+        "y": 90
+      },
+      "defaultAnchor": {
+        "scene.home_kitchen": "counter_right"
+      },
+      "note": "She finds her keys where she left them. s1d1_kitchen_react."
+    },
+    "prop.food_container": {
+      "localViewBox": "0 0 220 140",
+      "basePoint": {
+        "x": 110,
+        "y": 140
+      },
+      "defaultAnchor": {
+        "scene.block": "parapet_left",
+        "scene.home_kitchen": "counter_right"
+      },
+      "note": "Two containers, one held out. s1d2_plate on the landing, s1d2_close in the kitchen — the same object in two scenes, so two anchors."
+    },
+    "prop.card": {
+      "localViewBox": "0 0 200 260",
+      "basePoint": {
+        "x": 100,
+        "y": 260
+      },
+      "defaultAnchor": {
+        "scene.block": "parapet_left"
+      },
+      "note": "He is carrying a card. s1d4_open."
+    },
+    "prop.plate_held": {
+      "localViewBox": "0 0 180 130",
+      "basePoint": {
+        "x": 90,
+        "y": 130
+      },
+      "defaultAnchor": {
+        "scene.jay_frontroom": "table_centre"
+      },
+      "note": "A plate he does not remember accepting. s1d4_frontroom and s1d4_stay. table_centre is directly below the centre slot — check it against prop_occlusion_test, this is the ring-box position."
+    },
+    "prop.coats_pile": {
+      "localViewBox": "0 0 380 220",
+      "basePoint": {
+        "x": 190,
+        "y": 220
+      },
+      "defaultAnchor": {
+        "scene.jay_frontroom": "sideboard_right"
+      },
+      "note": "Three coats on the sofa. THE BABY IS NOT DRAWN and no shape may imply one — coats only."
+    },
+    "prop.drink_untouched": {
+      "localViewBox": "0 0 90 160",
+      "basePoint": {
+        "x": 45,
+        "y": 160
+      },
+      "defaultAnchor": {
+        "scene.jay_balcony": "parapet_left"
+      },
+      "note": "A drink he isn't drinking. s1d4_balcony."
+    },
+    "prop.shoes_in_hand": {
+      "localViewBox": "0 0 200 150",
+      "basePoint": {
+        "x": 100,
+        "y": 150
+      },
+      "defaultAnchor": {
+        "scene.block": "parapet_right"
+      },
+      "note": "Shoes in her hand. s1d4_close, walking back at half eleven."
+    },
+    "prop.mug_pair": {
+      "localViewBox": "0 0 220 120",
+      "basePoint": {
+        "x": 110,
+        "y": 120
+      },
+      "defaultAnchor": {
+        "scene.home_kitchen": "counter_left"
+      },
+      "note": "Tea for two, which she does not do. s1d6_open."
+    },
+    "prop.note": {
+      "localViewBox": "0 0 160 110",
+      "basePoint": {
+        "x": 80,
+        "y": 110
+      },
+      "defaultAnchor": {
+        "scene.home_kitchen": "counter_right"
+      },
+      "note": "A note about Sunday afternoon. s1d5_open."
     }
   },
   "frames": {
@@ -1616,18 +2276,23 @@
       "props": [],
       "note": "Departs from the 2B.1 precedent deliberately. Alex was checkpointed in the LOCKED kitchen because his own rooms did not exist and the kitchen was an accepted reference. Ray cannot be: the Career palette inverts the lighting family, so a Career figure in a Neighbourhood room would be judged against a value relationship that will never ship. desk_evening is drawn first and Ray is judged in it."
     },
-  "frame_c_set": {
-    "renderBlockSource": "SYNTHETIC — register swap partner for frame_c_checkpoint. Differs in exactly one render-block field.",
-    "scene": "scene.desk_evening",
-    "time": "evening",
-    "framing": "direct",
-    "cast": [
-      { "id": "char.ray", "base": "figure_c", "slot": "centre",
-        "register": "set", "wardrobe": "work" }
-    ],
-    "props": [],
-    "note": "set is the right partner for open: 23 degrees of tilt apart, the largest separation in Ray's matrix, so a head layer that failed to swap would be unmissable."
-},
+    "frame_c_set": {
+      "renderBlockSource": "SYNTHETIC — register swap partner for frame_c_checkpoint. Differs in exactly one render-block field.",
+      "scene": "scene.desk_evening",
+      "time": "evening",
+      "framing": "direct",
+      "cast": [
+        {
+          "id": "char.ray",
+          "base": "figure_c",
+          "slot": "centre",
+          "register": "set",
+          "wardrobe": "work"
+        }
+      ],
+      "props": [],
+      "note": "set is the right partner for open: 23 degrees of tilt apart, the largest separation in Ray's matrix, so a head layer that failed to swap would be unmissable."
+    },
     "frame_c_scale_test": {
       "renderBlockSource": "SYNTHETIC — shipping-scale register separation, not a scenario node",
       "scene": "scene.desk_evening",
@@ -2183,6 +2848,218 @@
       "hairPolicy": "fixed",
       "hairNote": "Dana's hair is FIXED across both registers — a short, pinned professional cut. With only two registers the separation has to come from the drawn head-down in `noting`, not from redistributing hair mass.",
       "note": "Dana Whitfield. Reuses figure_b's neck and socket contract and nothing else. Narrower face than figure_b, higher cheekbone, set jaw, reading glasses on the `noting` register only — which is part of why that register separates."
+    },
+    "figure_e": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 210,
+        "note": "figure_a's socket. Inherited contract — geometry only."
+      },
+      "neckSpan": {
+        "x0": 81,
+        "x1": 119,
+        "y": 170,
+        "note": "inherited from figure_a. A figure_e register head MUST span x 81..119 at y 175..195 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 185,
+        "headHeight": 186,
+        "note": "figure_a's build. Proportion difference is achieved in the drawing, never by moving the contract."
+      },
+      "skinTokens": {
+        "base": "--irx-skin-e",
+        "shade": "--irx-skin-e-shade"
+      },
+      "hairPolicy": "variable",
+      "note": "Bola. Solid, weight carried in the shoulders, fifties. Warm and tired in the same frame. Highest node count in the flat.",
+      "hairNote": "Hair is a silhouette lever: four registers, front-facing, and tilt alone will not separate tired from waiting at 220px."
+    },
+    "figure_f": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 196,
+        "note": "figure_b's socket. Inherited contract — geometry only."
+      },
+      "neckSpan": {
+        "x0": 85,
+        "x1": 123,
+        "y": 156,
+        "note": "inherited from figure_b. A figure_f register head MUST span x 85..123 at y 161..181 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 196,
+        "headHeight": 178,
+        "note": "figure_b's build. Proportion difference is achieved in the drawing, never by moving the contract."
+      },
+      "skinTokens": {
+        "base": "--irx-skin-f",
+        "shade": "--irx-skin-f-shade"
+      },
+      "hairPolicy": "fixed",
+      "note": "Jay. Nineteen, lighter build, restless — holds himself like someone performing ease.",
+      "hairNote": "A short cut cannot restyle between nodes; registers are atomic so the block is duplicated per file and must be enforced identical."
+    },
+    "figure_f_rear": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 196,
+        "note": "figure_b's socket. Inherited contract — geometry only."
+      },
+      "neckSpan": {
+        "x0": 85,
+        "x1": 123,
+        "y": 156,
+        "note": "inherited from figure_b. A figure_f_rear register head MUST span x 85..123 at y 161..181 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 196,
+        "headHeight": 178,
+        "note": "figure_b's build. Proportion difference is achieved in the drawing, never by moving the contract."
+      },
+      "skinTokens": {
+        "base": "--irx-skin-r",
+        "shade": "--irx-skin-r-shade"
+      },
+      "hairPolicy": "fixed",
+      "note": "Rear view of figure_f. One register only ('rear') — a rear figure reports posture, not expression. Required by s1d1_jay_asked and s1d1_jay_quiet, which are alternatives to each other, so both resolving to the same frame is correct."
+    },
+    "figure_g": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 210,
+        "note": "figure_a's socket. Inherited contract — geometry only."
+      },
+      "neckSpan": {
+        "x0": 81,
+        "x1": 119,
+        "y": 170,
+        "note": "inherited from figure_a. A figure_g register head MUST span x 81..119 at y 175..195 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 185,
+        "headHeight": 186,
+        "note": "figure_a's build. Proportion difference is achieved in the drawing, never by moving the contract."
+      },
+      "skinTokens": {
+        "base": "--irx-skin-g",
+        "shade": "--irx-skin-g-shade"
+      },
+      "hairPolicy": "fixed",
+      "note": "Tunde. Broad, upright, deliberate — a working athlete, NOT sleek. Thirties to forties."
+    },
+    "figure_h": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 210,
+        "note": "figure_a's socket. Inherited contract — geometry only."
+      },
+      "neckSpan": {
+        "x0": 81,
+        "x1": 119,
+        "y": 170,
+        "note": "inherited from figure_a. A figure_h register head MUST span x 81..119 at y 175..195 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 185,
+        "headHeight": 186,
+        "note": "figure_a's build. Proportion difference is achieved in the drawing, never by moving the contract."
+      },
+      "skinTokens": {
+        "base": "--irx-skin-h",
+        "shade": "--irx-skin-h-shade"
+      },
+      "hairPolicy": "fixed",
+      "note": "Dee. Twenty-seven, physically easy, takes up space without effort. NOTHING MENACING IN THE BUILD — if he reads as a threat the scenario collapses on Day 3."
+    },
+    "figure_i": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 196,
+        "note": "figure_b's socket. Inherited contract — geometry only."
+      },
+      "neckSpan": {
+        "x0": 85,
+        "x1": 123,
+        "y": 156,
+        "note": "inherited from figure_b. A figure_i register head MUST span x 85..123 at y 161..181 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 196,
+        "headHeight": 178,
+        "note": "figure_b's build. Proportion difference is achieved in the drawing, never by moving the contract."
+      },
+      "skinTokens": {
+        "base": "--irx-skin-i",
+        "shade": "--irx-skin-i-shade"
+      },
+      "hairPolicy": "fixed",
+      "note": "Kai. Nineteen, performative posture — angled toward an audience even when there isn't one. One register."
+    },
+    "figure_j": {
+      "localViewBox": "0 0 420 800",
+      "basePoint": {
+        "x": 210,
+        "y": 800,
+        "note": "bottom-centre; lands on the scene slot anchor"
+      },
+      "headSocket": {
+        "x": 210,
+        "y": 196,
+        "note": "figure_b's socket. Inherited contract — geometry only."
+      },
+      "neckSpan": {
+        "x0": 85,
+        "x1": 123,
+        "y": 156,
+        "note": "inherited from figure_b. A figure_j register head MUST span x 85..123 at y 161..181 or it will float."
+      },
+      "build": {
+        "shoulderWidth": 196,
+        "headHeight": 178,
+        "note": "figure_b's build. Proportion difference is achieved in the drawing, never by moving the contract."
+      },
+      "skinTokens": {
+        "base": "--irx-skin-j",
+        "shade": "--irx-skin-j-shade"
+      },
+      "hairPolicy": "fixed",
+      "note": "Amara. Nineteen to twenty, slighter, self-contained. One register, one node."
     }
   },
   "bubbles": {
