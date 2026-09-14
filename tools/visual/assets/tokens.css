@@ -144,4 +144,62 @@
   --irx-neighbourhood-foliage:      #46584B;
   --irx-neighbourhood-foliage-dark: #35463A;
   --irx-neighbourhood-car:          #5A5F66;
+  /* figure_e — Bola. African, fifties. */
+  --irx-skin-e:        #6B4A33;
+  --irx-skin-e-shade:  #4F3524;
+  --irx-hair-e:        #2E2622;
+  --irx-hair-e-light:  #4A3F38;
+  --irx-lip-e:         #7A4F42;
+  --irx-mouth-e:       #3A2019;
+  /* figure_f — Jay. Brown, mid-complexion, nineteen. */
+  --irx-skin-f:        #96684A;
+  --irx-skin-f-shade:  #754F36;
+  --irx-hair-f:        #221A15;
+  --irx-hair-f-light:  #3A2B22;
+  --irx-lip-f:         #9C6552;
+  --irx-mouth-f:       #4A2A22;
+  /* figure_g — Tunde. African, thirties to forties. */
+  --irx-skin-g:        #5E4030;
+  --irx-skin-g-shade:  #452D21;
+  --irx-hair-g:        #2A221E;
+  --irx-hair-g-light:  #423731;
+  --irx-lip-g:         #6E463A;
+  --irx-mouth-g:       #331C16;
+  /* figure_h — Dee. White, twenty-seven. */
+  --irx-skin-h:        #C9A184;
+  --irx-skin-h-shade:  #A87F64;
+  --irx-hair-h:        #5A4332;
+  --irx-hair-h-light:  #775843;
+  --irx-lip-h:         #B3806C;
+  --irx-mouth-h:       #6B4034;
+  /* figure_i — Kai. Brown, a different complexion from Jay. */
+  --irx-skin-i:        #A8794F;
+  --irx-skin-i-shade:  #86603D;
+  --irx-hair-i:        #281F1A;
+  --irx-hair-i-light:  #41332B;
+  --irx-lip-i:         #A87057;
+  --irx-mouth-i:       #4F2E23;
+  /* figure_j — Amara. Caramel, nineteen to twenty. */
+  --irx-skin-j:        #B08258;
+  --irx-skin-j-shade:  #8E6644;
+  --irx-hair-j:        #2B211C;
+  --irx-hair-j-light:  #463831;
+  --irx-lip-j:         #AE7460;
+  --irx-mouth-j:       #533026;
+
+  /* ==== the streets — wax-print wardrobe palette ==== */
+  /* The existing Neighbourhood set is a lit-interior palette: warm browns, cool
+     greys, one amber accent. It has no saturated cloth colour at all, so West
+     African print had to be invented or faked. Added here rather than faked.
+     Same D14 churn as the character tokens: the preamble is inlined into every
+     composed frame, so this rewrites canonicalSha256 on the existing fixtures
+     and changes no geometry. */
+  --irx-wax-teal:      #1F6F63;
+  --irx-wax-teal-dark: #144F46;
+  --irx-wax-plum:      #6E3A8C;
+  --irx-wax-plum-dark: #4E2866;
+  --irx-wax-red:       #C24A2E;
+  --irx-wax-red-dark:  #93331C;
+  --irx-wax-gold:      #E3A83C;
+  --irx-wax-cream:     #EADBC2;
 }
