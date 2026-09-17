@@ -1,3 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600"
+     id="vig.sister_frontroom" data-vignette="vig.sister_frontroom">
+    <defs><style><![CDATA[
 /* ENVIRONMENT VALUE LOCK: C applied (k=0.82) */
 /* IRX Visual Asset Tokens — Phase 2A
  * Source of truth for all colour and stroke values in the asset system.
@@ -144,6 +147,8 @@
   --irx-neighbourhood-foliage:      #46584B;
   --irx-neighbourhood-foliage-dark: #35463A;
   --irx-neighbourhood-car:          #5A5F66;
+
+  /* ==== the streets — six characters, deliberately differentiated ==== */
   /* figure_e — Bola. African, fifties. */
   --irx-skin-e:        #6B4A33;
   --irx-skin-e-shade:  #4F3524;
@@ -202,6 +207,33 @@
   --irx-wax-red-dark:  #93331C;
   --irx-wax-gold:      #E3A83C;
   --irx-wax-cream:     #EADBC2;
+  /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+     and --irx-jacket are both grey-blues for lit interiors, and a football
+     jersey in either reads as grey. Two added rather than faked. */
   --irx-wax-blue:      #4A86C4;
   --irx-wax-blue-dark: #2F5E91;
 }
+]]></style></defs>
+    <g id="vignette">
+        <path id="bg" fill="var(--irx-vig-mid)" d="M0 0 h480 v600 h-480 z"/>
+        <path id="sf-wall" fill="var(--irx-vig-base)" d="M0 0 h480 v404 h-480 z"/>
+        <path id="sf-floor" fill="var(--irx-vig-mid)" d="M0 404 h480 v196 h-480 z"/>
+        <path id="sf-skirt" fill="var(--irx-vig-light)" d="M0 392 h480 v16 h-480 z"/>
+        <path id="sf-mantel" fill="var(--irx-vig-light)" d="M56 196 h368 v26 h-368 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sf-breast" fill="var(--irx-vig-mid)" d="M90 222 h300 v170 h-300 z"/>
+        <path id="sf-orn0" fill="var(--irx-vig-light)" d="M102 148 h28 v48 h-28 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sf-orn1" fill="var(--irx-vig-light)" d="M146 160 h22 v36 h-22 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sf-orn2" fill="var(--irx-vig-light)" d="M306 154 h24 v42 h-24 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sf-orn3" fill="var(--irx-vig-light)" d="M352 164 h32 v32 h-32 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sf-frame0" fill="var(--irx-vig-light)" d="M148 54 h76 v92 h-76 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sf-photo0" fill="var(--irx-vig-mid)" d="M158 64 h56 v72 h-56 z"/>
+        <path id="sf-frame1" fill="var(--irx-vig-light)" d="M248 70 h64 v76 h-64 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sf-photo1" fill="var(--irx-vig-mid)" d="M258 80 h44 v56 h-44 z"/>
+        <path id="sf-chair0" fill="var(--irx-vig-light)" d="M18 576 v-132 q0 -34 38 -34 h80 q38 0 38 34 v132 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sf-cush0" fill="var(--irx-vig-base)" d="M34 520 h128 v40 h-128 z"/>
+        <path id="sf-shadow0" fill="var(--irx-vig-dark)" d="M14 576 h164 v10 h-164 z"/>
+        <path id="sf-chair1" fill="var(--irx-vig-light)" d="M306 576 v-132 q0 -34 38 -34 h80 q38 0 38 34 v132 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sf-cush1" fill="var(--irx-vig-base)" d="M322 520 h128 v40 h-128 z"/>
+        <path id="sf-shadow1" fill="var(--irx-vig-dark)" d="M302 576 h164 v10 h-164 z"/>
+    </g>
+</svg>

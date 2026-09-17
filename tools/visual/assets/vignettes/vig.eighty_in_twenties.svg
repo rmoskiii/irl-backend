@@ -1,3 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600"
+     id="vig.eighty_in_twenties" data-vignette="vig.eighty_in_twenties">
+    <defs><style><![CDATA[
 /* ENVIRONMENT VALUE LOCK: C applied (k=0.82) */
 /* IRX Visual Asset Tokens — Phase 2A
  * Source of truth for all colour and stroke values in the asset system.
@@ -144,6 +147,8 @@
   --irx-neighbourhood-foliage:      #46584B;
   --irx-neighbourhood-foliage-dark: #35463A;
   --irx-neighbourhood-car:          #5A5F66;
+
+  /* ==== the streets — six characters, deliberately differentiated ==== */
   /* figure_e — Bola. African, fifties. */
   --irx-skin-e:        #6B4A33;
   --irx-skin-e-shade:  #4F3524;
@@ -202,6 +207,26 @@
   --irx-wax-red-dark:  #93331C;
   --irx-wax-gold:      #E3A83C;
   --irx-wax-cream:     #EADBC2;
+  /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+     and --irx-jacket are both grey-blues for lit interiors, and a football
+     jersey in either reads as grey. Two added rather than faked. */
   --irx-wax-blue:      #4A86C4;
   --irx-wax-blue-dark: #2F5E91;
 }
+]]></style></defs>
+    <g id="vignette">
+        <path id="bg" fill="var(--irx-vig-mid)" d="M0 0 h480 v600 h-480 z"/>
+        <path id="et-counter" fill="var(--irx-vig-light)" d="M0 352 h480 v54 h-480 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="et-front" fill="var(--irx-vig-base)" d="M0 406 h480 v194 h-480 z"/>
+        <path id="et-note0" fill="var(--irx-vig-light)" d="M96 352 l14 -52 h188 l-14 52 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="et-field0" fill="var(--irx-vig-mid)" d="M220 314 h44 v26 h-44 z"/>
+        <path id="et-band0" fill="none" stroke="var(--irx-vig-mid)" stroke-width="var(--irx-stroke-fine)" d="M110 340 h96"/>
+        <path id="et-note1" fill="var(--irx-vig-light)" d="M150 330 l6 -52 h188 l-6 52 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="et-field1" fill="var(--irx-vig-mid)" d="M274 292 h44 v26 h-44 z"/>
+        <path id="et-band1" fill="none" stroke="var(--irx-vig-mid)" stroke-width="var(--irx-stroke-fine)" d="M164 318 h96"/>
+        <path id="et-note2" fill="var(--irx-vig-light)" d="M208 314 l-4 -52 h188 l4 52 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="et-field2" fill="var(--irx-vig-mid)" d="M332 276 h44 v26 h-44 z"/>
+        <path id="et-band2" fill="none" stroke="var(--irx-vig-mid)" stroke-width="var(--irx-stroke-fine)" d="M222 302 h96"/>
+        <path id="et-shadow" fill="var(--irx-vig-mid)" d="M92 352 h300 v10 h-300 z"/>
+    </g>
+</svg>

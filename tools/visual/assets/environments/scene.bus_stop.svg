@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
+     id="scene.bus_stop" data-scene="scene.bus_stop" data-occlusion-line="600" data-times="day" data-default-time="day" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo4ZDMxMTI5Mi1jNTU1LTQyMjctYTcwNy03ZWQwZWM3ODQ0OTEAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaN1X0WjIjvM13pZpG/CnXi0AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo2MGZmZDQ1Yi1kZDRlLTRkMjktODQ4NC04ZTNkMjBkM2M5MTFscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNo0WYwVXjUd1Wk+zeG9h3QWgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggp3HDLpmvB/U5PnsJS24cLkLNcWvdVUqel4dM5KmHb/ykZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaGcEqYWJh/feGDExhd91PG4AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCBp6SpjjF0qfV2XTm+etMH8Oe5giKiNWI5YEoXBUGUVoGRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBj2Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjhkMzExMjkyLWM1NTUtNDIyNy1hNzA3LTdlZDBlYzc4NDQ5MS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmI2OGVhMjgxLTIyMzctNDk3OC1hMGE4LTA2Y2I5OTg2ZjczMHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCnccMuma8H9Tk+ewlLbhwuQs1xa91VSp6Xh0zkqYdv/KJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgg97R6vy9W+oCLP48ojeM8xX9mJ1S2FAlx7x6hGexQ6IuiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggOJGVnVQIy16EW0uyC6qO3r/EbScpyydkyPgEUmOKrPp0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQA95LLVBp584T3V0OzdCHQrmO10kEw9InXtA2AUfxBHo92mLkUYLD73q143xOnP8ggfTGHvg0SSJO5TxSgBeUMg=</c2pa:manifest></metadata>
+    <defs>
+        <style>/* @tokens-begin */
+            :root {
+            /* line */
+            --irx-line:          #241D19;
+            --irx-line-soft:     #3B302A;
+            --irx-shadow:        #2A231E;
+
+            /* architecture */
+            --irx-wall:          #5C6A5F;
+            --irx-wall-dark:     #4E5A51;
+            --irx-wall-pattern:  #556359;
+            --irx-tile:          #B5A992;
+            --irx-tile-alt:      #A49980;
+            --irx-floor:         #5E4D3E;
+
+            /* window */
+            --irx-sky-high:      #334051;
+            --irx-sky-mid:       #4D4656;
+            --irx-sky-low:       #785A4F;
+            --irx-outside-dark:  #2A333E;
+            --irx-curtain:       #424E56;
+            --irx-curtain-dark:  #38424A;
+
+            /* joinery */
+            --irx-cabinet:       #785D44;
+            --irx-cabinet-dark:  #634C36;
+            --irx-counter:       #947553;
+            --irx-counter-edge:  #7B5F43;
+
+            /* character */
+            --irx-skin:          #A87A5A;
+            --irx-skin-shade:    #875D42;
+            --irx-skin-b:        #8E6244;
+            --irx-skin-b-shade:  #6E4A32;
+            --irx-lip-b:         #96604F;
+            --irx-mouth-b:       #4A2C24;
+            --irx-hair:          #41322A;
+            --irx-hair-light:    #554136;
+            --irx-hair-b:        #241A16;
+            --irx-hair-b-light:  #3D2C24;
+
+            /* wardrobe: home_casual */
+            --irx-cloth:         #A8603F;
+            --irx-cloth-dark:    #894C31;
+            --irx-cloth-inner:   #D9CDBC;
+
+            /* props */
+            --irx-glass:         #BCC8C3;
+            --irx-glass-dark:    #9AA8A2;
+            --irx-highlight:     #FFFFFF;
+            --irx-jacket:        #4F5A63;
+            --irx-jacket-dark:   #3D464E;
+
+            /* accent — neighbourhood district, warm light only */
+            --irx-accent:        #FFC15E;
+            --irx-accent-dim:    #C89A4E;
+            --irx-lamp-warm:     #F2C77E;
+            --irx-cool-spill:    #7E93A8;
+
+            /* vignettes */
+            --irx-vig-light:     #B3ABA0;
+            --irx-vig-base:      #8C857C;
+            --irx-vig-mid:       #635D56;
+            --irx-vig-dark:      #3B3733;
+
+            /* stroke weights */
+            --irx-stroke-xheavy: 6.6;
+            --irx-stroke-heavy:  5;
+            --irx-stroke:        3.4;
+            --irx-stroke-fine:   2.1;
+            --irx-stroke-hair:   1.4;
+
+            /* ==== the streets — six characters, deliberately differentiated ==== */
+            /* figure_e — Bola. African, fifties. */
+            --irx-skin-e:        #6B4A33;
+            --irx-skin-e-shade:  #4F3524;
+            --irx-hair-e:        #2E2622;
+            --irx-hair-e-light:  #4A3F38;
+            --irx-lip-e:         #7A4F42;
+            --irx-mouth-e:       #3A2019;
+            /* figure_f — Jay. Brown, mid-complexion, nineteen. */
+            --irx-skin-f:        #96684A;
+            --irx-skin-f-shade:  #754F36;
+            --irx-hair-f:        #221A15;
+            --irx-hair-f-light:  #3A2B22;
+            --irx-lip-f:         #9C6552;
+            --irx-mouth-f:       #4A2A22;
+            /* figure_g — Tunde. African, thirties to forties. */
+            --irx-skin-g:        #5E4030;
+            --irx-skin-g-shade:  #452D21;
+            --irx-hair-g:        #2A221E;
+            --irx-hair-g-light:  #423731;
+            --irx-lip-g:         #6E463A;
+            --irx-mouth-g:       #331C16;
+            /* figure_h — Dee. White, twenty-seven. */
+            --irx-skin-h:        #C9A184;
+            --irx-skin-h-shade:  #A87F64;
+            --irx-hair-h:        #5A4332;
+            --irx-hair-h-light:  #775843;
+            --irx-lip-h:         #B3806C;
+            --irx-mouth-h:       #6B4034;
+            /* figure_i — Kai. Brown, a different complexion from Jay. */
+            --irx-skin-i:        #A8794F;
+            --irx-skin-i-shade:  #86603D;
+            --irx-hair-i:        #281F1A;
+            --irx-hair-i-light:  #41332B;
+            --irx-lip-i:         #A87057;
+            --irx-mouth-i:       #4F2E23;
+            /* figure_j — Amara. Caramel, nineteen to twenty. */
+            --irx-skin-j:        #B08258;
+            --irx-skin-j-shade:  #8E6644;
+            --irx-hair-j:        #2B211C;
+            --irx-hair-j-light:  #463831;
+            --irx-lip-j:         #AE7460;
+            --irx-mouth-j:       #533026;
+
+            /* ==== the streets — wax-print wardrobe palette ==== */
+            /* The existing Neighbourhood set is a lit-interior palette: warm browns, cool
+            greys, one amber accent. It has no saturated cloth colour at all, so West
+            African print had to be invented or faked. Added here rather than faked.
+            Same D14 churn as the character tokens: the preamble is inlined into every
+            composed frame, so this rewrites canonicalSha256 on the existing fixtures
+            and changes no geometry. */
+            --irx-wax-teal:      #1F6F63;
+            --irx-wax-teal-dark: #144F46;
+            --irx-wax-plum:      #6E3A8C;
+            --irx-wax-plum-dark: #4E2866;
+            --irx-wax-red:       #C24A2E;
+            --irx-wax-red-dark:  #93331C;
+            --irx-wax-gold:      #E3A83C;
+            --irx-wax-cream:     #EADBC2;
+            /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+            and --irx-jacket are both grey-blues for lit interiors, and a football
+            jersey in either reads as grey. Two added rather than faked. */
+            --irx-wax-blue:      #4A86C4;
+            --irx-wax-blue-dark: #2F5E91;
+            }
+            /* @tokens-end */</style>
+        <style data-time="day">.bs-sky { fill: var(--irx-glass); } .bs-terr { fill: var(--irx-counter-edge); } .bs-terrd { fill: var(--irx-cabinet-dark); } .bs-roof { fill: var(--irx-wall-dark); } .bs-road { fill: var(--irx-jacket-dark); } .bs-roadd { fill: var(--irx-outside-dark); } .bs-kerb { fill: var(--irx-glass-dark); } .bs-steel { fill: var(--irx-jacket); } .bs-steeld { fill: var(--irx-jacket-dark); } .bs-glaz { fill: var(--irx-glass-dark); } .bs-panel { fill: var(--irx-outside-dark); } .bs-flag { fill: var(--irx-wax-red); } .bs-flagd { fill: var(--irx-wax-red-dark); } .bs-blue { fill: var(--irx-wax-blue); } .bs-blued { fill: var(--irx-wax-blue-dark); } .bs-pale { fill: var(--irx-cloth-inner); } .bs-tree { fill: var(--irx-wax-teal-dark); } .bs-ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }</style>
+    </defs>
+    <g id="background">
+        <path id="bs-sky" class="bs-sky" d="M0 0 h1600 v470 h-1600 z"/>
+        <path id="bs-terr-roof" class="bs-terrd" d="M0 214 h150 v-34 h40 v34 h230 v-30 h38 v30 h250 v-36 h40 v36 h300 v-28 h40 v28 h512 v40 h-1600 z"/>
+        <path id="bs-terr" class="bs-terr" d="M0 250 h1600 v220 h-1600 z"/>
+        <path id="bs-twin0" class="bs-glaz" d="M60 286 h84 v76 h-84 z"/>
+        <path id="bs-twin0-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M60 286 h84 v76 h-84 z M102 286 v76"/>
+        <path id="bs-tdoor0" class="bs-terrd" d="M168 380 h52 v90 h-52 z"/>
+        <path id="bs-twin1" class="bs-glaz" d="M256 286 h84 v76 h-84 z"/>
+        <path id="bs-twin1-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M256 286 h84 v76 h-84 z M298 286 v76"/>
+        <path id="bs-tdoor1" class="bs-terrd" d="M364 380 h52 v90 h-52 z"/>
+        <path id="bs-twin2" class="bs-glaz" d="M452 286 h84 v76 h-84 z"/>
+        <path id="bs-twin2-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M452 286 h84 v76 h-84 z M494 286 v76"/>
+        <path id="bs-tdoor2" class="bs-terrd" d="M560 380 h52 v90 h-52 z"/>
+        <path id="bs-twin3" class="bs-glaz" d="M648 286 h84 v76 h-84 z"/>
+        <path id="bs-twin3-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M648 286 h84 v76 h-84 z M690 286 v76"/>
+        <path id="bs-tdoor3" class="bs-terrd" d="M756 380 h52 v90 h-52 z"/>
+        <path id="bs-twin4" class="bs-glaz" d="M844 286 h84 v76 h-84 z"/>
+        <path id="bs-twin4-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M844 286 h84 v76 h-84 z M886 286 v76"/>
+        <path id="bs-tdoor4" class="bs-terrd" d="M952 380 h52 v90 h-52 z"/>
+        <path id="bs-twin5" class="bs-glaz" d="M1040 286 h84 v76 h-84 z"/>
+        <path id="bs-twin5-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M1040 286 h84 v76 h-84 z M1082 286 v76"/>
+        <path id="bs-tdoor5" class="bs-terrd" d="M1148 380 h52 v90 h-52 z"/>
+        <path id="bs-twin6" class="bs-glaz" d="M1236 286 h84 v76 h-84 z"/>
+        <path id="bs-twin6-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M1236 286 h84 v76 h-84 z M1278 286 v76"/>
+        <path id="bs-tdoor6" class="bs-terrd" d="M1344 380 h52 v90 h-52 z"/>
+        <path id="bs-twin7" class="bs-glaz" d="M1432 286 h84 v76 h-84 z"/>
+        <path id="bs-twin7-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M1432 286 h84 v76 h-84 z M1474 286 v76"/>
+        <path id="bs-tdoor7" class="bs-terrd" d="M1540 380 h52 v90 h-52 z"/>
+        <path id="bs-terr-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M0 250 h1600"/>
+        <path id="bs-tree0" class="bs-tree" d="M340 124 q92 0 92 92 q0 92 -92 92 q-92 0 -92 -92 q0 -92 92 -92 z"/>
+        <path id="bs-tree1" class="bs-tree" d="M1180 138 q78 0 78 78 q0 78 -78 78 q-78 0 -78 -78 q0 -78 78 -78 z"/>
+    </g>
+    <g id="architecture">
+        <path id="bs-road" class="bs-road" d="M0 470 h1600 v126 h-1600 z"/>
+        <path id="bs-road-line" class="bs-pale" d="M80 532 h120 v12 h-120 z M310 532 h120 v12 h-120 z M540 532 h120 v12 h-120 z M770 532 h120 v12 h-120 z M1000 532 h120 v12 h-120 z M1230 532 h120 v12 h-120 z M1460 532 h120 v12 h-120 z"/>
+        <path id="bs-kerb" class="bs-kerb" d="M0 550 h1600 v46 h-1600 z"/>
+        <path id="bs-kerb-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M0 470 h1600 M0 550 h1600"/>
+        <path id="bs-bus" class="bs-flag" d="M300 188 q0 -26 30 -26 h1240 q30 0 30 26 v362 h-1300 z"/>
+        <path id="bs-bus-band" class="bs-flagd" d="M300 492 h1300 v22 h-1300 z"/>
+        <path id="bs-bus-blind" class="bs-panel" d="M330 196 h330 v58 h-330 z"/>
+        <path id="bs-bus-blind-t" class="bs-pale" d="M352 212 h40 v26 h-40 z M400 212 h30 v26 h-30 z M446 212 h150 v26 h-150 z"/>
+        <path id="bs-bus-glaz0" class="bs-panel" d="M326 274 h1248 v84 h-1248 z"/>
+        <path id="bs-bus-mul0" class="bs-flag" d="M352 274 h14 v84 h-14 z M448 274 h14 v84 h-14 z M544 274 h14 v84 h-14 z M640 274 h14 v84 h-14 z M736 274 h14 v84 h-14 z M832 274 h14 v84 h-14 z M928 274 h14 v84 h-14 z M1024 274 h14 v84 h-14 z M1120 274 h14 v84 h-14 z M1216 274 h14 v84 h-14 z M1312 274 h14 v84 h-14 z M1408 274 h14 v84 h-14 z M1504 274 h14 v84 h-14 z"/>
+        <path id="bs-bus-glaz1" class="bs-panel" d="M326 392 h1248 v86 h-1248 z"/>
+        <path id="bs-bus-mul1" class="bs-flag" d="M352 392 h14 v86 h-14 z M448 392 h14 v86 h-14 z M544 392 h14 v86 h-14 z M640 392 h14 v86 h-14 z M736 392 h14 v86 h-14 z M832 392 h14 v86 h-14 z M928 392 h14 v86 h-14 z M1024 392 h14 v86 h-14 z M1120 392 h14 v86 h-14 z M1216 392 h14 v86 h-14 z M1312 392 h14 v86 h-14 z M1408 392 h14 v86 h-14 z M1504 392 h14 v86 h-14 z"/>
+        <path id="bs-bus-door" class="bs-panel" d="M690 392 h132 v158 h-132 z"/>
+        <path id="bs-bus-door-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M690 392 h132 v158 M756 392 v158"/>
+        <path id="bs-bus-f" class="bs-ln" stroke-width="var(--irx-stroke-heavy)" d="M300 188 q0 -26 30 -26 h1240 q30 0 30 26 v362 h-1300 z M326 274 h1248 v84 h-1248 z M326 392 h1248 v86 h-1248 z M330 196 h330 v58 h-330 z"/>
+        <path id="bs-roof" class="bs-roof" d="M0 60 h1600 v60 h-1600 z"/>
+        <path id="bs-roof-lip" class="bs-flag" d="M0 104 h1600 v16 h-1600 z"/>
+        <path id="bs-roof-f" class="bs-ln" stroke-width="var(--irx-stroke-heavy)" d="M0 120 h1600"/>
+        <path id="bs-post0" class="bs-steel" d="M96 120 h34 v716 h-34 z"/>
+        <path id="bs-post0-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M96 120 h34 v716 h-34 z"/>
+        <path id="bs-post1" class="bs-steel" d="M748 120 h34 v716 h-34 z"/>
+        <path id="bs-post1-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M748 120 h34 v716 h-34 z"/>
+        <path id="bs-post2" class="bs-steel" d="M1448 120 h34 v716 h-34 z"/>
+        <path id="bs-post2-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M1448 120 h34 v716 h-34 z"/>
+        <path id="bs-glaz-rail" class="bs-steel" d="M0 566 h1600 v16 h-1600 z"/>
+    </g>
+    <g id="environmental_detail">
+        <path id="bs-pole" class="bs-steeld" d="M1312 222 h16 v374 h-16 z"/>
+        <path id="bs-roundel" class="bs-flag" d="M1320 122 q56 0 56 50 q0 50 -56 50 q-56 0 -56 -50 q0 -50 56 -50 z"/>
+        <path id="bs-roundel-in" class="bs-pale" d="M1320 146 q32 0 32 26 q0 26 -32 26 q-32 0 -32 -26 q0 -26 32 -26 z"/>
+        <path id="bs-roundel-bar" class="bs-blue" d="M1246 158 h148 v30 h-148 z"/>
+        <path id="bs-roundel-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M1320 122 q56 0 56 50 q0 50 -56 50 q-56 0 -56 -50 q0 -50 56 -50 z M1246 158 h148 v30 h-148 z"/>
+        <path id="bs-plate" class="bs-pale" d="M1240 232 h160 v46 h-160 z"/>
+        <path id="bs-plate-t" class="bs-blue" d="M1262 248 h116 v14 h-116 z"/>
+        <path id="bs-plate-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M1240 232 h160 v46 h-160 z"/>
+        <path id="bs-tile0" class="bs-blue" d="M1240 288 h78 v46 h-78 z"/>
+        <path id="bs-tile0-t" class="bs-pale" d="M1262 302 h34 v18 h-34 z"/>
+        <path id="bs-tile0-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M1240 288 h78 v46 h-78 z"/>
+        <path id="bs-tile1" class="bs-flag" d="M1322 288 h78 v46 h-78 z"/>
+        <path id="bs-tile1-t" class="bs-pale" d="M1344 302 h34 v18 h-34 z"/>
+        <path id="bs-tile1-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M1322 288 h78 v46 h-78 z"/>
+        <path id="bs-tile2" class="bs-blue" d="M1240 344 h78 v46 h-78 z"/>
+        <path id="bs-tile2-t" class="bs-pale" d="M1262 358 h34 v18 h-34 z"/>
+        <path id="bs-tile2-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M1240 344 h78 v46 h-78 z"/>
+        <path id="bs-tile3" class="bs-blue" d="M1322 344 h78 v46 h-78 z"/>
+        <path id="bs-tile3-t" class="bs-pale" d="M1344 358 h34 v18 h-34 z"/>
+        <path id="bs-tile3-f" class="bs-ln" stroke-width="var(--irx-stroke-fine)" d="M1322 344 h78 v46 h-78 z"/>
+        <path id="bs-end" class="bs-panel" d="M0 120 h130 v476 h-130 z"/>
+        <path id="bs-end-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M0 120 h130 v476 h-130 z"/>
+        <path id="bs-map" class="bs-pale" d="M16 196 h98 v244 h-98 z"/>
+        <path id="bs-map-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M16 196 h98 v244 h-98 z"/>
+        <path id="bs-map-line" class="bs-flag" d="M32 320 h44 v12 h-44 z M76 254 h12 v78 h-12 z M88 254 h18 v12 h-18 z"/>
+        <path id="bs-stopdot0" class="bs-steeld" d="M28 314 q11 0 11 11 q0 11 -11 11 q-11 0 -11 -11 q0 -11 11 -11 z"/>
+        <path id="bs-stopdot1" class="bs-steeld" d="M70 248 q11 0 11 11 q0 11 -11 11 q-11 0 -11 -11 q0 -11 11 -11 z"/>
+        <path id="bs-stopdot2" class="bs-steeld" d="M98 248 q11 0 11 11 q0 11 -11 11 q-11 0 -11 -11 q0 -11 11 -11 z"/>
+        <path id="bs-bin" class="bs-steeld" d="M172 378 h108 v172 h-108 z"/>
+        <path id="bs-bin-lid" class="bs-steel" d="M160 360 h132 v22 h-132 z"/>
+        <path id="bs-bin-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M172 378 h108 v172 M160 360 h132 v22 h-132 z"/>
+    </g>
+    <g id="furniture">
+        <path id="bs-panel-top" class="bs-steel" d="M0 596 h1600 v26 h-1600 z"/>
+        <path id="bs-panel" class="bs-panel" d="M0 622 h1600 v248 h-1600 z"/>
+        <path id="bs-panel-plinth" class="bs-steeld" d="M0 870 h1600 v30 h-1600 z"/>
+        <path id="bs-panel-j0" class="bs-steeld" d="M60 622 h12 v248 h-12 z"/>
+        <path id="bs-panel-j1" class="bs-steeld" d="M310 622 h12 v248 h-12 z"/>
+        <path id="bs-panel-j2" class="bs-steeld" d="M560 622 h12 v248 h-12 z"/>
+        <path id="bs-panel-j3" class="bs-steeld" d="M810 622 h12 v248 h-12 z"/>
+        <path id="bs-panel-j4" class="bs-steeld" d="M1060 622 h12 v248 h-12 z"/>
+        <path id="bs-panel-j5" class="bs-steeld" d="M1310 622 h12 v248 h-12 z"/>
+        <path id="bs-brk0" class="bs-steeld" d="M300 742 h20 v92 h-20 z"/>
+        <path id="bs-brk1" class="bs-steeld" d="M760 742 h20 v92 h-20 z"/>
+        <path id="bs-brk2" class="bs-steeld" d="M1240 742 h20 v92 h-20 z"/>
+        <path id="bs-bench" class="bs-flag" d="M200 710 h1200 v36 h-1200 z"/>
+        <path id="bs-bench-edge" class="bs-steeld" d="M200 746 h1200 v12 h-1200 z"/>
+        <path id="bs-bench-f" class="bs-ln" stroke-width="var(--irx-stroke)" d="M200 710 h1200 v48 h-1200 z"/>
+        <path id="bs-panel-f" class="bs-ln" stroke-width="var(--irx-stroke-heavy)" d="M0 596 h1600 M0 622 h1600"/>
+    </g>
+    <g id="foreground">
+        <path id="bs-near" class="bs-steeld" d="M1552 0 h48 v900 h-48 z"/>
+        <path id="bs-near-f" class="bs-ln" stroke-width="var(--irx-stroke-xheavy)" d="M1552 0 v900"/>
+    </g>
+</svg>

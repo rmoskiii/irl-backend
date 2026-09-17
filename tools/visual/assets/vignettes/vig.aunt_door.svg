@@ -1,3 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600"
+     id="vig.aunt_door" data-vignette="vig.aunt_door">
+    <defs><style><![CDATA[
 /* ENVIRONMENT VALUE LOCK: C applied (k=0.82) */
 /* IRX Visual Asset Tokens — Phase 2A
  * Source of truth for all colour and stroke values in the asset system.
@@ -144,6 +147,8 @@
   --irx-neighbourhood-foliage:      #46584B;
   --irx-neighbourhood-foliage-dark: #35463A;
   --irx-neighbourhood-car:          #5A5F66;
+
+  /* ==== the streets — six characters, deliberately differentiated ==== */
   /* figure_e — Bola. African, fifties. */
   --irx-skin-e:        #6B4A33;
   --irx-skin-e-shade:  #4F3524;
@@ -202,6 +207,25 @@
   --irx-wax-red-dark:  #93331C;
   --irx-wax-gold:      #E3A83C;
   --irx-wax-cream:     #EADBC2;
+  /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+     and --irx-jacket are both grey-blues for lit interiors, and a football
+     jersey in either reads as grey. Two added rather than faked. */
   --irx-wax-blue:      #4A86C4;
   --irx-wax-blue-dark: #2F5E91;
 }
+]]></style></defs>
+    <g id="vignette">
+        <path id="bg" fill="var(--irx-vig-mid)" d="M0 0 h480 v600 h-480 z"/>
+        <path id="ad-wall" fill="var(--irx-vig-base)" d="M0 0 h480 v520 h-480 z"/>
+        <path id="ad-course" fill="var(--irx-vig-mid)" d="M0 132 h480 v8 h-480 z M0 284 h480 v8 h-480 z M0 436 h480 v8 h-480 z"/>
+        <path id="ad-reveal" fill="var(--irx-vig-mid)" d="M118 58 h244 v462 h-244 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="ad-door" fill="var(--irx-vig-dark)" d="M140 80 h200 v440 h-200 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="ad-glass" fill="var(--irx-accent)" d="M168 116 h144 v128 h-144 z"/>
+        <path id="ad-glazing" fill="var(--irx-vig-dark)" d="M234 116 h12 v128 h-12 z M168 174 h144 v12 h-144 z"/>
+        <path id="ad-glass-f" fill="none" stroke="var(--irx-line)" stroke-width="var(--irx-stroke)" d="M168 116 h144 v128 h-144 z"/>
+        <path id="ad-letterbox" fill="var(--irx-vig-light)" d="M196 330 h88 v20 h-88 z"/>
+        <path id="ad-knob" fill="var(--irx-vig-light)" d="M310 386 q14 0 14 14 q0 14 -14 14 q-14 0 -14 -14 q0 -14 14 -14 z"/>
+        <path id="ad-step" fill="var(--irx-vig-light)" d="M96 520 h288 v42 h-288 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="ad-spill" fill="var(--irx-vig-base)" d="M0 562 h480 v38 h-480 z"/>
+    </g>
+</svg>

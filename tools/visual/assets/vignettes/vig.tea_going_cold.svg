@@ -1,3 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600"
+     id="vig.tea_going_cold" data-vignette="vig.tea_going_cold">
+    <defs><style><![CDATA[
 /* ENVIRONMENT VALUE LOCK: C applied (k=0.82) */
 /* IRX Visual Asset Tokens — Phase 2A
  * Source of truth for all colour and stroke values in the asset system.
@@ -144,6 +147,8 @@
   --irx-neighbourhood-foliage:      #46584B;
   --irx-neighbourhood-foliage-dark: #35463A;
   --irx-neighbourhood-car:          #5A5F66;
+
+  /* ==== the streets — six characters, deliberately differentiated ==== */
   /* figure_e — Bola. African, fifties. */
   --irx-skin-e:        #6B4A33;
   --irx-skin-e-shade:  #4F3524;
@@ -202,6 +207,22 @@
   --irx-wax-red-dark:  #93331C;
   --irx-wax-gold:      #E3A83C;
   --irx-wax-cream:     #EADBC2;
+  /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+     and --irx-jacket are both grey-blues for lit interiors, and a football
+     jersey in either reads as grey. Two added rather than faked. */
   --irx-wax-blue:      #4A86C4;
   --irx-wax-blue-dark: #2F5E91;
 }
+]]></style></defs>
+    <g id="vignette">
+        <path id="bg" fill="var(--irx-vig-mid)" d="M0 0 h480 v600 h-480 z"/>
+        <path id="tc-table" fill="var(--irx-vig-light)" d="M30 372 h420 v44 h-420 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="tc-leg" fill="var(--irx-vig-base)" d="M76 416 h30 v184 h-30 z M374 416 h30 v184 h-30 z"/>
+        <path id="tc-apron" fill="var(--irx-vig-base)" d="M60 416 h360 v22 h-360 z"/>
+        <path id="tc-mug" fill="var(--irx-vig-base)" d="M166 372 v-140 h152 v140 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="tc-handle" fill="none" d="M318 262 q52 0 52 34 q0 34 -52 34" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="tc-tea" fill="var(--irx-vig-dark)" d="M180 246 h124 v22 h-124 z"/>
+        <path id="tc-tea-f" fill="none" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" d="M180 246 h124"/>
+        <path id="tc-ring" fill="var(--irx-vig-mid)" d="M336 358 h84 v14 h-84 z"/>
+    </g>
+</svg>

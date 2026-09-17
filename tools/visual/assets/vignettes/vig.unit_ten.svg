@@ -1,3 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600"
+     id="vig.unit_ten" data-vignette="vig.unit_ten">
+    <defs><style><![CDATA[
 /* ENVIRONMENT VALUE LOCK: C applied (k=0.82) */
 /* IRX Visual Asset Tokens — Phase 2A
  * Source of truth for all colour and stroke values in the asset system.
@@ -144,6 +147,8 @@
   --irx-neighbourhood-foliage:      #46584B;
   --irx-neighbourhood-foliage-dark: #35463A;
   --irx-neighbourhood-car:          #5A5F66;
+
+  /* ==== the streets — six characters, deliberately differentiated ==== */
   /* figure_e — Bola. African, fifties. */
   --irx-skin-e:        #6B4A33;
   --irx-skin-e-shade:  #4F3524;
@@ -202,6 +207,46 @@
   --irx-wax-red-dark:  #93331C;
   --irx-wax-gold:      #E3A83C;
   --irx-wax-cream:     #EADBC2;
+  /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+     and --irx-jacket are both grey-blues for lit interiors, and a football
+     jersey in either reads as grey. Two added rather than faked. */
   --irx-wax-blue:      #4A86C4;
   --irx-wax-blue-dark: #2F5E91;
 }
+]]></style></defs>
+    <g id="vignette">
+        <path id="bg" fill="var(--irx-vig-mid)" d="M0 0 h480 v600 h-480 z"/>
+        <path id="ut-board" fill="var(--irx-vig-base)" d="M46 54 h388 v304 h-388 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="ut-case0-0" fill="var(--irx-vig-mid)" d="M70 78 h42 v54 h-42 z"/>
+        <path id="ut-case0-1" fill="var(--irx-vig-light)" d="M132 78 h42 v54 h-42 z"/>
+        <path id="ut-case0-2" fill="var(--irx-vig-light)" d="M194 78 h42 v54 h-42 z"/>
+        <path id="ut-case0-3" fill="var(--irx-vig-mid)" d="M256 78 h42 v54 h-42 z"/>
+        <path id="ut-case0-4" fill="var(--irx-vig-light)" d="M318 78 h42 v54 h-42 z"/>
+        <path id="ut-case0-5" fill="var(--irx-vig-light)" d="M380 78 h42 v54 h-42 z"/>
+        <path id="ut-case1-0" fill="var(--irx-vig-light)" d="M70 148 h42 v54 h-42 z"/>
+        <path id="ut-case1-1" fill="var(--irx-vig-light)" d="M132 148 h42 v54 h-42 z"/>
+        <path id="ut-case1-2" fill="var(--irx-vig-mid)" d="M194 148 h42 v54 h-42 z"/>
+        <path id="ut-case1-3" fill="var(--irx-vig-light)" d="M256 148 h42 v54 h-42 z"/>
+        <path id="ut-case1-4" fill="var(--irx-vig-light)" d="M318 148 h42 v54 h-42 z"/>
+        <path id="ut-case1-5" fill="var(--irx-vig-mid)" d="M380 148 h42 v54 h-42 z"/>
+        <path id="ut-case2-0" fill="var(--irx-vig-light)" d="M70 218 h42 v54 h-42 z"/>
+        <path id="ut-case2-1" fill="var(--irx-vig-mid)" d="M132 218 h42 v54 h-42 z"/>
+        <path id="ut-case2-2" fill="var(--irx-vig-light)" d="M194 218 h42 v54 h-42 z"/>
+        <path id="ut-case2-3" fill="var(--irx-vig-light)" d="M256 218 h42 v54 h-42 z"/>
+        <path id="ut-case2-4" fill="var(--irx-vig-mid)" d="M318 218 h42 v54 h-42 z"/>
+        <path id="ut-case2-5" fill="var(--irx-vig-light)" d="M380 218 h42 v54 h-42 z"/>
+        <path id="ut-case3-0" fill="var(--irx-vig-mid)" d="M70 288 h42 v54 h-42 z"/>
+        <path id="ut-case3-1" fill="var(--irx-vig-light)" d="M132 288 h42 v54 h-42 z"/>
+        <path id="ut-case3-2" fill="var(--irx-vig-light)" d="M194 288 h42 v54 h-42 z"/>
+        <path id="ut-case3-3" fill="var(--irx-vig-mid)" d="M256 288 h42 v54 h-42 z"/>
+        <path id="ut-case3-4" fill="var(--irx-vig-light)" d="M318 288 h42 v54 h-42 z"/>
+        <path id="ut-case3-5" fill="var(--irx-vig-light)" d="M380 288 h42 v54 h-42 z"/>
+        <path id="ut-pegs" fill="none" stroke="var(--irx-vig-mid)" stroke-width="var(--irx-stroke-fine)" d="M46 68 h388 M46 138 h388 M46 208 h388 M46 278 h388 M46 348 h388"/>
+        <path id="ut-counter" fill="var(--irx-vig-light)" d="M20 392 h440 v46 h-440 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="ut-front" fill="var(--irx-vig-base)" d="M20 438 h440 v162 h-440 z"/>
+        <path id="ut-box0" fill="var(--irx-vig-mid)" d="M44 524 h116 v76 h-116 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="ut-box1" fill="var(--irx-vig-mid)" d="M172 538 h96 v62 h-96 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="ut-box2" fill="var(--irx-vig-mid)" d="M290 516 h130 v84 h-130 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="ut-tape" fill="none" stroke="var(--irx-vig-dark)" stroke-width="var(--irx-stroke-fine)" d="M102 524 v76 M220 538 v62 M355 516 v84"/>
+    </g>
+</svg>

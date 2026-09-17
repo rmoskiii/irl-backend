@@ -1,3 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600"
+     id="vig.bus_window" data-vignette="vig.bus_window">
+    <defs><style><![CDATA[
 /* ENVIRONMENT VALUE LOCK: C applied (k=0.82) */
 /* IRX Visual Asset Tokens — Phase 2A
  * Source of truth for all colour and stroke values in the asset system.
@@ -144,6 +147,8 @@
   --irx-neighbourhood-foliage:      #46584B;
   --irx-neighbourhood-foliage-dark: #35463A;
   --irx-neighbourhood-car:          #5A5F66;
+
+  /* ==== the streets — six characters, deliberately differentiated ==== */
   /* figure_e — Bola. African, fifties. */
   --irx-skin-e:        #6B4A33;
   --irx-skin-e-shade:  #4F3524;
@@ -202,6 +207,24 @@
   --irx-wax-red-dark:  #93331C;
   --irx-wax-gold:      #E3A83C;
   --irx-wax-cream:     #EADBC2;
+  /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+     and --irx-jacket are both grey-blues for lit interiors, and a football
+     jersey in either reads as grey. Two added rather than faked. */
   --irx-wax-blue:      #4A86C4;
   --irx-wax-blue-dark: #2F5E91;
 }
+]]></style></defs>
+    <g id="vignette">
+        <path id="bg" fill="var(--irx-vig-mid)" d="M0 0 h480 v600 h-480 z"/>
+        <path id="bw-glass" fill="var(--irx-vig-base)" d="M56 96 q0 -20 22 -20 h324 q22 0 22 20 v300 q0 20 -22 20 h-324 q-22 0 -22 -20 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="bw-terrace" fill="var(--irx-vig-light)" d="M56 250 h58 v-26 h44 v26 h62 v-34 h48 v34 h74 v-22 h52 v22 h30 v120 h-368 z"/>
+        <path id="bw-road" fill="var(--irx-vig-mid)" d="M56 340 h368 v76 h-368 z"/>
+        <path id="bw-lit" fill="var(--irx-accent)" d="M300 268 h34 v26 h-34 z"/>
+        <path id="bw-windows" fill="var(--irx-vig-mid)" d="M74 268 h30 v24 h-30 z M126 262 h28 v24 h-28 z M196 256 h30 v24 h-30 z M352 274 h30 v22 h-30 z"/>
+        <path id="bw-rain" fill="none" stroke="var(--irx-vig-light)" stroke-width="var(--irx-stroke-fine)" stroke-linecap="round" d="M96 130 l-14 54 M164 112 l-14 60 M254 126 l-14 48 M330 116 l-14 56 M392 140 l-12 44"/>
+        <path id="bw-frame" fill="none" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-heavy)" stroke-linejoin="round" d="M56 96 q0 -20 22 -20 h324 q22 0 22 20 v300 q0 20 -22 20 h-324 q-22 0 -22 -20 z"/>
+        <path id="bw-sill" fill="var(--irx-vig-base)" d="M40 416 h400 v34 h-400 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="bw-panel" fill="var(--irx-vig-dark)" d="M0 450 h480 v150 h-480 z"/>
+        <path id="bw-rail" fill="var(--irx-vig-light)" d="M0 470 h480 v14 h-480 z"/>
+    </g>
+</svg>

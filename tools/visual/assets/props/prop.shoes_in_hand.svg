@@ -1,3 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150"
+     id="prop.shoes_in_hand" data-prop="prop.shoes_in_hand">
+    <defs><style><![CDATA[
 /* ENVIRONMENT VALUE LOCK: C applied (k=0.82) */
 /* IRX Visual Asset Tokens — Phase 2A
  * Source of truth for all colour and stroke values in the asset system.
@@ -144,6 +147,8 @@
   --irx-neighbourhood-foliage:      #46584B;
   --irx-neighbourhood-foliage-dark: #35463A;
   --irx-neighbourhood-car:          #5A5F66;
+
+  /* ==== the streets — six characters, deliberately differentiated ==== */
   /* figure_e — Bola. African, fifties. */
   --irx-skin-e:        #6B4A33;
   --irx-skin-e-shade:  #4F3524;
@@ -202,6 +207,16 @@
   --irx-wax-red-dark:  #93331C;
   --irx-wax-gold:      #E3A83C;
   --irx-wax-cream:     #EADBC2;
+  /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+     and --irx-jacket are both grey-blues for lit interiors, and a football
+     jersey in either reads as grey. Two added rather than faked. */
   --irx-wax-blue:      #4A86C4;
   --irx-wax-blue-dark: #2F5E91;
 }
+]]></style></defs>
+    <g id="prop">
+        <path id="sh-b" fill="var(--irx-cabinet-dark)" d="M92 138 q2 -18 26 -24 q24 -8 40 -10 q6 -20 20 -20 q10 0 10 16 v38 h-12 v8 h-14 v-8 h-70 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sh-a" fill="var(--irx-jacket-dark)" d="M10 138 q2 -18 26 -24 q24 -8 40 -10 q6 -20 20 -20 q10 0 10 16 v38 h-12 v8 h-14 v-8 h-70 z" stroke="var(--irx-line)" stroke-width="var(--irx-stroke)" stroke-linejoin="round" stroke-linecap="round"/>
+        <path id="sh-openings" fill="none" stroke="var(--irx-line)" stroke-width="var(--irx-stroke-fine)" d="M76 104 q14 -4 22 -16 M158 104 q14 -4 22 -16"/>
+    </g>
+</svg>
