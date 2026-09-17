@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
+     id="scene.jay_frontroom" data-scene="scene.jay_frontroom" data-occlusion-line="600" data-times="night" data-default-time="night" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpjYzcxYTQ2Yi04MTcxLTRmYmQtOTc0Mi1jMmU2ZmE4NmNiODkAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaAgY4Cnq2NjwzilZbFYIrKIAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpmMmRhYTBlZS1mZDAxLTQzZTYtODEyNC1hMjdlNjdjNTU4YTNscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoYjaSmGXyNTH+FAsZhMi7AQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFgg/AP+wx4OfIrDhJYQXdjKza7a5E0D3MCKoQJsMO0ePw6kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaHqvXVXjsmYrx1lByYT8ldsAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIAcuWnhlgEAKpk9PCih6/nSEz1cV4GNJnfItobSXEQpaZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GQEEZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmNjNzFhNDZiLTgxNzEtNGZiZC05NzQyLWMyZTZmYTg2Y2I4OS9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjIwYTJjYzcyLTg4ZGEtNDg5YS04NmVkLTk5ZmNlODlmZmZhNHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCD8A/7DHg58isOElhBd2MrNrtrkTQPcwIqhAmww7R4/DqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggR8wj5wLc8WZsGcVDsqgKUsy8SzaF/DH6r3SV0orXoBuiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggzoQSwp/QsHyUiAlEbLR7jU4El72b35zTEXSn1e4PNSd0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQPIBFLy6yoK+mUdbCmKtdyVf95N3fsOVssL5JYdq+I4szPkD1DAdQ+y6nNYcGocGb385Cd2gB6DqzLg4gZcmfVw=</c2pa:manifest></metadata>
+    <defs>
+        <style>/* @tokens-begin */
+            :root {
+            /* line */
+            --irx-line:          #241D19;
+            --irx-line-soft:     #3B302A;
+            --irx-shadow:        #2A231E;
+
+            /* architecture */
+            --irx-wall:          #5C6A5F;
+            --irx-wall-dark:     #4E5A51;
+            --irx-wall-pattern:  #556359;
+            --irx-tile:          #B5A992;
+            --irx-tile-alt:      #A49980;
+            --irx-floor:         #5E4D3E;
+
+            /* window */
+            --irx-sky-high:      #334051;
+            --irx-sky-mid:       #4D4656;
+            --irx-sky-low:       #785A4F;
+            --irx-outside-dark:  #2A333E;
+            --irx-curtain:       #424E56;
+            --irx-curtain-dark:  #38424A;
+
+            /* joinery */
+            --irx-cabinet:       #785D44;
+            --irx-cabinet-dark:  #634C36;
+            --irx-counter:       #947553;
+            --irx-counter-edge:  #7B5F43;
+
+            /* character */
+            --irx-skin:          #A87A5A;
+            --irx-skin-shade:    #875D42;
+            --irx-skin-b:        #8E6244;
+            --irx-skin-b-shade:  #6E4A32;
+            --irx-lip-b:         #96604F;
+            --irx-mouth-b:       #4A2C24;
+            --irx-hair:          #41322A;
+            --irx-hair-light:    #554136;
+            --irx-hair-b:        #241A16;
+            --irx-hair-b-light:  #3D2C24;
+
+            /* wardrobe: home_casual */
+            --irx-cloth:         #A8603F;
+            --irx-cloth-dark:    #894C31;
+            --irx-cloth-inner:   #D9CDBC;
+
+            /* props */
+            --irx-glass:         #BCC8C3;
+            --irx-glass-dark:    #9AA8A2;
+            --irx-highlight:     #FFFFFF;
+            --irx-jacket:        #4F5A63;
+            --irx-jacket-dark:   #3D464E;
+
+            /* accent — neighbourhood district, warm light only */
+            --irx-accent:        #FFC15E;
+            --irx-accent-dim:    #C89A4E;
+            --irx-lamp-warm:     #F2C77E;
+            --irx-cool-spill:    #7E93A8;
+
+            /* vignettes */
+            --irx-vig-light:     #B3ABA0;
+            --irx-vig-base:      #8C857C;
+            --irx-vig-mid:       #635D56;
+            --irx-vig-dark:      #3B3733;
+
+            /* stroke weights */
+            --irx-stroke-xheavy: 6.6;
+            --irx-stroke-heavy:  5;
+            --irx-stroke:        3.4;
+            --irx-stroke-fine:   2.1;
+            --irx-stroke-hair:   1.4;
+
+            /* ==== the streets — six characters, deliberately differentiated ==== */
+            /* figure_e — Bola. African, fifties. */
+            --irx-skin-e:        #6B4A33;
+            --irx-skin-e-shade:  #4F3524;
+            --irx-hair-e:        #2E2622;
+            --irx-hair-e-light:  #4A3F38;
+            --irx-lip-e:         #7A4F42;
+            --irx-mouth-e:       #3A2019;
+            /* figure_f — Jay. Brown, mid-complexion, nineteen. */
+            --irx-skin-f:        #96684A;
+            --irx-skin-f-shade:  #754F36;
+            --irx-hair-f:        #221A15;
+            --irx-hair-f-light:  #3A2B22;
+            --irx-lip-f:         #9C6552;
+            --irx-mouth-f:       #4A2A22;
+            /* figure_g — Tunde. African, thirties to forties. */
+            --irx-skin-g:        #5E4030;
+            --irx-skin-g-shade:  #452D21;
+            --irx-hair-g:        #2A221E;
+            --irx-hair-g-light:  #423731;
+            --irx-lip-g:         #6E463A;
+            --irx-mouth-g:       #331C16;
+            /* figure_h — Dee. White, twenty-seven. */
+            --irx-skin-h:        #C9A184;
+            --irx-skin-h-shade:  #A87F64;
+            --irx-hair-h:        #5A4332;
+            --irx-hair-h-light:  #775843;
+            --irx-lip-h:         #B3806C;
+            --irx-mouth-h:       #6B4034;
+            /* figure_i — Kai. Brown, a different complexion from Jay. */
+            --irx-skin-i:        #A8794F;
+            --irx-skin-i-shade:  #86603D;
+            --irx-hair-i:        #281F1A;
+            --irx-hair-i-light:  #41332B;
+            --irx-lip-i:         #A87057;
+            --irx-mouth-i:       #4F2E23;
+            /* figure_j — Amara. Caramel, nineteen to twenty. */
+            --irx-skin-j:        #B08258;
+            --irx-skin-j-shade:  #8E6644;
+            --irx-hair-j:        #2B211C;
+            --irx-hair-j-light:  #463831;
+            --irx-lip-j:         #AE7460;
+            --irx-mouth-j:       #533026;
+
+            /* ==== the streets — wax-print wardrobe palette ==== */
+            /* The existing Neighbourhood set is a lit-interior palette: warm browns, cool
+            greys, one amber accent. It has no saturated cloth colour at all, so West
+            African print had to be invented or faked. Added here rather than faked.
+            Same D14 churn as the character tokens: the preamble is inlined into every
+            composed frame, so this rewrites canonicalSha256 on the existing fixtures
+            and changes no geometry. */
+            --irx-wax-teal:      #1F6F63;
+            --irx-wax-teal-dark: #144F46;
+            --irx-wax-plum:      #6E3A8C;
+            --irx-wax-plum-dark: #4E2866;
+            --irx-wax-red:       #C24A2E;
+            --irx-wax-red-dark:  #93331C;
+            --irx-wax-gold:      #E3A83C;
+            --irx-wax-cream:     #EADBC2;
+            /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+            and --irx-jacket are both grey-blues for lit interiors, and a football
+            jersey in either reads as grey. Two added rather than faked. */
+            --irx-wax-blue:      #4A86C4;
+            --irx-wax-blue-dark: #2F5E91;
+            }
+            /* @tokens-end */</style>
+        <style data-time="night">.jf-wall { fill: var(--irx-counter); } .jf-walld { fill: var(--irx-counter-edge); } .jf-sofa { fill: var(--irx-jacket); } .jf-sofad { fill: var(--irx-jacket-dark); } .jf-board { fill: var(--irx-cabinet-dark); } .jf-boardd { fill: var(--irx-line-soft); } .jf-carpet { fill: var(--irx-cloth-dark); } .jf-carpetd { fill: var(--irx-line-soft); } .jf-dark { fill: var(--irx-line-soft); } .jf-deep { fill: var(--irx-outside-dark); } .jf-curtain { fill: var(--irx-cloth-dark); } .jf-curtaind { fill: var(--irx-cloth); } .jf-pale { fill: var(--irx-cloth-inner); } .jf-ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; }</style>
+    </defs>
+    <g id="background">
+        <path id="jf-wall" class="jf-wall" d="M0 0 h1600 v596 h-1600 z"/>
+        <path id="jf-picture-rail" class="jf-walld" d="M0 150 h1600 v12 h-1600 z"/>
+    </g>
+    <g id="architecture">
+        <path id="jf-kit-rev" class="jf-walld" d="M96 96 h398 v500 h-398 z"/>
+        <path id="jf-kit" class="jf-deep" d="M120 120 h350 v476 h-350 z"/>
+        <path id="jf-kit-lit" fill="var(--irx-lamp-warm)" d="M120 120 h350 v476 h-350 z"/>
+        <path id="jf-kit-unit" class="jf-boardd" d="M150 330 h96 v266 h-96 z M330 286 h84 v310 h-84 z"/>
+        <path id="jf-kit-unit-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M150 330 h96 v266 M330 286 h84 v310"/>
+        <path id="jf-kit-f" class="jf-ln" stroke-width="var(--irx-stroke-heavy)" d="M96 96 h398 v500 M120 120 h350 v476"/>
+        <path id="jf-hall-rev" class="jf-walld" d="M1136 110 h358 v486 h-358 z"/>
+        <path id="jf-hall" class="jf-deep" d="M1160 134 h310 v462 h-310 z"/>
+        <path id="jf-hall-far" class="jf-dark" d="M1200 190 h230 v406 h-230 z"/>
+        <path id="jf-hall-f" class="jf-ln" stroke-width="var(--irx-stroke-heavy)" d="M1136 110 h358 v486 M1160 134 h310 v462"/>
+        <path id="jf-win-rev" class="jf-walld" d="M620 168 h380 v300 h-380 z"/>
+        <path id="jf-curtain-l" class="jf-curtain" d="M620 168 h96 q10 150 0 300 h-96 z"/>
+        <path id="jf-curtain-r" class="jf-curtain" d="M904 168 h96 v300 h-96 q-10 -150 0 -300 z"/>
+        <path id="jf-curtain-mid" class="jf-curtaind" d="M716 168 h188 v300 h-188 z"/>
+        <path id="jf-curtain-f" class="jf-ln" stroke-width="var(--irx-stroke)" d="M620 168 h380 v300 h-380 z M716 168 v300 M904 168 v300"/>
+        <path id="jf-pelmet" class="jf-boardd" d="M604 152 h412 v26 h-412 z"/>
+        <path id="jf-sofa" class="jf-sofa" d="M500 470 h620 v126 h-620 z"/>
+        <path id="jf-sofa-back" class="jf-sofad" d="M500 470 h620 v34 h-620 z"/>
+        <path id="jf-sofa-f" class="jf-ln" stroke-width="var(--irx-stroke)" d="M500 470 h620 v126 M712 470 v126 M908 470 v126"/>
+    </g>
+    <g id="environmental_detail">
+        <path id="jf-card0" class="jf-pale" d="M540 110 h46 v40 h-46 z"/>
+        <path id="jf-card0-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M540 110 h46 v40 h-46 z"/>
+        <path id="jf-card1" class="jf-pale" d="M680 110 h46 v40 h-46 z"/>
+        <path id="jf-card1-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M680 110 h46 v40 h-46 z"/>
+        <path id="jf-card2" class="jf-pale" d="M820 110 h46 v40 h-46 z"/>
+        <path id="jf-card2-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M820 110 h46 v40 h-46 z"/>
+        <path id="jf-card3" class="jf-pale" d="M960 110 h46 v40 h-46 z"/>
+        <path id="jf-card3-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M960 110 h46 v40 h-46 z"/>
+        <path id="jf-bunt0" class="jf-carpet" d="M40 44 h74 l-37 52 z"/>
+        <path id="jf-bunt1" class="jf-boardd" d="M148 44 h74 l-37 52 z"/>
+        <path id="jf-bunt2" class="jf-carpet" d="M256 44 h74 l-37 52 z"/>
+        <path id="jf-bunt3" class="jf-boardd" d="M364 44 h74 l-37 52 z"/>
+        <path id="jf-bunt4" class="jf-carpet" d="M472 44 h74 l-37 52 z"/>
+        <path id="jf-bunt5" class="jf-boardd" d="M580 44 h74 l-37 52 z"/>
+        <path id="jf-bunt6" class="jf-carpet" d="M688 44 h74 l-37 52 z"/>
+        <path id="jf-bunt7" class="jf-boardd" d="M796 44 h74 l-37 52 z"/>
+        <path id="jf-bunt8" class="jf-carpet" d="M904 44 h74 l-37 52 z"/>
+        <path id="jf-bunt9" class="jf-boardd" d="M1012 44 h74 l-37 52 z"/>
+        <path id="jf-bunt10" class="jf-carpet" d="M1120 44 h74 l-37 52 z"/>
+        <path id="jf-bunt11" class="jf-boardd" d="M1228 44 h74 l-37 52 z"/>
+        <path id="jf-bunt12" class="jf-carpet" d="M1336 44 h74 l-37 52 z"/>
+        <path id="jf-bunt13" class="jf-boardd" d="M1444 44 h74 l-37 52 z"/>
+        <path id="jf-bunt14" class="jf-carpet" d="M1552 44 h74 l-37 52 z"/>
+        <path id="jf-bunt-line" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M0 44 h1600"/>
+        <path id="jf-glass0" class="jf-curtaind" d="M236 548 h30 l-4 48 h-22 z"/>
+        <path id="jf-glass0-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M236 548 h30 l-4 48 h-22 z"/>
+        <path id="jf-glass1" class="jf-curtaind" d="M288 548 h30 l-4 48 h-22 z"/>
+        <path id="jf-glass1-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M288 548 h30 l-4 48 h-22 z"/>
+        <path id="jf-glass2" class="jf-curtaind" d="M1256 548 h30 l-4 48 h-22 z"/>
+        <path id="jf-glass2-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M1256 548 h30 l-4 48 h-22 z"/>
+        <path id="jf-glass3" class="jf-curtaind" d="M1310 548 h30 l-4 48 h-22 z"/>
+        <path id="jf-glass3-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M1310 548 h30 l-4 48 h-22 z"/>
+        <path id="jf-glass4" class="jf-curtaind" d="M1358 548 h30 l-4 48 h-22 z"/>
+        <path id="jf-glass4-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M1358 548 h30 l-4 48 h-22 z"/>
+        <path id="jf-spill-board" fill="var(--irx-accent-dim)" d="M100 602 q190 -14 380 0 q-190 22 -380 0 z"/>
+    </g>
+    <g id="furniture">
+        <path id="jf-board-top" class="jf-board" d="M0 596 h1600 v30 h-1600 z"/>
+        <path id="jf-board-nose" class="jf-boardd" d="M0 626 h1600 v10 h-1600 z"/>
+        <path id="jf-board-face" class="jf-board" d="M0 636 h1600 v264 h-1600 z"/>
+        <path id="jf-board-plinth" class="jf-boardd" d="M0 870 h1600 v30 h-1600 z"/>
+        <path id="jf-bd0" class="jf-boardd" d="M30 660 h176 v190 h-176 z"/>
+        <path id="jf-bd0-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M30 660 h176 v190 h-176 z"/>
+        <path id="jf-bh0" class="jf-board" d="M92 690 h52 v10 h-52 z"/>
+        <path id="jf-bd1" class="jf-boardd" d="M240 660 h176 v190 h-176 z"/>
+        <path id="jf-bd1-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M240 660 h176 v190 h-176 z"/>
+        <path id="jf-bh1" class="jf-board" d="M302 690 h52 v10 h-52 z"/>
+        <path id="jf-bd2" class="jf-boardd" d="M450 660 h176 v190 h-176 z"/>
+        <path id="jf-bd2-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M450 660 h176 v190 h-176 z"/>
+        <path id="jf-bh2" class="jf-board" d="M512 690 h52 v10 h-52 z"/>
+        <path id="jf-bd3" class="jf-boardd" d="M660 660 h176 v190 h-176 z"/>
+        <path id="jf-bd3-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M660 660 h176 v190 h-176 z"/>
+        <path id="jf-bh3" class="jf-board" d="M722 690 h52 v10 h-52 z"/>
+        <path id="jf-bd4" class="jf-boardd" d="M870 660 h176 v190 h-176 z"/>
+        <path id="jf-bd4-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M870 660 h176 v190 h-176 z"/>
+        <path id="jf-bh4" class="jf-board" d="M932 690 h52 v10 h-52 z"/>
+        <path id="jf-bd5" class="jf-boardd" d="M1080 660 h176 v190 h-176 z"/>
+        <path id="jf-bd5-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M1080 660 h176 v190 h-176 z"/>
+        <path id="jf-bh5" class="jf-board" d="M1142 690 h52 v10 h-52 z"/>
+        <path id="jf-bd6" class="jf-boardd" d="M1290 660 h176 v190 h-176 z"/>
+        <path id="jf-bd6-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M1290 660 h176 v190 h-176 z"/>
+        <path id="jf-bh6" class="jf-board" d="M1352 690 h52 v10 h-52 z"/>
+        <path id="jf-bd7" class="jf-boardd" d="M1500 660 h176 v190 h-176 z"/>
+        <path id="jf-bd7-f" class="jf-ln" stroke-width="var(--irx-stroke-fine)" d="M1500 660 h176 v190 h-176 z"/>
+        <path id="jf-bh7" class="jf-board" d="M1562 690 h52 v10 h-52 z"/>
+        <path id="jf-board-f" class="jf-ln" stroke-width="var(--irx-stroke-heavy)" d="M0 596 h1600 M0 636 h1600"/>
+    </g>
+    <g id="foreground">
+        <path id="jf-return" class="jf-walld" d="M1540 0 h60 v900 h-60 z"/>
+        <path id="jf-return-f" class="jf-ln" stroke-width="var(--irx-stroke-xheavy)" d="M1540 0 v900"/>
+    </g>
+</svg>

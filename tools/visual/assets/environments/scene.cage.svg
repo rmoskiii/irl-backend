@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
+     id="scene.cage" data-scene="scene.cage" data-occlusion-line="600" data-times="day night" data-default-time="night" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo3MzgxYTlmNi05NjM1LTQwZWYtOTZiNi05NmU4MDY4ZTFmOWMAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaM0xOdeQDmXeViX5kPHFwesAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpmMWI2OGM0NS0wODNhLTQ0YTItYWI5Zi03OGYyNDA1M2M5NWFscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoas+l0+Op37YGk0vdVyxXnQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggJUcca+NoAdR9BwXoYbZn48VmxIp1SWoWXMBiTmvRdIWkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaNCe1+ZThYjIKok6p2Bt7IIAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCDbFO7q7LnbErzbMF2D/L+MKbytTXPgTupWgcU3Pt8oUmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBj2Zmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjczODFhOWY2LTk2MzUtNDBlZi05NmI2LTk2ZTgwNjhlMWY5Yy9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjc4OWJiYmZlLWI0ZGItNDUzZC04YmE2LTlmYzk4MWFhMTJhNXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAlRxxr42gB1H0HBehhtmfjxWbEinVJahZcwGJOa9F0haJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgg3JZKOxvZqB2TzIegXBG9KAP3Gdh3NVC90/zTyCjlUp2iY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggKAAKqJ7mo9IAhQ1n/Cx3pjVN6Wgba5hFW+ANhTeEnqd0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQEMdZbYQtLdhNXgitolFvtXuZmnWjLFPQEjZqegt9C2I8AMzXeJA0htnuFgsaTfXvWgmh7FvQOeVDi8s0wDxqIo=</c2pa:manifest></metadata>
+    <defs>
+        <style>/* @tokens-begin */
+            :root {
+            /* line */
+            --irx-line:          #241D19;
+            --irx-line-soft:     #3B302A;
+            --irx-shadow:        #2A231E;
+
+            /* architecture */
+            --irx-wall:          #5C6A5F;
+            --irx-wall-dark:     #4E5A51;
+            --irx-wall-pattern:  #556359;
+            --irx-tile:          #B5A992;
+            --irx-tile-alt:      #A49980;
+            --irx-floor:         #5E4D3E;
+
+            /* window */
+            --irx-sky-high:      #334051;
+            --irx-sky-mid:       #4D4656;
+            --irx-sky-low:       #785A4F;
+            --irx-outside-dark:  #2A333E;
+            --irx-curtain:       #424E56;
+            --irx-curtain-dark:  #38424A;
+
+            /* joinery */
+            --irx-cabinet:       #785D44;
+            --irx-cabinet-dark:  #634C36;
+            --irx-counter:       #947553;
+            --irx-counter-edge:  #7B5F43;
+
+            /* character */
+            --irx-skin:          #A87A5A;
+            --irx-skin-shade:    #875D42;
+            --irx-skin-b:        #8E6244;
+            --irx-skin-b-shade:  #6E4A32;
+            --irx-lip-b:         #96604F;
+            --irx-mouth-b:       #4A2C24;
+            --irx-hair:          #41322A;
+            --irx-hair-light:    #554136;
+            --irx-hair-b:        #241A16;
+            --irx-hair-b-light:  #3D2C24;
+
+            /* wardrobe: home_casual */
+            --irx-cloth:         #A8603F;
+            --irx-cloth-dark:    #894C31;
+            --irx-cloth-inner:   #D9CDBC;
+
+            /* props */
+            --irx-glass:         #BCC8C3;
+            --irx-glass-dark:    #9AA8A2;
+            --irx-highlight:     #FFFFFF;
+            --irx-jacket:        #4F5A63;
+            --irx-jacket-dark:   #3D464E;
+
+            /* accent — neighbourhood district, warm light only */
+            --irx-accent:        #FFC15E;
+            --irx-accent-dim:    #C89A4E;
+            --irx-lamp-warm:     #F2C77E;
+            --irx-cool-spill:    #7E93A8;
+
+            /* vignettes */
+            --irx-vig-light:     #B3ABA0;
+            --irx-vig-base:      #8C857C;
+            --irx-vig-mid:       #635D56;
+            --irx-vig-dark:      #3B3733;
+
+            /* stroke weights */
+            --irx-stroke-xheavy: 6.6;
+            --irx-stroke-heavy:  5;
+            --irx-stroke:        3.4;
+            --irx-stroke-fine:   2.1;
+            --irx-stroke-hair:   1.4;
+
+            /* ==== the streets — six characters, deliberately differentiated ==== */
+            /* figure_e — Bola. African, fifties. */
+            --irx-skin-e:        #6B4A33;
+            --irx-skin-e-shade:  #4F3524;
+            --irx-hair-e:        #2E2622;
+            --irx-hair-e-light:  #4A3F38;
+            --irx-lip-e:         #7A4F42;
+            --irx-mouth-e:       #3A2019;
+            /* figure_f — Jay. Brown, mid-complexion, nineteen. */
+            --irx-skin-f:        #96684A;
+            --irx-skin-f-shade:  #754F36;
+            --irx-hair-f:        #221A15;
+            --irx-hair-f-light:  #3A2B22;
+            --irx-lip-f:         #9C6552;
+            --irx-mouth-f:       #4A2A22;
+            /* figure_g — Tunde. African, thirties to forties. */
+            --irx-skin-g:        #5E4030;
+            --irx-skin-g-shade:  #452D21;
+            --irx-hair-g:        #2A221E;
+            --irx-hair-g-light:  #423731;
+            --irx-lip-g:         #6E463A;
+            --irx-mouth-g:       #331C16;
+            /* figure_h — Dee. White, twenty-seven. */
+            --irx-skin-h:        #C9A184;
+            --irx-skin-h-shade:  #A87F64;
+            --irx-hair-h:        #5A4332;
+            --irx-hair-h-light:  #775843;
+            --irx-lip-h:         #B3806C;
+            --irx-mouth-h:       #6B4034;
+            /* figure_i — Kai. Brown, a different complexion from Jay. */
+            --irx-skin-i:        #A8794F;
+            --irx-skin-i-shade:  #86603D;
+            --irx-hair-i:        #281F1A;
+            --irx-hair-i-light:  #41332B;
+            --irx-lip-i:         #A87057;
+            --irx-mouth-i:       #4F2E23;
+            /* figure_j — Amara. Caramel, nineteen to twenty. */
+            --irx-skin-j:        #B08258;
+            --irx-skin-j-shade:  #8E6644;
+            --irx-hair-j:        #2B211C;
+            --irx-hair-j-light:  #463831;
+            --irx-lip-j:         #AE7460;
+            --irx-mouth-j:       #533026;
+
+            /* ==== the streets — wax-print wardrobe palette ==== */
+            /* The existing Neighbourhood set is a lit-interior palette: warm browns, cool
+            greys, one amber accent. It has no saturated cloth colour at all, so West
+            African print had to be invented or faked. Added here rather than faked.
+            Same D14 churn as the character tokens: the preamble is inlined into every
+            composed frame, so this rewrites canonicalSha256 on the existing fixtures
+            and changes no geometry. */
+            --irx-wax-teal:      #1F6F63;
+            --irx-wax-teal-dark: #144F46;
+            --irx-wax-plum:      #6E3A8C;
+            --irx-wax-plum-dark: #4E2866;
+            --irx-wax-red:       #C24A2E;
+            --irx-wax-red-dark:  #93331C;
+            --irx-wax-gold:      #E3A83C;
+            --irx-wax-cream:     #EADBC2;
+            /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+            and --irx-jacket are both grey-blues for lit interiors, and a football
+            jersey in either reads as grey. Two added rather than faked. */
+            --irx-wax-blue:      #4A86C4;
+            --irx-wax-blue-dark: #2F5E91;
+            }
+            /* @tokens-end */</style>
+        <style data-time="day">.cg-sky { fill: var(--irx-glass); } .cg-far { fill: var(--irx-wall-dark); } .cg-post { fill: var(--irx-jacket-dark); } .cg-mesh { fill: var(--irx-wall-pattern); } .cg-pitch { fill: var(--irx-wall); } .cg-pitchd { fill: var(--irx-wall-dark); } .cg-line { fill: var(--irx-cloth-inner); } .cg-kerb { fill: var(--irx-glass-dark); } .cg-kerbd { fill: var(--irx-wall-dark); } .cg-goal { fill: var(--irx-cloth-inner); } .cg-pole { fill: var(--irx-jacket-dark); } .cg-head { fill: var(--irx-jacket-dark); } .cg-ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; } .cg-mesh { stroke: var(--irx-wall-pattern); fill: none; stroke-linecap: butt; }</style>
+        <style data-time="night">.cg-sky { fill: var(--irx-outside-dark); } .cg-far { fill: var(--irx-line-soft); } .cg-post { fill: var(--irx-outside-dark); } .cg-mesh { fill: var(--irx-curtain); } .cg-pitch { fill: var(--irx-curtain-dark); } .cg-pitchd { fill: var(--irx-outside-dark); } .cg-line { fill: var(--irx-glass-dark); } .cg-kerb { fill: var(--irx-curtain); } .cg-kerbd { fill: var(--irx-outside-dark); } .cg-goal { fill: var(--irx-glass-dark); } .cg-pole { fill: var(--irx-outside-dark); } .cg-head { fill: var(--irx-lamp-warm); } .cg-ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; } .cg-mesh { stroke: var(--irx-curtain); fill: none; stroke-linecap: butt; }</style>
+    </defs>
+    <g id="background">
+        <path id="cg-sky" class="cg-sky" d="M0 0 h1600 v300 h-1600 z"/>
+        <path id="cg-far" class="cg-far" d="M0 250 h180 v-38 h150 v38 h240 v-26 h190 v26 h300 v-44 h170 v44 h370 v60 h-1600 z"/>
+    </g>
+    <g id="architecture">
+        <path id="cg-pitch" class="cg-pitch" d="M0 300 h1600 v296 h-1600 z"/>
+        <path id="cg-pitch-far" class="cg-pitchd" d="M0 300 h1600 v46 h-1600 z"/>
+        <path id="cg-halfway" class="cg-line" d="M796 346 h10 v250 h-10 z"/>
+        <path id="cg-arc" class="cg-ln" stroke-width="6" d="M690 536 q112 -70 222 0"/>
+        <path id="cg-rail-top" class="cg-post" d="M0 250 h1600 v18 h-1600 z"/>
+        <path id="cg-rail-mid" class="cg-post" d="M0 424 h1600 v10 h-1600 z"/>
+        <path id="cg-post0" class="cg-post" d="M60 250 h20 v346 h-20 z"/>
+        <path id="cg-post1" class="cg-post" d="M252 250 h20 v346 h-20 z"/>
+        <path id="cg-post2" class="cg-post" d="M444 250 h20 v346 h-20 z"/>
+        <path id="cg-post3" class="cg-post" d="M636 250 h20 v346 h-20 z"/>
+        <path id="cg-post4" class="cg-post" d="M828 250 h20 v346 h-20 z"/>
+        <path id="cg-post5" class="cg-post" d="M1020 250 h20 v346 h-20 z"/>
+        <path id="cg-post6" class="cg-post" d="M1212 250 h20 v346 h-20 z"/>
+        <path id="cg-post7" class="cg-post" d="M1404 250 h20 v346 h-20 z"/>
+        <path id="cg-post8" class="cg-post" d="M1596 250 h20 v346 h-20 z"/>
+        <path id="cg-mesh-v" class="cg-mesh" stroke-width="2" d="M40 268 v328 M80 268 v328 M120 268 v328 M160 268 v328 M200 268 v328 M240 268 v328 M280 268 v328 M320 268 v328 M360 268 v328 M400 268 v328 M440 268 v328 M480 268 v328 M520 268 v328 M560 268 v328 M600 268 v328 M640 268 v328 M680 268 v328 M720 268 v328 M760 268 v328 M800 268 v328 M840 268 v328 M880 268 v328 M920 268 v328 M960 268 v328 M1000 268 v328 M1040 268 v328 M1080 268 v328 M1120 268 v328 M1160 268 v328 M1200 268 v328 M1240 268 v328 M1280 268 v328 M1320 268 v328 M1360 268 v328 M1400 268 v328 M1440 268 v328 M1480 268 v328 M1520 268 v328 M1560 268 v328"/>
+        <path id="cg-mesh-h" class="cg-mesh" stroke-width="2" d="M0 308 h1600 M0 348 h1600 M0 388 h1600 M0 428 h1600 M0 468 h1600 M0 508 h1600 M0 548 h1600 M0 588 h1600"/>
+        <path id="cg-rail-f" class="cg-ln" stroke-width="var(--irx-stroke)" d="M0 250 h1600 M0 268 h1600 M0 424 h1600 M0 434 h1600"/>
+    </g>
+    <g id="environmental_detail">
+        <path id="cg-goal-net" class="cg-mesh" stroke-width="2" d="M592 348 v248 M628 348 v248 M664 348 v248 M700 348 v248 M736 348 v248 M772 348 v248 M808 348 v248 M844 348 v248 M880 348 v248 M916 348 v248 M952 348 v248 M988 348 v248 M578 366 h444 M578 392 h444 M578 418 h444 M578 444 h444 M578 470 h444 M578 496 h444 M578 522 h444 M578 548 h444 M578 574 h444"/>
+        <path id="cg-goal" class="cg-goal" d="M560 330 h18 v266 h-18 z M1022 330 h18 v266 h-18 z M560 330 h480 v20 h-480 z"/>
+        <path id="cg-goal-f" class="cg-ln" stroke-width="var(--irx-stroke)" d="M560 330 h18 v266 M1022 330 h18 v266 M560 330 h480 v20 h-480 z"/>
+        <path id="cg-pole0" class="cg-pole" d="M291 120 h18 v130 h-18 z"/>
+        <path id="cg-head0" class="cg-head" d="M228 92 h144 v40 h-144 z"/>
+        <path id="cg-head0-f" class="cg-ln" stroke-width="var(--irx-stroke)" d="M228 92 h144 v40 h-144 z"/>
+        <path id="cg-pole1" class="cg-pole" d="M1171 120 h18 v130 h-18 z"/>
+        <path id="cg-head1" class="cg-head" d="M1108 92 h144 v40 h-144 z"/>
+        <path id="cg-head1-f" class="cg-ln" stroke-width="var(--irx-stroke)" d="M1108 92 h144 v40 h-144 z"/>
+        <path id="cg-day-lift" data-time="day" class="cg-line" d="M0 300 h1600 v4 h-1600 z"/>
+        <path id="cg-bag" class="cg-post" d="M1300 538 h108 v58 h-108 z"/>
+        <path id="cg-bag-f" class="cg-ln" stroke-width="var(--irx-stroke-fine)" d="M1300 538 h108 v58 h-108 z M1300 556 h108"/>
+        <path id="cg-bottle" class="cg-goal" d="M1440 556 h18 v40 h-18 z"/>
+    </g>
+    <g id="furniture">
+        <path id="cg-kerb-top" class="cg-kerb" d="M0 596 h1600 v34 h-1600 z"/>
+        <path id="cg-kerb-face" class="cg-kerbd" d="M0 626 h1600 v274 h-1600 z"/>
+        <path id="cg-kerb-band" class="cg-kerb" d="M0 746 h1600 v10 h-1600 z"/>
+        <path id="cg-kerb-f" class="cg-ln" stroke-width="var(--irx-stroke-heavy)" d="M0 596 h1600 M0 630 h1600"/>
+        <path id="cg-kit0" class="cg-post" d="M150 532 q105 -22 210 0 v58 h-210 z"/>
+        <path id="cg-kit0-f" class="cg-ln" stroke-width="var(--irx-stroke)" d="M150 532 q105 -22 210 0 v58 h-210 z"/>
+        <path id="cg-kit0-strap" class="cg-goal" d="M220 534 h16 v56 h-16 z"/>
+        <path id="cg-kit1" class="cg-post" d="M960 532 q90 -22 180 0 v58 h-180 z"/>
+        <path id="cg-kit1-f" class="cg-ln" stroke-width="var(--irx-stroke)" d="M960 532 q90 -22 180 0 v58 h-180 z"/>
+        <path id="cg-kit1-strap" class="cg-goal" d="M1020 534 h16 v56 h-16 z"/>
+    </g>
+    <g id="foreground">
+        <path id="cg-near-post" class="cg-post" d="M1548 0 h52 v900 h-52 z"/>
+        <path id="cg-near-post-f" class="cg-ln" stroke-width="var(--irx-stroke-xheavy)" d="M1548 0 v900"/>
+    </g>
+</svg>

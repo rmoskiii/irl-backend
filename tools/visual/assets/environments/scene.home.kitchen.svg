@@ -1,0 +1,224 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
+     id="scene.home_kitchen" data-scene="scene.home_kitchen" data-occlusion-line="600" data-times="day evening" data-default-time="evening" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpmNDk2MjY2MC0wNWVmLTQ3ZTEtYjM5Ni0wODE2ZTBjNTY4YmQAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaBLyyepFcd9oReZc/DUpJRMAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo4YzdjNTZmMy1kZGRjLTQ1MzgtYjA2Yy00ZjY2OWVlMDNiNzhscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNotRGEWq/mM10DrXsQ/UiXKwAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggkiXP7dtuVX8CVCLv8OMsIcFqvpTc92wNoBlNi0GCUK+kZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaOpCELobNzgnbiSQ6micFV8AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIFLnpRKmhYpftEXMErzdtyMM1ddZ9cvUieCpkC4ViJwuZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GQEKZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmY0OTYyNjYwLTA1ZWYtNDdlMS1iMzk2LTA4MTZlMGM1NjhiZC9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjFiZmI0ZGY2LTg1NmEtNDU0NS1hOGQyLTIwYzVkN2RlYWY3NXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCSJc/t225VfwJUIu/w4ywhwWq+lNz3bA2gGU2LQYJQr6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggZuzkgdjx3TNZgDQFqMOX+JrhXHiGBJ8YFBHgeKRxOViiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggxFPQ5YWDuiFVNhfnCIrJjByPIYOyQRiYtawM/r+//2t0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQD1Jm1iO1/2bfXIElibOXOT78LI3C+EW3Wp2TljCS0/19f+isHebk0T7Vhp5RsdEVpb1KmF4uggLeEKXSLLI/9s=</c2pa:manifest></metadata>
+    <defs>
+        <style>/* @tokens-begin */
+            :root {
+            /* line */
+            --irx-line:          #241D19;
+            --irx-line-soft:     #3B302A;
+            --irx-shadow:        #2A231E;
+
+            /* architecture */
+            --irx-wall:          #5C6A5F;
+            --irx-wall-dark:     #4E5A51;
+            --irx-wall-pattern:  #556359;
+            --irx-tile:          #B5A992;
+            --irx-tile-alt:      #A49980;
+            --irx-floor:         #5E4D3E;
+
+            /* window */
+            --irx-sky-high:      #334051;
+            --irx-sky-mid:       #4D4656;
+            --irx-sky-low:       #785A4F;
+            --irx-outside-dark:  #2A333E;
+            --irx-curtain:       #424E56;
+            --irx-curtain-dark:  #38424A;
+
+            /* joinery */
+            --irx-cabinet:       #785D44;
+            --irx-cabinet-dark:  #634C36;
+            --irx-counter:       #947553;
+            --irx-counter-edge:  #7B5F43;
+
+            /* character */
+            --irx-skin:          #A87A5A;
+            --irx-skin-shade:    #875D42;
+            --irx-skin-b:        #8E6244;
+            --irx-skin-b-shade:  #6E4A32;
+            --irx-lip-b:         #96604F;
+            --irx-mouth-b:       #4A2C24;
+            --irx-hair:          #41322A;
+            --irx-hair-light:    #554136;
+            --irx-hair-b:        #241A16;
+            --irx-hair-b-light:  #3D2C24;
+
+            /* wardrobe: home_casual */
+            --irx-cloth:         #A8603F;
+            --irx-cloth-dark:    #894C31;
+            --irx-cloth-inner:   #D9CDBC;
+
+            /* props */
+            --irx-glass:         #BCC8C3;
+            --irx-glass-dark:    #9AA8A2;
+            --irx-highlight:     #FFFFFF;
+            --irx-jacket:        #4F5A63;
+            --irx-jacket-dark:   #3D464E;
+
+            /* accent — neighbourhood district, warm light only */
+            --irx-accent:        #FFC15E;
+            --irx-accent-dim:    #C89A4E;
+            --irx-lamp-warm:     #F2C77E;
+            --irx-cool-spill:    #7E93A8;
+
+            /* vignettes */
+            --irx-vig-light:     #B3ABA0;
+            --irx-vig-base:      #8C857C;
+            --irx-vig-mid:       #635D56;
+            --irx-vig-dark:      #3B3733;
+
+            /* stroke weights */
+            --irx-stroke-xheavy: 6.6;
+            --irx-stroke-heavy:  5;
+            --irx-stroke:        3.4;
+            --irx-stroke-fine:   2.1;
+            --irx-stroke-hair:   1.4;
+
+            /* ==== the streets — six characters, deliberately differentiated ==== */
+            /* figure_e — Bola. African, fifties. */
+            --irx-skin-e:        #6B4A33;
+            --irx-skin-e-shade:  #4F3524;
+            --irx-hair-e:        #2E2622;
+            --irx-hair-e-light:  #4A3F38;
+            --irx-lip-e:         #7A4F42;
+            --irx-mouth-e:       #3A2019;
+            /* figure_f — Jay. Brown, mid-complexion, nineteen. */
+            --irx-skin-f:        #96684A;
+            --irx-skin-f-shade:  #754F36;
+            --irx-hair-f:        #221A15;
+            --irx-hair-f-light:  #3A2B22;
+            --irx-lip-f:         #9C6552;
+            --irx-mouth-f:       #4A2A22;
+            /* figure_g — Tunde. African, thirties to forties. */
+            --irx-skin-g:        #5E4030;
+            --irx-skin-g-shade:  #452D21;
+            --irx-hair-g:        #2A221E;
+            --irx-hair-g-light:  #423731;
+            --irx-lip-g:         #6E463A;
+            --irx-mouth-g:       #331C16;
+            /* figure_h — Dee. White, twenty-seven. */
+            --irx-skin-h:        #C9A184;
+            --irx-skin-h-shade:  #A87F64;
+            --irx-hair-h:        #5A4332;
+            --irx-hair-h-light:  #775843;
+            --irx-lip-h:         #B3806C;
+            --irx-mouth-h:       #6B4034;
+            /* figure_i — Kai. Brown, a different complexion from Jay. */
+            --irx-skin-i:        #A8794F;
+            --irx-skin-i-shade:  #86603D;
+            --irx-hair-i:        #281F1A;
+            --irx-hair-i-light:  #41332B;
+            --irx-lip-i:         #A87057;
+            --irx-mouth-i:       #4F2E23;
+            /* figure_j — Amara. Caramel, nineteen to twenty. */
+            --irx-skin-j:        #B08258;
+            --irx-skin-j-shade:  #8E6644;
+            --irx-hair-j:        #2B211C;
+            --irx-hair-j-light:  #463831;
+            --irx-lip-j:         #AE7460;
+            --irx-mouth-j:       #533026;
+
+            /* ==== the streets — wax-print wardrobe palette ==== */
+            /* The existing Neighbourhood set is a lit-interior palette: warm browns, cool
+            greys, one amber accent. It has no saturated cloth colour at all, so West
+            African print had to be invented or faked. Added here rather than faked.
+            Same D14 churn as the character tokens: the preamble is inlined into every
+            composed frame, so this rewrites canonicalSha256 on the existing fixtures
+            and changes no geometry. */
+            --irx-wax-teal:      #1F6F63;
+            --irx-wax-teal-dark: #144F46;
+            --irx-wax-plum:      #6E3A8C;
+            --irx-wax-plum-dark: #4E2866;
+            --irx-wax-red:       #C24A2E;
+            --irx-wax-red-dark:  #93331C;
+            --irx-wax-gold:      #E3A83C;
+            --irx-wax-cream:     #EADBC2;
+            /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+            and --irx-jacket are both grey-blues for lit interiors, and a football
+            jersey in either reads as grey. Two added rather than faked. */
+            --irx-wax-blue:      #4A86C4;
+            --irx-wax-blue-dark: #2F5E91;
+            }
+            /* @tokens-end */</style>
+        <style data-time="day">.hk-wall { fill: var(--irx-tile); } .hk-walld { fill: var(--irx-counter-edge); } .hk-cab { fill: var(--irx-cabinet); } .hk-cabd { fill: var(--irx-cabinet-dark); } .hk-ctr { fill: var(--irx-tile-alt); } .hk-ctre { fill: var(--irx-counter-edge); } .hk-tile { fill: var(--irx-glass); } .hk-tiled { fill: var(--irx-glass-dark); } .hk-floor { fill: var(--irx-floor); } .hk-win { fill: var(--irx-glass); } .hk-winf { fill: var(--irx-counter-edge); } .hk-app { fill: var(--irx-glass-dark); } .hk-appd { fill: var(--irx-wall-dark); } .hk-door { fill: var(--irx-cabinet-dark); } .hk-ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; } .hk-gr { stroke: var(--irx-glass-dark); fill: none; stroke-linecap: butt; }</style>
+        <style data-time="evening">.hk-wall { fill: var(--irx-counter-edge); } .hk-walld { fill: var(--irx-cabinet-dark); } .hk-cab { fill: var(--irx-cabinet-dark); } .hk-cabd { fill: var(--irx-line-soft); } .hk-ctr { fill: var(--irx-counter-edge); } .hk-ctre { fill: var(--irx-line-soft); } .hk-tile { fill: var(--irx-curtain); } .hk-tiled { fill: var(--irx-curtain-dark); } .hk-floor { fill: var(--irx-line-soft); } .hk-win { fill: var(--irx-outside-dark); } .hk-winf { fill: var(--irx-cabinet-dark); } .hk-app { fill: var(--irx-curtain); } .hk-appd { fill: var(--irx-curtain-dark); } .hk-door { fill: var(--irx-line-soft); } .hk-ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; } .hk-gr { stroke: var(--irx-curtain-dark); fill: none; stroke-linecap: butt; }</style>
+    </defs>
+    <g id="background">
+        <path id="hk-wall-r" class="hk-wall" d="M0 0 h1600 v596 h-1600 z"/>
+        <path id="hk-splash" class="hk-tile" d="M0 400 h1600 v196 h-1600 z"/>
+        <path id="hk-grout-h" class="hk-gr" stroke-width="3" d="M0 449 h1600 M0 498 h1600 M0 547 h1600"/>
+        <path id="hk-grout-v" class="hk-gr" stroke-width="3" d="M98 400 v196 M196 400 v196 M294 400 v196 M392 400 v196 M490 400 v196 M588 400 v196 M686 400 v196 M784 400 v196 M882 400 v196 M980 400 v196 M1078 400 v196 M1176 400 v196 M1274 400 v196 M1372 400 v196 M1470 400 v196 M1568 400 v196"/>
+    </g>
+    <g id="architecture">
+        <path id="hk-win-rev" class="hk-walld" d="M598 128 h424 v364 h-424 z"/>
+        <path id="hk-win" class="hk-win" d="M620 150 h380 v320 h-380 z"/>
+        <path id="hk-win-mul" class="hk-winf" d="M803 150 h14 v320 h-14 z M620 300 h380 v14 h-380 z"/>
+        <path id="hk-win-f" class="hk-ln" stroke-width="var(--irx-stroke)" d="M598 128 h424 v364 h-424 z M620 150 h380 v320 h-380 z"/>
+        <path id="hk-sill" class="hk-ctre" d="M580 492 h460 v18 h-460 z"/>
+        <path id="hk-wall-unit0" class="hk-cab" d="M60 120 h520 v260 h-520 z"/>
+        <path id="hk-wall-unit0-f" class="hk-ln" stroke-width="var(--irx-stroke)" d="M60 120 h520 v260 h-520 z M320 120 v260"/>
+        <path id="hk-wall-h0-0" class="hk-cabd" d="M144 352 h92 v12 h-92 z"/>
+        <path id="hk-wall-h0-1" class="hk-cabd" d="M404 352 h92 v12 h-92 z"/>
+        <path id="hk-wall-unit1" class="hk-cab" d="M1040 120 h520 v260 h-520 z"/>
+        <path id="hk-wall-unit1-f" class="hk-ln" stroke-width="var(--irx-stroke)" d="M1040 120 h520 v260 h-520 z M1300 120 v260"/>
+        <path id="hk-wall-h1-0" class="hk-cabd" d="M1124 352 h92 v12 h-92 z"/>
+        <path id="hk-wall-h1-1" class="hk-cabd" d="M1384 352 h92 v12 h-92 z"/>
+        <path id="hk-door-rev" class="hk-walld" d="M1452 80 h148 v516 h-148 z"/>
+        <path id="hk-door" class="hk-door" d="M1472 104 h128 v492 h-128 z"/>
+        <path id="hk-door-f" class="hk-ln" stroke-width="var(--irx-stroke)" d="M1452 80 h148 v516 h-148 z"/>
+        <path id="hk-hood" class="hk-app" d="M150 260 h300 v40 h-300 z"/>
+        <path id="hk-hood-n" class="hk-app" d="M240 300 h120 v56 h-120 z"/>
+        <path id="hk-hood-f" class="hk-ln" stroke-width="var(--irx-stroke)" d="M150 260 h300 v40 h-300 z M240 300 h120 v56 h-120 z"/>
+    </g>
+    <g id="environmental_detail">
+        <path id="hk-strip0" data-time="evening" fill="var(--irx-lamp-warm)" d="M250 380 h140 v12 h-140 z"/>
+        <path id="hk-pool0" data-time="evening" fill="var(--irx-accent-dim)" d="M170 400 q150 -8 300 0 q-56 52 -150 52 q-94 0 -150 -52 z"/>
+        <path id="hk-strip1" data-time="evening" fill="var(--irx-lamp-warm)" d="M1230 380 h140 v12 h-140 z"/>
+        <path id="hk-pool1" data-time="evening" fill="var(--irx-accent-dim)" d="M1150 400 q150 -8 300 0 q-56 52 -150 52 q-94 0 -150 -52 z"/>
+        <path id="hk-day-pane" data-time="day" fill="var(--irx-glass)" d="M628 158 h364 v304 h-364 z"/>
+        <path id="hk-day-mul" data-time="day" class="hk-winf" d="M803 150 h14 v320 h-14 z M620 300 h380 v14 h-380 z"/>
+        <path id="hk-cal" class="hk-tiled" d="M1120 180 h132 v168 h-132 z"/>
+        <path id="hk-cal-f" class="hk-ln" stroke-width="var(--irx-stroke-fine)" d="M1120 180 h132 v168 h-132 z M1120 218 h132"/>
+        <path id="hk-rail" class="hk-appd" d="M1080 470 h300 v10 h-300 z"/>
+        <path id="hk-towel" class="hk-app" d="M1180 478 h76 v96 h-76 z"/>
+        <path id="hk-towel-f" class="hk-ln" stroke-width="var(--irx-stroke-fine)" d="M1180 478 h76 v96 h-76 z"/>
+        <path id="hk-socket" class="hk-walld" d="M500 448 h58 v40 h-58 z"/>
+        <path id="hk-socket-f" class="hk-ln" stroke-width="var(--irx-stroke-fine)" d="M500 448 h58 v40 h-58 z"/>
+    </g>
+    <g id="furniture">
+        <path id="hk-ctr-top" class="hk-ctr" d="M0 596 h1600 v30 h-1600 z"/>
+        <path id="hk-ctr-nose" class="hk-ctre" d="M0 626 h1600 v10 h-1600 z"/>
+        <path id="hk-base" class="hk-cab" d="M0 636 h1600 v230 h-1600 z"/>
+        <path id="hk-plinth" class="hk-cabd" d="M0 866 h1600 v34 h-1600 z"/>
+        <path id="hk-door0" class="hk-cabd" d="M24 656 h168 v196 h-168 z"/>
+        <path id="hk-door0-f" class="hk-ln" stroke-width="var(--irx-stroke-fine)" d="M24 656 h168 v196 h-168 z"/>
+        <path id="hk-hdl0" class="hk-ctre" d="M80 678 h56 v10 h-56 z"/>
+        <path id="hk-door3" class="hk-cabd" d="M612 656 h168 v196 h-168 z"/>
+        <path id="hk-door3-f" class="hk-ln" stroke-width="var(--irx-stroke-fine)" d="M612 656 h168 v196 h-168 z"/>
+        <path id="hk-hdl3" class="hk-ctre" d="M668 678 h56 v10 h-56 z"/>
+        <path id="hk-door4" class="hk-cabd" d="M808 656 h168 v196 h-168 z"/>
+        <path id="hk-door4-f" class="hk-ln" stroke-width="var(--irx-stroke-fine)" d="M808 656 h168 v196 h-168 z"/>
+        <path id="hk-hdl4" class="hk-ctre" d="M864 678 h56 v10 h-56 z"/>
+        <path id="hk-door5" class="hk-cabd" d="M1004 656 h168 v196 h-168 z"/>
+        <path id="hk-door5-f" class="hk-ln" stroke-width="var(--irx-stroke-fine)" d="M1004 656 h168 v196 h-168 z"/>
+        <path id="hk-hdl5" class="hk-ctre" d="M1060 678 h56 v10 h-56 z"/>
+        <path id="hk-door6" class="hk-cabd" d="M1200 656 h168 v196 h-168 z"/>
+        <path id="hk-door6-f" class="hk-ln" stroke-width="var(--irx-stroke-fine)" d="M1200 656 h168 v196 h-168 z"/>
+        <path id="hk-hdl6" class="hk-ctre" d="M1256 678 h56 v10 h-56 z"/>
+        <path id="hk-door7" class="hk-cabd" d="M1396 656 h168 v196 h-168 z"/>
+        <path id="hk-door7-f" class="hk-ln" stroke-width="var(--irx-stroke-fine)" d="M1396 656 h168 v196 h-168 z"/>
+        <path id="hk-hdl7" class="hk-ctre" d="M1452 678 h56 v10 h-56 z"/>
+        <path id="hk-door8" class="hk-cabd" d="M1592 656 h168 v196 h-168 z"/>
+        <path id="hk-door8-f" class="hk-ln" stroke-width="var(--irx-stroke-fine)" d="M1592 656 h168 v196 h-168 z"/>
+        <path id="hk-hdl8" class="hk-ctre" d="M1648 678 h56 v10 h-56 z"/>
+        <path id="hk-cooker" class="hk-app" d="M150 636 h300 v230 h-300 z"/>
+        <path id="hk-cooker-door" class="hk-appd" d="M176 682 h248 v150 h-248 z"/>
+        <path id="hk-cooker-f" class="hk-ln" stroke-width="var(--irx-stroke)" d="M150 636 h300 v230 h-300 z M176 682 h248 v150 h-248 z"/>
+        <path id="hk-ctr-lit0" data-time="evening" fill="var(--irx-accent-dim)" d="M160 602 q160 -12 320 0 q-160 20 -320 0 z"/>
+        <path id="hk-ctr-lit1" data-time="evening" fill="var(--irx-accent-dim)" d="M1140 602 q160 -12 320 0 q-160 20 -320 0 z"/>
+        <path id="hk-ctr-f" class="hk-ln" stroke-width="var(--irx-stroke-heavy)" d="M0 596 h1600 M0 626 h1600"/>
+    </g>
+    <g id="foreground">
+        <path id="hk-return" class="hk-walld" d="M0 0 h58 v900 h-58 z"/>
+        <path id="hk-return-f" class="hk-ln" stroke-width="var(--irx-stroke-xheavy)" d="M58 0 v900"/>
+    </g>
+</svg>

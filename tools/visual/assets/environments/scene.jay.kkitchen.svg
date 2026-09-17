@@ -1,0 +1,256 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900"
+     id="scene.jay_kitchen" data-scene="scene.jay_kitchen" data-occlusion-line="600" data-times="day night" data-default-time="night" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTpiMmY0OGQ1NS01YWE5LTQ1YjAtYmVjNC05ZjUxYWRhNGFmNzcAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaA00UoE2Ti4i23nglIlyGr8AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDo4NTM2ZGE0ZC05NWRjLTQ5YmItYjJjZi1mYTBlOTJjYWNmN2JscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNodCYRbeCFdXb60rtT8b3JqgAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggjamOmWIaT+wl9TihFyUNthkq5Y6vTeDTz+IIy8cOV7qkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaOK1Ts9TpAhedO3+Fkrd+nwAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIMgIfXf/LmlczSc4mKa4cXdA4RBTjDK8+h2gDCk3OcZwZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GQEEZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOmIyZjQ4ZDU1LTVhYTktNDViMC1iZWM0LTlmNTFhZGE0YWY3Ny9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOmM4ODkyYzM2LTk1OTEtNDAyNS04ZGRmLWZjNjZkMTdmN2JlZHJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCNqY6ZYhpP7CX1OKEXJQ22GSrljq9N4NPP4gjLxw5XuqJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggOeA5SOGCdAW9ogPfxKyZZI5kto7vSRsIEPCM23phOmeiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggzOQZA16VksEY3h3idoOG7d19SS6d00IkMtr5Rj8iZrp0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQMXr0OfpVTWdUiJ+JIpHKVTOZOPhewhJEPGcX++7y8Q+2DU5Uq2bzy+VzcL3N9yR8WixT8N1VfyzIwsMPTpKuYM=</c2pa:manifest></metadata>
+    <defs>
+        <style>/* @tokens-begin */
+            :root {
+            /* line */
+            --irx-line:          #241D19;
+            --irx-line-soft:     #3B302A;
+            --irx-shadow:        #2A231E;
+
+            /* architecture */
+            --irx-wall:          #5C6A5F;
+            --irx-wall-dark:     #4E5A51;
+            --irx-wall-pattern:  #556359;
+            --irx-tile:          #B5A992;
+            --irx-tile-alt:      #A49980;
+            --irx-floor:         #5E4D3E;
+
+            /* window */
+            --irx-sky-high:      #334051;
+            --irx-sky-mid:       #4D4656;
+            --irx-sky-low:       #785A4F;
+            --irx-outside-dark:  #2A333E;
+            --irx-curtain:       #424E56;
+            --irx-curtain-dark:  #38424A;
+
+            /* joinery */
+            --irx-cabinet:       #785D44;
+            --irx-cabinet-dark:  #634C36;
+            --irx-counter:       #947553;
+            --irx-counter-edge:  #7B5F43;
+
+            /* character */
+            --irx-skin:          #A87A5A;
+            --irx-skin-shade:    #875D42;
+            --irx-skin-b:        #8E6244;
+            --irx-skin-b-shade:  #6E4A32;
+            --irx-lip-b:         #96604F;
+            --irx-mouth-b:       #4A2C24;
+            --irx-hair:          #41322A;
+            --irx-hair-light:    #554136;
+            --irx-hair-b:        #241A16;
+            --irx-hair-b-light:  #3D2C24;
+
+            /* wardrobe: home_casual */
+            --irx-cloth:         #A8603F;
+            --irx-cloth-dark:    #894C31;
+            --irx-cloth-inner:   #D9CDBC;
+
+            /* props */
+            --irx-glass:         #BCC8C3;
+            --irx-glass-dark:    #9AA8A2;
+            --irx-highlight:     #FFFFFF;
+            --irx-jacket:        #4F5A63;
+            --irx-jacket-dark:   #3D464E;
+
+            /* accent — neighbourhood district, warm light only */
+            --irx-accent:        #FFC15E;
+            --irx-accent-dim:    #C89A4E;
+            --irx-lamp-warm:     #F2C77E;
+            --irx-cool-spill:    #7E93A8;
+
+            /* vignettes */
+            --irx-vig-light:     #B3ABA0;
+            --irx-vig-base:      #8C857C;
+            --irx-vig-mid:       #635D56;
+            --irx-vig-dark:      #3B3733;
+
+            /* stroke weights */
+            --irx-stroke-xheavy: 6.6;
+            --irx-stroke-heavy:  5;
+            --irx-stroke:        3.4;
+            --irx-stroke-fine:   2.1;
+            --irx-stroke-hair:   1.4;
+
+            /* ==== the streets — six characters, deliberately differentiated ==== */
+            /* figure_e — Bola. African, fifties. */
+            --irx-skin-e:        #6B4A33;
+            --irx-skin-e-shade:  #4F3524;
+            --irx-hair-e:        #2E2622;
+            --irx-hair-e-light:  #4A3F38;
+            --irx-lip-e:         #7A4F42;
+            --irx-mouth-e:       #3A2019;
+            /* figure_f — Jay. Brown, mid-complexion, nineteen. */
+            --irx-skin-f:        #96684A;
+            --irx-skin-f-shade:  #754F36;
+            --irx-hair-f:        #221A15;
+            --irx-hair-f-light:  #3A2B22;
+            --irx-lip-f:         #9C6552;
+            --irx-mouth-f:       #4A2A22;
+            /* figure_g — Tunde. African, thirties to forties. */
+            --irx-skin-g:        #5E4030;
+            --irx-skin-g-shade:  #452D21;
+            --irx-hair-g:        #2A221E;
+            --irx-hair-g-light:  #423731;
+            --irx-lip-g:         #6E463A;
+            --irx-mouth-g:       #331C16;
+            /* figure_h — Dee. White, twenty-seven. */
+            --irx-skin-h:        #C9A184;
+            --irx-skin-h-shade:  #A87F64;
+            --irx-hair-h:        #5A4332;
+            --irx-hair-h-light:  #775843;
+            --irx-lip-h:         #B3806C;
+            --irx-mouth-h:       #6B4034;
+            /* figure_i — Kai. Brown, a different complexion from Jay. */
+            --irx-skin-i:        #A8794F;
+            --irx-skin-i-shade:  #86603D;
+            --irx-hair-i:        #281F1A;
+            --irx-hair-i-light:  #41332B;
+            --irx-lip-i:         #A87057;
+            --irx-mouth-i:       #4F2E23;
+            /* figure_j — Amara. Caramel, nineteen to twenty. */
+            --irx-skin-j:        #B08258;
+            --irx-skin-j-shade:  #8E6644;
+            --irx-hair-j:        #2B211C;
+            --irx-hair-j-light:  #463831;
+            --irx-lip-j:         #AE7460;
+            --irx-mouth-j:       #533026;
+
+            /* ==== the streets — wax-print wardrobe palette ==== */
+            /* The existing Neighbourhood set is a lit-interior palette: warm browns, cool
+            greys, one amber accent. It has no saturated cloth colour at all, so West
+            African print had to be invented or faked. Added here rather than faked.
+            Same D14 churn as the character tokens: the preamble is inlined into every
+            composed frame, so this rewrites canonicalSha256 on the existing fixtures
+            and changes no geometry. */
+            --irx-wax-teal:      #1F6F63;
+            --irx-wax-teal-dark: #144F46;
+            --irx-wax-plum:      #6E3A8C;
+            --irx-wax-plum-dark: #4E2866;
+            --irx-wax-red:       #C24A2E;
+            --irx-wax-red-dark:  #93331C;
+            --irx-wax-gold:      #E3A83C;
+            --irx-wax-cream:     #EADBC2;
+            /* kit blues. The Neighbourhood set has no true blue at all - --irx-cool-spill
+            and --irx-jacket are both grey-blues for lit interiors, and a football
+            jersey in either reads as grey. Two added rather than faked. */
+            --irx-wax-blue:      #4A86C4;
+            --irx-wax-blue-dark: #2F5E91;
+            }
+            /* @tokens-end */</style>
+        <style data-time="day">.jk-wall { fill: var(--irx-tile-alt); } .jk-walld { fill: var(--irx-counter-edge); } .jk-cab { fill: var(--irx-wall); } .jk-cabd { fill: var(--irx-wall-dark); } .jk-ctr { fill: var(--irx-tile); } .jk-ctre { fill: var(--irx-counter-edge); } .jk-hdl { fill: var(--irx-counter-edge); } .jk-tile { fill: var(--irx-glass-dark); } .jk-tiled { fill: var(--irx-wall-dark); } .jk-win { fill: var(--irx-glass); } .jk-winf { fill: var(--irx-counter-edge); } .jk-app { fill: var(--irx-glass-dark); } .jk-deep { fill: var(--irx-cabinet-dark); } .jk-door { fill: var(--irx-cabinet-dark); } .jk-pale { fill: var(--irx-cloth-inner); } .jk-ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; } .jk-gr { stroke: var(--irx-wall-dark); fill: none; stroke-linecap: butt; }</style>
+        <style data-time="night">.jk-wall { fill: var(--irx-counter-edge); } .jk-walld { fill: var(--irx-cabinet-dark); } .jk-cab { fill: var(--irx-wall-dark); } .jk-cabd { fill: var(--irx-line-soft); } .jk-ctr { fill: var(--irx-counter-edge); } .jk-ctre { fill: var(--irx-line-soft); } .jk-hdl { fill: var(--irx-counter); } .jk-tile { fill: var(--irx-curtain); } .jk-tiled { fill: var(--irx-curtain-dark); } .jk-win { fill: var(--irx-outside-dark); } .jk-winf { fill: var(--irx-cabinet-dark); } .jk-app { fill: var(--irx-curtain); } .jk-deep { fill: var(--irx-outside-dark); } .jk-door { fill: var(--irx-line-soft); } .jk-pale { fill: var(--irx-glass-dark); } .jk-ln { stroke: var(--irx-line); fill: none; stroke-linecap: round; stroke-linejoin: round; } .jk-gr { stroke: var(--irx-curtain-dark); fill: none; stroke-linecap: butt; }</style>
+    </defs>
+    <g id="background">
+        <path id="jk-wall" class="jk-wall" d="M0 0 h1600 v596 h-1600 z"/>
+        <path id="jk-splash" class="jk-tile" d="M0 420 h1180 v176 h-1180 z"/>
+        <path id="jk-grout-h" class="jk-gr" stroke-width="3" d="M0 464 h1180 M0 508 h1180 M0 552 h1180"/>
+        <path id="jk-grout-v" class="jk-gr" stroke-width="3" d="M84 420 v176 M168 420 v176 M252 420 v176 M336 420 v176 M420 420 v176 M504 420 v176 M588 420 v176 M672 420 v176 M756 420 v176 M840 420 v176 M924 420 v176 M1008 420 v176 M1092 420 v176 M1176 420 v176"/>
+    </g>
+    <g id="architecture">
+        <path id="jk-win-rev" class="jk-walld" d="M278 150 h404 v320 h-404 z"/>
+        <path id="jk-win" class="jk-win" d="M300 172 h360 v276 h-360 z"/>
+        <path id="jk-win-mul" class="jk-winf" d="M474 172 h12 v276 h-12 z M300 296 h360 v12 h-360 z"/>
+        <path id="jk-win-f" class="jk-ln" stroke-width="var(--irx-stroke)" d="M278 150 h404 v320 h-404 z M300 172 h360 v276 h-360 z"/>
+        <path id="jk-unit" class="jk-cab" d="M720 140 h420 v260 h-420 z"/>
+        <path id="jk-unit-f" class="jk-ln" stroke-width="var(--irx-stroke)" d="M720 140 h420 v260 h-420 z M860 140 v260 M1000 140 v260"/>
+        <path id="jk-unit-h0" class="jk-hdl" d="M746 372 h88 v12 h-88 z"/>
+        <path id="jk-unit-h1" class="jk-hdl" d="M886 372 h88 v12 h-88 z"/>
+        <path id="jk-unit-h2" class="jk-hdl" d="M1026 372 h88 v12 h-88 z"/>
+        <path id="jk-tall-rev" class="jk-walld" d="M1154 90 h372 v506 h-372 z"/>
+        <path id="jk-tall" class="jk-door" d="M1180 116 h320 v480 h-320 z"/>
+        <path id="jk-tall-split" class="jk-ln" stroke-width="var(--irx-stroke)" d="M1340 116 v480 M1180 350 h320"/>
+        <path id="jk-tall-h0" class="jk-hdl" d="M1304 300 h12 v56 h-12 z"/>
+        <path id="jk-tall-h1" class="jk-hdl" d="M1364 300 h12 v56 h-12 z"/>
+        <path id="jk-tall-h2" class="jk-hdl" d="M1304 396 h12 v56 h-12 z"/>
+        <path id="jk-tall-h3" class="jk-hdl" d="M1364 396 h12 v56 h-12 z"/>
+        <path id="jk-tall-f" class="jk-ln" stroke-width="var(--irx-stroke-heavy)" d="M1154 90 h372 v506 M1180 116 h320 v480"/>
+        <path id="jk-fridge" class="jk-app" d="M960 424 h180 v172 h-180 z"/>
+        <path id="jk-fridge-f" class="jk-ln" stroke-width="var(--irx-stroke)" d="M960 424 h180 v172 h-180 z"/>
+    </g>
+    <g id="environmental_detail">
+        <path id="jk-photo0" class="jk-pale" d="M976 438 h44 v54 h-44 z"/>
+        <path id="jk-photo0-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M976 438 h44 v54 h-44 z"/>
+        <path id="jk-photo1" class="jk-pale" d="M1030 444 h50 v40 h-50 z"/>
+        <path id="jk-photo1-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M1030 444 h50 v40 h-50 z"/>
+        <path id="jk-photo2" class="jk-pale" d="M1092 436 h38 v50 h-38 z"/>
+        <path id="jk-photo2-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M1092 436 h38 v50 h-38 z"/>
+        <path id="jk-photo3" class="jk-pale" d="M984 504 h56 v42 h-56 z"/>
+        <path id="jk-photo3-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M984 504 h56 v42 h-56 z"/>
+        <path id="jk-photo4" class="jk-pale" d="M1056 500 h44 v52 h-44 z"/>
+        <path id="jk-photo4-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M1056 500 h44 v52 h-44 z"/>
+        <path id="jk-tap" class="jk-app" d="M470 520 h12 v76 h-12 z M470 520 h56 v10 h-56 z"/>
+        <path id="jk-tap-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M470 520 h12 v76 M470 520 h56 v10"/>
+        <path id="jk-day-pane" data-time="day" fill="var(--irx-glass)" d="M308 180 h344 v260 h-344 z"/>
+        <path id="jk-day-mul" data-time="day" class="jk-winf" d="M474 172 h12 v276 h-12 z M300 296 h360 v12 h-360 z"/>
+        <path id="jk-day-towel" data-time="day" class="jk-pale" d="M840 424 h56 v70 h-56 z"/>
+        <path id="jk-day-towel-f" data-time="day" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M840 424 h56 v70 h-56 z"/>
+    </g>
+    <g id="furniture">
+        <path id="jk-ctr-top" class="jk-ctr" d="M0 596 h1600 v30 h-1600 z"/>
+        <path id="jk-ctr-nose" class="jk-ctre" d="M0 626 h1600 v10 h-1600 z"/>
+        <path id="jk-base" class="jk-cab" d="M0 636 h1600 v230 h-1600 z"/>
+        <path id="jk-plinth" class="jk-cabd" d="M0 866 h1600 v34 h-1600 z"/>
+        <path id="jk-bd0" class="jk-cabd" d="M26 664 h172 v190 h-172 z"/>
+        <path id="jk-bd0-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M26 664 h172 v190 h-172 z"/>
+        <path id="jk-bh0" class="jk-hdl" d="M84 686 h56 v10 h-56 z"/>
+        <path id="jk-bd1" class="jk-cabd" d="M228 664 h172 v190 h-172 z"/>
+        <path id="jk-bd1-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M228 664 h172 v190 h-172 z"/>
+        <path id="jk-bh1" class="jk-hdl" d="M286 686 h56 v10 h-56 z"/>
+        <path id="jk-bd2" class="jk-cabd" d="M430 664 h172 v190 h-172 z"/>
+        <path id="jk-bd2-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M430 664 h172 v190 h-172 z"/>
+        <path id="jk-bh2" class="jk-hdl" d="M488 686 h56 v10 h-56 z"/>
+        <path id="jk-bd3" class="jk-cabd" d="M632 664 h172 v190 h-172 z"/>
+        <path id="jk-bd3-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M632 664 h172 v190 h-172 z"/>
+        <path id="jk-bh3" class="jk-hdl" d="M690 686 h56 v10 h-56 z"/>
+        <path id="jk-bd4" class="jk-cabd" d="M834 664 h172 v190 h-172 z"/>
+        <path id="jk-bd4-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M834 664 h172 v190 h-172 z"/>
+        <path id="jk-bh4" class="jk-hdl" d="M892 686 h56 v10 h-56 z"/>
+        <path id="jk-bd5" class="jk-cabd" d="M1036 664 h172 v190 h-172 z"/>
+        <path id="jk-bd5-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M1036 664 h172 v190 h-172 z"/>
+        <path id="jk-bh5" class="jk-hdl" d="M1094 686 h56 v10 h-56 z"/>
+        <path id="jk-bd6" class="jk-cabd" d="M1238 664 h172 v190 h-172 z"/>
+        <path id="jk-bd6-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M1238 664 h172 v190 h-172 z"/>
+        <path id="jk-bh6" class="jk-hdl" d="M1296 686 h56 v10 h-56 z"/>
+        <path id="jk-bd7" class="jk-cabd" d="M1440 664 h172 v190 h-172 z"/>
+        <path id="jk-bd7-f" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M1440 664 h172 v190 h-172 z"/>
+        <path id="jk-bh7" class="jk-hdl" d="M1498 686 h56 v10 h-56 z"/>
+        <path id="jk-bottle0" data-time="night" class="jk-tiled" d="M90 522 h28 v-40 h-9 v-22 h14 v22 h-9 v40 z"/>
+        <path id="jk-bottle0-b" data-time="night" class="jk-tiled" d="M86 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle0-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M86 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle1" data-time="night" class="jk-tiled" d="M128 520 h26 v-32 h-8 v-20 h12 v20 h-8 v32 z"/>
+        <path id="jk-bottle1-b" data-time="night" class="jk-tiled" d="M124 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle1-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M124 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle2" data-time="night" class="jk-tiled" d="M166 522 h28 v-40 h-9 v-22 h14 v22 h-9 v40 z"/>
+        <path id="jk-bottle2-b" data-time="night" class="jk-tiled" d="M162 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle2-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M162 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle3" data-time="night" class="jk-tiled" d="M700 520 h26 v-32 h-8 v-20 h12 v20 h-8 v32 z"/>
+        <path id="jk-bottle3-b" data-time="night" class="jk-tiled" d="M696 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle3-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M696 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle4" data-time="night" class="jk-tiled" d="M738 522 h28 v-40 h-9 v-22 h14 v22 h-9 v40 z"/>
+        <path id="jk-bottle4-b" data-time="night" class="jk-tiled" d="M734 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle4-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M734 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle5" data-time="night" class="jk-tiled" d="M900 520 h26 v-32 h-8 v-20 h12 v20 h-8 v32 z"/>
+        <path id="jk-bottle5-b" data-time="night" class="jk-tiled" d="M896 520 h36 v76 h-36 z"/>
+        <path id="jk-bottle5-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M896 520 h36 v76 h-36 z"/>
+        <path id="jk-can0" data-time="night" class="jk-app" d="M240 542 h28 v54 h-28 z"/>
+        <path id="jk-can0-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M240 542 h28 v54 h-28 z"/>
+        <path id="jk-can1" data-time="night" class="jk-app" d="M276 542 h28 v54 h-28 z"/>
+        <path id="jk-can1-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M276 542 h28 v54 h-28 z"/>
+        <path id="jk-can2" data-time="night" class="jk-app" d="M312 542 h28 v54 h-28 z"/>
+        <path id="jk-can2-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M312 542 h28 v54 h-28 z"/>
+        <path id="jk-can3" data-time="night" class="jk-app" d="M800 542 h28 v54 h-28 z"/>
+        <path id="jk-can3-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M800 542 h28 v54 h-28 z"/>
+        <path id="jk-can4" data-time="night" class="jk-app" d="M836 542 h28 v54 h-28 z"/>
+        <path id="jk-can4-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M836 542 h28 v54 h-28 z"/>
+        <path id="jk-tray" data-time="night" class="jk-pale" d="M380 556 h190 v40 h-190 z"/>
+        <path id="jk-tray-f" data-time="night" class="jk-ln" stroke-width="var(--irx-stroke-fine)" d="M380 556 h190 v40 h-190 z M420 556 v40 M470 556 v40"/>
+        <path id="jk-ctr-lit" data-time="night" fill="var(--irx-accent-dim)" d="M1600 598 v34 h-420 q150 -26 420 -34 z"/>
+        <path id="jk-ctr-f" class="jk-ln" stroke-width="var(--irx-stroke-heavy)" d="M0 596 h1600 M0 636 h1600"/>
+    </g>
+    <g id="foreground">
+        <path id="jk-return" class="jk-walld" d="M0 0 h54 v900 h-54 z"/>
+        <path id="jk-return-f" class="jk-ln" stroke-width="var(--irx-stroke-xheavy)" d="M54 0 v900"/>
+    </g>
+</svg>
