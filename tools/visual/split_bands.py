@@ -138,8 +138,8 @@ def is_atmosphere(el: str) -> bool:
     """Full-canvas overlay rather than geometry: a filter, a gradient fill, or
     explicitly non-interactive."""
     return (
-            el.lstrip().startswith("<rect")
-            and ('filter="url(' in el or 'fill="url(' in el or 'pointer-events="none"' in el)
+        el.lstrip().startswith("<rect")
+        and ('filter="url(' in el or 'fill="url(' in el or 'pointer-events="none"' in el)
     )
 
 
@@ -226,12 +226,59 @@ def main() -> int:
 
     # VALIDATE EVERYTHING BEFORE WRITING ANYTHING.
     bodies = {b: read_group(src_stripped, b) for b in BANDS}
-    side, far = split_architecture(bodies["architecture"], tuple(args.far_box))
-    env_mid, env_over = split_environmental(bodies["environmental_detail"])
+
+    # ANY element the camera anchors on is the parallax reference and must not
+    # translate. Measured twice, from both directions: the exterior's target
+    # house sat in `architecture` at depth 0.15 and rendered at 5.6% of the
+    # camera's zoom, so it never approached; the interior's pendant sat in
+    # `environmental_detail` at depth 0.45 and drifted 130 units out of the
+    # hinge frame, so the warm field went dark. An anchor is a destination, and
+    # a destination cannot lag.
+    #
+    # The rule is generic: data-camera-anchor promotes an element to its own
+    # band at depth 1.0. Choreography already targets the semantic anchor
+    # rather than an artwork id, so this closes the loop.
+    anchors: list[tuple[str, str]] = []
+    for band_id in list(bodies):
+        found = re.findall(r'<(?:path|g|rect)[^>]*data-camera-anchor="([^"]+)"[^>]*(?:/>|>)', bodies[band_id])
+        for name in found:
+            el = re.search(
+                r'<(?:path|rect)[^>]*data-camera-anchor="%s"[^>]*/>' % re.escape(name),
+                bodies[band_id],
+            )
+            if el:
+                anchors.append((f"anchor-{name}", el.group(0)))
+                bodies[band_id] = bodies[band_id].replace(el.group(0), "")
+
+    # Plane splits apply only to scenes drawn in perspective.
+    #
+    # A one-point-perspective exterior holds several depths inside one band —
+    # receding side terraces AND a far terrace at the vanishing point, street
+    # lamps AND an overhead wire — and each needs its own parallax factor.
+    # A frontal interior does not: every wall is the same distance away, and
+    # splitting it would invent depth the artwork does not contain.
+    #
+    # The scene says which it is by declaring data-vanishing-point. Inferring
+    # it would be guessing, and this tool raises rather than guesses.
+    perspective = "data-vanishing-point" in root
+    if perspective:
+        side, far = split_architecture(bodies["architecture"], tuple(args.far_box))
+        env_mid, env_over = split_environmental(bodies["environmental_detail"])
+    else:
+        side, far = re.findall(r"<path[^>]*/>", bodies["architecture"]), []
+        env_mid, env_over = re.findall(r"<path[^>]*/>", bodies["environmental_detail"]), []
 
     fg = bodies["foreground"]
     near_body = read_group(fg, "n-near-geometry") if 'id="n-near-geometry"' in fg else ""
-    atmo_body = read_group(fg, "n-atmosphere") if 'id="n-atmosphere"' in fg else ""
+    atmo_body = ""
+    for gid in ("n-atmosphere", "hb-atmosphere"):
+        if f'id="{gid}"' in fg:
+            atmo_body = read_group(fg, gid)
+            # everything in foreground that is not the atmosphere group is near
+            whole = fg
+            start = whole.index(f'<g id="{gid}"')
+            near_body = whole[:start]
+            break
     if not atmo_body:
         atmo_els = [e for e in re.findall(r"<rect[^>]*/>", fg) if is_atmosphere(e)]
         near_body = "\n".join(e for e in re.findall(r"<path[^>]*/>", fg))
@@ -251,7 +298,7 @@ def main() -> int:
     emitted = [
         ("background", bodies["background"], "true"),
         ("architecture", "\n".join(side), "true"),
-        ("architecture_far", "\n".join(far), "true"),
+        ("architecture_far", "\n".join(far), "true") if far else None,
         ("environmental_detail", "\n".join(env_mid), "true"),
         ("furniture", bodies["furniture"], "true"),
         ("overhead", "\n".join(env_over), "true") if env_over else None,
@@ -260,6 +307,7 @@ def main() -> int:
     ]
     if aperture:
         emitted.insert(3, ("n-window-lit", aperture, "true"))
+    emitted += [(name, body, "true") for name, body in anchors]
 
     emitted = [e for e in emitted if e is not None]
 
@@ -273,11 +321,11 @@ def main() -> int:
     for name, body, parallax in emitted:
         extra = ap_attrs if name == "n-window-lit" else ""
         doc = (
-                f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{view_box}"\n'
-                f'     data-band="{name}" data-parallax="{parallax}" {attrs}>\n'
-                + (f"<style>{style.group(1)}</style>\n" if style else "")
-                + (f"<defs>{defs.group(1)}</defs>\n" if defs else "")
-                + f'<g id="{name}"{extra}>\n{body}\n</g>\n</svg>\n'
+            f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{view_box}"\n'
+            f'     data-band="{name}" data-parallax="{parallax}" {attrs}>\n'
+            + (f"<style>{style.group(1)}</style>\n" if style else "")
+            + (f"<defs>{defs.group(1)}</defs>\n" if defs else "")
+            + f'<g id="{name}"{extra}>\n{body}\n</g>\n</svg>\n'
         )
         (out / f"{name}.svg").write_text(doc)
         manifest["bands"].append(
