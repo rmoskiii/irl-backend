@@ -5,8 +5,8 @@
   "district": "streets",
   "difficulty": 2,
   "estimatedMinutes": 30,
-  "contentRevision": 1,
-  "premise": "Seven days in March. He is nineteen, the money at home is tight, and everybody who has ever helped him wants something this week.",
+  "contentRevision": 2,
+  "premise": "Seven days in March. You're nineteen, the money at home is tight, and everybody who has ever helped you wants something this week.",
   "persona": {
     "name": "Bola",
     "role": "Mum"
@@ -558,7 +558,7 @@
   "nodes": {
     "s1d1_open": {
       "day": 1,
-      "message": "Half five, and he has been up since eleven, which he is aware of.\n\nMum is doing the thing she does before a shift — moving through the flat picking things up and putting them somewhere else, coat already half on. There is a letter on the side that has been there four days, face down, which is its own kind of statement.\n\nShe is not angry. She is doing sums in her head while talking about something else, and he can tell, because he has watched her do it since he was twelve.",
+      "message": "Half five, and you've been up since eleven, which you're aware of.\n\nMum is doing the thing she does before a shift — moving through the flat picking things up and putting them somewhere else, coat already half on. There is a letter on the side that has been there four days, face down, which is its own kind of statement.\n\nShe is not angry. She is doing sums in her head while talking about something else, and you can tell, because you've watched her do it since you were twelve.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -613,7 +613,7 @@
             "mumTrust": 1,
             "mumStrain": 1
           },
-          "beat": "She stops moving. \"How short?\" — which is not the question he wanted.",
+          "beat": "She stops moving. \"How short?\" — which is not the question you wanted.",
           "next": "s1d1_kitchen_react"
         },
         {
@@ -652,7 +652,7 @@
           "when": {
             "lied_to_mum": true
           },
-          "message": "\"Alright then.\" She takes it. She takes it slightly too easily, and is out the door before he has worked out whether that means anything.\n\nFour minutes later the flat is the flat again."
+          "message": "\"Alright then.\" She takes it. She takes it slightly too easily, and is out the door before you've worked out whether that means anything.\n\nFour minutes later the flat is the flat again."
         }
       ],
       "presentation": {
@@ -682,7 +682,7 @@
     },
     "s1d1_walkway": {
       "day": 1,
-      "message": "Jay is on the walkway and has been for a while, which he does when he wants to be found without having asked.\n\nHe is funny for about ninety seconds and then isn't, and the gap between those two things is visible if you know him. Jay's flat is where he ate for a stretch when things were bad, and neither of them has ever said a word about it.\n\nTunde's message arrives while Jay is talking. *Cage, eight. You coming or not.*",
+      "message": "Jay is on the walkway and has been for a while, which he does when he wants to be found without having asked.\n\nHe is funny for about ninety seconds and then isn't, and the gap between those two things is visible if you know him. Jay's flat is where you ate for a stretch when things were bad, and neither of you has ever said a word about it.\n\nTunde's message arrives while Jay is talking. *Cage, eight. You coming or not.*",
       "reactionDelay": "medium",
       "presentation": {
         "type": "scene",
@@ -757,7 +757,7 @@
     },
     "s1d1_jay_asked": {
       "day": 1,
-      "message": "He's annoyed for about four seconds — the specific annoyance of someone who wanted to be asked and hasn't decided how to be — and then tells him.\n\nHis sister has a course place. There's a deposit. The date has already been moved once and can't be again.\n\nHe tells it in pieces, out of order, and stops before the part where he explains what he's going to do about it. The player notices him stop.",
+      "message": "Jay's annoyed for about four seconds — the specific annoyance of someone who wanted to be asked and hasn't decided how to be — and then tells you.\n\nHis sister has a course place. There's a deposit. The date has already been moved once and can't be again.\n\nHe tells it in pieces, out of order, and stops before the part where he explains what he's going to do about it. You notice him stop.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -785,7 +785,7 @@
     },
     "s1d1_jay_quiet": {
       "day": 1,
-      "message": "They walk. It's a good two hours and genuinely funny in places.\n\nTwice, unprompted, Jay says he's fine.\n\nThe second one is what stays with him on the way home, because nobody says it twice.",
+      "message": "You walk. It's a good two hours and genuinely funny in places.\n\nTwice, unprompted, Jay says he's fine.\n\nThe second one is what stays with you on the way home, because nobody says it twice.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -813,7 +813,7 @@
     },
     "s1d1_cage": {
       "day": 1,
-      "message": "Tunde is training for something specific and doesn't make a thing of it.\n\nAfterwards he asks a direct question about what the player is actually doing with himself, and takes the answer seriously enough to be unsatisfied by it.\n\nHe isn't unkind. He just doesn't pretend.",
+      "message": "Tunde is training for something specific and doesn't make a thing of it.\n\nAfterwards he asks you a direct question about what you're actually doing with yourself, and takes the answer seriously enough to be unsatisfied by it.\n\nHe isn't unkind. He just doesn't pretend.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -841,12 +841,12 @@
     },
     "s1d1_alone": {
       "day": 1,
-      "message": "His room. The flat is empty because Mum is on nights.\n\nIt's the first hour he's had to himself in a week, and it's fine, and he checks his phone eleven times.",
+      "message": "Your room. The flat is empty because Mum is on nights.\n\nIt's the first hour you've had to yourself in a week, and it's fine, and you check your phone eleven times.",
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "His room",
+          "location": "Your room",
           "character": {
             "name": "",
             "role": "",
@@ -882,10 +882,10 @@
           "text": "you alright?"
         },
         {
-          "narration": "Twenty minutes between them. He hasn't answered either."
+          "narration": "Twenty minutes between them. You haven't answered either."
         },
         {
-          "narration": "And a number he doesn't have saved."
+          "narration": "And a number you don't have saved."
         },
         {
           "from": "Unknown number",
@@ -922,7 +922,7 @@
             "heat": 2,
             "stayed_out": true
           },
-          "beat": "*10 mins.* Nothing else. He is outside for four minutes and back inside by ten past.",
+          "beat": "*10 mins.* Nothing else. You're outside for four minutes and back inside by ten past.",
           "next": "s1d2_open"
         },
         {
@@ -1002,7 +1002,7 @@
             "stayed_out": true,
             "kept_the_receipt": true
           },
-          "beat": "The question is still in the thread. It doesn't protect him from anything.",
+          "beat": "The question is still in the thread. It doesn't protect you from anything.",
           "next": "s1d2_open"
         },
         {
@@ -1046,7 +1046,7 @@
               "text": "you about today. need you for something. before 4 tho"
             },
             {
-              "narration": "And under last night's unanswered question of his own:"
+              "narration": "And under your own unanswered question from last night:"
             },
             {
               "from": "Unknown number",
@@ -1119,7 +1119,7 @@
     },
     "s1d2_bag": {
       "day": 2,
-      "message": "Somebody is on the walkway who he half-recognises and can't place.\n\nTwo people on the balcony above are hanging washing.",
+      "message": "Somebody is on the walkway who you half-recognise and can't place.\n\nTwo people on the balcony above are hanging washing.",
       "presentation": {
         "type": "none",
         "modal": false,
@@ -1160,7 +1160,7 @@
     },
     "s1d2_walkway": {
       "day": 2,
-      "message": "Jay is outside before he's finished getting ready, which is how you know it matters.\n\nWhat he needs is a lift with an errand. His aunt has put food aside and it has to be picked up before she shuts at four, and it's a bus and a walk each way, and he doesn't want to do it on his own.\n\nThat's genuinely all he says.",
+      "message": "Jay is outside before you've finished getting ready, which is how you know it matters.\n\nWhat he needs is a lift with an errand. His aunt has put food aside and it has to be picked up before she shuts at four, and it's a bus and a walk each way, and he doesn't want to do it on his own.\n\nThat's genuinely all he says.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -1211,7 +1211,7 @@
     },
     "s1d2_ask": {
       "day": 2,
-      "message": "He doesn't ask. That's the whole difficulty.\n\nHe describes the situation and then goes quiet and lets the silence do the asking, and both of them know exactly what is happening.\n\nThere is forty pounds in the player's pocket. The deposit is not forty pounds.",
+      "message": "Jay doesn't ask. That's the whole difficulty.\n\nHe describes the situation and then goes quiet and lets the silence do the asking, and both of you know exactly what is happening.\n\nThere is forty pounds in your pocket. The deposit is not forty pounds.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
@@ -1240,7 +1240,7 @@
             "helped_jay": true,
             "credit": 1
           },
-          "beat": "He tries to refuse it once, badly, and then takes it. It doesn't cover it. Both of them know it doesn't cover it.",
+          "beat": "He tries to refuse it once, badly, and then takes it. It doesn't cover it. Both of you know it doesn't cover it.",
           "next": "s1d2_plate"
         },
         {
@@ -1307,12 +1307,12 @@
     },
     "s1d2_plate": {
       "day": 2,
-      "message": "On the landing outside his flat, Jay splits it — one container for his, one held out.\n\n\"That one's your mum's. She likes the rice.\"\n\nHe says it like it's nothing, because to him it is. His aunt made too much, the way she has made too much for eleven years.",
+      "message": "On the landing outside your flat, Jay splits it — one container for himself, one held out.\n\n\"That one's your mum's. She likes the rice.\"\n\nHe says it like it's nothing, because to him it is. His aunt made too much, the way she has made too much for eleven years.",
       "presentation": {
         "type": "scene",
         "modal": false,
         "data": {
-          "location": "His landing, six",
+          "location": "Your landing, six",
           "character": {
             "name": "Jay",
             "role": "Oldest friend",
@@ -1335,7 +1335,7 @@
     },
     "s1d2_close": {
       "day": 2,
-      "message": "He puts a container of somebody else's aunt's food in his own fridge, in a flat where the money is tight, on the day he decided what he was and wasn't going to do about Jay's sister.\n\nMum's shoes are still not by the door.",
+      "message": "You put a container of somebody else's aunt's food in your own fridge, in a flat where the money is tight, on the day you decided what you were and weren't going to do about Jay's sister.\n\nMum's shoes are still not by the door.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -1363,19 +1363,19 @@
     },
     "s1d3_open": {
       "day": 3,
-      "message": "Two days since he decided what he was and wasn't going to do about Jay's sister.\n\nJay hasn't messaged. That's not a falling-out; it's just Thursday. But it's the first morning since Sunday that he's woken up without somebody wanting something, and the quiet is not as good as he expected it to be.",
+      "message": "Two days since you decided what you were and weren't going to do about Jay's sister.\n\nJay hasn't messaged. That's not a falling-out; it's just Thursday. But it's the first morning since Sunday that you've woken up without somebody wanting something, and the quiet is not as good as you expected it to be.",
       "messageVariants": [
         {
           "when": {
             "moneyBand": "short"
           },
-          "message": "Two days, and nothing in his pocket since Wednesday.\n\nJay hasn't messaged. That's not a falling-out; it's just Thursday. But it's the first morning since Sunday that he's woken up without somebody wanting something, and the quiet is not as good as he expected it to be."
+          "message": "Two days, and nothing in your pocket since Wednesday.\n\nJay hasn't messaged. That's not a falling-out; it's just Thursday. But it's the first morning since Sunday that you've woken up without somebody wanting something, and the quiet is not as good as you expected it to be."
         },
         {
           "when": {
             "helped_jay": true
           },
-          "message": "Two days since he did something about it, and nothing since.\n\nJay hasn't messaged. Not a falling-out — just Thursday. It's the first morning since Sunday nobody has wanted anything, and the quiet is not as good as he expected."
+          "message": "Two days since you did something about it, and nothing since.\n\nJay hasn't messaged. Not a falling-out — just Thursday. It's the first morning since Sunday nobody has wanted anything, and the quiet is not as good as you expected."
         }
       ],
       "interstitial": {
@@ -1409,7 +1409,7 @@
     },
     "s1d3_tunde": {
       "day": 3,
-      "message": "Tunde finds him, which Tunde does, because Tunde plans things.\n\nThere's a trial. Saturday, ten till two, at the place he's been talking about since March. The man who runs it will be there and Tunde has already said his name — not put him forward formally, just said it, in the way that gets you looked at once.\n\n\"It's one Saturday. If you're coming, come properly.\"\n\nHe isn't selling it. He's about half embarrassed to have mentioned it, because he knows exactly how it sounds to say *there might be something in September* to somebody who needs money now.",
+      "message": "Tunde finds you, which Tunde does, because Tunde plans things.\n\nThere's a trial. Saturday, ten till two, at the place he's been talking about since March. The man who runs it will be there and Tunde has already said your name — not put you forward formally, just said it, in the way that gets you looked at once.\n\n\"It's one Saturday. If you're coming, come properly.\"\n\nHe isn't selling it. He's about half embarrassed to have mentioned it, because he knows exactly how it sounds to say *there might be something in September* to somebody who needs money now.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -1437,7 +1437,7 @@
     },
     "s1d3_stop": {
       "day": 3,
-      "message": "Two of them are already out of the car by the time he clocks them.\n\nIt isn't a shout. Nobody grabs anybody. Names, where he's going, where he's come from, and one of them looking past him at the road the whole time.\n\nHe is carrying nothing. There is nothing to find and nothing is looked for.\n\nAcross the walkway, outside the shops, Kai is with three or four others and his phone is up, and it has been up since about the second sentence.\n\nTwo years ago Kai did this to somebody else in front of everyone, and the player laughed. Not loudly. He laughed.",
+      "message": "Two of them are already out of the car by the time you clock them.\n\nIt isn't a shout. Nobody grabs anybody. Names, where you're going, where you've come from, and one of them looking past you at the road the whole time.\n\nYou're carrying nothing. There is nothing to find and nothing is looked for.\n\nAcross the walkway, outside the shops, Kai is with three or four others and his phone is up, and it has been up since about the second sentence.\n\nTwo years ago Kai did this to somebody else in front of everyone, and you laughed. Not loudly. You laughed.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
@@ -1465,7 +1465,7 @@
             "rep": 1,
             "stop_was_filmed": true
           },
-          "beat": "Four minutes. He hears himself being polite and doesn't enjoy it.",
+          "beat": "Four minutes. You hear yourself being polite and don't enjoy it.",
           "next": "s1d3_after"
         },
         {
@@ -1516,7 +1516,7 @@
           "when": {
             "kaiBand": "needled"
           },
-          "message": "They get back in the car and go. Four minutes, start to finish.\n\nNothing happened, and nothing exists of it. Forty people saw him square up to Kai over nothing, and Kai has to live with having put it down."
+          "message": "They get back in the car and go. Four minutes, start to finish.\n\nNothing happened, and nothing exists of it. Forty people saw you square up to Kai over nothing, and Kai has to live with having put it down."
         }
       ],
       "presentation": {
@@ -1546,7 +1546,7 @@
     },
     "s1d3_dee": {
       "day": 3,
-      "message": "Dee comes to him, which is not how it normally goes.\n\nHe is not a stranger. Two summers ago Dee got him a fortnight's work when he needed it, paid him on the Friday like he said he would, and drove him home the night the buses stopped. Neither of them has mentioned it since and neither of them needs to.\n\nHe's got a unit for a fortnight — phone cases, chargers, the usual — and he needs somebody on it Saturday, ten till six. Eighty quid, cash, end of the day.\n\nHe asks for the player by name. He doesn't say why him, and it doesn't occur to him that he should, and eighty is a bit more than the day is worth.\n\nSaturday is Saturday.",
+      "message": "Dee comes to you, which is not how it normally goes.\n\nHe is not a stranger. Two summers ago Dee got you a fortnight's work when you needed it, paid you on the Friday like he said he would, and drove you home the night the buses stopped. Neither of you has mentioned it since and neither of you needs to.\n\nHe's got a unit for a fortnight — phone cases, chargers, the usual — and he needs somebody on it Saturday, ten till six. Eighty quid, cash, end of the day.\n\nHe asks for you by name. He doesn't say why you, and it doesn't occur to him that he should, and eighty is a bit more than the day is worth.\n\nSaturday is Saturday.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
@@ -1590,7 +1590,7 @@
             "deeTrust": 2,
             "heat": 1
           },
-          "beat": "He answers completely and plainly — the unit, the stock, the hours, where the float lives — and says nothing at all about why him.",
+          "beat": "He answers completely and plainly — the unit, the stock, the hours, where the float lives — and says nothing at all about why you.",
           "next": "s1d3_close"
         },
         {
@@ -1615,10 +1615,10 @@
       "day": 3,
       "thread": [
         {
-          "narration": "Whatever he said, it's said."
+          "narration": "Whatever you said, it's said."
         },
         {
-          "narration": "He opens the thread with Amara in it."
+          "narration": "You open the thread with Amara in it."
         },
         {
           "from": "Amara",
@@ -1632,14 +1632,14 @@
           "narration": "Tuesday. There is nothing new underneath. She hasn't messaged since."
         },
         {
-          "narration": "He types something and doesn't send it, which is a thing he has now done twice."
+          "narration": "You type something and don't send it, which is a thing you've now done twice."
         }
       ],
       "presentation": {
         "type": "messages",
         "modal": true,
         "data": {
-          "location": "His room, night",
+          "location": "Your room, night",
           "sender": "Amara",
           "character": {
             "name": "Amara",
@@ -1663,7 +1663,7 @@
     },
     "s1d4_open": {
       "day": 4,
-      "message": "You can hear it from the stairs. Somebody has put the music slightly too loud and nobody has said anything about it because it's her night.\n\nHe has been coming to this door since he was nine. He ate in this kitchen for four months.\n\nHe is carrying a card because his mum told him to bring a card.",
+      "message": "You can hear it from the stairs. Somebody has put the music slightly too loud and nobody has said anything about it because it's her night.\n\nYou've been coming to this door since you were nine. You ate in this kitchen for four months.\n\nYou're carrying a card because your mum told you to bring a card.",
       "interstitial": {
         "label": "Friday",
         "durationMs": 2000
@@ -1695,7 +1695,7 @@
     },
     "s1d4_frontroom": {
       "day": 4,
-      "message": "She has him by the arm inside six seconds and doesn't let go for another minute. He gets introduced to two aunties as *the sensible one*, which is a thing she has called him since before it was true. There is a plate in his hand he does not remember accepting.\n\nMum is here. She knows this family. She is in the corner with Jay's mum and one of the aunties, and she has taken her shoes off, which he has not seen her do since Christmas.\n\nThrough the doorway he can see the shape of the evening. Kai has the kitchen and four people. Tunde is by the balcony door with a drink he isn't drinking, out of place in the specific way of somebody who came because you asked him to, weeks ago, before any of this. Amara is in the hallway looking at the photographs, and hasn't messaged since Tuesday.\n\nJay is somewhere. Jay has been somewhere all evening.",
+      "message": "Jay's mum has you by the arm inside six seconds and doesn't let go for another minute. You get introduced to two aunties as *the sensible one*, which is a thing she has called you since before it was true. There is a plate in your hand you don't remember accepting.\n\nMum is here. She knows this family. She is in the corner with Jay's mum and one of the aunties, and she has taken her shoes off, which you haven't seen her do since Christmas.\n\nThrough the doorway you can see the shape of the evening. Kai has the kitchen and four people. Tunde is by the balcony door with a drink he isn't drinking, out of place in the specific way of somebody who came because you asked him to, weeks ago, before any of this. Amara is in the hallway looking at the photographs, and hasn't messaged since Tuesday.\n\nJay is somewhere. Jay has been somewhere all evening.",
       "reactionDelay": "medium",
       "presentation": {
         "type": "scene",
@@ -1770,19 +1770,19 @@
     },
     "s1d4_kitchen": {
       "day": 4,
-      "message": "Kai is doing Thursday from memory to four people who half believe him, and that is worse for Kai and better for nobody.\n\nHe doesn't stop when the player comes in, which is either confidence or courtesy and there is no way to tell.",
+      "message": "Kai is doing Thursday from memory to four people who half believe him, and that is worse for Kai and better for nobody.\n\nHe doesn't stop when you come in, which is either confidence or courtesy and there is no way to tell.",
       "messageVariants": [
         {
           "when": {
             "stop_was_filmed": true
           },
-          "message": "Kai is doing Thursday. He plays it twice — once for the people who came in late — and the player is in the room while his own name is used.\n\nHe doesn't stop when the player comes in, which is either confidence or courtesy and there is no way to tell."
+          "message": "Kai is doing Thursday. He plays it twice — once for the people who came in late — and you're in the room while your own name is used.\n\nHe doesn't stop when you come in, which is either confidence or courtesy and there is no way to tell."
         },
         {
           "when": {
             "kaiBand": "needled"
           },
-          "message": "Kai stops talking when the player comes in. Everybody notices. Nobody says anything, and after about four seconds he starts again, on something else."
+          "message": "Kai stops talking when you come in. Everybody notices. Nobody says anything, and after about four seconds he starts again, on something else."
         }
       ],
       "presentation": {
@@ -1812,19 +1812,19 @@
     },
     "s1d4_balcony": {
       "day": 4,
-      "message": "Tunde talks about tomorrow like it's settled, because as far as he knows it is.\n\nIt's cold and neither of them goes back in for eleven minutes.",
+      "message": "Tunde talks about tomorrow like it's settled, because as far as he knows it is.\n\nIt's cold and neither of you goes back in for eleven minutes.",
       "messageVariants": [
         {
           "when": {
             "standing": "around"
           },
-          "message": "Tunde talks about tomorrow like it's settled, because as far as he knows it is. He mentions the time twice.\n\nIt's cold and neither of them goes back in for eleven minutes, and the player does not correct him."
+          "message": "Tunde talks about tomorrow like it's settled, because as far as he knows it is. He mentions the time twice.\n\nIt's cold and neither of you goes back in for eleven minutes, and you don't correct him."
         },
         {
           "when": {
             "disciplineBand": "held"
           },
-          "message": "Tunde talks about tomorrow and doesn't oversell it, which is how he is when he has stopped worrying about somebody.\n\nIt's cold and neither of them goes back in for eleven minutes."
+          "message": "Tunde talks about tomorrow and doesn't oversell it, which is how he is when he has stopped worrying about somebody.\n\nIt's cold and neither of you goes back in for eleven minutes."
         }
       ],
       "presentation": {
@@ -1882,7 +1882,7 @@
     },
     "s1d4_stay": {
       "day": 4,
-      "message": "He stays. He holds the plate. He is told about somebody's hip and somebody's daughter and he says the right things in the right places.\n\nThrough two doorways he can watch all of it happening without him.\n\nHis mum looks over twice and doesn't say anything either time.",
+      "message": "You stay. You hold the plate. You're told about somebody's hip and somebody's daughter and you say the right things in the right places.\n\nThrough two doorways you can watch all of it happening without you.\n\nYour mum looks over twice and doesn't say anything either time.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -1910,13 +1910,13 @@
     },
     "s1d4_speech": {
       "day": 4,
-      "message": "Somebody bangs a glass.\n\nJay does four sentences about his mum and gets through about three. Everybody claps. She cries in the way you're allowed to at your own birthday.\n\nHe looks over once, in the middle of it.",
+      "message": "Somebody bangs a glass.\n\nJay does four sentences about his mum and gets through about three. Everybody claps. She cries in the way you're allowed to at your own birthday.\n\nJay looks over at you once, in the middle of it.",
       "messageVariants": [
         {
           "when": {
             "helped_jay": true
           },
-          "message": "Somebody bangs a glass.\n\nJay does four sentences about his mum and gets through about three. The part he can't finish is about people who turn up.\n\nHe looks over once, in the middle of it, and it is not subtle, and nobody else sees it."
+          "message": "Somebody bangs a glass.\n\nJay does four sentences about his mum and gets through about three. The part he can't finish is about people who turn up.\n\nHe looks over at you once, in the middle of it, and it is not subtle, and nobody else sees it."
         }
       ],
       "presentation": {
@@ -1946,7 +1946,7 @@
     },
     "s1d4_landing": {
       "day": 4,
-      "message": "Jay comes out after him.\n\nHe isn't angry. He's his mum's son and it's her night and he's had four cans, and he is going to ask one question and then go back inside.\n\n\"Where'd you get to?\"",
+      "message": "Jay comes out after you.\n\nHe isn't angry. He's his mum's son and it's her night and he's had four cans, and he is going to ask one question and then go back inside.\n\n\"Where'd you get to?\"",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
@@ -1988,7 +1988,7 @@
             "dayFourSaid": "lied",
             "jayStrain": 2
           },
-          "beat": "He accepts it and holds the door open and neither of them moves for a second.",
+          "beat": "He accepts it and holds the door open and neither of you moves for a second.",
           "next": "s1d4_close"
         },
         {
@@ -2010,13 +2010,13 @@
     },
     "s1d4_close": {
       "day": 4,
-      "message": "Two floors and a walkway. Mum has her shoes in her hand.\n\nShe says one thing about Tuesday. Not the money — Tuesday.\n\nAnd then she talks about somebody's hip for the rest of the walk, and he can't tell whether the first thing was the point or whether he just made it the point.",
+      "message": "Two floors and a walkway. Mum has her shoes in her hand.\n\nShe says one thing about Tuesday. Not the money — Tuesday.\n\nAnd then she talks about somebody's hip for the rest of the walk, and you can't tell whether the first thing was the point or whether you just made it the point.",
       "messageVariants": [
         {
           "when": {
             "lied_to_mum": true
           },
-          "message": "Two floors and a walkway. Mum has her shoes in her hand.\n\n\"You said it was sorted, on Tuesday.\" She doesn't look at him. It isn't a question and she doesn't wait for an answer.\n\nThen she talks about somebody's hip for the rest of the walk."
+          "message": "Two floors and a walkway. Mum has her shoes in her hand.\n\n\"You said it was sorted, on Tuesday.\" She doesn't look at you. It isn't a question and she doesn't wait for an answer.\n\nThen she talks about somebody's hip for the rest of the walk."
         },
         {
           "when": {
@@ -2052,7 +2052,7 @@
     },
     "s1d5_open": {
       "day": 5,
-      "message": "The thing he said on Thursday is now the thing he's doing.\n\nMum went in at six. There's a note about Sunday afternoon — she needs him around for something, she hasn't said what, and the note doesn't ask so much as assume.",
+      "message": "The thing you said on Thursday is now the thing you're doing.\n\nMum went in at six. There's a note about Sunday afternoon — she needs you around for something, she hasn't said what, and the note doesn't ask so much as assume.",
       "interstitial": {
         "label": "Saturday",
         "durationMs": 2000
@@ -2092,7 +2092,7 @@
     },
     "s1d5_stall": {
       "day": 5,
-      "message": "Eight hours and it is boring. Phone cases, chargers, a card reader that works about half the time. Four people ask if he's got a specific thing and he hasn't. Around two he serves somebody's mum who knows his mum. Around four he stops checking the time.\n\nAt six Dee comes by, counts out eighty in twenties, and says \"same next Saturday if you want it\" — which is the first time anybody has offered him something twice.",
+      "message": "Eight hours and it is boring. Phone cases, chargers, a card reader that works about half the time. Four people ask if you've got a specific thing and you haven't. Around two you serve somebody's mum who knows your mum. Around four you stop checking the time.\n\nAt six Dee comes by, counts out eighty in twenties, and says \"same next Saturday if you want it\" — which is the first time anybody has offered you something twice.",
       "presentation": {
         "type": "montage",
         "modal": false,
@@ -2208,14 +2208,14 @@
             "tundeStrain": 1,
             "credit": -1
           },
-          "beat": "\"I'll ask.\" He will ask. He'll be asking on the player's behalf for the second time in a fortnight.",
+          "beat": "\"I'll ask.\" He will ask. He'll be asking on your behalf for the second time in a fortnight.",
           "next": "s1d5_dee"
         }
       ]
     },
     "s1d5_tunde_went": {
       "day": 5,
-      "message": "Tunde rings straight after and gets to it.\n\nThe man asked what he's like. Tunde has to tell him something by Wednesday and he'd rather tell him the true thing.",
+      "message": "Tunde rings straight after and gets to it.\n\nThe man asked what you're like. Tunde has to tell him something by Wednesday and he'd rather tell him the true thing.",
       "reactionDelay": "long",
       "presentation": {
         "type": "call",
@@ -2240,7 +2240,7 @@
             "discipline": 1,
             "tundeTrust": 1
           },
-          "beat": "\"Alright. I'll tell him that then.\" And now somebody has said it on his behalf.",
+          "beat": "\"Alright. I'll tell him that then.\" And now somebody has said it on your behalf.",
           "next": "s1d5_dee"
         },
         {
@@ -2277,7 +2277,7 @@
     },
     "s1d5_dee": {
       "day": 5,
-      "message": "He has a cousin. Thirteen. He's started being around people Dee doesn't want him around, and Dee can't say that to him — \"because look at me.\"\n\nTraining's Tuesdays and Thursdays, six till half seven. Take him, bring him back, be about. He'll sort him weekly for it.\n\nHe isn't selling it. He looks slightly embarrassed to be asking, which is not a thing the player has seen on him before.\n\n\"You're the only one round here I'd have him with.\"\n\nHe means it. That is the entire difficulty.",
+      "message": "Dee has a cousin. Thirteen. He's started being around people Dee doesn't want him around, and Dee can't say that to him — \"because look at me.\"\n\nTraining's Tuesdays and Thursdays, six till half seven. Take him, bring him back, be about. Dee will sort you weekly for it.\n\nHe isn't selling it. He looks slightly embarrassed to be asking, which is not a thing you've seen on him before.\n\n\"You're the only one round here I'd have him with.\"\n\nHe means it. That is the entire difficulty.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
@@ -2337,20 +2337,20 @@
             "refused_the_offer": true,
             "deeStrain": 1
           },
-          "beat": "\"No, that's fair.\" He asks after the player's mum on the way out. He does not ask again.",
+          "beat": "\"No, that's fair.\" He asks after your mum on the way out. He does not ask again.",
           "next": "s1d5_close"
         }
       ]
     },
     "s1d5_close": {
       "day": 5,
-      "message": "The flat is empty. The note about Sunday is still on the side.\n\nWhatever he agreed to or didn't, Tuesday is in three days and it is somebody else's Tuesday now.",
+      "message": "The flat is empty. The note about Sunday is still on the side.\n\nWhatever you agreed to or didn't, Tuesday is in three days and it is somebody else's Tuesday now.",
       "messageVariants": [
         {
           "when": {
             "moneyBand": "flush"
           },
-          "message": "The flat is empty. The note about Sunday is still on the side.\n\nThere is eighty quid in twenties in his jacket and nobody in the flat to mention it to."
+          "message": "The flat is empty. The note about Sunday is still on the side.\n\nThere is eighty quid in twenties in your jacket and nobody in the flat to mention it to."
         }
       ],
       "presentation": {
@@ -2375,7 +2375,7 @@
     },
     "s1d6_open": {
       "day": 6,
-      "message": "Mum is in the kitchen and she has already made tea for two, which she does not do.\n\nShe needs him at three. Her sister's, an hour, back by five. She doesn't say why and it clearly isn't important, and she asks once, in the way that means she has decided not to ask twice.\n\nIt is the first thing she has asked him for all week.",
+      "message": "Mum is in the kitchen and she has already made tea for two, which she does not do.\n\nShe needs you at three. Her sister's, an hour, back by five. She doesn't say why and it clearly isn't important, and she asks once, in the way that means she has decided not to ask twice.\n\nIt is the first thing she has asked you for all week.",
       "interstitial": {
         "label": "Sunday",
         "durationMs": 2000
@@ -2416,7 +2416,7 @@
           "text": "you about this afternoon"
         },
         {
-          "narration": "Four minutes later, before he's replied:"
+          "narration": "Four minutes later, before you've replied:"
         },
         {
           "from": "Jay",
@@ -2464,14 +2464,14 @@
               "narration": "One o'clock. Tunde rings rather than messages. He needs to tell the man something by Wednesday."
             },
             {
-              "narration": "And a number in a group he isn't really in:"
+              "narration": "And a number in a group you aren't really in:"
             },
             {
               "from": "Unknown",
               "text": "is this you"
             },
             {
-              "narration": "Four minutes of Thursday, sent to somebody who sent it to somebody who sent it to him."
+              "narration": "Four minutes of Thursday, sent to somebody who sent it to somebody who sent it to you."
             },
             {
               "narration": "Dee doesn't call. None of them knows about any of the others."
@@ -2505,7 +2505,7 @@
               "narration": "One o'clock. Tunde rings rather than messages."
             },
             {
-              "narration": "And a number in a group he isn't really in:"
+              "narration": "And a number in a group you aren't really in:"
             },
             {
               "from": "Unknown",
@@ -2570,13 +2570,13 @@
     },
     "s1d6_afternoon": {
       "day": 6,
-      "message": "He cannot do all of it. He can't even do two of it properly.",
+      "message": "You can't do all of it. You can't even do two of it properly.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
         "modal": true,
         "data": {
-          "location": "His room, three",
+          "location": "Your room, three",
           "character": {
             "name": "",
             "role": "",
@@ -2652,7 +2652,7 @@
     },
     "s1d6_fronted": {
       "day": 6,
-      "message": "He goes to Jay's flat and says it to Jay's mum in her own kitchen — the deposit, the date, the fact that Jay has been carrying it alone since before the birthday.\n\nJay is standing right there while he does it.\n\nIt is the correct thing to do and Jay does not look at him once.",
+      "message": "You go to Jay's flat and say it to Jay's mum in her own kitchen — the deposit, the date, the fact that Jay has been carrying it alone since before the birthday.\n\nJay is standing right there while you do it.\n\nIt is the correct thing to do and Jay does not look at you once.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -2680,7 +2680,7 @@
     },
     "s1d6_sat": {
       "day": 6,
-      "message": "Two hours on the wall outside the flats, and they don't solve anything.\n\nAt some point Jay says \"I know you were working Saturday\" — not as an accusation, just as a thing he knows — and after that it is easier rather than harder.",
+      "message": "Two hours on the wall outside the flats, and the two of you don't solve anything.\n\nAt some point Jay says \"I know you were working Saturday\" — not as an accusation, just as a thing he knows — and after that it is easier rather than harder.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -2708,12 +2708,12 @@
     },
     "s1d6_covered": {
       "day": 6,
-      "message": "He tells his mum he'll be back by four. He tells Jay he's coming. He tells Dee Tuesday's fine.\n\nThen it's six and he has been in his room and every one of those three sentences is still technically true and none of them happened.",
+      "message": "You tell your mum you'll be back by four. You tell Jay you're coming. You tell Dee Tuesday's fine.\n\nThen it's six and you've been in your room and every one of those three sentences is still technically true and none of them happened.",
       "presentation": {
         "type": "none",
         "modal": false,
         "data": {
-          "location": "His room, six"
+          "location": "Your room, six"
         }
       },
       "choices": [
@@ -2731,7 +2731,7 @@
     },
     "s1d6_mum": {
       "day": 6,
-      "message": "An hour at her sister's. She talks to her sister and he sits there and is, for the first time in six days, somewhere he said he'd be.\n\nHis phone goes twice and he doesn't look at it, and she notices that he doesn't look at it.",
+      "message": "An hour at her sister's. She talks to her sister and you sit there and are, for the first time in six days, somewhere you said you'd be.\n\nYour phone goes twice and you don't look at it, and she notices that you don't look at it.",
       "presentation": {
         "type": "montage",
         "modal": false,
@@ -2754,7 +2754,7 @@
     },
     "s1d6_late": {
       "day": 6,
-      "message": "Mum comes in and puts her bag down and doesn't take her coat off.\n\nShe has heard something. Not the whole thing — a version, from her sister, from somebody on the walkway, from the specific and unreliable network that has been running all week without him in it.\n\nShe asks him one question directly.",
+      "message": "Mum comes in and puts her bag down and doesn't take her coat off.\n\nShe has heard something. Not the whole thing — a version, from her sister, from somebody on the walkway, from the specific and unreliable network that has been running all week without you in it.\n\nShe asks you one question directly.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
@@ -2831,14 +2831,14 @@
           "when": {
             "daySixAct": "fronted"
           },
-          "message": "Tuesday is in two days. Tomorrow is the deposit — and somebody else is dealing with it now, because he made that happen in her kitchen with her son standing there.\n\nNothing has been resolved."
+          "message": "Tuesday is in two days. Tomorrow is the deposit — and somebody else is dealing with it now, because you made that happen in her kitchen with her son standing there.\n\nNothing has been resolved."
         }
       ],
       "presentation": {
         "type": "none",
         "modal": false,
         "data": {
-          "location": "His room, late"
+          "location": "Your room, late"
         }
       },
       "choices": [
@@ -2856,7 +2856,7 @@
     },
     "s1d7_open": {
       "day": 7,
-      "message": "Nobody has messaged.\n\nThat is the first thing. Six days of somebody wanting something by four, and this morning the phone has one notification and it's the bank telling him what his balance is.\n\nMum went at six. The mug is washed.",
+      "message": "Nobody has messaged.\n\nThat is the first thing. Six days of somebody wanting something by four, and this morning the phone has one notification and it's the bank telling you what your balance is.\n\nMum went at six. The mug is washed.",
       "interstitial": {
         "label": "Monday",
         "durationMs": 2400
@@ -2888,7 +2888,7 @@
     },
     "s1d7_situation": {
       "day": 7,
-      "message": "The deposit was today and it either happened or it didn't, and he will find out from somebody else rather than from Jay.\n\nTunde has to tell the man something on Wednesday.\n\nTuesday is tomorrow, and a thirteen-year-old either has somebody coming or he hasn't.\n\nAmara's two messages from Tuesday are still the last thing in that thread.\n\nNone of these are problems he can solve today. They are things that have arrived at the shape they are going to be in.",
+      "message": "The deposit was today and it either happened or it didn't, and you'll find out from somebody else rather than from Jay.\n\nTunde has to tell the man something on Wednesday.\n\nTuesday is tomorrow, and a thirteen-year-old either has somebody coming or he hasn't.\n\nAmara's two messages from Tuesday are still the last thing in that thread.\n\nNone of these are problems you can solve today. They are things that have arrived at the shape they are going to be in.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
@@ -2917,7 +2917,7 @@
     },
     "s1d7_action": {
       "day": 7,
-      "message": "He has one afternoon and he can do one thing with it.\n\nNot fix the week. Do one thing.",
+      "message": "You have one afternoon and you can do one thing with it.\n\nNot fix the week. Do one thing.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
@@ -2944,7 +2944,7 @@
             "amaraTrust": 1
           },
           "terminal": {
-            "consequence": "She reads it and doesn't reply for two hours and then replies properly, and the reply is longer than his was.",
+            "consequence": "She reads it and doesn't reply for two hours and then replies properly, and the reply is longer than yours was.",
             "landing": "\"You could've just said that on Tuesday.\" She isn't being unkind. She's stating the thing that was true all week."
           }
         },
@@ -2970,8 +2970,8 @@
             "paid_it_back": true
           },
           "terminal": {
-            "consequence": "Sixty of it on the side, under the kettle, where she'll find it and he won't have to hand it over. She doesn't mention it. It's gone in the morning and she doesn't mention that either.",
-            "landing": "On Thursday she buys him something he didn't ask for and doesn't mention that. He counts what's left twice on the bus and it isn't very much."
+            "consequence": "Sixty of it on the side, under the kettle, where she'll find it and you won't have to hand it over. She doesn't mention it. It's gone in the morning and she doesn't mention that either.",
+            "landing": "On Thursday she buys you something you didn't ask for and doesn't mention that. You count what's left twice on the bus and it isn't very much."
           }
         },
         {
@@ -2995,7 +2995,7 @@
             "discipline": 1
           },
           "terminal": {
-            "consequence": "Without Tunde, without telling Tunde, on a Monday afternoon, at a place he has been to twice. The man is busy and gives him four minutes. Four minutes is more than he had this morning.",
+            "consequence": "Without Tunde, without telling Tunde, on a Monday afternoon, at a place you've been to twice. The man is busy and gives you four minutes. Four minutes is more than you had this morning.",
             "landing": "Tunde rings that night. \"He said you turned up.\" That's the whole call, and Tunde sounds like somebody who has just got something back."
           }
         },
@@ -3022,7 +3022,7 @@
           },
           "terminal": {
             "consequence": "The day before it starts. Face to face, because doing it by message would be the other thing. \"Nah, that's better than Tuesday night.\" He means it, and he is also now sorting something out at short notice for a thirteen-year-old.",
-            "landing": "He doesn't ask why. He asks after the player's mum, the way he always does, and then he's gone."
+            "landing": "He doesn't ask why. He asks after your mum, the way he always does, and then he's gone."
           }
         },
         {
@@ -3049,8 +3049,8 @@
             "jayTrust": 1
           },
           "terminal": {
-            "consequence": "On the walkway, standing up, in under a minute, without asking whether they're alright now. Jay says \"yeah, I know\" and then nothing for a while, and then something about his sister that is not an answer to anything.",
-            "landing": "They stand there another minute. Neither of them says the week is finished, because it isn't."
+            "consequence": "On the walkway, standing up, in under a minute, without asking whether you two are alright now. Jay says \"yeah, I know\" and then nothing for a while, and then something about his sister that is not an answer to anything.",
+            "landing": "You stand there another minute. Neither of you says the week is finished, because it isn't."
           }
         },
         {
@@ -3075,8 +3075,8 @@
             "kaiStrain": -2
           },
           "terminal": {
-            "consequence": "Two years late for one thing and five days late for another, and he doesn't separate them. Kai is thrown, and covers it badly, and says \"yeah, you're alright\" — which from Kai is a lot.",
-            "landing": "It doesn't come up again. Six weeks later they're civil in a shop queue and it is genuinely fine, which nobody could have predicted in March."
+            "consequence": "Two years late for one thing and five days late for another, and you don't separate them. Kai is thrown, and covers it badly, and says \"yeah, you're alright\" — which from Kai is a lot.",
+            "landing": "It doesn't come up again. Six weeks later you're civil in a shop queue and it is genuinely fine, which nobody could have predicted in March."
           }
         },
         {
@@ -3091,8 +3091,8 @@
             "walked_away": true
           },
           "terminal": {
-            "consequence": "Not running. Not sulking. One afternoon somewhere nobody knows him, and back by nine. Four hours where nobody wants anything. He doesn't do anything with them. He doesn't need to.",
-            "landing": "Coming back over the bridge he works out that the whole thing turned on about nine seconds on Tuesday, and that he did not experience those nine seconds as a decision at the time."
+            "consequence": "Not running. Not sulking. One afternoon somewhere nobody knows you, and back by nine. Four hours where nobody wants anything. You don't do anything with them. You don't need to.",
+            "landing": "Coming back over the bridge you work out that the whole thing turned on about nine seconds on Tuesday, and that you didn't experience those nine seconds as a decision at the time."
           }
         }
       ]
@@ -3208,7 +3208,7 @@
         "daySixAct": "fronted"
       },
       "title": "The One Who Said It",
-      "text": "He stood in somebody else's kitchen and said the thing his friend couldn't, in front of his friend, and it was the right call and it wasn't his to make. Both of those stayed true. Nobody in that flat has mentioned it since."
+      "text": "You stand in somebody else's kitchen and say the thing your friend can't, in front of your friend, and it's the right call and it isn't yours to make. Both of those stay true. Nobody in that flat has mentioned it since."
     },
     {
       "when": {
@@ -3216,7 +3216,7 @@
         "lied_to_mum": true
       },
       "title": "Three True Sentences",
-      "text": "He told his mum he'd be back by four, told Jay he was coming, told Dee Tuesday was fine. Every one of those was true when he said it and none of them happened, and the week ended with three people each holding a slightly different version of a person who was, that Sunday, in his room."
+      "text": "You tell your mum you'll be back by four, tell Jay you're coming, tell Dee Tuesday's fine. Every one of those is true when you say it and none of them happens, and the week ends with three people each holding a slightly different version of you — and you, that Sunday, are in your room."
     },
     {
       "when": {
@@ -3224,55 +3224,55 @@
         "missed_training": true
       },
       "title": "Two Small Ones",
-      "text": "A version on Friday night, on a landing, at a party. A Saturday morning somebody had arranged for him. Neither was a lie he'd have called a lie at the time, and by Sunday there were two people carrying something he'd told them that wasn't so."
+      "text": "A version on Friday night, on a landing, at a party. A Saturday morning somebody arranged for you. Neither is a lie you'd call a lie at the time, and by Sunday there are two people carrying something you told them that isn't so."
     },
     {
       "when": {
         "refused_the_offer": true,
         "kept_the_receipt": true
       },
-      "title": "Said What He Could Do",
-      "text": "He put a limit on something on the Tuesday, in writing, before he knew any of it mattered. On the Saturday he said no to a good thing he couldn't carry.\n\nNeither of those is impressive. Both of them are rarer than they sound."
+      "title": "You Say What You Can Do",
+      "text": "You put a limit on something on the Tuesday, in writing, before you know any of it matters. On the Saturday you say no to a good thing you can't carry.\n\nNeither of those is impressive. Both of them are rarer than they sound."
     },
     {
       "when": {
         "dayFive": "took_limited"
       },
       "title": "Tuesdays, Not Thursdays",
-      "text": "He said what he could actually do rather than what he wanted to be the kind of person who does, and then he did it. There's no story in that, which is why almost nobody manages it."
+      "text": "You say what you can actually do rather than what you want to be the kind of person who does, and then you do it. There's no story in that, which is why almost nobody manages it."
     },
     {
       "when": {
         "dayFive": "took"
       },
-      "title": "Somebody Trusted Him With Somebody",
-      "text": "A man who knows exactly what he is asked him to be near a thirteen-year-old twice a week, and he said yes, and the money was real and so was the reason.\n\nHe's on somebody's payroll now. He knew that when he said it."
+      "title": "Somebody Trusts You With Somebody",
+      "text": "A man who knows exactly what he is asks you to be near a thirteen-year-old twice a week, and you say yes, and the money is real and so is the reason.\n\nYou're on somebody's payroll now. You know that when you say it."
     },
     {
       "when": {
         "disciplineBand": "held"
       },
-      "title": "He Kept Turning Up",
-      "text": "On the days it was available, he did the boring thing. That's most of it. It doesn't feel like a decision at the time, which is exactly why it's so easy not to."
+      "title": "You Keep Turning Up",
+      "text": "On the days it's available, you do the boring thing. That's most of it. It doesn't feel like a decision at the time, which is exactly why it's so easy not to."
     },
     {
       "when": {
         "dayFourWent": "nowhere"
       },
-      "title": "He Stayed in the Front Room",
-      "text": "He was invited, he came, he held a plate for four hours and talked to two aunties about a hip, and through two doorways the rest of the week happened without him.\n\nHe owed that flat. It was also the easiest place in it to stand."
+      "title": "You Stay in the Front Room",
+      "text": "You're invited, you come, you hold a plate for four hours and talk to two aunties about a hip, and through two doorways the rest of the week happens without you.\n\nYou owe that flat. It's also the easiest place in it to stand."
     },
     {
       "when": {
         "kept_the_receipt": true
       },
-      "title": "He Asked",
-      "text": "At midnight, to a number he didn't have saved, he typed *what is it* and sent it. He didn't get an answer.\n\nThe question's still in the phone. It didn't protect him from anything. It just means he was the only person in it who said a true thing at the start."
+      "title": "You Ask",
+      "text": "At midnight, to a number you don't have saved, you type *what is it* and send it. You don't get an answer.\n\nThe question's still in the phone. It doesn't protect you from anything. It just means you're the only person in it who says a true thing at the start."
     }
   ],
   "defaultReflection": {
     "title": "Seven Days",
-    "text": "On the Tuesday, nobody could have told you a single thing about who he was. By the Monday, four or five people could, and they'd each say something different, and not one of them would be wrong."
+    "text": "On the Tuesday, nobody can say a single thing about who you are. By the Monday, four or five people can — and they each say something different, and not one of them is wrong."
   },
   "aftermath": {
     "jay": [
@@ -3280,19 +3280,19 @@
         "when": {
           "told_jay_about_dee": true
         },
-        "text": "Jay knows about Dee, because he told him on a wall on a Sunday when there was nothing else to do.\n\nIt doesn't become a thing. What it becomes is the reason that, in August, when Jay hears something about Dee from somebody who has it wrong, he comes and asks rather than assumes."
+        "text": "Jay knows about Dee, because you told him on a wall on a Sunday when there was nothing else to do.\n\nIt doesn't become a thing. What it becomes is the reason that, in August, when Jay hears something about Dee from somebody who has it wrong, he comes and asks rather than assumes."
       },
       {
         "when": {
           "daySixAct": "fronted"
         },
-        "text": "Jay's sister goes in September. Nobody in that flat has ever said out loud that it was because of a Sunday afternoon in March, and Jay has never once thanked him for it, and both of those are correct.\n\nThey're alright. It took until about July."
+        "text": "Jay's sister goes in September. Nobody in that flat has ever said out loud that it was because of a Sunday afternoon in March, and Jay has never once thanked you for it, and both of those are correct.\n\nYou're alright, the two of you. It took until about July."
       },
       {
         "when": {
           "jayBand": "tight"
         },
-        "text": "Jay is still Jay. He's careful with him now in a way he wasn't before — asks before assuming, which he never used to do — and neither of them has worked out whether that's better."
+        "text": "Jay is still Jay. He's careful with you now in a way he wasn't before — asks before assuming, which he never used to do — and neither of you has worked out whether that's better."
       },
       {
         "when": {
@@ -3301,7 +3301,7 @@
         "text": "Jay stops coming to the door. Not dramatically, not with a conversation. He just stops, and after a while it's hard to remember which week it was that he stopped.\n\nHis mum still says hello on the walkway. She always will."
       },
       {
-        "text": "They're fine. That's the accurate word for it. Same walkway, same shop, same jokes — and one subject that neither of them is ever going to go near again."
+        "text": "You're fine, the two of you. That's the accurate word for it. Same walkway, same shop, same jokes — and one subject that neither of you is ever going to go near again."
       }
     ],
     "mum": [
@@ -3309,41 +3309,41 @@
         "when": {
           "paid_it_back": true
         },
-        "text": "She never mentions the money. Not that week, not later.\n\nWhat changes is that she starts saying the numbers out loud — not asking him for anything, just saying them, the way you do with somebody who has turned out to be in it with you."
+        "text": "She never mentions the money. Not that week, not later.\n\nWhat changes is that she starts saying the numbers out loud — not asking you for anything, just saying them, the way you do with somebody who has turned out to be in it with you."
       },
       {
         "when": {
           "lied_to_mum": true,
           "answered_mum": true
         },
-        "text": "She knows about the Tuesday and she knows about the Sunday, and she has decided to keep exactly one of those.\n\nShe doesn't bring it up. She does start telling him things about the money before he asks, which she has never done, and it takes him about a month to work out that's what it is."
+        "text": "She knows about the Tuesday and she knows about the Sunday, and she has decided to keep exactly one of those.\n\nShe doesn't bring it up. She does start telling you things about the money before you ask, which she has never done, and it takes you about a month to work out that's what it is."
       },
       {
         "when": {
           "mumBand": "frayed"
         },
-        "text": "She is careful with him now, and being careful is not a thing she has ever had to be with him.\n\nShe still cooks for two. She just doesn't wait up any more, and she has stopped asking what time he'll be back, and neither of those was a decision she announced."
+        "text": "She is careful with you now, and being careful is not a thing she has ever had to be with you.\n\nShe still cooks for two. She just doesn't wait up any more, and she has stopped asking what time you'll be back, and neither of those was a decision she announced."
       },
       {
         "when": {
           "answered_mum": true
         },
-        "text": "She stops managing what he knows. It's small and it's most of what he wanted — she says the number out loud one Thursday, in the kitchen, like it's nothing, and then carries on making tea."
+        "text": "She stops managing what you know. It's small and it's most of what you wanted — she says the number out loud one Thursday, in the kitchen, like it's nothing, and then carries on making tea."
       },
       {
         "when": {
           "mumBand": "tight"
         },
-        "text": "Something loosened. She tells him things she used to handle on her own — not the whole of it, but more than none — and the first time she does it she watches his face to see whether it was a mistake.\n\nIt wasn't."
+        "text": "Something loosened. She tells you things she used to handle on her own — not the whole of it, but more than none — and the first time she does it she watches your face to see whether it was a mistake.\n\nIt wasn't."
       },
       {
         "when": {
           "lied_to_mum": true
         },
-        "text": "She works it out in her own time, the way she works everything out, and never tells him that she has.\n\nWhat changes is that she stops waiting up. He notices in about May and doesn't mention it."
+        "text": "She works it out in her own time, the way she works everything out, and never tells you that she has.\n\nWhat changes is that she stops waiting up. You notice in about May and don't mention it."
       },
       {
-        "text": "She's the same. Still on the extra shifts, still doing sums in her head while talking about something else.\n\nShe asks him less. He couldn't tell you when that started."
+        "text": "She's the same. Still on the extra shifts, still doing sums in her head while talking about something else.\n\nShe asks you less. You couldn't say when that started."
       }
     ],
     "tunde": [
@@ -3351,13 +3351,13 @@
         "when": {
           "disciplineBand": "held"
         },
-        "text": "Tunde puts his name forward again in September, for something else, and doesn't mention that he did it the first time and it didn't take."
+        "text": "Tunde puts your name forward again in September, for something else, and doesn't mention that he did it the first time and it didn't take."
       },
       {
         "when": {
           "missed_training": true
         },
-        "text": "Tunde starts in September. There's a photo of him in the polo shirt in a group chat and it's genuinely good news and he looks at it for slightly too long."
+        "text": "Tunde starts in September. There's a photo of him in the polo shirt in a group chat and it's genuinely good news and you look at it for slightly too long."
       },
       {
         "when": {
@@ -3366,7 +3366,7 @@
         "text": "Tunde stops asking. He isn't cold about it. He's just got a start date and a bus route and a life that begins on the ninth."
       },
       {
-        "text": "Tunde's around. They still play. He doesn't bring up the trial and he doesn't bring up September, and the not-bringing-it-up is new."
+        "text": "Tunde's around. You still play. He doesn't bring up the trial and he doesn't bring up September, and the not-bringing-it-up is new."
       }
     ],
     "dee": [
@@ -3374,22 +3374,22 @@
         "when": {
           "dayFive": "took"
         },
-        "text": "The cousin gets to training on Tuesdays and Thursdays and is, by Christmas, quite good. Dee pays on the Friday, every Friday, exactly like he said he would.\n\nHe's on Dee's phone now under his actual name. He hadn't thought about what that meant until he saw it."
+        "text": "The cousin gets to training on Tuesdays and Thursdays and is, by Christmas, quite good. Dee pays on the Friday, every Friday, exactly like he said he would.\n\nYou're on Dee's phone now under your actual name. You hadn't thought about what that meant until you saw it."
       },
       {
         "when": {
           "dayFive": "took_limited"
         },
-        "text": "Dee tells people he wouldn't do Thursdays. He tells it as a good story about somebody knowing what they can manage, and it is one — and it also means a lot of people who didn't know his name know it now."
+        "text": "Dee tells people you wouldn't do Thursdays. He tells it as a good story about somebody knowing what they can manage, and it is one — and it also means a lot of people who didn't know your name know it now."
       },
       {
         "when": {
           "refused_the_offer": true
         },
-        "text": "Dee's warm to him for the rest of the year and never asks him for anything again.\n\nHe sees the cousin around sometimes, at the shops, with other people. He's got no way of knowing whether that means anything."
+        "text": "Dee's warm to you for the rest of the year and never asks you for anything again.\n\nYou see the cousin around sometimes, at the shops, with other people. You've got no way of knowing whether that means anything."
       },
       {
-        "text": "Dee's Dee. Says hello, asks after his mum, remembers things.\n\nThere's no second offer. It's not a snub — he's just somebody who got asked once."
+        "text": "Dee's Dee. Says hello, asks after your mum, remembers things.\n\nThere's no second offer. It's not a snub — you're just somebody who got asked once."
       }
     ],
     "amara": [
@@ -3397,7 +3397,7 @@
         "when": {
           "amaraBand": "tight"
         },
-        "text": "Amara's still there in August. She asked him one straight question in March and got a straight answer, and it turns out that was the whole of it.\n\nShe's doing her thing. He knows what her thing is now, which he didn't in February."
+        "text": "Amara's still there in August. She asked you one straight question in March and got a straight answer, and it turns out that was the whole of it.\n\nShe's doing her thing. You know what her thing is now, which you didn't in February."
       }
     ],
     "kai": [
@@ -3405,7 +3405,7 @@
         "when": {
           "apologised_to_kai": true
         },
-        "text": "It stays ended. Six weeks later they're civil in a shop queue and it's genuinely fine, which nobody could have predicted in March.\n\nHe's the first person to text when something good happens in September."
+        "text": "It stays ended. Six weeks later you're civil in a shop queue and it's genuinely fine, which nobody could have predicted in March.\n\nKai's the first person to text you when something good happens in September."
       }
     ],
     "afterwards": [
@@ -3413,7 +3413,7 @@
         "when": {
           "walked_away": true
         },
-        "text": "He doesn't tell anybody where he went that afternoon, and nobody asks.\n\nIt becomes a thing he does. Four or five times that year, always on his own, always back the same night. He would not be able to tell you what it's for."
+        "text": "You don't tell anybody where you went that afternoon, and nobody asks.\n\nIt becomes a thing you do. Four or five times that year, always on your own, always back the same night. You couldn't tell anyone what it's for."
       }
     ]
   },
@@ -3422,60 +3422,60 @@
       "when": {
         "trajectory": "carrying_it"
       },
-      "text": "Nothing broke.\n\nThat's the achievement and it's the whole problem. Three or four people are walking around with a version of March that he gave them, and every one of those versions is going to have to survive contact with somebody else's. Not this month. Probably not this year.\n\nThe longer it holds, the more it'll cost to say."
+      "text": "Nothing broke.\n\nThat's the achievement and it's the whole problem. Three or four people are walking around with a version of March that you gave them, and every one of those versions is going to have to survive contact with somebody else's. Not this month. Probably not this year.\n\nThe longer it holds, the more it'll cost to say."
     },
     {
       "when": {
         "trajectory": "in_it"
       },
-      "text": "It's not a story about a bag.\n\nIt's a story about nine seconds on a Tuesday, and about being the one nobody looked at right up until they did. He's got money coming in and a place to be on Saturdays and somebody's phone with his actual name in it.\n\nNone of that is a trap. All of it narrows what next year can look like, and he won't feel it narrowing."
+      "text": "It's not a story about a bag.\n\nIt's a story about nine seconds on a Tuesday, and about being the one nobody looked at right up until they did. You've got money coming in and a place to be on Saturdays and somebody's phone with your actual name in it.\n\nNone of that is a trap. All of it narrows what next year can look like, and you won't feel it narrowing."
     },
     {
       "when": {
         "trajectory": "the_one_they_call"
       },
-      "text": "People come to him now.\n\nHe earned that on a Wednesday with forty quid he didn't have and on a Sunday in somebody's kitchen, and it's real — there are three or four people who'd answer for him and mean it.\n\nWhich means every one of their problems is now slightly his. One day he's going to not pick up, and somebody is going to experience that as a betrayal, and they won't be entirely wrong."
+      "text": "People come to you now.\n\nYou earned that on a Wednesday with forty quid you didn't have and on a Sunday in somebody's kitchen, and it's real — there are three or four people who'd answer for you and mean it.\n\nWhich means every one of their problems is now slightly yours. One day you're going to not pick up, and somebody is going to experience that as a betrayal, and they won't be entirely wrong."
     },
     {
       "when": {
         "trajectory": "useful"
       },
-      "text": "He's good at this. That's the thing nobody expected, including him.\n\nMoney, access, people who'd vouch — all of it came from being the one who sorts things out, and it works, and he likes that it works.\n\nWhat he hasn't noticed yet is that every one of those relationships is about what he does. At some point he'll have to ask for something back, and find out which of them were about him."
+      "text": "You're good at this. That's the thing nobody expected, including you.\n\nMoney, access, people who'd vouch — all of it came from being the one who sorts things out, and it works, and you like that it works.\n\nWhat you haven't noticed yet is that every one of those relationships is about what you do. At some point you'll have to ask for something back, and find out which of them were about you."
     },
     {
       "when": {
         "trajectory": "kept_both"
       },
-      "text": "He didn't drop anybody.\n\nJay's still there and so is Tunde, and holding both of them cost more than either would have on its own — the week was longer for him than it was for anyone else in it and nobody knows that.\n\nIt isn't sustainable and it hasn't stopped. Both of them are going to keep asking, and neither of them has any idea they're asking somebody who is already at the limit."
+      "text": "You didn't drop anybody.\n\nJay's still there and so is Tunde, and holding both of them cost more than either would have on its own — the week was longer for you than it was for anyone else in it and nobody knows that.\n\nIt isn't sustainable and it hasn't stopped. Both of them are going to keep asking, and neither of them has any idea they're asking somebody who is already at the limit."
     },
     {
       "when": {
         "trajectory": "moving"
       },
-      "text": "There's a route now. September is real rather than a thing people say.\n\nWhat it cost is small and permanent: he's around less, he says no more, and the block has noticed and adjusted. Nobody's angry. They've just stopped including him in the first round of asking.\n\nHe'll have to prove the new direction was worth it to people who aren't going to see any of it."
+      "text": "There's a route now. September is real rather than a thing people say.\n\nWhat it cost is small and permanent: you're around less, you say no more, and the block has noticed and adjusted. Nobody's angry. They've just stopped including you in the first round of asking.\n\nYou'll have to prove the new direction was worth it to people who aren't going to see any of it."
     },
     {
       "when": {
         "trajectory": "on_your_own"
       },
-      "text": "He said what he could do and what he couldn't, every time, out loud.\n\nHe was right nearly every time as well — you could go through the week day by day and find the sentence where he was right.\n\nThere's nobody left to say it to. The line between not needing help and not letting anyone give you any is somewhere behind him, and he's going to have to find it going backwards."
+      "text": "You said what you could do and what you couldn't, every time, out loud.\n\nYou were right nearly every time as well — go through the week day by day and there's a sentence where you were right.\n\nThere's nobody left to say it to. The line between not needing help and not letting anyone give you any is somewhere behind you, and you're going to have to find it going backwards."
     },
     {
       "when": {
         "trajectory": "invisible"
       },
-      "text": "Nobody looks at him again.\n\nThat's what he had on the Monday before any of it, and it took a week of saying no to people — including the ones being kind — to get it back. It's worth exactly what it was worth to somebody at midnight on Tuesday.\n\nHe's the only one who knows it cost anything. If he leaves it much longer, it stops being a week he had and starts being who he is."
+      "text": "Nobody looks at you again.\n\nThat's what you had on the Monday before any of it, and it took a week of saying no to people — including the ones being kind — to get it back. It's worth exactly what it was worth to somebody at midnight on Tuesday.\n\nYou're the only one who knows it cost anything. If you leave it much longer, it stops being a week you had and starts being who you are."
     },
     {
       "when": {
         "dayFourSaid": "true",
         "kept_the_receipt": true
       },
-      "text": "He didn't solve any of it.\n\nWhat he did was say one true thing on a landing at half eleven when a version would have been easier, and put a limit on something at midnight before he knew it mattered. Nobody thanked him for either.\n\nSome people are still disappointed and they're entitled to be. The next honest thing is going to be available on an ordinary day, not in a crisis, and that's the one that's hard."
+      "text": "You didn't solve any of it.\n\nWhat you did was say one true thing on a landing at half eleven when a version would have been easier, and put a limit on something at midnight before you knew it mattered. Nobody thanked you for either.\n\nSome people are still disappointed and they're entitled to be. The next honest thing is going to be available on an ordinary day, not in a crisis, and that's the one that's hard."
     }
   ],
   "defaultFinalMessage": {
-    "text": "Seven days.\n\nNothing landed and nothing broke. He's got roughly what he had on the Monday, minus a bit of money and plus the specific knowledge of what he does when four people want the same afternoon.\n\nNone of it is finished. Tuesday is training, Wednesday is an answer somebody's waiting for, and the deposit was yesterday. It just carries on from here, which is what most weeks do."
+    "text": "Seven days.\n\nNothing landed and nothing broke. You've got roughly what you had on the Monday, minus a bit of money and plus the specific knowledge of what you do when four people want the same afternoon.\n\nNone of it is finished. Tuesday is training, Wednesday is an answer somebody's waiting for, and the deposit was yesterday. It just carries on from here, which is what most weeks do."
   },
   "testPlaythroughs": [
     {

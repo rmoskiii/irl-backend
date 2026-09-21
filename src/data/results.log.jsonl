@@ -38,3 +38,9 @@
 {"testerId":"anonymous","scenarioId":"the_instruction","nodeId":"establish_delivery","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-09-06T22:20:31.982Z"}
 {"testerId":"anonymous","scenarioId":"the_instruction","nodeId":"ask1_date","choiceId":"a1_comply","scores":{"savvy":-5,"streetSmarts":5,"integrity":-10},"terminal":false,"timestamp":"2026-09-06T22:20:43.819Z"}
 {"testerId":"anonymous","scenarioId":"the_instruction","nodeId":"ask1_reaction","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-09-06T22:20:50.035Z"}
+{"testerId":"anonymous","scenarioId":"the_streets","nodeId":"s1d1_open","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-09-21T15:44:39.643Z"}
+{"testerId":"anonymous","scenarioId":"the_streets","nodeId":"s1d1_kitchen","choiceId":"d1_manage","scores":{"savvy":5,"streetSmarts":5,"integrity":0},"terminal":false,"timestamp":"2026-09-21T15:44:55.497Z"}
+{"testerId":"anonymous","scenarioId":"the_streets","nodeId":"s1d1_kitchen_react","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-09-21T15:45:01.397Z"}
+{"testerId":"anonymous","scenarioId":"the_streets","nodeId":"s1d1_walkway","choiceId":"d1_jay_asked","scores":{"savvy":15,"streetSmarts":5,"integrity":10},"terminal":false,"timestamp":"2026-09-21T15:45:25.878Z"}
+{"testerId":"anonymous","scenarioId":"the_streets","nodeId":"s1d1_jay_asked","choiceId":"continue","scores":{"savvy":0,"streetSmarts":0,"integrity":0},"terminal":false,"timestamp":"2026-09-21T15:45:36.024Z"}
+{"testerId":"anonymous","scenarioId":"the_streets","nodeId":"s1d1_close","choiceId":"d1_limit","scores":{"savvy":20,"streetSmarts":5,"integrity":10},"terminal":false,"timestamp":"2026-09-21T15:45:59.267Z"}
