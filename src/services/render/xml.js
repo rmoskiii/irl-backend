@@ -1,7 +1,7 @@
 'use strict';
 
-/** Minimal XML reader for the asset set: well-formed SVG, no CDATA outside
- *  <style>, no DTD. Deliberately NOT a general parser - it exists so the
+/** Minimal XML reader for the asset set: well-formed SVG, CDATA only inside
+ *  <style> (skipped as opaque), no DTD. Deliberately NOT a general parser - it exists so the
  *  composer can lift a named <g> subtree verbatim, exactly as ElementTree does,
  *  without a re-serialisation round trip that could perturb the output. */
 function parse(src) {
@@ -17,6 +17,16 @@ function parse(src) {
             if (text.trim()) top.text = (top.text || '') + decode(text);
         }
         if (src.startsWith('<!--', lt)) { i = src.indexOf('-->', lt) + 3; continue; }
+        // CDATA is opaque. The canonical token header lives inside a <style>
+        // wrapped in CDATA because its comment contains a literal <defs><style>;
+        // treating `<![CDATA[` as a tag name crashed the whole AssetStore at boot
+        // (an unescaped `[` in the matchingClose regex), and renderFor swallowed
+        // it, so every node in every scenario silently shipped render: null.
+        if (src.startsWith('<![CDATA[', lt)) {
+            const close = src.indexOf(']]>', lt);
+            i = close === -1 ? src.length : close + 3;
+            continue;
+        }
         if (src.startsWith('<?', lt)) { i = src.indexOf('?>', lt) + 2; continue; }
         if (src.startsWith('</', lt)) {
             const gt = src.indexOf('>', lt);
@@ -68,12 +78,27 @@ function findTagEnd(src, lt) {
     return src.length;
 }
 
+/** indexOf that does not look inside comments or CDATA. The token header's
+ *  comment contains a literal `<defs><style>`, so a raw indexOf for `<style`
+ *  would count it as a nested open and mis-measure the element. */
+function indexOutsideOpaque(src, needle, from) {
+    let i = from;
+    for (;;) {
+        const hit = src.indexOf(needle, i);
+        if (hit === -1) return -1;
+        const c = src.lastIndexOf('<!--', hit), ce = c === -1 ? -1 : src.indexOf('-->', c);
+        if (c !== -1 && c >= from && ce > hit) { i = ce + 3; continue; }
+        const d = src.lastIndexOf('<![CDATA[', hit), de = d === -1 ? -1 : src.indexOf(']]>', d);
+        if (d !== -1 && d >= from && de > hit) { i = de + 3; continue; }
+        return hit;
+    }
+}
+
 function matchingClose(src, tag, from) {
     let depth = 1, i = from;
-    const open = new RegExp(`<${tag}(\\s|>|/>)`, 'g');
     while (depth > 0 && i < src.length) {
-        const nextOpen = src.indexOf(`<${tag}`, i);
-        const nextClose = src.indexOf(`</${tag}`, i);
+        const nextOpen = indexOutsideOpaque(src, `<${tag}`, i);
+        const nextClose = indexOutsideOpaque(src, `</${tag}`, i);
         if (nextClose === -1) return src.length;
         if (nextOpen !== -1 && nextOpen < nextClose) {
             const e = findTagEnd(src, nextOpen);

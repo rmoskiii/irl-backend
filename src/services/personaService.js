@@ -117,10 +117,10 @@ function renderer() {
  *  what the client may see, and a picture is presentation. The client receives
  *  an SVG and head coordinates - never state, never the variant index that
  *  chose them. */
-function renderFor(nodeId, variantIndex, message) {
+function renderFor(nodeId, variantIndex, message, scenarioId) {
   try {
     const { render, blocks, policy } = renderer();
-    const block = blocks.blockFor(nodeId, variantIndex);
+    const block = blocks.blockFor(nodeId, variantIndex, scenarioId);
     if (!block) return { render: null, message };   // messages mode, or another scenario
 
     const bubbles = block.bubbles || [];
@@ -155,7 +155,7 @@ function renderFor(nodeId, variantIndex, message) {
   }
 }
 
-function publicNode(nodeId, node, state, content) {
+function publicNode(nodeId, node, state, content, scenarioId) {
   const resolved = content || resolveNodeContent(node, state || {});
   const currentState = state || {};
 
@@ -163,7 +163,7 @@ function publicNode(nodeId, node, state, content) {
       (c) => !c.requires || matchesAny(c.requires, currentState)
   );
 
-  const scene = renderFor(nodeId, resolved.variantIndex, resolved.message ?? '');
+  const scene = renderFor(nodeId, resolved.variantIndex, resolved.message ?? '', scenarioId);
 
   return {
     nodeId,
@@ -239,7 +239,7 @@ function readNode(scenarioId, nodeId, rawState) {
     playerVisible: scenario.scoring?.playerVisible !== false,
     contentRevision: contentRevisionFor(scenario),
     state,
-    node: publicNode(nodeId, node, state),
+    node: publicNode(nodeId, node, state, undefined, scenario.id),
   };
 }
 
@@ -260,7 +260,7 @@ function getRootView(scenarioId) {
     playerVisible: scenario.scoring?.playerVisible !== false,
     contentRevision: contentRevisionFor(scenario),
     state,
-    node: publicNode(scenario.rootNode, rootNode, state),
+    node: publicNode(scenario.rootNode, rootNode, state, undefined, scenario.id),
   };
 }
 

@@ -47,13 +47,17 @@ function resolvePlan(block, contract, opts = {}) {
             const register = turned ? 'rear' : c.register;
             const slot = scene.slots[c.slot];
             const cc = contractFor(A, base);
+            // Streets figures are drawn from files named for the character
+            // (jay.body.svg); anchors.json declares that per figure. Absent,
+            // the figure id is the file name, as for every earlier figure.
+            const file = cc.asset || base;
             return {
                 id: c.id, base, slot: c.slot, register, wardrobe: c.wardrobe,
                 transform: `translate(${slot.x - cc.basePoint.x},${slot.y - cc.basePoint.y})`,
                 assets: {
-                    body: `characters/${base}.body.svg`,
-                    register: `characters/${base}.register.${register}.svg`,
-                    wardrobe: `characters/${base}.wardrobe.${c.wardrobe}.svg`,
+                    body: `characters/${file}.body.svg`,
+                    register: `characters/${file}.register.${register}.svg`,
+                    wardrobe: `characters/${file}.wardrobe.${c.wardrobe}.svg`,
                 },
                 // emitted so the client never has to re-derive where a head is
                 headAnchor: {

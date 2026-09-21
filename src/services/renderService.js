@@ -6,7 +6,7 @@ const { resolvePlan } = require('./render/resolvePlan');
 const { composeFrame } = require('./render/composeFrame');
 const { cacheKey } = require('./render/cacheKey');
 const { RenderCache } = require('./render/renderCache');
-const { flattenTokens } = require('./render/flattenTokens');
+const { flattenTokens, loadBaseTokens } = require('./render/flattenTokens');
 const { inlineStyles } = require('./render/inlineStyles');
 const { simplifyForClient } = require('./render/simplifyForClient');
 const errors = require('./render/errors');
@@ -44,6 +44,7 @@ class RenderService {
         this.registriesPath = registriesPath || path.join(visual, 'registries.json');
         this.contract = loadContract(this.assetsDir, this.registriesPath);
         this.store = new AssetStore(this.assetsDir).loadAll();
+        this.baseTokens = loadBaseTokens(path.join(this.assetsDir, 'tokens.css'));
         this.cache = new RenderCache(cacheSize);
     }
 
@@ -65,7 +66,7 @@ class RenderService {
         // touches geometry; both exist because the client renderer supports
         // less CSS than the composition uses.
         const svg = this.flattenForClient
-            ? simplifyForClient(inlineStyles(flattenTokens(composed)))
+            ? simplifyForClient(inlineStyles(flattenTokens(composed, this.baseTokens)))
             : composed;
 
         const headAnchors = {};

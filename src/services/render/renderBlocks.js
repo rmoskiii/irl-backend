@@ -15,18 +15,35 @@ const path = require('path');
  *  the prose, and would put variant selection on the wrong side of the firewall.
  */
 class RenderBlocks {
-    constructor(file) {
-        this.file = file || path.join(__dirname, '..', '..', '..',
-            'tools', 'visual', 'render_blocks.json');
-        this.blocks = JSON.parse(fs.readFileSync(this.file, 'utf8'));
+    /** Blocks are scoped per scenario: tools/visual/render_blocks.<scenarioId>.json,
+     *  exactly as dump_render.py writes them. Node ids are only unique WITHIN a
+     *  scenario, so a single flat map keyed by node id is one shared id away from
+     *  serving one scenario's picture in another. The flat render_blocks.json is
+     *  still read as the fallback for a scenario with no file of its own. */
+    constructor(file, dir) {
+        this.dir = dir || path.join(__dirname, '..', '..', '..', 'tools', 'visual');
+        this.file = file || path.join(this.dir, 'render_blocks.json');
+        this.blocks = fs.existsSync(this.file)
+            ? JSON.parse(fs.readFileSync(this.file, 'utf8')) : {};
+        this.byScenario = new Map();
+    }
+
+    forScenario(scenarioId) {
+        if (!scenarioId) return this.blocks;
+        if (!this.byScenario.has(scenarioId)) {
+            const f = path.join(this.dir, `render_blocks.${scenarioId}.json`);
+            this.byScenario.set(scenarioId, fs.existsSync(f)
+                ? JSON.parse(fs.readFileSync(f, 'utf8')) : this.blocks);
+        }
+        return this.byScenario.get(scenarioId);
     }
 
     /** variantIndex: integer index of the matched messageVariant, or null/undefined
      *  when the node rendered its default `message`. Returns null for nodes with
      *  no artwork (messages mode) and for anything unknown - the caller treats a
      *  null block as "this node has no picture", which is a legitimate state. */
-    blockFor(nodeId, variantIndex) {
-        const node = this.blocks[nodeId];
+    blockFor(nodeId, variantIndex, scenarioId) {
+        const node = this.forScenario(scenarioId)[nodeId];
         if (!node) return null;
         const key = (variantIndex === null || variantIndex === undefined)
             ? 'default'

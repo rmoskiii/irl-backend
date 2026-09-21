@@ -2850,6 +2850,7 @@
       "note": "Dana Whitfield. Reuses figure_b's neck and socket contract and nothing else. Narrower face than figure_b, higher cheekbone, set jaw, reading glasses on the `noting` register only — which is part of why that register separates."
     },
     "figure_e": {
+      "asset": "bola",
       "localViewBox": "0 0 420 800",
       "basePoint": {
         "x": 210,
@@ -2881,6 +2882,7 @@
       "hairNote": "Hair is a silhouette lever: four registers, front-facing, and tilt alone will not separate tired from waiting at 220px."
     },
     "figure_f": {
+      "asset": "jay",
       "localViewBox": "0 0 420 800",
       "basePoint": {
         "x": 210,
@@ -2912,6 +2914,7 @@
       "hairNote": "A short cut cannot restyle between nodes; registers are atomic so the block is duplicated per file and must be enforced identical."
     },
     "figure_f_rear": {
+      "asset": "jay_rear",
       "localViewBox": "0 0 420 800",
       "basePoint": {
         "x": 210,
@@ -2942,6 +2945,7 @@
       "note": "Rear view of figure_f. One register only ('rear') — a rear figure reports posture, not expression. Required by s1d1_jay_asked and s1d1_jay_quiet, which are alternatives to each other, so both resolving to the same frame is correct."
     },
     "figure_g": {
+      "asset": "tunde",
       "localViewBox": "0 0 420 800",
       "basePoint": {
         "x": 210,
@@ -2972,6 +2976,7 @@
       "note": "Tunde. Broad, upright, deliberate — a working athlete, NOT sleek. Thirties to forties."
     },
     "figure_h": {
+      "asset": "dee",
       "localViewBox": "0 0 420 800",
       "basePoint": {
         "x": 210,
@@ -3002,6 +3007,7 @@
       "note": "Dee. Twenty-seven, physically easy, takes up space without effort. NOTHING MENACING IN THE BUILD — if he reads as a threat the scenario collapses on Day 3."
     },
     "figure_i": {
+      "asset": "kai",
       "localViewBox": "0 0 420 800",
       "basePoint": {
         "x": 210,
@@ -3032,6 +3038,7 @@
       "note": "Kai. Nineteen, performative posture — angled toward an audience even when there isn't one. One register."
     },
     "figure_j": {
+      "asset": "amara",
       "localViewBox": "0 0 420 800",
       "basePoint": {
         "x": 210,

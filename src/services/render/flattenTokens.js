@@ -20,14 +20,31 @@
  */
 const TOKEN_RE = /var\(\s*(--[\w-]+)\s*(?:,\s*([^)]*))?\)/g;
 
-function readTokens(svg) {
-    const root = /:root\s*\{([^}]*)\}/.exec(svg);
-    if (!root) return {};
+/** Every :root block in the frame, FIRST definition wins, then `base`.
+ *
+ *  A composed frame carries one :root per distinct token block among its
+ *  assets. Reading only the first meant a character could only resolve its
+ *  colours if the ENVIRONMENT happened to define them: scene.block.svg carries
+ *  a 50-token block, so every Streets figure on the walkway went magenta while
+ *  the same figure in the kitchen (144 tokens) was fine. First-wins keeps every
+ *  value that resolved before this change byte-identical; the later blocks and
+ *  tokens.css only fill names that were previously unresolved. */
+function readTokens(svg, base = {}) {
     const out = {};
-    for (const m of root[1].matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g)) {
-        out[m[1]] = m[2].trim();
+    for (const root of svg.matchAll(/:root\s*\{([^}]*)\}/g)) {
+        for (const m of root[1].matchAll(/(--[\w-]+)\s*:\s*([^;]+);/g)) {
+            if (out[m[1]] === undefined) out[m[1]] = m[2].trim();
+        }
     }
+    for (const [k, v] of Object.entries(base)) if (out[k] === undefined) out[k] = v;
     return out;
+}
+
+/** The canonical token sheet as a map, for readTokens' last-resort fill. */
+function loadBaseTokens(tokensCssPath) {
+    const fs = require('fs');
+    if (!tokensCssPath || !fs.existsSync(tokensCssPath)) return {};
+    return readTokens(fs.readFileSync(tokensCssPath, 'utf8'));
 }
 
 const GEOMETRY = /\s(d|x|y|x1|y1|x2|y2|cx|cy|r|rx|ry|width|height|transform|points|viewBox|offset)\s*=\s*"[^"]*var\(/;
@@ -43,9 +60,9 @@ function assertGeometryUnchanged(svg) {
  *  Unknown tokens fall back to their declared fallback, then to magenta, which
  *  is deliberately hideous: a missing token should be obvious on screen, not
  *  quietly rendered as black. */
-function flattenTokens(svg) {
+function flattenTokens(svg, baseTokens) {
     assertGeometryUnchanged(svg);
-    const tokens = readTokens(svg);
+    const tokens = readTokens(svg, baseTokens);
     let out = svg;
     for (let pass = 0; pass < 6; pass++) {          // tokens may reference tokens
         const next = out.replace(TOKEN_RE, (_, name, fallback) =>
@@ -56,4 +73,4 @@ function flattenTokens(svg) {
     return out;
 }
 
-module.exports = { flattenTokens, readTokens };
+module.exports = { loadBaseTokens, flattenTokens, readTokens };

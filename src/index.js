@@ -5,6 +5,9 @@ const rateLimiter = require("./middleware/rateLimiter");
 const scenarioRoutes = require("./routes/scenarios");
 
 const app = express();
+// Behind a hosting proxy req.ip is the PROXY's address unless this is set, so
+// the per-IP rate limit would put every player in one shared bucket.
+app.set("trust proxy", Number(process.env.TRUST_PROXY_HOPS ?? 1));
 const PORT = process.env.PORT || 4000;
 
 app.use(cors({

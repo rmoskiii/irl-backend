@@ -289,7 +289,7 @@ function resolveChoice({ scenarioId, nodeId, choiceId, runningTotal, state }) {
     beat,
     terminal: false,
     state: nextState,
-    node: publicNode(nextNodeId, nextNode, nextState, content),
+    node: publicNode(nextNodeId, nextNode, nextState, content, scenario.id),
   };
 }
 
