@@ -147,12 +147,29 @@ function resolveBubbles(block, cast, scene, A, nodeId) {
 }
 
 function montagePlan(block, A) {
+    // Panel rectangles are resolved here rather than at compose time because two
+    // consumers need them: the composer, which draws the panels, and the client,
+    // which on a phone shows ONE panel at a time. A vignette is natively 4:5, so
+    // a panel window crops nothing - but only if the client is told where the
+    // panels are instead of hard-coding three x values that the contract owns.
+    const cfg = A.montage;
+    const list = block.panels || [];
+    // A contract with no montage block still resolves, it just reports no
+    // geometry - the composer would be the one to refuse, and it already does.
+    const total = cfg ? list.length * cfg.panelWidth + Math.max(0, list.length - 1) * cfg.gap : 0;
+    const x0 = cfg ? (A.canvas.width - total) / 2 : 0;
     return {
         canvas: A.canvas, mode: 'montage',
-        panels: (block.panels || []).map(p => ({ vignette: p.vignette, caption: p.caption || null })),
+        panels: list.map((p, i) => ({
+            vignette: p.vignette, caption: p.caption || null,
+            ...(cfg ? {
+                x: x0 + i * (cfg.panelWidth + cfg.gap), y: cfg.top,
+                width: cfg.panelWidth, height: cfg.panelHeight,
+            } : {}),
+        })),
         layers: (block.panels || []).map((p, i) => ({
             layer: 'montage_panel', index: i, source: `vignettes/${p.vignette}.svg` })),
     };
 }
 
-module.exports = { resolvePlan };
+module.exports = { resolvePlan, contractFor };

@@ -4,6 +4,43 @@ const { mergeStyles, mergeDefs, svgRoot } = require('./svgBuilder');
 const { composeBubbles } = require('./composeBubbles');
 const { g } = require('./num');
 
+/** Where a register lands inside its figure, as the composer places it.
+ *
+ *  Extracted rather than duplicated because a native speech bubble aims at a
+ *  point ON the register (the mouth), and a point derived from a second copy of
+ *  this maths would drift from the drawing the moment either copy changed. The
+ *  composer and the mouth emitter read the same function, so the tail lands on
+ *  the mouth that was actually drawn.
+ *
+ *  Returns the two parts separately: the translate that seats the register in
+ *  the figure, and the rotation the register declares about its own neck
+ *  anchor. Applied in that written order - `translate(...) rotate(...)` - which
+ *  means a point is rotated first, then translated. */
+function headPlacement(A, reg) {
+    const [nx, ny] = String(reg.attrs['data-neck-anchor']).split(',').map(Number);
+    const cc = A.character;
+    return {
+        nx, ny,
+        dx: cc.headSocket.x - nx,
+        dy: cc.headSocket.y - ny,
+        rotate: parseFloat(reg.attrs['data-register-rotate'] || '0') || 0,
+    };
+}
+
+/** A register-local point as it ends up on the canvas: rotate about the neck
+ *  anchor, seat the register in the figure, then place the figure in its slot.
+ *  `slot` is the plan's cast transform, `translate(x,y)`. */
+function projectRegisterPoint(pt, place, slotTransform) {
+    const m = /translate\((-?[\d.]+),\s*(-?[\d.]+)\)/.exec(slotTransform || '');
+    const sx = m ? Number(m[1]) : 0;
+    const sy = m ? Number(m[2]) : 0;
+    const t = (place.rotate * Math.PI) / 180;
+    const cos = Math.cos(t), sin = Math.sin(t);
+    const rx = place.nx + (pt.x - place.nx) * cos - (pt.y - place.ny) * sin;
+    const ry = place.ny + (pt.x - place.nx) * sin + (pt.y - place.ny) * cos;
+    return { x: rx + place.dx + sx, y: ry + place.dy + sy };
+}
+
 /** Plan in, SVG string out. Never reads the scenario, never sees state. */
 function composeFrame(plan, contract, store, opts = {}) {
     const A = contract.anchors;
@@ -21,7 +58,6 @@ function composeFrame(plan, contract, store, opts = {}) {
     for (const name of ['background', 'architecture', 'environmental_detail', 'furniture', 'foreground'])
         push(name, store.group(envRel, name));
 
-    const cc = A.character;
     for (const c of plan.cast) {
         const body = store.get(c.assets.body);
         const ward = store.get(c.assets.wardrobe);
@@ -29,10 +65,9 @@ function composeFrame(plan, contract, store, opts = {}) {
         styles.push(...body.styles, ...ward.styles, ...reg.styles);
         defs.push(...body.defs, ...ward.defs, ...reg.defs);
 
-        const [nx, ny] = String(reg.attrs['data-neck-anchor']).split(',').map(Number);
-        let headTf = `translate(${g(cc.headSocket.x - nx)},${g(cc.headSocket.y - ny)})`;
-        const rot = parseFloat(reg.attrs['data-register-rotate'] || '0') || 0;
-        if (rot) headTf += ` rotate(${g(rot)},${g(nx)},${g(ny)})`;
+        const place = headPlacement(A, reg);
+        let headTf = `translate(${g(place.dx)},${g(place.dy)})`;
+        if (place.rotate) headTf += ` rotate(${g(place.rotate)},${g(place.nx)},${g(place.ny)})`;
 
         const slotLayer = (inner, extra) => extra
             ? `<g transform="${c.transform}"><g transform="${extra}">${inner}</g></g>`
@@ -77,16 +112,16 @@ function composeMontage(plan, contract, store) {
     const A = contract.anchors;
     const cfg = A.montage;
     const styles = [], defs = [];
-    const pw = cfg.panelWidth, ph = cfg.panelHeight, gap = cfg.gap;
-    const total = plan.panels.length * pw + (plan.panels.length - 1) * gap;
-    const x0 = (A.canvas.width - total) / 2;
+    const pw = cfg.panelWidth, ph = cfg.panelHeight;
     let inner = `<rect x="0" y="0" width="${A.canvas.width}" height="${A.canvas.height}" ` +
         `fill="var(${cfg.matte})" />`;
-    plan.panels.forEach((p, i) => {
+    // the plan owns the rectangles: the client is told the same geometry the
+    // composer draws, so a phone showing one panel frames exactly this panel
+    plan.panels.forEach((p) => {
         const rel = `vignettes/${p.vignette}.svg`;
         const a = store.get(rel);
         styles.push(...a.styles); defs.push(...a.defs);
-        const x = x0 + i * (pw + gap);
+        const x = p.x;
         inner += `<g transform="translate(${g(x)},${cfg.top}) scale(${g(pw / cfg.sourceWidth)})">` +
             `${store.group(rel, 'vignette')}</g>`;
         inner += `<rect x="${g(x)}" y="${cfg.top}" width="${pw}" height="${ph}" fill="none" ` +
@@ -102,4 +137,4 @@ function composeMontage(plan, contract, store) {
     return svgRoot(attrs, body);
 }
 
-module.exports = { composeFrame };
+module.exports = { composeFrame, headPlacement, projectRegisterPoint };

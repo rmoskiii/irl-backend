@@ -28,13 +28,38 @@ class BubblePolicy {
             // No config is a valid state: it means no node uses balloons.
         }
         this.nodes = new Set(cfg.nodes || []);
+        this.delivery = cfg.delivery || {};
     }
 
     /** Global override wins, so IRX_SCENE_BUBBLES still works for comparing the
-     *  two treatments on every node at once. */
-    wants(nodeId, override) {
+     *  two treatments on every node at once.
+     *
+     *  variantIndex is optional and only narrows: `s1d4_close#1` enables the
+     *  dialogue on that message variant alone, while the bare node id enables
+     *  every variant, exactly as before. Needed because a node's variants can
+     *  carry different lines - `s1d4_close` says nothing in its base message and
+     *  two different things in its two variants. */
+    wants(nodeId, override, variantIndex) {
         if (override === true || override === false) return override;
+        if (variantIndex !== null && variantIndex !== undefined
+            && this.nodes.has(`${nodeId}#${variantIndex}`)) return true;
         return this.nodes.has(nodeId);
+    }
+
+    /** How this scenario's dialogue reaches the player.
+     *
+     *  'baked'  - balloons drawn inside the artwork by the renderer. The 2B
+     *             treatment, and still what The Secret ships.
+     *  'native' - the same lines, stripped from the prose exactly as the baked
+     *             path strips them, handed to the client to draw at the mouth.
+     *             The artwork stays text-free, so the line reflows, scales with
+     *             the OS text size and survives a camera that crops the canvas.
+     *
+     *  Per scenario rather than global because it is a presentation decision per
+     *  district, and because it lets The Streets move without touching a single
+     *  frame of the other two. */
+    deliveryFor(scenarioId) {
+        return this.delivery[scenarioId] === 'native' ? 'native' : 'baked';
     }
 
     /** The message with the balloon dialogue taken out.
@@ -65,6 +90,10 @@ class BubblePolicy {
         }
         const cleaned = out
             .replace(/[ \t]+\n/g, '\n')
+            // a line lifted from the FRONT of a paragraph leaves the space that
+            // followed it; one lifted from the middle leaves a double space
+            .replace(/\n[ \t]+/g, '\n')
+            .replace(/[ \t]{2,}/g, ' ')
             .replace(/\n{3,}/g, '\n\n')
             .trim();
         return {

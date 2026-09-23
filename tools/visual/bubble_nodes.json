@@ -1,13 +1,28 @@
 {
-  "note": "Which nodes render their dialogue as balloons inside the artwork instead of as prose under it. Everything not listed keeps the default: artwork carries the room, the panel carries the words.",
-  "why": "The balloon treatment costs something real - the text stops being selectable, stops reflowing, and stops responding to the OS text size. That is worth paying on the beats where seeing the line land in the room IS the beat, and not worth paying on a scene that is mostly narration. So it is a per-node decision, not a global one.",
-  "authoring": "A node listed here has its quoted dialogue removed from the message it sends the client, so the same words never appear twice. The narration around them stays. If removing the dialogue would leave nothing, the renderer keeps the prose and skips the balloons - a picture with no words under it and no narration is not a scene, it is a caption.",
+  "note": "Which nodes deliver their dialogue as speech rather than as prose under the picture. Everything not listed keeps the default: artwork carries the room, the panel carries the words.",
+  "why": "Speech costs something real - baked into the artwork the text stops being selectable, stops reflowing, and stops responding to the OS text size; drawn natively it has to fit beside a head. That is worth paying on the beats where seeing the line land in the room IS the beat, and not worth paying on a scene that is mostly narration. So it is a per-node decision, not a global one.",
+  "authoring": "A node listed here has its quoted dialogue removed from the message it sends the client, so the same words never appear twice. The narration around them stays. Removal is exact-match: if a line has drifted from the render block the renderer keeps the prose and ships no speech, rather than showing it twice or leaving a hole. A node id may be narrowed to one message variant as `nodeId#index` - `s1d4_close#1` - when a node's variants say different things.",
+  "delivery": {
+    "the_streets": "native"
+  },
+  "deliveryNote": "How a scenario's listed dialogue reaches the player. 'baked' (the default, and what The Secret ships) draws balloons inside the artwork. 'native' hands the same stripped lines to the client, which draws them at the mouth - the treatment the full-screen mobile shell needs, because a balloon baked at canvas x48 does not survive a camera that shows 800 of 1600 units.",
   "nodes": [
     "confession",
     "confession_guarded",
     "jessica_reacts_judge",
     "act2_alex_reveal",
     "act3b_alex_told",
-    "act4_engagement_party"
-  ]
+    "act4_engagement_party",
+
+    "s1d1_kitchen",
+    "s1d1_kitchen_react",
+    "s1d2_plate",
+    "s1d3_tunde",
+    "s1d4_close",
+    "s1d4_landing",
+    "s1d4_photos",
+    "s1d5_dee",
+    "s1d6_sat"
+  ],
+  "streetsNote": "The Streets speaks 13 lines across these 9 nodes and says nothing anywhere else. s1d4_close is listed bare rather than per variant because its base message carries no dialogue at all - a variant with no lines in its render block cannot bubble regardless of the list."
 }

@@ -14,7 +14,7 @@
  */
 const test = require('node:test');
 const assert = require('node:assert');
-const { resolvePlan } = require('../../src/services/render/resolvePlan');
+const { resolvePlan } = require('../src/services/render/resolvePlan');
 
 // ---------------------------------------------------------------- fixtures
 

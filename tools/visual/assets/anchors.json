@@ -2862,6 +2862,7 @@
         "y": 210,
         "note": "figure_a's socket. Inherited contract — geometry only."
       },
+      "mouthAnchor": { "x": 100, "y": 166 },
       "neckSpan": {
         "x0": 81,
         "x1": 119,
@@ -2894,6 +2895,7 @@
         "y": 196,
         "note": "figure_b's socket. Inherited contract — geometry only."
       },
+      "mouthAnchor": { "x": 100, "y": 163 },
       "neckSpan": {
         "x0": 85,
         "x1": 123,
@@ -2957,6 +2959,7 @@
         "y": 210,
         "note": "figure_a's socket. Inherited contract — geometry only."
       },
+      "mouthAnchor": { "x": 100, "y": 168 },
       "neckSpan": {
         "x0": 81,
         "x1": 119,
@@ -2988,6 +2991,7 @@
         "y": 210,
         "note": "figure_a's socket. Inherited contract — geometry only."
       },
+      "mouthAnchor": { "x": 100, "y": 165 },
       "neckSpan": {
         "x0": 81,
         "x1": 119,
@@ -3019,6 +3023,7 @@
         "y": 196,
         "note": "figure_b's socket. Inherited contract — geometry only."
       },
+      "mouthAnchor": { "x": 100, "y": 162 },
       "neckSpan": {
         "x0": 85,
         "x1": 123,
@@ -3050,6 +3055,7 @@
         "y": 196,
         "note": "figure_b's socket. Inherited contract — geometry only."
       },
+      "mouthAnchor": { "x": 100, "y": 159 },
       "neckSpan": {
         "x0": 85,
         "x1": 123,
@@ -3165,5 +3171,6 @@
     }
   },
   "propAnchorRule": "Every prop declares defaultAnchor per scene. Composers must use it rather than assigning anchors positionally - the full-scenario audit caught prop.jacket_chair placed on a worktop because a round-robin had put the second prop at the second anchor.",
+  "mouthAnchorRule": "mouthAnchor is optional and additive. A figure without one (every rear register, and the figures that predate The Streets) simply reports no mouth, and a bubble falls back to the head.",
   "scenesBubbleNote": "None of the five Career scenes declares bubblePlacement, because mapping.the_instruction.json sets textLayer 'native' and no Career node composes a balloon. If bubbles are ever enabled for this district, each of these five needs a placement block for the slots it uses, and the global defaults in anchors.bubbles.placement are NOT safe to inherit — they were measured against Neighbourhood rooms."
 }

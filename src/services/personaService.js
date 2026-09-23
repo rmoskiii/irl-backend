@@ -127,23 +127,40 @@ function renderFor(nodeId, variantIndex, message, scenarioId) {
     const override = process.env.IRX_SCENE_BUBBLES === '1' ? true
         : process.env.IRX_SCENE_BUBBLES === '0' ? false
             : undefined;
-    let useBubbles = bubbles.length > 0 && policy.wants(nodeId, override);
+    let useBubbles = bubbles.length > 0 && policy.wants(nodeId, override, variantIndex);
     let prose = message;
+    // Native delivery hands the lines to the client to draw at the mouth instead
+    // of baking balloons into the artwork. IRX_SCENE_BUBBLES=1 still forces the
+    // baked treatment, so the two stay comparable on the same node.
+    const native = useBubbles && override !== true
+        && policy.deliveryFor(scenarioId) === 'native';
+    let dialogue = null;
 
     if (useBubbles) {
       const stripped = policy.stripDialogue(message, bubbles);
       // Refuse the balloons rather than ship a duplicate or an empty panel.
+      // Native delivery is refused on exactly the same terms: a line the prose
+      // still contains would be read twice - once in the panel, once at the
+      // mouth - which is the defect this check exists to prevent.
       if (!stripped.complete || !stripped.message) {
         console.warn(`[render] ${nodeId}: dialogue de-duplication incomplete ` +
             `(${stripped.removed}/${bubbles.length}); keeping prose`);
         useBubbles = false;
       } else {
         prose = stripped.message;
+        if (native) {
+          dialogue = bubbles.filter(b => b && b.text)
+              .map(b => ({ speaker: b.speaker || null, text: b.text }));
+          useBubbles = false;   // the artwork stays text-free
+        }
       }
     }
 
+    const composed = render.render(block, { nodeId, bubbles: useBubbles });
     return {
-      render: render.render(block, { nodeId, bubbles: useBubbles }),
+      // spread rather than mutate: RenderService hands back its cached object,
+      // and which node is speaking is not part of what that cache is keyed on
+      render: dialogue ? { ...composed, dialogue } : composed,
       message: prose,
     };
   } catch (e) {

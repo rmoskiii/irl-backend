@@ -1854,7 +1854,7 @@
     },
     "s1d4_photos": {
       "day": 4,
-      "message": "\"You're in about four of these,\" Amara says.\n\nShe isn't making a point. She's working something out, and she says the thing about Tuesday exactly once and then lets it go.\n\nTwenty minutes.",
+      "message": "\\\"You're in about four of these.\\\"\\n\\nAmara says it without looking up.\\n\\nShe isn't making a point. She's working something out, and she says the thing about Tuesday exactly once and then lets it go.\n\nTwenty minutes.",
       "presentation": {
         "type": "scene",
         "modal": false,
@@ -2022,7 +2022,7 @@
           "when": {
             "mumBand": "tight"
           },
-          "message": "Two floors and a walkway. Mum has her shoes in her hand.\n\n\"They're good to you, that family.\" A pause. \"They always were.\"\n\nThen she talks about somebody's hip for the rest of the walk."
+          "message": "Two floors and a walkway. Mum has her shoes in her hand.\n\n\\\"They're good to you, that family.\\\"\\n\\nA pause.\\n\\n\\\"They always were.\\\"\n\nThen she talks about somebody's hip for the rest of the walk."
         }
       ],
       "presentation": {
@@ -2277,7 +2277,7 @@
     },
     "s1d5_dee": {
       "day": 5,
-      "message": "Dee has a cousin. Thirteen. He's started being around people Dee doesn't want him around, and Dee can't say that to him — \"because look at me.\"\n\nTraining's Tuesdays and Thursdays, six till half seven. Take him, bring him back, be about. Dee will sort you weekly for it.\n\nHe isn't selling it. He looks slightly embarrassed to be asking, which is not a thing you've seen on him before.\n\n\"You're the only one round here I'd have him with.\"\n\nHe means it. That is the entire difficulty.",
+      "message": "Dee has a cousin. Thirteen. He's started being around people Dee doesn't want him around, and Dee can't say that to him. He says why.\\n\\n\\\"Because look at me.\\\"\\n\\nTraining's Tuesdays and Thursdays, six till half seven. Take him, bring him back, be about. Dee will sort you weekly for it.\n\nHe isn't selling it. He looks slightly embarrassed to be asking, which is not a thing you've seen on him before.\n\n\"You're the only one round here I'd have him with.\"\n\nHe means it. That is the entire difficulty.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
@@ -2680,7 +2680,7 @@
     },
     "s1d6_sat": {
       "day": 6,
-      "message": "Two hours on the wall outside the flats, and the two of you don't solve anything.\n\nAt some point Jay says \"I know you were working Saturday\" — not as an accusation, just as a thing he knows — and after that it is easier rather than harder.",
+      "message": "Two hours on the wall outside the flats, and the two of you don't solve anything.\n\nAt some point Jay says it — not as an accusation, just as a thing he knows.\n\n\"I know you were working Saturday.\"\n\nAnd after that it is easier rather than harder.",
       "presentation": {
         "type": "scene",
         "modal": false,

@@ -9,6 +9,7 @@ const { RenderCache } = require('./render/renderCache');
 const { flattenTokens, loadBaseTokens } = require('./render/flattenTokens');
 const { inlineStyles } = require('./render/inlineStyles');
 const { simplifyForClient } = require('./render/simplifyForClient');
+const { mouthAnchorsFor } = require('./render/mouthAnchors');
 const errors = require('./render/errors');
 
 /** The only composition module the route layer touches.
@@ -72,13 +73,26 @@ class RenderService {
         const headAnchors = {};
         for (const c of plan.cast || []) headAnchors[c.id] = c.headAnchor;
 
+        // Where each speaking figure's mouth ended up, for a bubble the CLIENT
+        // draws. Empty for a montage, for rear registers and for every figure
+        // that predates The Streets - all normal states. See mouthAnchors.js.
+        const mouthAnchors = mouthAnchorsFor(plan, this.contract, this.store);
+
+        // Panel rectangles, so a phone can show one vignette at a time instead
+        // of the full 16:9 strip of three. Only montage frames carry it.
+        const montage = plan.mode === 'montage'
+            ? { panels: plan.panels.map(p => ({
+                    x: p.x, y: p.y, width: p.width, height: p.height,
+                    caption: p.caption || null })) }
+            : null;
+
         const warnings = (plan.unplaceableProps || []).map(u => ({
             code: 'PROP_NOT_PLACEABLE_IN_SCENE', ...u }));
 
         return this.cache.set(slot, {
             svg, cacheKey: key, aspect: '16:9', bubbles: withBubbles,
             canvas: this.contract.anchors.canvas.viewBox,
-            headAnchors, warnings,
+            headAnchors, mouthAnchors, montage, warnings,
         });
     }
 
