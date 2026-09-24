@@ -146,3 +146,18 @@ test('The Secret still bakes its balloons and ships no native dialogue', () => {
     assert.strictEqual(out.render.bubbles, true, 'baked, exactly as before');
     assert.strictEqual(out.render.dialogue, undefined, 'nothing native leaks in');
 });
+
+test('the prose carries no literal escape sequences', () => {
+    // Guards a paste hazard, not a logic error: a message edited by hand can
+    // arrive double-escaped, and the player then reads a backslash-n where a
+    // paragraph break should be. Every other test still passed when this
+    // happened, because the dialogue was stripped correctly either way.
+    for (const [nodeId, node] of Object.entries(scenario.nodes)) {
+        const texts = [node.message, ...(node.messageVariants || []).map(v => v.message)];
+        for (const t of texts) {
+            if (!t) continue;
+            assert.ok(!t.includes('\\n'), `${nodeId}: literal \\n in the prose`);
+            assert.ok(!t.includes('\\"'), `${nodeId}: escaped quote in the prose`);
+        }
+    }
+});
