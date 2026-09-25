@@ -5,7 +5,7 @@
   "district": "streets",
   "difficulty": 2,
   "estimatedMinutes": 30,
-  "contentRevision": 3,
+  "contentRevision": 4,
   "premise": "Seven days in March. You're nineteen, the money at home is tight, and everybody who has ever helped you wants something this week.",
   "persona": {
     "name": "Bola",
@@ -682,7 +682,7 @@
     },
     "s1d1_walkway": {
       "day": 1,
-      "message": "Jay is on the walkway and has been for a while, which he does when he wants to be found without having asked.\n\nHe is funny for about ninety seconds and then isn't, and the gap between those two things is visible if you know him. Jay's flat is where you ate for a stretch when things were bad, and neither of you has ever said a word about it.\n\nTunde's message arrives while Jay is talking. *Cage, eight. You coming or not.*",
+      "message": "Jay is on the walkway and has been for a while, which he does when he wants to be found without having asked.\n\nHe is funny for about ninety seconds and then isn't, and the gap between those two things is visible if you know him. Jay's flat is where you ate for a stretch when things were bad, and neither of you has ever said a word about it.\n\nTunde's message arrives while Jay is talking. *Cage, eight. You coming or not.*\n\nTunde trains most nights. He asks direct questions, too.",
       "reactionDelay": "medium",
       "presentation": {
         "type": "scene",
@@ -883,6 +883,9 @@
         },
         {
           "narration": "Twenty minutes between them. You haven't answered either."
+        },
+        {
+          "narration": "Amara asks once and leaves it with you. She doesn't ask twice."
         },
         {
           "narration": "And a number you don't have saved."
@@ -1437,7 +1440,7 @@
     },
     "s1d3_stop": {
       "day": 3,
-      "message": "Two of them are already out of the car by the time you clock them.\n\nIt isn't a shout. Nobody grabs anybody. Names, where you're going, where you've come from, and one of them looking past you at the road the whole time.\n\nYou're carrying nothing. There is nothing to find and nothing is looked for.\n\nAcross the walkway, outside the shops, Kai is with three or four others and his phone is up, and it has been up since about the second sentence.\n\nTwo years ago Kai did this to somebody else in front of everyone, and you laughed. Not loudly. You laughed.",
+      "message": "Two of them are already out of the car by the time you clock them.\n\nIt isn't a shout. Nobody grabs anybody. Names, where you're going, where you've come from, and one of them looking past you at the road the whole time.\n\nYou're carrying nothing. There is nothing to find and nothing is looked for.\n\nAcross the walkway, outside the shops, Kai is with three or four others and his phone is up, and it has been up since about the second sentence. He isn't filming this for himself. The three or four are why the phone is up.\n\nTwo years ago Kai did this to somebody else in front of everyone, and you laughed. Not loudly. You laughed.",
       "reactionDelay": "long",
       "presentation": {
         "type": "scene",
